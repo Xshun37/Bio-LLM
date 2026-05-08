@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+trrust_rawdata.human.tsv
+abstracts_for_test.txt
+analysis_results.json
+report.html
