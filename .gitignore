@@ -1,7 +1,9 @@
 __pycache__/
 *.py[cod]
+.snakemake
 
 trrust_rawdata.human.tsv
 abstracts_for_test.txt
 analysis_results.json
 report.html
+config.yaml
