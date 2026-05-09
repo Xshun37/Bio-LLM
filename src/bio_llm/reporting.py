@@ -329,21 +329,29 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
 
     recall = (total_matched_gt / total_gt * 100) if total_gt > 0 else 0
     precision = ((total_consistent + total_conflict) / total_llm * 100) if total_llm > 0 else 0
+    total_missed = total_gt - total_matched_gt
+    evaluable_llm = total_llm - total_new_found - total_new
+    evaluable_precision = ((total_consistent + total_conflict) / evaluable_llm * 100) if evaluable_llm > 0 else 0
+    direction_accuracy = (total_consistent / (total_consistent + total_conflict) * 100) if (total_consistent + total_conflict) > 0 else 0
 
     html_content += f"""
         <div class="card" style="background:#f0f8ff;">
             <h2>Summary Statistics</h2>
             <table style="width:auto;">
-                <tr><th>Metric</th><th>Value</th></tr>
-                <tr><td>Total PMIDs</td><td>{len(llm_data)}</td></tr>
-                <tr><td>Ground-truth relationships</td><td>{total_gt}</td></tr>
-                <tr><td>LLM extracted relationships</td><td>{total_llm}</td></tr>
-                <tr><td>Recall (GT found by LLM)</td><td>{total_matched_gt}/{total_gt} = {recall:.1f}%</td></tr>
-                <tr><td>Precision (LLM results in GT)</td><td>{total_consistent + total_conflict}/{total_llm} = {precision:.1f}%</td></tr>
-                <tr><td>Consistent (TF+Target+Dir match)</td><td style="color:green;font-weight:bold;">{total_consistent}</td></tr>
-                <tr><td>Conflict (pair matches GT, Dir mismatch)</td><td style="color:orange;font-weight:bold;">{total_conflict}</td></tr>
-                <tr><td>New Found (pair not in TRRUST)</td><td style="color:#0066cc;font-weight:bold;">{total_new_found}</td></tr>
-                <tr><td>New (no GT for this PMID)</td><td style="color:blue;font-weight:bold;">{total_new}</td></tr>
+                <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+                <tr><td>Total PMIDs</td><td>{len(llm_data)}</td><td></td></tr>
+                <tr><td>Ground-truth relationships</td><td>{total_gt}</td><td>TRRUST entries for sampled PMIDs</td></tr>
+                <tr><td>LLM extracted relationships</td><td>{total_llm}</td><td>Total predictions</td></tr>
+                <tr><td>Recall</td><td>{total_matched_gt}/{total_gt} = {recall:.1f}%</td><td>GT found by LLM</td></tr>
+                <tr><td>Overall Precision</td><td>{total_consistent + total_conflict}/{total_llm} = {precision:.1f}%</td><td>LLM results matching any GT pair</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{total_consistent + total_conflict}/{evaluable_llm} = {evaluable_precision:.1f}%</b></td><td>Excl. New Found — among evaluable predictions, % matching GT</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Direction Accuracy</b></td><td><b>{total_consistent}/{total_consistent + total_conflict} = {direction_accuracy:.1f}%</b></td><td>Among GT-matched pairs, % with correct direction</td></tr>
+                <tr><td colspan="3"></td></tr>
+                <tr><td>Consistent (full match)</td><td style="color:green;font-weight:bold;">{total_consistent}</td><td>TF + Target + Direction all match</td></tr>
+                <tr><td>Conflict (direction mismatch)</td><td style="color:orange;font-weight:bold;">{total_conflict}</td><td>Pair matches GT, but direction differs</td></tr>
+                <tr><td>New Found (not in TRRUST)</td><td style="color:#0066cc;font-weight:bold;">{total_new_found}</td><td>LLM discoveries — no GT to compare</td></tr>
+                <tr><td>Missed (GT not found)</td><td style="color:red;font-weight:bold;">{total_missed}</td><td>TRRUST entries the LLM did not find</td></tr>
+                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{total_new}</td><td>PMIDs without any TRRUST entry</td></tr>
             </table>
         </div>
     """
