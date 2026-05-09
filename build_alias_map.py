@@ -1,77 +1,74 @@
 #!/usr/bin/env python3
-"""Build a comprehensive gene alias -> HGNC symbol map from TRRUST data + mygene."""
+"""Build a clean gene alias -> HGNC symbol map from the HGNC complete set TSV."""
 import csv
 import json
-import mygene
+import re
+import sys
 
 
-TRRUST_PATH = "data/raw/trrust_rawdata.human.tsv"
+HGNC_PATH = "data/raw/hgnc_complete_set.txt"
 OUTPUT_PATH = "data/curated/gene_alias_map.json"
 
 
+def is_valid_alias(name):
+    """Filter out garbage aliases."""
+    if not name or len(name) < 3:
+        return False
+    if re.match(r'^[\d\.\-]+$', name):
+        return False
+    if re.match(r'^[\s\W]+$', name):
+        return False
+    return True
+
+
 def main():
-    # 1. Collect all unique gene names from TRRUST
-    names = set()
-    with open(TRRUST_PATH, "r", encoding="utf-8") as f:
-        reader = csv.reader(f, delimiter="\t")
-        for row in reader:
-            if len(row) < 2:
-                continue
-            names.add(row[0].strip())   # TF
-            names.add(row[1].strip())   # Target
-
-    print(f"Unique gene names in TRRUST: {len(names)}")
-
-    # 2. For each TRRUST gene, look up its official symbol + all aliases
-    mg = mygene.MyGeneInfo()
     alias_map = {}
+    missing = 0
 
-    # Batch query: for each name, get the official record with aliases
-    results = mg.querymany(
-        list(names),
-        scopes="symbol,alias,retired",
-        fields="symbol,alias,retired",
-        species="human",
-        returnall=False,
-        verbose=False,
-    )
+    with open(HGNC_PATH, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            symbol = row.get("symbol", "").strip()
+            if not symbol:
+                continue
 
-    for entry in results:
-        if "notfound" in entry or "symbol" not in entry:
-            continue
-        official = entry["symbol"]
-        # Map all known aliases for this gene → official symbol
-        for alias in entry.get("alias", []):
-            alias_map[alias] = official
-        retired = entry.get("retired", [])
-        if isinstance(retired, list):
-            for alias in retired:
-                if isinstance(alias, dict):
-                    alias_map[alias.get("symbol", "")] = official
-        # Also map the query itself if it differs from official
-        query = entry.get("query", "")
-        if query and query.upper() != official.upper():
-            alias_map[query] = official
+            # Parse pipe-delimited alias_symbol column
+            alias_str = row.get("alias_symbol", "").strip()
+            if alias_str:
+                for alias in alias_str.split("|"):
+                    alias = alias.strip()
+                    if alias and is_valid_alias(alias) and alias.upper() != symbol.upper():
+                        alias_map[alias.upper()] = symbol
 
-    print(f"Alias mappings built: {len(alias_map)}")
+            # Also parse prev_symbol
+            prev_str = row.get("prev_symbol", "").strip()
+            if prev_str:
+                for prev in prev_str.split("|"):
+                    prev = prev.strip()
+                    if prev and is_valid_alias(prev) and prev.upper() != symbol.upper():
+                        alias_map[prev.upper()] = symbol
 
-    # 4. Merge with existing curated map
-    existing = {}
+            # Also handle genes with no alias but with standard symbol (identity map not needed)
+
+    # Merge with curated overrides (highest priority)
+    curated_path = "data/curated/gene_alias_curated.json"
     try:
-        with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
-            existing = json.load(f)
+        with open(curated_path, "r", encoding="utf-8") as f:
+            curated = json.load(f)
+        for k, v in curated.items():
+            alias_map[k.upper()] = v
+        print(f"Curated overrides merged: {len(curated)}")
     except FileNotFoundError:
-        pass
+        print("No curated overrides found, skipping.")
 
-    merged = {k.upper(): v for k, v in existing.items()}
-    for k, v in alias_map.items():
-        merged[k.upper()] = v
-    merged = dict(sorted(merged.items()))
+    # Sort and deduplicate
+    alias_map = dict(sorted(alias_map.items()))
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(merged, f, ensure_ascii=False, indent=2)
+        json.dump(alias_map, f, ensure_ascii=False, indent=2)
 
-    print(f"Total mappings (curated + auto): {len(merged)}")
+    print(f"HGNC genes processed: {sum(1 for _ in open(HGNC_PATH)) - 1}")
+    print(f"Valid alias mappings:  {len(alias_map)}")
     print(f"Saved to {OUTPUT_PATH}")
 
 

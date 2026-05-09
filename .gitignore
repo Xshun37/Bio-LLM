@@ -8,3 +8,4 @@ outputs/
 config/config.yaml
 data/raw/trrust_rawdata.human.tsv
 data/raw/trrust_by_pmid.tsv
+data/raw/hgnc_complete_set.txt

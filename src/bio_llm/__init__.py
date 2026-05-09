@@ -70,17 +70,52 @@ _TARGET_SYNONYM_MAP = {
 }
 
 
+_HGNC_ALIAS_MAP = None
+
+
+def _load_hgnc_map():
+    """Lazy-load the HGNC alias map (auto-generated from HGNC complete set)."""
+    global _HGNC_ALIAS_MAP
+    if _HGNC_ALIAS_MAP is None:
+        try:
+            path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+                "data", "curated", "gene_alias_map.json",
+            )
+            if os.path.exists(path):
+                with open(path, "r", encoding="utf-8") as f:
+                    _HGNC_ALIAS_MAP = json.load(f)
+            else:
+                _HGNC_ALIAS_MAP = {}
+        except Exception:
+            _HGNC_ALIAS_MAP = {}
+    return _HGNC_ALIAS_MAP
+
+
 def normalize_gene_name(raw_name, alias_map):
-    """Normalize a gene name through an alias map. Returns standardized symbol."""
+    """Normalize a gene name through alias maps. Returns standardized symbol.
+
+    Priority: 1) curated hardcoded map  2) HGNC comprehensive map 3) stripped name
+    """
     if not raw_name:
         return ""
     name = str(raw_name).strip().upper()
     name = re.sub(r"\(.*\)", "", name).strip()
+
+    # 1. Hardcoded curated map (highest priority)
     if name in alias_map:
         return alias_map[name]
     stripped = re.sub(r"[\s/\-]+", "", name)
     if stripped in alias_map:
         return alias_map[stripped]
+
+    # 2. HGNC comprehensive alias map
+    hgnc = _load_hgnc_map()
+    if name in hgnc:
+        return hgnc[name].upper()
+    if stripped in hgnc:
+        return hgnc[stripped].upper()
+
     return stripped
 
 
