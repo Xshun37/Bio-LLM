@@ -11,7 +11,7 @@ from bio_llm import normalize_tf as _norm_tf, normalize_target as _norm_target
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "qwen-max"
+DEFAULT_MODEL = "qvq-max-2025-03-25"
 
 
 def get_api_key(cli_key=None):
@@ -106,6 +106,16 @@ def extract_model_content(response):
         return choice["message"]["content"]
     except Exception:
         return str(response)
+
+
+def extract_reasoning_content(response):
+    """Extract reasoning/thinking content from qvq models (if available)."""
+    try:
+        choice = response.output.choices[0]
+        msg = choice.message if hasattr(choice, "message") else choice["message"]
+        return getattr(msg, "reasoning_content", "") or ""
+    except Exception:
+        return ""
 
 
 def _extract_usage(resp):
@@ -242,6 +252,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
             return {
                 "error": err_msg,
                 "round1_analysis": analysis,
+                "round1_reasoning": extract_reasoning_content(resp1),
                 "round1_usage": _extract_usage(resp1),
                 "round2_usage": _extract_usage(resp2),
             }
@@ -265,8 +276,10 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
             return {
                 "error": "parse_fail",
                 "round1_analysis": analysis,
+                "round1_reasoning": extract_reasoning_content(resp1),
                 "round2_raw": content,
                 "round2_clean": clean,
+                "round2_reasoning": extract_reasoning_content(resp2),
                 "round1_usage": _extract_usage(resp1),
                 "round2_usage": _extract_usage(resp2),
             }
@@ -276,9 +289,11 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         return {
             "result": parsed,
             "round1_analysis": analysis,
+            "round1_reasoning": extract_reasoning_content(resp1),
             "round1_usage": _extract_usage(resp1),
             "round2_raw": content,
             "round2_clean": clean,
+            "round2_reasoning": extract_reasoning_content(resp2),
             "round2_usage": _extract_usage(resp2),
         }
     return parsed
