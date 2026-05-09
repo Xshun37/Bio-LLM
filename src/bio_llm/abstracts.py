@@ -149,6 +149,9 @@ def generate_test_file(
     bypass_proxy=False,
     no_proxy_hosts=DEFAULT_NCBI_NO_PROXY_HOSTS,
 ):
+    from bio_llm import load_anomalies
+    import json as _json
+
     df = pd.read_csv(
         input_file,
         sep="\t",
@@ -163,11 +166,25 @@ def generate_test_file(
     df = df[df["clean_pmid"] != ""]
     df = df[df["direction"].str.lower() != "unknown"]
 
+    # Exclude PMIDs with curated anomalies
+    anomalies = load_anomalies()
+    excluded_pmids = set(anomalies.keys())
+    if excluded_pmids:
+        df = df[~df["clean_pmid"].isin(excluded_pmids)]
+
     pmid_groups = df.groupby("clean_pmid")
     unique_pmids = list(pmid_groups.groups.keys())
     sampled_pmids = pd.Series(unique_pmids).sample(
         min(sample_size, len(unique_pmids)), random_state=seed
     ).tolist()
+
+    # Write excluded PMIDs list for reporting
+    excluded_path = "outputs/excluded_pmids.json"
+    os.makedirs("outputs", exist_ok=True)
+    with open(excluded_path, "w", encoding="utf-8") as _fh:
+        _json.dump(sorted(excluded_pmids), _fh, ensure_ascii=False, indent=2)
+    if excluded_pmids:
+        print(f"Excluded {len(excluded_pmids)} PMID(s) with curated anomalies")
 
     abstracts = fetch_abstracts(
         sampled_pmids,

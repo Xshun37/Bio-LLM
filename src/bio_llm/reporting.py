@@ -508,6 +508,33 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
         </div>
         """
 
+    # --- Excluded PMIDs section ---
+    from bio_llm import load_anomalies
+    anomalies = load_anomalies()
+    if anomalies:
+        html_content += """
+        <div class="card" style="background:#fff5f5;">
+            <h2 style="color:#c00;">Excluded PMIDs (Curated Anomalies)</h2>
+            <p style="font-size:0.85em; color:#666;">
+                These PMIDs were excluded from sampling due to known issues
+                recorded in <code>data/curated/trrust_anomalies.jsonl</code>.
+            </p>
+            <table>
+                <tr><th>PMID</th><th>Type</th><th>TRRUST Entry</th><th>Issue</th></tr>
+        """
+        for pmid in sorted(anomalies.keys(), key=int):
+            for entry in anomalies[pmid]:
+                html_content += (
+                    f"<tr>"
+                    f"<td><a href=\"https://pubmed.ncbi.nlm.nih.gov/{pmid}/\" "
+                    f"target=\"_blank\">{pmid}</a></td>"
+                    f"<td style=\"color:#c00;\">{entry.get('anomaly_type', '?')}</td>"
+                    f"<td>{entry.get('trrust_entry', '?')}</td>"
+                    f"<td style=\"font-size:0.85em;\">{entry.get('issue', '')}</td>"
+                    f"</tr>"
+                )
+        html_content += "</table></div>"
+
     html_content += "</body></html>"
     with open(output_file, "w", encoding="utf-8") as handle:
         handle.write(html_content)
