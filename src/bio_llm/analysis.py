@@ -146,7 +146,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "    - Only include links where the regulator DIRECTLY alters the target.\n"
         "    - If TF regulates B which then affects C, the link is TF→B (not TF→C).\n"
         "    - Include only relationships with specific experimental evidence (confidence ≥ 2).\n"
-        "    - Maximum 5 relationships. If more exist, keep the 5 with strongest evidence.\n"
+        "    - Maximum 10 relationships. If more exist, keep the 5 with strongest evidence.\n"
         "    - For each relationship, clearly state the regulator, target, direction,\n"
         "      confidence score, and experimental evidence.\n\n"
         "For the final answer, also include:\n"
@@ -194,7 +194,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "   acid, estrogen), growth factors, cytokines, drugs, signaling kinases (JNK,\n"
         "   p38MAPK, PI3K, AKT, MEK1/MAP2K1), and metabolites.\n"
         "1. Include ONLY direct regulatory relationships (confidence ≥ 2).\n"
-        "2. Maximum 5 relationships. If you found more, keep only the top 5 by confidence.\n"
+        "2. Maximum 10 relationships. If you found more, keep only the top 10 by confidence.\n"
         "3. If ZERO valid TF-target relationships found, output an empty array: []\n"
         "4. NEVER use fusion protein names (MLL-AF9, BCR-ABL, etc.) as gene symbols.\n"
         "5. Gene symbols MUST be official HGNC human symbols. Convert ALL protein\n"
@@ -205,7 +205,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "8. 'evidence': specific experimental method name.\n"
         "9. NF-kB family: output the specific subunit. If unspecified, use NFKB1.\n"
         "10. Do NOT output duplicate (TF, Target) pairs.\n\n"
-        "Output ONLY a JSON array (0-5 elements), nothing else:\n"
+        "Output ONLY a JSON array (0-10 elements), nothing else:\n"
         '[{"TF": "GENE", "Target": "GENE", "direction": "Activation", '
         '"confidence": 5, "evidence": "ChIP+luciferase"}]'
     )
