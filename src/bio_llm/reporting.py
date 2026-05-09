@@ -80,9 +80,17 @@ _TARGET_SYNONYM_MAP = {
 }
 
 
-from bio_llm import normalize_gene_name as _norm_gene
 def normalize_name(raw_name, alias_map):
-    return _norm_gene(raw_name, alias_map)
+    if not raw_name:
+        return ""
+    name = str(raw_name).strip().upper()
+    name = re.sub(r"\(.*\)", "", name).strip()
+    if name in alias_map:
+        return alias_map[name]
+    stripped = re.sub(r"[\s/\-]+", "", name)
+    if stripped in alias_map:
+        return alias_map[stripped]
+    return stripped
 
 
 def _fuzzy_gene_match(a, b):
