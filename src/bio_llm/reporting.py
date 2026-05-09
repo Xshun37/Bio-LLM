@@ -41,6 +41,7 @@ _SYNONYM_MAP = {
     "FOXP3": "FOXP3",
     "ROR-GAMMA-T": "RORC",
     "BCL-6": "BCL6",
+    "ZBP-89": "ZNF148", "ZBP89": "ZNF148", "BFCOL1": "ZNF148",
     "YB-1": "YBX1", "YB1": "YBX1",
     "TEL1": "ETV6", "TEL": "ETV6",
     "YAN": "ETS1",
@@ -156,7 +157,10 @@ def load_trrust_by_pmid(tsv_path):
                     continue
                 m = re.match(r"(\S+)->(\S+)\((\w+)\)", rel)
                 if m:
-                    entries.append((m.group(1), m.group(2), m.group(3)))
+                    direction = m.group(3)
+                    if direction.lower() == "unknown":
+                        continue
+                    entries.append((m.group(1), m.group(2), direction))
             result[pmid] = entries
     return result
 
