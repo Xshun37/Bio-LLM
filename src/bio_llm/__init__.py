@@ -49,6 +49,7 @@ _SYNONYM_MAP = {
     "USF1": "USF1", "USF2": "USF2",
     "ATF4": "ATF4", "ATF6": "ATF6",
     "HDAC1": "HDAC1", "HDAC3": "HDAC3",
+    "BMAL1": "ARNTL", "BMAL-1": "ARNTL",
 }
 
 _TARGET_SYNONYM_MAP = {
