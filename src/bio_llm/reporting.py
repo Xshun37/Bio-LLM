@@ -325,9 +325,9 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
 
         total_matched_gt += len(matched_gt)
 
-    recall = (total_matched_gt / total_gt * 100) if total_gt > 0 else 0
+    recall = ((total_consistent + total_conflict) / total_gt * 100) if total_gt > 0 else 0
     precision = ((total_consistent + total_conflict) / total_llm * 100) if total_llm > 0 else 0
-    total_missed = total_gt - total_matched_gt
+    total_missed = max(0, total_gt - total_matched_gt)
     evaluable_llm = total_llm - total_new_found - total_new
     evaluable_precision = ((total_consistent + total_conflict) / evaluable_llm * 100) if evaluable_llm > 0 else 0
     direction_accuracy = (total_consistent / (total_consistent + total_conflict) * 100) if (total_consistent + total_conflict) > 0 else 0
@@ -340,7 +340,7 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
                 <tr><td>Total PMIDs</td><td>{len(llm_data)}</td><td></td></tr>
                 <tr><td>Ground-truth relationships</td><td>{total_gt}</td><td>TRRUST entries for sampled PMIDs</td></tr>
                 <tr><td>LLM extracted relationships</td><td>{total_llm}</td><td>Total predictions</td></tr>
-                <tr><td>Recall</td><td>{total_matched_gt}/{total_gt} = {recall:.1f}%</td><td>GT found by LLM</td></tr>
+                <tr><td>Recall</td><td>{total_consistent + total_conflict}/{total_gt} = {recall:.1f}%</td><td>LLM results matching GT</td></tr>
                 <tr><td>Overall Precision</td><td>{total_consistent + total_conflict}/{total_llm} = {precision:.1f}%</td><td>LLM results matching any GT pair</td></tr>
                 <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{total_consistent + total_conflict}/{evaluable_llm} = {evaluable_precision:.1f}%</b></td><td>Excl. New Found — among evaluable predictions, % matching GT</td></tr>
                 <tr style="background:#e8f5e9;"><td><b>Direction Accuracy</b></td><td><b>{total_consistent}/{total_consistent + total_conflict} = {direction_accuracy:.1f}%</b></td><td>Among GT-matched pairs, % with correct direction</td></tr>
