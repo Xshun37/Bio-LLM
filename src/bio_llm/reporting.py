@@ -42,6 +42,7 @@ _SYNONYM_MAP = {
     "ROR-GAMMA-T": "RORC",
     "BCL-6": "BCL6",
     "ZBP-89": "ZNF148", "ZBP89": "ZNF148", "BFCOL1": "ZNF148",
+    "SAF-1": "MAZ", "SAF1": "MAZ", "ZNF801": "MAZ",
     "YB-1": "YBX1", "YB1": "YBX1",
     "TEL1": "ETV6", "TEL": "ETV6",
     "YAN": "ETS1",

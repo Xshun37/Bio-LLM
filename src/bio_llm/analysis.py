@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import dashscope
 from dashscope import Generation
+from bio_llm import normalize_tf as _norm_tf, normalize_target as _norm_target
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
@@ -160,7 +161,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "FUSION PROTEINS: NEVER use fusion names. 'MLL-AF9' → KMT2A and MLLT3.\n\n"
         "B. Gene name standardization: AP-2→TFAP2A, C/EBPbeta→CEBPB, YB-1→YBX1,\n"
         "   Nanog→NANOG, c-Myc→MYC, cPLA2→PLA2G4A, cox-2→PTGS2, dPRL→PRL,\n"
-        "   ZBP-89→ZNF148, ZBP89→ZNF148, BFCOL1→ZNF148.\n\n"
+        "   ZBP-89→ZNF148, ZBP89→ZNF148, SAF-1→MAZ, SAF1→MAZ.\n\n"
         "C. If after analysis you found ZERO TF-target relationships, re-read the abstract\n"
         "   once more. Look for any sentence describing a TF regulating a gene.\n\n"
         "Do NOT output JSON yet. Just analyze in plain text."
@@ -229,6 +230,14 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
     clean = clean_json_text(content)
     try:
         parsed = json.loads(clean)
+        # Post-process: normalize gene names through synonym maps
+        if isinstance(parsed, list):
+            for entry in parsed:
+                if isinstance(entry, dict):
+                    if "TF" in entry:
+                        entry["TF"] = _norm_tf(entry["TF"])
+                    if "Target" in entry:
+                        entry["Target"] = _norm_target(entry["Target"])
     except json.JSONDecodeError as exc:
         print(f"JSON 解析失败。错误: {exc}")
         if debug:
