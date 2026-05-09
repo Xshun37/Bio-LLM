@@ -11,7 +11,7 @@ from bio_llm import normalize_tf as _norm_tf, normalize_target as _norm_target
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "qvq-max-2025-03-25"
+DEFAULT_MODEL = "qwq-plus"
 
 
 def get_api_key(cli_key=None):
@@ -95,6 +95,14 @@ def clean_json_text(text):
         return text[first:last + 1]
 
     return text
+
+
+def _collect_stream(gen):
+    """Collect streaming response into a single response-like object."""
+    final = None
+    for resp in gen:
+        final = resp
+    return final
 
 
 def extract_model_content(response):
@@ -193,12 +201,14 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "Do NOT output JSON yet. Just analyze in plain text."
     )
 
-    resp1 = Generation.call(
+    resp1 = _collect_stream(Generation.call(
         model=model_name,
         prompt=round1_user,
         temperature=temperature,
         result_format="message",
-    )
+        stream=True,
+        incremental_output=False,
+    ))
     if getattr(resp1, "status_code", None) != 200:
         err_msg = f"Round1_API_Error: {getattr(resp1, 'status_code', 'unknown')}"
         if debug:
@@ -236,7 +246,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         '"confidence": 5, "evidence": "ChIP+luciferase"}]'
     )
 
-    resp2 = Generation.call(
+    resp2 = _collect_stream(Generation.call(
         model=model_name,
         messages=[
             {"role": "user", "content": round1_user},
@@ -245,7 +255,9 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         ],
         temperature=temperature,
         result_format="message",
-    )
+        stream=True,
+        incremental_output=False,
+    ))
     if getattr(resp2, "status_code", None) != 200:
         err_msg = f"Round2_API_Error: {getattr(resp2, 'status_code', 'unknown')}"
         if debug:
