@@ -23,12 +23,14 @@ Bio-LLM/
 │   ├── abstracts.py             # 拉取 PubMed 摘要
 │   ├── analysis.py              # 两轮 LLM 抽取 TF-Target
 │   └── reporting.py             # 生成 HTML 报告 + 统计
-├── build_alias_map.py           # 从 HGNC 构建别名映射表
-├── group_by_pmid.py             # TRRUST 按 PMID 分组
-├── review_debug.sh              # 一键生成含 debug 面板的报告
+├── scripts/
+│   ├── build_alias_map.py       # 从 HGNC 构建别名映射表
+│   ├── group_by_pmid.py         # TRRUST 按 PMID 分组
+│   └── review_debug.sh          # 一键生成含 debug 面板的报告
 ├── run.sh                       # 一键启动入口
 ├── snakefile                    # Snakemake 工作流
-├── 2026-05-09_optimization_log.md  # 优化记录
+├── docs/
+│   └── 2026-05-10_optimization_log.md  # 优化记录
 ├── requirements.txt
 └── .gitignore
 ```
@@ -84,7 +86,7 @@ export DASHSCOPE_API_KEY="your_api_key"
 2. Post-processing 层：JSON 解析后用 58K 别名表纠正
 3. Reporting 层：对比时再次标准化
 
-别名映射表通过 `build_alias_map.py` 从 HGNC 官方数据集自动生成，手动补充通过 `gene_alias_curated.json`。
+别名映射表通过 `scripts/build_alias_map.py` 从 HGNC 官方数据集自动生成，手动补充通过 `gene_alias_curated.json`。
 
 ### Debug 与评估
 

@@ -10,13 +10,15 @@ def main():
     parser = argparse.ArgumentParser(
         description="Group TRRUST data by PMID, output one row per PMID."
     )
+    import os as _os
+    _root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     parser.add_argument(
-        "--input", default="data/raw/trrust_rawdata.human.tsv",
-        help="Input TRRUST TSV (default: data/raw/trrust_rawdata.human.tsv)"
+        "--input", default=_os.path.join(_root, "data/raw/trrust_rawdata.human.tsv"),
+        help="Input TRRUST TSV"
     )
     parser.add_argument(
-        "--output", default="outputs/trrust_by_pmid.tsv",
-        help="Output TSV path (default: outputs/trrust_by_pmid.tsv)"
+        "--output", default=_os.path.join(_root, "outputs/trrust_by_pmid.tsv"),
+        help="Output TSV path"
     )
     args = parser.parse_args()
 

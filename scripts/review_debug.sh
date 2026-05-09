@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-ROOT="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 PYTHONPATH="$ROOT/src" python -m bio_llm.reporting \
   --llm-json "$ROOT/outputs/analysis_results.json" \

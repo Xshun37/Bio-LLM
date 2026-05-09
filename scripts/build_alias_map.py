@@ -2,12 +2,12 @@
 """Build a clean gene alias -> HGNC symbol map from the HGNC complete set TSV."""
 import csv
 import json
+import os
 import re
-import sys
 
 
-HGNC_PATH = "data/raw/hgnc_complete_set.txt"
-OUTPUT_PATH = "data/curated/gene_alias_map.json"
+HGNC_PATH = os.path.join(os.path.dirname(__file__), "..", "data/raw/hgnc_complete_set.txt")
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data/curated/gene_alias_map.json")
 
 
 def is_valid_alias(name):
@@ -51,7 +51,7 @@ def main():
             # Also handle genes with no alias but with standard symbol (identity map not needed)
 
     # Merge with curated overrides (highest priority)
-    curated_path = "data/curated/gene_alias_curated.json"
+    curated_path = os.path.join(os.path.dirname(__file__), "..", "data/curated/gene_alias_curated.json")
     try:
         with open(curated_path, "r", encoding="utf-8") as f:
             curated = json.load(f)
