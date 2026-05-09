@@ -146,3 +146,77 @@
 | `IDtoAbstract.py` (删除) | → `src/bio_llm/abstracts.py` |
 | `main.py` (删除) | → `src/bio_llm/analysis.py` |
 | `generate_result.py` (删除) | → `src/bio_llm/reporting.py` |
+
+---
+
+## 2026-05-10 优化记录
+
+### 11. TRRUST 异常记录与自动排除
+
+- 创建 `data/curated/trrust_anomalies.jsonl` 记录已知 TRRUST 错误
+- PMID 9792724: HNF4G→AFP (phantom gene: 核苷酸 G 被当成基因名), HNF4A→AFP (indirect chain)
+- PMID 17350963: HOXA10→BHLHE22 (phantom gene: BHLHE22 不出现在论文中)
+- `abstracts.py` 采样时自动排除异常 PMID
+- 报告中末尾展示被排除的 PMID 列表及原因
+
+### 12. 基因别名自动化标准化
+
+**背景**：模型遇到 ZBP-89 (论文) 但 TRRUST 用 ZNF148 (HGNC)。手动添加别名不持久。
+
+**方案**：从 HGNC 官方数据集 (`hgnc_complete_set.txt`) 自动构建 58K 条目别名映射表。
+
+**工具链**：
+- `build_alias_map.py`：解析 HGNC TSV，过滤垃圾条目（<3 字符），合并手动补充 (`gene_alias_curated.json`)
+- `src/bio_llm/__init__.py`：`normalize_gene_name()` 先查硬编码映射，再查 HGNC 映射，最后 fallback
+- `analysis.py`：JSON 解析后自动跑 `normalize_tf` / `normalize_target`
+- Prompt 加强制要求模型输出 HGNC 符号："You know these mappings — use them"
+
+**关键别名覆盖**：
+| 论文用名 | HGNC 标准 |
+|----------|-----------|
+| ZBP-89 | ZNF148 |
+| SAF-1 | MAZ |
+| Oct-1 | POU2F1 |
+| c-Myc | MYC |
+| BMAL1 | ARNTL |
+
+### 13. Prompt 优化 — 自调控与异构体
+
+**自调控误判**：模型将 TF 在靶基因启动子上的结合位点误解为 TF 调控自身。
+- 新增 AUTO-REGULATION RULE：只有摘要明确说 TF 调控自身表达时才输出 TF→TF
+
+**异构体冲突**：同一 TF 对不同异构体相反效应，模型输出矛盾方向。
+- 新增 ISOFORM RULE：允许拆成两条（不同方向），但禁止输出 "Regulation" 作为模糊方向
+- 方向只能是 Activation 或 Repression
+
+**去重强化**：多个实验支持同一 (TF,Target) 对应合并为一条。
+
+### 14. 评估指标完善
+
+- 新增 Missed 计数
+- 新增 Evaluable Precision（排除 New Found 后的精确率）
+- 新增 Direction Accuracy（匹配到的配对中方向正确率）
+- Recall 统计唯一 GT 命中数（非 LLM 结果数）
+
+### 15. 分类标准最终简化
+
+| 状态 | 含义 |
+|------|------|
+| Consistent | (TF, Target) 在 TRRUST，方向一致 |
+| Conflict | (TF, Target) 在 TRRUST，方向不同 |
+| New Found | (TF, Target) 不在 TRRUST |
+| Missed | TRRUST 有但 LLM 未找到 |
+
+移除 TF-Match、Mismatch。Unknown 方向在 reporting 时自动筛除。
+
+### 16. 模型切换至 qwq-plus
+
+- 从 qwen-max 切换到 qwq-plus（Qwen 推理模型）
+- qwq 要求 `stream=True`，添加 `_collect_stream()` 处理流式响应
+- 新增 `extract_reasoning_content()` 捕获思考 token
+- Recall: 74.3% → 85.7% → **88.6%**
+
+### 17. 项目文档更新
+
+- README.md 重写：完整项目结构、核心特性、手动运行说明
+- 优化日志更新至 2026-05-10

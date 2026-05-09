@@ -1,166 +1,155 @@
 # Bio-LLM
 
-一个面向小规模实验的生物文本抽取流水线项目。  
-输入 TRRUST 数据，抽样 PubMed PMID，拉取摘要，用 LLM 提取 TF-target 关系，最后生成 HTML 对比报告。
+面向小规模实验的生物文本抽取流水线。从 TRRUST 采样 PMID，拉取 PubMed 摘要，用 LLM (qwq-plus) 提取 TF-target 调控关系，生成 HTML 对比报告。
 
 ## 项目结构
 
 ```text
 Bio-LLM/
 ├── config/
-│   └── config.yaml          # 运行参数
+│   └── config.yaml              # 运行参数
 ├── data/
-│   ├── raw/                 # 原始输入数据
-│   └── interim/             # 中间文件
-├── outputs/                 # 最终输出
-├── src/
-│   └── bio_llm/
-│       ├── abstracts.py     # 拉取 PubMed 摘要
-│       ├── analysis.py      # 调用 LLM 抽取关系
-│       └── reporting.py     # 生成 HTML 报告
+│   ├── raw/
+│   │   ├── trrust_rawdata.human.tsv  # TRRUST 原始数据
+│   │   └── hgnc_complete_set.txt    # HGNC 完整基因集 (可选)
+│   ├── interim/                 # 中间文件 (gitignore)
+│   └── curated/
+│       ├── trrust_anomalies.jsonl    # TRRUST 已知错误记录
+│       ├── gene_alias_map.json       # HGNC 别名映射表 (自动生成)
+│       └── gene_alias_curated.json   # 手动补充别名
+├── outputs/                     # 输出 (gitignore)
+├── src/bio_llm/
+│   ├── __init__.py              # 共享：别名映射、异常加载
+│   ├── abstracts.py             # 拉取 PubMed 摘要
+│   ├── analysis.py              # 两轮 LLM 抽取 TF-Target
+│   └── reporting.py             # 生成 HTML 报告 + 统计
+├── build_alias_map.py           # 从 HGNC 构建别名映射表
+├── group_by_pmid.py             # TRRUST 按 PMID 分组
+├── review_debug.sh              # 一键生成含 debug 面板的报告
+├── run.sh                       # 一键启动入口
+├── snakefile                    # Snakemake 工作流
+├── 2026-05-09_optimization_log.md  # 优化记录
 ├── requirements.txt
-├── run.sh                   # 一键启动入口
-└── snakefile                # Snakemake 工作流
+└── .gitignore
 ```
 
 ## 流程
 
 ```text
 data/raw/trrust_rawdata.human.tsv
--> data/interim/abstracts_for_test.txt
--> outputs/analysis_results.json
--> outputs/report.html
+    → data/interim/abstracts_for_test.txt   (abstracts.py)
+    → outputs/analysis_results.json         (analysis.py)
+    → outputs/report.html                   (reporting.py)
+
+辅助数据:
+    outputs/trrust_by_pmid.tsv              (group_by_pmid.py)
+    outputs/analysis_results_debug.json     (--debug 模式)
+    data/curated/gene_alias_map.json        (build_alias_map.py)
 ```
 
-## 环境要求
+## 环境
 
-- `conda`
-- 一个名为 `bio_llm` 的 conda 环境
-- [requirements.txt](/home/bioxs/Bioproduce/Bio-LLM/requirements.txt) 中的依赖
-- DashScope API Key
-
-推荐安装方式：
+- `conda` + 名为 `bio_llm` 的环境
+- DashScope API Key (`DASHSCOPE_API_KEY`)
+- [requirements.txt](requirements.txt)
 
 ```bash
 conda create -n bio_llm python=3.10 -y
 conda activate bio_llm
 pip install -r requirements.txt
-```
-
-设置 DashScope API Key：
-
-```bash
 export DASHSCOPE_API_KEY="your_api_key"
 ```
 
 ## 快速开始
 
-进入项目目录后直接运行：
-
 ```bash
-./run.sh
+./run.sh        # 默认 5 条
+./run.sh 20     # 抽样 20 条
 ```
 
-如果想修改抽样数量：
+## 核心特性
+
+### 两轮 CoT LLM 提取
+
+- Round 1: 自由文本分析（不限制 JSON），模型逐句扫描摘要
+- Round 2: 基于 Round 1 分析，输出结构化 JSON（0-10 条关系）
+- 支持方向：Activation / Repression
+- 置信度 1-5（基于实验方法 + 证据强度）
+
+### 基因名自动标准化
+
+三层防护确保输出为标准 HGNC 符号：
+
+1. Prompt 层：强制要求模型输出 HGNC 符号
+2. Post-processing 层：JSON 解析后用 58K 别名表纠正
+3. Reporting 层：对比时再次标准化
+
+别名映射表通过 `build_alias_map.py` 从 HGNC 官方数据集自动生成，手动补充通过 `gene_alias_curated.json`。
+
+### Debug 与评估
 
 ```bash
-./run.sh 10
+# 单条摘要交互调试
+PYTHONPATH=src python -m bio_llm.analysis --test-abstract "STAT3 binds to..."
+
+# 批量模式输出 debug
+PYTHONPATH=src python -m bio_llm.analysis --input ... --output ... --debug
+
+# 生成含 debug 面板的报告
+./review_debug.sh
 ```
 
-这会把 `sample_size=10` 传给整个流程。
+报告包含：
+- 统计面板（Recall / Precision / Evaluable Precision / Direction Accuracy）
+- 每个 PMID 的黄色 TRRUST Reference 条
+- 可折叠 Debug 面板（Round 1/2 分析 + reasoning + token 用量）
+- 底部的异常 PMID 排除列表
 
-## 配置文件
+### 评估分类标准
 
-主配置文件是 [config/config.yaml](/home/bioxs/Bioproduce/Bio-LLM/config/config.yaml)。
+| 状态 | 含义 |
+|------|------|
+| Consistent | (TF, Target) 在 TRRUST 中，方向一致 |
+| Conflict | (TF, Target) 在 TRRUST 中，方向不同 |
+| New Found | (TF, Target) 不在 TRRUST — LLM 新发现 |
+| Missed | TRRUST 有但 LLM 未找到 |
 
-当前主要参数：
+### TRRUST 数据质量管理
 
-- `sample_size`: 抽样条数
-- `seed`: 随机种子
-- `email`: NCBI / PubMed 请求邮箱
-- `model`: DashScope 模型名
-- `temperature`: LLM 温度
-- `workers`: 并发数
-- `ncbi_bypass_proxy`: 是否绕过代理访问 NCBI
-- `ncbi_no_proxy_hosts`: 直连的 NCBI 域名列表
+- `data/curated/trrust_anomalies.jsonl` 记录已知错误（phantom gene、indirect chain）
+- 记录的 PMID 自动从采样中排除
+- `group_by_pmid.py` 生成 PMID 分组视图
 
 ## 手动分步运行
 
-如果不想跑整条流水线，可以逐步执行：
-
 ```bash
+# 1. 拉取摘要
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.abstracts \
   --input data/raw/trrust_rawdata.human.tsv \
   --output data/interim/abstracts_for_test.txt
-```
 
-```bash
+# 2. LLM 分析
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis \
   --input data/interim/abstracts_for_test.txt \
-  --output outputs/analysis_results.json
-```
+  --output outputs/analysis_results.json --debug
 
-```bash
+# 3. 生成报告
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.reporting \
   --llm-json outputs/analysis_results.json \
   --abstracts data/interim/abstracts_for_test.txt \
+  --debug-json outputs/analysis_results_debug.json \
+  --trrust-by-pmid outputs/trrust_by_pmid.tsv \
   --output outputs/report.html
 ```
 
-## 输出文件
+## 配置文件
 
-- [data/interim/abstracts_for_test.txt](/home/bioxs/Bioproduce/Bio-LLM/data/interim/abstracts_for_test.txt)
-  抽样后拉取到的摘要
+`config/config.yaml` 主要参数：
 
-- [outputs/analysis_results.json](/home/bioxs/Bioproduce/Bio-LLM/outputs/analysis_results.json)
-  LLM 抽取结果
-
-- [outputs/report.html](/home/bioxs/Bioproduce/Bio-LLM/outputs/report.html)
-  最终 HTML 报告
-
-## 代理 / VPN 说明
-
-项目支持在拉取 PubMed 摘要时临时绕过环境代理。把 [config/config.yaml](/home/bioxs/Bioproduce/Bio-LLM/config/config.yaml) 改成：
-
-```yaml
-ncbi_bypass_proxy: true
-ncbi_no_proxy_hosts: "eutils.ncbi.nlm.nih.gov,ncbi.nlm.nih.gov,pubmed.ncbi.nlm.nih.gov"
-```
-
-注意：
-
-- 这只对基于 `HTTP_PROXY` / `HTTPS_PROXY` / `NO_PROXY` 的代理有效
-- 如果你使用的是全局 TUN / 全局 VPN，需要在VPN客户端里做域名分流，把上面这些 NCBI 域名设为 `DIRECT`
-
-## 常见问题
-
-### 1. `run.sh` 没反应或看起来卡住
-
-现在 `run.sh` 已经使用 `conda run --no-capture-output`，应该能实时看到 Snakemake 日志。  
-如果还是没有输出，先确认：
-
-- `bio_llm` 环境存在
-- `snakemake` 已安装
-- `DASHSCOPE_API_KEY` 已设置
-
-### 2. 最后没有打开 HTML，而是打开了一个文件夹
-
-在 WSL 下，脚本会优先把 Linux 路径转成 Windows 路径再交给 `explorer.exe`。  
-如果仍然没有自动打开，可以手动打开：
-
-```bash
-explorer.exe "$(wslpath -w outputs/report.html)"
-```
-
-### 3. PubMed 获取失败
-
-优先检查：
-
-- `email` 是否配置正确
-- 当前网络是否能直连 NCBI
-- 是否需要开启 `ncbi_bypass_proxy`
-
-## 说明
-
-这个项目是实验性质的脚本化流水线，不是生产级工程。  
-当前结构以“够清楚、够好跑、够容易改”为目标，没有刻意引入更重的工程层次。
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| sample_size | 5 | 抽样 PMID 数 |
+| seed | 42 | 随机种子 |
+| model | qwq-plus | DashScope 推理模型 |
+| temperature | 0 | LLM 温度 |
+| workers | 16 | 并发数 |
