@@ -110,7 +110,7 @@ def _fuzzy_gene_match(a, b):
 
 
 def normalize_dir(raw_dir):
-    """Normalize direction to canonical 'Activation', 'Repression', or 'Regulation'."""
+    """Normalize direction to canonical 'Activation' or 'Repression'."""
     if not raw_dir:
         return ""
     d = str(raw_dir).strip().lower()
@@ -118,8 +118,6 @@ def normalize_dir(raw_dir):
         return "Activation"
     if "repression" in d or "inhibition" in d:
         return "Repression"
-    if "regulation" in d:
-        return "Regulation"
     return str(raw_dir).strip()
 
 
