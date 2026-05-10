@@ -5,128 +5,15 @@ import re
 
 import pandas as pd
 
-_SYNONYM_MAP = {
-    "AP-2": "TFAP2A", "AP2": "TFAP2A", "AP-2ALPHA": "TFAP2A",
-    "AP-2BETA": "TFAP2B", "AP-2GAMMA": "TFAP2C",
-    "C/EBPALPHA": "CEBPA", "C/EBP-ALPHA": "CEBPA", "C/EBP A": "CEBPA",
-    "C/EBPBETA": "CEBPB", "C/EBP-BETA": "CEBPB", "C/EBP B": "CEBPB",
-    "C/EBPDELTA": "CEBPD", "C/EBP-DELTA": "CEBPD", "C/EBP D": "CEBPD",
-    "C/EBPGAMMA": "CEBPG", "C/EBP-EPSILON": "CEBPE", "C/EBPZETA": "CEBPZ",
-    "NF-KB": "NFKB1", "NFKB": "NFKB1", "NF-KAPPA-B": "NFKB1",
-    "NF-KB1": "NFKB1", "NF-KB P50": "NFKB1", "P50": "NFKB1",
-    "NF-KB P65": "RELA", "P65": "RELA", "NFKB3": "RELA",
-    "NF-KB2": "NFKB2", "P52": "NFKB2",
-    "RELB": "RELB",
-    "C-REL": "REL",
-    "STAT3": "STAT3", "STAT1": "STAT1", "STAT5": "STAT5A",
-    "P53": "TP53", "TP53": "TP53",
-    "C-MYC": "MYC", "CMYC": "MYC", "MYCC": "MYC",
-    "N-MYC": "MYCN", "L-MYC": "MYCL",
-    "C-JUN": "JUN", "CJUN": "JUN",
-    "C-FOS": "FOS", "CFOS": "FOS",
-    "LIVER-ENRICHED ACTIVATOR PROTEIN": "CEBPB",
-    "LIVER-ENRICHED INHIBITORY PROTEIN": "CEBPB",
-    "LAP": "CEBPB", "LIP": "CEBPB",
-    "ER-ALPHA": "ESR1", "ER-BETA": "ESR2",
-    "PPAR-GAMMA": "PPARG", "PPAR-ALPHA": "PPARA",
-    "HIF-1ALPHA": "HIF1A", "HIF-2ALPHA": "HIF2A",
-    "SP1": "SP1", "SP3": "SP3",
-    "EGR-1": "EGR1",
-    "OCT-1": "POU2F1", "OCT-4": "POU5F1", "OCT4": "POU5F1",
-    "SOX2": "SOX2",
-    "NANOG": "NANOG",
-    "KLF4": "KLF4",
-    "GATA1": "GATA1", "GATA3": "GATA3",
-    "TBET": "TBX21",
-    "FOXP3": "FOXP3",
-    "ROR-GAMMA-T": "RORC",
-    "BCL-6": "BCL6",
-    "ZBP-89": "ZNF148", "ZBP89": "ZNF148", "BFCOL1": "ZNF148",
-    "SAF-1": "MAZ", "SAF1": "MAZ", "ZNF801": "MAZ",
-    "YB-1": "YBX1", "YB1": "YBX1",
-    "TEL1": "ETV6", "TEL": "ETV6",
-    "YAN": "ETS1",
-    "POINTEDP2": "ETS1",
-    "KLF8": "KLF8",
-    "MBD1": "MBD1", "MBD2": "MBD2", "MECP2": "MECP2",
-    "USF1": "USF1", "USF2": "USF2",
-    "ATF4": "ATF4", "ATF6": "ATF6",
-    "HDAC1": "HDAC1", "HDAC3": "HDAC3",
-}
-
-_TARGET_SYNONYM_MAP = {
-    "DPRL": "PRL",
-    "PRL1": "PRL",
-    "BCL-2": "BCL2", "BCL-XL": "BCL2L1",
-    "CDKN1A": "CDKN1A", "P21": "CDKN1A",
-    "CDKN2A": "CDKN2A", "P16": "CDKN2A",
-    "GUSB": "GUSB", "BETA-GLUC": "GUSB", "BETA-GLUCURONIDASE": "GUSB",
-    "MUC5B": "MUC5B", "MUC5AC": "MUC5AC",
-    "VWF": "VWF", "VON WILLEBRAND FACTOR": "VWF",
-    "CPLA2": "PLA2G4A", "COX-2": "PTGS2", "COX2": "PTGS2",
-    "MRP14": "S100A9",
-    "SERPINE1": "SERPINE1", "PAI-1": "SERPINE1", "PAI1": "SERPINE1",
-    "SERPBP1": "SERPBP1",
-    "AGGF1": "AGGF1",
-    "SIRT1": "SIRT1",
-    "EPSTI1": "EPSTI1",
-    "ALOX5": "ALOX5", "5-LIPOXYGENASE": "ALOX5",
-    "APOM": "APOM",
-    "SLC6A4": "SLC6A4",
-    "DRD2": "DRD2",
-    "VEGFA": "VEGFA",
-    "CCNA2": "CCNA2",
-    "CDH1": "CDH1",
-}
-
-
-from bio_llm import normalize_gene_name
-
-def normalize_name(raw_name, alias_map):
-    return normalize_gene_name(raw_name, alias_map)
-
-
-def _fuzzy_gene_match(a, b):
-    """Return True if gene names match, allowing isoform suffix differences.
-
-    Handles cases like RASSF1 vs RASSF1A by stripping a trailing single letter
-    that follows a digit, but only when that letter is a known isoform suffix.
-    """
-    if a == b:
-        return True
-
-    def strip_isoform(name):
-        # Strip trailing single uppercase letter after a digit: RASSF1A -> RASSF1
-        m = re.search(r"^(.+\d)[A-Z]$", name)
-        return m.group(1) if m else name
-
-    a_stripped = strip_isoform(a)
-    b_stripped = strip_isoform(b)
-    if a_stripped == b_stripped:
-        return True
-    if a_stripped == b or a == b_stripped:
-        return True
-    return False
-
-
-def normalize_dir(raw_dir):
-    """Normalize direction to canonical 'Activation' or 'Repression'."""
-    if not raw_dir:
-        return ""
-    d = str(raw_dir).strip().lower()
-    if "activation" in d:
-        return "Activation"
-    if "repression" in d or "inhibition" in d:
-        return "Repression"
-    return str(raw_dir).strip()
-
-
-def normalize_tf(raw_name):
-    return normalize_name(raw_name, _SYNONYM_MAP)
-
-
-def normalize_target(raw_name):
-    return normalize_name(raw_name, _TARGET_SYNONYM_MAP)
+from bio_llm import normalize_tf, normalize_target
+from bio_llm.evaluation import (
+    normalize_direction,
+    fuzzy_gene_match,
+    classify_llm_entry,
+    classify_missed_gt,
+    compute_metrics,
+    _get_field,
+)
 
 
 def load_trrust_by_pmid(tsv_path):
@@ -213,17 +100,6 @@ def format_error_result(result):
     return None
 
 
-def get_field(obj, *keys, default=""):
-    for key in keys:
-        if key in obj:
-            return str(obj[key])
-        if key.lower() in obj:
-            return str(obj[key.lower()])
-        if key.upper() in obj:
-            return str(obj[key.upper()])
-    return default
-
-
 def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None, trrust_by_pmid=None):
     with open(llm_json, "r", encoding="utf-8") as handle:
         llm_data = json.load(handle)
@@ -276,80 +152,28 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
     """
 
     # --- Compute summary statistics ---
-    total_gt = 0
-    total_matched_gt = 0
-    total_llm = 0
-    total_consistent = 0
-    total_conflict = 0
-    total_new_found = 0
-    total_new = 0
-
-    for pmid, llm_results in llm_data.items():
-        info = abstracts.get(str(pmid), {})
-        gt_raw = trrust_data.get(str(pmid)) or info.get("trrust_entries", [])
-        gt_norm = [(normalize_tf(tf), normalize_target(target), dr) for tf, target, dr in gt_raw]
-        llm_list = llm_results if isinstance(llm_results, list) else []
-        if isinstance(llm_results, dict) and llm_results.get("error"):
-            continue
-
-        total_gt += len(gt_norm)
-        total_llm += len(llm_list)
-
-        matched_gt = set()
-        for item in llm_list:
-            if not isinstance(item, dict):
-                continue
-            llm_tf = normalize_tf(get_field(item, "tf", "TF"))
-            llm_target = normalize_target(get_field(item, "target", "Target"))
-            llm_dir = get_field(item, "direction", "Direction")
-
-            # Find matching GT
-            gt_idx = -1
-            gt_dir = None
-            for i, (gt_tf, gt_target, gt_dr) in enumerate(gt_norm):
-                if _fuzzy_gene_match(llm_tf, gt_tf) and _fuzzy_gene_match(llm_target, gt_target):
-                    gt_idx = i
-                    gt_dir = gt_dr
-                    break
-
-            if gt_idx >= 0:
-                matched_gt.add(gt_idx)
-                if normalize_dir(llm_dir) == normalize_dir(gt_dir):
-                    total_consistent += 1
-                else:
-                    total_conflict += 1
-            elif gt_norm:
-                total_new_found += 1
-            else:
-                total_new += 1
-
-        total_matched_gt += len(matched_gt)
-
-    recall = (total_matched_gt / total_gt * 100) if total_gt > 0 else 0
-    precision = ((total_consistent + total_conflict) / total_llm * 100) if total_llm > 0 else 0
-    total_missed = total_gt - total_matched_gt
-    evaluable_llm = total_llm - total_new_found - total_new
-    evaluable_precision = ((total_consistent + total_conflict) / evaluable_llm * 100) if evaluable_llm > 0 else 0
-    direction_accuracy = (total_consistent / (total_consistent + total_conflict) * 100) if (total_consistent + total_conflict) > 0 else 0
+    metrics = compute_metrics(llm_data, trrust_data, abstracts,
+                              normalize_tf_fn=normalize_tf,
+                              normalize_target_fn=normalize_target)
 
     html_content += f"""
         <div class="card" style="background:#f0f8ff;">
             <h2>Summary Statistics</h2>
             <table style="width:auto;">
                 <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-                <tr><td>Total PMIDs</td><td>{len(llm_data)}</td><td></td></tr>
-                <tr><td>Ground-truth relationships</td><td>{total_gt}</td><td>TRRUST entries for sampled PMIDs</td></tr>
-                <tr><td>LLM extracted relationships</td><td>{total_llm}</td><td>Total predictions</td></tr>
-                <tr><td>Recall</td><td>{total_matched_gt}/{total_gt} = {recall:.1f}%</td><td>Unique GT entries found by LLM</td></tr>
-                <tr><td>Overall Precision</td><td>{total_consistent + total_conflict}/{total_llm} = {precision:.1f}%</td><td>LLM results matching any GT pair</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{total_consistent + total_conflict}/{evaluable_llm} = {evaluable_precision:.1f}%</b></td><td>Excl. New Found — among evaluable predictions, % matching GT</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Direction Accuracy</b></td><td><b>{total_consistent}/{total_consistent + total_conflict} = {direction_accuracy:.1f}%</b></td><td>Among GT-matched pairs, % with correct direction</td></tr>
+                <tr><td>Total PMIDs</td><td>{metrics['total_pmids']}</td><td></td></tr>
+                <tr><td>Ground-truth relationships</td><td>{metrics['total_gt']}</td><td>TRRUST entries for sampled PMIDs</td></tr>
+                <tr><td>LLM extracted relationships</td><td>{metrics['total_llm']}</td><td>Total predictions</td></tr>
+                <tr><td>Recall</td><td>{metrics['total_matched_gt']}/{metrics['total_gt']} = {metrics['recall']:.1f}%</td><td>Unique GT entries found by LLM</td></tr>
+                <tr><td>Overall Precision</td><td>{metrics['total_consistent'] + metrics['total_conflict']}/{metrics['total_llm']} = {metrics['overall_precision']:.1f}%</td><td>LLM results matching any GT pair</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{metrics['total_consistent'] + metrics['total_conflict']}/{metrics['total_llm'] - metrics['total_new_found'] - metrics['total_new']} = {metrics['evaluable_precision']:.1f}%</b></td><td>Excl. New Found — among evaluable predictions, % matching GT</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Direction Accuracy</b></td><td><b>{metrics['total_consistent']}/{metrics['total_consistent'] + metrics['total_conflict']} = {metrics['direction_accuracy']:.1f}%</b></td><td>Among GT-matched pairs, % with correct direction</td></tr>
                 <tr><td colspan="3"></td></tr>
-                <tr><td>Consistent (full match)</td><td style="color:green;font-weight:bold;">{total_consistent}</td><td>TF + Target + Direction all match</td></tr>
-                <tr><td>Conflict (direction mismatch)</td><td style="color:orange;font-weight:bold;">{total_conflict}</td><td>Pair matches GT, but direction differs</td></tr>
-                <tr><td>New Found (not in TRRUST)</td><td style="color:#0066cc;font-weight:bold;">{total_new_found}</td><td>LLM discoveries — no GT to compare</td></tr>
-                <tr><td>Missed (GT not found)</td><td style="color:red;font-weight:bold;">{total_missed}</td><td>TRRUST entries the LLM did not find</td></tr>
-                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{total_new}</td><td>PMIDs without any TRRUST entry</td></tr>
+                <tr><td>Consistent (full match)</td><td style="color:green;font-weight:bold;">{metrics['total_consistent']}</td><td>TF + Target + Direction all match</td></tr>
+                <tr><td>Conflict (direction mismatch)</td><td style="color:orange;font-weight:bold;">{metrics['total_conflict']}</td><td>Pair matches GT, but direction differs</td></tr>
+                <tr><td>New Found (not in TRRUST)</td><td style="color:#0066cc;font-weight:bold;">{metrics['total_new_found']}</td><td>LLM discoveries — no GT to compare</td></tr>
+                <tr><td>Missed (GT not found)</td><td style="color:red;font-weight:bold;">{metrics['total_missed']}</td><td>TRRUST entries the LLM did not find</td></tr>
+                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{metrics['total_new']}</td><td>PMIDs without any TRRUST entry</td></tr>
             </table>
         </div>
     """
@@ -362,13 +186,6 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
             (normalize_tf(tf), normalize_target(target), dr)
             for tf, target, dr in gt_raw
         ]
-
-        def match_gt(llm_tf, llm_target):
-            """Return (gt_dir, matched_index) if (tf, target) fuzzy-matches a GT entry."""
-            for idx, (gt_tf, gt_target, gt_dir) in enumerate(gt_entries_norm):
-                if _fuzzy_gene_match(llm_tf, gt_tf) and _fuzzy_gene_match(llm_target, gt_target):
-                    return gt_dir, idx
-            return None, -1
 
         # Build TRRUST reference string
         trrust_ref = "; ".join(
@@ -423,17 +240,18 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
                 if not isinstance(item, dict):
                     continue
 
-                llm_tf = normalize_tf(get_field(item, "tf", "TF"))
-                llm_target = normalize_target(get_field(item, "target", "Target"))
-                llm_dir = get_field(item, "direction", "Direction")
-                confidence = get_field(item, "confidence", "Confidence")
-                evidence = get_field(item, "evidence", "Evidence")
+                llm_tf = normalize_tf(_get_field(item, "tf", "TF"))
+                llm_target = normalize_target(_get_field(item, "target", "Target"))
+                llm_dir = _get_field(item, "direction", "Direction")
+                confidence = _get_field(item, "confidence", "Confidence")
+                evidence = _get_field(item, "evidence", "Evidence")
 
-                gt_dir, gt_idx = match_gt(llm_tf, llm_target)
+                status, gt_dir, gt_idx = classify_llm_entry(
+                    llm_tf, llm_target, llm_dir, gt_entries_norm)
 
                 if gt_idx >= 0:
                     matched_gt_indices.add(gt_idx)
-                    if normalize_dir(llm_dir) == normalize_dir(gt_dir):
+                    if status == "Consistent":
                         status_class, status_text = "status-ok", "Consistent"
                     else:
                         status_class, status_text = "status-conflict", "Conflict"
@@ -553,7 +371,7 @@ def build_parser():
     parser.add_argument("--abstracts", default="data/interim/abstracts_for_test.txt", help="包含摘要及标准答案的文本路径")
     parser.add_argument("--output", default="outputs/report.html", help="生成的 HTML 报告文件名")
     parser.add_argument("--debug-json", default=None, help="Debug JSON 文件路径 (optional)")
-    parser.add_argument("--trrust-by-pmid", default="outputs/trrust_by_pmid.tsv",
+    parser.add_argument("--trrust-by-pmid", default="data/raw/trrust_by_pmid.tsv",
                         help="TRRUST by-PMID TSV 文件路径 (default: outputs/trrust_by_pmid.tsv)")
     return parser
 

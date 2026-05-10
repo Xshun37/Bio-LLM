@@ -6,8 +6,14 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import dashscope
+
+try:
+    from tqdm import tqdm as _tqdm
+except ImportError:
+    _tqdm = None
 from dashscope import Generation
 from bio_llm import normalize_tf as _norm_tf, normalize_target as _norm_target
+from bio_llm.evaluation import normalize_and_log
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
@@ -275,13 +281,16 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
     try:
         parsed = json.loads(clean)
         # Post-process: normalize gene names through synonym maps
+        norm_log = []
         if isinstance(parsed, list):
             for entry in parsed:
                 if isinstance(entry, dict):
                     if "TF" in entry:
-                        entry["TF"] = _norm_tf(entry["TF"])
+                        entry["TF"] = normalize_and_log(
+                            entry["TF"], _norm_tf, "TF", norm_log)
                     if "Target" in entry:
-                        entry["Target"] = _norm_target(entry["Target"])
+                        entry["Target"] = normalize_and_log(
+                            entry["Target"], _norm_target, "Target", norm_log)
     except json.JSONDecodeError as exc:
         print(f"JSON 解析失败。错误: {exc}")
         if debug:
@@ -307,7 +316,10 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
             "round2_clean": clean,
             "round2_reasoning": extract_reasoning_content(resp2),
             "round2_usage": _extract_usage(resp2),
+            "normalization_log": norm_log,
         }
+    if norm_log:
+        return {"result": parsed, "normalization_log": norm_log}
     return parsed
 
 
@@ -333,20 +345,38 @@ def run_analysis(input_path, output_path, model_name, temperature=0, workers=1, 
             ): task["pmid"]
             for task in tasks
         }
+        pbar = _tqdm(total=len(tasks), desc="LLM 分析", unit="PMID",
+                      disable=_tqdm is None) if True else None
         for future in as_completed(future_map):
             pmid = future_map[future]
             try:
                 raw_result = future.result()
-                if debug and isinstance(raw_result, dict) and "round1_analysis" in raw_result:
+                if isinstance(raw_result, dict) and "result" in raw_result:
+                    if "round1_analysis" in raw_result:
+                        debug_info[pmid] = raw_result
+                    elif "normalization_log" in raw_result:
+                        debug_info.setdefault(pmid, {}).update(raw_result)
+                    results[pmid] = raw_result["result"]
+                elif debug and isinstance(raw_result, dict) and "round1_analysis" in raw_result:
                     debug_info[pmid] = raw_result
                     results[pmid] = raw_result.get("result", raw_result)
                 else:
                     results[pmid] = raw_result
                 count = len(results[pmid]) if isinstance(results[pmid], list) else 0
-                print(f"PMID {pmid}: {count} relationships")
+                if pbar:
+                    pbar.set_postfix_str(f"PMID {pmid} → {count}条", refresh=True)
+                else:
+                    print(f"PMID {pmid}: {count} relationships")
             except Exception as exc:
-                print(f"PMID {pmid}: ERROR - {exc}")
+                if pbar:
+                    pbar.set_postfix_str(f"PMID {pmid} ✗ {exc}", refresh=True)
+                else:
+                    print(f"PMID {pmid}: ERROR - {exc}")
                 results[pmid] = {"error": str(exc)}
+            if pbar:
+                pbar.update(1)
+        if pbar:
+            pbar.close()
 
     with open(output_path, "w", encoding="utf-8") as handle:
         json.dump(results, handle, ensure_ascii=False, indent=4)

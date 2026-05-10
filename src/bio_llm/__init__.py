@@ -44,6 +44,7 @@ _SYNONYM_MAP = {
     "SAF-1": "MAZ", "SAF1": "MAZ", "ZNF801": "MAZ",
     "YB-1": "YBX1", "YB1": "YBX1",
     "TEL1": "ETV6", "TEL": "ETV6",
+    "YAN": "ETS1", "POINTEDP2": "ETS1",
     "KLF8": "KLF8",
     "MBD1": "MBD1", "MBD2": "MBD2", "MECP2": "MECP2",
     "USF1": "USF1", "USF2": "USF2",

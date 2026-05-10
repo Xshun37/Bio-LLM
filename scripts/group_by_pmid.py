@@ -17,7 +17,7 @@ def main():
         help="Input TRRUST TSV"
     )
     parser.add_argument(
-        "--output", default=_os.path.join(_root, "outputs/trrust_by_pmid.tsv"),
+        "--output", default=_os.path.join(_root, "data", "raw", "trrust_by_pmid.tsv"),
         help="Output TSV path"
     )
     args = parser.parse_args()

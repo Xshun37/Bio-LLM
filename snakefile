@@ -19,7 +19,7 @@ rule generate_abstracts:
         "data/interim/abstracts_for_test.txt"
     params:
         sample_size=config.get("sample_size", 5),
-        seed=config.get("seed", 42),
+        seed_str="--seed " + str(config["seed"]) if "seed" in config else "",
         email=config.get("email", "your_email@example.com"),
         bypass_proxy_flag="--bypass-proxy" if config.get("ncbi_bypass_proxy", False) else "",
         no_proxy_hosts=config.get(
@@ -29,7 +29,7 @@ rule generate_abstracts:
     shell:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.abstracts"
         " --input {input} --output {output}"
-        " --sample-size {params.sample_size} --seed {params.seed} --email '{params.email}'"
+        " --sample-size {params.sample_size} {params.seed_str} --email '{params.email}'"
         " {params.bypass_proxy_flag} --ncbi-no-proxy-hosts '{params.no_proxy_hosts}'"
 
 rule analyze_abstracts:
@@ -54,7 +54,7 @@ rule generate_report:
         llm_json="outputs/analysis_results.json",
         debug_json="outputs/analysis_results_debug.json",
         abstracts="data/interim/abstracts_for_test.txt",
-        trrust_by_pmid="outputs/trrust_by_pmid.tsv"
+        trrust_by_pmid="data/raw/trrust_by_pmid.tsv"
     output:
         "outputs/report.html"
     shell:

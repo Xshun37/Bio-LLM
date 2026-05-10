@@ -1,0 +1,27 @@
+# Bio-LLM 运行参数
+# 复制此文件为 config.yaml 并修改
+# cp config/config.example.yaml config/config.yaml
+
+# 每次抽样的 PMID 数量
+sample_size: 5
+
+# 随机种子 (可选，不设置则每次随机)
+# seed: 42
+
+# NCBI Entrez 邮箱 (必填)
+email: "your_email@example.com"
+
+# DashScope 模型名称
+model: "qwq-plus"
+
+# LLM 温度 (0 = 确定性输出)
+temperature: 0
+
+# 并行 worker 数量
+workers: 16
+
+# NCBI 代理旁路 (true 时绕过 http_proxy 直连 PubMed)
+ncbi_bypass_proxy: false
+
+# NCBI 直连域名列表 (逗号分隔)
+ncbi_no_proxy_hosts: "eutils.ncbi.nlm.nih.gov,ncbi.nlm.nih.gov,pubmed.ncbi.nlm.nih.gov"
