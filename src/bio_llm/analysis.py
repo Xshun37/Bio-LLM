@@ -3,6 +3,7 @@ import json
 import os
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import dashscope
@@ -142,6 +143,27 @@ def _extract_usage(resp):
     }
 
 
+def _call_llm(model, temperature, prompt=None, messages=None, max_retries=3):
+    """Call DashScope Generation with exponential backoff on 429 rate-limit."""
+    for attempt in range(max_retries):
+        kwargs = {"model": model, "temperature": temperature,
+                  "result_format": "message", "stream": True,
+                  "incremental_output": False}
+        if messages is not None:
+            kwargs["messages"] = messages
+        else:
+            kwargs["prompt"] = prompt
+
+        resp = _collect_stream(Generation.call(**kwargs))
+        if getattr(resp, "status_code", None) == 429:
+            delay = 2 ** attempt
+            print(f"  API 限流 (429)，{delay}s 后重试 (attempt {attempt + 1}/{max_retries})...")
+            time.sleep(delay)
+            continue
+        return resp
+    return resp  # return last attempt even if it's still 429
+
+
 def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=0, debug=False):
     round1_user = (
         "You are a bioinformatics expert. Read the following PubMed abstract carefully.\n"
@@ -207,14 +229,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         "Do NOT output JSON yet. Just analyze in plain text."
     )
 
-    resp1 = _collect_stream(Generation.call(
-        model=model_name,
-        prompt=round1_user,
-        temperature=temperature,
-        result_format="message",
-        stream=True,
-        incremental_output=False,
-    ))
+    resp1 = _call_llm(model_name, temperature, prompt=round1_user)
     if getattr(resp1, "status_code", None) != 200:
         err_msg = f"Round1_API_Error: {getattr(resp1, 'status_code', 'unknown')}"
         if debug:
@@ -252,18 +267,11 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         '"confidence": 5, "evidence": "ChIP+luciferase"}]'
     )
 
-    resp2 = _collect_stream(Generation.call(
-        model=model_name,
-        messages=[
-            {"role": "user", "content": round1_user},
-            {"role": "assistant", "content": analysis},
-            {"role": "user", "content": round2_user},
-        ],
-        temperature=temperature,
-        result_format="message",
-        stream=True,
-        incremental_output=False,
-    ))
+    resp2 = _call_llm(model_name, temperature, messages=[
+        {"role": "user", "content": round1_user},
+        {"role": "assistant", "content": analysis},
+        {"role": "user", "content": round2_user},
+    ])
     if getattr(resp2, "status_code", None) != 200:
         err_msg = f"Round2_API_Error: {getattr(resp2, 'status_code', 'unknown')}"
         if debug:

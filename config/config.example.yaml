@@ -17,8 +17,8 @@ model: "qwq-plus"
 # LLM 温度 (0 = 确定性输出)
 temperature: 0
 
-# 并行 worker 数量
-workers: 16
+# 并行 worker 数量 (推理模型建议 2-4，避免 429 限流)
+workers: 4
 
 # NCBI 代理旁路 (true 时绕过 http_proxy 直连 PubMed)
 ncbi_bypass_proxy: false

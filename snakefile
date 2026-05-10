@@ -41,7 +41,7 @@ rule analyze_abstracts:
     params:
         model=config.get("model", "qwen-max"),
         temperature=config.get("temperature", 0),
-        workers=config.get("workers", 16)
+        workers=config.get("workers", 4)
     shell:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis"
         " --input {input} --output {output.results}"
