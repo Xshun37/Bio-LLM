@@ -220,3 +220,74 @@
 
 - README.md 重写：完整项目结构、核心特性、手动运行说明
 - 优化日志更新至 2026-05-10
+
+---
+
+## 2026-05-10 第二次优化记录
+
+### 18. 评估标准模块化
+
+**问题**：评估逻辑（方向归一化、模糊匹配、状态分类、指标计算）散落在 `reporting.py` 中，与 HTML 渲染耦合。同名映射在 `__init__.py` 和 `reporting.py` 两份维护，已有偏差。
+
+**改动**：
+- 新建 `src/bio_llm/evaluation.py`：集中 `normalize_direction`、`fuzzy_gene_match`、`classify_llm_entry`、`classify_missed_gt`、`compute_metrics`、`is_suspicious_gene_name`
+- `reporting.py` 删除 ~130 行重复代码，改为从 `evaluation` 和 `__init__` 导入
+- `__init__.py` 补充缺失别名（YAN→ETS1, POINTEDP2→ETS1），成为唯一真相源
+- 评估指标与 HTML 报告生成完全解耦
+
+### 19. 异常标注入口
+
+**问题**：`trrust_anomalies.jsonl` 只能手动编辑 JSON，容易写错格式。
+
+**改动**：
+- 新建 `src/bio_llm/curate.py`（非一次性脚本，作为正式模块）
+- 交互式 5 步引导添加：PMID → 异常类型 → 原始条目 → 问题说明 → 修正条目
+- 字段校验：PMID 纯数字、异常类型枚举、条目格式、非空 issue
+- 支持 `add` / `list` / `remove` / `export` 子命令
+- 自动记录 `curated_date`
+
+### 20. 归一化日志
+
+**问题**：基因名被纠正后无法追溯（NF-KB P65 → RELA 等静默发生）。
+
+**改动**：
+- `evaluation.py` 新增 `normalize_and_log()`，每次归一化记录 `{original, normalized, type}`
+- `analysis.py` JSON 后处理阶段改为 `normalize_and_log`，`norm_log` 写入 debug 输出
+- Debug 模式下可在 `analysis_results_debug.json` 的 `normalization_log` 字段查看所有纠正记录
+
+### 21. 提取策略规范文档
+
+- 新建 `docs/extraction_strategy.md`（中文）：完整记录两轮 CoT 设计、四问卷、调控规则、三层归一化、置信度标度、评估指标定义、异常管理流程、已知局限
+
+### 22. 进度条
+
+**问题**：`qwq-plus` 推理模型极慢，无进度反馈无法判断是否卡死。
+
+**改动**：
+- `requirements.txt` 添加 `tqdm>=4.67`
+- `analysis.py` 的 `run_analysis` 用 tqdm 包裹 `as_completed`，实时显示进度 + 最新完成的 PMID 和关系数
+- tqdm 未安装时自动回退到逐行打印
+
+### 23. 429 限流重试
+
+**问题**：并发过高时 DashScope API 返回 429，任务直接失败。
+
+**改动**：
+- `analysis.py` 新增 `_call_llm()` 封装 API 调用，检测 429 后指数退避重试（1s → 2s → 4s，最多 3 次）
+- 默认并发从 16 降至 4（snakefile + config 模版）
+
+### 24. 抽样随机化
+
+**问题**：config 写死 `seed: 42`，每次运行抽样完全相同的 PMID，测试阶段需要不同数据。
+
+**改动**：
+- config 去掉 seed，不设则每次随机（需要复现时显式指定）
+- snakefile 相应调整：seed 未配置时不传 `--seed` 参数
+
+### 25. 项目结构整理
+
+- `trrust_by_pmid.tsv` 定位为预处理源数据，归入 `data/raw/`
+- `outputs/` 仅保留流水线产物
+- 新建 `config/config.example.yaml` 配置模版，真实 config 保持 gitignore
+- README 全面更新：结构树、配置表、特性说明、手动运行示例
+- requirements.txt 更新包含 tqdm
