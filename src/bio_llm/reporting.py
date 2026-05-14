@@ -3,14 +3,9 @@ import json
 import os
 import re
 
-import pandas as pd
-
 from bio_llm import normalize_tf, normalize_target
 from bio_llm.evaluation import (
-    normalize_direction,
-    fuzzy_gene_match,
     classify_llm_entry,
-    classify_missed_gt,
     compute_metrics,
     _get_field,
 )
@@ -75,23 +70,6 @@ def parse_abstracts_file(abstracts_path):
             ],
         }
     return result
-
-
-def load_trrust(trrust_path):
-    return pd.read_csv(
-        trrust_path,
-        sep="\t",
-        header=None,
-        names=["tf", "target", "direction", "pmid"],
-        dtype={"pmid": str},
-    )
-
-
-def build_pair_map(rows):
-    return {
-        (normalize_tf(str(row.tf)), normalize_target(str(row.target))): str(row.direction)
-        for row in rows.itertuples(index=False)
-    }
 
 
 def format_error_result(result):
@@ -385,4 +363,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

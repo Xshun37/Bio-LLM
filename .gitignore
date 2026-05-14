@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .snakemake
+.claude
 src/**/*.pyc
 
 data/interim/
@@ -8,3 +9,6 @@ outputs/
 config/config.yaml
 data/raw/trrust_rawdata.human.tsv
 data/raw/hgnc_complete_set.txt
+data/raw/trrust_availableinborzoi.tsv
+data/raw/targets_human_track.txt
+data/raw/GS_50.tsv

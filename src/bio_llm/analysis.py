@@ -6,26 +6,34 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import dashscope
+from openai import OpenAI, RateLimitError, APIStatusError
 
 try:
     from tqdm import tqdm as _tqdm
 except ImportError:
     _tqdm = None
-from dashscope import Generation
 from bio_llm import normalize_tf as _norm_tf, normalize_target as _norm_target
 from bio_llm.evaluation import normalize_and_log
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "qwq-plus"
+DEFAULT_MODEL = "deepseek-chat"
+
+_client = None
 
 
-def get_api_key(cli_key=None):
-    api_key = cli_key or os.getenv("DASHSCOPE_API_KEY")
-    if not api_key:
-        raise ValueError("缺少 DashScope API Key，请设置环境变量 DASHSCOPE_API_KEY 或使用 --api-key 参数。")
-    return api_key
+def init_client(api_key=None):
+    global _client
+    key = api_key or os.getenv("DEEPSEEK_API_KEY")
+    if not key:
+        raise ValueError("缺少 DeepSeek API Key，请设置环境变量 DEEPSEEK_API_KEY 或使用 --api-key 参数。")
+    _client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
+
+
+def _get_client():
+    if _client is None:
+        init_client()
+    return _client
 
 
 def parse_test_file(file_path):
@@ -104,64 +112,57 @@ def clean_json_text(text):
     return text
 
 
-def _collect_stream(gen):
-    """Collect streaming response into a single response-like object."""
-    final = None
-    for resp in gen:
-        final = resp
-    return final
-
-
 def extract_model_content(response):
-    """Handle different dashscope SDK response shapes."""
+    """Extract message content from OpenAI-compatible response."""
     try:
-        choice = response.output.choices[0]
-        if hasattr(choice, "message"):
-            return choice.message.content
-        return choice["message"]["content"]
+        return response.choices[0].message.content
     except Exception:
         return str(response)
 
 
 def extract_reasoning_content(response):
-    """Extract reasoning/thinking content from qvq models (if available)."""
+    """Extract reasoning content from DeepSeek-R1 (if available)."""
     try:
-        choice = response.output.choices[0]
-        msg = choice.message if hasattr(choice, "message") else choice["message"]
+        msg = response.choices[0].message
         return getattr(msg, "reasoning_content", "") or ""
     except Exception:
         return ""
 
 
 def _extract_usage(resp):
-    """Safely extract token usage and request_id from a GenerationResponse."""
+    """Safely extract token usage and request_id from a chat completion."""
     usage = getattr(resp, "usage", None)
     return {
-        "request_id": getattr(resp, "request_id", ""),
-        "input_tokens": getattr(usage, "input_tokens", 0) if usage else 0,
-        "output_tokens": getattr(usage, "output_tokens", 0) if usage else 0,
+        "request_id": getattr(resp, "id", ""),
+        "input_tokens": getattr(usage, "prompt_tokens", 0) if usage else 0,
+        "output_tokens": getattr(usage, "completion_tokens", 0) if usage else 0,
     }
 
 
 def _call_llm(model, temperature, prompt=None, messages=None, max_retries=3):
-    """Call DashScope Generation with exponential backoff on 429 rate-limit."""
+    """Call DeepSeek API with exponential backoff on 429 rate-limit."""
+    client = _get_client()
     for attempt in range(max_retries):
-        kwargs = {"model": model, "temperature": temperature,
-                  "result_format": "message", "stream": True,
-                  "incremental_output": False}
+        kwargs = {"model": model, "temperature": temperature}
         if messages is not None:
             kwargs["messages"] = messages
         else:
-            kwargs["prompt"] = prompt
+            kwargs["messages"] = [{"role": "user", "content": prompt}]
 
-        resp = _collect_stream(Generation.call(**kwargs))
-        if getattr(resp, "status_code", None) == 429:
+        try:
+            return client.chat.completions.create(**kwargs)
+        except RateLimitError:
             delay = 2 ** attempt
             print(f"  API 限流 (429)，{delay}s 后重试 (attempt {attempt + 1}/{max_retries})...")
             time.sleep(delay)
-            continue
-        return resp
-    return resp  # return last attempt even if it's still 429
+        except APIStatusError as e:
+            if e.status_code == 429:
+                delay = 2 ** attempt
+                print(f"  API 限流 (429)，{delay}s 后重试 (attempt {attempt + 1}/{max_retries})...")
+                time.sleep(delay)
+                continue
+            raise
+    return None
 
 
 def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=0, debug=False):
@@ -230,10 +231,10 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
     )
 
     resp1 = _call_llm(model_name, temperature, prompt=round1_user)
-    if getattr(resp1, "status_code", None) != 200:
-        err_msg = f"Round1_API_Error: {getattr(resp1, 'status_code', 'unknown')}"
+    if resp1 is None:
+        err_msg = "Round1_API_Error: rate_limit_exhausted"
         if debug:
-            return {"error": err_msg, "round1_usage": _extract_usage(resp1)}
+            return {"error": err_msg}
         return {"error": err_msg}
 
     analysis = extract_model_content(resp1)
@@ -272,8 +273,8 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         {"role": "assistant", "content": analysis},
         {"role": "user", "content": round2_user},
     ])
-    if getattr(resp2, "status_code", None) != 200:
-        err_msg = f"Round2_API_Error: {getattr(resp2, 'status_code', 'unknown')}"
+    if resp2 is None:
+        err_msg = "Round2_API_Error: rate_limit_exhausted"
         if debug:
             return {
                 "error": err_msg,
@@ -445,8 +446,8 @@ def build_parser():
     parser = argparse.ArgumentParser(description="从 PubMed 摘要提取 TF-Target 关系并保存 JSON 结果。")
     parser.add_argument("--input", default=DEFAULT_INPUT, help="输入摘要文件路径")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="输出 JSON 文件路径")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="DashScope 模型名称")
-    parser.add_argument("--api-key", default=None, help="DashScope API Key")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="DeepSeek 模型名称")
+    parser.add_argument("--api-key", default=None, help="DeepSeek API Key")
     parser.add_argument("--temperature", type=float, default=0, help="LLM temperature")
     parser.add_argument("--workers", type=int, default=1, help="并行 worker 数量")
     parser.add_argument("--debug", action="store_true", default=False,
@@ -459,7 +460,7 @@ def build_parser():
 def main():
     args = build_parser().parse_args()
     try:
-        dashscope.api_key = get_api_key(args.api_key)
+        init_client(args.api_key)
     except ValueError as exc:
         print(exc)
         sys.exit(1)

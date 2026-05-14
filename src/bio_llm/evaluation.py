@@ -221,7 +221,7 @@ def is_suspicious_gene_name(name):
 # ---------------------------------------------------------------------------
 
 
-def log_normalization(original, normalized, gene_type="", alias_map=None):
+def log_normalization(original, normalized, gene_type="", alias_map=None, meta=None):
     """Record a gene name normalization event.
 
     Returns a dict recording the before/after state, or None if unchanged.
@@ -230,13 +230,23 @@ def log_normalization(original, normalized, gene_type="", alias_map=None):
     if not original:
         return None
     orig_clean = str(original).strip()
-    if orig_clean == normalized:
+    meta_dict = meta.to_dict() if hasattr(meta, "to_dict") else (meta or {})
+    status = meta_dict.get("status", "")
+    if orig_clean == normalized and status in ("", "identity"):
         return None
-    return {
+    entry = {
         "original": orig_clean,
         "normalized": normalized,
         "type": gene_type,
     }
+    if meta_dict:
+        entry.update({
+            "status": status,
+            "source": meta_dict.get("source", ""),
+            "candidates": meta_dict.get("candidates", []),
+            "matched_key": meta_dict.get("matched_key", ""),
+        })
+    return entry
 
 
 def normalize_and_log(raw_name, norm_fn, gene_type, log_list):
@@ -251,8 +261,10 @@ def normalize_and_log(raw_name, norm_fn, gene_type, log_list):
     Returns:
         normalized gene name string
     """
-    normalized = norm_fn(raw_name)
-    entry = log_normalization(raw_name, normalized, gene_type=gene_type)
+    meta_getter = getattr(norm_fn, "with_meta", None)
+    meta = meta_getter(raw_name) if meta_getter else None
+    normalized = meta.normalized if meta is not None else norm_fn(raw_name)
+    entry = log_normalization(raw_name, normalized, gene_type=gene_type, meta=meta)
     if entry:
         log_list.append(entry)
     return normalized

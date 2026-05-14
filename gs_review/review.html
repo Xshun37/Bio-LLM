@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS 50 Gold Standard Review</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #333; }
+  .toolbar {
+    position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #ddd;
+    padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  }
+  .toolbar .title { font-size: 1.1em; font-weight: 600; margin-right: auto; }
+  .toolbar button, .toolbar select {
+    padding: 6px 14px; border: 1px solid #ccc; border-radius: 6px; background: #fff;
+    cursor: pointer; font-size: 0.9em;
+  }
+  .toolbar button:hover { background: #e9e9e9; }
+  .toolbar button.export-btn { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+  .toolbar button.export-btn:hover { background: #1557b0; }
+  .progress { font-size: 0.9em; color: #666; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 20px 24px; }
+  .card {
+    background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    margin-bottom: 20px; padding: 20px 24px; transition: box-shadow 0.2s;
+  }
+  .card.hidden { display: none; }
+  .card.completed { border-left: 4px solid #34a853; }
+  .card.pending { border-left: 4px solid #ea4335; }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .card-header .pmid { font-weight: 700; font-size: 1.05em; }
+  .card-header a { color: #1a73e8; text-decoration: none; font-size: 0.9em; }
+  .card-header a:hover { text-decoration: underline; }
+  .card-header .reviewed-label { margin-left: auto; display: flex; align-items: center; gap: 6px;
+    font-size: 0.85em; color: #666; cursor: pointer; user-select: none; }
+  .pairs-section { margin-bottom: 12px; }
+  .pairs-section .header { font-size: 0.85em; color: #888; margin-bottom: 4px; }
+  .pair-row {
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    padding: 8px 12px; background: #f8f9fa; border-radius: 6px; margin-bottom: 6px;
+  }
+  .pair-row .tf-name { font-weight: 600; color: #1a73e8; min-width: 80px; }
+  .pair-row .arrow { color: #999; }
+  .pair-row .target-name { min-width: 80px; }
+  .pair-row .ensg { font-family: monospace; font-size: 0.85em; color: #666; }
+  .pair-row .ensg.missing { color: #ea4335; }
+  .pair-row .tf-warn { font-size: 0.8em; color: #f9ab00; }
+  .aliases { font-size: 0.78em; color: #999; margin-top: 2px; }
+  .aliases span { font-family: monospace; background: #eee; padding: 1px 5px; border-radius: 3px; margin-right: 3px; }
+  .trrust-dir { font-size: 0.8em; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .trrust-dir.Activation { background: #e8f5e9; color: #2e7d32; }
+  .trrust-dir.Repression { background: #fce4ec; color: #c62828; }
+  .trrust-dir.Unknown { background: #fff3e0; color: #e65100; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .fields.full-width { grid-template-columns: 1fr; }
+  .field label { display: block; font-size: 0.85em; color: #666; margin-bottom: 4px; }
+  .field input, .field select {
+    width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px;
+    font-size: 0.95em;
+  }
+  .field input:focus, .field select:focus { outline: none; border-color: #1a73e8; }
+  .abstract-box {
+    margin-top: 12px; max-height: 200px; overflow-y: auto; padding: 12px;
+    background: #fafafa; border: 1px solid #e0e0e0; border-radius: 6px;
+    font-size: 0.85em; line-height: 1.5; white-space: pre-wrap; display: none;
+  }
+  .abstract-box.open { display: block; }
+  .abstract-toggle { font-size: 0.85em; color: #1a73e8; cursor: pointer; margin-top: 8px; }
+  .kbd-hint {
+    position: fixed; bottom: 16px; right: 24px; font-size: 0.8em; color: #aaa;
+    background: #fff; padding: 6px 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="title">GS 50 Gold Standard Review</span>
+  <span class="progress" id="progress">0/50</span>
+  <select id="filter" onchange="applyFilter()">
+    <option value="all">All</option>
+    <option value="pending">Pending</option>
+    <option value="done">Done</option>
+  </select>
+  <button onclick="importTSV()">Import progress from TSV</button>
+  <button class="export-btn" onclick="exportTSV()">Export TSV</button>
+</div>
+<div class="container" id="container"></div>
+<div class="kbd-hint">j/k navigate &middot; Enter open PubMed &middot; g top</div>
+
+<script>
+const REVIEW_DATA = {"pmids": ["10082553", "10211993", "10453008", "10978529", "11013233", "11706010", "11854297", "14642566", "15178343", "15184388", "15195143", "15688019", "15735663", "15908194", "16488890", "16595680", "16628196", "17204573", "17932312", "18625744", "18776923", "19043455", "19290488", "19303924", "19376845", "19609274", "19786090", "20068145", "20160719", "20228272", "20304822", "21700680", "21983014", "22010578", "22205702", "22213192", "22227292", "22258560", "22419072", "22479354", "23000143", "23388456", "23598529", "25113559", "7504695", "7655015", "7876096", "8631128", "9611253", "9756895"], "entries": {"10082553": {"abstract": "", "pairs": [{"tf": "UBTF", "gene": "TAF1B", "ensg": "ENSG00000115750", "in_track": true, "tf_aliases": ["NOR-90", "NOR90", "UBF", "UBF1", "UBF2"], "gene_aliases": ["RAF1B", "RAFI63", "SL1", "TAFI63"], "trrust_direction": "Unknown"}]}, "10211993": {"abstract": "", "pairs": [{"tf": "ETS1", "gene": "PLAU", "ensg": "ENSG00000122861", "in_track": true, "tf_aliases": ["ETS-1", "EWSR2", "FLJ10768"], "gene_aliases": ["UPA", "URK"], "trrust_direction": "Unknown"}]}, "10453008": {"abstract": "", "pairs": [{"tf": "CEBPB", "gene": "IL5", "ensg": "ENSG00000113525", "in_track": true, "tf_aliases": ["C/EBP-BETA", "CEBPBETA", "CRP2", "IL6DBP", "LAP", "NFIL6", "TCF5"], "gene_aliases": ["EDF", "IL-5", "TRF"], "trrust_direction": "Unknown"}]}, "10978529": {"abstract": "", "pairs": [{"tf": "NFIC", "gene": "POLD2", "ensg": "ENSG00000106628", "in_track": true, "tf_aliases": ["CTF", "CTF5", "NF-I", "NFI"], "gene_aliases": [], "trrust_direction": "Unknown"}]}, "11013233": {"abstract": "", "pairs": [{"tf": "MAFK", "gene": "NQO1", "ensg": "ENSG00000181019", "in_track": true, "tf_aliases": ["NFE2U", "P18"], "gene_aliases": ["DHQU", "DIA4", "DTD", "NMOR1", "QR1"], "trrust_direction": "Unknown"}]}, "11706010": {"abstract": "", "pairs": [{"tf": "CTCF", "gene": "APP", "ensg": "ENSG00000142192", "in_track": true, "tf_aliases": ["CFAP108", "FAP108"], "gene_aliases": ["AD1", "ALPHA-SAPP", "ALPHASAPP"], "trrust_direction": "Repression"}]}, "11854297": {"abstract": "", "pairs": [{"tf": "JUNB", "gene": "SMAD4", "ensg": "ENSG00000141646", "in_track": true, "tf_aliases": [], "gene_aliases": ["DPC4", "MADH4"], "trrust_direction": "Unknown"}]}, "14642566": {"abstract": "", "pairs": [{"tf": "NFIC", "gene": "SMUG1", "ensg": "ENSG00000123415", "in_track": true, "tf_aliases": ["CTF", "CTF5", "NF-I", "NFI"], "gene_aliases": ["FDG", "HMUDG", "UNG3"], "trrust_direction": "Activation"}]}, "15178343": {"abstract": "", "pairs": [{"tf": "ARNT", "gene": "EGLN2", "ensg": "ENSG00000269858", "in_track": true, "tf_aliases": ["ARNT1", "BHLHE2", "HIF-1BETA", "HIF1BETA"], "gene_aliases": ["HIFPH1", "PHD1"], "trrust_direction": "Unknown"}]}, "15184388": {"abstract": "", "pairs": [{"tf": "USF2", "gene": "THBS1", "ensg": "ENSG00000137801", "in_track": true, "tf_aliases": ["BHLHB12", "FIP"], "gene_aliases": ["THBS", "THBS-1", "TSP", "TSP-1", "TSP1"], "trrust_direction": "Activation"}, {"tf": "USF2", "gene": "TGFB1", "ensg": "ENSG00000105329", "in_track": true, "tf_aliases": ["BHLHB12", "FIP"], "gene_aliases": ["CED", "DPD1", "TGFB", "TGFBETA"], "trrust_direction": "Unknown"}]}, "15195143": {"abstract": "", "pairs": [{"tf": "E2F4", "gene": "MCM10", "ensg": "ENSG00000065328", "in_track": true, "tf_aliases": ["E2F-4"], "gene_aliases": ["CNA43", "DNA43", "PRO2249"], "trrust_direction": "Repression"}, {"tf": "E2F4", "gene": "TOPBP1", "ensg": "ENSG00000163781", "in_track": true, "tf_aliases": ["E2F-4"], "gene_aliases": ["DPB11", "KIAA0259", "TOP2BP1"], "trrust_direction": "Repression"}]}, "15688019": {"abstract": "", "pairs": [{"tf": "RUNX3", "gene": "RUNX1", "ensg": "ENSG00000159216", "in_track": true, "tf_aliases": ["AML2", "CBFA3", "PEBP2A3"], "gene_aliases": ["AML1", "AMLCR1", "CBFA2", "PEBP2A2"], "trrust_direction": "Unknown"}]}, "15735663": {"abstract": "", "pairs": [{"tf": "ATF7", "gene": "TAF12", "ensg": "ENSG00000120656", "in_track": true, "tf_aliases": ["ATFA"], "gene_aliases": ["TAF2J", "TAFII20"], "trrust_direction": "Activation"}]}, "15908194": {"abstract": "", "pairs": [{"tf": "CEBPZ", "gene": "SOX9", "ensg": "ENSG00000125398", "in_track": true, "tf_aliases": ["CBF2", "CTF2", "HSP-CBF", "HSPCBF"], "gene_aliases": ["CMD1", "CMPD1", "SRA1"], "trrust_direction": "Unknown"}]}, "16488890": {"abstract": "", "pairs": [{"tf": "USF1", "gene": "P4HA1", "ensg": "ENSG00000122884", "in_track": true, "tf_aliases": ["BHLHB11", "MLTFI", "UEF"], "gene_aliases": ["C-P4HALPHA", "CP4HALPHA", "P4HA"], "trrust_direction": "Activation"}, {"tf": "USF2", "gene": "P4HA1", "ensg": "ENSG00000122884", "in_track": true, "tf_aliases": ["BHLHB12", "FIP"], "gene_aliases": ["C-P4HALPHA", "CP4HALPHA", "P4HA"], "trrust_direction": "Activation"}]}, "16595680": {"abstract": "", "pairs": [{"tf": "KLF5", "gene": "BIRC5", "ensg": "ENSG00000089685", "in_track": true, "tf_aliases": ["BTEB2", "CKLF", "IKLF"], "gene_aliases": ["API4", "EPR-1", "EPR1", "SURVIVIN"], "trrust_direction": "Activation"}]}, "16628196": {"abstract": "", "pairs": [{"tf": "STAT1", "gene": "CCR1", "ensg": "ENSG00000163823", "in_track": true, "tf_aliases": ["ISGF-3", "ISGF3", "STAT91"], "gene_aliases": ["CD191", "CKR-1", "CKR1", "CMKBR1", "MIP1AR", "SCYAR1"], "trrust_direction": "Activation"}]}, "17204573": {"abstract": "", "pairs": [{"tf": "STAT3", "gene": "FOS", "ensg": "ENSG00000170345", "in_track": true, "tf_aliases": ["APRF"], "gene_aliases": ["AP-1", "AP1", "C-FOS", "CFOS"], "trrust_direction": "Activation"}, {"tf": "STAT3", "gene": "JUNB", "ensg": "ENSG00000171223", "in_track": true, "tf_aliases": ["APRF"], "gene_aliases": [], "trrust_direction": "Activation"}]}, "17932312": {"abstract": "", "pairs": [{"tf": "EGR1", "gene": "TNFSF10", "ensg": "ENSG00000121858", "in_track": true, "tf_aliases": ["AT225", "G0S30", "KROX-24", "KROX24", "NGFI-A", "NGFIA", "TIS8", "ZIF-268", "ZIF268"], "gene_aliases": ["APO-2L", "APO2L", "CD253", "TANCR", "TL2", "TRAIL"], "trrust_direction": "Repression"}]}, "18625744": {"abstract": "", "pairs": [{"tf": "CTCF", "gene": "CCND1", "ensg": "ENSG00000110092", "in_track": true, "tf_aliases": ["CFAP108", "FAP108"], "gene_aliases": ["BCL1", "D11S287E", "PRAD1", "U21B31"], "trrust_direction": "Unknown"}]}, "18776923": {"abstract": "", "pairs": [{"tf": "BRCA1", "gene": "HSPA5", "ensg": "ENSG00000044574", "in_track": true, "tf_aliases": ["BRCC1", "FANCS", "PPP1R53", "RNF53"], "gene_aliases": ["BIP", "GRP78"], "trrust_direction": "Repression"}]}, "19043455": {"abstract": "", "pairs": [{"tf": "CEBPB", "gene": "BCL2L1", "ensg": "ENSG00000171552", "in_track": true, "tf_aliases": ["C/EBP-BETA", "CEBPBETA", "CRP2", "IL6DBP", "LAP", "NFIL6", "TCF5"], "gene_aliases": ["BCL-X", "BCL-XL", "BCL-XS", "BCL2L", "BCLX", "BCLXL", "BCLXS", "PPP1R52"], "trrust_direction": "Unknown"}]}, "19290488": {"abstract": "", "pairs": [{"tf": "RUNX3", "gene": "CASP3", "ensg": "ENSG00000164305", "in_track": true, "tf_aliases": ["AML2", "CBFA3", "PEBP2A3"], "gene_aliases": ["APOPAIN", "CPP32", "CPP32B", "YAMA"], "trrust_direction": "Activation"}]}, "19303924": {"abstract": "", "pairs": [{"tf": "RB1", "gene": "FGFR1", "ensg": "ENSG00000077782", "in_track": true, "tf_aliases": ["OSRC", "PPP1R130"], "gene_aliases": ["BFGFR", "CD331", "CEK", "FLG", "FLT2", "KAL2", "N-SAM", "NSAM"], "trrust_direction": "Repression"}]}, "19376845": {"abstract": "", "pairs": [{"tf": "ARNT", "gene": "CYP1B1", "ensg": "ENSG00000138061", "in_track": true, "tf_aliases": ["ARNT1", "BHLHE2", "HIF-1BETA", "HIF1BETA"], "gene_aliases": ["CP1B", "GLC3A"], "trrust_direction": "Unknown"}, {"tf": "ARNT", "gene": "CYP1A1", "ensg": "ENSG00000140465", "in_track": true, "tf_aliases": ["ARNT1", "BHLHE2", "HIF-1BETA", "HIF1BETA"], "gene_aliases": ["CP11", "CYP1", "P1-450", "P1450", "P450-C", "P450C", "P450DX"], "trrust_direction": "Unknown"}]}, "19609274": {"abstract": "", "pairs": [{"tf": "MYB", "gene": "MYC", "ensg": "ENSG00000136997", "in_track": true, "tf_aliases": ["C-MYB", "CMYB"], "gene_aliases": ["BHLHE39", "C-MYC", "CMYC", "MYCC"], "trrust_direction": "Unknown"}]}, "19786090": {"abstract": "", "pairs": [{"tf": "EGR1", "gene": "STMN1", "ensg": "ENSG00000117632", "in_track": true, "tf_aliases": ["AT225", "G0S30", "KROX-24", "KROX24", "NGFI-A", "NGFIA", "TIS8", "ZIF-268", "ZIF268"], "gene_aliases": ["C1ORF215", "FLJ32206", "LAG", "LAP18", "OP18", "PP17", "PP19", "PR22", "SMN"], "trrust_direction": "Unknown"}]}, "20068145": {"abstract": "", "pairs": [{"tf": "RB1", "gene": "BRCA1", "ensg": "ENSG00000012048", "in_track": true, "tf_aliases": ["OSRC", "PPP1R130"], "gene_aliases": ["BRCC1", "FANCS", "PPP1R53", "RNF53"], "trrust_direction": "Repression"}]}, "20160719": {"abstract": "", "pairs": [{"tf": "BRCA1", "gene": "SIRT1", "ensg": "ENSG00000096717", "in_track": true, "tf_aliases": ["BRCC1", "FANCS", "PPP1R53", "RNF53"], "gene_aliases": ["SIR2L1"], "trrust_direction": "Activation"}]}, "20228272": {"abstract": "", "pairs": [{"tf": "STAT3", "gene": "BCL6", "ensg": "ENSG00000113916", "in_track": true, "tf_aliases": ["APRF"], "gene_aliases": ["BCL5", "BCL6A", "LAZ3", "ZBTB27", "ZNF51"], "trrust_direction": "Activation"}]}, "20304822": {"abstract": "", "pairs": [{"tf": "ATF2", "gene": "IFNG", "ensg": "ENSG00000111537", "in_track": true, "tf_aliases": ["CRE-BP1", "CREB2", "CREBP1", "HB16", "TREB7"], "gene_aliases": [], "trrust_direction": "Activation"}]}, "21700680": {"abstract": "", "pairs": [{"tf": "BRCA1", "gene": "DDIT3", "ensg": "ENSG00000175197", "in_track": true, "tf_aliases": ["BRCC1", "FANCS", "PPP1R53", "RNF53"], "gene_aliases": ["CHOP", "CHOP10", "GADD153"], "trrust_direction": "Activation"}]}, "21983014": {"abstract": "", "pairs": [{"tf": "EGR1", "gene": "PTGES", "ensg": "ENSG00000148344", "in_track": true, "tf_aliases": ["AT225", "G0S30", "KROX-24", "KROX24", "NGFI-A", "NGFIA", "TIS8", "ZIF-268", "ZIF268"], "gene_aliases": ["MGST-IV", "MGST1-L1", "MGST1L1", "MGSTIV", "MPGES-1", "MPGES1", "PIG12", "TP53I12"], "trrust_direction": "Activation"}]}, "22010578": {"abstract": "", "pairs": [{"tf": "ARID3A", "gene": "PML", "ensg": "ENSG00000140464", "in_track": true, "tf_aliases": ["BRIGHT", "DRIL1"], "gene_aliases": ["MYL", "RNF71", "TRIM19"], "trrust_direction": "Activation"}]}, "22205702": {"abstract": "", "pairs": [{"tf": "STAT3", "gene": "CDH1", "ensg": "ENSG00000039068", "in_track": true, "tf_aliases": ["APRF"], "gene_aliases": ["CD324", "UVO", "UVOMORULIN"], "trrust_direction": "Unknown"}]}, "22213192": {"abstract": "", "pairs": [{"tf": "ZNF24", "gene": "CCND1", "ensg": "ENSG00000110092", "in_track": true, "tf_aliases": ["KOX17", "ZFP191", "ZNF191", "ZSCAN3"], "gene_aliases": ["BCL1", "D11S287E", "PRAD1", "U21B31"], "trrust_direction": "Activation"}]}, "22227292": {"abstract": "", "pairs": [{"tf": "HSF1", "gene": "POLK", "ensg": "ENSG00000122008", "in_track": true, "tf_aliases": ["HSTF1"], "gene_aliases": ["DINB1", "DINP", "POLQ"], "trrust_direction": "Activation"}]}, "22258560": {"abstract": "", "pairs": [{"tf": "USF1", "gene": "TBX21", "ensg": "ENSG00000073861", "in_track": true, "tf_aliases": ["BHLHB11", "MLTFI", "UEF"], "gene_aliases": ["T-BET", "TBET", "TBLYM"], "trrust_direction": "Unknown"}]}, "22419072": {"abstract": "", "pairs": [{"tf": "HDAC2", "gene": "CD1D", "ensg": "ENSG00000158473", "in_track": true, "tf_aliases": ["KDAC2", "RPD3", "YAF1"], "gene_aliases": [], "trrust_direction": "Repression"}]}, "22479354": {"abstract": "", "pairs": [{"tf": "STAT1", "gene": "GLS", "ensg": "ENSG00000115419", "in_track": true, "tf_aliases": ["ISGF-3", "ISGF3", "STAT91"], "gene_aliases": ["GAC", "GAM", "GLS1", "KGA", "KIAA0838"], "trrust_direction": "Unknown"}]}, "23000143": {"abstract": "", "pairs": [{"tf": "YY1", "gene": "HCFC1", "ensg": "ENSG00000172534", "in_track": true, "tf_aliases": ["DELTA", "INO80S", "NF-E1", "NFE1", "UCRBP", "YIN-YANG-1", "YINYANG1"], "gene_aliases": ["CFF", "HCF-1", "HCF1", "HFC1", "MGC70925", "MRX3", "PPP1R89", "VCAF"], "trrust_direction": "Unknown"}]}, "23388456": {"abstract": "", "pairs": [{"tf": "HSF1", "gene": "SESN3", "ensg": "ENSG00000149212", "in_track": true, "tf_aliases": ["HSTF1"], "gene_aliases": ["MGC29667", "SEST3"], "trrust_direction": "Unknown"}]}, "23598529": {"abstract": "", "pairs": [{"tf": "REST", "gene": "STAT1", "ensg": "ENSG00000115415", "in_track": true, "tf_aliases": ["DFNA27", "NRSF", "XBR"], "gene_aliases": ["ISGF-3", "ISGF3", "STAT91"], "trrust_direction": "Repression"}]}, "25113559": {"abstract": "", "pairs": [{"tf": "CTCF", "gene": "CELSR3", "ensg": "ENSG00000008300", "in_track": true, "tf_aliases": ["CFAP108", "FAP108"], "gene_aliases": ["ADGRC3", "CDHF11", "EGFL1", "FMI1", "HFMI1", "MEGF2"], "trrust_direction": "Unknown"}]}, "7504695": {"abstract": "", "pairs": [{"tf": "NFIC", "gene": "COL1A1", "ensg": "ENSG00000108821", "in_track": true, "tf_aliases": ["CTF", "CTF5", "NF-I", "NFI"], "gene_aliases": ["OI4"], "trrust_direction": "Unknown"}]}, "7655015": {"abstract": "", "pairs": [{"tf": "MYB", "gene": "MYB", "ensg": "ENSG00000118513", "in_track": true, "tf_aliases": ["C-MYB", "CMYB"], "gene_aliases": ["C-MYB", "CMYB"], "trrust_direction": "Unknown"}]}, "7876096": {"abstract": "", "pairs": [{"tf": "USF1", "gene": "CEACAM5", "ensg": "ENSG00000105388", "in_track": true, "tf_aliases": ["BHLHB11", "MLTFI", "UEF"], "gene_aliases": ["CD66E", "CEA"], "trrust_direction": "Activation"}, {"tf": "USF2", "gene": "CEACAM5", "ensg": "ENSG00000105388", "in_track": true, "tf_aliases": ["BHLHB12", "FIP"], "gene_aliases": ["CD66E", "CEA"], "trrust_direction": "Activation"}]}, "8631128": {"abstract": "", "pairs": [{"tf": "ARNT", "gene": "CYP1A1", "ensg": "ENSG00000140465", "in_track": true, "tf_aliases": ["ARNT1", "BHLHE2", "HIF-1BETA", "HIF1BETA"], "gene_aliases": ["CP11", "CYP1", "P1-450", "P1450", "P450-C", "P450C", "P450DX"], "trrust_direction": "Unknown"}]}, "9611253": {"abstract": "", "pairs": [{"tf": "ARNT", "gene": "CTSD", "ensg": "ENSG00000117984", "in_track": true, "tf_aliases": ["ARNT1", "BHLHE2", "HIF-1BETA", "HIF1BETA"], "gene_aliases": ["CLN10", "CPSD"], "trrust_direction": "Unknown"}]}, "9756895": {"abstract": "", "pairs": [{"tf": "YY1", "gene": "CTCF", "ensg": "ENSG00000102974", "in_track": true, "tf_aliases": ["DELTA", "INO80S", "NF-E1", "NFE1", "UCRBP", "YIN-YANG-1", "YINYANG1"], "gene_aliases": ["CFAP108", "FAP108"], "trrust_direction": "Activation"}]}}};
+
+const LS_KEY = "gs50_review_state";
+const FIELDS = ["direction", "cellline", "assay", "notes"];
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+
+function saveState(state) {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch {}
+}
+
+let state = loadState();
+
+function getReviewed(pmid) {
+  const s = state[pmid] || {};
+  return {
+    direction: s.direction || "",
+    cellline: s.cellline || "",
+    assay: s.assay || "",
+    notes: s.notes || "",
+    reviewed: !!s.reviewed,
+    in_track: s.in_track,
+  };
+}
+
+function saveField(pmid, field, value) {
+  if (!state[pmid]) state[pmid] = {};
+  state[pmid][field] = value;
+  // auto-mark reviewed only when filling in data fields (not when toggling checkbox directly)
+  if (field !== "reviewed") {
+    const s = state[pmid];
+    s.reviewed = !!(s.direction && s.cellline && s.assay);
+  }
+  saveState(state);
+  updateProgress();
+  updateCardStatus(pmid);
+}
+
+function updateCardStatus(pmid) {
+  const s = getReviewed(pmid);
+  const card = document.getElementById("card-" + pmid);
+  if (!card) return;
+  card.classList.toggle("completed", s.reviewed);
+  card.classList.toggle("pending", !s.reviewed);
+}
+
+function updateProgress() {
+  let done = 0;
+  for (const pmid of REVIEW_DATA.pmids) {
+    const s = state[pmid] || {};
+    if (s.reviewed) done++;
+  }
+  document.getElementById("progress").textContent = done + "/" + REVIEW_DATA.pmids.length;
+}
+
+function applyFilter() {
+  const filter = document.getElementById("filter").value;
+  for (const pmid of REVIEW_DATA.pmids) {
+    const card = document.getElementById("card-" + pmid);
+    if (!card) continue;
+    const s = getReviewed(pmid);
+    if (filter === "done") card.classList.toggle("hidden", !s.reviewed);
+    else if (filter === "pending") card.classList.toggle("hidden", s.reviewed);
+    else card.classList.remove("hidden");
+  }
+}
+
+function exportTSV() {
+  const lines = [];
+  for (const pmid of REVIEW_DATA.pmids) {
+    const entry = REVIEW_DATA.entries[pmid];
+    const s = state[pmid] || {};
+    const cellline = s.cellline || "";
+    const assay = s.assay || "";
+    const direction = s.direction || "";
+    for (const pair of entry.pairs) {
+      lines.push([pmid, pair.tf, pair.ensg, direction, cellline, assay].join("\t"));
+    }
+  }
+  const blob = new Blob([lines.join("\n") + "\n"], {type: "text/tab-separated-values"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "gs50_review_export.tsv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importTSV() {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".tsv,.txt";
+  input.onchange = function() { if (this.files[0]) importFromTSV(this.files[0]); };
+  input.click();
+}
+
+function importFromTSV(file) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const lines = e.target.result.split("\n").filter(l => l.trim());
+    const newState = {};
+    for (const line of lines) {
+      const parts = line.split("\t");
+      if (parts.length < 6) continue;
+      const pmid = parts[0].trim();
+      // const tf = parts[1];  // not needed for import
+      // const ensg = parts[2];  // not needed for import
+      const direction = parts[3].trim();
+      const cellline = parts[4].trim();
+      const assay = parts[5].trim();
+      if (!newState[pmid] || !newState[pmid].direction) {
+        newState[pmid] = {direction, cellline, assay, notes: "", reviewed: true};
+      }
+    }
+    state = newState;
+    saveState(state);
+    renderCards();  // re-render to sync inputs
+    updateProgress();
+    alert("Imported " + Object.keys(newState).length + " PMIDs");
+  };
+  reader.readAsText(file);
+}
+
+function renderCards() {
+  const container = document.getElementById("container");
+  container.innerHTML = "";
+
+  for (const pmid of REVIEW_DATA.pmids) {
+    const entry = REVIEW_DATA.entries[pmid];
+    const s = getReviewed(pmid);
+    const card = document.createElement("div");
+    card.className = "card " + (s.reviewed ? "completed" : "pending");
+    card.id = "card-" + pmid;
+
+    let pairsHTML = "";
+    for (const pair of entry.pairs) {
+      const ensg = pair.ensg;
+      const ensgClass = ensg === "NOT_FOUND" ? "missing" : "";
+      const tfWarn = pair.in_track ? "" :
+        '<span class="tf-warn" title="TF not found in human_track">&#9888; not in track</span>';
+      const tfAliases = pair.tf_aliases && pair.tf_aliases.length
+        ? '<div class="aliases">aka: ' + pair.tf_aliases.map(a => '<span>' + a + '</span>').join(' ') + '</div>' : '';
+      const geneAliases = pair.gene_aliases && pair.gene_aliases.length
+        ? '<div class="aliases">aka: ' + pair.gene_aliases.map(a => '<span>' + a + '</span>').join(' ') + '</div>' : '';
+      const trrustDir = pair.trrust_direction
+        ? '<span class="trrust-dir ' + pair.trrust_direction + '">' + pair.trrust_direction + '</span>' : '';
+      pairsHTML +=
+        '<div class="pair-row">' +
+          '<div style="min-width:80px"><span class="tf-name">' + pair.tf + '</span>' + tfWarn + tfAliases + '</div>' +
+          '<span class="arrow">&rarr;</span>' + trrustDir + '<span class="arrow">&rarr;</span>' +
+          '<div style="min-width:80px"><span class="target-name">' + pair.gene + '</span>' +
+          '<span class="ensg ' + ensgClass + '">' + ensg + '</span>' + geneAliases + '</div>' +
+        '</div>';
+    }
+
+    let abstractHTML = "";
+    if (entry.abstract) {
+      const absText = typeof entry.abstract === "string"
+        ? entry.abstract
+        : Object.entries(entry.abstract).map(([k,v]) => "[" + k + "] " + v).join("\n\n");
+      abstractHTML =
+        '<span class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')">Show/Hide Abstract</span>' +
+        '<div class="abstract-box">' + absText.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") + '</div>';
+    }
+
+    card.innerHTML =
+      '<div class="card-header">' +
+        '<span class="pmid">PMID: ' + pmid + '</span>' +
+        '<a href="https://pubmed.ncbi.nlm.nih.gov/' + pmid + '/" target="_blank" rel="noopener">Open PubMed &#8599;</a>' +
+        '<label class="reviewed-label">' +
+          '<input type="checkbox" ' + (s.reviewed ? "checked" : "") +
+          ' onchange="saveField(\'' + pmid + '\', \'reviewed\', this.checked)"> Done' +
+        '</label>' +
+      '</div>' +
+      '<div class="pairs-section">' +
+        '<div class="header">TRRUST reference (' + entry.pairs.length + ' pair' + (entry.pairs.length > 1 ? "s" : "") + ')</div>' +
+        pairsHTML +
+      '</div>' +
+      '<div class="fields">' +
+        '<div class="field">' +
+          '<label>Direction</label>' +
+          '<select value="' + s.direction + '" onchange="saveField(\'' + pmid + '\', \'direction\', this.value)">' +
+            '<option value="" ' + (s.direction === "" ? "selected" : "") + '>-- select --</option>' +
+            '<option value="Activation" ' + (s.direction === "Activation" ? "selected" : "") + '>Activation</option>' +
+            '<option value="Repression" ' + (s.direction === "Repression" ? "selected" : "") + '>Repression</option>' +
+            '<option value="Unknown" ' + (s.direction === "Unknown" ? "selected" : "") + '>Unknown</option>' +
+          '</select>' +
+        '</div>' +
+        '<div class="field">' +
+          '<label>Cell Line</label>' +
+          '<input type="text" value="' + s.cellline.replace(/"/g, "&quot;") + '"' +
+          ' oninput="saveField(\'' + pmid + '\', \'cellline\', this.value)" placeholder="e.g. HeLa, MCF-7, K562">' +
+        '</div>' +
+        '<div class="field">' +
+          '<label>Assay</label>' +
+          '<input type="text" value="' + s.assay.replace(/"/g, "&quot;") + '"' +
+          ' oninput="saveField(\'' + pmid + '\', \'assay\', this.value)" placeholder="e.g. ChIP-seq, luciferase, EMSA">' +
+        '</div>' +
+        '<div class="field">' +
+          '<label>Notes</label>' +
+          '<input type="text" value="' + s.notes.replace(/"/g, "&quot;") + '"' +
+          ' oninput="saveField(\'' + pmid + '\', \'notes\', this.value)" placeholder="Optional notes">' +
+        '</div>' +
+      '</div>' +
+      abstractHTML;
+
+    container.appendChild(card);
+  }
+  updateProgress();
+}
+
+// Keyboard navigation
+let currentIdx = 0;
+document.addEventListener("keydown", function(e) {
+  // don't intercept when typing in inputs
+  if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") return;
+
+  if (e.key === "j" || e.key === "n") {
+    e.preventDefault();
+    currentIdx = Math.min(currentIdx + 1, REVIEW_DATA.pmids.length - 1);
+    document.getElementById("card-" + REVIEW_DATA.pmids[currentIdx])?.scrollIntoView({behavior: "smooth", block: "start"});
+  } else if (e.key === "k" || e.key === "p") {
+    e.preventDefault();
+    currentIdx = Math.max(currentIdx - 1, 0);
+    document.getElementById("card-" + REVIEW_DATA.pmids[currentIdx])?.scrollIntoView({behavior: "smooth", block: "start"});
+  } else if (e.key === "g") {
+    e.preventDefault();
+    currentIdx = 0;
+    window.scrollTo({top: 0, behavior: "smooth"});
+  } else if (e.key === "Enter") {
+    e.preventDefault();
+    window.open("https://pubmed.ncbi.nlm.nih.gov/" + REVIEW_DATA.pmids[currentIdx] + "/", "_blank");
+  }
+});
+
+renderCards();
+</script>
+</body>
+</html>

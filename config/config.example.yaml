@@ -11,8 +11,8 @@ sample_size: 5
 # NCBI Entrez 邮箱 (必填)
 email: "your_email@example.com"
 
-# DashScope 模型名称
-model: "qwq-plus"
+# DeepSeek 模型名称
+model: "deepseek-chat"
 
 # LLM 温度 (0 = 确定性输出)
 temperature: 0
