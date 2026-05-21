@@ -108,7 +108,7 @@ function loadState() {
 function renderSidebar() {
   var list = document.getElementById('sidebarList');
   var html = '';
-  var currentPmid = currentMode === 'review' ? DataStore.getCurrentPmid() : null;
+  var currentPmid = DataStore.getCurrentPmid();
   for (var i = 0; i < DataStore.getTotal(); i++) {
     var pmid = DataStore.pmids[i];
     var cls = getStatusClass(pmid);
@@ -133,11 +133,9 @@ function updateSidebarItem(pmid) {
   var cls = getStatusClass(pmid);
   var dot = item.querySelector('.status-dot');
   if (dot) { dot.className = 'status-dot ' + cls; }
-  if (currentMode === 'review') {
-    var allItems = document.querySelectorAll('.sidebar-item');
-    allItems.forEach(function(el) { el.classList.remove('active'); });
-    if (pmid === DataStore.getCurrentPmid()) item.classList.add('active');
-  }
+  var allItems = document.querySelectorAll('.sidebar-item');
+  allItems.forEach(function(el) { el.classList.remove('active'); });
+  if (pmid === DataStore.getCurrentPmid()) item.classList.add('active');
 }
 
 function filterSidebar() {
@@ -160,25 +158,6 @@ function escapeHTML(s) {
 }
 
 window.filterSidebar = filterSidebar;
-
-// ====== Mode Switching ======
-var currentMode = 'review';
-
-function switchMode(mode) {
-  saveCurrentFromDom();
-  closeSearchModal();
-  currentMode = mode;
-  document.querySelectorAll('.mode-tab').forEach(function(t) {
-    t.classList.toggle('active', t.dataset.mode === mode);
-  });
-  var bottomBar = document.getElementById('bottomBar');
-  if (bottomBar) bottomBar.style.display = (mode === 'review') ? '' : 'none';
-  if (mode === 'review') renderCurrent();
-  else renderAnnoForm();
-  renderSidebar();
-}
-
-window.switchMode = switchMode;
 
 // ====== PMID Card Renderer ======
 function renderAssayChips(containerId, selectedAssays, pairIdx) {
@@ -320,7 +299,7 @@ function attachAssayHandlers() {
 }
 
 function collectAssaySelections(pairIdx) {
-  var pmid = currentMode === 'review' ? DataStore.getCurrentPmid() : null;
+  var pmid = DataStore.getCurrentPmid();
   if (!pmid) return;
   var chips = document.querySelectorAll('.assay-chip[data-pair="' + pairIdx + '"] input[type="checkbox"]:checked');
   var selected = [];
@@ -448,129 +427,6 @@ function closeSearchModal() {
 }
 window.closeSearchModal = closeSearchModal;
 
-// ====== Annotation Form (simplified — no inline search) ======
-var _annoAssaySelected = [];
-
-function renderAnnoForm() {
-  var html = '<div class="card anno-form" style="max-width:680px">' +
-    '<h3 style="margin-bottom:4px">New Annotation</h3>' +
-    '<label><span>PubMed ID</span><input type="text" id="anno_pmid"></label>' +
-    '<label><span>TF (Transcription Factor)</span><input type="text" id="anno_tf"></label>' +
-    '<label><span>Gene (Target)</span><input type="text" id="anno_gene"></label>' +
-    '<label><span>Cell Line</span><input type="text" id="anno_cellline"></label>' +
-    '<label><span>Assay</span><div id="anno_assay_chips"></div></label>' +
-    '<label><span>Complex</span><input type="text" id="anno_complex"></label>' +
-    '<button class="anno-save-btn" onclick="saveAnnotation()">Save</button>' +
-    '<div id="anno_save_msg" style="margin-top:8px;font-size:0.85em"></div>' +
-    '<div class="recent-list" id="recentList"></div>' +
-  '</div>';
-
-  document.getElementById('mainContent').innerHTML = html;
-  renderAnnoAssayChips([]);
-  attachAnnoAssayHandlers();
-  loadRecentAnnotations();
-}
-
-function renderAnnoAssayChips(selected) {
-  var html = '<div class="assay-chips-wrap">';
-  for (var i = 0; i < ASSAY_CATEGORIES.length; i++) {
-    var cat = ASSAY_CATEGORIES[i];
-    var opts = GROUPED_ASSAYS[cat];
-    html += '<div class="assay-cat">' + escapeHTML(cat) + '</div>';
-    for (var j = 0; j < opts.length; j++) {
-      var o = opts[j];
-      var checked = selected.indexOf(o.tag) >= 0;
-      html += '<label class="assay-chip' + (checked ? ' checked' : '') + '" data-tag="' + escapeHTML(o.tag) + '" title="' + escapeHTML(o.en) + '">';
-      html += '<input type="checkbox" value="' + escapeHTML(o.tag) + '" ' + (checked ? 'checked' : '') + '> ' + escapeHTML(o.cn);
-      html += '</label>';
-    }
-  }
-  html += '</div>';
-  var container = document.getElementById('anno_assay_chips');
-  if (container) container.innerHTML = html;
-}
-
-function attachAnnoAssayHandlers() {
-  var chips = document.querySelectorAll('#anno_assay_chips .assay-chip');
-  chips.forEach(function(ch) {
-    var inp = ch.querySelector('input[type="checkbox"]');
-    if (!inp) return;
-    ch.addEventListener('click', function(ev) {
-      if (ev.target.tagName.toLowerCase() === 'input') return;
-      inp.checked = !inp.checked;
-      inp.dispatchEvent(new Event('change'));
-    });
-    inp.addEventListener('change', function() {
-      ch.classList.toggle('checked', inp.checked);
-      _annoAssaySelected = [];
-      var checked = document.querySelectorAll('#anno_assay_chips input[type="checkbox"]:checked');
-      checked.forEach(function(cb) { _annoAssaySelected.push(cb.value); });
-    });
-  });
-}
-
-async function saveAnnotation() {
-  var payload = {
-    pubmed_id: document.getElementById('anno_pmid').value.trim(),
-    tf_input: document.getElementById('anno_tf').value.trim(),
-    tf_standard: document.getElementById('anno_tf').value.trim(),
-    tf_uniprot: '',
-    gene_input: document.getElementById('anno_gene').value.trim(),
-    gene_ensg: '',
-    cellline: document.getElementById('anno_cellline').value.trim(),
-    assay: _annoAssaySelected,
-    complex: document.getElementById('anno_complex').value.trim()
-  };
-  try {
-    var r = await fetch('/api/save_annotation', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    var j = await r.json();
-    var msg = document.getElementById('anno_save_msg');
-    if (j.ok) {
-      msg.innerHTML = '<span style="color:#34a853">Saved (id=' + j.id + ')</span>';
-      loadRecentAnnotations();
-    } else {
-      msg.innerHTML = '<span style="color:#c62828">Error: ' + escapeHTML(j.error||'') + '</span>';
-    }
-  } catch(e) {
-    document.getElementById('anno_save_msg').innerHTML = '<span style="color:#c62828">Save failed.</span>';
-  }
-}
-window.saveAnnotation = saveAnnotation;
-
-async function deleteAnnotation(id) {
-  if (!confirm('Delete annotation #' + id + '?')) return;
-  try {
-    var r = await fetch('/api/delete_annotation/' + id, { method: 'DELETE' });
-    var j = await r.json();
-    if (j.ok) {
-      var el = document.getElementById('recent_' + id);
-      if (el) el.style.display = 'none';
-    }
-  } catch(e) {}
-}
-window.deleteAnnotation = deleteAnnotation;
-
-async function loadRecentAnnotations() {
-  try {
-    var r = await fetch('/api/annotations');
-    var data = await r.json();
-    var list = document.getElementById('recentList');
-    if (!list) return;
-    var html = '<h4>Recent Annotations (' + (Array.isArray(data) ? data.length : 0) + ')</h4>';
-    if (Array.isArray(data)) {
-      data.slice(0, 20).forEach(function(item) {
-        var assayText = Array.isArray(item.assay) ? item.assay.join(', ') : item.assay;
-        html += '<div class="recent-item" id="recent_' + item.id + '"><strong>' + escapeHTML(item.pubmed_id||'') + '</strong> TF:' + escapeHTML(item.tf_input||'') + ' Gene:' + escapeHTML(item.gene_input||'') + ' assay:' + escapeHTML(assayText||'') + ' <button onclick="deleteAnnotation(' + item.id + ')" style="color:#c62828;border:1px solid #ef9a9a;background:#fff;cursor:pointer;font-size:0.78em;padding:2px 8px;border-radius:3px;margin-left:8px">Del</button></div>';
-      });
-    }
-    list.innerHTML = html;
-  } catch(e) {}
-}
-
 // ====== Progress ======
 function updateProgress() {
   var done = 0;
@@ -583,7 +439,6 @@ function updateProgress() {
 // ====== Pagination ======
 function navigate(delta) {
   closeSearchModal();
-  if (currentMode !== 'review') return;
   var newIdx = DataStore.currentIdx + delta;
   if (newIdx < 0) newIdx = 0;
   if (newIdx >= DataStore.getTotal()) newIdx = DataStore.getTotal() - 1;
@@ -600,7 +455,6 @@ window.navigate = navigate;
 
 function navigateToPmid(pmid) {
   closeSearchModal();
-  if (currentMode !== 'review') switchMode('review');
   saveCurrentFromDom();
   var oldPmid = DataStore.getCurrentPmid();
   DataStore.setPmid(pmid);
@@ -626,7 +480,6 @@ function jumpTo() {
     saveCurrentFromDom();
     var oldPmid = DataStore.getCurrentPmid();
     DataStore.currentIdx = idx;
-    if (currentMode !== 'review') switchMode('review');
     renderCurrent();
     updateSidebarItem(oldPmid);
     document.getElementById('mainArea').scrollTo({ top: 0, behavior: 'smooth' });
@@ -635,7 +488,6 @@ function jumpTo() {
 window.jumpTo = jumpTo;
 
 function saveCurrentFromDom() {
-  if (currentMode !== 'review') return;
   var pmid = DataStore.getCurrentPmid();
   var e = getEntry(pmid);
   for (var i = 0; i < e.p.length; i++) {
@@ -654,7 +506,7 @@ function updateUrl() {
 
 // ====== Export ======
 function exportTSV() {
-  if (currentMode === 'review') { saveCurrentFromDom(); saveState(DataStore.getCurrentPmid()); }
+  saveCurrentFromDom(); saveState(DataStore.getCurrentPmid());
   setTimeout(function() { window.open('/api/gs_review/export/tsv', '_blank'); }, 300);
 }
 window.exportTSV = exportTSV;
@@ -663,7 +515,6 @@ window.exportTSV = exportTSV;
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
   if (e.key === 'Escape') { closeSearchModal(); return; }
-  if (currentMode !== 'review') return;
   if (e.key === 'j' || e.key === 'n') { e.preventDefault(); navigate(1); }
   else if (e.key === 'k' || e.key === 'p') { e.preventDefault(); navigate(-1); }
   else if (e.key === 'g') { e.preventDefault(); navigateToPmid(DataStore.pmids[0]); }
@@ -672,7 +523,7 @@ document.addEventListener('keydown', function(e) {
 
 // ====== Popstate ======
 window.addEventListener('popstate', function(e) {
-  if (e.state && e.state.pmid) { DataStore.setPmid(e.state.pmid); if (currentMode !== 'review') switchMode('review'); renderCurrent(); }
+  if (e.state && e.state.pmid) { DataStore.setPmid(e.state.pmid); renderCurrent(); }
 });
 
 // ====== Init ======

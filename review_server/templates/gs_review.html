@@ -22,7 +22,6 @@
   .toolbar button:hover { background: #e9e9e9; }
   .toolbar button.primary { background: #1a73e8; color: #fff; border-color: #1a73e8; }
   .toolbar button.primary:hover { background: #1557b0; }
-  .mode-tab.active { background: #1a73e8; color: #fff; border-color: #1a73e8; }
   .progress { font-size: 0.85em; color: #666; min-width: 55px; text-align: center; }
   .jump-input { width: 90px; padding: 5px 6px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.85em; }
   .spacer { flex: 0 0 8px; }
@@ -197,25 +196,6 @@
   }
   .search-candidate button:hover { background: #1557b0; }
 
-  /* --- annotation form --- */
-  .anno-form label { display: block; margin-top: 10px; font-size: 0.85em; color: #555; }
-  .anno-form label span { font-weight: 600; }
-  .anno-form input[type="text"] {
-    width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 5px;
-    font-size: 0.9em; margin-top: 3px;
-  }
-  .anno-form input:focus { outline: none; border-color: #1a73e8; }
-  .anno-form .search-row { margin-top: 3px; }
-  .anno-form .search-row input { margin-top: 0; }
-  .anno-save-btn {
-    margin-top: 14px; padding: 8px 24px; background: #1a73e8; color: #fff;
-    border: none; border-radius: 6px; cursor: pointer; font-size: 0.95em;
-  }
-  .anno-save-btn:hover { background: #1557b0; }
-  .recent-list { margin-top: 18px; }
-  .recent-list h4 { font-size: 0.9em; color: #666; margin-bottom: 6px; }
-  .recent-item { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.82em; }
-
   /* --- bottom bar --- */
   .bottom-bar {
     margin-top: 16px; display: flex; gap: 10px; align-items: center; justify-content: center;
@@ -232,8 +212,6 @@
 <!-- top toolbar -->
 <div class="toolbar">
   <span class="title">GS 50 Gold Standard Review</span>
-  <button class="mode-tab active" data-mode="review" onclick="switchMode('review')">GS Review</button>
-  <button class="mode-tab" data-mode="anno" onclick="switchMode('anno')">New Annotation</button>
   <button onclick="openSearchTool()" title="独立搜索工具">Search Tool</button>
   <a class="nav-link" href="/api/export_csv">导出 CSV</a>
   <span class="spacer"></span>
