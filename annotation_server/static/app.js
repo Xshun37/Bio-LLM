@@ -86,9 +86,16 @@ async function loadList(){
   j.forEach(item=>{
     const d = document.createElement('div');
     const assayText = Array.isArray(item.assay) ? item.assay.join(',') : item.assay;
-    d.innerHTML = `<div><strong>${item.pubmed_id}</strong> TF:${item.tf_input}/${item.tf_standard} ENSG:${item.gene_ensg} assay:${assayText} cell:${item.cellline}</div>`;
+    d.innerHTML = `<div><strong>${item.pubmed_id}</strong> TF:${item.tf_input}/${item.tf_standard} ENSG:${item.gene_ensg} assay:${assayText} cell:${item.cellline} <button onclick="deleteAnno(${item.id},this)" style="color:#c62828;border:1px solid #ef9a9a;background:#fff;cursor:pointer;font-size:0.78em;padding:2px 8px;border-radius:3px;margin-left:8px">Del</button></div>`;
     wrap.appendChild(d);
   });
+}
+
+async function deleteAnno(id, btn){
+  if(!confirm('Delete annotation #'+id+'?')) return;
+  const r = await fetch('/api/delete_annotation/'+id, {method:'DELETE'});
+  const j = await r.json();
+  if(j.ok) btn.closest('div').style.display='none';
 }
 
 window.onload = ()=>{ loadList(); };

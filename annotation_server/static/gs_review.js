@@ -600,6 +600,20 @@ async function saveAnnotation() {
 
 window.saveAnnotation = saveAnnotation;
 
+async function deleteAnnotation(id) {
+  if (!confirm('Delete annotation #' + id + '?')) return;
+  try {
+    var r = await fetch('/api/delete_annotation/' + id, { method: 'DELETE' });
+    var j = await r.json();
+    if (j.ok) {
+      var el = document.getElementById('recent_' + id);
+      if (el) el.style.display = 'none';
+    }
+  } catch(e) {}
+}
+
+window.deleteAnnotation = deleteAnnotation;
+
 async function loadRecentAnnotations() {
   try {
     var r = await fetch('/api/annotations');
@@ -610,7 +624,7 @@ async function loadRecentAnnotations() {
     if (Array.isArray(data)) {
       data.slice(0, 20).forEach(function(item) {
         var assayText = Array.isArray(item.assay) ? item.assay.join(', ') : item.assay;
-        html += '<div class="recent-item"><strong>' + escapeHTML(item.pubmed_id||'') + '</strong> TF:' + escapeHTML(item.tf_input||'') + '/' + escapeHTML(item.tf_standard||'') + ' ENSG:' + escapeHTML(item.gene_ensg||'') + ' assay:' + escapeHTML(assayText||'') + '</div>';
+        html += '<div class="recent-item" id="recent_' + item.id + '"><strong>' + escapeHTML(item.pubmed_id||'') + '</strong> TF:' + escapeHTML(item.tf_input||'') + '/' + escapeHTML(item.tf_standard||'') + ' ENSG:' + escapeHTML(item.gene_ensg||'') + ' assay:' + escapeHTML(assayText||'') + ' <button onclick="deleteAnnotation(' + item.id + ')" style="color:#c62828;border:1px solid #ef9a9a;background:#fff;cursor:pointer;font-size:0.78em;padding:2px 8px;border-radius:3px;margin-left:8px">Delete</button></div>';
       });
     }
     list.innerHTML = html;

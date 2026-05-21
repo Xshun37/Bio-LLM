@@ -467,6 +467,16 @@ def create_app():
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
+    @app.route('/api/delete_annotation/<int:anno_id>', methods=['DELETE'])
+    def delete_annotation(anno_id):
+        try:
+            cur = conn.cursor()
+            cur.execute('DELETE FROM annotations WHERE id = ?', (anno_id,))
+            conn.commit()
+            return jsonify({'ok': True})
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
     @app.route('/api/annotations')
     def list_annotations():
         try:
