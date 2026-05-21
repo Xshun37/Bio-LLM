@@ -96,10 +96,16 @@ def main():
     print("\t".join(header))
 
     with open(input_path, encoding="utf-8") as f:
+        first = True
         for line in f:
             line = line.strip()
             if not line:
                 continue
+            if first:
+                first = False
+                # skip header if present
+                if line.startswith("PMID") or line.startswith("pmid"):
+                    continue
             parts = line.split("\t")
             if len(parts) < 5:
                 continue
@@ -107,21 +113,34 @@ def main():
             pmid = parts[0].strip()
             tf_raw = parts[1].strip()
             col2 = parts[2].strip()
-            cellline = parts[3].strip() if len(parts) >= 4 else ""
-            assay = parts[4].strip() if len(parts) >= 5 else ""
-            complex_note = parts[5].strip() if len(parts) >= 6 else ""
 
-            # Detect format: old (ENSG in col2) or new (target name in col2)
-            if col2.startswith("ENSG"):
+            # Detect format: new (7 cols: PMID,TF,Target,Direction,CellLine,Assay,Complex)
+            #                old (6 cols: PMID,TF,ENSG,CellLine,Assay,complex)
+            if len(parts) >= 7:
+                # New format: col2 = Target name, col3 = Direction
+                target_raw = col2
+                direction = parts[3].strip()
+                cellline = parts[4].strip()
+                assay = parts[5].strip()
+                complex_note = parts[6].strip() if len(parts) >= 7 else ""
+            elif col2.startswith("ENSG"):
+                # Old format: col2 is ENSG
                 target_raw = ensg_to_symbol.get(col2, "")
                 target_ensg = col2
+                cellline = parts[3].strip() if len(parts) >= 4 else ""
+                assay = parts[4].strip() if len(parts) >= 5 else ""
+                complex_note = parts[5].strip() if len(parts) >= 6 else ""
             else:
+                # Old format with target name in col2
                 target_raw = col2
+                cellline = parts[3].strip() if len(parts) >= 4 else ""
+                assay = parts[4].strip() if len(parts) >= 5 else ""
+                complex_note = parts[5].strip() if len(parts) >= 6 else ""
 
             tf_norm = normalize(tf_raw, override_map, alias_map, ensg_map)
             target_norm = normalize(target_raw, override_map, alias_map, ensg_map)
 
-            if target_norm and (not col2.startswith("ENSG")):
+            if target_norm and not (col2.startswith("ENSG") and len(parts) < 7):
                 target_ensg = ensg_map.get(target_norm.upper(), "NOT_FOUND")
             elif not target_norm:
                 target_ensg = "NOT_FOUND"

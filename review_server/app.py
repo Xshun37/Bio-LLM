@@ -454,8 +454,8 @@ def create_app():
                         assay_str = str(assay) if assay else ''
                     lines.append('\t'.join([
                         pmid,
-                        pair.get('tf_input', '') or pair.get('f', ''),
-                        pair.get('gene_ensg', '') or '',
+                        pair.get('tf', '') or pair.get('tf_input', '') or pair.get('f', ''),
+                        pair.get('gene', '') or pair.get('gene_input', '') or pair.get('t', ''),
                         pair.get('direction', '') or pair.get('d', ''),
                         pair.get('cellline', '') or pair.get('c', ''),
                         assay_str,
@@ -463,7 +463,7 @@ def create_app():
                     ]))
             import io
             output = io.StringIO()
-            output.write('PMID\tTF\tENSG\tDirection\tCellLine\tAssay\tComplex\n')
+            output.write('PMID\tTF\tTarget\tDirection\tCellLine\tAssay\tComplex\n')
             output.write('\n'.join(lines) + '\n')
             return app.response_class(output.getvalue(), mimetype='text/tab-separated-values',
                                       headers={'Content-Disposition': 'attachment;filename=gs_review_export.tsv'})
