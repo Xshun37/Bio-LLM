@@ -1,0 +1,4 @@
+Flask>=2.0
+requests>=2.25
+python-dotenv>=0.19
+openai>=0.27
