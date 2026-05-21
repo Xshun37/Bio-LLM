@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GS 50 Gold Standard Review</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #333; }
+
+  /* --- toolbar --- */
+  .toolbar {
+    position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #ddd;
+    padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .toolbar .title { font-size: 1.1em; font-weight: 600; margin-right: 4px; }
+  .toolbar .nav-link { font-size: 0.85em; color: #1a73e8; text-decoration: none; margin-left: 8px; }
+  .toolbar button, .toolbar select {
+    padding: 5px 12px; border: 1px solid #ccc; border-radius: 5px; background: #fff;
+    cursor: pointer; font-size: 0.85em;
+  }
+  .toolbar button:hover { background: #e9e9e9; }
+  .toolbar button.primary { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+  .toolbar button.primary:hover { background: #1557b0; }
+  .progress { font-size: 0.85em; color: #666; min-width: 60px; text-align: center; }
+  .jump-input { width: 100px; padding: 5px 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.85em; }
+
+  /* --- main --- */
+  .container { max-width: 1100px; margin: 0 auto; padding: 16px 20px 40px; }
+  .card {
+    background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 20px 24px; transition: box-shadow 0.2s;
+  }
+  .card.completed { border-left: 4px solid #34a853; }
+  .card.pending { border-left: 4px solid #ea4335; }
+
+  /* --- card header --- */
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .card-header .pmid { font-weight: 700; font-size: 1.05em; }
+  .card-header a { color: #1a73e8; text-decoration: none; font-size: 0.9em; }
+  .card-header a:hover { text-decoration: underline; }
+  .card-header .toggle-link { font-size: 0.85em; color: #1a73e8; cursor: pointer; user-select: none; }
+  .card-header .toggle-link:hover { text-decoration: underline; }
+  .reviewed-label { margin-left: auto; display: flex; align-items: center; gap: 6px;
+    font-size: 0.85em; color: #666; cursor: pointer; user-select: none; }
+
+  /* --- ref box --- */
+  .ref-box {
+    margin-top: 6px; padding: 10px 14px; background: #fffde7; border: 1px solid #ffe082;
+    border-radius: 6px; font-size: 0.85em; display: none;
+  }
+  .ref-box.open { display: block; }
+  .ref-box .ref-header { font-weight: 600; color: #888; margin-bottom: 6px; }
+  .ref-box .ref-pair { display: inline-block; margin-right: 16px; margin-bottom: 4px; }
+  .ref-box .ref-tf { font-weight: 600; color: #1a73e8; }
+  .ref-box .ref-arrow { color: #999; margin: 0 4px; }
+  .ref-box .ref-dir { font-size: 0.85em; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+  .ref-box .ref-dir.Activation { background: #e8f5e9; color: #2e7d32; }
+  .ref-box .ref-dir.Repression { background: #fce4ec; color: #c62828; }
+  .ref-box .ref-dir.Unknown, .ref-box .ref-dir:empty { background: #fff3e0; color: #e65100; }
+  .ref-box .aliases { font-size: 0.78em; color: #999; margin-top: 1px; }
+  .ref-box .aliases span { font-family: monospace; background: #eee; padding: 1px 4px; border-radius: 2px; margin-right: 2px; }
+
+  /* --- abstract --- */
+  .abstract-box {
+    margin-top: 6px; max-height: 220px; overflow-y: auto; padding: 12px;
+    background: #fafafa; border: 1px solid #e0e0e0; border-radius: 6px;
+    font-size: 0.85em; line-height: 1.5; white-space: pre-wrap; display: none;
+  }
+  .abstract-box.open { display: block; }
+
+  /* --- pairs table --- */
+  .pairs-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  .pairs-table th {
+    text-align: left; font-size: 0.8em; color: #888; padding: 4px 6px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  .pairs-table td { padding: 6px; vertical-align: top; }
+  .pairs-table input, .pairs-table select {
+    width: 100%; padding: 6px 7px; border: 1px solid #ddd; border-radius: 5px;
+    font-size: 0.88em;
+  }
+  .pairs-table input:focus, .pairs-table select:focus { outline: none; border-color: #1a73e8; }
+  .pairs-table .col-tf { width: 11%; }
+  .pairs-table .col-gene { width: 11%; }
+  .pairs-table .col-dir { width: 11%; }
+  .pairs-table .col-cellline { width: 13%; }
+  .pairs-table .col-assay { width: 28%; }
+  .pairs-table .col-complex { width: 16%; }
+  .pairs-table .col-del { width: 5%; }
+
+  /* --- search dropdown within pair row --- */
+  .search-row { display: flex; gap: 4px; }
+  .search-row input { flex: 1; }
+  .search-row button { padding: 4px 8px; font-size: 0.78em; white-space: nowrap; }
+  .candidates { margin-top: 4px; max-height: 180px; overflow-y: auto; }
+  .candidate {
+    border: 1px solid #ddd; padding: 6px 8px; margin: 3px 0; border-radius: 5px;
+    font-size: 0.8em; display: flex; align-items: center; justify-content: space-between;
+  }
+  .candidate .meta { color: #666; font-size: 0.9em; }
+  .candidate button { margin-left: 8px; font-size: 0.9em; }
+  .candidate.selected { background: #e8f4ff; border-color: #2b8cff; }
+  .candidate.hidden { display: none; }
+
+  /* --- assay chips --- */
+  .assay-chips-wrap { max-height: 200px; overflow-y: auto; }
+  .assay-chips-wrap .assay-cat { font-size: 0.8em; font-weight: 600; color: #888; margin-top: 4px; }
+  .assay-chip {
+    display: inline-flex; align-items: center; padding: 3px 7px; border: 1px solid #ddd;
+    border-radius: 12px; margin: 2px; cursor: pointer; user-select: none;
+    background: #fafafa; font-size: 0.78em;
+  }
+  .assay-chip input { margin-right: 4px; width: auto; }
+  .assay-chip.checked { background: #2b8cff; color: #fff; border-color: #2b8cff; }
+
+  /* --- buttons --- */
+  .btn-del {
+    background: none; border: 1px solid #e0e0e0; color: #999; border-radius: 5px;
+    padding: 5px 10px; cursor: pointer; font-size: 0.85em;
+  }
+  .btn-del:hover { background: #fce4ec; color: #c62828; border-color: #ef9a9a; }
+  .btn-add {
+    margin-top: 8px; padding: 6px 16px; border: 1px dashed #ccc; border-radius: 6px;
+    background: #fafafa; color: #666; cursor: pointer; font-size: 0.9em;
+  }
+  .btn-add:hover { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+  .empty-hint { margin-top: 8px; font-size: 0.85em; color: #bbb; }
+
+  /* --- notes --- */
+  .notes-row { margin-top: 14px; }
+  .notes-row label { display: block; font-size: 0.85em; color: #666; margin-bottom: 4px; }
+  .notes-row textarea {
+    width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px;
+    font-size: 0.9em; resize: vertical; min-height: 40px;
+  }
+  .notes-row textarea:focus { outline: none; border-color: #1a73e8; }
+
+  /* --- bottom bar --- */
+  .bottom-bar {
+    margin-top: 16px; display: flex; gap: 10px; align-items: center; justify-content: center;
+    padding: 10px; color: #888; font-size: 0.8em;
+  }
+  .bottom-bar kbd {
+    background: #eee; border: 1px solid #ccc; border-radius: 3px;
+    padding: 1px 5px; font-family: monospace; font-size: 0.95em;
+  }
+</style>
+</head>
+<body>
+
+<!-- top toolbar -->
+<div class="toolbar">
+  <span class="title">GS 50 Gold Standard Review</span>
+  <a class="nav-link" href="/">标注表单</a>
+  <a class="nav-link" href="/ai">AI 审核</a>
+  <span class="progress" id="progress">0/50</span>
+  <button onclick="navigate(-1)" title="上一个 (k/p)">&larr; 上一个</button>
+  <button onclick="navigate(1)" title="下一个 (j/n)">下一个 &rarr;</button>
+  <input class="jump-input" id="jumpPmid" placeholder="PMID 跳转" onkeydown="if(event.key==='Enter')jumpTo()" />
+  <button onclick="jumpTo()">跳转</button>
+  <button class="primary" onclick="exportTSV()">导出 TSV</button>
+</div>
+
+<div class="container" id="mainContent"></div>
+
+<!-- bottom bar -->
+<div class="bottom-bar">
+  <span>快捷键: <kbd>j</kbd>/<kbd>n</kbd> 下一个 &nbsp; <kbd>k</kbd>/<kbd>p</kbd> 上一个 &nbsp; <kbd>Enter</kbd> 打开 PubMed &nbsp; <kbd>g</kbd> 回到第一个</span>
+</div>
+
+<script>
+const GS_DATA = {{ gs_data | tojson }};
+const ASSAY_OPTIONS = {{ assay_options | tojson }};
+const GROUPED_ASSAYS = {{ grouped_assays | tojson }};
+const ASSAY_CATEGORIES = {{ assay_categories | tojson }};
+</script>
+<script src="/static/gs_review.js"></script>
+</body>
+</html>

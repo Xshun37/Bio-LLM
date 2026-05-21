@@ -140,6 +140,19 @@ def create_app():
 
     ensure_columns()
 
+    # --- gs_review table ---
+    cur.execute('''
+    CREATE TABLE IF NOT EXISTS gs_review_entries (
+        pubmed_id TEXT PRIMARY KEY,
+        state_json TEXT NOT NULL DEFAULT '{}',
+        updated_at TEXT DEFAULT (datetime('now'))
+    )
+    ''')
+    conn.commit()
+
+    # Load GS_50 reference data once at startup
+    gs_data = _load_gs_review_data()
+
     # Assay options (predefined) - tag, english description, chinese name
     ASSAY_OPTIONS = [
         {'tag':'Luciferase','en':'Luciferase Reporter Assay (incl. Dual-Luciferase)','cn':'荧光素酶报告基因检测','category':'Expression/Reporter'},
@@ -478,6 +491,106 @@ def create_app():
                     'created_at': r['created_at']
                 })
             return jsonify(items)
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    # ---- gs_review routes ----
+
+    @app.route('/gs_review')
+    def gs_review_page():
+        return render_template('gs_review.html',
+                              gs_data=gs_data,
+                              assay_options=ASSAY_OPTIONS,
+                              grouped_assays=grouped_assays,
+                              assay_categories=order)
+
+    @app.route('/api/gs_review/save', methods=['POST'])
+    def gs_review_save():
+        data = request.json or {}
+        pmid = data.get('pubmed_id', '').strip()
+        state = data.get('state')
+        if not pmid:
+            return jsonify({'error': 'missing pubmed_id'}), 400
+        try:
+            cur = conn.cursor()
+            cur.execute('''
+                INSERT OR REPLACE INTO gs_review_entries (pubmed_id, state_json, updated_at)
+                VALUES (?, ?, datetime('now'))
+            ''', (pmid, json.dumps(state, ensure_ascii=False)))
+            conn.commit()
+            return jsonify({'ok': True})
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    @app.route('/api/gs_review/load')
+    def gs_review_load():
+        try:
+            cur = conn.cursor()
+            cur.execute('SELECT pubmed_id, state_json, updated_at FROM gs_review_entries')
+            rows = cur.fetchall()
+            states = {}
+            for r in rows:
+                try:
+                    states[r['pubmed_id']] = json.loads(r['state_json'])
+                except Exception:
+                    states[r['pubmed_id']] = {}
+            return jsonify({'states': states, 'total': len(gs_data['pmids'])})
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    @app.route('/api/gs_review/progress')
+    def gs_review_progress():
+        try:
+            cur = conn.cursor()
+            cur.execute("SELECT pubmed_id, state_json FROM gs_review_entries")
+            rows = cur.fetchall()
+            done = 0
+            for r in rows:
+                try:
+                    s = json.loads(r['state_json'])
+                    if s.get('r'):
+                        done += 1
+                except Exception:
+                    pass
+            return jsonify({'total': len(gs_data['pmids']), 'done': done})
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    @app.route('/api/gs_review/export/tsv')
+    def gs_review_export_tsv():
+        try:
+            cur = conn.cursor()
+            cur.execute('SELECT pubmed_id, state_json FROM gs_review_entries')
+            rows = cur.fetchall()
+            lines = []
+            for r in rows:
+                pmid = r['pubmed_id']
+                try:
+                    s = json.loads(r['state_json'])
+                except Exception:
+                    s = {}
+                pairs = s.get('p', [])
+                for pair in pairs:
+                    assay = pair.get('assay', [])
+                    if isinstance(assay, list):
+                        assay_str = ';'.join(assay)
+                    else:
+                        assay_str = str(assay) if assay else ''
+                    lines.append('\t'.join([
+                        pmid,
+                        pair.get('tf_input', '') or pair.get('f', ''),
+                        pair.get('gene_ensg', '') or '',
+                        pair.get('direction', '') or pair.get('d', ''),
+                        pair.get('cellline', '') or pair.get('c', ''),
+                        assay_str,
+                        pair.get('complex', '') or '',
+                    ]))
+            import io
+            output = io.StringIO()
+            output.write('PMID\tTF\tENSG\tDirection\tCellLine\tAssay\tComplex\n')
+            output.write('\n'.join(lines) + '\n')
+            return app.response_class(output.getvalue(), mimetype='text/tab-separated-values',
+                                      headers={'Content-Disposition': 'attachment;filename=gs_review_export.tsv'})
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
