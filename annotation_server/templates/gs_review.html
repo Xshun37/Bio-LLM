@@ -11,25 +11,57 @@
   /* --- toolbar --- */
   .toolbar {
     position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #ddd;
-    padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
   }
-  .toolbar .title { font-size: 1.1em; font-weight: 600; margin-right: 4px; }
-  .toolbar .nav-link { font-size: 0.85em; color: #1a73e8; text-decoration: none; margin-left: 8px; }
-  .toolbar button, .toolbar select {
+  .toolbar .title { font-size: 1.05em; font-weight: 600; margin-right: 8px; }
+  .toolbar .nav-link { font-size: 0.82em; color: #1a73e8; text-decoration: none; margin-left: 4px; }
+  .toolbar button, .toolbar .mode-tab {
     padding: 5px 12px; border: 1px solid #ccc; border-radius: 5px; background: #fff;
     cursor: pointer; font-size: 0.85em;
   }
   .toolbar button:hover { background: #e9e9e9; }
   .toolbar button.primary { background: #1a73e8; color: #fff; border-color: #1a73e8; }
   .toolbar button.primary:hover { background: #1557b0; }
-  .progress { font-size: 0.85em; color: #666; min-width: 60px; text-align: center; }
-  .jump-input { width: 100px; padding: 5px 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.85em; }
+  .mode-tab.active { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+  .progress { font-size: 0.85em; color: #666; min-width: 55px; text-align: center; }
+  .jump-input { width: 90px; padding: 5px 6px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.85em; }
+  .spacer { flex: 0 0 8px; }
 
-  /* --- main --- */
-  .container { max-width: 1100px; margin: 0 auto; padding: 16px 20px 40px; }
+  /* --- page layout: sidebar + main --- */
+  .page-layout { display: flex; height: calc(100vh - 48px); }
+  .sidebar {
+    width: 270px; min-width: 270px; background: #fff; border-right: 1px solid #ddd;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .sidebar-header {
+    padding: 10px 14px; font-weight: 600; font-size: 0.9em; border-bottom: 1px solid #eee;
+    display: flex; justify-content: space-between;
+  }
+  .sidebar-search { margin: 8px 10px; padding: 6px 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.82em; }
+  .sidebar-list { flex: 1; overflow-y: auto; }
+  .sidebar-item {
+    display: flex; align-items: center; gap: 8px; padding: 8px 14px; cursor: pointer;
+    border-bottom: 1px solid #f0f0f0; font-size: 0.82em; transition: background 0.1s;
+  }
+  .sidebar-item:hover { background: #f0f4ff; }
+  .sidebar-item.active { background: #e8f0ff; }
+  .sidebar-item .status-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .sidebar-item .status-dot.done { background: #34a853; }
+  .sidebar-item .status-dot.in-progress { background: #fbbc04; }
+  .sidebar-item .status-dot.untouched { background: #ddd; }
+  .sidebar-item .item-text { flex: 1; min-width: 0; }
+  .sidebar-item .item-pmid { font-weight: 600; }
+  .sidebar-item .item-preview { color: #999; font-size: 0.85em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .main-area { flex: 1; overflow-y: auto; }
+  .main-content { max-width: 1000px; margin: 0 auto; padding: 14px 20px 30px; }
+
   .card {
     background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    padding: 20px 24px; transition: box-shadow 0.2s;
+    padding: 20px 24px;
   }
   .card.completed { border-left: 4px solid #34a853; }
   .card.pending { border-left: 4px solid #ea4335; }
@@ -69,39 +101,29 @@
   }
   .abstract-box.open { display: block; }
 
-  /* --- pairs table --- */
+  /* --- pairs table (wider now) --- */
   .pairs-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
   .pairs-table th {
     text-align: left; font-size: 0.8em; color: #888; padding: 4px 6px;
     border-bottom: 2px solid #e0e0e0;
   }
-  .pairs-table td { padding: 6px; vertical-align: top; }
+  .pairs-table td { padding: 7px 6px; vertical-align: top; }
   .pairs-table input, .pairs-table select {
     width: 100%; padding: 6px 7px; border: 1px solid #ddd; border-radius: 5px;
     font-size: 0.88em;
   }
   .pairs-table input:focus, .pairs-table select:focus { outline: none; border-color: #1a73e8; }
-  .pairs-table .col-tf { width: 11%; }
-  .pairs-table .col-gene { width: 11%; }
+  .pairs-table .col-tf { width: 14%; }
+  .pairs-table .col-gene { width: 14%; }
   .pairs-table .col-dir { width: 11%; }
-  .pairs-table .col-cellline { width: 13%; }
-  .pairs-table .col-assay { width: 28%; }
-  .pairs-table .col-complex { width: 16%; }
-  .pairs-table .col-del { width: 5%; }
+  .pairs-table .col-cellline { width: 14%; }
+  .pairs-table .col-assay { width: 25%; }
+  .pairs-table .col-complex { width: 14%; }
+  .pairs-table .col-del { width: 4%; }
 
-  /* --- search dropdown within pair row --- */
   .search-row { display: flex; gap: 4px; }
   .search-row input { flex: 1; }
   .search-row button { padding: 4px 8px; font-size: 0.78em; white-space: nowrap; }
-  .candidates { margin-top: 4px; max-height: 180px; overflow-y: auto; }
-  .candidate {
-    border: 1px solid #ddd; padding: 6px 8px; margin: 3px 0; border-radius: 5px;
-    font-size: 0.8em; display: flex; align-items: center; justify-content: space-between;
-  }
-  .candidate .meta { color: #666; font-size: 0.9em; }
-  .candidate button { margin-left: 8px; font-size: 0.9em; }
-  .candidate.selected { background: #e8f4ff; border-color: #2b8cff; }
-  .candidate.hidden { display: none; }
 
   /* --- assay chips --- */
   .assay-chips-wrap { max-height: 200px; overflow-y: auto; }
@@ -136,10 +158,68 @@
   }
   .notes-row textarea:focus { outline: none; border-color: #1a73e8; }
 
+  /* --- search modal overlay --- */
+  .modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); z-index: 200;
+    justify-content: center; align-items: flex-start; padding-top: 60px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-panel {
+    background: #fff; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    width: 680px; max-height: 75vh; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; border-bottom: 1px solid #eee;
+  }
+  .modal-header h3 { font-size: 1.05em; }
+  .modal-close {
+    background: none; border: none; font-size: 1.5em; cursor: pointer;
+    color: #999; line-height: 1; padding: 0 4px;
+  }
+  .modal-close:hover { color: #333; }
+  .modal-body { flex: 1; overflow-y: auto; padding: 10px 18px 14px; }
+  .modal-body .search-loading { text-align: center; color: #999; padding: 30px; }
+  .modal-body .search-empty { text-align: center; color: #999; padding: 30px; }
+  .search-candidate {
+    border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .search-candidate:hover { border-color: #1a73e8; background: #f8faff; }
+  .search-candidate .cand-main { flex: 1; min-width: 0; }
+  .search-candidate .cand-name { font-weight: 600; font-size: 0.95em; }
+  .search-candidate .cand-meta { color: #666; font-size: 0.82em; margin-top: 2px; }
+  .search-candidate .cand-meta span { margin-right: 12px; }
+  .search-candidate button {
+    padding: 6px 16px; background: #1a73e8; color: #fff; border: none;
+    border-radius: 5px; cursor: pointer; font-size: 0.85em; white-space: nowrap;
+  }
+  .search-candidate button:hover { background: #1557b0; }
+
+  /* --- annotation form --- */
+  .anno-form label { display: block; margin-top: 10px; font-size: 0.85em; color: #555; }
+  .anno-form label span { font-weight: 600; }
+  .anno-form input[type="text"] {
+    width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 5px;
+    font-size: 0.9em; margin-top: 3px;
+  }
+  .anno-form input:focus { outline: none; border-color: #1a73e8; }
+  .anno-form .search-row { margin-top: 3px; }
+  .anno-form .search-row input { margin-top: 0; }
+  .anno-save-btn {
+    margin-top: 14px; padding: 8px 24px; background: #1a73e8; color: #fff;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 0.95em;
+  }
+  .anno-save-btn:hover { background: #1557b0; }
+  .recent-list { margin-top: 18px; }
+  .recent-list h4 { font-size: 0.9em; color: #666; margin-bottom: 6px; }
+  .recent-item { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.82em; }
+
   /* --- bottom bar --- */
   .bottom-bar {
     margin-top: 16px; display: flex; gap: 10px; align-items: center; justify-content: center;
-    padding: 10px; color: #888; font-size: 0.8em;
+    padding: 10px; color: #888; font-size: 0.78em;
   }
   .bottom-bar kbd {
     background: #eee; border: 1px solid #ccc; border-radius: 3px;
@@ -152,25 +232,51 @@
 <!-- top toolbar -->
 <div class="toolbar">
   <span class="title">GS 50 Gold Standard Review</span>
-  <a class="nav-link" href="/">标注表单</a>
+  <button class="mode-tab active" data-mode="review" onclick="switchMode('review')">GS Review</button>
+  <button class="mode-tab" data-mode="anno" onclick="switchMode('anno')">New Annotation</button>
   <a class="nav-link" href="/ai">AI 审核</a>
+  <a class="nav-link" href="/api/export_csv">导出 CSV</a>
+  <span class="spacer"></span>
   <span class="progress" id="progress">0/50</span>
   <button onclick="navigate(-1)" title="上一个 (k/p)">&larr; 上一个</button>
   <button onclick="navigate(1)" title="下一个 (j/n)">下一个 &rarr;</button>
-  <input class="jump-input" id="jumpPmid" placeholder="PMID 跳转" onkeydown="if(event.key==='Enter')jumpTo()" />
+  <input class="jump-input" id="jumpPmid" placeholder="PMID" onkeydown="if(event.key==='Enter')jumpTo()" />
   <button onclick="jumpTo()">跳转</button>
   <button class="primary" onclick="exportTSV()">导出 TSV</button>
 </div>
 
-<div class="container" id="mainContent"></div>
+<!-- page layout: sidebar + main -->
+<div class="page-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span>GS_50 PMIDs</span>
+      <span id="sidebarCount" style="color:#999">50</span>
+    </div>
+    <input class="sidebar-search" id="sidebarFilter" placeholder="筛选 PMID 或基因名..." oninput="filterSidebar()" />
+    <div class="sidebar-list" id="sidebarList"></div>
+  </aside>
+  <main class="main-area" id="mainArea">
+    <div class="main-content" id="mainContent"></div>
+    <div class="bottom-bar" id="bottomBar">
+      <span>快捷键: <kbd>j</kbd>/<kbd>n</kbd> 下一个 &nbsp; <kbd>k</kbd>/<kbd>p</kbd> 上一个 &nbsp; <kbd>Enter</kbd> 打开 PubMed &nbsp; <kbd>g</kbd> 第一个</span>
+    </div>
+  </main>
+</div>
 
-<!-- bottom bar -->
-<div class="bottom-bar">
-  <span>快捷键: <kbd>j</kbd>/<kbd>n</kbd> 下一个 &nbsp; <kbd>k</kbd>/<kbd>p</kbd> 上一个 &nbsp; <kbd>Enter</kbd> 打开 PubMed &nbsp; <kbd>g</kbd> 回到第一个</span>
+<!-- search modal overlay -->
+<div class="modal-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearchModal()">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h3 id="searchModalTitle">Search Results</h3>
+      <button class="modal-close" onclick="closeSearchModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="searchBody"></div>
+  </div>
 </div>
 
 <script>
 const GS_DATA = {{ gs_data | tojson }};
+const PMID_SUMMARIES = {{ pmid_summaries | tojson }};
 const ASSAY_OPTIONS = {{ assay_options | tojson }};
 const GROUPED_ASSAYS = {{ grouped_assays | tojson }};
 const ASSAY_CATEGORIES = {{ assay_categories | tojson }};

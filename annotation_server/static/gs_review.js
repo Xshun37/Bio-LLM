@@ -1,8 +1,8 @@
-// GS Review — client-side SPA, one PMID per page
+// GS Review — sidebar, search modal, mode switching, annotation form
 (function() {
 
 // ====== DataStore ======
-const DataStore = {
+var DataStore = {
   pmids: GS_DATA.pmids,
   refPairs: GS_DATA.ref_pairs,
   abstracts: GS_DATA.abstracts,
@@ -23,6 +23,14 @@ var state = { d: {} };
 function getEntry(pmid) {
   if (!state.d[pmid]) state.d[pmid] = { p: [], n: "", r: false };
   return state.d[pmid];
+}
+
+function getStatusClass(pmid) {
+  var e = state.d[pmid];
+  if (!e) return 'untouched';
+  if (e.r) return 'done';
+  if (e.p && e.p.length > 0) return 'in-progress';
+  return 'untouched';
 }
 
 function saveLocal() {
@@ -49,7 +57,6 @@ function saveState(pmid) {
 }
 
 function loadState() {
-  // 1. try localStorage
   try {
     var raw = localStorage.getItem("gs_review_v3");
     if (raw) {
@@ -58,29 +65,100 @@ function loadState() {
     }
   } catch(e) {}
 
-  // 2. fetch server state
   fetch('/api/gs_review/load').then(function(r) { return r.json(); }).then(function(data) {
     if (!data.states) return;
     var merged = false;
     for (var pmid in data.states) {
-      if (!state.d[pmid]) {
-        state.d[pmid] = data.states[pmid];
-        merged = true;
-      }
+      if (!state.d[pmid]) { state.d[pmid] = data.states[pmid]; merged = true; }
     }
-    if (merged) {
-      saveLocal();
-      renderCurrent();
-      updateProgress();
-    }
+    if (merged) { saveLocal(); renderSidebar(); updateProgress(); }
   });
 }
 
-// ====== Renderer ======
+// ====== Sidebar ======
+function renderSidebar() {
+  var list = document.getElementById('sidebarList');
+  var html = '';
+  var currentPmid = currentMode === 'review' ? DataStore.getCurrentPmid() : null;
+  for (var i = 0; i < DataStore.getTotal(); i++) {
+    var pmid = DataStore.pmids[i];
+    var cls = getStatusClass(pmid);
+    var summary = PMID_SUMMARIES[pmid] || {};
+    var tfs = (summary.tfs || []).join(', ');
+    var targets = (summary.targets || []).join(', ');
+    var preview = tfs + ' → ' + targets;
+    html += '<div class="sidebar-item' + (pmid === currentPmid ? ' active' : '') + '" data-pmid="' + pmid + '" data-tfs="' + escapeHTML(tfs) + '" data-targets="' + escapeHTML(targets) + '" onclick="navigateToPmid(\'' + pmid + '\')">' +
+      '<span class="status-dot ' + cls + '"></span>' +
+      '<span class="item-text">' +
+        '<span class="item-pmid">' + pmid + '</span>' +
+        '<span class="item-preview">' + escapeHTML(preview) + '</span>' +
+      '</span>' +
+    '</div>';
+  }
+  list.innerHTML = html;
+}
+
+function updateSidebarItem(pmid) {
+  var item = document.querySelector('.sidebar-item[data-pmid="' + pmid + '"]');
+  if (!item) return;
+  var cls = getStatusClass(pmid);
+  var dot = item.querySelector('.status-dot');
+  if (dot) { dot.className = 'status-dot ' + cls; }
+  // update active
+  if (currentMode === 'review') {
+    var allItems = document.querySelectorAll('.sidebar-item');
+    allItems.forEach(function(el) { el.classList.remove('active'); });
+    if (pmid === DataStore.getCurrentPmid()) item.classList.add('active');
+  }
+}
+
+function filterSidebar() {
+  var q = document.getElementById('sidebarFilter').value.trim().toLowerCase();
+  var items = document.querySelectorAll('.sidebar-item');
+  var count = 0;
+  items.forEach(function(item) {
+    var pmid = item.dataset.pmid || '';
+    var tfs = (item.dataset.tfs || '').toLowerCase();
+    var targets = (item.dataset.targets || '').toLowerCase();
+    var visible = !q || pmid.indexOf(q) >= 0 || tfs.indexOf(q) >= 0 || targets.indexOf(q) >= 0;
+    item.style.display = visible ? '' : 'none';
+    if (visible) count++;
+  });
+  document.getElementById('sidebarCount').textContent = count;
+}
+
 function escapeHTML(s) {
   return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
+window.filterSidebar = filterSidebar;
+
+// ====== Mode Switching ======
+var currentMode = 'review';
+
+function switchMode(mode) {
+  saveCurrentFromDom();
+  closeSearchModal();
+  currentMode = mode;
+  // update tab buttons
+  document.querySelectorAll('.mode-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.mode === mode);
+  });
+  // show/hide bottom bar
+  var bottomBar = document.getElementById('bottomBar');
+  if (bottomBar) bottomBar.style.display = (mode === 'review') ? '' : 'none';
+  // render
+  if (mode === 'review') {
+    renderCurrent();
+  } else {
+    renderAnnoForm();
+  }
+  renderSidebar();
+}
+
+window.switchMode = switchMode;
+
+// ====== PMID Card Renderer ======
 function renderAssayChips(containerId, selectedAssays, pairIdx) {
   var html = '<div class="assay-chips-wrap">';
   for (var i = 0; i < ASSAY_CATEGORIES.length; i++) {
@@ -91,8 +169,8 @@ function renderAssayChips(containerId, selectedAssays, pairIdx) {
       var o = opts[j];
       var checked = selectedAssays.indexOf(o.tag) >= 0;
       html += '<label class="assay-chip' + (checked ? ' checked' : '') + '" data-pair="' + pairIdx + '" data-tag="' + escapeHTML(o.tag) + '" title="' + escapeHTML(o.en) + '">';
-      html += '<input type="checkbox" value="' + escapeHTML(o.tag) + '" ' + (checked ? 'checked' : '') + ' onchange="void(0)">';
-      html += escapeHTML(o.cn) + ' (' + escapeHTML(o.tag) + ')</label>';
+      html += '<input type="checkbox" value="' + escapeHTML(o.tag) + '" ' + (checked ? 'checked' : '') + '> ' + escapeHTML(o.cn);
+      html += '</label>';
     }
   }
   html += '</div>';
@@ -105,7 +183,6 @@ function renderCurrent() {
   var ref = DataStore.refPairs[pmid] || [];
   var abstract = DataStore.abstracts[pmid] || "";
 
-  // TRRUST reference HTML
   var refHTML = "";
   if (ref.length) {
     refHTML = '<div class="ref-box" id="refBox">' +
@@ -126,13 +203,11 @@ function renderCurrent() {
     refHTML += '</div>';
   }
 
-  // Abstract
   var absHTML = "";
   if (abstract) {
     absHTML = '<div class="abstract-box" id="absBox">' + escapeHTML(abstract) + '</div>';
   }
 
-  // Pairs table
   var rowsHTML = "";
   for (var j = 0; j < e.p.length; j++) {
     var p = e.p[j];
@@ -143,9 +218,8 @@ function renderCurrent() {
       '<td class="col-tf">' +
         '<div class="search-row">' +
           '<input type="text" id="tf_input_' + j + '" value="' + escapeHTML(p.tf_input||'') + '" onchange="updatePairField(' + j + ',\'tf_input\',this.value)">' +
-          '<button type="button" onclick="searchTF(' + j + ')">搜索</button>' +
+          '<button type="button" onclick="openSearchModal(\'tf\',' + j + ',\'tf_input_' + j + '\')">搜索</button>' +
         '</div>' +
-        '<div class="candidates" id="tf_candidates_' + j + '"></div>' +
         '<input type="hidden" id="tf_standard_' + j + '" value="' + escapeHTML(p.tf_standard||'') + '">' +
         '<input type="hidden" id="tf_uniprot_' + j + '" value="' + escapeHTML(p.tf_uniprot||'') + '">' +
         (p.tf_standard ? '<div style="font-size:0.75em;color:#2b8cff">' + escapeHTML(p.tf_standard) + (p.tf_uniprot ? ' / ' + escapeHTML(p.tf_uniprot) : '') + '</div>' : '') +
@@ -153,9 +227,8 @@ function renderCurrent() {
       '<td class="col-gene">' +
         '<div class="search-row">' +
           '<input type="text" id="gene_input_' + j + '" value="' + escapeHTML(p.gene_input||'') + '" onchange="updatePairField(' + j + ',\'gene_input\',this.value)">' +
-          '<button type="button" onclick="searchGene(' + j + ')">搜索</button>' +
+          '<button type="button" onclick="openSearchModal(\'gene\',' + j + ',\'gene_input_' + j + '\')">搜索</button>' +
         '</div>' +
-        '<div class="candidates" id="gene_candidates_' + j + '"></div>' +
         '<input type="hidden" id="gene_ensg_' + j + '" value="' + escapeHTML(p.gene_ensg||'') + '">' +
         (p.gene_ensg ? '<div style="font-size:0.75em;color:#2b8cff">' + escapeHTML(p.gene_ensg) + '</div>' : '') +
       '</td>' +
@@ -181,14 +254,14 @@ function renderCurrent() {
       '</tr>';
   }
 
-  var mainHTML =
+  var html =
     '<div class="card ' + (e.r ? 'completed' : 'pending') + '" id="pmidCard">' +
       '<div class="card-header">' +
         '<span class="pmid">PMID: ' + pmid + '</span>' +
         '<a href="https://pubmed.ncbi.nlm.nih.gov/' + pmid + '/" target="_blank" rel="noopener">PubMed &#8599;</a>' +
         '<span class="toggle-link" onclick="document.getElementById(\'refBox\').classList.toggle(\'open\')">TRRUST Ref (' + ref.length + ')</span>' +
         (abstract ? '<span class="toggle-link" onclick="document.getElementById(\'absBox\').classList.toggle(\'open\')">Abstract</span>' : '') +
-        '<span class="toggle-link" onclick="toggleAllSearch()">展开搜索</span>' +
+        '<span class="toggle-link" onclick="searchAllCurrent()">一键搜索全部</span>' +
         '<label class="reviewed-label">' +
           '<input type="checkbox" ' + (e.r ? "checked" : "") + ' onchange="toggleReviewed(this.checked)"> Done' +
         '</label>' +
@@ -212,23 +285,20 @@ function renderCurrent() {
       '</div>' +
     '</div>';
 
-  document.getElementById('mainContent').innerHTML = mainHTML;
+  document.getElementById('mainContent').innerHTML = html;
 
-  // Render assay chips for each pair
   for (var k = 0; k < e.p.length; k++) {
     var aArr = e.p[k].assay || [];
     if (typeof aArr === 'string') aArr = aArr ? aArr.split(';') : [];
     renderAssayChips('assay_chips_' + k, aArr, k);
   }
-
-  // Attach assay chip click handlers
   attachAssayHandlers();
-
+  updateSidebarItem(pmid);
   updateProgress();
   updateUrl();
 }
 
-// ====== Assay chip interaction ======
+// ====== Assay chips ======
 function attachAssayHandlers() {
   var chips = document.querySelectorAll('.assay-chip');
   chips.forEach(function(ch) {
@@ -240,7 +310,7 @@ function attachAssayHandlers() {
       inp.dispatchEvent(new Event('change'));
     });
     inp.addEventListener('change', function() {
-      if (inp.checked) ch.classList.add('checked'); else ch.classList.remove('checked');
+      ch.classList.toggle('checked', inp.checked);
       var pairIdx = parseInt(ch.dataset.pair);
       collectAssaySelections(pairIdx);
     });
@@ -248,14 +318,13 @@ function attachAssayHandlers() {
 }
 
 function collectAssaySelections(pairIdx) {
-  var pmid = DataStore.getCurrentPmid();
+  var pmid = currentMode === 'review' ? DataStore.getCurrentPmid() : null;
+  if (!pmid) return;
   var chips = document.querySelectorAll('.assay-chip[data-pair="' + pairIdx + '"] input[type="checkbox"]:checked');
   var selected = [];
   chips.forEach(function(cb) { selected.push(cb.value); });
-  var e = getEntry(pmid);
-  e.p[pairIdx].assay = selected;
+  getEntry(pmid).p[pairIdx].assay = selected;
   saveState(pmid);
-  // update display text
   var td = document.querySelectorAll('.col-assay')[pairIdx];
   if (td) {
     var div = td.querySelector('div:last-child');
@@ -272,7 +341,6 @@ function addPair() {
   saveState(pmid);
   renderCurrent();
 }
-
 window.addPair = addPair;
 
 function removePair(idx) {
@@ -282,116 +350,20 @@ function removePair(idx) {
   saveState(pmid);
   renderCurrent();
 }
-
 window.removePair = removePair;
 
 function updatePairField(idx, field, value) {
   var pmid = DataStore.getCurrentPmid();
-  var e = getEntry(pmid);
-  e.p[idx][field] = value;
+  getEntry(pmid).p[idx][field] = value;
   saveState(pmid);
 }
-
 window.updatePairField = updatePairField;
 
-// ====== Search ======
-var _allSearchOpen = false;
-
-function toggleAllSearch() {
-  _allSearchOpen = !_allSearchOpen;
-  var pmid = DataStore.getCurrentPmid();
-  var e = getEntry(pmid);
-  for (var i = 0; i < e.p.length; i++) {
-    var tfInput = document.getElementById('tf_input_' + i);
-    var geneInput = document.getElementById('gene_input_' + i);
-    if (_allSearchOpen) {
-      if (tfInput && tfInput.value.trim()) searchTF(i);
-      if (geneInput && geneInput.value.trim()) searchGene(i);
-    }
-  }
-}
-
-window.toggleAllSearch = toggleAllSearch;
-
-async function searchTF(pairIdx) {
-  var q = document.getElementById('tf_input_' + pairIdx).value.trim();
-  if (!q) return;
-  var wrap = document.getElementById('tf_candidates_' + pairIdx);
-  wrap.innerHTML = '搜索中...';
-  try {
-    var res = await fetch('/api/search_protein?q=' + encodeURIComponent(q));
-    var data = await res.json();
-    wrap.innerHTML = '';
-    if (!data || data.length === 0) { wrap.innerHTML = '无结果'; return; }
-    data.forEach(function(d) {
-      var el = document.createElement('div'); el.className = 'candidate';
-      var name = d.name || d.id || '';
-      var genes = (d.genes || []).join(', ');
-      el.innerHTML = '<div><strong>' + escapeHTML(name) + '</strong><div class="meta">ID: ' + escapeHTML(d.id||'') + ' | Genes: ' + escapeHTML(genes) + '</div></div>';
-      var btn = document.createElement('button');
-      btn.textContent = '选择';
-      btn.onclick = function() {
-        document.getElementById('tf_input_' + pairIdx).value = name;
-        document.getElementById('tf_standard_' + pairIdx).value = name;
-        document.getElementById('tf_uniprot_' + pairIdx).value = d.id || '';
-        updatePairField(pairIdx, 'tf_input', name);
-        updatePairField(pairIdx, 'tf_standard', name);
-        updatePairField(pairIdx, 'tf_uniprot', d.id || '');
-        // highlight selected
-        Array.from(wrap.children).forEach(function(c) {
-          if (c === el) { c.classList.add('selected'); } else { c.classList.add('hidden'); }
-        });
-        // re-render to show the standardized name below input
-        renderCurrent();
-      };
-      el.appendChild(btn);
-      wrap.appendChild(el);
-    });
-  } catch(e) { wrap.innerHTML = '搜索失败'; }
-}
-
-window.searchTF = searchTF;
-
-async function searchGene(pairIdx) {
-  var q = document.getElementById('gene_input_' + pairIdx).value.trim();
-  if (!q) return;
-  var wrap = document.getElementById('gene_candidates_' + pairIdx);
-  wrap.innerHTML = '搜索中...';
-  try {
-    var res = await fetch('/api/search_gene?q=' + encodeURIComponent(q));
-    var data = await res.json();
-    wrap.innerHTML = '';
-    if (!data || data.length === 0) { wrap.innerHTML = '无结果'; return; }
-    data.forEach(function(d) {
-      var el = document.createElement('div'); el.className = 'candidate';
-      el.innerHTML = '<div><strong>' + escapeHTML(d.query_symbol||'') + '</strong> ' + escapeHTML(d.name||'') + '<div class="meta">ENSG: ' + escapeHTML(d.ensg||'') + '</div></div>';
-      var btn = document.createElement('button');
-      btn.textContent = '选择';
-      btn.onclick = function() {
-        document.getElementById('gene_input_' + pairIdx).value = d.query_symbol || d.name || '';
-        document.getElementById('gene_ensg_' + pairIdx).value = d.ensg || '';
-        updatePairField(pairIdx, 'gene_input', d.query_symbol || d.name || '');
-        updatePairField(pairIdx, 'gene_ensg', d.ensg || '');
-        Array.from(wrap.children).forEach(function(c) {
-          if (c === el) { c.classList.add('selected'); } else { c.classList.add('hidden'); }
-        });
-        renderCurrent();
-      };
-      el.appendChild(btn);
-      wrap.appendChild(el);
-    });
-  } catch(e) { wrap.innerHTML = '搜索失败'; }
-}
-
-window.searchGene = searchGene;
-
-// ====== Notes & Reviewed ======
 function updateNotes(value) {
   var pmid = DataStore.getCurrentPmid();
   getEntry(pmid).n = value;
   saveState(pmid);
 }
-
 window.updateNotes = updateNotes;
 
 function toggleReviewed(checked) {
@@ -399,14 +371,251 @@ function toggleReviewed(checked) {
   getEntry(pmid).r = checked;
   saveState(pmid);
   var card = document.getElementById('pmidCard');
-  if (card) {
-    card.classList.toggle('completed', checked);
-    card.classList.toggle('pending', !checked);
-  }
+  if (card) { card.classList.toggle('completed', checked); card.classList.toggle('pending', !checked); }
+  updateSidebarItem(pmid);
   updateProgress();
 }
-
 window.toggleReviewed = toggleReviewed;
+
+// ====== Search Modal ======
+var _modalState = { type: null, pairIdx: -1, inputId: null };
+
+function openSearchModal(type, pairIdx, inputId) {
+  _modalState = { type: type, pairIdx: pairIdx, inputId: inputId };
+  var overlay = document.getElementById('searchOverlay');
+  var title = document.getElementById('searchModalTitle');
+  var body = document.getElementById('searchBody');
+  var q = document.getElementById(inputId).value.trim();
+
+  title.textContent = (type === 'tf' ? 'TF Protein Search (UniProt)' : 'Gene ENSG Search (MyGene)');
+  body.innerHTML = q ? '<div class="search-loading">Searching...</div>' : '<div class="search-empty">Please enter a search term first.</div>';
+  overlay.classList.add('open');
+
+  if (!q) return;
+
+  var url = type === 'tf' ? '/api/search_protein?q=' : '/api/search_gene?q=';
+  fetch(url + encodeURIComponent(q))
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderSearchResults(data); })
+    .catch(function() { body.innerHTML = '<div class="search-empty">Search failed.</div>'; });
+}
+window.openSearchModal = openSearchModal;
+
+function closeSearchModal() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  _modalState = { type: null, pairIdx: -1, inputId: null };
+}
+window.closeSearchModal = closeSearchModal;
+
+function renderSearchResults(data) {
+  var body = document.getElementById('searchBody');
+  if (!data || data.length === 0) { body.innerHTML = '<div class="search-empty">No results found.</div>'; return; }
+
+  var isTF = _modalState.type === 'tf';
+  var html = '';
+  data.forEach(function(d, i) {
+    if (isTF) {
+      var name = d.name || d.id || '';
+      var genes = (d.genes || []).join(', ');
+      html += '<div class="search-candidate">' +
+        '<div class="cand-main">' +
+          '<div class="cand-name">' + escapeHTML(name) + '</div>' +
+          '<div class="cand-meta">' +
+            '<span>UniProt: ' + escapeHTML(d.id||'') + '</span>' +
+            '<span>Genes: ' + escapeHTML(genes) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<button onclick="selectCandidate(' + i + ')">Select</button>' +
+      '</div>';
+    } else {
+      html += '<div class="search-candidate">' +
+        '<div class="cand-main">' +
+          '<div class="cand-name">' + escapeHTML(d.query_symbol||'') + '</div>' +
+          '<div class="cand-meta">' +
+            '<span>' + escapeHTML(d.name||'') + '</span>' +
+            '<span>ENSG: ' + escapeHTML(d.ensg||'') + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<button onclick="selectCandidate(' + i + ')">Select</button>' +
+      '</div>';
+    }
+  });
+  body.innerHTML = html;
+  // store results for selectCandidate
+  body._results = data;
+}
+
+function selectCandidate(idx) {
+  var data = document.getElementById('searchBody')._results;
+  if (!data || !data[idx]) return;
+  var d = data[idx];
+  var info = _modalState;
+  var inputEl = document.getElementById(info.inputId);
+  if (!inputEl) { closeSearchModal(); return; }
+
+  var isTF = info.type === 'tf';
+  if (isTF) {
+    var name = d.name || d.id || '';
+    inputEl.value = name;
+    var stdEl = document.getElementById('tf_standard_' + info.pairIdx);
+    var uniEl = document.getElementById('tf_uniprot_' + info.pairIdx);
+    if (stdEl) stdEl.value = name;
+    if (uniEl) uniEl.value = d.id || '';
+    if (currentMode === 'review') {
+      updatePairField(info.pairIdx, 'tf_input', name);
+      updatePairField(info.pairIdx, 'tf_standard', name);
+      updatePairField(info.pairIdx, 'tf_uniprot', d.id || '');
+    }
+  } else {
+    var sym = d.query_symbol || d.name || '';
+    inputEl.value = sym;
+    var ensgEl = document.getElementById('gene_ensg_' + info.pairIdx);
+    if (ensgEl) ensgEl.value = d.ensg || '';
+    if (currentMode === 'review') {
+      updatePairField(info.pairIdx, 'gene_input', sym);
+      updatePairField(info.pairIdx, 'gene_ensg', d.ensg || '');
+    }
+  }
+  closeSearchModal();
+  if (currentMode === 'review') renderCurrent();
+}
+window.selectCandidate = selectCandidate;
+
+function searchAllCurrent() {
+  if (currentMode !== 'review') return;
+  var pmid = DataStore.getCurrentPmid();
+  var e = getEntry(pmid);
+  for (var i = 0; i < e.p.length; i++) {
+    var tfEl = document.getElementById('tf_input_' + i);
+    var geneEl = document.getElementById('gene_input_' + i);
+    if (tfEl && tfEl.value.trim()) openSearchModal('tf', i, 'tf_input_' + i);
+    if (geneEl && geneEl.value.trim()) openSearchModal('gene', i, 'gene_input_' + i);
+  }
+}
+window.searchAllCurrent = searchAllCurrent;
+
+// ====== Annotation Form ======
+function renderAnnoForm() {
+  var html = '<div class="card anno-form" style="max-width:680px">' +
+    '<h3 style="margin-bottom:4px">New Annotation</h3>' +
+    '<label><span>PubMed ID</span><input type="text" id="anno_pmid"></label>' +
+    '<label><span>TF (Transcription Factor)</span>' +
+      '<div class="search-row"><input type="text" id="anno_tf"><button type="button" onclick="openSearchModal(\'tf\',-1,\'anno_tf\')">Search</button></div>' +
+    '</label>' +
+    '<label><span>Gene (Target)</span>' +
+      '<div class="search-row"><input type="text" id="anno_gene"><button type="button" onclick="openSearchModal(\'gene\',-1,\'anno_gene\')">Search</button></div>' +
+    '</label>' +
+    '<label><span>Cell Line</span><input type="text" id="anno_cellline"></label>' +
+    '<label><span>Assay</span><div id="anno_assay_chips"></div></label>' +
+    '<label><span>Complex</span><input type="text" id="anno_complex"></label>' +
+    '<button class="anno-save-btn" onclick="saveAnnotation()">Save</button>' +
+    '<div id="anno_save_msg" style="margin-top:8px;font-size:0.85em"></div>' +
+    '<div class="recent-list" id="recentList"></div>' +
+  '</div>';
+
+  document.getElementById('mainContent').innerHTML = html;
+
+  // render assay chips for annotation form
+  renderAnnoAssayChips([]);
+  attachAnnoAssayHandlers();
+  loadRecentAnnotations();
+}
+
+var _annoAssaySelected = [];
+
+function renderAnnoAssayChips(selected) {
+  var html = '<div class="assay-chips-wrap">';
+  for (var i = 0; i < ASSAY_CATEGORIES.length; i++) {
+    var cat = ASSAY_CATEGORIES[i];
+    var opts = GROUPED_ASSAYS[cat];
+    html += '<div class="assay-cat">' + escapeHTML(cat) + '</div>';
+    for (var j = 0; j < opts.length; j++) {
+      var o = opts[j];
+      var checked = selected.indexOf(o.tag) >= 0;
+      html += '<label class="assay-chip' + (checked ? ' checked' : '') + '" data-tag="' + escapeHTML(o.tag) + '" title="' + escapeHTML(o.en) + '">';
+      html += '<input type="checkbox" value="' + escapeHTML(o.tag) + '" ' + (checked ? 'checked' : '') + '> ' + escapeHTML(o.cn);
+      html += '</label>';
+    }
+  }
+  html += '</div>';
+  var container = document.getElementById('anno_assay_chips');
+  if (container) container.innerHTML = html;
+}
+
+function attachAnnoAssayHandlers() {
+  var chips = document.querySelectorAll('#anno_assay_chips .assay-chip');
+  chips.forEach(function(ch) {
+    var inp = ch.querySelector('input[type="checkbox"]');
+    if (!inp) return;
+    ch.addEventListener('click', function(ev) {
+      if (ev.target.tagName.toLowerCase() === 'input') return;
+      inp.checked = !inp.checked;
+      inp.dispatchEvent(new Event('change'));
+    });
+    inp.addEventListener('change', function() {
+      ch.classList.toggle('checked', inp.checked);
+      _annoAssaySelected = [];
+      var checked = document.querySelectorAll('#anno_assay_chips input[type="checkbox"]:checked');
+      checked.forEach(function(cb) { _annoAssaySelected.push(cb.value); });
+    });
+  });
+}
+
+async function saveAnnotation() {
+  var tfInput = document.getElementById('anno_tf').value.trim();
+  var geneInput = document.getElementById('anno_gene').value.trim();
+  var tfStd = document.getElementById('tf_standard_-1');
+  var tfUni = document.getElementById('tf_uniprot_-1');
+  var geneEns = document.getElementById('gene_ensg_-1');
+
+  var payload = {
+    pubmed_id: document.getElementById('anno_pmid').value.trim(),
+    tf_input: tfInput,
+    tf_standard: tfStd ? tfStd.value : tfInput,
+    tf_uniprot: tfUni ? tfUni.value : '',
+    gene_input: geneInput,
+    gene_ensg: geneEns ? geneEns.value : '',
+    cellline: document.getElementById('anno_cellline').value.trim(),
+    assay: _annoAssaySelected,
+    complex: document.getElementById('anno_complex').value.trim()
+  };
+  try {
+    var r = await fetch('/api/save_annotation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    var j = await r.json();
+    var msg = document.getElementById('anno_save_msg');
+    if (j.ok) {
+      msg.innerHTML = '<span style="color:#34a853">Saved (id=' + j.id + ')</span>';
+      loadRecentAnnotations();
+    } else {
+      msg.innerHTML = '<span style="color:#c62828">Error: ' + escapeHTML(j.error||'') + '</span>';
+    }
+  } catch(e) {
+    document.getElementById('anno_save_msg').innerHTML = '<span style="color:#c62828">Save failed.</span>';
+  }
+}
+
+window.saveAnnotation = saveAnnotation;
+
+async function loadRecentAnnotations() {
+  try {
+    var r = await fetch('/api/annotations');
+    var data = await r.json();
+    var list = document.getElementById('recentList');
+    if (!list) return;
+    var html = '<h4>Recent Annotations (' + (Array.isArray(data) ? data.length : 0) + ')</h4>';
+    if (Array.isArray(data)) {
+      data.slice(0, 20).forEach(function(item) {
+        var assayText = Array.isArray(item.assay) ? item.assay.join(', ') : item.assay;
+        html += '<div class="recent-item"><strong>' + escapeHTML(item.pubmed_id||'') + '</strong> TF:' + escapeHTML(item.tf_input||'') + '/' + escapeHTML(item.tf_standard||'') + ' ENSG:' + escapeHTML(item.gene_ensg||'') + ' assay:' + escapeHTML(assayText||'') + '</div>';
+      });
+    }
+    list.innerHTML = html;
+  } catch(e) {}
+}
 
 // ====== Progress ======
 function updateProgress() {
@@ -419,44 +628,60 @@ function updateProgress() {
 
 // ====== Pagination ======
 function navigate(delta) {
+  closeSearchModal();
+  if (currentMode !== 'review') return;
   var newIdx = DataStore.currentIdx + delta;
   if (newIdx < 0) newIdx = 0;
   if (newIdx >= DataStore.getTotal()) newIdx = DataStore.getTotal() - 1;
   if (newIdx !== DataStore.currentIdx) {
-    // save current pmid state from DOM before navigating
     saveCurrentFromDom();
+    var oldPmid = DataStore.getCurrentPmid();
     DataStore.currentIdx = newIdx;
     renderCurrent();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updateSidebarItem(oldPmid);
+    document.getElementById('mainArea').scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
-
 window.navigate = navigate;
+
+function navigateToPmid(pmid) {
+  closeSearchModal();
+  if (currentMode !== 'review') switchMode('review');
+  saveCurrentFromDom();
+  var oldPmid = DataStore.getCurrentPmid();
+  DataStore.setPmid(pmid);
+  if (DataStore.getCurrentPmid() !== oldPmid) {
+    renderCurrent();
+    updateSidebarItem(oldPmid);
+    document.getElementById('mainArea').scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+window.navigateToPmid = navigateToPmid;
 
 function jumpTo() {
   var val = document.getElementById('jumpPmid').value.trim();
   if (!val) return;
   var idx = DataStore.pmids.indexOf(val);
   if (idx < 0) {
-    // try partial match
     for (var i = 0; i < DataStore.pmids.length; i++) {
       if (DataStore.pmids[i].indexOf(val) >= 0) { idx = i; break; }
     }
   }
   if (idx >= 0) {
+    closeSearchModal();
     saveCurrentFromDom();
+    var oldPmid = DataStore.getCurrentPmid();
     DataStore.currentIdx = idx;
+    if (currentMode !== 'review') switchMode('review');
     renderCurrent();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
-    alert('PMID 未找到: ' + val);
+    updateSidebarItem(oldPmid);
+    document.getElementById('mainArea').scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
-
 window.jumpTo = jumpTo;
 
 function saveCurrentFromDom() {
-  // Sync any in-progress text edits back to state before navigating
+  if (currentMode !== 'review') return;
   var pmid = DataStore.getCurrentPmid();
   var e = getEntry(pmid);
   for (var i = 0; i < e.p.length; i++) {
@@ -470,60 +695,38 @@ function saveCurrentFromDom() {
 }
 
 function updateUrl() {
-  var pmid = DataStore.getCurrentPmid();
-  try {
-    history.replaceState({ pmid: pmid }, '', '/gs_review?pmid=' + pmid);
-  } catch(e) {}
+  try { history.replaceState({ pmid: DataStore.getCurrentPmid() }, '', '/gs_review?pmid=' + DataStore.getCurrentPmid()); } catch(e) {}
 }
 
 // ====== Export ======
 function exportTSV() {
-  saveCurrentFromDom();
-  var pmid = DataStore.getCurrentPmid();
-  saveState(pmid);
-  // Force server save then download
-  setTimeout(function() {
-    window.open('/api/gs_review/export/tsv', '_blank');
-  }, 300);
+  if (currentMode === 'review') { saveCurrentFromDom(); saveState(DataStore.getCurrentPmid()); }
+  setTimeout(function() { window.open('/api/gs_review/export/tsv', '_blank'); }, 300);
 }
-
 window.exportTSV = exportTSV;
 
 // ====== Keyboard ======
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
-  if (e.key === 'j' || e.key === 'n') {
-    e.preventDefault(); navigate(1);
-  } else if (e.key === 'k' || e.key === 'p') {
-    e.preventDefault(); navigate(-1);
-  } else if (e.key === 'g') {
-    e.preventDefault();
-    saveCurrentFromDom();
-    DataStore.currentIdx = 0;
-    renderCurrent();
-    window.scrollTo({ top: 0 });
-  } else if (e.key === 'Enter') {
-    e.preventDefault();
-    window.open('https://pubmed.ncbi.nlm.nih.gov/' + DataStore.getCurrentPmid() + '/', '_blank');
-  }
+  if (e.key === 'Escape') { closeSearchModal(); return; }
+  if (currentMode !== 'review') return;
+  if (e.key === 'j' || e.key === 'n') { e.preventDefault(); navigate(1); }
+  else if (e.key === 'k' || e.key === 'p') { e.preventDefault(); navigate(-1); }
+  else if (e.key === 'g') { e.preventDefault(); navigateToPmid(DataStore.pmids[0]); }
+  else if (e.key === 'Enter') { e.preventDefault(); window.open('https://pubmed.ncbi.nlm.nih.gov/' + DataStore.getCurrentPmid() + '/', '_blank'); }
 });
 
-// ====== Popstate for back/forward ======
+// ====== Popstate ======
 window.addEventListener('popstate', function(e) {
-  if (e.state && e.state.pmid) {
-    DataStore.setPmid(e.state.pmid);
-    renderCurrent();
-  }
+  if (e.state && e.state.pmid) { DataStore.setPmid(e.state.pmid); if (currentMode !== 'review') switchMode('review'); renderCurrent(); }
 });
 
 // ====== Init ======
 loadState();
-
-// Parse ?pmid= from URL
 var urlParams = new URLSearchParams(window.location.search);
 var initPmid = urlParams.get('pmid');
 if (initPmid) DataStore.setPmid(initPmid);
-
+renderSidebar();
 renderCurrent();
 
 })();

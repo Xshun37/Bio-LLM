@@ -76,6 +76,7 @@ def _load_gs_review_data():
     # --- build reference data ---
     ref_pairs = {}
     abstracts_out = {}
+    pmid_summaries = {}
     for pmid in pmids_unique:
         pairs = []
         for tf, target in gs50_pairs.get(pmid, []):
@@ -88,12 +89,16 @@ def _load_gs_review_data():
             })
         ref_pairs[pmid] = pairs
 
+        tfs = sorted(set(p['tf'] for p in pairs))
+        targets = sorted(set(p['target'] for p in pairs))
+        pmid_summaries[pmid] = {"tfs": tfs, "targets": targets, "pair_count": len(pairs)}
+
         abstract = abstracts.get(pmid, "")
         if isinstance(abstract, dict):
             abstract = "\n\n".join(f"[{k}] {v}" for k, v in abstract.items())
         abstracts_out[pmid] = abstract
 
-    return {"pmids": pmids_unique, "ref_pairs": ref_pairs, "abstracts": abstracts_out}
+    return {"pmids": pmids_unique, "ref_pairs": ref_pairs, "abstracts": abstracts_out, "pmid_summaries": pmid_summaries}
 
 
 def create_app():
@@ -500,6 +505,7 @@ def create_app():
     def gs_review_page():
         return render_template('gs_review.html',
                               gs_data=gs_data,
+                              pmid_summaries=gs_data['pmid_summaries'],
                               assay_options=ASSAY_OPTIONS,
                               grouped_assays=grouped_assays,
                               assay_categories=order)
