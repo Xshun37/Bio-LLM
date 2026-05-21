@@ -2,7 +2,7 @@ import os
 import sqlite3
 import json
 import requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -104,10 +104,6 @@ def _load_gs_review_data():
 def create_app():
     app = Flask(__name__, template_folder='templates', static_folder='static')
     db_path = os.environ.get('ANNOTATION_DB', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'annotations.db'))
-    # AI API defaults (can be overridden by env vars)
-    AI_API_URL = os.environ.get('AI_API_URL', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')
-    AI_API_KEY = os.environ.get('AI_API_KEY', 'sk-dffba2ca4792471db4fe1ede97e01aff')
-    AI_MODEL = os.environ.get('AI_MODEL', 'qwen3.6-plus')
 
     # Ensure DB and table exist
     conn = sqlite3.connect(db_path, check_same_thread=False)
@@ -129,21 +125,6 @@ def create_app():
     )
     ''')
     conn.commit()
-
-    # ensure AI-related columns exist
-    def ensure_columns():
-        cur = conn.cursor()
-        cur.execute("PRAGMA table_info(annotations)")
-        cols = [r['name'] for r in cur.fetchall()]
-        if 'ai_flags' not in cols:
-            cur.execute("ALTER TABLE annotations ADD COLUMN ai_flags TEXT")
-        if 'ai_notes' not in cols:
-            cur.execute("ALTER TABLE annotations ADD COLUMN ai_notes TEXT")
-        if 'ai_reviewed' not in cols:
-            cur.execute("ALTER TABLE annotations ADD COLUMN ai_reviewed INTEGER DEFAULT 0")
-        conn.commit()
-
-    ensure_columns()
 
     # --- gs_review table ---
     cur.execute('''
@@ -214,7 +195,7 @@ def create_app():
 
     @app.route('/')
     def index():
-        return render_template('index.html', assays=ASSAY_OPTIONS, grouped_assays=grouped_assays, assay_categories=order)
+        return redirect('/gs_review')
 
     @app.route('/api/search_protein')
     def search_protein():
@@ -290,131 +271,15 @@ def create_app():
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-    @app.route('/ai')
-    def ai_page():
-        return render_template('ai.html')
-
-    @app.route('/api/ai/audit', methods=['POST'])
-    def ai_audit():
-        """Run AI-assisted (or heuristic) audit over annotations. If OPENAI_API_KEY is set, will try to call OpenAI's API for extra suggestions; otherwise uses heuristics only."""
-        openai_key = os.environ.get('OPENAI_API_KEY')
-        use_openai = bool(openai_key)
-        # fetch annotations to audit
-        limit = int(request.json.get('limit', 200)) if request.json else 200
-        cur = conn.cursor()
-        cur.execute('SELECT * FROM annotations ORDER BY datetime(created_at) DESC LIMIT ?', (limit,))
-        rows = cur.fetchall()
-        results = []
-        for r in rows:
-            rid = r['id']
-            tf_input = r['tf_input'] or ''
-            tf_standard = r['tf_standard'] or ''
-            tf_uniprot = r['tf_uniprot'] or ''
-            gene_input = r['gene_input'] or ''
-            gene_ensg = r['gene_ensg'] or ''
-
-            flags = []
-            notes = []
-            # heuristic checks
-            if not tf_standard:
-                flags.append('tf_standard')
-                notes.append('未选择标准化的 TF 名称')
-            if not tf_uniprot:
-                flags.append('tf_uniprot')
-                notes.append('未匹配到 UniProt 条目')
-            if not gene_ensg:
-                flags.append('gene_ensg')
-                notes.append('未找到 ENSG ID')
-            if ',' in tf_input or '/' in tf_input or ' and ' in tf_input.lower():
-                flags.append('tf_input_ambiguous')
-                notes.append('TF 输入可能包含多个名字或别名')
-            if tf_input and tf_input.lower() == tf_input:
-                flags.append('tf_input_format')
-                notes.append('TF 输入可能为非标准大小写')
-
-            ai_suggestion = None
-            # optionally call configured AI API for flagged items
-            if AI_API_KEY and flags:
-                try:
-                    # build user message, double braces {{}} to emit literal braces inside f-string
-                    user_content = (
-                        f"Record: TF_input={tf_input}, TF_standard={tf_standard}, TF_uniprot={tf_uniprot}, "
-                        f"gene_input={gene_input}, gene_ensg={gene_ensg}.\n"
-                        "Respond with a JSON object: {{\"flags\": [list of fields to flag], \"notes\": \"short explanation\"}}. Only return valid JSON."
-                    )
-                    payload = {
-                        'model': AI_MODEL,
-                        'messages': [
-                            {'role':'system','content':'You are an assistant that inspects biological annotation records and identifies ambiguous transcription factors or genes, returning JSON.'},
-                            {'role':'user','content': user_content}
-                        ],
-                        'temperature': 0.0,
-                        'max_tokens': 300,
-                        'response_format': {'type':'json_object'}
-                    }
-                    headers = {'Authorization': f'Bearer {AI_API_KEY}', 'Content-Type': 'application/json'}
-                    resp = requests.post(AI_API_URL, json=payload, headers=headers, timeout=30)
-                    if resp.ok:
-                        j = resp.json()
-                        # dashscope-compatible responses place content similarly
-                        content = None
-                        try:
-                            content = j['choices'][0]['message']['content']
-                        except Exception:
-                            content = None
-                        if content:
-                            # content may already be parsed as object
-                            if isinstance(content, dict):
-                                ai_json = content
-                            else:
-                                try:
-                                    ai_json = json.loads(content)
-                                except Exception:
-                                    ai_json = None
-                            if ai_json:
-                                if isinstance(ai_json.get('flags'), list):
-                                    for f in ai_json.get('flags'):
-                                        if f not in flags:
-                                            flags.append(f)
-                                if ai_json.get('notes'):
-                                    notes.append(ai_json.get('notes'))
-                                ai_suggestion = ai_json
-                            else:
-                                notes.append('AI output无法解析为JSON')
-                except Exception as e:
-                    notes.append('AI 请求失败: ' + str(e))
-
-            # store results back
-            cur.execute('UPDATE annotations SET ai_flags=?, ai_notes=?, ai_reviewed=0 WHERE id=?', (json.dumps(flags, ensure_ascii=False), '\n'.join(notes), rid))
-            conn.commit()
-            results.append({'id': rid, 'flags': flags, 'notes': notes})
-
-        return jsonify({'ok': True, 'count': len(results), 'results': results})
-
-    @app.route('/api/ai/results')
-    def ai_results():
-        cur = conn.cursor()
-        cur.execute('SELECT id, pubmed_id, tf_input, tf_standard, gene_input, gene_ensg, ai_flags, ai_notes, ai_reviewed FROM annotations ORDER BY datetime(created_at) DESC LIMIT 500')
-        rows = cur.fetchall()
-        out = []
-        for r in rows:
-            flags = []
-            try:
-                flags = json.loads(r['ai_flags']) if r['ai_flags'] else []
-            except Exception:
-                flags = r['ai_flags']
-            out.append({'id': r['id'], 'pubmed_id': r['pubmed_id'], 'tf_input': r['tf_input'], 'tf_standard': r['tf_standard'], 'gene_input': r['gene_input'], 'gene_ensg': r['gene_ensg'], 'ai_flags': flags, 'ai_notes': r['ai_notes'], 'ai_reviewed': r['ai_reviewed']})
-        return jsonify(out)
-
     @app.route('/api/export_csv')
     def export_csv():
         import io, csv
         cur = conn.cursor()
-        cur.execute('SELECT id, pubmed_id, tf_input, tf_standard, tf_uniprot, gene_input, gene_ensg, cellline, assay, complex, created_at, ai_flags, ai_notes, ai_reviewed FROM annotations ORDER BY id')
+        cur.execute('SELECT id, pubmed_id, tf_input, tf_standard, tf_uniprot, gene_input, gene_ensg, cellline, assay, complex, created_at FROM annotations ORDER BY id')
         rows = cur.fetchall()
         si = io.StringIO()
         writer = csv.writer(si)
-        header = ['id','pubmed_id','tf_input','tf_standard','tf_uniprot','gene_input','gene_ensg','cellline','assay','complex','created_at','ai_flags','ai_notes','ai_reviewed']
+        header = ['id','pubmed_id','tf_input','tf_standard','tf_uniprot','gene_input','gene_ensg','cellline','assay','complex','created_at']
         writer.writerow(header)
         for r in rows:
             assay_field = r['assay']
@@ -426,15 +291,10 @@ def create_app():
                     assay_out = assay_parsed
             except Exception:
                 assay_out = assay_field
-            ai_flags = ''
-            try:
-                ai_flags = json.dumps(json.loads(r['ai_flags']), ensure_ascii=False) if r['ai_flags'] else ''
-            except Exception:
-                ai_flags = r['ai_flags'] or ''
-            row = [r['id'], r['pubmed_id'], r['tf_input'], r['tf_standard'], r['tf_uniprot'], r['gene_input'], r['gene_ensg'], r['cellline'], assay_out, r['complex'], r['created_at'], ai_flags, r['ai_notes'] or '', r['ai_reviewed']]
+            row = [r['id'], r['pubmed_id'], r['tf_input'], r['tf_standard'], r['tf_uniprot'], r['gene_input'], r['gene_ensg'], r['cellline'], assay_out, r['complex'], r['created_at']]
             writer.writerow(row)
         output = si.getvalue()
-        return app.response_class(output, mimetype='text/csv', headers={'Content-Disposition':'attachment;filename=annotations_with_ai.csv'})
+        return app.response_class(output, mimetype='text/csv', headers={'Content-Disposition':'attachment;filename=annotations.csv'})
 
     @app.route('/api/save_annotation', methods=['POST'])
     def save_annotation():
