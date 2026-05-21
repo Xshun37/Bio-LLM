@@ -103,7 +103,7 @@ def _load_gs_review_data():
 
 def create_app():
     app = Flask(__name__, template_folder='templates', static_folder='static')
-    db_path = os.environ.get('ANNOTATION_DB', 'annotations.db')
+    db_path = os.environ.get('ANNOTATION_DB', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'annotations.db'))
     # AI API defaults (can be overridden by env vars)
     AI_API_URL = os.environ.get('AI_API_URL', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')
     AI_API_KEY = os.environ.get('AI_API_KEY', 'sk-dffba2ca4792471db4fe1ede97e01aff')
