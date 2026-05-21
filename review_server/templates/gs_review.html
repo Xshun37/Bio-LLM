@@ -157,44 +157,15 @@
   }
   .notes-row textarea:focus { outline: none; border-color: #1a73e8; }
 
-  /* --- search modal overlay --- */
-  .modal-overlay {
-    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4); z-index: 200;
-    justify-content: center; align-items: flex-start; padding-top: 60px;
-  }
-  .modal-overlay.open { display: flex; }
-  .modal-panel {
-    background: #fff; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    width: 680px; max-height: 75vh; display: flex; flex-direction: column; overflow: hidden;
-  }
-  .modal-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 18px; border-bottom: 1px solid #eee;
-  }
-  .modal-header h3 { font-size: 1.05em; }
-  .modal-close {
-    background: none; border: none; font-size: 1.5em; cursor: pointer;
-    color: #999; line-height: 1; padding: 0 4px;
-  }
-  .modal-close:hover { color: #333; }
-  .modal-body { flex: 1; overflow-y: auto; padding: 10px 18px 14px; }
-  .modal-body .search-loading { text-align: center; color: #999; padding: 30px; }
-  .modal-body .search-empty { text-align: center; color: #999; padding: 30px; }
   .search-candidate {
-    border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border: 1px solid #e0e0e0; border-radius: 6px; padding: 6px 10px; margin-bottom: 3px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
   }
   .search-candidate:hover { border-color: #1a73e8; background: #f8faff; }
   .search-candidate .cand-main { flex: 1; min-width: 0; }
-  .search-candidate .cand-name { font-weight: 600; font-size: 0.95em; }
-  .search-candidate .cand-meta { color: #666; font-size: 0.82em; margin-top: 2px; }
-  .search-candidate .cand-meta span { margin-right: 12px; }
-  .search-candidate button {
-    padding: 6px 16px; background: #1a73e8; color: #fff; border: none;
-    border-radius: 5px; cursor: pointer; font-size: 0.85em; white-space: nowrap;
-  }
-  .search-candidate button:hover { background: #1557b0; }
+  .search-candidate .cand-name { font-weight: 600; font-size: 0.88em; }
+  .search-candidate .cand-meta { color: #666; font-size: 0.78em; margin-top: 1px; }
+  .search-candidate .cand-meta span { margin-right: 10px; }
 
   /* --- bottom bar --- */
   .bottom-bar {
@@ -212,7 +183,7 @@
 <!-- top toolbar -->
 <div class="toolbar">
   <span class="title">GS 50 Gold Standard Review</span>
-  <button onclick="openSearchTool()" title="独立搜索工具">Search Tool</button>
+  <button onclick="openSearchTool()" id="searchBtn" title="内联搜索面板">Search Tool</button>
   <a class="nav-link" href="/api/export_csv">导出 CSV</a>
   <span class="spacer"></span>
   <span class="progress" id="progress">0/50</span>
@@ -234,22 +205,14 @@
     <div class="sidebar-list" id="sidebarList"></div>
   </aside>
   <main class="main-area" id="mainArea">
-    <div class="main-content" id="mainContent"></div>
+    <div class="main-content" id="mainContent">
+      <div id="searchPanel" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:12px 14px;margin-bottom:14px"></div>
+      <div id="pmidCardContainer"></div>
+    </div>
     <div class="bottom-bar" id="bottomBar">
       <span>快捷键: <kbd>j</kbd>/<kbd>n</kbd> 下一个 &nbsp; <kbd>k</kbd>/<kbd>p</kbd> 上一个 &nbsp; <kbd>Enter</kbd> 打开 PubMed &nbsp; <kbd>g</kbd> 第一个</span>
     </div>
   </main>
-</div>
-
-<!-- search modal overlay -->
-<div class="modal-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearchModal()">
-  <div class="modal-panel">
-    <div class="modal-header">
-      <h3 id="searchModalTitle">Search Results</h3>
-      <button class="modal-close" onclick="closeSearchModal()">&times;</button>
-    </div>
-    <div class="modal-body" id="searchBody"></div>
-  </div>
 </div>
 
 <script>

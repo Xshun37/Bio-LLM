@@ -266,7 +266,7 @@ function renderCurrent() {
       '</div>' +
     '</div>';
 
-  document.getElementById('mainContent').innerHTML = html;
+  document.getElementById('pmidCardContainer').innerHTML = html;
 
   for (var k = 0; k < e.p.length; k++) {
     var aArr = e.p[k].assay || [];
@@ -357,27 +357,36 @@ function toggleReviewed(checked) {
 }
 window.toggleReviewed = toggleReviewed;
 
-// ====== Standalone Search Tool ======
+// ====== Inline Search Panel ======
+var _searchOpen = false;
+
 function openSearchTool() {
-  document.getElementById('searchOverlay').classList.add('open');
-  document.getElementById('searchModalTitle').textContent = 'Gene Search Tool (UniProt / MyGene)';
-  var body = document.getElementById('searchBody');
-  body.innerHTML = '<div style="padding:10px">' +
-    '<div style="margin-bottom:10px"><input id="searchToolInput" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:0.95em" placeholder="输入 TF 或 Gene 名称搜索..." onkeydown="if(event.key===\'Enter\')doSearchTool()"></div>' +
-    '<div style="display:flex;gap:8px;margin-bottom:12px">' +
-      '<button onclick="doSearchTool()" style="flex:1;padding:8px;background:#1a73e8;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:0.9em">Search</button>' +
+  _searchOpen = !_searchOpen;
+  var panel = document.getElementById('searchPanel');
+  if (!panel) return;
+  if (_searchOpen) {
+    panel.style.display = 'block';
+    panel.innerHTML = '<div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">' +
+      '<input id="searchToolInput" style="flex:1;padding:7px 10px;border:1px solid #ddd;border-radius:5px;font-size:0.9em" placeholder="输入 TF 或 Gene 名称搜索..." onkeydown="if(event.key===\'Enter\')doSearchTool()">' +
+      '<button onclick="doSearchTool()" style="padding:7px 16px;background:#1a73e8;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:0.9em">Search</button>' +
+      '<button onclick="openSearchTool()" style="padding:7px 12px;background:none;border:1px solid #ddd;border-radius:5px;cursor:pointer;font-size:0.9em">&times;</button>' +
     '</div>' +
-    '<div id="searchToolResults"></div>' +
-  '</div>';
+    '<div id="searchToolResults" style="max-height:300px;overflow-y:auto"></div>';
+  } else {
+    panel.style.display = 'none';
+  }
+  document.getElementById('searchBtn').textContent = _searchOpen ? 'Close Search' : 'Search Tool';
 }
 
 function doSearchTool() {
-  var q = document.getElementById('searchToolInput').value.trim();
+  var input = document.getElementById('searchToolInput');
+  if (!input) return;
+  var q = input.value.trim();
   if (!q) return;
   var resultsDiv = document.getElementById('searchToolResults');
-  resultsDiv.innerHTML = '<div style="color:#999;text-align:center;padding:20px">搜索中...</div>';
+  if (!resultsDiv) return;
+  resultsDiv.innerHTML = '<div style="color:#999;text-align:center;padding:16px">搜索中...</div>';
 
-  // Search both APIs in parallel
   Promise.all([
     fetch('/api/search_protein?q=' + encodeURIComponent(q)).then(function(r) { return r.json(); }),
     fetch('/api/search_gene?q=' + encodeURIComponent(q)).then(function(r) { return r.json(); })
@@ -387,35 +396,35 @@ function doSearchTool() {
     var html = '';
 
     if (proteins.length > 0) {
-      html += '<h4 style="margin-bottom:6px;color:#555">UniProt Proteins (' + proteins.length + ')</h4>';
+      html += '<h4 style="margin-bottom:4px;color:#555;font-size:0.85em">UniProt Proteins (' + proteins.length + ')</h4>';
       proteins.forEach(function(d) {
         var name = d.name || d.id || '';
-        var genes = (d.genes || []).join(', ');
-        html += '<div class="search-candidate">' +
+        var gs = (d.genes || []).join(', ');
+        html += '<div class="search-candidate" style="padding:8px 10px;margin-bottom:4px">' +
           '<div class="cand-main">' +
-            '<div class="cand-name">' + escapeHTML(name) + '</div>' +
-            '<div class="cand-meta"><span>ID: ' + escapeHTML(d.id||'') + '</span><span>Genes: ' + escapeHTML(genes) + '</span></div>' +
+            '<div class="cand-name" style="font-size:0.88em">' + escapeHTML(name) + '</div>' +
+            '<div class="cand-meta" style="font-size:0.78em"><span>ID: ' + escapeHTML(d.id||'') + '</span><span>Genes: ' + escapeHTML(gs) + '</span></div>' +
           '</div>' +
         '</div>';
       });
     }
 
     if (genes.length > 0) {
-      html += '<h4 style="margin:12px 0 6px;color:#555">MyGene Genes (' + genes.length + ')</h4>';
+      html += '<h4 style="margin:8px 0 4px;color:#555;font-size:0.85em">MyGene Genes (' + genes.length + ')</h4>';
       genes.forEach(function(d) {
-        html += '<div class="search-candidate">' +
+        html += '<div class="search-candidate" style="padding:8px 10px;margin-bottom:4px">' +
           '<div class="cand-main">' +
-            '<div class="cand-name">' + escapeHTML(d.query_symbol||'') + '</div>' +
-            '<div class="cand-meta"><span>' + escapeHTML(d.name||'') + '</span><span>ENSG: ' + escapeHTML(d.ensg||'') + '</span></div>' +
+            '<div class="cand-name" style="font-size:0.88em">' + escapeHTML(d.query_symbol||'') + '</div>' +
+            '<div class="cand-meta" style="font-size:0.78em"><span>' + escapeHTML(d.name||'') + '</span><span>ENSG: ' + escapeHTML(d.ensg||'') + '</span></div>' +
           '</div>' +
         '</div>';
       });
     }
 
-    if (!html) html = '<div style="color:#999;text-align:center;padding:20px">无结果</div>';
+    if (!html) html = '<div style="color:#999;text-align:center;padding:16px">无结果</div>';
     resultsDiv.innerHTML = html;
   }).catch(function() {
-    resultsDiv.innerHTML = '<div style="color:#c62828;text-align:center;padding:20px">搜索失败</div>';
+    resultsDiv.innerHTML = '<div style="color:#c62828;text-align:center;padding:16px">搜索失败</div>';
   });
 }
 
@@ -423,7 +432,11 @@ window.openSearchTool = openSearchTool;
 window.doSearchTool = doSearchTool;
 
 function closeSearchModal() {
-  document.getElementById('searchOverlay').classList.remove('open');
+  _searchOpen = false;
+  var panel = document.getElementById('searchPanel');
+  if (panel) panel.style.display = 'none';
+  var btn = document.getElementById('searchBtn');
+  if (btn) btn.textContent = 'Search Tool';
 }
 window.closeSearchModal = closeSearchModal;
 
