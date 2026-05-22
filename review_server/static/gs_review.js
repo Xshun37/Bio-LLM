@@ -99,8 +99,13 @@ function loadState() {
     var merged = false;
     for (var pmid in data.states) {
       if (!state.d[pmid]) { state.d[pmid] = data.states[pmid]; merged = true; }
+      else {
+        // Server data takes priority (fixes stale localStorage blocking server data)
+        state.d[pmid] = data.states[pmid];
+        merged = true;
+      }
     }
-    if (merged) { saveLocal(); renderSidebar(); updateProgress(); }
+    if (merged) { saveLocal(); renderSidebar(); updateProgress(); renderCurrent(); }
   });
 }
 
@@ -209,31 +214,31 @@ function renderCurrent() {
     absHTML = '<div class="abstract-box" id="absBox">' + escapeHTML(abstract) + '</div>';
   }
 
-  var rowsHTML = "";
+  var pairsHTML = "";
   for (var j = 0; j < e.p.length; j++) {
     var p = e.p[j];
     var assayArr = p.assay || [];
     if (typeof assayArr === 'string') assayArr = assayArr ? assayArr.split(';') : [];
-    var assayDisplay = Array.isArray(assayArr) ? assayArr.join(', ') : '';
-    rowsHTML += '<tr>' +
-      '<td class="col-tf"><input type="text" id="tf_' + j + '" value="' + escapeHTML(p.tf||'') + '" onchange="updatePairField(' + j + ',\'tf\',this.value)"></td>' +
-      '<td class="col-gene"><input type="text" id="gene_' + j + '" value="' + escapeHTML(p.gene||'') + '" onchange="updatePairField(' + j + ',\'gene\',this.value)"></td>' +
-      '<td class="col-dir">' +
-        '<select onchange="updatePairField(' + j + ',\'direction\',this.value)">' +
-          '<option value="" ' + ((p.direction||'')===""?"selected":"") + '>--</option>' +
-          '<option value="Activation" ' + ((p.direction||'')==="Activation"?"selected":"") + '>Activation</option>' +
-          '<option value="Repression" ' + ((p.direction||'')==="Repression"?"selected":"") + '>Repression</option>' +
-          '<option value="Unknown" ' + ((p.direction||'')==="Unknown"?"selected":"") + '>Unknown</option>' +
-        '</select>' +
-      '</td>' +
-      '<td class="col-cellline"><input type="text" value="' + escapeHTML(p.cellline||'') + '" onchange="updatePairField(' + j + ',\'cellline\',this.value)"></td>' +
-      '<td class="col-assay">' +
+    pairsHTML += '<div class="pair-block">' +
+      '<div class="pair-top">' +
+        '<div class="pair-field"><label>TF</label><input type="text" id="tf_' + j + '" value="' + escapeHTML(p.tf||'') + '" onchange="updatePairField(' + j + ',\'tf\',this.value)"></div>' +
+        '<div class="pair-field"><label>Gene</label><input type="text" id="gene_' + j + '" value="' + escapeHTML(p.gene||'') + '" onchange="updatePairField(' + j + ',\'gene\',this.value)"></div>' +
+        '<div class="pair-field pair-field-sm"><label>Direction</label>' +
+          '<select onchange="updatePairField(' + j + ',\'direction\',this.value)">' +
+            '<option value="" ' + ((p.direction||'')===""?"selected":"") + '>--</option>' +
+            '<option value="Activation" ' + ((p.direction||'')==="Activation"?"selected":"") + '>Activation</option>' +
+            '<option value="Repression" ' + ((p.direction||'')==="Repression"?"selected":"") + '>Repression</option>' +
+            '<option value="Unknown" ' + ((p.direction||'')==="Unknown"?"selected":"") + '>Unknown</option>' +
+          '</select></div>' +
+        '<div class="pair-field"><label>Cell Line</label><input type="text" value="' + escapeHTML(p.cellline||'') + '" onchange="updatePairField(' + j + ',\'cellline\',this.value)"></div>' +
+        '<div class="pair-field"><label>Complex</label><input type="text" value="' + escapeHTML(p.complex||'') + '" onchange="updatePairField(' + j + ',\'complex\',this.value)" placeholder="复合体"></div>' +
+        '<button class="btn-del" onclick="removePair(' + j + ')">&times;</button>' +
+      '</div>' +
+      '<div class="pair-assay">' +
+        '<label>Assay</label>' +
         '<div id="assay_chips_' + j + '"></div>' +
-        '<div style="font-size:0.75em;color:#888">已选: ' + (assayDisplay || '无') + '</div>' +
-      '</td>' +
-      '<td class="col-complex"><input type="text" value="' + escapeHTML(p.complex||'') + '" onchange="updatePairField(' + j + ',\'complex\',this.value)" placeholder="复合体"></td>' +
-      '<td class="col-del"><button class="btn-del" onclick="removePair(' + j + ')">&times;</button></td>' +
-      '</tr>';
+      '</div>' +
+    '</div>';
   }
 
   var html =
@@ -250,15 +255,7 @@ function renderCurrent() {
       refHTML + absHTML +
       (e.p.length === 0
         ? '<p class="empty-hint">点击 "添加 Pair" 开始标注</p>'
-        : '<table class="pairs-table"><thead><tr>' +
-            '<th class="col-tf">TF</th>' +
-            '<th class="col-gene">Gene</th>' +
-            '<th class="col-dir">Direction</th>' +
-            '<th class="col-cellline">Cell Line</th>' +
-            '<th class="col-assay">Assay</th>' +
-            '<th class="col-complex">Complex</th>' +
-            '<th class="col-del"></th>' +
-          '</tr></thead><tbody>' + rowsHTML + '</tbody></table>') +
+        : pairsHTML) +
       '<button class="btn-add" onclick="addPair()">+ 添加 Pair</button>' +
       '<div class="notes-row">' +
         '<label>Notes</label>' +
@@ -306,11 +303,6 @@ function collectAssaySelections(pairIdx) {
   chips.forEach(function(cb) { selected.push(cb.value); });
   getEntry(pmid).p[pairIdx].assay = selected;
   saveState(pmid);
-  var td = document.querySelectorAll('.col-assay')[pairIdx];
-  if (td) {
-    var div = td.querySelector('div:last-child');
-    if (div) div.textContent = '已选: ' + (selected.length ? selected.join(', ') : '无');
-  }
 }
 
 // ====== Pair management ======

@@ -100,29 +100,24 @@
   }
   .abstract-box.open { display: block; }
 
-  /* --- pairs table (wider now) --- */
-  .pairs-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-  .pairs-table th {
-    text-align: left; font-size: 0.8em; color: #888; padding: 4px 6px;
-    border-bottom: 2px solid #e0e0e0;
+  /* --- pair blocks --- */
+  .pair-block {
+    border: 1px solid #e8e8e8; border-radius: 8px; padding: 12px 14px 10px;
+    margin-bottom: 10px; background: #fafafa;
   }
-  .pairs-table td { padding: 7px 6px; vertical-align: top; }
-  .pairs-table input, .pairs-table select {
-    width: 100%; padding: 6px 7px; border: 1px solid #ddd; border-radius: 5px;
-    font-size: 0.88em;
+  .pair-top {
+    display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;
   }
-  .pairs-table input:focus, .pairs-table select:focus { outline: none; border-color: #1a73e8; }
-  .pairs-table .col-tf { width: 14%; }
-  .pairs-table .col-gene { width: 14%; }
-  .pairs-table .col-dir { width: 11%; }
-  .pairs-table .col-cellline { width: 14%; }
-  .pairs-table .col-assay { width: 25%; }
-  .pairs-table .col-complex { width: 14%; }
-  .pairs-table .col-del { width: 4%; }
-
-  .search-row { display: flex; gap: 4px; }
-  .search-row input { flex: 1; }
-  .search-row button { padding: 4px 8px; font-size: 0.78em; white-space: nowrap; }
+  .pair-field { flex: 1; min-width: 120px; }
+  .pair-field-sm { flex: 0 0 130px; min-width: 110px; }
+  .pair-field label, .pair-assay label { display: block; font-size: 0.75em; color: #999; margin-bottom: 2px; }
+  .pair-field input, .pair-field select {
+    width: 100%; padding: 6px 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.88em;
+  }
+  .pair-field input:focus, .pair-field select:focus { outline: none; border-color: #1a73e8; }
+  .pair-assay {
+    margin-top: 10px; padding-top: 8px; border-top: 1px solid #eee;
+  }
 
   /* --- assay chips --- */
   .assay-chips-wrap { max-height: 200px; overflow-y: auto; }
