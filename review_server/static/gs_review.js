@@ -334,14 +334,6 @@ function collectAssaySelections(pairIdx) {
   var refCb = document.getElementById('ref_' + pairIdx);
   if (refCb) refCb.checked = selected.indexOf('Literature') >= 0;
 }
-  var pmid = DataStore.getCurrentPmid();
-  if (!pmid) return;
-  var chips = document.querySelectorAll('.assay-chip[data-pair="' + pairIdx + '"] input[type="checkbox"]:checked');
-  var selected = [];
-  chips.forEach(function(cb) { selected.push(cb.value); });
-  getEntry(pmid).p[pairIdx].assay = selected;
-  saveState(pmid);
-}
 
 // ====== Pair management ======
 function addPair() {
