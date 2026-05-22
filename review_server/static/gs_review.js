@@ -306,13 +306,34 @@ function toggleReference(pairIdx, checked) {
   if (!checked && idx >= 0) assays.splice(idx, 1);
   getEntry(pmid).p[pairIdx].assay = assays;
   saveState(pmid);
-  // keep the assay panel label updated
-  var panel = document.getElementById('assay_chips_' + pairIdx);
-  if (panel && panel.nextSibling) panel.nextSibling.textContent = '';
+  // Sync Literature chip
+  syncLiteratureChip(pairIdx, checked);
 }
 window.toggleReference = toggleReference;
 
+function syncLiteratureChip(pairIdx, checked) {
+  var chips = document.querySelectorAll('#assay_chips_' + pairIdx + ' .assay-chip[data-tag="Literature"]');
+  chips.forEach(function(ch) {
+    var inp = ch.querySelector('input[type="checkbox"]');
+    if (inp && inp.checked !== checked) {
+      inp.checked = checked;
+      ch.classList.toggle('checked', checked);
+    }
+  });
+}
+
 function collectAssaySelections(pairIdx) {
+  var pmid = DataStore.getCurrentPmid();
+  if (!pmid) return;
+  var chips = document.querySelectorAll('.assay-chip[data-pair="' + pairIdx + '"] input[type="checkbox"]:checked');
+  var selected = [];
+  chips.forEach(function(cb) { selected.push(cb.value); });
+  getEntry(pmid).p[pairIdx].assay = selected;
+  saveState(pmid);
+  // Sync Ref checkbox
+  var refCb = document.getElementById('ref_' + pairIdx);
+  if (refCb) refCb.checked = selected.indexOf('Literature') >= 0;
+}
   var pmid = DataStore.getCurrentPmid();
   if (!pmid) return;
   var chips = document.querySelectorAll('.assay-chip[data-pair="' + pairIdx + '"] input[type="checkbox"]:checked');
