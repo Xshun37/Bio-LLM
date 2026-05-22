@@ -219,6 +219,7 @@ function renderCurrent() {
     var p = e.p[j];
     var assayArr = p.assay || [];
     if (typeof assayArr === 'string') assayArr = assayArr ? assayArr.split(';') : [];
+    var hasRef = assayArr.indexOf('Literature') >= 0;
     pairsHTML += '<div class="pair-block">' +
       '<div class="pair-top">' +
         '<div class="pair-field"><label>TF</label><input type="text" id="tf_' + j + '" value="' + escapeHTML(p.tf||'') + '" onchange="updatePairField(' + j + ',\'tf\',this.value)"></div>' +
@@ -232,6 +233,7 @@ function renderCurrent() {
           '</select></div>' +
         '<div class="pair-field"><label>Cell Line</label><input type="text" value="' + escapeHTML(p.cellline||'') + '" onchange="updatePairField(' + j + ',\'cellline\',this.value)"></div>' +
         '<div class="pair-field"><label>Complex</label><input type="text" value="' + escapeHTML(p.complex||'') + '" onchange="updatePairField(' + j + ',\'complex\',this.value)" placeholder="复合体"></div>' +
+        '<label class="ref-check"><input type="checkbox" id="ref_' + j + '" ' + (hasRef ? 'checked' : '') + ' onchange="toggleReference(' + j + ',this.checked)"> Ref</label>' +
         '<button class="btn-del" onclick="removePair(' + j + ')">&times;</button>' +
       '</div>' +
       '<div class="pair-assay">' +
@@ -294,6 +296,21 @@ function attachAssayHandlers() {
     });
   });
 }
+
+function toggleReference(pairIdx, checked) {
+  var pmid = DataStore.getCurrentPmid();
+  var assays = getEntry(pmid).p[pairIdx].assay || [];
+  if (typeof assays === 'string') assays = assays ? assays.split(';') : [];
+  var idx = assays.indexOf('Literature');
+  if (checked && idx < 0) assays.push('Literature');
+  if (!checked && idx >= 0) assays.splice(idx, 1);
+  getEntry(pmid).p[pairIdx].assay = assays;
+  saveState(pmid);
+  // keep the assay panel label updated
+  var panel = document.getElementById('assay_chips_' + pairIdx);
+  if (panel && panel.nextSibling) panel.nextSibling.textContent = '';
+}
+window.toggleReference = toggleReference;
 
 function collectAssaySelections(pairIdx) {
   var pmid = DataStore.getCurrentPmid();
