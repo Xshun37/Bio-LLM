@@ -445,6 +445,7 @@ def create_app():
                 except Exception:
                     s = {}
                 notes = s.get('n', '')
+                pairs = s.get('p', [])
                 # Collect cofactor info to append to notes
                 cofactor_notes = []
                 for pair in pairs:
