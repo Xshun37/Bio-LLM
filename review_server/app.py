@@ -445,7 +445,18 @@ def create_app():
                 except Exception:
                     s = {}
                 notes = s.get('n', '')
+                # Collect cofactor info to append to notes
+                cofactor_notes = []
                 for pair in pairs:
+                    if pair.get('cofactor'):
+                        cofactor_notes.append('[Co-regulator: ' + (pair.get('tf', '') or pair.get('tf_input', '') or pair.get('f', '')) + ']')
+                cofactor_str = '; '.join(cofactor_notes) if cofactor_notes else ''
+                full_notes = notes
+                if cofactor_str:
+                    full_notes = (notes + ' | ' if notes else '') + cofactor_str
+                for pair in pairs:
+                    if pair.get('cofactor'):
+                        continue  # skip cofactor rows in TSV
                     assay = pair.get('assay', [])
                     if isinstance(assay, list):
                         assay_str = ';'.join(assay)
@@ -459,7 +470,7 @@ def create_app():
                         pair.get('cellline', '') or pair.get('c', ''),
                         assay_str,
                         pair.get('complex', '') or '',
-                        notes,
+                        full_notes,
                     ]))
             import io
             output = io.StringIO()

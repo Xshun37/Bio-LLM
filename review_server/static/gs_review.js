@@ -220,7 +220,8 @@ function renderCurrent() {
     var assayArr = p.assay || [];
     if (typeof assayArr === 'string') assayArr = assayArr ? assayArr.split(';') : [];
     var hasRef = assayArr.indexOf('Literature') >= 0;
-    pairsHTML += '<div class="pair-block">' +
+    var isCofactor = !!p.cofactor;
+    pairsHTML += '<div class="pair-block' + (isCofactor ? ' cofactor' : '') + '">' +
       '<div class="pair-top">' +
         '<div class="pair-field"><label>TF</label><input type="text" id="tf_' + j + '" value="' + escapeHTML(p.tf||'') + '" onchange="updatePairField(' + j + ',\'tf\',this.value)"></div>' +
         '<div class="pair-field"><label>Gene</label><input type="text" id="gene_' + j + '" value="' + escapeHTML(p.gene||'') + '" onchange="updatePairField(' + j + ',\'gene\',this.value)"></div>' +
@@ -233,6 +234,7 @@ function renderCurrent() {
           '</select></div>' +
         '<div class="pair-field"><label>Cell Line</label><input type="text" value="' + escapeHTML(p.cellline||'') + '" onchange="updatePairField(' + j + ',\'cellline\',this.value)"></div>' +
         '<div class="pair-field"><label>Complex</label><input type="text" value="' + escapeHTML(p.complex||'') + '" onchange="updatePairField(' + j + ',\'complex\',this.value)" placeholder="复合体"></div>' +
+        '<label class="ref-check"><input type="checkbox" id="cofactor_' + j + '" ' + (isCofactor ? 'checked' : '') + ' onchange="toggleCofactor(' + j + ',this.checked)" title="标记为协同因子，导出时并入Notes"> cofactor</label>' +
         '<label class="ref-check"><input type="checkbox" id="ref_' + j + '" ' + (hasRef ? 'checked' : '') + ' onchange="toggleReference(' + j + ',this.checked)"> citation</label>' +
         '<button class="btn-del" onclick="removePair(' + j + ')">&times;</button>' +
       '</div>' +
@@ -297,6 +299,15 @@ function attachAssayHandlers() {
   });
 }
 
+function toggleCofactor(pairIdx, checked) {
+  var pmid = DataStore.getCurrentPmid();
+  getEntry(pmid).p[pairIdx].cofactor = checked;
+  saveState(pmid);
+  var block = document.querySelectorAll('.pair-block')[pairIdx];
+  if (block) block.classList.toggle('cofactor', checked);
+}
+window.toggleCofactor = toggleCofactor;
+
 function toggleReference(pairIdx, checked) {
   var pmid = DataStore.getCurrentPmid();
   var assays = getEntry(pmid).p[pairIdx].assay || [];
@@ -339,7 +350,7 @@ function collectAssaySelections(pairIdx) {
 function addPair() {
   var pmid = DataStore.getCurrentPmid();
   var e = getEntry(pmid);
-  e.p.push({ tf: "", gene: "", direction: "", cellline: "", assay: [], complex: "" });
+  e.p.push({ tf: "", gene: "", direction: "", cellline: "", assay: [], complex: "", cofactor: false });
   saveState(pmid);
   renderCurrent();
 }
