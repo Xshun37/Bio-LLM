@@ -444,7 +444,7 @@ def create_app():
                     s = json.loads(r['state_json'])
                 except Exception:
                     s = {}
-                pairs = s.get('p', [])
+                notes = s.get('n', '')
                 for pair in pairs:
                     assay = pair.get('assay', [])
                     if isinstance(assay, list):
@@ -459,10 +459,11 @@ def create_app():
                         pair.get('cellline', '') or pair.get('c', ''),
                         assay_str,
                         pair.get('complex', '') or '',
+                        notes,
                     ]))
             import io
             output = io.StringIO()
-            output.write('PMID\tTF\tTarget\tDirection\tCellLine\tAssay\tComplex\n')
+            output.write('PMID\tTF\tTarget\tDirection\tCellLine\tAssay\tComplex\tNotes\n')
             output.write('\n'.join(lines) + '\n')
             return app.response_class(output.getvalue(), mimetype='text/tab-separated-values',
                                       headers={'Content-Disposition': 'attachment;filename=gs_review_export.tsv'})
