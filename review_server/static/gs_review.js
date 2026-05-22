@@ -233,7 +233,7 @@ function renderCurrent() {
           '</select></div>' +
         '<div class="pair-field"><label>Cell Line</label><input type="text" value="' + escapeHTML(p.cellline||'') + '" onchange="updatePairField(' + j + ',\'cellline\',this.value)"></div>' +
         '<div class="pair-field"><label>Complex</label><input type="text" value="' + escapeHTML(p.complex||'') + '" onchange="updatePairField(' + j + ',\'complex\',this.value)" placeholder="复合体"></div>' +
-        '<label class="ref-check"><input type="checkbox" id="ref_' + j + '" ' + (hasRef ? 'checked' : '') + ' onchange="toggleReference(' + j + ',this.checked)"> Ref</label>' +
+        '<label class="ref-check"><input type="checkbox" id="ref_' + j + '" ' + (hasRef ? 'checked' : '') + ' onchange="toggleReference(' + j + ',this.checked)"> citation</label>' +
         '<button class="btn-del" onclick="removePair(' + j + ')">&times;</button>' +
       '</div>' +
       '<div class="pair-assay">' +

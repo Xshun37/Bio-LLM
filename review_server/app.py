@@ -148,8 +148,7 @@ def create_app():
         {'tag':'NB','en':'Northern Blot','cn':'核糖核酸印迹','category':'Expression/Reporter'},
         {'tag':'RPA','en':'RNase Protection Assay','cn':'RNase保护实验','category':'Expression/Reporter'},
 
-        {'tag':'ChIP','en':'Chromatin Immunoprecipitation (incl. ChIP-seq, ChIP-chip)','cn':'染色质免疫共沉淀','category':'DNA/TF Binding'},
-        {'tag':'ChIPmentation','en':'ChIPmentation','cn':'ChIPmentation','category':'DNA/TF Binding'},
+        {'tag':'ChIP','en':'Chromatin Immunoprecipitation (incl. ChIP-seq, ChIP-chip, ChIPmentation)','cn':'染色质免疫共沉淀','category':'DNA/TF Binding'},
         {'tag':'CUT&RUN','en':'Cleavage Under Targets & Release Using Nuclease (CUT&RUN)','cn':'CUT&RUN','category':'DNA/TF Binding'},
         {'tag':'CUT&Tag','en':'Cleavage Under Targets & Tagmentation (CUT&Tag)','cn':'CUT&Tag','category':'DNA/TF Binding'},
         {'tag':'EMSA','en':'Electrophoretic Mobility Shift Assay (incl. Supershift)','cn':'电泳迁移率变动分析','category':'DNA/TF Binding'},
@@ -181,7 +180,7 @@ def create_app():
         {'tag':'Cell_viability','en':'Cell viability / proliferation assays (MTT, CCK-8, EdU)','cn':'细胞活性/增殖（MTT/CCK-8/EdU）','category':'Cell-based'},
         {'tag':'Migration','en':'Cell migration / invasion assays (Transwell, wound healing)','cn':'细胞迁移/侵袭实验','category':'Cell-based'},
         {'tag':'Patch_clamp','en':'Patch clamp / electrophysiology','cn':'膜片钳/电生理','category':'Cell-based'}
-        ,{'tag':'Literature','en':'Literature citation (reported in paper)','cn':'文献引用','category':'Reference'}
+        ,{'tag':'Literature','en':'Literature citation (reported in paper)','cn':'文献引用','category':'citation'}
     ]
     # group by category preserving order
     grouped_assays = {}
