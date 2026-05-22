@@ -446,18 +446,7 @@ def create_app():
                     s = {}
                 notes = s.get('n', '')
                 pairs = s.get('p', [])
-                # Collect cofactor info to append to notes
-                cofactor_notes = []
                 for pair in pairs:
-                    if pair.get('cofactor'):
-                        cofactor_notes.append('[Co-regulator: ' + (pair.get('tf', '') or pair.get('tf_input', '') or pair.get('f', '')) + ']')
-                cofactor_str = '; '.join(cofactor_notes) if cofactor_notes else ''
-                full_notes = notes
-                if cofactor_str:
-                    full_notes = (notes + ' | ' if notes else '') + cofactor_str
-                for pair in pairs:
-                    if pair.get('cofactor'):
-                        continue  # skip cofactor rows in TSV
                     assay = pair.get('assay', [])
                     if isinstance(assay, list):
                         assay_str = ';'.join(assay)
@@ -471,11 +460,12 @@ def create_app():
                         pair.get('cellline', '') or pair.get('c', ''),
                         assay_str,
                         pair.get('complex', '') or '',
-                        full_notes,
+                        notes,
+                        '1' if pair.get('cofactor') else '0',
                     ]))
             import io
             output = io.StringIO()
-            output.write('PMID\tTF\tTarget\tDirection\tCellLine\tAssay\tComplex\tNotes\n')
+            output.write('PMID\tTF\tTarget\tDirection\tCellLine\tAssay\tComplex\tNotes\tCofactor\n')
             output.write('\n'.join(lines) + '\n')
             return app.response_class(output.getvalue(), mimetype='text/tab-separated-values',
                                       headers={'Content-Disposition': 'attachment;filename=gs_review_export.tsv'})

@@ -92,7 +92,7 @@ def main():
         if ensg not in ensg_to_symbol:
             ensg_to_symbol[ensg] = sym
 
-    header = ["PMID", "TF", "ENSG", "CellLine", "Assay", "complex", "Notes"]
+    header = ["PMID", "TF", "ENSG", "CellLine", "Assay", "complex", "Notes", "Cofactor"]
     print("\t".join(header))
 
     with open(input_path, encoding="utf-8") as f:
@@ -113,7 +113,7 @@ def main():
             tf_raw = parts[1].strip()
             col2 = parts[2].strip()
 
-            # Detect format: new (8 cols: PMID,TF,Target,Direction,CellLine,Assay,Complex,Notes)
+            # Detect format: new (9 cols: PMID,TF,Target,Direction,CellLine,Assay,Complex,Notes,Cofactor)
             #                old (6 cols: PMID,TF,ENSG,CellLine,Assay,complex)
             if len(parts) >= 7:
                 target_raw = col2
@@ -121,6 +121,7 @@ def main():
                 assay = parts[5].strip()
                 complex_note = parts[6].strip() if len(parts) >= 7 else ""
                 notes = parts[7].strip() if len(parts) >= 8 else ""
+                cofactor = parts[8].strip() if len(parts) >= 9 else "0"
             elif col2.startswith("ENSG"):
                 target_raw = ensg_to_symbol.get(col2, "")
                 target_ensg = col2
@@ -128,12 +129,14 @@ def main():
                 assay = parts[4].strip() if len(parts) >= 5 else ""
                 complex_note = parts[5].strip() if len(parts) >= 6 else ""
                 notes = parts[6].strip() if len(parts) >= 7 else ""
+                cofactor = parts[7].strip() if len(parts) >= 8 else "0"
             else:
                 target_raw = col2
                 cellline = parts[3].strip() if len(parts) >= 4 else ""
                 assay = parts[4].strip() if len(parts) >= 5 else ""
                 complex_note = parts[5].strip() if len(parts) >= 6 else ""
                 notes = parts[6].strip() if len(parts) >= 7 else ""
+                cofactor = parts[7].strip() if len(parts) >= 8 else "0"
 
             tf_norm = normalize(tf_raw, override_map, alias_map, ensg_map)
             target_norm = normalize(target_raw, override_map, alias_map, ensg_map)
@@ -144,7 +147,7 @@ def main():
                 target_ensg = "NOT_FOUND"
 
             print("\t".join([pmid, tf_norm, target_ensg,
-                             cellline, assay, complex_note, notes]))
+                             cellline, assay, complex_note, notes, cofactor]))
 
 
 if __name__ == "__main__":
