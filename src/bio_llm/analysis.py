@@ -18,6 +18,8 @@ from bio_llm.evaluation import normalize_and_log
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
 DEFAULT_MODEL = "qwen3.7-max-2026-05-20"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DEFAULT_PROMPT_DIR = os.path.join(PROJECT_ROOT, "config", "prompts")
 
 _client = None
 
@@ -36,8 +38,18 @@ def _get_client():
     return _client
 
 
+def load_prompt(filename, prompt_dir=None):
+    """Load a prompt template from config/prompts/."""
+    prompt_dir = prompt_dir or DEFAULT_PROMPT_DIR
+    path = os.path.join(prompt_dir, filename)
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Prompt file not found: {path}")
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
+
+
 def parse_test_file(file_path):
-    """Parse PMID blocks and structured abstracts from the test file."""
+    """Parse PMID blocks, structured abstracts, and gold standard entries."""
     if not os.path.exists(file_path):
         print(f"错误: 找不到输入文件 {file_path}")
         return []
@@ -63,6 +75,21 @@ def parse_test_file(file_path):
         pmid = pmid_match.group(1).strip()
         raw_abstract = abstract_match.group(1).strip()
 
+        # Parse gold standard entries
+        gs_entries = []
+        for gs_match in re.finditer(
+            r"Gold Standard:\s*(\S+)\s*->\s*(\S+)"
+            r"(?:\s*\[Assay:\s*([^\]]*)\])?"
+            r"(?:\s*\[CellLine:\s*([^\]]*)\])?",
+            block,
+        ):
+            gs_entries.append({
+                "tf": gs_match.group(1).strip(),
+                "target": gs_match.group(2).strip(),
+                "assay": (gs_match.group(3) or "").strip(),
+                "cellLine": (gs_match.group(4) or "").strip(),
+            })
+
         sections = {}
         if raw_abstract.startswith("["):
             segments = re.split(r"\n---+\n?", raw_abstract)
@@ -78,7 +105,12 @@ def parse_test_file(file_path):
         else:
             abstract_text = raw_abstract
 
-        tasks.append({"pmid": pmid, "abstract": abstract_text, "sections": sections})
+        tasks.append({
+            "pmid": pmid,
+            "abstract": abstract_text,
+            "sections": sections,
+            "gold_standard": gs_entries,
+        })
 
     return tasks
 
@@ -165,70 +197,26 @@ def _call_llm(model, temperature, prompt=None, messages=None, max_retries=3):
     return None
 
 
-def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=0, debug=False):
-    round1_user = (
-        "You are a bioinformatics expert. Read the following PubMed abstract carefully.\n"
-        "Pay special attention to the METHODS and RESULTS sections.\n\n"
-        f"{abstract_text}\n\n"
-        "You are analyzing a PubMed abstract to find DIRECT TF-target relationships.\n"
-        "A transcription factor (TF) is a protein that directly or indirectly (via a\n"
-        "complex) regulates gene transcription. ACCEPTABLE: classical TFs (STAT3, TP53,\n"
-        "NFKB1, RELA, MYC, GATA1, FOXO, JUN, FOS, HNF1, HNF4, SP1, SP3) and\n"
-        "transcriptional regulators (EZH2, HDAC1/3, EP300, MECP2). NOT acceptable:\n"
-        "hormones (RA/retinoic acid, estrogen), growth factors, cytokines, drugs,\n"
-        "signaling kinases (JNK, p38MAPK, PI3K, AKT, MEK1/MAP2K1), or metabolites.\n"
-        "If a regulator is NOT a TF, exclude that relationship.\n\n"
-        "Answer these specific questions based on the ENTIRE abstract:\n\n"
-        "Q1: List every gene mentioned whose mRNA or protein level changes when\n"
-        "    another gene/protein is knocked down or overexpressed. Give the exact\n"
-        "    sentence from the abstract for each.\n\n"
-        "Q2: Are there sentences containing the words 'mediates', 'mediated',\n"
-        "    'via', 'through', 'by regulating', 'which in turn', or 'in turn'?\n"
-        "    Copy those sentences verbatim. These describe the MECHANISM.\n\n"
-        "Q3: The pattern 'X inhibits Y-mediated Z' means X acts on Y, and Y acts on Z.\n"
-        "    The DIRECT relationship is X→Y (not X→Z). Check if the abstract has\n"
-        "    any such pattern: 'A inhibits/blocks/suppresses B-mediated C'.\n"
-        "    If yes, list A→B as the DIRECT relationship.\n\n"
-        "Q4: List ALL valid direct regulatory relationships found in this abstract.\n"
-        "    - Only include links where the regulator DIRECTLY alters the target.\n"
-        "    - If TF regulates B which then affects C, the link is TF→B (not TF→C).\n"
-        "    - Include only relationships with specific experimental evidence (confidence ≥ 2).\n"
-        "    - Maximum 10 relationships. If more exist, keep the top 10 by confidence.\n"
-        "    - For each relationship, clearly state the regulator, target, direction,\n"
-        "      confidence score, and experimental evidence.\n\n"
-        "    ISOFORM RULE: If a TF has opposite effects on different isoforms of the\n"
-        "    SAME gene (e.g., activates isoform A, represses isoform B), you MAY\n"
-        "    output TWO entries if you specify the isoform in the evidence field\n"
-        "    (e.g., Target='LEF1', evidence='activates Lef-1 FL isoform'). Direction\n"
-        "    MUST be 'Activation' or 'Repression' — NEVER use 'Regulation'.\n"
-        "    If you cannot determine the direction, exclude the relationship.\n\n"
-        "    AUTO-REGULATION RULE: A TF binding to the promoter of Gene X means\n"
-        "    TF → X (NOT TF → TF). Only report TF → TF if the abstract uses explicit\n"
-        "    self-regulation language (e.g., 'regulates its own expression',\n"
-        "    'auto-regulates', 'binds its own promoter'). If a TF binds to a binding\n"
-        "    site ON ANOTHER gene's promoter, that is TF→that_gene, never TF→TF.\n"
-        "    A 'binding site for CEBPB' on the IL4 promoter means CEBPB→IL4, not\n"
-        "    CEBPB→CEBPB. Do NOT confuse binding sites with self-regulation.\n\n"
-        "For the final answer, also include:\n"
-        "  - DIRECTION: Activation or Repression.\n"
-        "  - CONFIDENCE (1-5):\n"
-        "    5 = ChIP + reporter + mutagenesis\n"
-        "    4 = ChIP or EMSA + knockdown/overexpression phenotype\n"
-        "    3 = clear functional evidence but binding method unclear\n"
-        "    2 = mentioned but sparse experimental details\n"
-        "    1 = speculated or only in discussion\n"
-        "  - EVIDENCE: specific experimental method.\n\n"
-        "GENE NAME RULES — CRITICAL:\n"
-        "  You MUST output official HGNC approved symbols for ALL genes. Do NOT use\n"
-        "  protein names, common names, or literature aliases. You know the mapping:\n"
-        "  ZBP-89 → ZNF148, SAF-1 → MAZ, Oct-1 → POU2F1, c-Myc → MYC,\n"
-        "  NF-kB p65 → RELA, AP-2 → TFAP2A, C/EBPbeta → CEBPB, YB-1 → YBX1.\n"
-        "  Convert EVERY gene to its HGNC symbol before listing it.\n\n"
-        "FUSION PROTEINS: NEVER use fusion names. 'MLL-AF9' → KMT2A and MLLT3.\n\n"
-        "C. If after analysis you found ZERO TF-target relationships, re-read the abstract\n"
-        "   once more. Look for any sentence describing a TF regulating a gene.\n\n"
-        "Do NOT output JSON yet. Just analyze in plain text."
-    )
+def analyze_tf_interaction(
+    abstract_text,
+    model_name=DEFAULT_MODEL,
+    temperature=0,
+    debug=False,
+    round1_prompt=None,
+    round2_prompt=None,
+):
+    # Load prompts from files or use overrides
+    if round1_prompt is None:
+        round1_template = load_prompt("round1.txt")
+    else:
+        round1_template = round1_prompt
+    if round2_prompt is None:
+        round2_template = load_prompt("round2.txt")
+    else:
+        round2_template = round2_prompt
+
+    round1_user = round1_template.replace("{abstract_text}", abstract_text)
+    round2_user = round2_template  # Round 2 has no abstract placeholder
 
     resp1 = _call_llm(model_name, temperature, prompt=round1_user)
     if resp1 is None:
@@ -238,35 +226,6 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL, temperature=
         return {"error": err_msg}
 
     analysis = extract_model_content(resp1)
-    round2_user = (
-        "Now, based on YOUR analysis above, output ALL valid TF-target relationships "
-        "as a JSON array.\n\n"
-        "Selection Priority:\n"
-        "DIRECT OVER MEDIATED: If the abstract says 'A regulates C via B', output 'A -> B' (if A is a TF), not 'A -> C'.\n"
-        "EXAMPLE: IFI16 represses hTERT by first repressing MYC → output IFI16 -> MYC, not IFI16 -> hTERT.\n\n"
-        "Rules:\n"
-        "0. The regulator MUST be a transcription factor. Exclude: hormones (RA/retinoic\n"
-        "   acid, estrogen), growth factors, cytokines, drugs, signaling kinases (JNK,\n"
-        "   p38MAPK, PI3K, AKT, MEK1/MAP2K1), and metabolites.\n"
-        "1. Include ONLY direct regulatory relationships (confidence ≥ 2).\n"
-        "2. Maximum 10 relationships. If you found more, keep only the top 10 by confidence.\n"
-        "3. If ZERO valid TF-target relationships found, output an empty array: []\n"
-        "4. NEVER use fusion protein names (MLL-AF9, BCR-ABL, etc.) as gene symbols.\n"
-        "5. Gene symbols MUST be official HGNC human symbols. Convert ALL protein\n"
-        "   names and aliases to HGNC: ZBP-89→ZNF148, SAF-1→MAZ, Oct-1→POU2F1,\n"
-        "   c-Myc→MYC, NF-kB p65→RELA. You know these mappings — use them.\n"
-        "6. Direction: 'Activation' or 'Repression' only. NEVER output 'Regulation'\n"
-        "   or any other direction value. If direction is unclear, exclude the entry.\n"
-        "7. 'confidence': integer 2-5 (do NOT include confidence-1 relationships).\n"
-        "8. 'evidence': specific experimental method name.\n"
-        "9. NF-kB family: output the specific subunit. If unspecified, use NFKB1.\n"
-        "10. Do NOT output duplicate (TF, Target) pairs. Each (TF, Target) pair\n"
-        "    must appear exactly ONCE in the array. If multiple experiments support\n"
-        "    the same pair, merge them into a single entry with the best evidence.\n\n"
-        "Output ONLY a JSON array (0-10 elements), nothing else:\n"
-        '[{"TF": "GENE", "Target": "GENE", "direction": "Activation", '
-        '"confidence": 5, "evidence": "ChIP+luciferase"}]'
-    )
 
     resp2 = _call_llm(model_name, temperature, messages=[
         {"role": "user", "content": round1_user},
@@ -399,13 +358,15 @@ def run_analysis(input_path, output_path, model_name, temperature=0, workers=1, 
     print(f"分析完成！结果已存至: {output_path}")
 
 
-def test_single(abstract_text, model_name=DEFAULT_MODEL, temperature=0):
+def test_single(abstract_text, model_name=DEFAULT_MODEL, temperature=0,
+                round1_prompt=None, round2_prompt=None):
     """Run analyze_tf_interaction in debug mode and pretty-print all outputs.
 
     Useful for iterating on prompt design with a single abstract.
     """
     result = analyze_tf_interaction(
-        abstract_text, model_name=model_name, temperature=temperature, debug=True
+        abstract_text, model_name=model_name, temperature=temperature, debug=True,
+        round1_prompt=round1_prompt, round2_prompt=round2_prompt,
     )
 
     print("=" * 60)
