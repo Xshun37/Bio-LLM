@@ -143,31 +143,28 @@ def fetch_abstracts(
 def generate_test_file(
     input_file,
     output_file,
-    sample_size=5,
+    sample_size=None,
     seed=None,
     email="your_email@example.com",
     bypass_proxy=False,
     no_proxy_hosts=DEFAULT_NCBI_NO_PROXY_HOSTS,
 ):
-    df = pd.read_csv(
-        input_file,
-        sep="\t",
-        header=None,
-        names=["tf", "target", "direction", "pmid"],
-        dtype={"pmid": str},
-    )
+    df = pd.read_csv(input_file, sep="\t", dtype={"PMID": str})
 
-    df["clean_pmid"] = df["pmid"].apply(
-        lambda value: value.split(";")[0].strip() if pd.notna(value) else ""
-    )
-    df = df[df["clean_pmid"] != ""]
-    df = df[df["direction"].str.lower() != "unknown"]
+    # Drop rows with missing PMID
+    df = df[df["PMID"].notna() & (df["PMID"].str.strip() != "")]
 
-    pmid_groups = df.groupby("clean_pmid")
+    pmid_groups = df.groupby("PMID")
     unique_pmids = list(pmid_groups.groups.keys())
-    sampled_pmids = pd.Series(unique_pmids).sample(
-        min(sample_size, len(unique_pmids)), random_state=seed
-    ).tolist()
+
+    if sample_size is not None and sample_size < len(unique_pmids):
+        sampled_pmids = pd.Series(unique_pmids).sample(
+            sample_size, random_state=seed
+        ).tolist()
+    else:
+        sampled_pmids = unique_pmids
+
+    print(f"Gold standard: {len(unique_pmids)} PMIDs, using {len(sampled_pmids)}")
 
     abstracts = fetch_abstracts(
         sampled_pmids,
@@ -184,7 +181,17 @@ def generate_test_file(
 
             pmid_rows = pmid_groups.get_group(curr_pmid)
             for _, row in pmid_rows.iterrows():
-                handle.write(f"TRRUST Standard: {row['tf']} -> {row['target']} ({row['direction']})\n")
+                tf = str(row.get("TF", "")).strip()
+                target = str(row.get("Target", "")).strip()
+                assay = str(row.get("Assay", "")).strip()
+                cellline = str(row.get("CellLine", "")).strip()
+
+                parts = [f"Gold Standard: {tf} -> {target}"]
+                if assay and assay != "nan":
+                    parts.append(f"[Assay: {assay}]")
+                if cellline and cellline != "nan" and cellline != "-":
+                    parts.append(f"[CellLine: {cellline}]")
+                handle.write(" ".join(parts) + "\n")
 
             handle.write(f"\nAbstract:{SECTION_SEPARATOR}")
 
@@ -198,10 +205,11 @@ def generate_test_file(
 
 
 def build_parser():
-    parser = argparse.ArgumentParser(description="从 TRRUST 数据随机选取 PMID 并下载结构化摘要。")
-    parser.add_argument("--input", default="data/raw/trrust_rawdata.human.tsv")
+    parser = argparse.ArgumentParser(description="从金标准数据集选取 PMID 并下载结构化摘要。")
+    parser.add_argument("--input", default="data/raw/finalresult.tsv")
     parser.add_argument("--output", default="data/interim/abstracts_for_test.txt")
-    parser.add_argument("--sample-size", type=int, default=5)
+    parser.add_argument("--sample-size", type=int, default=None,
+                        help="选取 PMID 数量 (默认全部)")
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--email", default="your_email@example.com")
     parser.add_argument(
