@@ -177,7 +177,6 @@ def build_ui():
 
     with gr.Blocks(
         title="Bio-LLM Prompt Debugger",
-        theme=gr.themes.Soft(),
     ) as demo:
         gr.Markdown("# Bio-LLM Prompt Debugger\nEdit prompts and test against gold standard abstracts.")
 
@@ -261,7 +260,7 @@ def main():
         print("Set DASHSCOPE_API_KEY environment variable before running analysis.")
 
     demo = build_ui()
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())
 
 
 if __name__ == "__main__":
