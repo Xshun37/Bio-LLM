@@ -42,11 +42,11 @@ def _load_prompts():
     try:
         r1 = load_prompt("round1.txt", PROMPT_DIR)
     except FileNotFoundError:
-        r1 = "(round1.txt not found)"
+        r1 = "（未找到 round1.txt）"
     try:
         r2 = load_prompt("round2.txt", PROMPT_DIR)
     except FileNotFoundError:
-        r2 = "(round2.txt not found)"
+        r2 = "（未找到 round2.txt）"
     return r1, r2
 
 
@@ -57,7 +57,7 @@ def _save_prompts(r1, r2):
         f.write(r1)
     with open(os.path.join(PROMPT_DIR, "round2.txt"), "w", encoding="utf-8") as f:
         f.write(r2)
-    return "✓ Prompts saved to config/prompts/"
+    return "✓ 提示词已保存到 config/prompts/"
 
 
 def _load_abstracts():
@@ -78,7 +78,7 @@ def _get_pmid_choices(gs_data):
     choices = []
     for pmid in sorted(gs_data.keys(), key=int):
         n = len(gs_data[pmid])
-        choices.append(f"{pmid} ({n} entries)")
+        choices.append(f"{pmid} ({n} 条)")
     return choices
 
 
@@ -96,8 +96,7 @@ def _run_analysis(pmid_label, abstract_override, r1_prompt, r2_prompt):
     elif pmid in abstracts:
         abstract_text = abstracts[pmid]["abstract"]
     else:
-        return f"⚠ No abstract available for PMID {pmid}. Run the pipeline first or paste an abstract below.", "", "", "", ""
-
+        return f"⚠ PMID {pmid} 无可用摘要。请先运行流水线或在下方粘贴摘要。", "", "", "", ""
     # Run analysis
     try:
         result = analyze_tf_interaction(
@@ -107,11 +106,11 @@ def _run_analysis(pmid_label, abstract_override, r1_prompt, r2_prompt):
             round2_prompt=r2_prompt,
         )
     except Exception as e:
-        return f"❌ Error: {e}", "", "", "", ""
+        return f"❌ 错误: {e}", "", "", "", ""
 
     # Format outputs
-    r1_text = result.get("round1_analysis", "(not available)")
-    r2_raw = result.get("round2_raw", "(not available)")
+    r1_text = result.get("round1_analysis", "（不可用）")
+    r2_raw = result.get("round2_raw", "（不可用）")
 
     # Token info
     tokens = ""
@@ -128,18 +127,18 @@ def _run_analysis(pmid_label, abstract_override, r1_prompt, r2_prompt):
     elif "round2_clean" in result:
         parsed_text = result["round2_clean"]
     else:
-        parsed_text = "(no parsed result)"
+        parsed_text = "（无解析结果）"
 
     # GT comparison
     gt_comparison = ""
     gt_entries = gs_data.get(pmid, [])
     if gt_entries:
-        gt_comparison += f"Gold Standard for PMID {pmid} ({len(gt_entries)} entries):\n\n"
+        gt_comparison += f"PMID {pmid} 金标准（{len(gt_entries)} 条）：\n\n"
         for tf, target, assay, cellline, ensg in gt_entries:
             gt_comparison += f"  {tf} → {target}  [{assay}]  [{cellline}]\n"
 
         if "result" in result and isinstance(result["result"], list):
-            gt_comparison += "\nMatching:\n"
+            gt_comparison += "\n匹配结果：\n"
             gt_norm = [
                 (normalize_tf(tf), normalize_target(target), assay, cellline, ensg)
                 for tf, target, assay, cellline, ensg in gt_entries
@@ -159,12 +158,12 @@ def _run_analysis(pmid_label, abstract_override, r1_prompt, r2_prompt):
                     c_ok = "✓" if match_cellline(llm_cellline, gt_norm[gt_idx][3]) else "✗"
                     gt_comparison += f"  ✓ {llm_tf}→{llm_target} (Assay:{a_ok} CellLine:{c_ok})\n"
                 else:
-                    gt_comparison += f"  ? {llm_tf}→{llm_target} (New Found)\n"
+                    gt_comparison += f"  ? {llm_tf}→{llm_target}（新发现）\n"
             for i, (tf, target, assay, cellline, ensg) in enumerate(gt_norm):
                 if i not in matched:
-                    gt_comparison += f"  ✗ {tf}→{target} (Missed)\n"
+                    gt_comparison += f"  ✗ {tf}→{target}（遗漏）\n"
     else:
-        gt_comparison = f"No gold standard entries for PMID {pmid}"
+        gt_comparison = f"PMID {pmid} 无金标准条目"
 
     return r1_text, r2_raw, parsed_text, tokens, gt_comparison
 
@@ -176,57 +175,57 @@ def build_ui():
     pmid_choices = _get_pmid_choices(gs_data)
 
     with gr.Blocks(
-        title="Bio-LLM Prompt Debugger",
+        title="Bio-LLM 提示词调试器",
     ) as demo:
-        gr.Markdown("# Bio-LLM Prompt Debugger\nEdit prompts and test against gold standard abstracts.")
+        gr.Markdown("# Bio-LLM 提示词调试器\n编辑提示词并在金标准摘要上测试效果。")
 
         with gr.Row():
             # --- Left: Prompt editing ---
             with gr.Column(scale=1):
-                gr.Markdown("## Prompts")
+                gr.Markdown("## 提示词")
                 r1_box = gr.Textbox(
                     value=r1_default,
-                    label="Round 1 Prompt (free-text analysis)",
+                    label="Round 1 提示词（自由文本分析）",
                     lines=20,
                     max_lines=50,
                 )
                 r2_box = gr.Textbox(
                     value=r2_default,
-                    label="Round 2 Prompt (structured JSON output)",
+                    label="Round 2 提示词（结构化 JSON 输出）",
                     lines=15,
                     max_lines=40,
                 )
                 with gr.Row():
-                    save_btn = gr.Button("💾 Save Prompts", variant="primary")
-                    reload_btn = gr.Button("🔄 Reload from Files")
-                save_status = gr.Textbox(label="Status", interactive=False, max_lines=1)
+                    save_btn = gr.Button("💾 保存提示词", variant="primary")
+                    reload_btn = gr.Button("🔄 从文件重新加载")
+                save_status = gr.Textbox(label="状态", interactive=False, max_lines=1)
 
             # --- Right: Testing ---
             with gr.Column(scale=1):
-                gr.Markdown("## Test")
+                gr.Markdown("## 测试")
                 pmid_dropdown = gr.Dropdown(
                     choices=pmid_choices,
                     value=pmid_choices[0] if pmid_choices else None,
-                    label="Select PMID",
+                    label="选择 PMID",
                 )
                 abstract_override = gr.Textbox(
-                    label="Or paste abstract text (overrides PMID selection)",
+                    label="或粘贴摘要文本（覆盖上方 PMID 选择）",
                     lines=5,
                     max_lines=15,
                 )
-                run_btn = gr.Button("🚀 Run Analysis", variant="primary")
+                run_btn = gr.Button("🚀 运行分析", variant="primary")
 
-                gr.Markdown("### Results")
+                gr.Markdown("### 结果")
                 with gr.Tabs():
                     with gr.Tab("Round 1"):
-                        r1_output = gr.Textbox(label="Round 1 Analysis", lines=15, max_lines=30)
-                    with gr.Tab("Round 2 Raw"):
-                        r2_output = gr.Textbox(label="Round 2 Raw Output", lines=10, max_lines=20)
-                    with gr.Tab("Parsed JSON"):
-                        parsed_output = gr.Textbox(label="Parsed Result", lines=10, max_lines=20)
-                    with gr.Tab("GT Comparison"):
-                        gt_output = gr.Textbox(label="Gold Standard Comparison", lines=15, max_lines=25)
-                token_info = gr.Textbox(label="Token Usage", interactive=False, max_lines=3)
+                        r1_output = gr.Textbox(label="Round 1 分析", lines=15, max_lines=30)
+                    with gr.Tab("Round 2 原始"):
+                        r2_output = gr.Textbox(label="Round 2 原始输出", lines=10, max_lines=20)
+                    with gr.Tab("解析 JSON"):
+                        parsed_output = gr.Textbox(label="解析结果", lines=10, max_lines=20)
+                    with gr.Tab("金标准对比"):
+                        gt_output = gr.Textbox(label="金标准对比", lines=15, max_lines=25)
+                token_info = gr.Textbox(label="Token 用量", interactive=False, max_lines=3)
 
         # --- Event handlers ---
         def save(r1, r2):
@@ -234,7 +233,7 @@ def build_ui():
 
         def reload():
             r1, r2 = _load_prompts()
-            return r1, r2, "✓ Reloaded from config/prompts/"
+            return r1, r2, "✓ 已从 config/prompts/ 重新加载"
 
         def run(pmid_label, abstract, r1, r2):
             return _run_analysis(pmid_label, abstract, r1, r2)
@@ -256,8 +255,8 @@ def main():
     try:
         init_client()
     except ValueError as e:
-        print(f"Warning: {e}")
-        print("Set DASHSCOPE_API_KEY environment variable before running analysis.")
+        print(f"警告: {e}")
+        print("请设置 DASHSCOPE_API_KEY 环境变量后再运行分析。")
 
     demo = build_ui()
     demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())

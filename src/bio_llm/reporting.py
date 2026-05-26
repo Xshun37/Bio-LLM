@@ -75,7 +75,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
         </style>
     </head>
     <body>
-        <h1>TF-Target Extraction Analysis Report</h1>
+        <h1>TF-Target 调控关系提取分析报告</h1>
     """
 
     # --- Compute summary statistics ---
@@ -85,22 +85,22 @@ def generate_html_report(llm_json, abstracts_file, output_file,
 
     html_content += f"""
         <div class="card" style="background:#f0f8ff;">
-            <h2>Summary Statistics</h2>
+            <h2>统计概览</h2>
             <table style="width:auto;">
-                <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-                <tr><td>Total PMIDs</td><td>{metrics['total_pmids']}</td><td></td></tr>
-                <tr><td>Gold standard entries</td><td>{metrics['total_gt']}</td><td>finalresult.tsv entries</td></tr>
-                <tr><td>LLM extracted</td><td>{metrics['total_llm']}</td><td>Total predictions</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Recall (all)</b></td><td><b>{metrics['total_matched_gt']}/{metrics['total_gt']} = {metrics['recall']:.1f}%</b></td><td>GT entries found by LLM (TF+Target match)</td></tr>
-                <tr><td>Recall (experimental only)</td><td>{metrics['exp_matched_gt']}/{metrics['exp_gt']} = {metrics['exp_recall']:.1f}%</td><td>Subset: Assay ≠ Literature</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{metrics['total_consistent']}/{metrics['total_llm'] - metrics['total_new_found'] - metrics['total_new']} = {metrics['evaluable_precision']:.1f}%</b></td><td>Excl. New Found — % matching GT</td></tr>
-                <tr><td>Assay Accuracy</td><td>{metrics['assay_matched']}/{metrics['assay_total']} = {metrics['assay_accuracy']:.1f}%</td><td>Among matched pairs, GT assay ⊆ LLM assay</td></tr>
-                <tr><td>CellLine Accuracy</td><td>{metrics['cellline_matched']}/{metrics['cellline_total']} = {metrics['cellline_accuracy']:.1f}%</td><td>Among matched pairs, fuzzy cell line match</td></tr>
+                <tr><th>指标</th><th>数值</th><th>说明</th></tr>
+                <tr><td>论文总数</td><td>{metrics['total_pmids']}</td><td></td></tr>
+                <tr><td>金标准条目数</td><td>{metrics['total_gt']}</td><td>finalresult.tsv 中的条目总数</td></tr>
+                <tr><td>LLM 提取数</td><td>{metrics['total_llm']}</td><td>模型预测总数</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>召回率（全部）</b></td><td><b>{metrics['total_matched_gt']}/{metrics['total_gt']} = {metrics['recall']:.1f}%</b></td><td>LLM 匹配到的金标准条目（TF+Target 匹配）</td></tr>
+                <tr><td>召回率（仅实验验证）</td><td>{metrics['exp_matched_gt']}/{metrics['exp_gt']} = {metrics['exp_recall']:.1f}%</td><td>子集：Assay ≠ Literature</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>可评估精确率</b></td><td><b>{metrics['total_consistent']}/{metrics['total_llm'] - metrics['total_new_found'] - metrics['total_new']} = {metrics['evaluable_precision']:.1f}%</b></td><td>排除新发现后，匹配金标准的比例</td></tr>
+                <tr><td>Assay 准确率</td><td>{metrics['assay_matched']}/{metrics['assay_total']} = {metrics['assay_accuracy']:.1f}%</td><td>匹配对中，GT assay ⊆ LLM assay</td></tr>
+                <tr><td>CellLine 准确率</td><td>{metrics['cellline_matched']}/{metrics['cellline_total']} = {metrics['cellline_accuracy']:.1f}%</td><td>匹配对中，细胞系模糊匹配</td></tr>
                 <tr><td colspan="3"></td></tr>
-                <tr><td>Consistent (TF+Target match)</td><td style="color:green;font-weight:bold;">{metrics['total_consistent']}</td><td>TF + Target match GT</td></tr>
-                <tr><td>New Found</td><td style="color:#0066cc;font-weight:bold;">{metrics['total_new_found']}</td><td>LLM discoveries not in GT</td></tr>
-                <tr><td>Missed</td><td style="color:red;font-weight:bold;">{metrics['total_missed']}</td><td>GT entries LLM did not find</td></tr>
-                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{metrics['total_new']}</td><td></td></tr>
+                <tr><td>一致（TF+Target 匹配）</td><td style="color:green;font-weight:bold;">{metrics['total_consistent']}</td><td>TF + Target 命中金标准</td></tr>
+                <tr><td>新发现</td><td style="color:#0066cc;font-weight:bold;">{metrics['total_new_found']}</td><td>LLM 发现但不在金标准中</td></tr>
+                <tr><td>遗漏</td><td style="color:red;font-weight:bold;">{metrics['total_missed']}</td><td>金标准中有但 LLM 未找到</td></tr>
+                <tr><td>无金标准</td><td style="color:blue;font-weight:bold;">{metrics['total_new']}</td><td>该 PMID 无金标准条目</td></tr>
             </table>
         </div>
     """
@@ -123,18 +123,18 @@ def generate_html_report(llm_json, abstracts_file, output_file,
         <div class="card">
             <div class="pmid-header">
                 <span style="font-size: 1.2em; font-weight: bold;">PMID: {pmid}</span>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank">View on PubMed</a>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank">在 PubMed 查看</a>
             </div>
             <div style="background:#fffde7; padding:8px 12px; margin-bottom:15px; border-radius:4px; font-size:0.85em;">
-                <strong>Gold Standard:</strong> {_html.escape(gs_ref)}
+                <strong>金标准：</strong> {_html.escape(gs_ref)}
             </div>
             <div class="content-grid">
                 <div class="abstract-box">
-                    <strong>Abstract:</strong><br>
-                    {_html.escape(info.get('abstract', 'Not found'))}
+                    <strong>摘要：</strong><br>
+                    {_html.escape(info.get('abstract', '未找到'))}
                 </div>
                 <div>
-                    <strong>Comparison Table:</strong>
+                    <strong>对比表：</strong>
                     <table>
                         <tr>
                             <th>TF → Target</th>
@@ -142,9 +142,9 @@ def generate_html_report(llm_json, abstracts_file, output_file,
                             <th>LLM Assay</th>
                             <th>GT CellLine</th>
                             <th>LLM CellLine</th>
-                            <th>Conf</th>
-                            <th>Evidence</th>
-                            <th>Status</th>
+                            <th>置信度</th>
+                            <th>证据</th>
+                            <th>状态</th>
                         </tr>
         """
 
@@ -164,7 +164,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
                     f"<td>{_html.escape(gt_cellline)}</td>"
                     f"<td>N/A</td>"
                     f"<td>-</td><td>-</td>"
-                    f"<td class=\"status-miss\">Missed</td>"
+                    f"<td class=\"status-miss\">遗漏</td>"
                     f"</tr>"
                 )
         else:
@@ -185,7 +185,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
 
                 if gt_idx >= 0:
                     matched_gt_indices.add(gt_idx)
-                    status_class, status_text = "status-ok", "Consistent"
+                    status_class, status_text = "status-ok", "一致"
                     gt_assay = gt_entries_norm[gt_idx][2]
                     gt_cellline = gt_entries_norm[gt_idx][3]
                     assay_ok = match_assays(llm_assay, gt_assay)
@@ -196,9 +196,9 @@ def generate_html_report(llm_json, abstracts_file, output_file,
                     gt_assay, gt_cellline = "-", "-"
                     assay_class = cl_class = ""
                     if gt_entries_norm:
-                        status_class, status_text = "status-newfound", "New Found"
+                        status_class, status_text = "status-newfound", "新发现"
                     else:
-                        status_class, status_text = "status-new", "New"
+                        status_class, status_text = "status-new", "无金标准"
 
                 conf_num = int(confidence) if confidence.isdigit() else 0
                 conf_display = f'<span class="conf-{conf_num}">{confidence}</span>' if conf_num else "-"
@@ -227,7 +227,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
                         f"<td style=\"font-size:0.8em\">{_html.escape(gt_cellline)}</td>"
                         f"<td>N/A</td>"
                         f"<td>-</td><td>-</td>"
-                        f"<td class=\"status-miss\">Missed</td>"
+                        f"<td class=\"status-miss\">遗漏</td>"
                         f"</tr>"
                     )
 
@@ -249,20 +249,20 @@ def generate_html_report(llm_json, abstracts_file, output_file,
 
             html_content += f"""
             <details class="debug-section">
-                <summary>LLM Debug — Round 1 & 2</summary>
+                <summary>LLM 调试信息 — Round 1 &amp; 2</summary>
                 <div class="debug-panel">
                     <div class="round-box">
-                        <strong>Round 1 Analysis</strong>
+                        <strong>Round 1 分析</strong>
                         <span class="token-info">{r1_tok}</span>
                         <pre>{_html.escape(r1)}</pre>
                     </div>
                     <div class="round-box">
-                        <strong>Round 2 Raw</strong>
+                        <strong>Round 2 原始输出</strong>
                         <span class="token-info">{r2_tok}</span>
                         <pre>{_html.escape(r2r)}</pre>
                     </div>
                     <div class="round-box">
-                        <strong>Round 2 Cleaned</strong>
+                        <strong>Round 2 清洗后</strong>
                         <pre>{_html.escape(r2c)}</pre>
                     </div>
                 </div>
@@ -276,7 +276,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
     html_content += "</body></html>"
     with open(output_file, "w", encoding="utf-8") as handle:
         handle.write(html_content)
-    print(f"HTML report generated: {output_file}")
+    print(f"HTML 报告已生成: {output_file}")
 
 
 def build_parser():
