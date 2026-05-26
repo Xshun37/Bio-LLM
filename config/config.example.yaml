@@ -2,8 +2,8 @@
 # 复制此文件为 config.yaml 并修改
 # cp config/config.example.yaml config/config.yaml
 
-# 每次抽样的 PMID 数量
-sample_size: 5
+# 金标准 PMID 数量 (默认 46 = 全量，设小值用于快速测试)
+sample_size: 46
 
 # 随机种子 (可选，不设置则每次随机)
 # seed: 42
@@ -25,3 +25,6 @@ ncbi_bypass_proxy: false
 
 # NCBI 直连域名列表 (逗号分隔)
 ncbi_no_proxy_hosts: "eutils.ncbi.nlm.nih.gov,ncbi.nlm.nih.gov,pubmed.ncbi.nlm.nih.gov"
+
+# 提示词文件目录
+prompt_dir: "config/prompts"

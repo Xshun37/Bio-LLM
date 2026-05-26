@@ -2,8 +2,7 @@
 set -e
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 rm -f "$ROOT/data/interim/abstracts_for_test.txt" "$ROOT/outputs/analysis_results.json" "$ROOT/outputs/report.html"
-conda run --no-capture-output -n bio_llm snakemake -s "$ROOT/snakefile" -d "$ROOT" --unlock >/dev/null 2>&1 || true
-conda run --no-capture-output -n bio_llm snakemake -s "$ROOT/snakefile" -d "$ROOT" -j16 --config sample_size="${1:-5}"
+conda run --no-capture-output -n bio_llm snakemake -s "$ROOT/snakefile" -d "$ROOT" -j16 --config sample_size="${1:-46}"
 echo "Report generated: $ROOT/outputs/report.html"
 echo "LLM results: $ROOT/outputs/analysis_results.json"
 
