@@ -392,3 +392,11 @@
 - `src/bio_llm/reporting.py`：删除 `load_trrust_by_pmid()` 和 `parse_abstracts_file()`（消除重复），导入共享解析器，比较表新增 Assay/CellLine 列
 - `scripts/prompt_debugger.py`（新建）：Gradio Web UI 用于编辑提示词和单 PMID 测试
 - `snakefile`、`run.sh`、`config/config.example.yaml`：更新数据源和默认参数
+
+### 32. 报告与调试器界面中文化
+
+**问题**：reporting.py 生成的 HTML 报告和 prompt_debugger.py Gradio UI 全部使用英文，不利于中文用户阅读。
+
+**改动**：
+- `src/bio_llm/reporting.py`：标题、统计面板（召回率/精确率/准确率）、表头、状态标签（一致/新发现/遗漏/无金标准）、调试面板全部中文化
+- `scripts/prompt_debugger.py`：UI 标题/按钮/标签/状态消息/金标准对比输出全部中文化
