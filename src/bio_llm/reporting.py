@@ -1,75 +1,18 @@
 import argparse
+import html as _html
 import json
 import os
-import re
 
 from bio_llm import normalize_tf, normalize_target
+from bio_llm.analysis import parse_test_file
 from bio_llm.evaluation import (
     classify_llm_entry,
     compute_metrics,
+    load_gold_standard,
+    match_assays,
+    match_cellline,
     _get_field,
 )
-
-
-def load_trrust_by_pmid(tsv_path):
-    """Load TRRUST data grouped by PMID.
-
-    Returns dict: pmid -> [(tf, target, direction), ...]
-    """
-    if not tsv_path or not os.path.exists(tsv_path):
-        return {}
-    result = {}
-    with open(tsv_path, "r", encoding="utf-8") as f:
-        next(f)  # skip header
-        for line in f:
-            parts = line.strip().split("\t")
-            if len(parts) < 3:
-                continue
-            pmid = parts[0].strip()
-            entries = []
-            for rel in parts[2].split("; "):
-                rel = rel.strip()
-                if not rel:
-                    continue
-                m = re.match(r"(\S+)->(\S+)\((\w+)\)", rel)
-                if m:
-                    direction = m.group(3)
-                    if direction.lower() == "unknown":
-                        continue
-                    entries.append((m.group(1), m.group(2), direction))
-            result[pmid] = entries
-    return result
-
-
-def parse_abstracts_file(abstracts_path):
-    if not os.path.exists(abstracts_path):
-        return {}
-
-    with open(abstracts_path, "r", encoding="utf-8") as handle:
-        content = handle.read()
-
-    blocks = re.split(r"={10,}", content)
-    result = {}
-    for block in blocks:
-        pmid_match = re.search(r"PMID:\s*(\d+)", block)
-        if not pmid_match:
-            continue
-
-        pmid = pmid_match.group(1).strip()
-        abstract_match = re.search(
-            r"Abstract:\s*-{3,}\s*(.*?)(?:\n(?=={10,})|\Z)",
-            block,
-            re.DOTALL,
-        )
-        abstract_text = abstract_match.group(1).strip() if abstract_match else ""
-        trrust_matches = re.findall(r"TRRUST Standard:\s*(\S+)\s*->\s*(\S+)\s*\((\w+)\)", block)
-        result[pmid] = {
-            "abstract": abstract_text,
-            "trrust_entries": [
-                (m[0].strip(), m[1].strip(), m[2].strip()) for m in trrust_matches
-            ],
-        }
-    return result
 
 
 def format_error_result(result):
@@ -78,7 +21,8 @@ def format_error_result(result):
     return None
 
 
-def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None, trrust_by_pmid=None):
+def generate_html_report(llm_json, abstracts_file, output_file,
+                         debug_json=None, gold_standard=None):
     with open(llm_json, "r", encoding="utf-8") as handle:
         llm_data = json.load(handle)
 
@@ -87,8 +31,13 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
         with open(debug_json, "r", encoding="utf-8") as handle:
             debug_data = json.load(handle)
 
-    abstracts = parse_abstracts_file(abstracts_file)
-    trrust_data = load_trrust_by_pmid(trrust_by_pmid)
+    # Parse abstracts file using shared parser from analysis.py
+    tasks = parse_test_file(abstracts_file)
+    abstracts = {t["pmid"]: t for t in tasks}
+
+    # Load gold standard
+    gs_data = load_gold_standard(gold_standard)
+
     html_content = """
     <html>
     <head>
@@ -103,8 +52,6 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
             th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
             th { background-color: #f2f2f2; }
             .status-ok { color: green; font-weight: bold; }
-            .status-conflict { color: orange; font-weight: bold; }
-            .status-partial { color: #996600; font-weight: bold; }
             .status-new { color: blue; font-weight: bold; }
             .status-newfound { color: #0066cc; font-weight: bold; }
             .status-miss { color: red; font-weight: bold; }
@@ -113,6 +60,8 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
             .conf-3 { background: #fff3cd; }
             .conf-2 { background: #ffe5cc; }
             .conf-1 { background: #f8d7da; }
+            .match-yes { color: green; }
+            .match-no { color: #c00; }
             .debug-section { margin-top: 20px; border: 1px solid #ddd; border-radius: 6px; padding: 0; background: #fafafa; }
             .debug-section summary { padding: 12px 16px; font-weight: bold; cursor: pointer; background: #e9ecef; border-radius: 6px; user-select: none; }
             .debug-section summary:hover { background: #dee2e6; }
@@ -130,7 +79,7 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
     """
 
     # --- Compute summary statistics ---
-    metrics = compute_metrics(llm_data, trrust_data, abstracts,
+    metrics = compute_metrics(llm_data, gs_data, abstracts,
                               normalize_tf_fn=normalize_tf,
                               normalize_target_fn=normalize_target)
 
@@ -140,34 +89,34 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
             <table style="width:auto;">
                 <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
                 <tr><td>Total PMIDs</td><td>{metrics['total_pmids']}</td><td></td></tr>
-                <tr><td>Ground-truth relationships</td><td>{metrics['total_gt']}</td><td>TRRUST entries for sampled PMIDs</td></tr>
-                <tr><td>LLM extracted relationships</td><td>{metrics['total_llm']}</td><td>Total predictions</td></tr>
-                <tr><td>Recall</td><td>{metrics['total_matched_gt']}/{metrics['total_gt']} = {metrics['recall']:.1f}%</td><td>Unique GT entries found by LLM</td></tr>
-                <tr><td>Overall Precision</td><td>{metrics['total_consistent'] + metrics['total_conflict']}/{metrics['total_llm']} = {metrics['overall_precision']:.1f}%</td><td>LLM results matching any GT pair</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{metrics['total_consistent'] + metrics['total_conflict']}/{metrics['total_llm'] - metrics['total_new_found'] - metrics['total_new']} = {metrics['evaluable_precision']:.1f}%</b></td><td>Excl. New Found — among evaluable predictions, % matching GT</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>Direction Accuracy</b></td><td><b>{metrics['total_consistent']}/{metrics['total_consistent'] + metrics['total_conflict']} = {metrics['direction_accuracy']:.1f}%</b></td><td>Among GT-matched pairs, % with correct direction</td></tr>
+                <tr><td>Gold standard entries</td><td>{metrics['total_gt']}</td><td>finalresult.tsv entries</td></tr>
+                <tr><td>LLM extracted</td><td>{metrics['total_llm']}</td><td>Total predictions</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Recall (all)</b></td><td><b>{metrics['total_matched_gt']}/{metrics['total_gt']} = {metrics['recall']:.1f}%</b></td><td>GT entries found by LLM (TF+Target match)</td></tr>
+                <tr><td>Recall (experimental only)</td><td>{metrics['exp_matched_gt']}/{metrics['exp_gt']} = {metrics['exp_recall']:.1f}%</td><td>Subset: Assay ≠ Literature</td></tr>
+                <tr style="background:#e8f5e9;"><td><b>Evaluable Precision</b></td><td><b>{metrics['total_consistent']}/{metrics['total_llm'] - metrics['total_new_found'] - metrics['total_new']} = {metrics['evaluable_precision']:.1f}%</b></td><td>Excl. New Found — % matching GT</td></tr>
+                <tr><td>Assay Accuracy</td><td>{metrics['assay_matched']}/{metrics['assay_total']} = {metrics['assay_accuracy']:.1f}%</td><td>Among matched pairs, GT assay ⊆ LLM assay</td></tr>
+                <tr><td>CellLine Accuracy</td><td>{metrics['cellline_matched']}/{metrics['cellline_total']} = {metrics['cellline_accuracy']:.1f}%</td><td>Among matched pairs, fuzzy cell line match</td></tr>
                 <tr><td colspan="3"></td></tr>
-                <tr><td>Consistent (full match)</td><td style="color:green;font-weight:bold;">{metrics['total_consistent']}</td><td>TF + Target + Direction all match</td></tr>
-                <tr><td>Conflict (direction mismatch)</td><td style="color:orange;font-weight:bold;">{metrics['total_conflict']}</td><td>Pair matches GT, but direction differs</td></tr>
-                <tr><td>New Found (not in TRRUST)</td><td style="color:#0066cc;font-weight:bold;">{metrics['total_new_found']}</td><td>LLM discoveries — no GT to compare</td></tr>
-                <tr><td>Missed (GT not found)</td><td style="color:red;font-weight:bold;">{metrics['total_missed']}</td><td>TRRUST entries the LLM did not find</td></tr>
-                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{metrics['total_new']}</td><td>PMIDs without any TRRUST entry</td></tr>
+                <tr><td>Consistent (TF+Target match)</td><td style="color:green;font-weight:bold;">{metrics['total_consistent']}</td><td>TF + Target match GT</td></tr>
+                <tr><td>New Found</td><td style="color:#0066cc;font-weight:bold;">{metrics['total_new_found']}</td><td>LLM discoveries not in GT</td></tr>
+                <tr><td>Missed</td><td style="color:red;font-weight:bold;">{metrics['total_missed']}</td><td>GT entries LLM did not find</td></tr>
+                <tr><td>New (no GT for PMID)</td><td style="color:blue;font-weight:bold;">{metrics['total_new']}</td><td></td></tr>
             </table>
         </div>
     """
 
     for pmid, llm_results in llm_data.items():
         info = abstracts.get(str(pmid), {})
-        # Ground truth: prefer trrust_by_pmid, fall back to embedded lines
-        gt_raw = trrust_data.get(str(pmid)) or info.get("trrust_entries", [])
+        gt_raw = gs_data.get(str(pmid), [])
         gt_entries_norm = [
-            (normalize_tf(tf), normalize_target(target), dr)
-            for tf, target, dr in gt_raw
+            (normalize_tf(tf), normalize_target(target), assay, cellline, ensg)
+            for tf, target, assay, cellline, ensg in gt_raw
         ]
 
-        # Build TRRUST reference string
-        trrust_ref = "; ".join(
-            f"{tf}→{target} ({dr})" for tf, target, dr in gt_raw
+        # Build Gold Standard reference string
+        gs_ref = "; ".join(
+            f"{tf}→{target} [{assay}] [{cellline}]"
+            for tf, target, assay, cellline, ensg in gt_raw
         ) if gt_raw else "(none)"
 
         html_content += f"""
@@ -177,20 +126,22 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
                 <a href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank">View on PubMed</a>
             </div>
             <div style="background:#fffde7; padding:8px 12px; margin-bottom:15px; border-radius:4px; font-size:0.85em;">
-                <strong>TRRUST Reference:</strong> {trrust_ref}
+                <strong>Gold Standard:</strong> {_html.escape(gs_ref)}
             </div>
             <div class="content-grid">
                 <div class="abstract-box">
                     <strong>Abstract:</strong><br>
-                    {info.get('abstract', 'Not found')}
+                    {_html.escape(info.get('abstract', 'Not found'))}
                 </div>
                 <div>
                     <strong>Comparison Table:</strong>
                     <table>
                         <tr>
                             <th>TF → Target</th>
-                            <th>TRRUST Dir</th>
-                            <th>LLM Dir</th>
+                            <th>GT Assay</th>
+                            <th>LLM Assay</th>
+                            <th>GT CellLine</th>
+                            <th>LLM CellLine</th>
                             <th>Conf</th>
                             <th>Evidence</th>
                             <th>Status</th>
@@ -202,14 +153,17 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
         matched_gt_indices = set()
 
         if error_message:
-            html_content += f"<tr><td colspan='6' class='status-conflict'>{error_message}</td></tr>"
+            html_content += f"<tr><td colspan='8' class='status-miss'>{_html.escape(error_message)}</td></tr>"
         elif not llm_list:
-            for idx, (gt_tf, gt_target, gt_dir) in enumerate(gt_entries_norm):
+            for gt_tf, gt_target, gt_assay, gt_cellline, gt_ensg in gt_entries_norm:
                 html_content += (
                     f"<tr>"
                     f"<td>{gt_tf} → {gt_target}</td>"
-                    f"<td>{gt_dir}</td>"
-                    f"<td>N/A</td><td>-</td><td>-</td>"
+                    f"<td>{_html.escape(gt_assay)}</td>"
+                    f"<td>N/A</td>"
+                    f"<td>{_html.escape(gt_cellline)}</td>"
+                    f"<td>N/A</td>"
+                    f"<td>-</td><td>-</td>"
                     f"<td class=\"status-miss\">Missed</td>"
                     f"</tr>"
                 )
@@ -220,26 +174,31 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
 
                 llm_tf = normalize_tf(_get_field(item, "tf", "TF"))
                 llm_target = normalize_target(_get_field(item, "target", "Target"))
+                llm_assay = _get_field(item, "assay", "Assay")
+                llm_cellline = _get_field(item, "cellLine", "CellLine", "cellline")
                 llm_dir = _get_field(item, "direction", "Direction")
                 confidence = _get_field(item, "confidence", "Confidence")
                 evidence = _get_field(item, "evidence", "Evidence")
 
-                status, gt_dir, gt_idx = classify_llm_entry(
-                    llm_tf, llm_target, llm_dir, gt_entries_norm)
+                status, gt_idx = classify_llm_entry(
+                    llm_tf, llm_target, gt_entries_norm)
 
                 if gt_idx >= 0:
                     matched_gt_indices.add(gt_idx)
-                    if status == "Consistent":
-                        status_class, status_text = "status-ok", "Consistent"
-                    else:
-                        status_class, status_text = "status-conflict", "Conflict"
-                    gt_display = gt_dir
-                elif gt_entries_norm:
-                    status_class, status_text = "status-newfound", "New Found"
-                    gt_display = "-"
+                    status_class, status_text = "status-ok", "Consistent"
+                    gt_assay = gt_entries_norm[gt_idx][2]
+                    gt_cellline = gt_entries_norm[gt_idx][3]
+                    assay_ok = match_assays(llm_assay, gt_assay)
+                    cl_ok = match_cellline(llm_cellline, gt_cellline)
+                    assay_class = "match-yes" if assay_ok else "match-no"
+                    cl_class = "match-yes" if cl_ok else "match-no"
                 else:
-                    status_class, status_text = "status-new", "New"
-                    gt_display = "-"
+                    gt_assay, gt_cellline = "-", "-"
+                    assay_class = cl_class = ""
+                    if gt_entries_norm:
+                        status_class, status_text = "status-newfound", "New Found"
+                    else:
+                        status_class, status_text = "status-new", "New"
 
                 conf_num = int(confidence) if confidence.isdigit() else 0
                 conf_display = f'<span class="conf-{conf_num}">{confidence}</span>' if conf_num else "-"
@@ -247,22 +206,27 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
                 html_content += f"""
                     <tr>
                         <td>{llm_tf} → {llm_target}</td>
-                        <td>{gt_display}</td>
-                        <td>{llm_dir}</td>
+                        <td style="font-size:0.8em">{_html.escape(gt_assay)}</td>
+                        <td style="font-size:0.8em" class="{assay_class}">{_html.escape(llm_assay)}</td>
+                        <td style="font-size:0.8em">{_html.escape(gt_cellline)}</td>
+                        <td style="font-size:0.8em" class="{cl_class}">{_html.escape(llm_cellline)}</td>
                         <td>{conf_display}</td>
-                        <td style="font-size:0.8em">{evidence}</td>
+                        <td style="font-size:0.8em">{_html.escape(evidence)}</td>
                         <td class="{status_class}">{status_text}</td>
                     </tr>
                 """
 
             # Show missed ground-truth entries
-            for idx, (gt_tf, gt_target, gt_dir) in enumerate(gt_entries_norm):
+            for idx, (gt_tf, gt_target, gt_assay, gt_cellline, gt_ensg) in enumerate(gt_entries_norm):
                 if idx not in matched_gt_indices:
                     html_content += (
                         f"<tr>"
                         f"<td>{gt_tf} → {gt_target}</td>"
-                        f"<td>{gt_dir}</td>"
-                        f"<td>N/A</td><td>-</td><td>-</td>"
+                        f"<td style=\"font-size:0.8em\">{_html.escape(gt_assay)}</td>"
+                        f"<td>N/A</td>"
+                        f"<td style=\"font-size:0.8em\">{_html.escape(gt_cellline)}</td>"
+                        f"<td>N/A</td>"
+                        f"<td>-</td><td>-</td>"
                         f"<td class=\"status-miss\">Missed</td>"
                         f"</tr>"
                     )
@@ -283,7 +247,6 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
             r1_tok = f"in:{r1u.get('input_tokens',0)} out:{r1u.get('output_tokens',0)}"
             r2_tok = f"in:{r2u.get('input_tokens',0)} out:{r2u.get('output_tokens',0)}"
 
-            import html as _html
             html_content += f"""
             <details class="debug-section">
                 <summary>LLM Debug — Round 1 & 2</summary>
@@ -318,12 +281,16 @@ def generate_html_report(llm_json, abstracts_file, output_file, debug_json=None,
 
 def build_parser():
     parser = argparse.ArgumentParser(description="生成 TF-Target 提取结果对比报告。")
-    parser.add_argument("--llm-json", default="outputs/analysis_results.json", help="LLM 输出 JSON 文件路径")
-    parser.add_argument("--abstracts", default="data/interim/abstracts_for_test.txt", help="包含摘要及标准答案的文本路径")
-    parser.add_argument("--output", default="outputs/report.html", help="生成的 HTML 报告文件名")
-    parser.add_argument("--debug-json", default=None, help="Debug JSON 文件路径 (optional)")
-    parser.add_argument("--trrust-by-pmid", default="data/raw/trrust_by_pmid.tsv",
-                        help="TRRUST by-PMID TSV 文件路径 (default: outputs/trrust_by_pmid.tsv)")
+    parser.add_argument("--llm-json", default="outputs/analysis_results.json",
+                        help="LLM 输出 JSON 文件路径")
+    parser.add_argument("--abstracts", default="data/interim/abstracts_for_test.txt",
+                        help="包含摘要及金标准的文本路径")
+    parser.add_argument("--output", default="outputs/report.html",
+                        help="生成的 HTML 报告文件名")
+    parser.add_argument("--debug-json", default=None,
+                        help="Debug JSON 文件路径 (optional)")
+    parser.add_argument("--gold-standard", default="data/raw/finalresult.tsv",
+                        help="金标准 TSV 文件路径")
     return parser
 
 
@@ -331,7 +298,7 @@ def main():
     args = build_parser().parse_args()
     generate_html_report(args.llm_json, args.abstracts, args.output,
                          debug_json=args.debug_json,
-                         trrust_by_pmid=args.trrust_by_pmid)
+                         gold_standard=args.gold_standard)
 
 
 if __name__ == "__main__":
