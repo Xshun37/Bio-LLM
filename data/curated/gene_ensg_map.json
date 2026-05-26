@@ -1,4 +1,5 @@
 {
+  "_comment": "官方基因 symbol → Ensembl Gene ID (ENSG) 映射表。\n构建来源: 通过 build_ensg_map.py 从 Ensembl 和 HGNC 数据生成。\n用途: normalize_export.py 和 build_review_html.py 通过此文件获取靶基因的 ENSG 编号。",
   "A1BG": "ENSG00000121410",
   "A1BG-AS1": "ENSG00000268895",
   "A1CF": "ENSG00000148584",

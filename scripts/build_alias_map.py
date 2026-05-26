@@ -64,6 +64,10 @@ def load_overrides(path):
     except FileNotFoundError:
         return []
     if isinstance(overrides, dict):
+        # Support {"_comment":..., "rules":[...]} format (preferred) and
+        # legacy {alias: symbol, ...} format.
+        if "rules" in overrides:
+            return overrides["rules"]
         return [
             {"alias": key, "symbol": value, "roles": ["tf", "target"], "reason": "legacy"}
             for key, value in overrides.items()

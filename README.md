@@ -1,6 +1,6 @@
 # Bio-LLM
 
-面向小规模实验的生物文本抽取流水线。从 TRRUST 采样 PMID，拉取 PubMed 摘要，用 LLM (qwq-plus) 提取 TF-target 调控关系，生成 HTML 对比报告。
+面向小规模实验的生物文本抽取流水线。从 TRRUST 采样 PMID，拉取 PubMed 摘要，用 LLM (qwen3.7-max-2026-05-20) 提取 TF-target 调控关系，生成 HTML 对比报告。
 
 ## 项目结构
 
@@ -16,26 +16,36 @@ Bio-LLM/
 │   │   └── hgnc_complete_set.txt    # HGNC 完整基因集
 │   ├── interim/                 # 中间文件 (gitignore)
 │   └── curated/
-│       ├── trrust_anomalies.jsonl    # TRRUST 已知错误记录
-│       ├── gene_alias_map.json       # HGNC 别名映射表 (自动生成)
-│       └── gene_alias_curated.json   # 手动补充别名
+│       ├── trrust_anomalies.jsonl        # TRRUST 已知错误记录
+│       ├── gene_alias_index.json         # HGNC 别名索引 (自动生成，含冲突信息)
+│       ├── gene_alias_map.json           # 旧版别名映射 (向后兼容)
+│       ├── gene_alias_overrides.json     # 人工标注覆盖规则 (最高优先级)
+│       ├── gene_alias_conflicts.json     # 歧义别名列表 (自动生成)
+│       └── gene_ensg_map.json            # Gene → ENSG 映射表
 ├── outputs/                     # 输出 (gitignore)
 ├── src/bio_llm/
-│   ├── __init__.py              # 共享：别名映射、异常加载
+│   ├── __init__.py              # 包入口 + 异常加载
+│   ├── gene_aliases.py          # 基因名标准化 (role-aware + 元数据追踪)
 │   ├── abstracts.py             # 拉取 PubMed 摘要
 │   ├── analysis.py              # 两轮 LLM 抽取 TF-Target
 │   ├── curate.py                # 异常标注入口 (交互式)
 │   ├── evaluation.py            # 评估标准模块
 │   └── reporting.py             # 生成 HTML 报告 + 统计
 ├── scripts/
-│   ├── build_alias_map.py       # 从 HGNC 构建别名映射表
+│   ├── build_alias_map.py       # 从 HGNC 构建别名索引 + overrides
+│   ├── build_ensg_map.py        # 构建 Gene→ENSG 映射表
 │   ├── group_by_pmid.py         # TRRUST 按 PMID 分组
 │   └── review_debug.sh          # 一键生成含 debug 面板的报告
+├── gs_review/                   # GS_50 人工审阅流水线
+│   ├── build_ensg_map.py
+│   ├── build_review_html.py
+│   └── review.html
 ├── run.sh                       # 一键启动入口
 ├── snakefile                    # Snakemake 工作流
 ├── docs/
-│   ├── extraction_strategy.md   # 提取策略规范
-│   └── 2026-05-10_optimization_log.md  # 优化记录
+│   ├── extraction_strategy.md          # 提取策略规范
+│   ├── 2026-05-10_optimization_log.md  # 优化记录
+│   └── gs50_review_plan.md             # GS_50 review 方案
 ├── requirements.txt
 └── .gitignore
 ```
@@ -57,7 +67,7 @@ data/raw/trrust_rawdata.human.tsv
 ## 环境
 
 - `conda` + 名为 `bio_llm` 的环境
-- DashScope API Key (`DASHSCOPE_API_KEY`)
+- 阿里云百炼 API Key (`DASHSCOPE_API_KEY`)
 - [requirements.txt](requirements.txt)
 
 ```bash
@@ -85,14 +95,18 @@ export DASHSCOPE_API_KEY="your_api_key"
 
 ### 基因名自动标准化
 
-三层防护确保输出为标准 HGNC 符号：
+四层防护确保输出为标准 HGNC 符号：
 
 1. Prompt 层：强制要求模型输出 HGNC 符号，提供内联别名映射
-2. Post-processing 层：JSON 解析后自动运行归一化级联，记录 before/after 日志
+2. Post-processing 层：JSON 解析后通过 `gene_aliases.py` 运行 role-aware 归一化（TF/Target 区分上下文），记录 before/after 日志及决策元数据
 3. Reporting 层：对比时使用 `evaluation.py` 统一标准化 + 异构体模糊匹配
+4. 数据层：`gene_alias_overrides.json` 支持 map/block action + per-rule reason
 
-别名映射表通过 `scripts/build_alias_map.py` 从 HGNC 官方数据集自动生成，手动补充通过 `gene_alias_curated.json`。
-所有同名映射统一维护在 `src/bio_llm/__init__.py`，作为唯一真相源。
+别名数据流水线：
+- `build_alias_map.py` 从 HGNC 官方数据集生成 `gene_alias_index.json`（含每个别名的候选符号、来源、冲突标记）
+- `gene_alias_overrides.json` 为人工标注的最高优先级规则，支持按 TF/Target 角色区分映射
+- 运行时 `gene_aliases.py` 查询顺序：overrides → HGNC index（仅当唯一映射时接受）→ 兜底
+- 歧义别名（映射到多个符号）被保守拒绝，避免错误归一化
 
 ### 进度条
 
@@ -172,8 +186,8 @@ cp config/config.example.yaml config/config.yaml
 | sample_size | 5 | 抽样 PMID 数 |
 | seed | (无) | 随机种子，不设则每次随机 |
 | email | (必填) | NCBI Entrez 邮箱 |
-| model | qwq-plus | DashScope 推理模型 |
+| model | qwen3.7-max-2026-05-20 | 阿里云百炼 Qwen 模型 |
 | temperature | 0 | LLM 温度 (0 = 确定性) |
-| workers | 16 | API 并发数 |
+| workers | 4 | API 并发数 |
 | ncbi_bypass_proxy | false | 绕过代理直连 PubMed |
 | ncbi_no_proxy_hosts | eutils.ncbi.nlm.nih.gov,... | NCBI 直连域名 |

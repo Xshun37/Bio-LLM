@@ -1,4 +1,5 @@
 {
+  "_comment": "旧版基因别名映射表。key 为别名或官方 symbol，value 为该基因的详细信息。\n现已被 gene_alias_index.json 替代，仅作为遗留兼容保留。\n用途: gene_aliases.py 的旧版加载路径。",
   "0808Y08Y": "NFYC-AS1",
   "1-8D": "IFITM2",
   "1-8U": "IFITM3",

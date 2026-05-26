@@ -4,7 +4,7 @@
 
 **目的**：从 PubMed 摘要中提取 TF-Target 转录调控关系，并与 TRRUST v2 基准进行对比。
 
-**模型**：DashScope `qwq-plus`（Qwen 推理模型），temperature = 0（确定性输出）。
+**模型**：阿里云百炼 Qwen `qwen3.7-max-2026-05-20`，temperature = 0（确定性输出）。
 
 **架构**：两轮链式思维（Chain-of-Thought, CoT）提取：
 - **第一轮**：自由文本分析 — 模型完整阅读摘要后，以纯文本形式回答结构化问卷（Q1-Q4），不受 JSON 格式约束。
@@ -70,30 +70,47 @@ IL4 启动子上的"CEBPB 结合位点"意味着 CEBPB→IL4，而非 CEBPB→CE
 
 ## 4. 基因名标准化
 
-### 4.1 三层归一化
+### 4.1 四层归一化
 
-所有基因名通过三层级联归一化：
+所有基因名通过四层级联归一化，运行时由 `gene_aliases.py` 统一调度：
 
-| 优先级 | 规模 | 示例 |
-|--------|------|------|------|
-| 1（最高） | 硬编码人工映射表 | NF-KB P65 → RELA, C-MYC → MYC |
-| 2 | HGNC 全量别名映射 | ZBP-89 → ZNF148, Oct-1 → POU2F1 |
-| 3（兜底） | 去特殊字符大写 | 无匹配时返回清理后的原名 |
+| 优先级 | 来源 | 说明 |
+|--------|------|------|
+| 1（最高） | `gene_alias_overrides.json` | 人工标注的 map/block 规则，支持按 TF/Target 角色区分 |
+| 2 | `gene_alias_index.json` (HGNC) | 仅当别名唯一映射到一个符号时接受；歧义别名被保守拒绝 |
+| 3 | 官方符号直接匹配 | 输入名本身是 HGNC 官方符号则原样返回 |
+| 4（兜底） | 去特殊字符大写 | 无匹配时返回清理后的原名 |
 
-第一层包含两个子表：`_SYNONYM_MAP`（TF 专用）和 `_TARGET_SYNONYM_MAP`（靶基因专用）。
+关键设计决策：
+- **Role-aware**: TF 和 Target 使用独立的上下文查询。COX-2 作为 TF 角色时被 block（非转录因子），作为 Target 角色时映射到 PTGS2。
+- **歧义拒绝**: HGNC 中一个别名对应多个符号时（如 AP-2 → TFAP2A/TFAP2B/TFAP2C），不猜测，留待 override 规则指定。
+- **元数据追踪**: 每次归一化记录 `NormalizationResult`（original, normalized, status, source, candidates, matched_key），写入 debug 日志。
 
-### 4.2 HGNC 强制执行
+### 4.2 运行时归一化流程
+
+`gene_aliases.py` 中的 `normalize_gene_name_with_meta()` 是归一化的核心入口：
+
+1. 输入清洗：去括号、大写、压缩空白/连字符
+2. 覆盖规则查询 (`gene_alias_overrides.json`)：检查是否匹配人工标注的 map/block 规则，按角色（TF/Target）区分
+3. HGNC 索引查询 (`gene_alias_index.json`)：仅当别名唯一映射到一个符号时才接受；歧义别名被拒绝
+4. 官方符号直接匹配：输入名本身是 HGNC 符号则原样返回
+5. 兜底：去特殊字符后的原名
 
 模型提示词明确要求：
 - 输出官方 HGNC 批准符号
 - 将所有蛋白质名称和别名转换为 HGNC 符号
 - 提示词中内联提供别名映射：ZBP-89→ZNF148, SAF-1→MAZ, Oct-1→POU2F1, c-Myc→MYC, NF-kB p65→RELA
 
-JSON 解析后，对每个 TF 和 Target 字段运行归一化级联。
-
 ### 4.3 归一化日志
 
-每次归一化事件（原始名 → 标准符号）会记录在 debug 输出的 `normalization_log` 中，可追溯基因名纠正过程。
+每次归一化事件返回 `NormalizationResult` 数据类，包含：
+- `original` / `normalized`: 输入/输出名
+- `status`: empty / override / identity / hgnc_alias / ambiguous / blocked / unmapped
+- `source`: curated_override / hgnc_alias_index / hgnc_official_symbol / none
+- `candidates`: 候选符号列表及来源
+- `matched_key`: 匹配到的查询键
+
+日志记录在 debug 输出的 `normalization_log` 中，可追溯每一次基因名纠正的决策过程。
 
 ## 5. 置信度标度
 

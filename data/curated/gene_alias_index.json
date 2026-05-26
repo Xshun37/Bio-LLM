@@ -1,4 +1,5 @@
 {
+  "_comment": "HGNC 别名逆向索引。将基因别名（包括蛋白名、历史名等）映射到官方 HGNC symbol。\n结构: {\"aliases\": {\"ALIAS\": [{\"symbol\": \"OFFICIAL\", \"sources\": [...]}], ...}}\n构建来源: data/raw/hgnc_complete_set.txt\n用途: normalize_export.py 和 gene_aliases.py 通过此文件实现别名→官方基因名的转换。",
   "metadata": {
     "source": "HGNC complete set",
     "hgnc_path": "data/raw/hgnc_complete_set.txt",

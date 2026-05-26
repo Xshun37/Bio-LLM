@@ -39,7 +39,7 @@ rule analyze_abstracts:
         results="outputs/analysis_results.json",
         debug="outputs/analysis_results_debug.json"
     params:
-        model=config.get("model", "deepseek-chat"),
+        model=config.get("model", "qwen3.7-max-2026-05-20"),
         temperature=config.get("temperature", 0),
         workers=config.get("workers", 4)
     shell:

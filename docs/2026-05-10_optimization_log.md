@@ -291,3 +291,87 @@
 - 新建 `config/config.example.yaml` 配置模版，真实 config 保持 gitignore
 - README 全面更新：结构树、配置表、特性说明、手动运行示例
 - requirements.txt 更新包含 tqdm
+
+---
+
+## 2026-05-12 优化记录
+
+### 26. 基因别名系统重构
+
+**问题**：旧的别名架构有三重冗余和维护负担：
+- `__init__.py` 中 ~130 行硬编码 `_SYNONYM_MAP` / `_TARGET_SYNONYM_MAP`
+- `gene_alias_curated.json` 中的手动补充
+- `gene_alias_map.json` 中 ~58K 条 HGNC 自动生成条目
+
+三份数据存在重复（ZBP-89、SAF-1、OCT-1 等同时出现在硬编码和 curated 中），且查询逻辑不支持按 TF/Target 角色区分。
+
+**改动**：
+
+**新模块 `src/bio_llm/gene_aliases.py`**：
+- 统一的 `normalize_gene_name(raw_name, role)` 入口，支持 `role="tf"` / `role="target"` 区分
+- `normalize_gene_name_with_meta()` 返回 `NormalizationResult` 数据类，包含完整的决策元数据（status, source, candidates, matched_key）
+- 查询优先级：overrides → HGNC index → 官方符号直匹配 → 兜底
+- 歧义别名（一个别名映射到多个 HGNC 符号）被保守拒绝，避免错误归一化
+- `normalize_tf.with_meta` / `normalize_target.with_meta` 附加到函数对象上，`evaluation.py` 的 `normalize_and_log()` 通过 `getattr(fn, "with_meta", None)` 检测并获取元数据
+
+**新数据文件 `gene_alias_overrides.json`**：
+- JSON 数组格式，每条规则包含：`alias`, `symbol`, `roles`（可选 `tf`/`target`/`all`）, `action`（`map` 或 `block`）, `reason`
+- 支持 **block action**：COX-2 作为 TF 角色时被 block（非转录因子），作为 Target 角色时映射到 PTGS2
+- 替换旧的 `gene_alias_curated.json`（已删除）和 `__init__.py` 中的硬编码映射表（已删除）
+- 所有规则附带 `reason` 字段，记录映射依据
+
+**重构 `build_alias_map.py`**：
+- 新增 `gene_alias_index.json`：可审计的别名索引，包含每个别名的候选符号列表、来源（`hgnc_alias_symbol` / `hgnc_prev_symbol`）、冲突标记
+- 新增 `gene_alias_conflicts.json`：自动检测并导出的歧义别名列表
+- `gene_alias_map.json` 保留为向后兼容的旧格式（仅唯一映射 + overrides 覆盖）
+- 新增 `clean_key()` / `compact_key()` / `key_variants()` 辅助函数统一化名处理
+
+**清理 `__init__.py`**：
+- 删除 ~130 行硬编码的 `_SYNONYM_MAP`、`_TARGET_SYNONYM_MAP`、`_load_hgnc_map()`、`normalize_gene_name()`、`normalize_tf()`、`normalize_target()`
+- 改为从 `bio_llm.gene_aliases` 重导入，保持向后兼容
+
+### 27. 模型切换至 DeepSeek
+
+- 从 DashScope `qwq-plus` 切换到 DeepSeek `deepseek-chat`
+- SDK 从 `dashscope` 替换为 OpenAI-compatible `openai` 库
+- API Key 环境变量从 `DASHSCOPE_API_KEY` 改为 `DEEPSEEK_API_KEY`
+- `analysis.py`：`_call_llm()` 改用 `client.chat.completions.create()`，移除流式响应收集逻辑（`_collect_stream`），重试逻辑改用 `openai.RateLimitError`
+- `config.example.yaml` 和 `snakefile` 默认模型更新
+- 移除对 `dashscope` 的依赖，`requirements.txt` 中删除
+
+### 28. 清理与文档
+
+- `reporting.py`：删除未使用的 pandas 依赖和 `load_trrust()` / `build_pair_map()` 函数
+- `evaluation.py`：`normalize_and_log()` 支持 `gene_aliases` 的元数据输出，日志包含 status / source / candidates / matched_key
+- `.gitignore`：新增 `.claude` 目录
+- `docs/extraction_strategy.md`：更新第 4 节基因名标准化为四层架构
+- README 更新项目结构、API 配置、别名系统说明
+
+---
+
+## 2026-05-26 优化记录
+
+### 29. 模型切换至 Qwen 3.7 Max
+
+- 从 DeepSeek `deepseek-chat` 切换到阿里云百炼 `qwen3.7-max-2026-05-20`
+- SDK 不变，仍使用 OpenAI 兼容接口
+- API Key 环境变量从 `DEEPSEEK_API_KEY` 改为 `DASHSCOPE_API_KEY`
+- `analysis.py`：`base_url` 改为 `https://dashscope.aliyuncs.com/compatible-mode/v1`，`DEFAULT_MODEL` 更新
+- `config.yaml` / `config.example.yaml` / `snakefile`：默认模型名同步更新
+- README、`extraction_strategy.md`：所有 DeepSeek 引用替换为阿里云百炼 Qwen
+
+**改动**：
+- `src/bio_llm/analysis.py`：`DEFAULT_MODEL`、`init_client()`、docstring、argparse 帮助文本（共 5 处）
+- `config/config.yaml`：`model` 字段
+- `config/config.example.yaml`：`model` 字段 + 注释
+- `snakefile`：`analyze_abstracts` 规则默认值
+- `README.md`：4 处 DeepSeek 引用
+- `docs/extraction_strategy.md`：模型描述
+
+### 30. 创建 CLAUDE.md 自动日志维护指令
+
+**问题**：优化日志需要手动提醒才能更新，容易遗漏重要改动记录
+
+**改动**：
+- `CLAUDE.md`（新建）：加入日志维护规则，定义触发条件（非平凡改动）与格式模板，模型在每次重要改动后主动追加条目
+

@@ -46,6 +46,9 @@ def load_anomalies(path):
                     continue
                 try:
                     entry = json.loads(line)
+                    # Skip comment/metadata lines
+                    if "_comment" in entry:
+                        continue
                     pmid = entry.get("pmid", "")
                     result.setdefault(str(pmid), []).append(entry)
                     entries.append(entry)

@@ -77,13 +77,16 @@ def _load_overrides():
     global _OVERRIDES
     if _OVERRIDES is None:
         raw = _load_json(OVERRIDES_PATH, [])
-        # Backward compatibility for the old one-level curated map if the new
-        # schema has not been generated yet.
         if isinstance(raw, dict):
-            raw = [
-                {"alias": key, "symbol": value, "roles": ["tf", "target"], "reason": "legacy"}
-                for key, value in raw.items()
-            ]
+            # Support {"_comment":..., "rules":[...]} format (preferred) and
+            # legacy {alias: symbol, ...} format.
+            if "rules" in raw:
+                raw = raw["rules"]
+            else:
+                raw = [
+                    {"alias": key, "symbol": value, "roles": ["tf", "target"], "reason": "legacy"}
+                    for key, value in raw.items()
+                ]
         _OVERRIDES = raw if isinstance(raw, list) else []
     return _OVERRIDES
 
@@ -142,10 +145,14 @@ def _lookup_hgnc(keys):
     official_symbols = set(index.get("official_symbols", []))
     aliases = index.get("aliases", {})
 
-    for key in keys:
-        if key in official_symbols:
-            return STATUS_IDENTITY, key, [{"symbol": key, "sources": ["official_symbol"]}]
+    # Step 1: canonical key (first in list) as official symbol.
+    # Compact keys are NOT checked here — a hyphenated alias like "CBF-B"
+    # whose compact form "CBFB" happens to be a different official gene
+    # must not short-circuit the alias lookup below.
+    if keys and keys[0] in official_symbols:
+        return STATUS_IDENTITY, keys[0], [{"symbol": keys[0], "sources": ["official_symbol"]}]
 
+    # Step 2: alias lookup (all key variants).
     for key in keys:
         candidates = aliases.get(key, [])
         symbols = sorted({
@@ -157,6 +164,13 @@ def _lookup_hgnc(keys):
             return STATUS_HGNC_ALIAS, key, candidates
         if len(symbols) > 1:
             return STATUS_AMBIGUOUS, key, candidates
+
+    # Step 3: compact keys as official symbols.
+    # This catches e.g. "CDK-1" → "CDK1" when the canonical form is not
+    # an official symbol and no alias entry exists.
+    for key in keys[1:]:
+        if key in official_symbols:
+            return STATUS_IDENTITY, key, [{"symbol": key, "sources": ["official_symbol"]}]
 
     return STATUS_UNMAPPED, "", []
 

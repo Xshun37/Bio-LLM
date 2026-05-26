@@ -11,8 +11,8 @@ sample_size: 5
 # NCBI Entrez 邮箱 (必填)
 email: "your_email@example.com"
 
-# DeepSeek 模型名称
-model: "deepseek-chat"
+# 阿里云百炼 Qwen 模型名称
+model: "qwen3.7-max-2026-05-20"
 
 # LLM 温度 (0 = 确定性输出)
 temperature: 0

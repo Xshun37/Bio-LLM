@@ -17,17 +17,17 @@ from bio_llm.evaluation import normalize_and_log
 
 DEFAULT_INPUT = "data/interim/abstracts_for_test.txt"
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "deepseek-chat"
+DEFAULT_MODEL = "qwen3.7-max-2026-05-20"
 
 _client = None
 
 
 def init_client(api_key=None):
     global _client
-    key = api_key or os.getenv("DEEPSEEK_API_KEY")
+    key = api_key or os.getenv("DASHSCOPE_API_KEY")
     if not key:
-        raise ValueError("缺少 DeepSeek API Key，请设置环境变量 DEEPSEEK_API_KEY 或使用 --api-key 参数。")
-    _client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
+        raise ValueError("缺少阿里云百炼 API Key，请设置环境变量 DASHSCOPE_API_KEY 或使用 --api-key 参数。")
+    _client = OpenAI(api_key=key, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
 
 
 def _get_client():
@@ -121,7 +121,7 @@ def extract_model_content(response):
 
 
 def extract_reasoning_content(response):
-    """Extract reasoning content from DeepSeek-R1 (if available)."""
+    """Extract reasoning content from thinking mode (if available)."""
     try:
         msg = response.choices[0].message
         return getattr(msg, "reasoning_content", "") or ""
@@ -140,7 +140,7 @@ def _extract_usage(resp):
 
 
 def _call_llm(model, temperature, prompt=None, messages=None, max_retries=3):
-    """Call DeepSeek API with exponential backoff on 429 rate-limit."""
+    """Call Qwen API via DashScope with exponential backoff on 429 rate-limit."""
     client = _get_client()
     for attempt in range(max_retries):
         kwargs = {"model": model, "temperature": temperature}
@@ -446,8 +446,8 @@ def build_parser():
     parser = argparse.ArgumentParser(description="从 PubMed 摘要提取 TF-Target 关系并保存 JSON 结果。")
     parser.add_argument("--input", default=DEFAULT_INPUT, help="输入摘要文件路径")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="输出 JSON 文件路径")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="DeepSeek 模型名称")
-    parser.add_argument("--api-key", default=None, help="DeepSeek API Key")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="阿里云百炼 Qwen 模型名称")
+    parser.add_argument("--api-key", default=None, help="阿里云百炼 API Key")
     parser.add_argument("--temperature", type=float, default=0, help="LLM temperature")
     parser.add_argument("--workers", type=int, default=1, help="并行 worker 数量")
     parser.add_argument("--debug", action="store_true", default=False,
