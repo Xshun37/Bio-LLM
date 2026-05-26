@@ -64,8 +64,9 @@ def parse_test_file(file_path):
         if not pmid_match:
             continue
 
+        # Match either "Full Text:" or "Abstract:" marker
         abstract_match = re.search(
-            r"Abstract:\s*-{3,}\s*(.*?)(?:\n(?=={10,})|\Z)",
+            r"(?:Full Text|Abstract):\s*-{3,}\s*(.*?)(?:\n(?=={10,})|\Z)",
             block,
             re.DOTALL,
         )

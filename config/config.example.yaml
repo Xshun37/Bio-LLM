@@ -28,3 +28,6 @@ ncbi_no_proxy_hosts: "eutils.ncbi.nlm.nih.gov,ncbi.nlm.nih.gov,pubmed.ncbi.nlm.n
 
 # 提示词文件目录
 prompt_dir: "config/prompts"
+
+# PMC 全文缓存目录
+fulltext_dir: "data/interim/fulltext"

@@ -12,7 +12,7 @@ rule all:
     input:
         "outputs/report.html"
 
-rule generate_abstracts:
+rule generate_fulltexts:
     input:
         "data/raw/finalresult.tsv"
     output:
@@ -22,6 +22,7 @@ rule generate_abstracts:
         sample_flag="--sample-size " + str(config["sample_size"]) if config.get("sample_size", 46) != 46 else "",
         seed_str="--seed " + str(config["seed"]) if "seed" in config else "",
         email=config.get("email", "your_email@example.com"),
+        fulltext_dir=config.get("fulltext_dir", "data/interim/fulltext"),
         bypass_proxy_flag="--bypass-proxy" if config.get("ncbi_bypass_proxy", False) else "",
         no_proxy_hosts=config.get(
             "ncbi_no_proxy_hosts",
@@ -31,6 +32,7 @@ rule generate_abstracts:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.abstracts"
         " --input {input} --output {output}"
         " {params.sample_flag} {params.seed_str} --email '{params.email}'"
+        " --fulltext-dir {params.fulltext_dir}"
         " {params.bypass_proxy_flag} --ncbi-no-proxy-hosts '{params.no_proxy_hosts}'"
 
 rule analyze_abstracts:

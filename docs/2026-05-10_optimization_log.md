@@ -400,3 +400,28 @@
 **改动**：
 - `src/bio_llm/reporting.py`：标题、统计面板（召回率/精确率/准确率）、表头、状态标签（一致/新发现/遗漏/无金标准）、调试面板全部中文化
 - `scripts/prompt_debugger.py`：UI 标题/按钮/标签/状态消息/金标准对比输出全部中文化
+
+### 33. 全文获取替代摘要方案
+
+**问题**：仅使用 PubMed 摘要（~200-300 词）作为 LLM 输入，信息密度不足以准确提取 TF-target 调控关系（Assay、CellLine 等细节常在摘要中被省略）。
+
+**改动**：
+- `src/bio_llm/fulltext.py`（新建）：PMC 全文获取模块
+  - `pmid_to_pmcid()`：PMID → PMCID 映射（Entrez.elink）
+  - `fetch_pmc_xml()`：获取 PMC XML（Europe PMC REST API，fallback 到 NCBI efetch）
+  - `parse_pmc_xml()`：XML → 结构化 sections（跳过 References/Acknowledgments 等）
+  - `fetch_fulltexts()`：批量获取 + 本地缓存（XML + TXT）
+  - CLI：`python -m bio_llm.fulltext --pmid 20052289` 单篇测试
+- `src/bio_llm/abstracts.py`：重写 `generate_test_file()` 整合全文获取
+  - 输出格式从 `Abstract:` 改为 `Full Text:`
+  - 无 PMC 全文时降级到摘要（`fetch_abstracts()` fallback）
+- `src/bio_llm/analysis.py`：`parse_test_file()` 兼容 `Full Text:` 和 `Abstract:` 标记
+- `config/prompts/round1.txt`：新增全文分析指引
+  - 标注 Introduction/Results/Discussion 为重点
+  - Methods 提供实验技术上下文
+- `snakefile`：`generate_abstracts` → `generate_fulltexts`
+- `config/config.example.yaml`：新增 `fulltext_dir` 参数
+- `src/bio_llm/reporting.py`：报告标题和标签从"摘要"改为"全文"
+- `scripts/prompt_debugger.py`：UI 标签同步更新
+
+**验证**：`./run.sh 3` 端到端测试通过（2 篇全文 + 1 篇摘要降级）

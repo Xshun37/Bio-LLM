@@ -90,13 +90,13 @@ def _run_analysis(pmid_label, abstract_override, r1_prompt, r2_prompt):
     # Extract PMID from label
     pmid = pmid_label.split(" ")[0] if pmid_label else ""
 
-    # Get abstract
+    # Get abstract or full text
     if abstract_override and abstract_override.strip():
         abstract_text = abstract_override.strip()
     elif pmid in abstracts:
         abstract_text = abstracts[pmid]["abstract"]
     else:
-        return f"⚠ PMID {pmid} 无可用摘要。请先运行流水线或在下方粘贴摘要。", "", "", "", ""
+        return f"⚠ PMID {pmid} 无可用全文。请先运行流水线或在下方粘贴文本。", "", "", "", ""
     # Run analysis
     try:
         result = analyze_tf_interaction(
@@ -209,7 +209,7 @@ def build_ui():
                     label="选择 PMID",
                 )
                 abstract_override = gr.Textbox(
-                    label="或粘贴摘要文本（覆盖上方 PMID 选择）",
+                    label="或粘贴全文文本（覆盖上方 PMID 选择）",
                     lines=5,
                     max_lines=15,
                 )

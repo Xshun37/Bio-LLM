@@ -47,7 +47,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
             .card { background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px; padding: 20px; }
             .pmid-header { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; }
             .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-            .abstract-box { background: #fdfdfd; padding: 15px; border-left: 4px solid #007bff; font-style: italic; font-size: 0.9em; white-space: pre-wrap; }
+            .abstract-box { background: #fdfdfd; padding: 15px; border-left: 4px solid #007bff; font-size: 0.9em; white-space: pre-wrap; max-height: 500px; overflow-y: auto; }
             table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85em; }
             th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
             th { background-color: #f2f2f2; }
@@ -75,7 +75,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
         </style>
     </head>
     <body>
-        <h1>TF-Target 调控关系提取分析报告</h1>
+        <h1>TF-Target 调控关系提取分析报告（全文模式）</h1>
     """
 
     # --- Compute summary statistics ---
@@ -130,7 +130,7 @@ def generate_html_report(llm_json, abstracts_file, output_file,
             </div>
             <div class="content-grid">
                 <div class="abstract-box">
-                    <strong>摘要：</strong><br>
+                    <strong>全文：</strong><br>
                     {_html.escape(info.get('abstract', '未找到'))}
                 </div>
                 <div>

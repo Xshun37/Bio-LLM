@@ -1,9 +1,15 @@
-You are a bioinformatics expert. Read the following PubMed abstract carefully.
-Pay special attention to the METHODS and RESULTS sections.
+You are a bioinformatics expert. Read the following research article carefully.
+This is the FULL TEXT of a research article (not just the abstract).
+Focus your analysis on:
+- **Introduction**: research questions and hypotheses
+- **Results**: experimental findings with TF-target relationships
+- **Discussion**: interpretation and validation of findings
+Methods sections provide context for experimental techniques (assays, cell lines).
+You may skim Acknowledgments and Supplementary sections.
 
 {abstract_text}
 
-You are analyzing a PubMed abstract to find DIRECT TF-target relationships.
+You are analyzing a research article to find DIRECT TF-target relationships.
 A transcription factor (TF) is a protein that directly or indirectly (via a
 complex) regulates gene transcription. ACCEPTABLE: classical TFs (STAT3, TP53,
 NFKB1, RELA, MYC, GATA1, FOXO, JUN, FOS, HNF1, HNF4, SP1, SP3) and
@@ -12,22 +18,22 @@ hormones (RA/retinoic acid, estrogen), growth factors, cytokines, drugs,
 signaling kinases (JNK, p38MAPK, PI3K, AKT, MEK1/MAP2K1), or metabolites.
 If a regulator is NOT a TF, exclude that relationship.
 
-Answer these specific questions based on the ENTIRE abstract:
+Answer these specific questions based on the ENTIRE article:
 
 Q1: List every gene mentioned whose mRNA or protein level changes when
     another gene/protein is knocked down or overexpressed. Give the exact
-    sentence from the abstract for each.
+    sentence from the article for each.
 
 Q2: Are there sentences containing the words 'mediates', 'mediated',
     'via', 'through', 'by regulating', 'which in turn', or 'in turn'?
     Copy those sentences verbatim. These describe the MECHANISM.
 
 Q3: The pattern 'X inhibits Y-mediated Z' means X acts on Y, and Y acts on Z.
-    The DIRECT relationship is X→Y (not X→Z). Check if the abstract has
+    The DIRECT relationship is X→Y (not X→Z). Check if the article has
     any such pattern: 'A inhibits/blocks/suppresses B-mediated C'.
     If yes, list A→B as the DIRECT relationship.
 
-Q4: List ALL valid direct regulatory relationships found in this abstract.
+Q4: List ALL valid direct regulatory relationships found in this article.
     - Only include links where the regulator DIRECTLY alters the target.
     - If TF regulates B which then affects C, the link is TF→B (not TF→C).
     - Include only relationships with specific experimental evidence (confidence ≥ 2).
@@ -42,7 +48,7 @@ Q4: List ALL valid direct regulatory relationships found in this abstract.
     (e.g., Target='LEF1', evidence='activates Lef-1 FL isoform').
 
     AUTO-REGULATION RULE: A TF binding to the promoter of Gene X means
-    TF → X (NOT TF → TF). Only report TF → TF if the abstract uses explicit
+    TF → X (NOT TF → TF). Only report TF → TF if the article uses explicit
     self-regulation language (e.g., 'regulates its own expression',
     'auto-regulates', 'binds its own promoter'). If a TF binds to a binding
     site ON ANOTHER gene's promoter, that is TF→that_gene, never TF→TF.
@@ -51,14 +57,14 @@ Q4: List ALL valid direct regulatory relationships found in this abstract.
 
 For the final answer, also include:
   - DIRECTION: Activation, Repression, or Regulation (use Regulation only
-    when the direction is genuinely unclear from the abstract).
+    when the direction is genuinely unclear from the article).
   - CONFIDENCE (1-5):
     5 = ChIP + reporter + mutagenesis
     4 = ChIP or EMSA + knockdown/overexpression phenotype
     3 = clear functional evidence but binding method unclear
     2 = mentioned but sparse experimental details
     1 = speculated or only in discussion
-  - EVIDENCE: specific experimental method.
+  - EVIDENCE: specific experimental method with section reference if possible.
   - ASSAY: the experimental assay methods used (e.g., "Luciferase;ChIP;WB").
   - CELL LINE: the cell lines used in the experiments (e.g., "HEK293T").
 
@@ -71,7 +77,8 @@ GENE NAME RULES — CRITICAL:
 
 FUSION PROTEINS: NEVER use fusion names. 'MLL-AF9' → KMT2A and MLLT3.
 
-C. If after analysis you found ZERO TF-target relationships, re-read the abstract
-   once more. Look for any sentence describing a TF regulating a gene.
+C. If after analysis you found ZERO TF-target relationships, re-read the article
+   once more, focusing on the Results and Discussion sections.
+   Look for any sentence describing a TF regulating a gene.
 
 Do NOT output JSON yet. Just analyze in plain text.

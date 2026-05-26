@@ -84,7 +84,10 @@ def fetch_abstracts(
     bypass_proxy=False,
     no_proxy_hosts=DEFAULT_NCBI_NO_PROXY_HOSTS,
 ):
-    """Fetch structured PubMed abstracts and preserve section labels."""
+    """Fetch structured PubMed abstracts and preserve section labels.
+
+    Legacy function — kept as fallback for PMIDs without PMC full-text.
+    """
     Entrez.email = email
     unique_pmids = clean_pmids(pmid_list)
     if not unique_pmids:
@@ -148,7 +151,15 @@ def generate_test_file(
     email="your_email@example.com",
     bypass_proxy=False,
     no_proxy_hosts=DEFAULT_NCBI_NO_PROXY_HOSTS,
+    fulltext_dir="data/interim/fulltext",
 ):
+    """Generate test file with full-text articles from PMC.
+
+    Fetches full-text from PMC for each PMID in the gold standard,
+    falling back to abstracts for PMIDs without PMC availability.
+    """
+    from bio_llm.fulltext import fetch_fulltexts  # lazy import to avoid circular
+
     df = pd.read_csv(input_file, sep="\t", dtype={"PMID": str})
 
     # Drop rows with missing PMID
@@ -166,12 +177,26 @@ def generate_test_file(
 
     print(f"Gold standard: {len(unique_pmids)} PMIDs, using {len(sampled_pmids)}")
 
-    abstracts = fetch_abstracts(
+    # Fetch full texts from PMC
+    fulltexts = fetch_fulltexts(
         sampled_pmids,
         email=email,
+        output_dir=fulltext_dir,
         bypass_proxy=bypass_proxy,
         no_proxy_hosts=no_proxy_hosts,
     )
+
+    # Fallback: fetch abstracts for PMIDs without PMC full-text
+    missing_pmids = [p for p in sampled_pmids if p not in fulltexts]
+    abstracts = {}
+    if missing_pmids:
+        print(f"  {len(missing_pmids)} 篇无 PMC 全文，降级获取摘要...")
+        abstracts = fetch_abstracts(
+            missing_pmids,
+            email=email,
+            bypass_proxy=bypass_proxy,
+            no_proxy_hosts=no_proxy_hosts,
+        )
 
     with open(output_file, "w", encoding="utf-8") as handle:
         handle.write("=== TF-Target Analysis Test Data ===\n\n")
@@ -193,25 +218,38 @@ def generate_test_file(
                     parts.append(f"[CellLine: {cellline}]")
                 handle.write(" ".join(parts) + "\n")
 
-            handle.write(f"\nAbstract:{SECTION_SEPARATOR}")
-
-            content = abstracts.get(curr_pmid, "Abstract not found in PubMed")
-            if isinstance(content, dict):
-                for label, text in content.items():
-                    handle.write(f"[{label}]\n{text}\n{SECTION_SEPARATOR}")
+            # Full text or abstract
+            if curr_pmid in fulltexts:
+                parsed = fulltexts[curr_pmid]
+                handle.write(f"\nFull Text:{SECTION_SEPARATOR}")
+                for sec_title, sec_text in parsed.get("sections", []):
+                    handle.write(f"[{sec_title}]\n{sec_text}\n{SECTION_SEPARATOR}")
+            elif curr_pmid in abstracts:
+                content = abstracts[curr_pmid]
+                handle.write(f"\nAbstract:{SECTION_SEPARATOR}")
+                if isinstance(content, dict):
+                    for label, text in content.items():
+                        handle.write(f"[{label}]\n{text}\n{SECTION_SEPARATOR}")
+                else:
+                    handle.write(f"{content}\n{SECTION_SEPARATOR}")
             else:
-                handle.write(f"{content}\n{SECTION_SEPARATOR}")
+                handle.write(f"\nFull Text:{SECTION_SEPARATOR}")
+                handle.write(f"Full text not available{SECTION_SEPARATOR}")
             handle.write("\n")
 
 
 def build_parser():
-    parser = argparse.ArgumentParser(description="从金标准数据集选取 PMID 并下载结构化摘要。")
+    parser = argparse.ArgumentParser(
+        description="从金标准数据集选取 PMID 并下载 PMC 全文。"
+    )
     parser.add_argument("--input", default="data/raw/finalresult.tsv")
     parser.add_argument("--output", default="data/interim/abstracts_for_test.txt")
     parser.add_argument("--sample-size", type=int, default=None,
                         help="选取 PMID 数量 (默认全部)")
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--email", default="your_email@example.com")
+    parser.add_argument("--fulltext-dir", default="data/interim/fulltext",
+                        help="全文缓存目录")
     parser.add_argument(
         "--bypass-proxy",
         action="store_true",
@@ -236,6 +274,7 @@ def main():
         email=args.email,
         bypass_proxy=args.bypass_proxy,
         no_proxy_hosts=args.ncbi_no_proxy_hosts,
+        fulltext_dir=args.fulltext_dir,
     )
 
 
