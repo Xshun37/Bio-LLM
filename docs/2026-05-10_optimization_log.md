@@ -375,3 +375,20 @@
 **改动**：
 - `CLAUDE.md`（新建）：加入日志维护规则，定义触发条件（非平凡改动）与格式模板，模型在每次重要改动后主动追加条目
 
+---
+
+### 31. 工程重构：TRRUST → 金标准数据集
+
+**问题**：原先基于 TRRUST 数据库的流水线不再适应新的人工金标准数据需求。需要替换数据源、清理冗余代码、更新评估逻辑、新增提示词调试工具。
+
+**改动**：
+- `data/`：TRRUST 相关文件移至 `data/archive/`（gitignore），金标准 `finalresult.tsv`（46 PMID, 226 行, 8 列）作为唯一数据源
+- `src/bio_llm/__init__.py`：删除 `load_anomalies()`
+- `src/bio_llm/curate.py`（删除）：TRRUST 异常标注工具，金标准已人工审核不再需要
+- `scripts/group_by_pmid.py`（删除）：TRRUST 按 PMID 分组，金标准已是按 PMID 组织
+- `src/bio_llm/abstracts.py`：重写，从 `finalresult.tsv` 读取 PMID，输出 `Gold Standard: TF -> Target [Assay: ...] [CellLine: ...]` 格式
+- `src/bio_llm/analysis.py`：提示词外部化到 `config/prompts/round1.txt` 和 `round2.txt`，输出新增 `assay` 和 `cellLine` 字段，`parse_test_file()` 解析 Gold Standard 行
+- `src/bio_llm/evaluation.py`：删除 Direction 评估，新增 `load_gold_standard()`、`match_assays()`（GT ⊆ LLM）、`match_cellline()`（模糊匹配），`classify_llm_entry()` 不再比较方向
+- `src/bio_llm/reporting.py`：删除 `load_trrust_by_pmid()` 和 `parse_abstracts_file()`（消除重复），导入共享解析器，比较表新增 Assay/CellLine 列
+- `scripts/prompt_debugger.py`（新建）：Gradio Web UI 用于编辑提示词和单 PMID 测试
+- `snakefile`、`run.sh`、`config/config.example.yaml`：更新数据源和默认参数
