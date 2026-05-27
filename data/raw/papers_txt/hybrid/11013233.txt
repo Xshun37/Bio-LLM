@@ -26,7 +26,15 @@ In the present report, we demonstrate that overexpression of MafG and MafK, indi
 
 _Materials_--The enzymes used in this study were purchased from Life Technologies, Inc. pcDNA3.1/V-G-His-TOPO and anti-V5 antibody were purchased from Invitrogen (Carlsbad, CA). a-Minimum essential medium was purchased from Life Technologies, Inc. Effecten transfection reagent was purchased from Qiagen (Valencia, CA). The Nrf2 antibodies were purchased from Santa Cruz Biotechnology, Inc. (Santa Cruz, CA). t-BHQ and all other chemicals were purchased from Sigma. The pGL2 promoter plasmid containing firefly luciferase gene, internal control plasmid pBL-TK that encodes _Renilla_ luciferase, the dual luciferase assay kit, and the TNT7/T7/T7/5 coupled rabbit reticulocyte lysate system were obtained from Promega (Madison, WI). The Hybond ECL nitrocellulose membrane, ECL Western blot analysis kit, and Amplify NAMP1000 were purchased from Amersham Pharmacia Biotech.
 
-_Plasmid Construction_--The NQO1 gene ARE, mutant ARE, and GST Ya ARE were subcloned in the pGL2 vector to generate reporter plasmids pGL2-HARE-Luc, pGL2-mAhRE-Luc, and pGL2-GST Ya ARE. Luc. The nucleotide sequences of the various AREs are shown in Fig. 1. The sense and antisense oligonucleotides corresponding to the AREs were synthesized with either _Nh_U_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M_M
+L-[35S]methionine was substituted for methionine in the reactions. After the coupled transcription/translation, the proteins were checked for
+their correct size on a 10% PAGE and Western analysis. Briefly, 5 ml of
+the translated proteins were resolved on a 10% PAGE, treated with
+Amplify solution (NAMP 100; Amersham Pharmacia Biotech) to enhance the 35S signal, dried, and exposed to x-ray film. In a similar
+experiment, the proteins were transferred onto a Hybond ECL nitrocellulose membrane and probed with Nrf2 and V5 antibodies. V5 antibodies were used to detect the V5 tagged Maf proteins. All of the in vitro
+translated proteins gave the expected sized products.
+The NQO1 gene ARE was end-labeled with [g-32P]ATP and T4
+polynucleotide kinase. The labeled ARE was incubated with nuclear
+extracts or in vitro translated proteins. Band and supershift assays
 
 were then performed by previously described procedures (25, 31). 10 \(\mu\)g of the nuclear extract or equimolar concentrations of _in vitro_ translated proteins were used in the gel shift and supershift experiments. The supershift assay with nuclear extracts used 20 \(\mu\)g of proteins. 1.5 \(\mu\)l of anti-V5 antibody and 3 \(\mu\)l of Nrf2 antibody or preimmune serum were used in the supershift assays.
 

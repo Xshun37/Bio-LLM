@@ -1,17 +1,17 @@
-"""Hybrid PDF→text v2: Nougat + pymupdf4llm with paragraph-level hallucination repair.
+"""Hybrid PDF→text: Nougat OCR + fitz fallback with paragraph-level hallucination repair.
+
+Strategy:
+  - Nougat (Meta OCR) as primary: correct Greek letters, auto Markdown structure
+  - fitz (PyMuPDF) as fallback: replace hallucinated Nougat segments with stable text
+  - Nougat provides Markdown formatting; fitz only fills in content where Nougat fails
 
 Two modes:
   --existing   Post-process saved Nougat text (no GPU, fast iteration)
-  --full       Full pipeline: Nougat inference + pymupdf4llm + repair
+  --full       Full pipeline: Nougat inference + fitz extraction + repair
 
 Usage::
-    # Quick test with existing Nougat output
     python scripts/hybrid_convert_v2.py --existing --pmid 10453008
-
-    # Full pipeline for new papers
-    python scripts/hybrid_convert_v2.py --full --pmid 12345678
-
-    # Detection report only (no repair)
+    python scripts/hybrid_convert_v2.py --full --pmids 15184388 15195143
     python scripts/hybrid_convert_v2.py --detect
 """
 
@@ -27,6 +27,7 @@ from difflib import SequenceMatcher
 BASE = "/home/bioxs/Bioproduce/Bio-LLM"
 PDF_DIR = os.path.join(BASE, "data/raw/papers")
 NOUGAT_DIR = os.path.join(BASE, "data/raw/papers_txt/Nougat")
+FITZ_DIR = os.path.join(BASE, "data/raw/papers_txt/fitz")
 HYBRID_DIR = os.path.join(BASE, "data/raw/papers_txt/hybrid")
 REPORT_DIR = os.path.join(BASE, "data/raw/papers_txt/hybrid_v2")
 
@@ -57,6 +58,21 @@ META_PATTERNS = [
     r"^\d{4}\s+Published by Elsevier",
     r"^Edited by ", r"^Available online \d+",
     r"^\(Received", r"^Accepted \d+",
+    # Additional fitz-specific noise
+    r"^\d+\s*$",                          # standalone page numbers
+    r"^[A-Z]\.\s+\w+\s+et\s+al\.\s*/",   # author line "A. Perez et al. / ..."
+    # Footnote / affiliation blocks (common in PDF page footers)
+    r"^Received\s+\d+\s+\w+\s+\d{4}",
+    r"^(?:Accepted|Published)\s+\d+\s+\w+",
+    r"^(?:Current|Present)\s+address:",
+    r"^(?:Corresponding\s+author|E-?mail|Address\s+correspondence)",
+    r"^Department\s+of\s+",
+    r"(?:This\s+work\s+was\s+supported|This\s+article\s+was\s+published)",
+    r"(?:contributed\s+equally|To\s+whom\s+correspondence)",
+    r"^(?:Abbreviations?|ABBR)[\s\w]*used",
+    r"(?:These\s+authors\s+contributed)",
+    r"(?:should\s+therefore\s+both|should\s+be\s+considered)",
+    r"^The\s+costs?\s+of\s+publication",
 ]
 
 
@@ -77,8 +93,7 @@ def _detect_line_dup(text):
 
 def _detect_token_rep(text):
     """Detect token-level repetition. Returns (bool, boundary_info|None)."""
-    # Pattern 1 (new): backreference — any token (2+ chars) repeated 10+ times
-    # Catches: "_Hind_III_III_III", "_Nh_U_M_M_M_M", "ClClClCl", etc.
+    # Pattern 1: backreference — any token (2+ chars) repeated 10+ times
     m = re.search(r"(\w{2,})(?:\W*\1){9,}", text)
     if m:
         return True, {
@@ -89,7 +104,6 @@ def _detect_token_rep(text):
         }
 
     # Pattern 2: word/markdown repeated with separators
-    # e.g. "_i.e._, a _i.e._, a"
     for m in re.finditer(
         r"((?:_?\w[\w.]*_?)(?:[,.\s]+_?\w[\w.]*_?){2,})", text
     ):
@@ -169,27 +183,16 @@ def _detect_char_rep(text):
 
 
 def _detect_cross_para_dup(paragraphs):
-    """Detect cross-paragraph duplication: same text appearing in many paragraphs.
-
-    This catches cases like PMID 10082553 where the author name is repeated
-    as a separate paragraph hundreds of times.
-
-    Args:
-        paragraphs: list of paragraph strings
-
-    Returns:
-        set of indices that are duplicated, or empty set
-    """
+    """Detect cross-paragraph duplication: same text appearing in many paragraphs."""
     if len(paragraphs) < 10:
         return set()
 
-    # Count paragraph occurrences (normalize for comparison)
     para_counter = Counter()
-    para_groups = {}  # normalized_text -> list of indices
+    para_groups = {}
     for i, p in enumerate(paragraphs):
         key = p.strip().lower()
         if len(key) < 5:
-            continue  # skip very short paragraphs
+            continue
         para_counter[key] += 1
         para_groups.setdefault(key, []).append(i)
 
@@ -206,9 +209,7 @@ def detect_paragraph_hallucination(paragraph):
     """Run all 4 detectors on a paragraph.
 
     Returns:
-        (is_hallucinated: bool,
-         reason: str|None,      # "line_dup" / "token_rep" / "sentence_rep" / "char_rep"
-         boundary: dict|None)   # position info for repair
+        (is_hallucinated, reason, boundary)
     """
     for name, detector in [
         ("line_dup", _detect_line_dup),
@@ -235,14 +236,13 @@ def assess_page(nougat_text):
     """Assess hallucination severity for a page of Nougat text.
 
     Returns:
-        severity: "none" | "minor" | "moderate" | "severe"
+        severity: "none" | "moderate" | "severe"
         details:  dict with per-paragraph results
     """
     paras = split_paragraphs(nougat_text)
     if not paras:
         return "none", {}
 
-    # Phase 1: per-paragraph detection
     bad_indices = []
     results = []
     for i, para in enumerate(paras):
@@ -257,7 +257,7 @@ def assess_page(nougat_text):
         if is_hall:
             bad_indices.append(i)
 
-    # Phase 2: cross-paragraph duplication
+    # Cross-paragraph duplication
     cross_dup_indices = _detect_cross_para_dup(paras)
     for idx in cross_dup_indices:
         if not results[idx]["is_hallucinated"]:
@@ -269,11 +269,9 @@ def assess_page(nougat_text):
     n_bad = len(bad_indices)
     n_total = len(paras)
 
-    # Severe: line_dup or cross_para_dup detected, or >50% paragraphs bad
     has_line_dup = any(
         r["reason"] in ("line_dup", "cross_para_dup")
-        for r in results
-        if r["is_hallucinated"]
+        for r in results if r["is_hallucinated"]
     )
     if has_line_dup or n_bad > n_total * 0.5:
         severity = "severe"
@@ -293,13 +291,51 @@ def assess_page(nougat_text):
 
 
 # ═══════════════════════════════════════════════════════════
-#  3. PYMUPDF4LLM EXTRACTION & CLEANING
+#  3. FITZ EXTRACTION & CLEANING
 # ═══════════════════════════════════════════════════════════
 
-def extract_pymupdf4llm(pdf_path):
-    """Extract per-page Markdown via pymupdf4llm."""
-    import pymupdf4llm
-    pages = pymupdf4llm.to_markdown(pdf_path, page_chunks=True)
+def _is_footnote_block(text):
+    """Check if a fitz text block is a page footnote / metadata (not main body)."""
+    first_line = text.strip().split('\n')[0].strip()
+    # Strip leading footnote number: "1 This work..." → "This work..."
+    first_stripped = re.sub(r'^\d+\s+', '', first_line)
+    for pat in META_PATTERNS:
+        if re.search(pat, first_line, re.IGNORECASE):
+            return True
+        if re.search(pat, first_stripped, re.IGNORECASE):
+            return True
+    # Very short non-content blocks (affiliations, author names)
+    if len(text.strip()) < 70 and not re.search(r'[.!?]\s*$', text.strip()):
+        return True
+    return False
+
+
+def extract_fitz_pages(pdf_path):
+    """Extract per-page text via fitz (PyMuPDF) blocks mode.
+
+    Uses "blocks" mode so each text block (typically one paragraph) is
+    separated by double-newlines.  Footnote/metadata blocks (page footers,
+    affiliations, grant info) are filtered out so that paragraph indices
+    align with Nougat's body-text paragraphs.
+
+    Returns:
+        list of strings, one per page (paragraphs separated by \\n\\n)
+    """
+    import fitz
+    doc = fitz.open(pdf_path)
+    pages = []
+    for page in doc:
+        blocks = page.get_text("blocks")
+        # Sort by vertical position (top-to-bottom), then horizontal (left-to-right)
+        blocks.sort(key=lambda b: (round(b[1] / 20) * 20, b[0]))
+        page_paras = []
+        for block in blocks:
+            if block[6] == 0:  # text block (type=0), skip image blocks (type=1)
+                text = block[4].strip()
+                if text and not _is_footnote_block(text):
+                    page_paras.append(text)
+        pages.append("\n\n".join(page_paras))
+    doc.close()
     return pages
 
 
@@ -314,21 +350,18 @@ def _is_meta_line(line):
     return False
 
 
-def clean_p4_text(text):
-    """Clean pymupdf4llm output: remove noise, merge lines, truncate references."""
+def clean_fitz_text(text):
+    """Clean fitz output: remove noise, merge lines, truncate references."""
     lines = text.split("\n")
     cleaned = []
-    skip_until_blank = False
     in_refs = False
 
     for line in lines:
         stripped = line.strip()
 
-        # Truncate at References section (allow **bold**, optional # headers)
+        # Truncate at References section
         if re.match(
-            r"^(#+\s*)?\*{0,2}\s*(References|REFERENCES|Bibliography)\s*\*{0,2}\s*$",
-            stripped,
-            re.IGNORECASE,
+            r"^(References|REFERENCES|Bibliography)\s*$", stripped, re.IGNORECASE
         ):
             in_refs = True
             continue
@@ -343,10 +376,6 @@ def clean_p4_text(text):
         if stripped and len(stripped) <= 6 and stripped.isdigit():
             continue
 
-        # Skip image placeholders: ![...](...)
-        if re.match(r"^!\[.*?\]\(.*?\)\s*$", stripped):
-            continue
-
         # Skip very short non-alpha lines (likely artifacts)
         if stripped and len(stripped) <= 5 and not stripped.isalpha():
             continue
@@ -355,7 +384,7 @@ def clean_p4_text(text):
 
     text = "\n".join(cleaned)
 
-    # Merge hyphenated line breaks
+    # Merge hyphenated line breaks: "tran-\n scription" → "transcription"
     text = re.sub(r"(\w)-\n\s*(\w)", r"\1\2", text)
 
     # Collapse 3+ blank lines
@@ -375,125 +404,169 @@ def _is_header(para):
 
 def _normalize_for_match(text):
     """Normalize text for fuzzy matching (strip markdown, LaTeX, lowercase)."""
-    text = re.sub(r"#{1,6}\s*", "", text)          # strip headers
-    text = re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)  # strip bold/italic
-    text = re.sub(r"\\?\(.*?\\?\)", "", text)       # strip LaTeX math
-    text = re.sub(r"\s+", " ", text)                # normalize whitespace
+    text = re.sub(r"#{1,6}\s*", "", text)
+    text = re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)
+    text = re.sub(r"\\?\(.*?\\?\)", "", text)
+    text = re.sub(r"\s+", " ", text)
     return text.lower().strip()
 
 
-def align_paragraphs(nougat_paras, p4_paras, bad_indices=None):
-    """Align Nougat paragraphs to pymupdf4llm paragraphs.
+def _is_fitz_header(para):
+    """Check if a fitz paragraph looks like a section header."""
+    stripped = para.strip()
+    if not stripped or len(stripped) > 120:
+        return False
+    # Common section headers in biology papers
+    return bool(re.match(
+        r"^(Introduction|INTRODUCTION|Background|BACKGROUND|"
+        r"Materials?\s+and\s+Methods?|MATERIALS?\s+AND\s+METHODS?|"
+        r"Experimental\s+Procedures?|EXPERIMENTAL\s+PROCEDURES?|"
+        r"Results?|RESULTS?|Discussion|DISCUSSION|"
+        r"Conclusions?|CONCLUSIONS?|Acknowledgm|ACKNOWLEDGM|"
+        r"References|REFERENCES|Abbreviations|ABBR)",
+        stripped, re.IGNORECASE,
+    ))
 
-    Strategy:
-      1. Use section headers as anchor points
-      2. Within each section, align by position + fuzzy match
-      3. Hallucination paragraphs: skip fuzzy match, use position fallback
-      4. Fallback: positional mapping
+
+def align_paragraphs(nougat_paras, fitz_paras, bad_indices=None):
+    """Align Nougat paragraphs to fitz paragraphs via global content matching.
+
+    Strategy (no header dependency — many old PDFs have unrecognizable fonts):
+      1. Match good (non-hallucinated) Nougat paragraphs globally against fitz
+      2. Use good matches as position anchors
+      3. For bad paragraphs, find the gap between neighbouring anchors in fitz
+         and assign unassigned fitz paragraphs from the gap (gap-filling)
 
     Args:
-        nougat_paras: list of Nougat paragraphs
-        p4_paras: list of pymupdf4llm paragraphs
-        bad_indices: set/list of hallucination paragraph indices (skip fuzzy match)
+        nougat_paras: list of Nougat paragraphs (Markdown)
+        fitz_paras: list of fitz paragraphs (plain text)
+        bad_indices: set/list of hallucination paragraph indices
 
     Returns:
-        mapping: dict {nougat_idx: p4_idx}
+        mapping: dict {nougat_idx: fitz_idx}
     """
     mapping = {}
-    if not nougat_paras or not p4_paras:
+    if not nougat_paras or not fitz_paras:
         return mapping
 
     bad_set = set(bad_indices) if bad_indices else set()
+    n_len = len(nougat_paras)
+    f_len = len(fitz_paras)
+    used_f = set()
 
-    # Extract header anchors from both
-    n_headers = [
-        (i, _normalize_for_match(p))
-        for i, p in enumerate(nougat_paras)
-        if _is_header(p)
-    ]
-    p_headers = [
-        (i, _normalize_for_match(p))
-        for i, p in enumerate(p4_paras)
-        if _is_header(p)
-    ]
-
-    # Match headers between nougat and p4
-    header_pairs = []
-    used_p = set()
-    for n_idx, n_text in n_headers:
-        best_score = 0
-        best_p_idx = None
-        for p_idx, p_text in p_headers:
-            if p_idx in used_p:
-                continue
-            score = SequenceMatcher(None, n_text, p_text).ratio()
-            if score > best_score:
-                best_score = score
-                best_p_idx = p_idx
-        if best_score > 0.5 and best_p_idx is not None:
-            header_pairs.append((n_idx, best_p_idx))
-            mapping[n_idx] = best_p_idx
-            used_p.add(best_p_idx)
-
-    # Between each pair of matched headers, align paragraphs by position
-    # Add sentinel anchors
-    n_anchors = [(-1, -1)] + header_pairs + [
-        (len(nougat_paras), len(p4_paras))
-    ]
-    n_anchors.sort()
-
-    for k in range(len(n_anchors) - 1):
-        n_start, p_start = n_anchors[k]
-        n_end, p_end = n_anchors[k + 1]
-
-        # Paragraphs between these anchors (exclusive of anchors)
-        n_range = list(range(n_start + 1, n_end))
-        p_range = list(range(p_start + 1, p_end))
-
-        if not n_range or not p_range:
+    # ── Pass 1: match good paragraphs globally ──
+    good_matches = []  # (nougat_idx, fitz_idx, score)
+    for ni in range(n_len):
+        if ni in bad_set:
+            continue
+        n_norm = _normalize_for_match(nougat_paras[ni][:500])
+        if len(n_norm) < 15:
             continue
 
-        # Try fuzzy matching for each nougat paragraph
-        for ni in n_range:
-            if ni in mapping:
+        best_score = 0
+        best_fi = None
+        for fi in range(f_len):
+            f_norm = _normalize_for_match(fitz_paras[fi][:500])
+            if len(f_norm) < 15:
                 continue
+            score = SequenceMatcher(None, n_norm, f_norm).ratio()
+            if score > best_score:
+                best_score = score
+                best_fi = fi
 
-            # Hallucination paragraphs: skip fuzzy match, use position fallback
-            # (the hallucinated text doesn't exist in p4, so fuzzy match
-            # will match the wrong p4 paragraph)
-            if ni in bad_set:
-                pos_idx = ni - n_start - 1
-                if pos_idx < len(p_range):
-                    mapping[ni] = p_range[pos_idx]
-                continue
+        if best_score > 0.40 and best_fi is not None:
+            good_matches.append((ni, best_fi, best_score))
 
-            n_norm = _normalize_for_match(nougat_paras[ni][:200])
-            if len(n_norm) < 10:
-                # Too short for fuzzy match, use positional
-                pos_idx = ni - n_start - 1
-                if pos_idx < len(p_range):
-                    mapping[ni] = p_range[pos_idx]
-                continue
+    # Sort by score descending, greedily assign (best match wins)
+    good_matches.sort(key=lambda x: -x[2])
+    good_mapping = {}
+    for ni, fi, score in good_matches:
+        if ni in good_mapping or fi in used_f:
+            continue
+        good_mapping[ni] = fi
+        used_f.add(fi)
 
+    # ── Pass 2: build ordered anchor list from good matches ──
+    anchors = sorted(good_mapping.items())  # [(n_idx, f_idx), ...]
+
+    # ── Pass 3: gap-filling for bad paragraphs ──
+    for ni in sorted(bad_set):
+        # Find bounding anchors (re-sorted each time to include prior bad mappings)
+        all_anchors = sorted(
+            [(k, v) for k, v in mapping.items()] + anchors
+        )
+        prev_anchor = None
+        next_anchor = None
+        for a_ni, a_fi in all_anchors:
+            if a_ni < ni:
+                prev_anchor = (a_ni, a_fi)
+            elif a_ni > ni and next_anchor is None:
+                next_anchor = (a_ni, a_fi)
+
+        # Determine the fitz gap
+        gap_lo = prev_anchor[1] + 1 if prev_anchor else 0
+        gap_hi = next_anchor[1] if next_anchor else f_len
+
+        # Collect unassigned fitz paragraphs in the gap
+        gap_fis = [fi for fi in range(gap_lo, gap_hi) if fi not in used_f]
+
+        if gap_fis:
+            # Pick from gap: if only one, take it; otherwise use content matching
+            if len(gap_fis) == 1:
+                mapping[ni] = gap_fis[0]
+            else:
+                # Try content match within gap
+                n_norm = _normalize_for_match(nougat_paras[ni][:500])
+                best_score = 0
+                best_fi = None
+                for fi in gap_fis:
+                    f_norm = _normalize_for_match(fitz_paras[fi][:500])
+                    if len(f_norm) < 10:
+                        continue
+                    score = SequenceMatcher(None, n_norm, f_norm).ratio()
+                    if score > best_score:
+                        best_score = score
+                        best_fi = fi
+                # Content match or position-based pick (first in gap)
+                mapping[ni] = best_fi if best_fi is not None else gap_fis[0]
+        else:
+            # No gap — try wider search window (±5 around interpolation)
+            if prev_anchor and next_anchor:
+                pn, pf = prev_anchor
+                nn, nf = next_anchor
+                ratio = (ni - pn) / max(1, nn - pn)
+                est_fi = pf + ratio * (nf - pf)
+            elif prev_anchor:
+                est_fi = prev_anchor[1] + (ni - prev_anchor[0])
+            elif next_anchor:
+                est_fi = next_anchor[1] - (next_anchor[0] - ni)
+            else:
+                est_fi = 0
+
+            search_lo = max(0, int(est_fi) - 5)
+            search_hi = min(f_len, int(est_fi) + 6)
             best_score = 0
-            best_pi = None
-            for pi in p_range:
-                if pi in mapping.values():
+            best_fi = None
+            for fi in range(search_lo, search_hi):
+                if fi in used_f:
                     continue
-                p_norm = _normalize_for_match(p4_paras[pi][:200])
-                score = SequenceMatcher(None, n_norm, p_norm).ratio()
+                f_norm = _normalize_for_match(fitz_paras[fi][:500])
+                if len(f_norm) < 10:
+                    continue
+                n_norm = _normalize_for_match(nougat_paras[ni][:500])
+                score = SequenceMatcher(None, n_norm, f_norm).ratio()
                 if score > best_score:
                     best_score = score
-                    best_pi = pi
+                    best_fi = fi
+            if best_fi is not None:
+                mapping[ni] = best_fi
 
-            if best_score > 0.4 and best_pi is not None:
-                mapping[ni] = best_pi
-            else:
-                # Positional fallback
-                pos_idx = ni - n_start - 1
-                if pos_idx < len(p_range):
-                    mapping[ni] = p_range[pos_idx]
+        # Mark assigned fitz paragraph as used so next bad para won't reuse it
+        if ni in mapping:
+            used_f.add(mapping[ni])
 
+    # Merge good_mapping into result
+    mapping.update(good_mapping)
     return mapping
 
 
@@ -505,10 +578,8 @@ def _strip_repeated_tokens(text, boundary):
     """Remove repeated token cluster, keeping the first occurrence.
 
     The detector returns a boundary spanning the *entire* repeated cluster
-    (first valid occurrence + all duplicates).  The old implementation deleted
-    the whole span, destroying table content.  This version collapses the
-    cluster down to a single copy of the repeated token so that surrounding
-    text (e.g. LaTeX table structure) is preserved.
+    (first valid occurrence + all duplicates).  This collapses the cluster
+    down to a single copy of the repeated token.
     """
     if not boundary or "start" not in boundary:
         return text
@@ -520,49 +591,31 @@ def _strip_repeated_tokens(text, boundary):
     if len(matched) == 0:
         return text
 
-    # ── char_rep: boundary covers e.g. "MMMMMMMM..." (20+ identical chars) ──
     token = boundary.get("token")
     if not token:
-        # char_rep boundary has "char" key; keep one copy of the char
+        # char_rep: keep one copy of the char
         ch = boundary.get("char", matched[0])
         collapsed = ch
     else:
-        # ── token_rep: collapse "CTGCTGCTG..." → "CTG" ──
-        # Replace the entire matched region with a single copy of the token
+        # token_rep: collapse "CTGCTGCTG..." → "CTG"
         collapsed = token
 
     before = text[:start]
     after = text[end:]
     result = before + collapsed + after
 
-    # Clean up potential double spaces at join points
     result = re.sub(r"  +", " ", result)
     return result.strip()
 
 
-def _is_p4_quality_ok(p4_text, nougat_text):
-    """Check if p4 replacement text is usable (not full of  or █ blocks)."""
-    if not p4_text or len(p4_text.strip()) < 10:
-        return False
-    # Reject if >5% replacement characters (U+FFFD) or block chars
-    bad_chars = p4_text.count("�") + p4_text.count("█")
-    if bad_chars / max(len(p4_text), 1) > 0.05:
-        return False
-    # Reject if p4 is much shorter than Nougat (< 20% of Nougat length)
-    if len(p4_text) < len(nougat_text) * 0.2:
-        return False
-    return True
-
-
-def repair_page(nougat_text, p4_text, severity, details):
+def repair_page(nougat_text, fitz_text, severity, details):
     """Apply repair strategy based on severity.
 
     Returns:
-        repaired_text: str
-        repair_info: dict with stats
+        repaired_text, repair_info
     """
     paras = split_paragraphs(nougat_text)
-    p4_paras = split_paragraphs(p4_text)
+    fitz_paras = split_paragraphs(fitz_text)
     bad_indices = details.get("bad_indices", [])
     results = details.get("paragraphs", [])
 
@@ -570,17 +623,14 @@ def repair_page(nougat_text, p4_text, severity, details):
         return nougat_text, {"action": "keep", "n_replaced": 0}
 
     if severity == "severe":
-        # Check if p4 is usable before replacing entire page
-        if _is_p4_quality_ok(p4_text, nougat_text):
-            return p4_text, {
-                "action": "page_replace",
-                "n_replaced": len(paras),
-            }
-        # p4 is bad quality — fall through to paragraph-level repair
-        severity = "moderate"
+        # Replace entire page with fitz text
+        return fitz_text, {
+            "action": "page_replace",
+            "n_replaced": len(paras),
+        }
 
     # moderate: replace only bad paragraphs
-    alignment = align_paragraphs(paras, p4_paras, bad_indices=bad_indices)
+    alignment = align_paragraphs(paras, fitz_paras, bad_indices=bad_indices)
     repaired_paras = []
     n_replaced = 0
     n_inline = 0
@@ -592,25 +642,27 @@ def repair_page(nougat_text, p4_text, severity, details):
 
         result = results[i]
 
-        # ── Priority 1: inline strip for token_rep / char_rep ──
+        # Priority 1: replace with fitz paragraph (most reliable — fitz always
+        # extracts the correct text from PDF; inline strip can preserve wrong
+        # content when Nougat hallucinated entirely different text)
+        fitz_idx = alignment.get(i)
+        if fitz_idx is not None and fitz_idx < len(fitz_paras):
+            replacement = fitz_paras[fitz_idx]
+            if len(replacement.strip()) > 10:
+                repaired_paras.append(replacement)
+                n_replaced += 1
+                continue
+
+        # Priority 2: inline strip for token_rep / char_rep (fallback)
         if result["reason"] in ("token_rep", "char_rep") and result.get("boundary"):
             stripped = _strip_repeated_tokens(para, result["boundary"])
-            # Use inline if result has meaningful content (> 50 chars)
+            # Use inline if result has meaningful content
             if len(stripped) > 50:
                 repaired_paras.append(stripped)
                 n_inline += 1
                 continue
 
-        # ── Priority 2: replace with p4 paragraph ──
-        p4_idx = alignment.get(i)
-        if p4_idx is not None and p4_idx < len(p4_paras):
-            replacement = p4_paras[p4_idx]
-            if _is_p4_quality_ok(replacement, para):
-                repaired_paras.append(replacement)
-                n_replaced += 1
-                continue
-
-        # ── Priority 3: keep original (even if hallucinated) ──
+        # Priority 3: keep original
         repaired_paras.append(para)
 
     return "\n\n".join(repaired_paras), {
@@ -669,7 +721,6 @@ def page_to_image(pdf_path, page_idx):
 
 def clean_nougat_page(text):
     """Remove references section and collapse blank lines."""
-    # Match References/REFERENCES/Bibliography with optional # headers and **bold**
     text = re.split(
         r"\n(?:#+\s*)?\*{0,2}\s*(?:References|REFERENCES|Bibliography)\s*\*{0,2}\s*\n",
         text,
@@ -680,12 +731,12 @@ def clean_nougat_page(text):
     return text.strip()
 
 
-def process_paper_existing(nougat_text, p4_text):
+def process_paper_existing(nougat_text, fitz_text):
     """Process a paper in --existing mode (no GPU).
 
     Args:
         nougat_text: saved Nougat output (joined, no page boundaries)
-        p4_text: pymupdf4llm output (cleaned)
+        fitz_text: fitz output (joined, cleaned)
 
     Returns:
         (repaired_text, stats)
@@ -696,8 +747,7 @@ def process_paper_existing(nougat_text, p4_text):
         cleaned = clean_nougat_page(nougat_text)
         return cleaned, {"severity": "none", "action": "keep"}
 
-    cleaned_p4 = clean_p4_text(p4_text)
-    repaired, repair_info = repair_page(nougat_text, cleaned_p4, severity, details)
+    repaired, repair_info = repair_page(nougat_text, fitz_text, severity, details)
     repaired = clean_nougat_page(repaired)
 
     return repaired, {
@@ -709,24 +759,22 @@ def process_paper_existing(nougat_text, p4_text):
 
 
 def process_paper_full(pdf_path, processor, model):
-    """Process a paper in --full mode (Nougat + pymupdf4llm, page by page).
+    """Process a paper in --full mode (Nougat + fitz, page by page).
 
     Returns:
         (final_markdown, stats)
     """
-    import fitz
-
     pmid = os.path.basename(pdf_path).replace(".pdf", "")
-    doc = fitz.open(pdf_path)
-    n_pages = len(doc)
-    doc.close()
+    import fitz as _fitz
+    with _fitz.open(pdf_path) as doc:
+        n_pages = len(doc)
 
-    # Extract pymupdf4llm output
-    p4_pages = extract_pymupdf4llm(pdf_path)
+    # Extract fitz text per page (blocks mode for proper paragraph structure)
+    fitz_pages = extract_fitz_pages(pdf_path)
 
     pages_out = []
-    nougat_raw_pages = []  # collect raw Nougat output for archival
-    stats = {"nougat": 0, "p4_full": 0, "p4_partial": 0, "p4_inline": 0}
+    nougat_raw_pages = []
+    stats = {"nougat": 0, "fitz_full": 0, "fitz_partial": 0, "fitz_inline": 0}
 
     for i in range(n_pages):
         # Nougat inference
@@ -736,10 +784,8 @@ def process_paper_full(pdf_path, processor, model):
         elapsed = time.time() - t0
         nougat_raw_pages.append(nougat_text)
 
-        # p4 text for this page
-        p4_text = ""
-        if i < len(p4_pages):
-            p4_text = clean_p4_text(p4_pages[i].get("text", ""))
+        # fitz text for this page
+        fitz_text = clean_fitz_text(fitz_pages[i]) if i < len(fitz_pages) else ""
 
         # Assess
         severity, details = assess_page(nougat_text)
@@ -750,19 +796,19 @@ def process_paper_full(pdf_path, processor, model):
             tag = "Nougat OK"
         else:
             repaired, repair_info = repair_page(
-                nougat_text, p4_text, severity, details
+                nougat_text, fitz_text, severity, details
             )
             pages_out.append(clean_nougat_page(repaired))
             action = repair_info["action"]
             if action == "page_replace":
-                stats["p4_full"] += 1
-                tag = f"SEVERE→p4"
+                stats["fitz_full"] += 1
+                tag = "SEVERE→fitz"
             elif action == "paragraph_replace":
-                stats["p4_partial"] += 1
+                stats["fitz_partial"] += 1
                 tag = f"MOD→replace {repair_info['n_replaced']}para"
             else:
-                stats["p4_inline"] += 1
-                tag = f"MINOR→inline"
+                stats["fitz_inline"] += 1
+                tag = "MINOR→inline"
 
         print(
             f"    p{i + 1}/{n_pages}: {tag} "
@@ -849,11 +895,11 @@ EXISTING_PMIDS = [
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Hybrid PDF→text v2")
+    parser = argparse.ArgumentParser(description="Hybrid PDF→text: Nougat + fitz")
     parser.add_argument("--existing", action="store_true",
                         help="Post-process saved Nougat text (no GPU)")
     parser.add_argument("--full", action="store_true",
-                        help="Full pipeline: Nougat + pymupdf4llm")
+                        help="Full pipeline: Nougat + fitz")
     parser.add_argument("--detect", action="store_true",
                         help="Detection report only (no repair)")
     parser.add_argument("--pmid", type=str, help="Single PMID to process")
@@ -871,28 +917,35 @@ def main():
 
         for pmid in pmids:
             nougat_path = os.path.join(NOUGAT_DIR, f"{pmid}.txt")
-            pdf_path = os.path.join(PDF_DIR, f"{pmid}.pdf")
             out_path = os.path.join(HYBRID_DIR, f"{pmid}.txt")
 
             if not os.path.exists(nougat_path):
                 print(f"  [{pmid}] SKIP: no Nougat output")
                 continue
-            if not os.path.exists(pdf_path):
-                print(f"  [{pmid}] SKIP: no PDF")
-                continue
+
+            # Always extract fitz blocks from PDF for proper paragraph structure
+            # (saved FITZ_DIR files use plain text mode without paragraph breaks)
+            pdf_path = os.path.join(PDF_DIR, f"{pmid}.pdf")
+            if os.path.exists(pdf_path):
+                fitz_pages = extract_fitz_pages(pdf_path)
+                fitz_text = "\n\n".join(fitz_pages)
+            else:
+                # Fallback: try saved fitz text (old format, less accurate)
+                fitz_path = os.path.join(FITZ_DIR, f"{pmid}.txt")
+                if os.path.exists(fitz_path):
+                    with open(fitz_path, "r", encoding="utf-8") as f:
+                        fitz_text = f.read()
+                else:
+                    print(f"  [{pmid}] SKIP: no PDF or fitz text")
+                    continue
 
             print(f"\n  [{pmid}] Processing (--existing)...")
 
             with open(nougat_path, "r", encoding="utf-8") as f:
                 nougat_text = f.read()
 
-            # Extract pymupdf4llm
-            p4_pages = extract_pymupdf4llm(pdf_path)
-            p4_full = "\n\n".join(
-                p.get("text", "") for p in p4_pages
-            )
-
-            repaired, stats = process_paper_existing(nougat_text, p4_full)
+            fitz_cleaned = clean_fitz_text(fitz_text)
+            repaired, stats = process_paper_existing(nougat_text, fitz_cleaned)
 
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(repaired)
@@ -928,8 +981,8 @@ def main():
 
             print(
                 f"  [{pmid}] saved ({len(text)} chars) | "
-                f"Nougat={stats['nougat']} p4_full={stats['p4_full']} "
-                f"p4_partial={stats['p4_partial']} p4_inline={stats['p4_inline']}"
+                f"Nougat={stats['nougat']} fitz_full={stats['fitz_full']} "
+                f"fitz_partial={stats['fitz_partial']} fitz_inline={stats['fitz_inline']}"
             )
 
         print("\nDone.")

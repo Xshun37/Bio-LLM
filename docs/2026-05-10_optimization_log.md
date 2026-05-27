@@ -577,3 +577,54 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 - ✅ PMID 10978529 表格 inline strip 后保留完整 LaTeX 表格结构
 - ✅ PMID 11706010 p4 质量通过检查，输出无乱码
 - ⚠️ PMID 10453008 Introduction 首段截断 — 根因是 p4 和 fitz 都未提取到该段落（PDF 排版问题），非脚本缺陷
+
+---
+
+## 2026-05-27 第三次优化记录
+
+### 38. 废弃 pymupdf4llm，迁移到纯 fitz（PyMuPDF）
+
+**问题**：Entry 37 的 pymupdf4llm 方案在老 PDF（2000 年代，Acrobat Distiller 3.0）上失败：
+- **layout 模式**：把整页识别为图片区域，输出 `█` 块（表格、公式全部丢失）
+- **RAG 模式**：输出 `` (U+FFFD replacement characters)，表格内容乱码
+- **PMID 10453008 Introduction**：pymupdf4llm 两种模式都未提取到该段落
+
+用户指示：**废弃 pymupdf4llm，改用纯 fitz**。Nougat 已经提供正确的 Markdown 格式，fitz 只需在幻觉段落提供正确文本。
+
+**根因分析**：
+- pymupdf4llm 的 layout 分析对老 PDF 的字体/排版识别错误
+- fitz 的 `page.get_text("text")` 对同样的 PDF 能正确提取文本（包括表格）
+- fitz 的 `page.get_text("blocks")` 能正确分段，段落结构与 Nougat 对齐良好
+
+**改动**：
+- `scripts/hybrid_convert_v2.py` 完全重写：
+  - **移除**：所有 pymupdf4llm 依赖（`extract_pymupdf4llm()`, `clean_p4_text()`, `_is_p4_quality_ok()`）
+  - **新增**：`extract_fitz_pages()` — 使用 `page.get_text("blocks")` 提取段落级文本（而非 `page.get_text("text")` 的整页文本），每段用 `\n\n` 分隔
+  - **新增**：`clean_fitz_text()` — 复用 `clean_pdf_txt.py` 元数据模式 + 页码/图片占位符清洗 + References 截断
+  - **新增**：`_is_fitz_header()` — 识别 fitz 纯文本中的 section header（Introduction, Methods, Results 等）
+  - **重写**：`align_paragraphs()` — 不再依赖 section header 锚点（许多老 PDF 的字体 fitz 无法识别），改用全局内容匹配：
+    1. 先用非幻觉段落（good paragraphs）全局匹配 fitz，建立位置锚点
+    2. 对幻觉段落（bad paragraphs），用相邻锚点插值位置，在 fitz 中搜索最佳匹配
+    3. 匹配文本长度从 `[:100]` 增加到 `[:500]`，阈值从 0.3 提高到 0.4
+  - **重写**：`repair_page()` — 调整修复优先级：
+    1. **优先用 fitz 替换**（最可靠，fitz 总是提取正确文本）
+    2. **次选 inline strip**（仅当 fitz 匹配失败时，用于 token_rep/char_rep）
+    3. **最后保留原文**（兜底）
+  - **增强**：References 正则 — 兼容 `## **REFERENCES**`、`**References**` 等格式
+  - **新增**：`process_paper_full()` 保存 Nougat 原始输出到 `data/raw/papers_txt/Nougat/{pmid}.txt`
+
+**验证结果（8 篇 PMID）**：
+- ✅ PMID 10978529 表格段落：fitz blocks 正确提取表格 LaTeX 结构，替换 Nougat 幻觉段
+- ✅ PMID 10082553 References：`clean_nougat_page()` 正则增强后正确删除
+- ✅ PMID 11706010 乱码段落：fitz 提取正确文本，无 `` 或 `█` 乱码
+- ✅ PMID 10453008 Introduction：fitz blocks 正确提取该段落（`ematopoiesis is a developmental process...`），完整替换 Nougat 幻觉段（旧版 `_i.e._, a _i.e._, a ...`）
+
+**关键发现**：
+- pymupdf4llm 对老 PDF（2000 年代）的 layout 分析不可靠，输出质量不如纯 fitz
+- fitz 的 `blocks` 模式比 `text` 模式更适合段落级对齐，输出结构与 Nougat 段落对应良好
+- Nougat + fitz 混合策略的核心思想不变：Nougat 提供 Markdown 格式 + 正确希腊字母，fitz 在幻觉段落提供正确文本
+
+**遗留问题**：
+- 编造型幻觉仍无法检测（无重复模式）
+- 某些 PDF 的 section header 字体 fitz 无法识别（如 PMID 10453008 的 "Introduction"），但不影响全局内容匹配
+- 重度幻觉页（severity=severe）整页替换丢失 Nougat 正常段落的正确希腊字母（如 PMID 10082553、11706010）

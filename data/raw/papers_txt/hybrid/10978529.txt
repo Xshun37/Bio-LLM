@@ -41,15 +41,8 @@ and AUAP (Table 1, Fig. 2B). A single transcript of 167 bp was obtained. This re
 
 The structural map of the POLD2 gene for the small subunit of Pol \(\delta\) was determined by a combination of restriction enzyme digestion, Southern blot hybridization, PCR analysis and DNA sequencing. The POLD2 gene is
 
-\begin{table} \begin{tabular}{c c c c c c} No. & Intron & Exon & Intron & Position & Exon size (bp) & Intron size \\
-1 & GGCGCGGCGGG\_GCGCGGCG & gtgagtgggg & −94—57 & 37 & 1.4 kb \\
-2 & gttttc**ccag** & TGAACCTCCT\_CAGCAGCAG & gtaagtgaga & −56-210 & 276 & 3.8 kb \\
-3 & cgtgtcc**ccag** & GCACTGGAGT\_CAGCAGCAG & gtgaggccagg & 211–332 & 122 & 200 kb \\
-4 & tgcatt**cc**ag** & CACACCTGC\_CTGGTACCG & gtaggaggacc & 333-456 & 124 & 370 bp \\
-5 & tgctcc**cc**ag** & GGGATCCGTCT\_ACACAAGTAG & gtgagcagca & 457–571 & 115 & 117 bp \\
-6 & tttcc**cc**ocag** & GTTTGGTCT\_CATACAATG & gtaggagcasc & 572–770 & 199 & 306 bp \\
-7 & tetatt**cc**ag** & GCCAAAATCC\_GCACCTGAGC & gtaggaggagg & 771–851 & 81 & 157 bp \\
-8 & tgcctt**cc**ag** & GCTCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG
+Table 2
+Analysis of exon^intron splice junctions of the POLD2 gene .
 
 approximately 10 kb in length and consists of 11 exons interrupted by 10 introns. The exon sequences closely match the published cDNA sequence [21], and all splice acceptor and donor sequences match the 5'-AG/GT-3' splicing junction consensus sequence (Table 2) [22,23]. The first exon, with a length of 37 bp, contains only the 5'-untranslated region (UTR) of the mRNA. The ATG start codon is found 56 bp downstream from the intron 1-exon 2 boundary (Fig. 1B). Therefore, exons 2-11 provide the coding information for this gene. Introns 1 and 2 of POLD2 were the longest of the 10 introns present, with estimated lengths of approximately 1.4 and 3.7 kb, respectively (Table 2). The sequences of the coding regions are identical to those reported for the human POLD2 cDNA [21]. The only difference is in the length of the 5'-UTR. As shown below, the 5'-end of human POLD2 cDNA is 16 bp longer (Fig. 1B) than that reported for the cDNA [21].
 
