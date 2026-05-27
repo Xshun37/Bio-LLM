@@ -551,3 +551,29 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 - 编造型幻觉仍无法检测（无重复模式）
 - pymupdf4llm fallback 段落希腊字母乱码（PDF 字体编码）
 - 重度幻觉页整页替换丢失 Nougat 正常段落的正确希腊字母
+
+---
+
+## 2026-05-27 第二次优化记录
+
+### 37. hybrid_convert_v2 四项缺陷修复
+
+**问题**：用户检查 13 篇 hybrid 输出后发现 4 个缺陷：
+1. PMID 10978529 表格段落变成 `` 乱码 — Nougat 表格被 token_rep 检测器标记后替换为 p4，但 p4 默认 layout 模式对老 PDF 输出也是乱码
+2. PMID 10082553 References 未删除 — `clean_nougat_page()` 正则不匹配 `## **REFERENCES**` 格式
+3. PMID 15184388/11706010 段落中仍有乱码 — p4 对某些 PDF 质量差
+4. PMID 10453008 Introduction 段落只替换了半段 — `align_paragraphs()` 用 `[:100]` 截断匹配到错误位置
+
+**改动**：
+- `scripts/hybrid_convert_v2.py`：
+  - **Fix 1**：`_strip_repeated_tokens()` 重写 — 旧版删除整个 boundary 区间（含首次有效出现），新版只删除重复部分，保留首次出现的 token（如 `CTGCTGCTG...` → `CTG`），表格 LaTeX 结构不再被破坏
+  - **Fix 2**：`_is_p4_quality_ok()` 新增 — 检查 p4 替换段是否可用（ replacement char 占比 < 5%，长度 > Nougat 段 20%）；`repair_page()` severe 路径增加质量检查，p4 质量差时降级为段落级修复
+  - **Fix 3**：`clean_nougat_page()` 和 `clean_p4_text()` References 正则增强 — 兼容 `## **REFERENCES**`、`**References**`、`# References`、`References` 等格式
+  - **Fix 4**：`align_paragraphs()` 接受 `bad_indices` 参数 — 幻觉段落跳过模糊匹配，直接使用位置 fallback（避免匹配到错误 p4 段落）；正常段落匹配文本从 `[:100]` 增加到 `[:200]`，阈值从 0.3 提高到 0.4
+  - **Fix 5**：`process_paper_full()` 保存 Nougat 原始输出到 `data/raw/papers_txt/Nougat/{pmid}.txt`
+
+**验证结果**：
+- ✅ PMID 10082553 References 已删除（仅剩正文中的 "references" 引用）
+- ✅ PMID 10978529 表格 inline strip 后保留完整 LaTeX 表格结构
+- ✅ PMID 11706010 p4 质量通过检查，输出无乱码
+- ⚠️ PMID 10453008 Introduction 首段截断 — 根因是 p4 和 fitz 都未提取到该段落（PDF 排版问题），非脚本缺陷

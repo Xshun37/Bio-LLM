@@ -57,7 +57,7 @@ The initial analysis of DNA binding activities by EMSA was carried out using a 1
 
 The 32P-radiolabeled probe (20,000 cpm) was incubated with crude nuclear extract (5 mg) or purified recombinant His-tagged NFI-C (3, 5, and 10 mg) in 20 ul reaction mixtures containing 20% glycerol, 5 mM MgCl2, 2.5 mM EDTA, 2.5 mM DTT, 250 mM NaCl, 50 mM Tris-Cl (pH 7.5) and 0.25 mg/ml poly dl-dC. The reaction mixtures were incubated at 25 degC for 30 min and then run in a 4% nondenaturing polyacrylamide gel, (40:1 acrylamide/bisacrylamide) in 0.5x Tris borate-EDTA for 45 min at 250 V at 4 degC. The gels were then dried and autoradiographed. Competition experiments were performed using EMSA conditions similar to those described above, except that the protein extracts were pre-incubated for 10 min in the presence of 50, 100, 200 or 500x molar excess of unlabeled double stranded oligonucleotides. Following addition of the labeled probe incubation was continued for 20 min. DNA-protein complexes were resolved and analyzed as described above.Double stranded oligonucleotides, used in competition experiments were purchased from Geneva and have the following sequences:
 
-Additional oligonucleotides used in competition studies were synthesized and purified by Integrated DNA Technologies Inc.
+\[\begin{array}{l} {\text{CGGTACCCCCTGAGGGCTTCAGG-5'}}} \\ \end{array}\]
 
 Additional oligonucleotides used in competition studies were synthesized and purified by Integrated DNA Technologies Inc.
 

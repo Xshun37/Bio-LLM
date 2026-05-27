@@ -324,9 +324,11 @@ def clean_p4_text(text):
     for line in lines:
         stripped = line.strip()
 
-        # Truncate at References section
+        # Truncate at References section (allow **bold**, optional # headers)
         if re.match(
-            r"^(#+\s*)?(References|REFERENCES|Bibliography)\s*$", stripped
+            r"^(#+\s*)?\*{0,2}\s*(References|REFERENCES|Bibliography)\s*\*{0,2}\s*$",
+            stripped,
+            re.IGNORECASE,
         ):
             in_refs = True
             continue
@@ -380,13 +382,19 @@ def _normalize_for_match(text):
     return text.lower().strip()
 
 
-def align_paragraphs(nougat_paras, p4_paras):
+def align_paragraphs(nougat_paras, p4_paras, bad_indices=None):
     """Align Nougat paragraphs to pymupdf4llm paragraphs.
 
     Strategy:
       1. Use section headers as anchor points
       2. Within each section, align by position + fuzzy match
-      3. Fallback: positional mapping
+      3. Hallucination paragraphs: skip fuzzy match, use position fallback
+      4. Fallback: positional mapping
+
+    Args:
+        nougat_paras: list of Nougat paragraphs
+        p4_paras: list of pymupdf4llm paragraphs
+        bad_indices: set/list of hallucination paragraph indices (skip fuzzy match)
 
     Returns:
         mapping: dict {nougat_idx: p4_idx}
@@ -394,6 +402,8 @@ def align_paragraphs(nougat_paras, p4_paras):
     mapping = {}
     if not nougat_paras or not p4_paras:
         return mapping
+
+    bad_set = set(bad_indices) if bad_indices else set()
 
     # Extract header anchors from both
     n_headers = [
@@ -447,7 +457,17 @@ def align_paragraphs(nougat_paras, p4_paras):
         for ni in n_range:
             if ni in mapping:
                 continue
-            n_norm = _normalize_for_match(nougat_paras[ni][:100])
+
+            # Hallucination paragraphs: skip fuzzy match, use position fallback
+            # (the hallucinated text doesn't exist in p4, so fuzzy match
+            # will match the wrong p4 paragraph)
+            if ni in bad_set:
+                pos_idx = ni - n_start - 1
+                if pos_idx < len(p_range):
+                    mapping[ni] = p_range[pos_idx]
+                continue
+
+            n_norm = _normalize_for_match(nougat_paras[ni][:200])
             if len(n_norm) < 10:
                 # Too short for fuzzy match, use positional
                 pos_idx = ni - n_start - 1
@@ -460,13 +480,13 @@ def align_paragraphs(nougat_paras, p4_paras):
             for pi in p_range:
                 if pi in mapping.values():
                     continue
-                p_norm = _normalize_for_match(p4_paras[pi][:100])
+                p_norm = _normalize_for_match(p4_paras[pi][:200])
                 score = SequenceMatcher(None, n_norm, p_norm).ratio()
                 if score > best_score:
                     best_score = score
                     best_pi = pi
 
-            if best_score > 0.3 and best_pi is not None:
+            if best_score > 0.4 and best_pi is not None:
                 mapping[ni] = best_pi
             else:
                 # Positional fallback
@@ -482,17 +502,56 @@ def align_paragraphs(nougat_paras, p4_paras):
 # ═══════════════════════════════════════════════════════════
 
 def _strip_repeated_tokens(text, boundary):
-    """Remove a repeated token cluster from text, keeping surrounding content."""
+    """Remove repeated token cluster, keeping the first occurrence.
+
+    The detector returns a boundary spanning the *entire* repeated cluster
+    (first valid occurrence + all duplicates).  The old implementation deleted
+    the whole span, destroying table content.  This version collapses the
+    cluster down to a single copy of the repeated token so that surrounding
+    text (e.g. LaTeX table structure) is preserved.
+    """
     if not boundary or "start" not in boundary:
         return text
+
     start = boundary["start"]
     end = boundary["end"]
-    # Keep text before and after the repeated cluster
-    before = text[:start].rstrip()
-    after = text[end:].lstrip()
-    if before and after:
-        return before + " " + after
-    return before or after
+    matched = text[start:end]
+
+    if len(matched) == 0:
+        return text
+
+    # ── char_rep: boundary covers e.g. "MMMMMMMM..." (20+ identical chars) ──
+    token = boundary.get("token")
+    if not token:
+        # char_rep boundary has "char" key; keep one copy of the char
+        ch = boundary.get("char", matched[0])
+        collapsed = ch
+    else:
+        # ── token_rep: collapse "CTGCTGCTG..." → "CTG" ──
+        # Replace the entire matched region with a single copy of the token
+        collapsed = token
+
+    before = text[:start]
+    after = text[end:]
+    result = before + collapsed + after
+
+    # Clean up potential double spaces at join points
+    result = re.sub(r"  +", " ", result)
+    return result.strip()
+
+
+def _is_p4_quality_ok(p4_text, nougat_text):
+    """Check if p4 replacement text is usable (not full of  or █ blocks)."""
+    if not p4_text or len(p4_text.strip()) < 10:
+        return False
+    # Reject if >5% replacement characters (U+FFFD) or block chars
+    bad_chars = p4_text.count("�") + p4_text.count("█")
+    if bad_chars / max(len(p4_text), 1) > 0.05:
+        return False
+    # Reject if p4 is much shorter than Nougat (< 20% of Nougat length)
+    if len(p4_text) < len(nougat_text) * 0.2:
+        return False
+    return True
 
 
 def repair_page(nougat_text, p4_text, severity, details):
@@ -511,14 +570,17 @@ def repair_page(nougat_text, p4_text, severity, details):
         return nougat_text, {"action": "keep", "n_replaced": 0}
 
     if severity == "severe":
-        # Replace entire page with pymupdf4llm
-        return p4_text, {
-            "action": "page_replace",
-            "n_replaced": len(paras),
-        }
+        # Check if p4 is usable before replacing entire page
+        if _is_p4_quality_ok(p4_text, nougat_text):
+            return p4_text, {
+                "action": "page_replace",
+                "n_replaced": len(paras),
+            }
+        # p4 is bad quality — fall through to paragraph-level repair
+        severity = "moderate"
 
     # moderate: replace only bad paragraphs
-    alignment = align_paragraphs(paras, p4_paras)
+    alignment = align_paragraphs(paras, p4_paras, bad_indices=bad_indices)
     repaired_paras = []
     n_replaced = 0
     n_inline = 0
@@ -528,26 +590,28 @@ def repair_page(nougat_text, p4_text, severity, details):
             repaired_paras.append(para)
             continue
 
-        # Find the corresponding p4 paragraph
-        p4_idx = alignment.get(i)
         result = results[i]
 
+        # ── Priority 1: inline strip for token_rep / char_rep ──
         if result["reason"] in ("token_rep", "char_rep") and result.get("boundary"):
-            # Minor: try inline strip first
             stripped = _strip_repeated_tokens(para, result["boundary"])
-            # Only use inline if result is reasonable length
-            if len(stripped) > len(para) * 0.3:
+            # Use inline if result has meaningful content (> 50 chars)
+            if len(stripped) > 50:
                 repaired_paras.append(stripped)
                 n_inline += 1
                 continue
 
-        # Replace with p4 paragraph
+        # ── Priority 2: replace with p4 paragraph ──
+        p4_idx = alignment.get(i)
         if p4_idx is not None and p4_idx < len(p4_paras):
-            repaired_paras.append(p4_paras[p4_idx])
-            n_replaced += 1
-        else:
-            # No alignment found, keep original (even if hallucinated)
-            repaired_paras.append(para)
+            replacement = p4_paras[p4_idx]
+            if _is_p4_quality_ok(replacement, para):
+                repaired_paras.append(replacement)
+                n_replaced += 1
+                continue
+
+        # ── Priority 3: keep original (even if hallucinated) ──
+        repaired_paras.append(para)
 
     return "\n\n".join(repaired_paras), {
         "action": "paragraph_replace",
@@ -605,11 +669,12 @@ def page_to_image(pdf_path, page_idx):
 
 def clean_nougat_page(text):
     """Remove references section and collapse blank lines."""
+    # Match References/REFERENCES/Bibliography with optional # headers and **bold**
     text = re.split(
-        r"\n#+\s*(References|REFERENCES|Bibliography)\s*\n",
+        r"\n(?:#+\s*)?\*{0,2}\s*(?:References|REFERENCES|Bibliography)\s*\*{0,2}\s*\n",
         text,
         maxsplit=1,
-        flags=re.DOTALL,
+        flags=re.DOTALL | re.IGNORECASE,
     )[0]
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
@@ -660,6 +725,7 @@ def process_paper_full(pdf_path, processor, model):
     p4_pages = extract_pymupdf4llm(pdf_path)
 
     pages_out = []
+    nougat_raw_pages = []  # collect raw Nougat output for archival
     stats = {"nougat": 0, "p4_full": 0, "p4_partial": 0, "p4_inline": 0}
 
     for i in range(n_pages):
@@ -668,6 +734,7 @@ def process_paper_full(pdf_path, processor, model):
         t0 = time.time()
         nougat_text = nougat_page(processor, model, img)
         elapsed = time.time() - t0
+        nougat_raw_pages.append(nougat_text)
 
         # p4 text for this page
         p4_text = ""
@@ -701,6 +768,12 @@ def process_paper_full(pdf_path, processor, model):
             f"    p{i + 1}/{n_pages}: {tag} "
             f"({len(nougat_text)} chars) [{elapsed:.1f}s]"
         )
+
+    # Save Nougat raw output for human review
+    os.makedirs(NOUGAT_DIR, exist_ok=True)
+    nougat_out = os.path.join(NOUGAT_DIR, f"{pmid}.txt")
+    with open(nougat_out, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(nougat_raw_pages))
 
     final = "\n\n".join(pages_out)
     return final, stats
