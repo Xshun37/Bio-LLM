@@ -11,6 +11,10 @@ doi:10.1016/j.febslet.2004.05.003
 
 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
+Reverse: 50-GTCCTCTGCGGTCCCTAAGGGC-30. The PCR product was cloned using the pcDNA3.1/V5-His-TOPO TA expression kit
+(Invitrogen). PHD1promoter-luc reporter plasmid was constructed by
+subcloning the PHD1 promoter into the pGL3-Basic luciferase plasmid (Promega).
+
 ### _Results and discussion_
 
 #### Cloning of human genomic DNA fragment containing the PHD1 promoter

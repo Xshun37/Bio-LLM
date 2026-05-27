@@ -655,25 +655,23 @@ def repair_page(nougat_text, fitz_text, details):
 
         # Priority 1: replace with fitz paragraph(s)
         # When Nougat compresses multiple paragraphs into one bad paragraph,
-        # we need to insert adjacent fitz paragraphs, but only if they're
-        # truly part of the same section (not from Abstract/other sections)
+        # insert consecutive unmapped fitz paragraphs starting from alignment[i]
+        # Stop when we hit a mapped fitz paragraph (which belongs to another Nougat para)
         fitz_idx = alignment.get(i)
         if fitz_idx is not None and fitz_idx < len(fitz_paras):
-            # Insert the aligned fitz paragraph
-            replacement = fitz_paras[fitz_idx]
-            if len(replacement.strip()) > 10:
-                repaired_paras.append(replacement)
-                used_fitz.add(fitz_idx)
+            inserted_count = 0
+            # Insert consecutive unmapped fitz paragraphs
+            for offset in range(len(fitz_paras) - fitz_idx):
+                fi = fitz_idx + offset
+                if fi in alignment.values() and offset > 0:
+                    # This fitz para is mapped to another Nougat para, stop
+                    break
+                if fi not in used_fitz and len(fitz_paras[fi].strip()) > 10:
+                    repaired_paras.append(fitz_paras[fi])
+                    used_fitz.add(fi)
+                    inserted_count += 1
 
-                # Check if the NEXT fitz paragraph should also be inserted
-                # (handles case where Nougat compressed 2+ paragraphs into 1)
-                # Only insert if it's not already mapped to another Nougat paragraph
-                if fitz_idx + 1 < len(fitz_paras) and (fitz_idx + 1) not in alignment.values():
-                    next_replacement = fitz_paras[fitz_idx + 1]
-                    if len(next_replacement.strip()) > 10:
-                        repaired_paras.append(next_replacement)
-                        used_fitz.add(fitz_idx + 1)
-
+            if inserted_count > 0:
                 n_replaced += 1
                 continue
 
