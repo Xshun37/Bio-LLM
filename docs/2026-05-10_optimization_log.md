@@ -627,4 +627,32 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 **遗留问题**：
 - 编造型幻觉仍无法检测（无重复模式）
 - 某些 PDF 的 section header 字体 fitz 无法识别（如 PMID 10453008 的 "Introduction"），但不影响全局内容匹配
-- 重度幻觉页（severity=severe）整页替换丢失 Nougat 正常段落的正确希腊字母（如 PMID 10082553、11706010）
+
+---
+
+## 2026-05-27 第四次优化记录
+
+### 39. 取消 severe 整页替换，保留 Nougat 格式
+
+**问题**：severity=severe 时整页替换为 fitz 纯文本，丢失 Nougat 的 Markdown 格式（`##` 标题、`\(\beta\)` 希腊字母、`_italic_` 等）。
+
+**根因**：
+- PMID 10082553 有 177/223 个坏段落（79%），全是作者行重复（`cross_para_dup`）
+- fitz 里只有 1 份作者行，无法对齐 177 份 → 超过 50% 坏段落未修复 → 触发 page_replace fallback
+- PMID 11706010 类似问题
+
+**改动**：
+- `scripts/hybrid_convert_v2.py`：
+  - **删除**：`repair_page()` 中 severity=severe 的 early return（整页替换）
+  - **新增**：Priority 0 处理 `cross_para_dup` / `line_dup` — 重复段落去重（保留首次出现，删除后续重复），line_dup 段落内部行级去重
+  - **调整**：page_replace fallback 条件改为"超过 50% 坏段落未修复"（而非"severity=severe 就整页替换"）
+  - **效果**：10082553、11706010 改为 paragraph_replace，Nougat 格式完整保留
+
+**验证结果**：
+- ✅ PMID 10082553：`action=paragraph_replace`，标题、`\(\beta\)`、`_italic_` 格式保留
+- ✅ PMID 11706010：`action=paragraph_replace`，Nougat 格式保留
+- ✅ 4 个原始 bug 全部修复（References 删除、Introduction 完整、表格正确、无乱码）
+
+**关键发现**：
+- `cross_para_dup`（跨段落重复）不需要 fitz 替换，直接删除重复即可（保留首次出现）
+- Nougat 为主、fitz 替换幻觉部分 — 这个原则适用于所有 severity，包括 severe

@@ -1,11 +1,10 @@
 Signal Transductions Induced by Bone Morphogenetic
 Protein-2 and Transforming Growth Factor- in Normal
 Human Osteoblastic Cells*
-Received for publication, January 24, 2002
-Published, JBC Papers in Press, February 19, 2002, DOI 10.1074/jbc.M200794200
-Chung-Fang Lai and Su-Li Cheng‡
+
 From the Division of Bone and Mineral Diseases, Department of Medicine, Washington University School of Medicine,
 St. Louis, Missouri 63110
+
 Transforming growth factor  (TGF-) activates Ras/
 MAPK signaling in many cell types. Because TGF- and
 BMP-2 exert similar effects, we examined if this signal-
@@ -32,14 +31,7 @@ osteocalcin, and alkaline phosphatase activity whereas
 ERK mediated BMP-2 stimulation of fibronectin and os-
 teopontin. Thus, ERK and p38 differentially mediate
 TGF- and BMP-2 function in osteoblasts.
-Bone morphogenetic protein (BMP)-21 and transforming
-growth factor (TGF)-, which are members of the TGF- su-
-perfamily and share 32–37% sequence homology, have pro-
-found effects on osteoblast activity (1–6). Both in vivo and in
-vitro bone formation potential of BMP-2 has been well docu-
-mented. When implanted intramuscularly or subcutaneously,
-BMP-2 induces ectopic bone formation with complementary
-marrow cavity and marrow cell constituents (1–3). In vitro,
+
 BMP-2 increases the colony formation of normal human bone
 marrow stromal preosteoblasts and induces their differentia-
 tion into cells with mature osteoblastic phenotype (6–8).
@@ -89,6 +81,16 @@ tionship between AP-1 and the Smad signaling induced by
 TGF- and BMP-2 in osteoblasts and the roles of ERK and p38
 MAPK in the regulation of osteoblast function by TGF- and
 BMP-2 were investigated.
+
+Bone morphogenetic protein (BMP)-21 and transforming
+growth factor (TGF)-, which are members of the TGF- su-
+perfamily and share 32–37% sequence homology, have pro-
+found effects on osteoblast activity (1–6). Both in vivo and in
+vitro bone formation potential of BMP-2 has been well docu-
+mented. When implanted intramuscularly or subcutaneously,
+BMP-2 induces ectopic bone formation with complementary
+marrow cavity and marrow cell constituents (1–3). In vitro,
+
 * The costs of publication of this article were defrayed in part by the
 payment of page charges. This article must therefore be hereby marked
 “advertisement” in accordance with 18 U.S.C. Section 1734 solely to
@@ -106,16 +108,9 @@ kinase; MEKK, MAPK kinase kinase; -MEM, -minimum Eagle’s
 medium; DTT, dithiothreitol; PMSF, phenylmethylsulfonyl fluoride;
 EMSA, electrophoretic mobility shift assay; TGF, transforming growth
 factor; AP-1, activating protein-1.
-THE JOURNAL OF BIOLOGICAL CHEMISTRY
-Vol. 277, No. 18, Issue of May 3, pp. 15514–15522, 2002
-© 2002 by The American Society for Biochemistry and Molecular Biology, Inc.
-Printed in U.S.A.
-This paper is available on line at http://www.jbc.org
-15514
+
 This is an Open Access article under the CC BY license.
 
-
-EXPERIMENTAL PROCEDURES
 Materials—TGF-2 and BMP-2 were generously provided by Dr. Nico
 C. Cerletti (Novartis Pharma AG, Basel, Switzerland) and Genetics
 Institute (Cambridge, MA), respectively. All chemicals for SDS-PAGE
@@ -192,6 +187,7 @@ BMP-2, TGF-, or vehicle for the indicated period of time, were pre-
 pared as described (38). Briefly, cells were lysed in ice-cold buffer
 consisting of 10 mM Hepes-KOH, pH 7.9, 1.5 mM MgCl2, 10 mM KCl, 0.5
 mM dithiothreitol (DTT), 0.5 mM PMSF, and 0.6% Nonidet P-40 for 10
+
 min. After microcentrifugation, pellets were extracted with high salt
 buffer (20 mM Hepes-KOH, pH 7.9, 1.2 mM MgCl2, 420 mM NaCl, 25%
 glycerol, 0.5 mM DTT, 0.5 mM PMSF, 10 g/ml each of leupeptin and
@@ -220,6 +216,7 @@ mixtures I and II (Sigma)) or in cadherin lysis buffer consisted of 0.5%
 Triton X-100 in 10 mM Hepes, pH 7.4, containing 150 mM NaCl, 0.02%
 sodium azide, and protease inhibitors (2 mM EDTA, 2 mM EGTA, 1 mM
 phenanthroline, 0.12 trypsin inhibitor unit/ml aprotinin, 100 g/ml
+
 L-1-tosylamido-2-phenylethyl chloromethyl ketone, 40 g/ml each of
 1-chloro-3-tosylamido-7-amino-2-heptanone and bestatin, 50 g/ml
 benzamidine, 10 g/ml each of leupeptin, pepstatin A, antipain, soy-
@@ -268,46 +265,33 @@ measured as described previously (38).
 Statistical Analysis—Statistical analysis was performed using Stu-
 dent’s t test. Each experiment was performed at least twice. The data
 were presented as means  S.E.
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15515
 
+FIG. 2. BMP-2 and TGF- stimulate ERK activity in HOB. HOB
+were treated with vehicle (C), BMP-2 (B, 100 ng/ml), or TGF- (T, 1
+ng/ml) for 1 or 6 h. Cell lysates were subjected to Western blot analysis
+and probed for the active ERK using antibody against phosphorylated
+ERK (p-ERK) or for total ERK with pan-ERK antibody.
 
-RESULTS
-BMP-2 and TGF- Stimulated Ras Activity in HOB—Expo-
-sure of HOB to BMP-2 for 5 and 10 min resulted in an increased
-Ras activity to 5- and 12-fold of the control level, respectively
-(Fig. 1). TGF- also activated Ras activity to 4-fold of the
-control level after 5-min exposure, which tapered off after 10
-min (Fig. 1).
-BMP-2 and TGF- Up-regulated MAPK Activity—Because
-Ras can activate ERK of the MAPK superfamily, we next ex-
-amined the effect of BMP-2 and TGF- on ERK activity. BMP-2
-stimulated ERK activity 5-fold after 1 h of incubation as dem-
-onstrated by the increased phosphorylated ERK (p-ERK) level
-relative to the total ERK level (pan-ERK) (Fig. 2A). The stim-
-ulation of ERK activity by BMP-2, however, was nearly over
-after 6 h (Fig. 2A). In contrast, TGF- only marginally stimu-
-lated ERK activity after 1 h of incubation, which became re-
-markable after 6 h (5-fold, Fig. 2B). Because JNK and p38 also
-belong to the MAPK superfamily (42–44), we analyzed the
-effect of BMP-2 and TGF- on their activity. As shown in Fig.
-3A, BMP-2 stimulated p38 and ERK activity, but not JNK
-activity, after 1-h incubation. Two hours after incubation with
-BMP-2, the stimulation of ERK persisted and JNK was acti-
-vated, whereas p38 was no longer activated. TGF- had little
-effect on ERK, JNK, and p38 activity after 1 h (Fig. 3B). Two
-hours after addition of TGF-, JNK and p38, but not ERK, were
-activated (Fig. 3B). Thus, BMP-2 and TGF- stimulated ERK,
-JNK, and p38 MAPK activities differentially, depending on the
-length of treatment.
-BMP-2 and TGF- Stimulated AP-1 Activity—Because com-
-ponents in the AP-1 complex serve as substrates for MAPK (45,
-46), we examined the effect of BMP-2 and TGF- on AP-1
-activity. Using a pAP1-Luc plasmid, which carries a seven-
-tandem AP-1 enhancer element to transfect MC3T3-E1 osteo-
-blastic cells, TGF- and BMP-2 were found to stimulate AP-1
-activity to 3.2- and 2.5-fold, respectively, of the control level
-(Fig. 4A, thin-striped columns). Moreover, preincubation of
+FIG. 1. BMP-2 and TGF- stimulate Ras activity in HOB. HOB
+were incubated in phosphate-free -MEM containing [32P]phosphate
+(300 Ci/100-mm dish) for 3 h followed by treatment with vehicle (C),
+BMP-2 (100 ng/ml), or TGF- (1 ng/ml) for 5 min (B5, T5) or 10 min
+(B10, T10). Cells were lysed, and aliquots containing equal radioactivity
+were immunoprecipitated with anti-Ras antibody overnight. The im-
+mune complex was extracted by Protein A-Sepharose and applied to
+thin-layer chromatography using a polyethyleneimine cellulose plate
+coated with fluorescent indicator and developed with 0.75 M KH2PO4,
+pH 3.5. [32P]GTP and [32P]GDP on the plates were visualized by auto-
+radiography (top) and quantified by densitometric analysis. Ras activity
+was determined by the ratio of [32P]GTP over the sum of [32P]GTP and
+[32P]GDP (bottom).
+
+FIG. 3. BMP-2 and TGF- stimulate ERK, JNK, and p38 activity
+in HOB. HOB were treated with vehicle (C), BMP-2 (B, 100 ng/ml), or
+TGF- (T, 1 ng/ml) for 1 or 2 h. Nuclear extracts were subjected to
+Western blot analysis and probed for the active phosphorylated forms of
+ERK (p-ERK), JNK (p-JNK), and p38 (p-p38).
+
 cells with PD98059, which is a specific inhibitor of ERK up-
 stream effector MEK, for 30 min before treatment with growth
 factors only partially inhibited the stimulation induced by
@@ -344,38 +328,43 @@ Fra-2, and JunB led to retardation of the migration of AP-
 1DNA complex in EMSA (Fig. 6A, bottom panel, arrows). Be-
 cause the intensity of these supershifted bands was higher in
 TGF--stimulated samples than those in the control samples,
-FIG. 1. BMP-2 and TGF- stimulate Ras activity in HOB. HOB
-were incubated in phosphate-free -MEM containing [32P]phosphate
-(300 Ci/100-mm dish) for 3 h followed by treatment with vehicle (C),
-BMP-2 (100 ng/ml), or TGF- (1 ng/ml) for 5 min (B5, T5) or 10 min
-(B10, T10). Cells were lysed, and aliquots containing equal radioactivity
-were immunoprecipitated with anti-Ras antibody overnight. The im-
-mune complex was extracted by Protein A-Sepharose and applied to
-thin-layer chromatography using a polyethyleneimine cellulose plate
-coated with fluorescent indicator and developed with 0.75 M KH2PO4,
-pH 3.5. [32P]GTP and [32P]GDP on the plates were visualized by auto-
-radiography (top) and quantified by densitometric analysis. Ras activity
-was determined by the ratio of [32P]GTP over the sum of [32P]GTP and
-[32P]GDP (bottom).
-FIG. 2. BMP-2 and TGF- stimulate ERK activity in HOB. HOB
-were treated with vehicle (C), BMP-2 (B, 100 ng/ml), or TGF- (T, 1
-ng/ml) for 1 or 6 h. Cell lysates were subjected to Western blot analysis
-and probed for the active ERK using antibody against phosphorylated
-ERK (p-ERK) or for total ERK with pan-ERK antibody.
-FIG. 3. BMP-2 and TGF- stimulate ERK, JNK, and p38 activity
-in HOB. HOB were treated with vehicle (C), BMP-2 (B, 100 ng/ml), or
-TGF- (T, 1 ng/ml) for 1 or 2 h. Nuclear extracts were subjected to
-Western blot analysis and probed for the active phosphorylated forms of
-ERK (p-ERK), JNK (p-JNK), and p38 (p-p38).
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15516
 
+BMP-2 and TGF- Stimulated Ras Activity in HOB—Expo-
+sure of HOB to BMP-2 for 5 and 10 min resulted in an increased
+Ras activity to 5- and 12-fold of the control level, respectively
+(Fig. 1). TGF- also activated Ras activity to 4-fold of the
+control level after 5-min exposure, which tapered off after 10
+min (Fig. 1).
+BMP-2 and TGF- Up-regulated MAPK Activity—Because
+Ras can activate ERK of the MAPK superfamily, we next ex-
+amined the effect of BMP-2 and TGF- on ERK activity. BMP-2
+stimulated ERK activity 5-fold after 1 h of incubation as dem-
+onstrated by the increased phosphorylated ERK (p-ERK) level
+relative to the total ERK level (pan-ERK) (Fig. 2A). The stim-
+ulation of ERK activity by BMP-2, however, was nearly over
+after 6 h (Fig. 2A). In contrast, TGF- only marginally stimu-
+lated ERK activity after 1 h of incubation, which became re-
+markable after 6 h (5-fold, Fig. 2B). Because JNK and p38 also
+belong to the MAPK superfamily (42–44), we analyzed the
+effect of BMP-2 and TGF- on their activity. As shown in Fig.
+3A, BMP-2 stimulated p38 and ERK activity, but not JNK
+activity, after 1-h incubation. Two hours after incubation with
+BMP-2, the stimulation of ERK persisted and JNK was acti-
+vated, whereas p38 was no longer activated. TGF- had little
+effect on ERK, JNK, and p38 activity after 1 h (Fig. 3B). Two
+hours after addition of TGF-, JNK and p38, but not ERK, were
+activated (Fig. 3B). Thus, BMP-2 and TGF- stimulated ERK,
+JNK, and p38 MAPK activities differentially, depending on the
+length of treatment.
+BMP-2 and TGF- Stimulated AP-1 Activity—Because com-
+ponents in the AP-1 complex serve as substrates for MAPK (45,
+46), we examined the effect of BMP-2 and TGF- on AP-1
+activity. Using a pAP1-Luc plasmid, which carries a seven-
+tandem AP-1 enhancer element to transfect MC3T3-E1 osteo-
+blastic cells, TGF- and BMP-2 were found to stimulate AP-1
+activity to 3.2- and 2.5-fold, respectively, of the control level
+(Fig. 4A, thin-striped columns). Moreover, preincubation of
 
-these results suggested that TGF- up-regulated the activity of
-FosB/FosB, Fra-2, and JunB. Although antibody to JunD also
-produced supershifted bands (Fig. 6A, top panel), no difference
-was detected in their intensity between the control and TGF-
--treated samples. Thus, TGF- did not affect JunD activity
 after 6-h stimulation. Judging from the remaining AP-1DNA
 band intensity after incubation with specific antibodies against
 c-Fos, c-Jun, and ATF-2, TGF- had either very little or no
@@ -442,6 +431,7 @@ Fra-1, c-Jun, JunB, and ATF-2 were also significantly up-
 regulated, because their antibodies reduced or abolished the
 stimulation of AP-1 band by BMP-2 (Fig. 7). The supershifted
 bands obtained using pan-Fos antibody further confirmed the
+
 FIG. 4. BMP-2 and TGF- stimulate AP-1 activity in osteo-
 blasts, which is partially dependent on ERK and p38. A, pAP1-
 Luc and CMV-gal plasmid-transfected MC3T3-E1 osteoblastic cells
@@ -462,6 +452,7 @@ vehicle (Control), TGF-, or BMP-2 for 24 h. Luciferase activity in cell
 extracts was measured. a, p  0.05 when compared with the corre-
 sponding control level; b, p  0.05 when compared with the correspond-
 ing Me2SO level.
+
 FIG. 5. TGF- and BMP-2 enhance the binding of nuclear fac-
 tors to AP-1 consensus oligonucleotide. HOB were incubated with
 vehicle (C), TGF- (T, 1 ng/ml), or BMP-2 (B, 100 ng/ml) for 6 h. Nuclear
@@ -470,9 +461,59 @@ unlabeled oligonucleotide before the addition of radiolabeled AP-1 con-
 sensus oligonucleotide or its mutant form (AP-1m). Complexes formed
 were subjected to EMSA, and bands were visualized by autoradiogra-
 phy. NC, no NE added.
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15517
 
+these results suggested that TGF- up-regulated the activity of
+FosB/FosB, Fra-2, and JunB. Although antibody to JunD also
+produced supershifted bands (Fig. 6A, top panel), no difference
+was detected in their intensity between the control and TGF-
+-treated samples. Thus, TGF- did not affect JunD activity
+
+FIG. 6. TGF- differentially modu-
+lates the binding activity of individ-
+ual AP-1 components to AP-1 consen-
+sus oligonucleotide. Nuclear extracts
+(NE) obtained from cells treated with ei-
+ther vehicle (C) or TGF- (T, 1 ng/ml) for
+6 h (A) or 2 h (B) were preincubated with
+the indicated antibody (1 g) for 30 min
+before the addition of radiolabeled AP-1
+consensus
+oligonucleotide.
+Complexes
+formed were subjected to EMSA, and
+bands were visualized by autoradiogra-
+phy. The bottom panels in A were after
+prolonged exposure to the x-ray films to
+show the supershifted bands more clearly
+(arrows). In the FosB/FosB panel, the
+top arrow represents FosB and the bottom
+arrow indicates FosB. The top panel in A
+was compiled from three gels, which were
+performed simultaneously and exposed to
+the x-ray films for the same length of
+time.
+
+FIG. 7. BMP-2 differentially modu-
+lates the binding activity of individ-
+ual AP-1 components to AP-1 consen-
+sus oligonucleotide. Nuclear extracts
+(NE) obtained from cells treated with ei-
+ther vehicle (C) or BMP-2 (B, 100 ng/ml)
+for 6 h were preincubated with the indi-
+cated antibody (1 g) for 30 min before
+the addition of radiolabeled AP-1 consen-
+sus oligonucleotide. Complexes formed
+were subjected to EMSA and bands visu-
+alized by autoradiography. The bottom
+panel is after prolonged exposure to show
+the supershifted bands of FosB (upper ar-
+row)
+and
+FosB
+(lower
+arrow)
+more
+clearly.
 
 up-regulation of the activity of Fos members by BMP-2 (Fig. 7).
 The effects of BMP-2 on these AP-1 components were already
@@ -501,6 +542,15 @@ ing immunoprecipitation of nuclear extracts with anti-Smad4
 antibody followed by Western blotting for AP-1 components. As
 shown in Fig. 8, c-Fos, Jun-B, FosB, and FosB co-immunopre-
 cipitated with Smad4 in all the samples tested.
+
+FIG. 8. c-Fos, JunB, FosB, and FosB are associated with
+Smad4 in HOB. Cells were stimulated with vehicle (C) or TGF- (T) for
+2 h (left), or vehicle (C) or BMP-2 (B) for 6 h (right). Nuclear extracts
+were subjected to immunoprecipitation with anti-Smad4 antibody fol-
+lowed by Western blotting and probed for c-Fos, JunB, and FosB/FosB.
+Antibody against FosB/FosB detects two bands with FosB in the upper
+band and FosB in the lower band.
+
 The importance of Smad proteins in the regulation of AP-1
 activity was further demonstrated by using MC3T3-E1 osteo-
 blastic cell line overexpressing dominant negative Smad3
@@ -515,61 +565,34 @@ and 0.6-fold, respectively, in Smad5m and Smad4m cells (Fig.
 confirmed by co-transfecting MC3T3-E1 cells with a pAP1-Luc
 plasmid and the expression vectors of MEKK and either the
 Smad3/Smad4 or Smad5/Smad4 pair. MEKK alone stimulated
-FIG. 8. c-Fos, JunB, FosB, and FosB are associated with
-Smad4 in HOB. Cells were stimulated with vehicle (C) or TGF- (T) for
-2 h (left), or vehicle (C) or BMP-2 (B) for 6 h (right). Nuclear extracts
-were subjected to immunoprecipitation with anti-Smad4 antibody fol-
-lowed by Western blotting and probed for c-Fos, JunB, and FosB/FosB.
-Antibody against FosB/FosB detects two bands with FosB in the upper
-band and FosB in the lower band.
-FIG. 6. TGF- differentially modu-
-lates the binding activity of individ-
-ual AP-1 components to AP-1 consen-
-sus oligonucleotide. Nuclear extracts
-(NE) obtained from cells treated with ei-
-ther vehicle (C) or TGF- (T, 1 ng/ml) for
-6 h (A) or 2 h (B) were preincubated with
-the indicated antibody (1 g) for 30 min
-before the addition of radiolabeled AP-1
-consensus
-oligonucleotide.
-Complexes
-formed were subjected to EMSA, and
-bands were visualized by autoradiogra-
-phy. The bottom panels in A were after
-prolonged exposure to the x-ray films to
-show the supershifted bands more clearly
-(arrows). In the FosB/FosB panel, the
-top arrow represents FosB and the bottom
-arrow indicates FosB. The top panel in A
-was compiled from three gels, which were
-performed simultaneously and exposed to
-the x-ray films for the same length of
-time.
-FIG. 7. BMP-2 differentially modu-
-lates the binding activity of individ-
-ual AP-1 components to AP-1 consen-
-sus oligonucleotide. Nuclear extracts
-(NE) obtained from cells treated with ei-
-ther vehicle (C) or BMP-2 (B, 100 ng/ml)
-for 6 h were preincubated with the indi-
-cated antibody (1 g) for 30 min before
-the addition of radiolabeled AP-1 consen-
-sus oligonucleotide. Complexes formed
-were subjected to EMSA and bands visu-
-alized by autoradiography. The bottom
-panel is after prolonged exposure to show
-the supershifted bands of FosB (upper ar-
-row)
-and
-FosB
-(lower
-arrow)
-more
-clearly.
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15518
 
+FIG. 9. Expression of dominant-negative Smad mutants inhib-
+its the stimulation of AP-1 activity by TGF- and BMP-2.
+MC3T3-E1
+cells
+stably
+expressing
+dominant-negative
+Smad3
+(Smad3m), Smad4 (Smad4m), or Smad5 (Smad5m) or control plasmid
+(pcDNA3) were transfected with pAP1-Luc and CMV-gal plasmids.
+After 24-h recovery in growth medium, cells were incubated with vehi-
+cle (Control), TGF- (1 ng/ml), or BMP-2 (100 ng/ml) in medium con-
+taining 0.2% HIFBS for 24 h. Cells were then lysed in reporter lysis
+buffer, and AP-1 activity was determined by measuring the luciferase
+activity, which was normalized with the -galactosidase activity in
+lysates. *, p  0.001 when compared with the corresponding pcDNA3
+group.
+
+FIG. 10. Expression of Smad3, Smad4, and Smad5 enhances
+MEKK stimulation of AP-1 activity. MC3T3-E1 cells were co-trans-
+fected with pAP1-Luc, CMV-gal, and the indicated expression vectors
+of MEKK, Smad3, Smad4, and Smad5. After 24-h recovery in growth
+medium, cells were lysed in reporter lysis buffer, and AP-1 activity was
+determined by measuring the luciferase activity, which was normalized
+with -galactosidase activity in lysate. a, p  0.001 when compared
+with the basal group (column 1), which did not receive any expression
+vector; b, p  0.05 when compared with the MEKK group (column 2).
 
 AP-1 activity to 48.3-fold of the basal level whereas Smad3 and
 Smad4 together enhanced AP-1 activity 2-fold (Fig. 10, com-
@@ -619,37 +642,7 @@ suppressed the stimulation of JunB and abrogated the down-
 regulation of JunD by TGF- (Fig. 12A). p38 was found to play
 an important role in mediating BMP-2 up-regulation of fi-
 bronectin, type I collagen, and osteopontin, because SB208530
-suppressed these stimulation (Fig. 12B). Similarly, ERK was
-essential in BMP-2 up-regulation of fibronectin and osteopon-
-tin, but not type I collagen, because PD98059 suppressed the
-stimulation of the former two proteins but not the latter one
-(Fig. 12B). Although the activities of JunD and JunB were
-FIG. 9. Expression of dominant-negative Smad mutants inhib-
-its the stimulation of AP-1 activity by TGF- and BMP-2.
-MC3T3-E1
-cells
-stably
-expressing
-dominant-negative
-Smad3
-(Smad3m), Smad4 (Smad4m), or Smad5 (Smad5m) or control plasmid
-(pcDNA3) were transfected with pAP1-Luc and CMV-gal plasmids.
-After 24-h recovery in growth medium, cells were incubated with vehi-
-cle (Control), TGF- (1 ng/ml), or BMP-2 (100 ng/ml) in medium con-
-taining 0.2% HIFBS for 24 h. Cells were then lysed in reporter lysis
-buffer, and AP-1 activity was determined by measuring the luciferase
-activity, which was normalized with the -galactosidase activity in
-lysates. *, p  0.001 when compared with the corresponding pcDNA3
-group.
-FIG. 10. Expression of Smad3, Smad4, and Smad5 enhances
-MEKK stimulation of AP-1 activity. MC3T3-E1 cells were co-trans-
-fected with pAP1-Luc, CMV-gal, and the indicated expression vectors
-of MEKK, Smad3, Smad4, and Smad5. After 24-h recovery in growth
-medium, cells were lysed in reporter lysis buffer, and AP-1 activity was
-determined by measuring the luciferase activity, which was normalized
-with -galactosidase activity in lysate. a, p  0.001 when compared
-with the basal group (column 1), which did not receive any expression
-vector; b, p  0.05 when compared with the MEKK group (column 2).
+
 FIG. 11. ERK and p38 mediate the down-regulation of osteo-
 calcin by TGF- whereas p38 mediates the up-regulation of
 osteocalcin by BMP-2. pOc-Luc and CMV-gal plasmids-transfected
@@ -661,9 +654,21 @@ treated with vehicle (C), TGF- (T, 1 ng/ml), or BMP-2 (B, 100 ng/ml) for
 was determined by measuring the luciferase activity, which was nor-
 malized with the -galactosidase activity in extracts. *, p  0.01 when
 compared with the corresponding control value.
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15519
 
+suppressed these stimulation (Fig. 12B). Similarly, ERK was
+essential in BMP-2 up-regulation of fibronectin and osteopon-
+tin, but not type I collagen, because PD98059 suppressed the
+stimulation of the former two proteins but not the latter one
+(Fig. 12B). Although the activities of JunD and JunB were
+
+FIG. 12. ERK and p38 have differential effects on TGF-- and
+BMP-2-induced protein expression. HOB were pretreated with di-
+methyl sulfoxide (DMSO), PD98059 (PD, 25 M), or SB208530 (SB, 10
+M) for 30 min followed by treatment with vehicle (Control), TGF- (1
+ng/ml), or BMP-2 (100 ng/ml) for 3 days. Cell layers were extracted, and
+Western blot analysis was performed using antibodies against the in-
+dicated proteins. FN, fibronectin; OPN, osteopontin; collagen, type I
+collagen.
 
 down- and up-regulated, respectively, after exposure to BMP-2
 for 6 h (Fig. 7), their levels were not altered after a 3-day
@@ -692,28 +697,16 @@ and
 BMP-2
 in
 osteoblasts.
-DISCUSSION
-We have demonstrated that Ras/MAPK/AP-1 signal trans-
-duction is induced by both TGF- and BMP-2 in osteoblasts in
-addition to Smad signaling. The majority of AP-1 components
-are stimulated to various degrees by these two growth factors
-whereas JunD is inhibited. We have also demonstrated that
-Smad signaling is essential in the AP-1 up-regulation by TGF-
-and BMP-2. Although both TGF- and BMP-2 stimulate Ras
-and all three members of MAPK (ERK, p38, and JNK), their
-time course profiles differ. The stimulation of Ras by BMP-2 is
-stronger and is maximal after 10 min whereas the stimulation
-by TGF- is moderate and the maximum occurs after 5 min.
-The activation of ERK and p38 by BMP-2 occurs after 1 h of
-incubation whereas a robust response to TGF- requires 6 and
-2 h, respectively. The timelines of the regulation of some of the
-AP-1 components by these two growth factors also differ. The
-stimulation of c-Fos and the inhibition of JunD activity in the
-nuclei by TGF- are only detectable after 2-h exposure whereas
-the effects of BMP-2 on these two AP-1 components persist
-after 6 h. In addition, ATF-2 is clearly activated by BMP-2,
-whereas its regulation by TGF- is less obvious. Thus, TGF-
-and BMP-2 exert a similar, but not identical, effect on the
+
+FIG. 13. p38, not ERK, mediates the up-regulation of alkaline
+phosphatase activity by BMP-2. HOB were pretreated with di-
+methyl sulfoxide (DMSO), PD98059 (PD, 25 M), or SB208530 (SB, 10
+M) for 30 min followed by treatment with vehicle (C), TGF- (T, 1
+ng/ml), or BMP-2 (B, 100 ng/ml) for 3 days. A, TGF- has no effect on
+alkaline phosphatase activity whether the cells are pretreated with
+inhibitors or not. B, BMP-2-stimulated alkaline phosphatase activity
+can be inhibited by SB, but not by PD.
+
 Ras/MAPK/AP-1 signal transduction in normal human osteo-
 blastic cells. In addition, we have shown that ERK and p38
 mediate differentially TGF- and BMP-2 effects on osteoblast
@@ -755,25 +748,28 @@ members, c-Jun activity is not altered by TGF-. The lack of
 stimulation of c-Jun by TGF- has also been reported earlier in
 HOB, in which TGF- actually reduces c-Jun mRNA level (31).
 Although transgenic mice overexpressing FosB have elevated
-FIG. 12. ERK and p38 have differential effects on TGF-- and
-BMP-2-induced protein expression. HOB were pretreated with di-
-methyl sulfoxide (DMSO), PD98059 (PD, 25 M), or SB208530 (SB, 10
-M) for 30 min followed by treatment with vehicle (Control), TGF- (1
-ng/ml), or BMP-2 (100 ng/ml) for 3 days. Cell layers were extracted, and
-Western blot analysis was performed using antibodies against the in-
-dicated proteins. FN, fibronectin; OPN, osteopontin; collagen, type I
-collagen.
-FIG. 13. p38, not ERK, mediates the up-regulation of alkaline
-phosphatase activity by BMP-2. HOB were pretreated with di-
-methyl sulfoxide (DMSO), PD98059 (PD, 25 M), or SB208530 (SB, 10
-M) for 30 min followed by treatment with vehicle (C), TGF- (T, 1
-ng/ml), or BMP-2 (B, 100 ng/ml) for 3 days. A, TGF- has no effect on
-alkaline phosphatase activity whether the cells are pretreated with
-inhibitors or not. B, BMP-2-stimulated alkaline phosphatase activity
-can be inhibited by SB, but not by PD.
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15520
 
+We have demonstrated that Ras/MAPK/AP-1 signal trans-
+duction is induced by both TGF- and BMP-2 in osteoblasts in
+addition to Smad signaling. The majority of AP-1 components
+are stimulated to various degrees by these two growth factors
+whereas JunD is inhibited. We have also demonstrated that
+Smad signaling is essential in the AP-1 up-regulation by TGF-
+and BMP-2. Although both TGF- and BMP-2 stimulate Ras
+and all three members of MAPK (ERK, p38, and JNK), their
+time course profiles differ. The stimulation of Ras by BMP-2 is
+stronger and is maximal after 10 min whereas the stimulation
+by TGF- is moderate and the maximum occurs after 5 min.
+The activation of ERK and p38 by BMP-2 occurs after 1 h of
+incubation whereas a robust response to TGF- requires 6 and
+2 h, respectively. The timelines of the regulation of some of the
+AP-1 components by these two growth factors also differ. The
+stimulation of c-Fos and the inhibition of JunD activity in the
+nuclei by TGF- are only detectable after 2-h exposure whereas
+the effects of BMP-2 on these two AP-1 components persist
+after 6 h. In addition, ATF-2 is clearly activated by BMP-2,
+whereas its regulation by TGF- is less obvious. Thus, TGF-
+and BMP-2 exert a similar, but not identical, effect on the
 
 type I collagen expression (57), the up-regulation of 1(I) col-
 lagen expression induced by TGF- and BMP-2 and the stim-
@@ -841,6 +837,7 @@ regulate AP-1 activity by proteinprotein interaction with the
 components of AP-1 family members as shown in this report
 and by others (34–36). Second, Smad proteins can regulate the
 transcription of AP-1 components. For example, the synthesis
+
 of JunB is stimulated by TGF- and BMP-2 via Smad binding
 element (CAGACA) in the JunB promoter (65).
 Although BMP-2 stimulates the activities of ERK and p38,
@@ -876,11 +873,12 @@ MAPK family are important mediators in BMP-2 and TGF-
 regulation of gene expression in osteoblasts. The net effect of
 these two factors on gene expression depends on the intricate
 balance of these two signal transduction pathways.
+
 Acknowledgments—We thank the Genetics Institute and Novartis
 Pharma AG for BMP-2 and TGF-2, respectively. We also thank
 Dr. Riko Nishimura, Dr. Dwight A. Towler, and Dr. Larry Fisher for the
 indicated reagents.
-REFERENCES
+
 1. Wozney, J. M., and Rosen V. (1998) Clin. Orthop. 346, 26–37
 2. Urist, M. R. (1997) J. Bone Miner. Res. 12, 343–346
 3. Reddi, A. H., and Cunningham, N. S. (1993) J. Bone Miner. Res. 8, S499–S502
@@ -917,9 +915,6 @@ Bunger, C. (1995) APMIS 103, 140–146
 Suda, T. (1997) Biochem. Biophys. Res. Commun. 238, 574–580
 25. Fujii, M., Takeda, K., Imamura, T., Aoki, H., Sampath, T. K., Enomoto, S.,
 Kawabata, M., Kato, M., Ichijo, H., and Miyazono, K. (1999) Mol. Biol. Cell
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15521
-
 
 10, 3801–3813
 26. Mulder, K. M. (2000) Cytokine Growth Factor 11, 23–35
@@ -971,6 +966,7 @@ Verde, P. (1995) Oncogene 11, 365–376
 50. Engel, M. E., McDonnell, M. A., Law, B. K., and Moses, H. L. (1999) J. Biol.
 Chem. 274, 37413–37420
 51. Chung, C. Y., Iida-Klein, A., Wyatt, L. E., Rudkin, G. H., Ishida, K.,
+
 Yamaguchi, D. T., and Miller, T. A. (1999) Biochem. Biophys. Res. Commun.
 265, 246–251
 52. Fagenholz, P. J., Warren, S. M., Greenwald, J. A., Bouletreau, P. J., Spector,
@@ -1021,5 +1017,3 @@ Biochem. 72, 81–93
 Kim, E. G., Choi, J. Y., Ryoo, H. M., and Bae, S. C. (2000) Mol. Cell. Biol. 20,
 8783–8792
 74. Ducy, P. (2000) Dev. Dyn. 219, 461–471
-Signal Transduction of TGF- and BMP-2 in Osteoblasts
-15522

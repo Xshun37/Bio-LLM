@@ -1,8 +1,10 @@
 A Composite C/EBP Binding Site Is Essential for the Activity
 of the Promoter of the IL-3/IL-5/Granulocyte-Macrophage
 Colony-Stimulating Factor Receptor bc Gene1
+
 Thamar B. van Dijk,2,3 Belinda Baltus,2 Jan A. M. Raaijmakers, Jan-Willem J. Lammers,
 Leo Koenderman, and Rolf P. de Groot4
+
 The common b-chain (bc) is the main signaling component of the heterodimeric receptors for IL-3, IL-5, and GM-CSF and is
 primarily expressed on myeloid cells. The proximal bc promoter is regulated by GGAA binding proteins, including PU.1, a
 hemopoietic speciﬁc member of the Ets family. However, it is not likely that PU.1 alone accounts for the myeloid-restricted
@@ -15,6 +17,7 @@ expressed on CD341 cells, these results demonstrate that both C/EBP and PU.1 are
 gene regulation at later stages of myeloid differentiation.
 The Journal of Immunology, 1999, 163: 2674–2680.
 H
+
 ematopoiesis is a developmental process in which plu-
 ripotent hemopoietic stem cells proliferate and differen-
 tiate to lineage-committed progenitors, which eventually
@@ -36,6 +39,7 @@ ing to the same cell (5, 6). Molecular cloning of the receptor com-
 ponents and reconstitution of the functional receptors have
 revealed that the receptors for the three cytokines are heterodimers
 composed of a cytokine-speciﬁc a-chain (IL-3Ra, IL-5Ra, and
+
 GM-CSFRa) and a common signaling b-chain (bc)5 (7–9). Both
 the a- and b-chains are glycosylated proteins and members of the
 class I cytokine receptor family (10). Although the human bc sub-
@@ -67,27 +71,6 @@ IL-5, and GM-CSF signaling, expression of the bc chain is im-
 portant for all myeloid cells and their precursors. Therefore, elu-
 cidating the factors that govern its expression will help to under-
 stand the events that regulate myeloid lineage commitment.
-Department of Pulmonary Diseases, University Hospital Utrecht, Utrecht, The Neth-
-erlands
-Received for publication February 26, 1999. Accepted for publication June 15, 1999.
-The costs of publication of this article were defrayed in part by the payment of page
-charges. This article must therefore be hereby marked advertisement in accordance
-with 18 U.S.C. Section 1734 solely to indicate this fact.
-1 This work was supported by a research grant from GlaxoWellcome bv.
-2 T.B.v.D. and B.B. contributed equally to this paper and should therefore both be
-considered as ﬁrst authors.
-3 Current address: Institute of Hematology, Erasmus University Rotterdam, Dr. Mole-
-waterplein 50, 3015 GE Rotterdam, The Netherlands.
-4 Address correspondence and reprint requests to Dr. Rolf P. de Groot, Department of
-Pulmonary Diseases, G03.550, University Hospital Utrecht, Heidelberglaan 100,
-3584 CX Utrecht, The Netherlands. E-mail address: e.degroot@hli.azu.nl
-5 Abbreviations used in this paper: bc, common b-chain; wt, wild type; mut, mutant;
-ERK, extracellular signal-regulated kinase; JNK, Jun N-terminal kinase; SAPK,
-stress-activated protein kinase; PI3K, phosphoinositol 3-OH kinase; C/EBP, CCAAT
-enhancer binding protein; CAT, chloramphenicol acetyltransferase.
-Copyright © 1999 by The American Association of Immunologists
-0022-1767/99/$02.00
-
 
 The bc chain is already expressed on hemopoietic CD341 stem
 cells (31), while at later stages of differentiation expression of the
@@ -138,28 +121,7 @@ crucial enhancer located 2 kb upstream of the transcription start
 site that contains two C/EBP-binding motifs. Both sites are able to
 bind C/EBPa, -b, and -e, while mutation of the sites results in a
 complete loss of promoter activity.
-Materials and Methods
-Cells, cDNAs, oligonucleotides, and Abs
-COS-1 cells were cultured in DMEM (Life Technologies, Gaithersburg,
-MD) supplemented with 8% heat-inactivated FCS (Life Technologies).
-The monocytic cell line U937 and the promyelocytic leukemia cell line
-HL-60 were maintained in RPMI 1640 (Life Technologies) supplemented
-with 8% FetalClone I (HyClone, Logan, UT).
-CD341 cells were isolated from cord blood and differentiated as de-
-scribed by Caldenhoven et al. (47). In short, mononuclear cells were ob-
-tained by centrifugation of the blood on a Ficoll-Hypaque gradient (den-
-sity, 1.077 g/ml). Mononuclear cells were incubated with CD341 Ab and
-magnetic beads before positive selection on a column that was placed in a
-magnetic ﬁeld. Cells were cultured in IMDM (Life Technologies) supple-
-mented with 10% FCS, stem cell factor (100 ng/ml), FLT-3 ligand (100
-ng/ml), IL-3 (0.1 nmol/l), GM-CSF (0.1 nmol/l), and IL-5 (0.1 nmol/l).
-After 3 days, cells were cultured in IMDM supplemented with 10% FCS,
-IL-3, and IL-5. From day 21, IL-3 was also omitted from the medium.
-Viability remained .95% throughout the 28-day experiment.
-Human C/EBPa (a gift from Dr. G. W. M. Swart, University of
-Nijmegen, The Netherlands), hC/EBPb (a gift from Prof. S. Akira, Hyogo
-College of Medicine, Nishinomoya, Japan), human C/EBPg (cloned by
-PCR from HL-60 cDNA), rat C/EBPd (a gift from Prof. S. L. McKnight,
+
 Johns Hopkins University, Baltimore, MD), human C/EBPe (cloned by
 PCR from HL-60 cDNA), and PU.1 (a gift from Prof. R. M. Maki, Burn-
 ham Institute, La Jolla, CA) were cloned into the expression vector pLNCX
@@ -183,8 +145,7 @@ nology), anti-C/EBPd (rabbit polyclonal IgG M-17, sc-636X; Santa Cruz
 Biotechnology), anti-C/EBPe (rabbit polyclonal IgG C-22, sc-158X; Santa
 Cruz Biotechnology), and anti-Fli-1 (rabbit polyclonal IgG C-19, sc-356X;
 Santa Cruz Biotechnology).
-Plasmids for promoter analysis, transient transfection, and CAT
-assay
+
 The 2.7-kb HindIII fragment of the bc subunit promoter (22096/1600)
 was cloned into the HindIII site of the promoterless pBLCAT3 vector (48).
 Deletion construct 21967/1600CAT3 was generated by cloning the Hin-
@@ -216,7 +177,28 @@ were then extracted using 400 ml of xylene/pristane (1/2), and the percent-
 age of acetylated products was determined using liquid scintillation count-
 ing. All experiments were performed at least four times. A lacZ reporter
 was used to correct for transfection efﬁciency.
-Gel retardation assay
+
+COS-1 cells were cultured in DMEM (Life Technologies, Gaithersburg,
+MD) supplemented with 8% heat-inactivated FCS (Life Technologies).
+The monocytic cell line U937 and the promyelocytic leukemia cell line
+HL-60 were maintained in RPMI 1640 (Life Technologies) supplemented
+with 8% FetalClone I (HyClone, Logan, UT).
+CD341 cells were isolated from cord blood and differentiated as de-
+scribed by Caldenhoven et al. (47). In short, mononuclear cells were ob-
+tained by centrifugation of the blood on a Ficoll-Hypaque gradient (den-
+sity, 1.077 g/ml). Mononuclear cells were incubated with CD341 Ab and
+magnetic beads before positive selection on a column that was placed in a
+magnetic ﬁeld. Cells were cultured in IMDM (Life Technologies) supple-
+mented with 10% FCS, stem cell factor (100 ng/ml), FLT-3 ligand (100
+ng/ml), IL-3 (0.1 nmol/l), GM-CSF (0.1 nmol/l), and IL-5 (0.1 nmol/l).
+After 3 days, cells were cultured in IMDM supplemented with 10% FCS,
+IL-3, and IL-5. From day 21, IL-3 was also omitted from the medium.
+Viability remained .95% throughout the 28-day experiment.
+Human C/EBPa (a gift from Dr. G. W. M. Swart, University of
+Nijmegen, The Netherlands), hC/EBPb (a gift from Prof. S. Akira, Hyogo
+College of Medicine, Nishinomoya, Japan), human C/EBPg (cloned by
+PCR from HL-60 cDNA), rat C/EBPd (a gift from Prof. S. L. McKnight,
+
 Nuclear extracts were prepared from U937 and HL-60 cells following a
 previously described procedure (52). Oligonucleotide probes were labeled
 by ﬁlling in the cohesive ends with [a-32P]dCTP using Klenow fragment
@@ -231,29 +213,7 @@ a 10- to 100-fold molar excess of wt or mut oligonucleotide was added to
 the reaction mix for 5 min before addition of the labeled probe. For su-
 pershift analysis, nuclear extracts were preincubated with 2 mg of Ab for
 40 min on ice before addition of the labeled probe.
-2675
-The Journal of Immunology
 
-
-Results
-A 2-kb upstream enhancer regulates bc subunit expression
-In a previous study we reported the isolation of a 2.7-kb HindIII
-fragment that contains the 44-bp exon 1, 2096 bp of upstream
-sequences, and 598 bp of the ﬁrst intron of the human bc subunit
-gene (18). After cloning into the promoterless pBLCAT3 reporter
-plasmid (22096/1600CAT3), transfection experiments in mono-
-cytic U937 cells and promyelocytic leukemia HL-60 cells showed
-that this fragment contains a functionally active promoter. To lo-
-calize cis-activating elements, successive 59 deletion constructs
-were generated. The NdeI (at 2566), EcoRI (at 21120), and SmaI
-(at 21334) sites were used to generate 2566/1600CAT3, 21120/
-1600CAT3, and 21334/1600CAT3, respectively. As shown in
-Fig. 1A, these constructs completely lost their activity. Also, con-
-struct 21967/1600CAT3, made by using the HincII site at
-21967, has no promoter activity, suggesting that an important pos-
-itively regulating element has to be present between 22096 and
-21967 bp. To test this hypothesis, the 129-bp HindIII-HincII frag-
-ment, as well as the fragments from 22096 to 2289 bp and from
 21967 to 2289 bp were cloned into the pBLCAT2 vector, a re-
 porter plasmid containing the minimal thymidine kinase promoter
 (48). The generated constructs, 22096/21967CAT2, 22096/
@@ -264,7 +224,7 @@ while 21967/2289CAT2 has lost this capacity. Indeed, 22096/
 21967CAT2 is highly active in both cell types, clearly demon-
 strating the presence of an enhancer between 22096 and
 21967 bp.
-The enhancer contains two C/EBP binding motifs
+
 To localize potential transcription factor binding sites, the 129-bp
 enhancer sequence (Fig. 2A) was subjected to the TFMATRIX
 transcription factor database (http://pdap1.trc.rwcp.or.jp/research/
@@ -303,19 +263,7 @@ was observed when extracts were incubated with anti-C/EBPe (our
 unpublished observations). Taken together, these results show that
 different C/EBP proteins, including C/EBPa, -b, and -e can bind to
 two distinct elements in the upstream enhancer.
-The C/EBP sites are essential for enhancer activity
-To elucidate whether the C/EBP binding elements are functionally
-important, both C1 and C2 were mutated in the 22096/
-21967CAT2 construct and tested for promoter activity in U937
-and HL-60 cells. Single mutation of either C1 or C2 reduced pro-
-moter activity to the background level (Fig. 3A), as occurs when
-both sites are mutated. These data show that both elements are
-essential for enhancer activity and suggest the cooperation of the
-proteins binding to the elements. Next, we cotransfected the wt and
-mut constructs with the cDNAs of several C/EBP family members.
-Probably due to a cryptic C/EBP site in the pBLCAT2 vector,
-cotransfection of C/EBP cDNAs with pBLCAT2 resulted in mod-
-erately enhanced background values (3). Therefore, the enhancer
+
 FIGURE 1.
 An upstream enhancer is crucial for bc promoter activity. A,
 U937 and HL-60 cells were transfected with successive 59 deletion con-
@@ -333,9 +281,50 @@ isolated enhancer element has maximal CAT activity. This ﬁgure demon-
 strates that the fragment from 22096 to 21967 bp contains a functionally
 important enhancer element. Bars indicate the mean value of at least three
 independent experiments. The SD is indicated by error bars.
-2676
-REGULATION OF IL-3/IL-5/GM-CSFR b-CHAIN EXPRESSION BY C/EBP
 
+In a previous study we reported the isolation of a 2.7-kb HindIII
+fragment that contains the 44-bp exon 1, 2096 bp of upstream
+sequences, and 598 bp of the ﬁrst intron of the human bc subunit
+gene (18). After cloning into the promoterless pBLCAT3 reporter
+plasmid (22096/1600CAT3), transfection experiments in mono-
+cytic U937 cells and promyelocytic leukemia HL-60 cells showed
+that this fragment contains a functionally active promoter. To lo-
+calize cis-activating elements, successive 59 deletion constructs
+were generated. The NdeI (at 2566), EcoRI (at 21120), and SmaI
+(at 21334) sites were used to generate 2566/1600CAT3, 21120/
+1600CAT3, and 21334/1600CAT3, respectively. As shown in
+Fig. 1A, these constructs completely lost their activity. Also, con-
+struct 21967/1600CAT3, made by using the HincII site at
+21967, has no promoter activity, suggesting that an important pos-
+itively regulating element has to be present between 22096 and
+21967 bp. To test this hypothesis, the 129-bp HindIII-HincII frag-
+ment, as well as the fragments from 22096 to 2289 bp and from
+
+To elucidate whether the C/EBP binding elements are functionally
+important, both C1 and C2 were mutated in the 22096/
+21967CAT2 construct and tested for promoter activity in U937
+and HL-60 cells. Single mutation of either C1 or C2 reduced pro-
+moter activity to the background level (Fig. 3A), as occurs when
+both sites are mutated. These data show that both elements are
+essential for enhancer activity and suggest the cooperation of the
+proteins binding to the elements. Next, we cotransfected the wt and
+mut constructs with the cDNAs of several C/EBP family members.
+Probably due to a cryptic C/EBP site in the pBLCAT2 vector,
+cotransfection of C/EBP cDNAs with pBLCAT2 resulted in mod-
+erately enhanced background values (3). Therefore, the enhancer
+
+FIGURE 2.
+Two elements in the enhancer bind C/EBP-containing complexes. A, The 150-bp nucleotide sequence of the 59 end of construct 22096/
+1600. The 129-bp HindIII/HincII fragment was subjected to a transcription factor database; one NF-kB site and two C/EBP binding elements (C1 and C2,
+underlined) were identiﬁed. Nucleotides that were mutated to inhibit C/EBP binding are indicated in boldface. B, Nuclear extracts of HL-60 cells were
+incubated with oligonucleotides spanning a single C/EBP site and analyzed in a band-shift assay. Elements C1 and C2 bind a partially overlapping set of
+complexes (lanes 1 and 8), which can be competed with a 10- to 100-fold molar excess of cold self oligo (lanes 2 and 3 and lanes 9 and 10). When mutant
+(C1 mut and C2 mut) or nonrelated oligo (265, a PU.1 binding element) is used, only one complex is competed for binding (indicated by the arrow). C,
+Before addition of the labeled oligo, 2 mg of the indicated Ab was added to nuclear extracts of HL-60 cells. Preincubation with Abs against C/EBPa, -b,
+and -e, but not with control Ab against Fli-1, results in the appearance of supershifted complexes (lower panel). The upper panel is a shorter exposure of
+the same gel. The arrow indicates the complex that disappears when anti-C/EBPd is added. It is unclear whether this complex contains C/EBPd, because
+A suggests that this is a nonspeciﬁc complex. This ﬁgure shows that the enhancer contains two discrete elements that speciﬁcally bind C/EBPa, -b, and
+-e in HL-60 nuclear extracts. In U937 cells similar results were obtained, but no binding of C/EBPe was detected.
 
 constructs were cloned into the pLT-G plasmid, a CAT vector with
 a synthetic TATA box. Fig. 3B shows that C/EBPa, -b, -d, and -e
@@ -364,10 +353,13 @@ transfected the C1 and C2 double mutant in the 22096/
 neutrophils (see Materials and Methods). As we found for HL-60
 and U937 cells (see Fig. 3A), mutation of the C/EBP sites signif-
 icantly reduces enhancer activity in both eosinophils and neutro-
+
 phil (Fig. 3D). This clearly shows that these C/EBP sites are in-
 volved in bc promoter activity in primary cells.
+
 C/EBP and PU.1 cooperate to activate the bc promoter in
 nonhemopoietic cells
+
 We have previously shown that binding of PU.1 to a GGAA ele-
 ment at 265 bp relative to the transcription start site is crucial for
 bc chain expression. To more precisely elucidate the roles of PU.1
@@ -390,21 +382,19 @@ tion of the full promoter construct (22096/1600CAT3) by PU.I is
 dependent on proteins binding to the C/EBP sites, this would sug-
 gest that COS cells contain endogenous binding activity for the
 C/EBP sites. Therefore, we performed band-shift experiments with
-FIGURE 2.
-Two elements in the enhancer bind C/EBP-containing complexes. A, The 150-bp nucleotide sequence of the 59 end of construct 22096/
-1600. The 129-bp HindIII/HincII fragment was subjected to a transcription factor database; one NF-kB site and two C/EBP binding elements (C1 and C2,
-underlined) were identiﬁed. Nucleotides that were mutated to inhibit C/EBP binding are indicated in boldface. B, Nuclear extracts of HL-60 cells were
-incubated with oligonucleotides spanning a single C/EBP site and analyzed in a band-shift assay. Elements C1 and C2 bind a partially overlapping set of
-complexes (lanes 1 and 8), which can be competed with a 10- to 100-fold molar excess of cold self oligo (lanes 2 and 3 and lanes 9 and 10). When mutant
-(C1 mut and C2 mut) or nonrelated oligo (265, a PU.1 binding element) is used, only one complex is competed for binding (indicated by the arrow). C,
-Before addition of the labeled oligo, 2 mg of the indicated Ab was added to nuclear extracts of HL-60 cells. Preincubation with Abs against C/EBPa, -b,
-and -e, but not with control Ab against Fli-1, results in the appearance of supershifted complexes (lower panel). The upper panel is a shorter exposure of
-the same gel. The arrow indicates the complex that disappears when anti-C/EBPd is added. It is unclear whether this complex contains C/EBPd, because
-A suggests that this is a nonspeciﬁc complex. This ﬁgure shows that the enhancer contains two discrete elements that speciﬁcally bind C/EBPa, -b, and
--e in HL-60 nuclear extracts. In U937 cells similar results were obtained, but no binding of C/EBPe was detected.
-2677
-The Journal of Immunology
 
+FIGURE 3.
+Enhancer activity is mediated via the C/EBP binding sites. A, C/EBP elements C1and C2 were mutated alone (m1 and m2, respectively)
+or together (m1–2) in the 22096/21967CAT2 construct and tested for activity in a CAT assay in both U937 and HL-60 cells. Single mutation of either
+one of the sites reduces CAT activity to the background level in both cell types. B, Cotransfection in HL-60 cells of the wt 22096/21967 construct with
+cDNAs encoding C/EBPa, -b, -d, and -e results in a 4- to 5-fold increase in CAT activity compared with that in the empty pLNCX (pL) vector. The double
+mutant is not responsive to C/EBP cotransfection. For this experiment the constructs were cloned into the pLT-G reporter, because C/EBP cotransfection
+has a moderate effect on empty pBLCAT2 vector. Similar results were obtained in U937 cells. C, Cotransfection of C/EBPg, a C/EBP member that lacks
+the trans-activation domain, or antisense C/EBPa signiﬁcantly reduces promoter activity of 22096/21967CAT2 in both U937 and HL-60 cells. This ﬁgure
+shows that the C/EBP elements are responsive to C/EBPa and -e and are both crucial in promoter activation. Bars indicate the mean value of at least three
+independent experiments. The SD is indicated by error bars. D, C/EBP elements C1and C2 were mutated both (m1–2) in the 22096/21967CAT2 construct
+and tested for activity in a CAT assay in eosinophils and neutrophils differentiated in vitro from CD341 cells isolated from cord blood. The C/EBP elements
+clearly contribute to bc promoter activity in primary eosinophils and neutrophils.
 
 COS nuclear extracts. Indeed, binding site C2 binds a speciﬁc
 protein complex in COS cells that can be competed with access
@@ -415,18 +405,7 @@ these results indicate that PU.1 and C/EBP functionally cooperate
 to enhance bc expression, although their respective binding
 elements are not clustered as is described for the GM-CSFRa,
 G-CSFR, and M-CSFR promoters.
-Discussion
-Members of the C/EBP family have been shown to have a chang-
-ing temporal expression pattern during myeloid differentiation.
-C/EBPa is expressed at high levels in early progenitors, C/EBPb
-and -d become more prominent at later stages, while C/EBPe is
-only expressed during granulopoiesis (41–43). Alternative splic-
-ing and the ability of all members of the C/EBP family to form
-homo- and heterodimers lead to a variety of possible DNA binding
-complexes. It is likely that these complexes have speciﬁc afﬁnities
-for particular binding sites and that this mechanism plays an im-
-portant role in the speciﬁc regulation of certain genes by C/EBPs.
-In the bc subunit enhancer we identiﬁed two different binding sites
+
 that bind multiple C/EBP containing complexes (Fig. 2, A and B).
 Both elements bind C/EBPa, -b, and -e in HL-60, while in U937
 cells, which express C/EBPe at a very low level, only binding of
@@ -450,25 +429,19 @@ situations.
 We have shown that both sites can bind C/EBP independently
 and that both sites are functional. Mutation of either site results in
 almost a complete loss of promoter activity in cell lines as well as
-FIGURE 3.
-Enhancer activity is mediated via the C/EBP binding sites. A, C/EBP elements C1and C2 were mutated alone (m1 and m2, respectively)
-or together (m1–2) in the 22096/21967CAT2 construct and tested for activity in a CAT assay in both U937 and HL-60 cells. Single mutation of either
-one of the sites reduces CAT activity to the background level in both cell types. B, Cotransfection in HL-60 cells of the wt 22096/21967 construct with
-cDNAs encoding C/EBPa, -b, -d, and -e results in a 4- to 5-fold increase in CAT activity compared with that in the empty pLNCX (pL) vector. The double
-mutant is not responsive to C/EBP cotransfection. For this experiment the constructs were cloned into the pLT-G reporter, because C/EBP cotransfection
-has a moderate effect on empty pBLCAT2 vector. Similar results were obtained in U937 cells. C, Cotransfection of C/EBPg, a C/EBP member that lacks
-the trans-activation domain, or antisense C/EBPa signiﬁcantly reduces promoter activity of 22096/21967CAT2 in both U937 and HL-60 cells. This ﬁgure
-shows that the C/EBP elements are responsive to C/EBPa and -e and are both crucial in promoter activation. Bars indicate the mean value of at least three
-independent experiments. The SD is indicated by error bars. D, C/EBP elements C1and C2 were mutated both (m1–2) in the 22096/21967CAT2 construct
-and tested for activity in a CAT assay in eosinophils and neutrophils differentiated in vitro from CD341 cells isolated from cord blood. The C/EBP elements
-clearly contribute to bc promoter activity in primary eosinophils and neutrophils.
-2678
-REGULATION OF IL-3/IL-5/GM-CSFR b-CHAIN EXPRESSION BY C/EBP
 
+Members of the C/EBP family have been shown to have a chang-
+ing temporal expression pattern during myeloid differentiation.
+C/EBPa is expressed at high levels in early progenitors, C/EBPb
+and -d become more prominent at later stages, while C/EBPe is
+only expressed during granulopoiesis (41–43). Alternative splic-
+ing and the ability of all members of the C/EBP family to form
+homo- and heterodimers lead to a variety of possible DNA binding
+complexes. It is likely that these complexes have speciﬁc afﬁnities
+for particular binding sites and that this mechanism plays an im-
+portant role in the speciﬁc regulation of certain genes by C/EBPs.
+In the bc subunit enhancer we identiﬁed two different binding sites
 
-in primary eosinophils and neutrophils (Fig. 3, A and D), suggest-
-ing that both sites are crucial for transcription activation. However,
-it is not clear whether both sites are occupied by C/EBP simulta-
 neously in vivo. Transcription could be reduced by cotransfection
 of C/EBPg, a dominant negative C/EBP member, and antisense
 C/EBPa, further demonstrating the speciﬁc binding of C/EBP pro-
@@ -504,7 +477,32 @@ ture experiments are necessary to identify possible additional pro-
 moter elements and/or proteins that are involved in bc subunit
 expression, we have shown that both PU.1 and C/EBP play a crit-
 ical role in bc chain transcription.
-References
+
+FIGURE 4.
+C/EBP and PU.1 cooperate in bc gene transcription. A,
+C/EBPa and PU.1 were cotransfected with different promoter constructs in
+COS ﬁbroblasts using the calcium phosphate precipitation method.
+C/EBPa and PU.1 each induce a 10-fold increased trans-activation when
+cotransfected with the full promoter construct 22096/1600CAT3. When
+both factors are transfected, a 30-fold induction is measured, indicating that
+these proteins cooperate in bc gene activation. The effect of both C/EBP
+and PU.1 overexpression is completely lost when the C/EBP binding en-
+hancer is deleted (21967/1600CAT3). B, COS ﬁbroblasts were trans-
+fected with different promoter constructs, C/EBPa, and PU.1 by the cal-
+cium phosphate precipitation method. The upstream enhancer (22096/
+21967) does not contain a functional PU.1 site, while activity of the
+proximal promoter region (2226/133) can be enhanced by PU.1, but not
+C/EBPa, cotransfection. These results demonstrate that PU.1, binding to
+the promoter proximal region, can no longer activate the bc promoter in the
+absence of C/EBP in the context of the full promoter. Bars indicate the
+mean value of at least three independent experiments. The SD is indicated
+by error bars. C, Nuclear extracts of COS cells were incubated with an
+oligonucleotide spanning C/EBP site C2 and analyzed in a band-shift as-
+say. Element C2 binds a set of complexes, which can be competed with a
+10- to 100-fold molar excess of cold self oligo. When mutant (C2 mut) or
+nonrelated oligo (265, a PU.1 binding element) was used, no competition
+was observed.
+
 1. Ogawa, M. 1993. Differentiation and proliferation of hematopoietic stem cells.
 Blood 81:2844.
 2. Arai, K., F. Lee, A. Miyajima, S. Miyatake, N. Arai, and T. Yokota. 1990.
@@ -540,33 +538,10 @@ human IL-3 receptor cDNA reveals a shared b subunit for the human IL-3 and
 GM-CSF receptors. Cell 66:1165.
 12. Kitamura, T., and A. Miyajima. 1992. Functional reconstitution of the human
 interleukin-3 receptor. Blood 80:84.
-FIGURE 4.
-C/EBP and PU.1 cooperate in bc gene transcription. A,
-C/EBPa and PU.1 were cotransfected with different promoter constructs in
-COS ﬁbroblasts using the calcium phosphate precipitation method.
-C/EBPa and PU.1 each induce a 10-fold increased trans-activation when
-cotransfected with the full promoter construct 22096/1600CAT3. When
-both factors are transfected, a 30-fold induction is measured, indicating that
-these proteins cooperate in bc gene activation. The effect of both C/EBP
-and PU.1 overexpression is completely lost when the C/EBP binding en-
-hancer is deleted (21967/1600CAT3). B, COS ﬁbroblasts were trans-
-fected with different promoter constructs, C/EBPa, and PU.1 by the cal-
-cium phosphate precipitation method. The upstream enhancer (22096/
-21967) does not contain a functional PU.1 site, while activity of the
-proximal promoter region (2226/133) can be enhanced by PU.1, but not
-C/EBPa, cotransfection. These results demonstrate that PU.1, binding to
-the promoter proximal region, can no longer activate the bc promoter in the
-absence of C/EBP in the context of the full promoter. Bars indicate the
-mean value of at least three independent experiments. The SD is indicated
-by error bars. C, Nuclear extracts of COS cells were incubated with an
-oligonucleotide spanning C/EBP site C2 and analyzed in a band-shift as-
-say. Element C2 binds a set of complexes, which can be competed with a
-10- to 100-fold molar excess of cold self oligo. When mutant (C2 mut) or
-nonrelated oligo (265, a PU.1 binding element) was used, no competition
-was observed.
-2679
-The Journal of Immunology
 
+in primary eosinophils and neutrophils (Fig. 3, A and D), suggest-
+ing that both sites are crucial for transcription activation. However,
+it is not clear whether both sites are occupied by C/EBP simulta-
 
 13. Tavernier, J., R. Devos, S. Cornelis, T. Tuypens, J. Van der Heyden, W. Fiers,
 and G. Plaetinck. 1991. A human high afﬁnity interleukin-5 receptor (IL5R) is
@@ -665,6 +640,7 @@ macrophage colony-stimulating factor receptor. Mol. Cell. Biol. 14:373.
 34. Smith, L. T., S. Hohaus, D. A. Gonzalez, S. E. Dziennis, and D. G. Tenen. 1996.
 PU. 1 (Spi-1) and C/EBPa regulate the granulocyte colony-stimulating factor
 receptor promoter in myeloid cells. Blood 88:1234.
+
 35. Hohaus, S., M. S. Petrovick, M. T. Voso, Z. Sun, D.-E. Zhang, and D. G. Tenen.
 1995. PU. 1 (Spi-1) and C/EBPa regulate the expression of the granulocyte-
 macrophage colony-stimulating factor receptor a gene. Mol. Cell. Biol. 15:5830.
@@ -746,5 +722,3 @@ growth factor receptor genes as markers of lineage commitment during in vitro
 development of hematopoietic cells. Blood 81:2903.
 55. Tenen, D. G., R. Hromas, J. D. Licht, and D.-E. Zhang. 1997. Transcription
 factors, normal myeloid development, and leukemia. Blood 90:489.
-2680
-REGULATION OF IL-3/IL-5/GM-CSFR b-CHAIN EXPRESSION BY C/EBP

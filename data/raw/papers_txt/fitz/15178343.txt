@@ -1,10 +1,8 @@
 Hypoxia-dependent regulation of PHD1: cloning and characterization
 of the human PHD1/EGLN2 gene promoter
+
 Neta Erez, Perry Stambolsky, Igor Shats, Michael Milyavsky, Tami Kachko, Varda Rotter*
-Department of Molecular Cell Biology, The Weizmann Institute of Science, Rehovot 76100, Israel
-Received 21 March 2004; revised 23 April 2004; accepted 3 May 2004
-Available online 13 May 2004
-Edited by Robert Barouki
+
 Abstract
 The recent identiﬁcation of hypoxia-inducible-factor
 (HIF) prolyl hydroxylases (PHD1, 2, and 3), which modify HIF-
@@ -23,30 +21,7 @@ suggest a hypoxia-induced regulatory loop of PHD1 expression,
 mediated by ARNT.
  2004 Published by Elsevier B.V. on behalf of the Federation of
 European Biochemical Societies.
-Keywords: Prolyl hydroxylases; HIF-1a; Hypoxia;
-Aryl hydrocarbon nuclear translocator
-1. Introduction
-Maintainingoxygenhomeostasisisessentialforthesurvivalof
-all organisms, and the ability of cells to sense and respond to
-changes in oxygen availability is critical for many physiological
-and pathological processes. Conserved oxygen responsive path-
-waysarepresentinmostmammaliancellsandresultinchangesin
-gene expression [1]. The hypoxia-inducible-factor-1 (HIF-1) is a
-centraltranscriptionfactorcomplexdrivingthecellularresponse
-to lack of oxygen. Following induction by hypoxia, HIF-1 binds
-toahypoxiaresponsiveelement(HRE)withinthepromotersofa
-rapidly increasing number of target genes and drives the cellular
-adaptive response to reduced oxygen availability. HIF target
-genes mediate changes in cellular metabolism such as increased
-glucose uptake and glycolysis, red blood cell maturation, the
-productionofseveralangiogenicfactorsandtheirreceptors[2,3],
-and, under severe hypoxia, apoptosis [4,5].
-HIF-1 is a heterodimeric complex consisting of two subunits:
-HIF-1b (also termed ARNT: aryl hydrocarbon nuclear trans-
-locator), which is expressed constitutively in the nucleus and also
-participates in other transcriptional pathways, and HIF-1a,
-whose stable expression is tightly regulated in a hypoxia-
-dependent manner. In normoxia, HIF-1a is rapidly degraded by
+
 the ubiquitin–proteasome pathway, and its low levels do not
 allow heterodimer formation and transcriptional activation
 [6,7]. When hypoxia occurs, this degradation is suppressed and
@@ -87,24 +62,57 @@ suggesting hypoxia-dependent regulation of PHD1. Further-
 more, we found that HIF-1b (ARNT) is associated in vivo with
 the PHD1 gene promoter following hypoxia, which implies a
 role for ARNT in the hypoxia-dependent regulation of PHD1.
-2. Materials and methods
+
+Keywords: Prolyl hydroxylases; HIF-1a; Hypoxia;
+Aryl hydrocarbon nuclear translocator
+
+Maintainingoxygenhomeostasisisessentialforthesurvivalof
+all organisms, and the ability of cells to sense and respond to
+changes in oxygen availability is critical for many physiological
+and pathological processes. Conserved oxygen responsive path-
+waysarepresentinmostmammaliancellsandresultinchangesin
+gene expression [1]. The hypoxia-inducible-factor-1 (HIF-1) is a
+centraltranscriptionfactorcomplexdrivingthecellularresponse
+to lack of oxygen. Following induction by hypoxia, HIF-1 binds
+toahypoxiaresponsiveelement(HRE)withinthepromotersofa
+rapidly increasing number of target genes and drives the cellular
+adaptive response to reduced oxygen availability. HIF target
+genes mediate changes in cellular metabolism such as increased
+glucose uptake and glycolysis, red blood cell maturation, the
+productionofseveralangiogenicfactorsandtheirreceptors[2,3],
+and, under severe hypoxia, apoptosis [4,5].
+HIF-1 is a heterodimeric complex consisting of two subunits:
+HIF-1b (also termed ARNT: aryl hydrocarbon nuclear trans-
+locator), which is expressed constitutively in the nucleus and also
+participates in other transcriptional pathways, and HIF-1a,
+whose stable expression is tightly regulated in a hypoxia-
+dependent manner. In normoxia, HIF-1a is rapidly degraded by
+
 2.1. Cloning of the PHD1 genomic 50 region
 Genomic DNA was prepared from primary human smooth muscle
 cells and the 50 ﬂanking region of the PHD1 gene was ampliﬁed using
 the primers: Forward: 50-CTTTTCTCAAGGGCAACCCGCAC-30
-FEBS 28457
-FEBS Letters 567 (2004) 311–315
+
 * Corresponding author. Fax: +972-08-9465265.
 E-mail address: varda.rotter@weizmann.ac.il (V. Rotter).
+
 0014-5793/$22.00  2004 Published by Elsevier B.V. on behalf of the Federation of European Biochemical Societies.
 doi:10.1016/j.febslet.2004.05.003
 
+18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
 Reverse: 50-GTCCTCTGCGGTCCCTAAGGGC-30. The PCR prod-
 uct was cloned using the pcDNA3.1/V5-His-TOPO TA expression kit
 (Invitrogen). PHD1promoter-luc reporter plasmid was constructed by
 subcloning the PHD1 promoter into the pGL3-Basic luciferase plas-
 mid (Promega).
+
+stream of the PHD1 gene from genomic DNA prepared from
+human primary smooth muscle cells.
+The PCR product was puriﬁed, cloned as described in Sec-
+tion 2 and sequenced. The nucleotide sequence of the PHD1
+promoter region is shown in Fig. 1.
+
 2.2. Transient transfection and luciferase assay
 Cells were seeded in 24-well culture dishes. Triplicate wells were
 transfected with 50 ng of a reporter plasmid expressing the ﬁreﬂy lu-
@@ -114,6 +122,15 @@ post-transfection and luciferase activity was assayed 48 h post-trans-
 fection. Luciferase assays were performed using (D)-luciferin (Roche).
 Luminescence was determined using a Rosys-Anthos Lucy 3 lumi-
 nometer. The luciferase values were normalized to b-gal activity.
+
+3.2. Sequence analysis of the human PHD1 promoter
+To ﬁnd out if the promoter contains potential regulatory
+elements, we used the web-based program MatInspector
+(http://www.gsf.de/biodv/matinspector.html).
+This
+program
+predicts putative binding sites for transcription factors within a
+
 2.3. Chromatin immunoprecipitation (ChIP) analysis
 ChIP experiments were performed according to the Farenham labo-
 ratoryprotocol[17].HCT116cells, eithernon-treated ortreatedwith200
@@ -152,41 +169,30 @@ Forward: 50-GTAGGCCACGGACCGCTGTTTCC-30
 Reverse: 50-CGGCGCCGCCGTTTGTGCC-30
 ARNT3 site: Forward: 50-GTGCCCTGGATGGGGGCACC-30
 Reverse: 50-CTGCCTCGGCGTTCCAGAAAG-30
+
 Real-time PCR: ARNT1+2 sites:
 Forward: 50-GCCATTTCTCCGTCTCTCACC-30
 Reverse: 50-TCAGCTCCTCCTCCTTCTCG-30
 ARNT3 site: Forward: 50-GGCACCTTTATCTCTCGTCCTGT-30
 Reverse: 50-CAGAGGAAAGGACGGAGGAG-30
-3. Results and discussion
+
 3.1. Cloning of human genomic DNA fragment containing the
 PHD1 promoter
 To facilitate studies on transcriptional regulation of PHD1,
 we cloned a genomic DNA fragment containing the human
 PHD1 promoter. The promoter containing region from the 50
+
 ﬂanking sequence of human PHD1 was predicted by using the
 PromoterInspector software at the Genomatix site (http://
 www.genomatix.de). Primers designed according to the soft-
 ware’s prediction were used to obtain a 2 kb fragment up-
-stream of the PHD1 gene from genomic DNA prepared from
-human primary smooth muscle cells.
-The PCR product was puriﬁed, cloned as described in Sec-
-tion 2 and sequenced. The nucleotide sequence of the PHD1
-promoter region is shown in Fig. 1.
-3.2. Sequence analysis of the human PHD1 promoter
-To ﬁnd out if the promoter contains potential regulatory
-elements, we used the web-based program MatInspector
-(http://www.gsf.de/biodv/matinspector.html).
-This
-program
-predicts putative binding sites for transcription factors within a
+
 Fig. 1. Nucleotide sequence of the 50-ﬂanking region of the human
 PHD1 gene. The various potential transcriptional factor binding sites
 are indicated. The nucleotide number was counted from the ﬁrst base
 of the initiation codon.
-312
-N. Erez et al. / FEBS Letters 567 (2004) 311–315
- 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
+18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
 given promoter sequence. We found several binding sites for
 known transcription factors which might transcriptionally
@@ -195,23 +201,7 @@ jB, and N-Myc. Their putative binding sites are indicated in
 Fig. 1. Additionally, the results of the analysis of the PHD1
 promoter sequence predicted three binding sites for HIF-1b/
 ARNT.
-3.3. Promoter activity and hypoxia-dependent regulation of
-PHD1 expression
-The 2 kb PCR product containing the 50 genomic region of
-the human PHD1 gene was cloned into the luciferase reporter
-plasmid pGL3-basic.
-To test for transcriptional activity of the putative promoter,
-HCT116 cells were transfected with the putative PHD1 pro-
-moter in pGL3-basic or with the empty vector. 48 h following
-transfection, cells were harvested and luciferase activity driven
-by the PHD1 promoter was measured. As seen in Fig. 2A,
-there was a dose-dependent, strong transcriptional activity
-from the plasmid containing the cloned genomic region, con-
-ﬁrming that it includes the promoter of PHD1. To test whether
-the expression of PHD1 is aﬀected by hypoxia, HCT116 cells
-were transfected as in Fig. 2A, treated with the hypoxia mi-
-metic drug DFO 24 h following transfection, and then ana-
-lyzed for luciferase activity. Fig. 2B shows that the hypoxic
+
 conditions caused by DFO resulted in suppression of tran-
 scription from the PHD1 promoter.
 We next wanted to know whether this hypoxia-induced
@@ -253,6 +243,25 @@ be cell growth regulators [13,18–20]. Thus, their regulation
 may be connected to their other targets. The signiﬁcance of
 PHD1 downregulation following hypoxia may become clearer
 as more target proteins are identiﬁed.
+
+3.3. Promoter activity and hypoxia-dependent regulation of
+PHD1 expression
+The 2 kb PCR product containing the 50 genomic region of
+the human PHD1 gene was cloned into the luciferase reporter
+plasmid pGL3-basic.
+To test for transcriptional activity of the putative promoter,
+HCT116 cells were transfected with the putative PHD1 pro-
+moter in pGL3-basic or with the empty vector. 48 h following
+transfection, cells were harvested and luciferase activity driven
+by the PHD1 promoter was measured. As seen in Fig. 2A,
+there was a dose-dependent, strong transcriptional activity
+from the plasmid containing the cloned genomic region, con-
+ﬁrming that it includes the promoter of PHD1. To test whether
+the expression of PHD1 is aﬀected by hypoxia, HCT116 cells
+were transfected as in Fig. 2A, treated with the hypoxia mi-
+metic drug DFO 24 h following transfection, and then ana-
+lyzed for luciferase activity. Fig. 2B shows that the hypoxic
+
 3.4. Transcriptional regulation of PHD1 by ARNT
 Hypoxic-dependent regulation of the prolyl hydroxylases
 mRNA was recently suggested to depend on the HIF tran-
@@ -278,6 +287,7 @@ Fragments immunoprecipitated with anti-HA tag antibodies
 are shown as control for non-speciﬁc binding. Thus, ARNT
 is associated in vivo with the PHD1 promoter under hypoxic
 conditions.
+
 Fig. 2. Transcription activity and response to DFO of the PHD1
 promoter. (A) Luciferase assay in HCT116 cells transfected with either
 50 ng pGL3-basic or with increasing amounts of the PHD1 promoter
@@ -287,10 +297,34 @@ of a representative experiment, normalized to b-gal activity. (B) Lu-
 ciferase assay as in (A). Cells were transfected with 50 ng PHD1
 promoter-pGL3 basic and were left untreated or were treated over-
 night with 200 lM DFO.
-N. Erez et al. / FEBS Letters 567 (2004) 311–315
-313
- 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
+18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Fig. 3. Transcription of PHD1 is suppressed under hypoxia. (A) RT-
+PCR of cDNA prepared from HCT116 cells. Cells were left non-
+treated (nt) or were treated with 200 lM DFO overnight (left panel).
+The right panel shows RT-PCR of cDNA from C2C12 cells for the
+indicated time periods. PCR with GPDH primers is shown as loading
+control. (B) Northern blot of RNA from HCT116 cells, either non-
+treated (nt) or treated with 200 lM DFO overnight. RNA was probed
+with PHD1 cDNA speciﬁc probe or with GPDH probe as loading
+control. (C) cDNA from HCT116 or MCF-7 cells was prepared as in
+(A) and analyzed by real-time PCR. The results shown are the average
+of duplicate wells of a representative experiment, normalized to those
+of GPDH (HCT116) or b-tubulin (MCF-7), with error bars. (D)
+HCT116 cells were incubated overnight in a 1% O2 incubator, collected
+and cDNA was analyzed by real-time PCR as in (C). The results were
+normalized to those of b-tubulin.
+
+Fig. 4. ARNT is associated in vivo with the PHD1 promoter. (A) PCR
+analysis of ChIP products. The consensus sites for ARNT found at
+)1944 and at )1439 were designated ARNT1 and ARNT2 sites, re-
+spectively. These two sites are too closely located to be eﬃciently
+separated by ChIP, and were thus analyzed together (ARNT 1+2 sites,
+upper panel). The site found at )939 was designated ARNT3 site
+(lower panel). nt: non-treated. (B) Real-time PCR analysis of ChIP
+products. PCR was done in duplicates. Results are shown as % of
+input, with error bars.
 
 3.5. Future aspects of transcriptional regulation of the PHD1
 gene
@@ -308,6 +342,7 @@ ARNT may be involved in both induction and repression of
 genes under hypoxia, depending on its heterodimer partner.
 Interestingly, the binding site for ARNT, found at )939
 (ARNT3) in the PHD1 promoter (50-GTGCGTG-30), is typi-
+
 cal for heterodimers of ARNT with SIM and not to ARNT
 homodimers or ARNT-HIF-1a heterodimers, which bind the
 HRE [25]. Thus, ARNT may heterodimerize with SIM to re-
@@ -320,34 +355,8 @@ experiments are needed to decipher the molecular mechanism
 underlying the regulation of PHD1 by ARNT following hyp-
 oxic stress, and to identify the relevant partners of ARNT in
 this regulation.
-Fig. 4. ARNT is associated in vivo with the PHD1 promoter. (A) PCR
-analysis of ChIP products. The consensus sites for ARNT found at
-)1944 and at )1439 were designated ARNT1 and ARNT2 sites, re-
-spectively. These two sites are too closely located to be eﬃciently
-separated by ChIP, and were thus analyzed together (ARNT 1+2 sites,
-upper panel). The site found at )939 was designated ARNT3 site
-(lower panel). nt: non-treated. (B) Real-time PCR analysis of ChIP
-products. PCR was done in duplicates. Results are shown as % of
-input, with error bars.
-Fig. 3. Transcription of PHD1 is suppressed under hypoxia. (A) RT-
-PCR of cDNA prepared from HCT116 cells. Cells were left non-
-treated (nt) or were treated with 200 lM DFO overnight (left panel).
-The right panel shows RT-PCR of cDNA from C2C12 cells for the
-indicated time periods. PCR with GPDH primers is shown as loading
-control. (B) Northern blot of RNA from HCT116 cells, either non-
-treated (nt) or treated with 200 lM DFO overnight. RNA was probed
-with PHD1 cDNA speciﬁc probe or with GPDH probe as loading
-control. (C) cDNA from HCT116 or MCF-7 cells was prepared as in
-(A) and analyzed by real-time PCR. The results shown are the average
-of duplicate wells of a representative experiment, normalized to those
-of GPDH (HCT116) or b-tubulin (MCF-7), with error bars. (D)
-HCT116 cells were incubated overnight in a 1% O2 incubator, collected
-and cDNA was analyzed by real-time PCR as in (C). The results were
-normalized to those of b-tubulin.
-314
-N. Erez et al. / FEBS Letters 567 (2004) 311–315
- 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
+18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
 Acknowledgements: We thank Dr. Mina Marmor for critical reading of
 the manuscript. This work was supported in part by grants from the
@@ -355,30 +364,7 @@ Israel–USA Binational Science Foundation (BSF), the Kadoorie
 Foundation, and the Israeli Science Foundation (ISF). V. Rotter is the
 incumbent of the Norman and Helen Asher Professorial Chair in
 Cancer Research at the Weizmann Institute.
-References
-[1] Bruick, R.K. (2003) Genes Dev. 17, 2614–2623.
-[2] Semenza, G.L. (2000) Genes Dev. 14, 1983–1991.
-[3] Maxwell, P.H. and Ratcliﬀe, P.J. (2002) Semin. Cell Dev. Biol. 13,
-29–37.
-[4] Bruick, R.K. (2000) Proc. Natl. Acad. Sci. USA 97, 9082–9087.
-[5] Carmeliet, P. et al. (1998) Nature 394, 485–490.
-[6] Sutter, C.H., Laughner, E. and Semenza, G.L. (2000) Proc. Natl.
-Acad. Sci. USA 97, 4748–4753.
-[7] Huang, L.E., Gu, J., Schau, M. and Bunn, H.F. (1998) Proc. Natl.
-Acad. Sci. USA 95, 7987–7992.
-[8] Safran, M. and Kaelin Jr., W.G. (2003) J. Clin. Invest. 111,
-779–783.
-[9] Epstein, A.C. et al. (2001) Cell 107, 43–54.
-[10] Bruick,
-R.K.
-and
-McKnight,
-S.L.
-(2001)
-Science
-294,
-1337–1340.
-[11] Ivan, M. et al. (2002) Proc. Natl. Acad. Sci. USA 99, 13459–13464.
+
 [12] Erez, N., Milyavsky, M., Eilam, R., Shats, I., Goldﬁnger, N. and
 Rotter, V. (2003) Cancer Res. 63, 8777–8783.
 [13] Erez, N., Milyavsky, M., Goldﬁnger, N., Peles, E., Gudkov, A.V.
@@ -406,6 +392,27 @@ J. Biochem. Cell Biol. 36, 189–204.
 [25] Swanson, H.I., Chan, W.K. and Bradﬁeld, C.A. (1995) J. Biol.
 Chem. 270, 26292–26302.
 [26] Swanson, H.I. (2002) Chem. Biol. Interact. 141, 63–76.
-N. Erez et al. / FEBS Letters 567 (2004) 311–315
-315
- 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+[1] Bruick, R.K. (2003) Genes Dev. 17, 2614–2623.
+[2] Semenza, G.L. (2000) Genes Dev. 14, 1983–1991.
+[3] Maxwell, P.H. and Ratcliﬀe, P.J. (2002) Semin. Cell Dev. Biol. 13,
+29–37.
+[4] Bruick, R.K. (2000) Proc. Natl. Acad. Sci. USA 97, 9082–9087.
+[5] Carmeliet, P. et al. (1998) Nature 394, 485–490.
+[6] Sutter, C.H., Laughner, E. and Semenza, G.L. (2000) Proc. Natl.
+Acad. Sci. USA 97, 4748–4753.
+[7] Huang, L.E., Gu, J., Schau, M. and Bunn, H.F. (1998) Proc. Natl.
+Acad. Sci. USA 95, 7987–7992.
+[8] Safran, M. and Kaelin Jr., W.G. (2003) J. Clin. Invest. 111,
+779–783.
+[9] Epstein, A.C. et al. (2001) Cell 107, 43–54.
+[10] Bruick,
+R.K.
+and
+McKnight,
+S.L.
+(2001)
+Science
+294,
+1337–1340.
+[11] Ivan, M. et al. (2002) Proc. Natl. Acad. Sci. USA 99, 13459–13464.

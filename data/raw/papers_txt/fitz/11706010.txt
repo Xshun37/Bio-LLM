@@ -1,11 +1,10 @@
 A Region to the N-terminal Side of the CTCF Zinc Finger Domain Is
 Essential for Activating Transcription from the Amyloid Precursor
 Protein Promoter*
-Received for publication, October 9, 2001, and in revised form, November 7, 2001
-Published, JBC Papers in Press, November 8, 2001, DOI 10.1074/jbc.M109748200
-Alexander A. Vostrov, Michael J. Taheny, and Wolfgang W. Quitschke‡
+
 From the Department of Psychiatry and Behavioral Science, State University of New York,
 Stony Brook, New York 11794-8101
+
 Transcription from the amyloid precursor protein
 (APP) promoter is largely dependent on a nuclear factor
 binding site designated as APB. The protein that binds
@@ -36,17 +35,7 @@ no effect. These results demonstrate that CTCF acti-
 vates transcription from the APP promoter and that the
 activation domain is located on the N-terminal side of
 the zinc finger domain.
-A defining neuropathological manifestation of Alzheimer’s
-disease and Down’s syndrome is the extracellular deposition of
-amyloid -protein (1–3). The amyloid -protein peptide is de-
-rived by proteolytic cleavage from a group of proteins desig-
-nated amyloid -protein precursors (APP),1 and these are de-
-rived from the same gene by differential splicing (4). The APP
-gene is differentially expressed in all major tissues, with the
-highest levels observed in kidney and brain (5, 6). Increased
-levels of APP gene transcript have been observed in Down’s
-syndrome and in certain areas of the brain in Alzheimer’s
-disease (6–9). Overexpression of APP also leads to amyloid
+
 deposition in transplanted murine hippocampal tissue with
 trisomy 16, the mouse equivalent of Down’s syndrome (10).
 These observations suggest that overexpression of APP may be
@@ -97,48 +86,21 @@ ing a widespread role for CTCF in the regulation of enhancer-
 activated genes (23). CTCF also binds to the proximal promoter
 of the chicken c-MYC gene where it acts either as a transcrip-
 tional repressor or activator (17, 24, 25). In the human and
-* This work was supported by United States Public Health Service
-Grant NINDS NS30994 from the National Institutes of Health. The
-costs of publication of this article were defrayed in part by the payment
-of page charges. This article must therefore be hereby marked “adver-
-tisement” in accordance with 18 U.S.C. Section 1734 solely to indicate
-this fact.
-‡ To whom correspondence should be addressed. Tel.: 631-444-8025;
-Fax: 631-444-7534; E-mail: wquitschke@mail.psychiatry.sunysb.edu.
-1 The abbreviations used are: APP, amyloid -protein precursor;
-DTT,
-dithiothreitol;
-CHAPS,
-3-[(3-cholamidopropyl)dimethylammo-
-nio]-1-propanesulfonate;
-CAT,
-chloramphenicol
-acetyltransferase;
-GFP, green fluorescent protein; msu, mobility shift units; CMV,
-cytomegalovirus.
-THE JOURNAL OF BIOLOGICAL CHEMISTRY
-Vol. 277, No. 2, Issue of January 11, pp. 1619–1627, 2002
-© 2002 by The American Society for Biochemistry and Molecular Biology, Inc.
-Printed in U.S.A.
-This paper is available on line at http://www.jbc.org
-1619
+
+A defining neuropathological manifestation of Alzheimer’s
+disease and Down’s syndrome is the extracellular deposition of
+amyloid -protein (1–3). The amyloid -protein peptide is de-
+rived by proteolytic cleavage from a group of proteins desig-
+nated amyloid -protein precursors (APP),1 and these are de-
+rived from the same gene by differential splicing (4). The APP
+gene is differentially expressed in all major tissues, with the
+highest levels observed in kidney and brain (5, 6). Increased
+levels of APP gene transcript have been observed in Down’s
+syndrome and in certain areas of the brain in Alzheimer’s
+disease (6–9). Overexpression of APP also leads to amyloid
+
 This is an Open Access article under the CC BY license.
 
-
-mouse c-myc, genes CTCF binds to divergent sequences that
-coincide with RNA polymerase pausing sites within the tran-
-scribed region of the genes (16).
-The above examples illustrate that CTCF primarily acts as a
-negative regulator of transcription. In contrast, some of our
-previous studies (13–15, 26) have provided indirect evidence
-implicating CTCF as a transcriptional activator of the APP
-promoter. The mechanism by which CTCF exerts its diverse
-regulatory effects remains unclear. However, it is likely to
-involve interactions with specific secondary factors. We provide
-here direct evidence both in vitro and in vivo that CTCF acti-
-vates transcription from the APP promoter and that this acti-
-vation requires the N-terminal end of the molecule.
-EXPERIMENTAL PROCEDURES
 Expression of Recombinant CTCF Constructs in Pichia pastoris—The
 cDNA encoding human CTCF was amplified by the polymerase chain
 reaction from a cDNA library derived from the human retinoblastoma
@@ -215,6 +177,7 @@ deplete CTCF from nuclear extract, 60 l of the affinity-purified anti-
 bodies were added to 400 l of the extract and incubated for 30 min at
 25 °C. The extract was cleared by centrifugation at 10,000  g for 10
 min and mixed with 80 l of protein G-Sepharose (Amersham Bio-
+
 FIG. 1. CTCF and the proximal APP promoter. A, amino acid
 sequence of human CTCF (16). The N-terminal methionine is desig-
 nated as M1. All other amino acids designating the positions of specific
@@ -231,9 +194,20 @@ the transcriptional start sites from position 4 to 1 (13). Black bar
 indicates the DNase I-protected domain produced by full-length CTCF
 (FLCTCF) together with the orientation of the N- and C-terminal end of
 the zinc finger domain (27).
-CTCF Activates APP Promoter Transcription
-1620
 
+mouse c-myc, genes CTCF binds to divergent sequences that
+coincide with RNA polymerase pausing sites within the tran-
+scribed region of the genes (16).
+The above examples illustrate that CTCF primarily acts as a
+negative regulator of transcription. In contrast, some of our
+previous studies (13–15, 26) have provided indirect evidence
+implicating CTCF as a transcriptional activator of the APP
+promoter. The mechanism by which CTCF exerts its diverse
+regulatory effects remains unclear. However, it is likely to
+involve interactions with specific secondary factors. We provide
+here direct evidence both in vitro and in vivo that CTCF acti-
+vates transcription from the APP promoter and that this acti-
+vation requires the N-terminal end of the molecule.
 
 sciences), which had been equilibrated with buffer D. The extract was
 incubated for 30 min at 25 °C and gently stirred periodically to keep the
@@ -313,6 +287,7 @@ APP and -actin promoter transcripts (13). The mixture was incubated
 at 99 °C for 5 min and at 75 °C for 20 min and then transferred to 48 °C.
 To the annealing mixture was added 10 l of a reverse transcriptase
 reaction mixture containing 12.5 mM Tris, pH 7.6, 10 mM MgCl2, 12.5
+
 mM DTT, and 6 mM of each of the dNTPs, supplemented with 20 units
 of avian myoblastosis virus-reverse transcriptase and 20 units of RNa-
 sin (both Roche Molecular Biochemicals). The reaction was continued at
@@ -377,7 +352,7 @@ resulting from the APP promoter construct was normalized to identical
 -galactosidase activities. Subsequently, in each experiment the APP
 promoter activity obtained with the cotransfected control GFP expres-
 sion plasmid was assigned the value 100%.
-RESULTS
+
 Depleting Nuclear Extract of CTCF Reduces Transcriptional
 Activity from the APP Promoter—HeLa cell nuclear extract
 supports in vitro transcription from both the -actin and APP
@@ -388,30 +363,7 @@ indicates that the two promoters are transcribed by different
 mechanisms. Transcription from the -actin promoter is initi-
 ated at one primary start site, whereas the APP promoter is
 initiated at multiple sites from position 1 to 4 (Fig. 2B, lane
-CTCF Activates APP Promoter Transcription
-1621
 
-
-1). When HeLa cell nuclear extract was depleted of CTCF by
-immunoprecipitation, transcription from the APP promoter
-was drastically reduced to a level corresponding to 23% of the
-activity observed with the non-depleted extract (Fig. 2B, lanes
-1 and 5). When whole nuclear extract was mixed with increas-
-ing amounts of CTCF-depleted extract, there was a gradual
-decline in the transcriptional activity from the APP promoter
-(Fig. 2B, lanes 2–4). In all cases transcriptional activity from
-the -actin promoter remained unaffected (Fig. 2B, lanes 2–4).
-The decrease in transcriptional activity was paralleled by a
-comparable decrease in binding activity to the APB site (Fig.
-2A, lanes 1–5).
-Replenishing CTCF-depleted Nuclear Extract with Purified
-Recombinant CTCF Restores Transcriptional Activity from the
-APP Promoter—To determine whether purified recombinant
-CTCF expressed in the yeast strain P. pastoris supports tran-
-scriptional activity from the APP promoter, depleted nuclear
-extract was replenished with increasing amounts of full-length
-recombinant CTCF. Mobility shift electrophoresis showed that
-binding to the APB site increased proportionally to the
 amount of CTCF added (Fig. 3A, lanes 1–5). In a similar man-
 ner, transcriptional activity from the APP promoter was re-
 stored to levels approximating those of whole nuclear extract,
@@ -478,6 +430,7 @@ complex was indistinguishable from the endogenous CTCF
 binding complex, and the total amount of binding complex
 formed was merely enhanced (Fig. 4A, lane 6).
 However, in vitro transcription from the APP promoter was
+
 FIG. 2. Depletion of CTCF from nuclear extract. A, native whole
 HeLa cell nuclear extract was depleted of CTCF by immunoadsorption
 and analyzed by mobility shift electrophoresis. The CTCF binding ac-
@@ -494,26 +447,51 @@ was used in the reaction (lanes 1–5). The transcriptional start sites from
 the control -actin and the APP promoters are indicated (brackets). The
 transcriptional activities from the APP promoter were normalized to
 identical -actin promoter activities.
-CTCF Activates APP Promoter Transcription
-1622
 
+1). When HeLa cell nuclear extract was depleted of CTCF by
+immunoprecipitation, transcription from the APP promoter
+was drastically reduced to a level corresponding to 23% of the
+activity observed with the non-depleted extract (Fig. 2B, lanes
+1 and 5). When whole nuclear extract was mixed with increas-
+ing amounts of CTCF-depleted extract, there was a gradual
+decline in the transcriptional activity from the APP promoter
+(Fig. 2B, lanes 2–4). In all cases transcriptional activity from
+the -actin promoter remained unaffected (Fig. 2B, lanes 2–4).
+The decrease in transcriptional activity was paralleled by a
+comparable decrease in binding activity to the APB site (Fig.
+2A, lanes 1–5).
+Replenishing CTCF-depleted Nuclear Extract with Purified
+Recombinant CTCF Restores Transcriptional Activity from the
+APP Promoter—To determine whether purified recombinant
+CTCF expressed in the yeast strain P. pastoris supports tran-
+scriptional activity from the APP promoter, depleted nuclear
+extract was replenished with increasing amounts of full-length
+recombinant CTCF. Mobility shift electrophoresis showed that
+binding to the APB site increased proportionally to the
 
-only reduced by the addition of N-terminal deletions of Met-249
-and Met-285, and this reduction was somewhat more pro-
-nounced with deletion Met-285 (Fig. 4B, lanes 1–6). In con-
-trast, the addition of recombinant full-length CTCF and C-
-terminal deletion Cys-525 increased transcriptional activity.
-These results confirm that CTCF activates transcription from
-the APP promoter and that the N-terminal domain is essential
-for this activation.
-In Vitro Transcription from the APP Promoter Is Unaffected
-by Adding a GFP Tag to the N-terminal End of CTCF—The
-results described above provide convincing evidence that CTCF
-activates transcription from the APP promoter in vitro. Fur-
-thermore, the activation is mediated by a portion of the CTCF
-molecule that is located close to the N-terminal side of the zinc
-finger domain. To complement this observation, it was of inter-
-est to investigate whether similar results could be obtained in
+FIG. 4. In vitro competition of native CTCF with purified re-
+combinant CTCF proteins. A, in this experiment, 2 l of whole
+nuclear extract were mixed with 2 l of CTCF-depleted extract (com-
+pare Fig. 1). The 4 l of combined extract were then incubated with a
+molar amount of radiolabeled APB oligonucleotide (20 ng) that corre-
+sponded to the amount of the same sequence present in the reporter
+plasmid used for in vitro transcription (below). The binding activity was
+determined by mobility shift electrophoresis (lane 1). For competition
+purposes, the extract was then mixed with increasing amounts of re-
+combinant N-terminal CTCF deletion Met-249 (lanes 2–4) or Met-285
+(lane 5), recombinant full-length CTCF (lane 6), and recombinant C-
+terminal deletion Cys-525 (lane 7) (see “Experimental Procedures” for
+details). The various binding complexes (b) and the free oligonucleotides
+(f) are indicated by brackets. B, in vitro transcription was performed
+with 4 l of nuclear extract consisting of 2 l of whole extract and 2 l
+of CTCF-depleted extract (lane 1). Because these are the same condi-
+tions as those described in Fig. 2B (lane 3), the normalized transcrip-
+tional activity from the APP promoter was here retained at 67% for
+comparison. The transcriptional activity was then determined with
+extracts that contained increasing amounts of recombinant CTCF N-
+terminal deletion Met-249 (lanes 2–4) or Met-285 (lanes 5 and 6),
+full-length CTCF (lane 7), and C-terminal deletion Cys-525 (lane 8).
+
 FIG. 3. Replenishment of CTCF-depleted HeLa cell nuclear
 extract with recombinant CTCF. A, the CTCF binding activity in 1
 l of whole nuclear extract (lane 1) and in 1 l of CTCF-depleted extract
@@ -538,31 +516,23 @@ data from numerous independent experiments with recombinant full-
 length CTCF (FL), N-terminal deletion Met-249, and C-terminal dele-
 tion Cys-525. The curves were generated by nonlinear regression anal-
 ysis, resulting in R values of 0.94 (FL), 0.92 (C525), and 0.94 (M249).
-FIG. 4. In vitro competition of native CTCF with purified re-
-combinant CTCF proteins. A, in this experiment, 2 l of whole
-nuclear extract were mixed with 2 l of CTCF-depleted extract (com-
-pare Fig. 1). The 4 l of combined extract were then incubated with a
-molar amount of radiolabeled APB oligonucleotide (20 ng) that corre-
-sponded to the amount of the same sequence present in the reporter
-plasmid used for in vitro transcription (below). The binding activity was
-determined by mobility shift electrophoresis (lane 1). For competition
-purposes, the extract was then mixed with increasing amounts of re-
-combinant N-terminal CTCF deletion Met-249 (lanes 2–4) or Met-285
-(lane 5), recombinant full-length CTCF (lane 6), and recombinant C-
-terminal deletion Cys-525 (lane 7) (see “Experimental Procedures” for
-details). The various binding complexes (b) and the free oligonucleotides
-(f) are indicated by brackets. B, in vitro transcription was performed
-with 4 l of nuclear extract consisting of 2 l of whole extract and 2 l
-of CTCF-depleted extract (lane 1). Because these are the same condi-
-tions as those described in Fig. 2B (lane 3), the normalized transcrip-
-tional activity from the APP promoter was here retained at 67% for
-comparison. The transcriptional activity was then determined with
-extracts that contained increasing amounts of recombinant CTCF N-
-terminal deletion Met-249 (lanes 2–4) or Met-285 (lanes 5 and 6),
-full-length CTCF (lane 7), and C-terminal deletion Cys-525 (lane 8).
-CTCF Activates APP Promoter Transcription
-1623
 
+only reduced by the addition of N-terminal deletions of Met-249
+and Met-285, and this reduction was somewhat more pro-
+nounced with deletion Met-285 (Fig. 4B, lanes 1–6). In con-
+trast, the addition of recombinant full-length CTCF and C-
+terminal deletion Cys-525 increased transcriptional activity.
+These results confirm that CTCF activates transcription from
+the APP promoter and that the N-terminal domain is essential
+for this activation.
+In Vitro Transcription from the APP Promoter Is Unaffected
+by Adding a GFP Tag to the N-terminal End of CTCF—The
+results described above provide convincing evidence that CTCF
+activates transcription from the APP promoter in vitro. Fur-
+thermore, the activation is mediated by a portion of the CTCF
+molecule that is located close to the N-terminal side of the zinc
+finger domain. To complement this observation, it was of inter-
+est to investigate whether similar results could be obtained in
 
 cultured cells. Because CTCF is essential for cell survival, its
 elimination from the cells was precluded. We therefore devised
@@ -629,8 +599,31 @@ alone was cloned into the same site of plasmid pcDNA3.1. As a
 cell background for transfection, we chose the cell line COS-1
 because it can be transfected at a high level of efficiency that
 approximates 50%. Furthermore, the expression from the APP
+
+FIG. 5. Replenishment of CTCF-depleted HeLa cell nuclear
+extract with recombinant N-terminal GFP-tagged CTCF. A, the
+CTCF binding activity in 1 l of whole nuclear extract (lane 1) and in 1
+l of CTCF-depleted extract (lane 2) was determined by mobility shift
+electrophoresis. The binding activity of recombinant CTCF protein was
+determined by mixing 1 l of depleted extract with purified recombi-
+nant full-length CTCF (lane 3), full-length GFP-tagged CTCF (lane 4),
+GFP-tagged C-terminal deletion Cys-525 (lane 5), and GFP-tagged N-
+terminal deletion Met-249 (lane 6). The binding complexes (b) and the
+free oligonucleotides (f) are indicated (brackets). B, in vitro transcrip-
+tion with 4 l of whole nuclear extract (lane 1) or CTCF-depleted
+nuclear extract (lane 2). In vitro transcription was then performed with
+CTCF-depleted extract that was supplemented with recombinant full-
+length CTCF (lane 3), GFP-tagged full-length CTCF (lane 4), GFP-
+tagged C-terminal deletion Cys-525 (lane 5), and GFP-tagged N-termi-
+nal deletion Met-285. The transcriptional activities from the APP
+promoter were normalized to those from the -actin promoter, and the
+APP promoter activity in native nuclear extract was assigned the value
+100%. The transcripts from the APP and -actin promoters are indi-
+cated by brackets.
+
 promoter is regulated in a manner identical to the previously
 used HeLa cells.2
+
 Cells were transfected under the same conditions as those
 used for subsequent competition experiments (see below). Spe-
 cifically, the reporter plasmid (APP(488)) was mixed at a
@@ -656,65 +649,19 @@ therefore proceeded to examine whether the transfected CTCF
 constructs were able to compete with endogenous CTCF for the
 expression from the cotransfected APP promoter construct. The
 reporter plasmid (APP(488)) contained the APP promoter
+
 2 A. A. Vostrov, M. J. Taheny, and W. W. Quitschke, unpublished
 observations.
-FIG. 5. Replenishment of CTCF-depleted HeLa cell nuclear
-extract with recombinant N-terminal GFP-tagged CTCF. A, the
-CTCF binding activity in 1 l of whole nuclear extract (lane 1) and in 1
-l of CTCF-depleted extract (lane 2) was determined by mobility shift
-electrophoresis. The binding activity of recombinant CTCF protein was
-determined by mixing 1 l of depleted extract with purified recombi-
-nant full-length CTCF (lane 3), full-length GFP-tagged CTCF (lane 4),
-GFP-tagged C-terminal deletion Cys-525 (lane 5), and GFP-tagged N-
-terminal deletion Met-249 (lane 6). The binding complexes (b) and the
-free oligonucleotides (f) are indicated (brackets). B, in vitro transcrip-
-tion with 4 l of whole nuclear extract (lane 1) or CTCF-depleted
-nuclear extract (lane 2). In vitro transcription was then performed with
-CTCF-depleted extract that was supplemented with recombinant full-
-length CTCF (lane 3), GFP-tagged full-length CTCF (lane 4), GFP-
-tagged C-terminal deletion Cys-525 (lane 5), and GFP-tagged N-termi-
-nal deletion Met-285. The transcriptional activities from the APP
-promoter were normalized to those from the -actin promoter, and the
-APP promoter activity in native nuclear extract was assigned the value
-100%. The transcripts from the APP and -actin promoters are indi-
-cated by brackets.
-CTCF Activates APP Promoter Transcription
-1624
 
+FIG. 7. In vivo competition of endogenous CTCF with trans-
+fected recombinant CTCF. Cotransfection of an APP promoter re-
+porter vector with expression vector pcDNA3.1 containing GFP alone
+(GFP), full-length GFP-CTCF (GFP-FL), N-terminal CTCF deletion
+GFP-M285, or C-terminal deletion Cys-525. In each experiment the
+APP promoter activity obtained with GFP alone was assigned the
+relative value of 100%. Error bars represent the S.E. of the mean from
+8 to 10 independent experiments.
 
-from position 488 to 100, which activated expression of the
-chloramphenicol acetyltransferase gene. In addition, as an in-
-ternal control, the same plasmid also contained the -actin
-promoter driving the expression of the -galactosidase gene.
-The reporter plasmid was cotransfected with a plasmid con-
-taining either one of the GFP-tagged CTCF constructs or the
-GFP reading frame alone. These CTCF constructs were tran-
-scribed from the constitutive CMV promoter. The resulting
-CAT activities were normalized to identical -galactosidase
-activities, and the CAT activity obtained with the cotransfected
-GFP open reading frame alone was set at 100%. The results
-show that cotransfection of either the full-length GFP-CTCF or
-C-terminal deletion GFP-C525 had no significant effect on the
-expression from the APP promoter. In contrast, cotransfection
-of N-terminal deletion GFP-M285 resulted in a reduction in
-APP expression to 30% of the control value (Fig. 7). Under the
-applied conditions these results were highly reproducible, and
-they can be interpreted as demonstrating that the cotrans-
-fected N-terminal deletion competes with endogenous CTCF
-for the binding to the APP promoter. However, because the
-binding of the N-terminal deletion is non-productive in terms of
-transcriptional activation, a reduction in expression from the
-APP promoter occurred. Similarly, the observation that the
-full-length CTCF construct and the C-terminal deletion did not
-increase APP promoter expression suggests that endogenous
-CTCF is not a rate-limiting factor in this cell background. In
-general, these results are consistent with those observed in
-vitro, and they support the notion that transcriptional activa-
-tion by CTCF is dependent upon the N-terminal domain of the
-molecule.
-DISCUSSION
-We have previously presented extensive indirect evidence
-that the nuclear factor binding site APB is essential for high
 levels of expression from the APP promoter. Specifically, pro-
 gressive deletions from the 5 end resulted in a 70–90% reduc-
 tion in expression from the APP promoter upon removal of the
@@ -759,6 +706,7 @@ As a first step in demonstrating the requirement for CTCF in
 transcriptional activation of the APP promoter, the HeLa cell
 nuclear extract was selectively depleted by antibody adsorp-
 tion. The depletion of CTCF was confirmed by mobility shift
+
 FIG. 6. Subcellular localization of GFP-tagged recombinant
 CTCF proteins synthesized in COS-1 cells. Fluorescence micros-
 copy of COS-1 cells after transfection with expression vector pcDNA3.1
@@ -768,17 +716,40 @@ distribution of GFP. B, transfection with GFP-FL. Arrows show nuclear
 localization of GFP-FL CTCF transcript. C, transfection with N-termi-
 nal CTCF deletion GFP-M285. D, transfection with C-terminal CTCF
 deletion GFP-C525.
-FIG. 7. In vivo competition of endogenous CTCF with trans-
-fected recombinant CTCF. Cotransfection of an APP promoter re-
-porter vector with expression vector pcDNA3.1 containing GFP alone
-(GFP), full-length GFP-CTCF (GFP-FL), N-terminal CTCF deletion
-GFP-M285, or C-terminal deletion Cys-525. In each experiment the
-APP promoter activity obtained with GFP alone was assigned the
-relative value of 100%. Error bars represent the S.E. of the mean from
-8 to 10 independent experiments.
-CTCF Activates APP Promoter Transcription
-1625
 
+from position 488 to 100, which activated expression of the
+chloramphenicol acetyltransferase gene. In addition, as an in-
+ternal control, the same plasmid also contained the -actin
+promoter driving the expression of the -galactosidase gene.
+The reporter plasmid was cotransfected with a plasmid con-
+taining either one of the GFP-tagged CTCF constructs or the
+GFP reading frame alone. These CTCF constructs were tran-
+scribed from the constitutive CMV promoter. The resulting
+CAT activities were normalized to identical -galactosidase
+activities, and the CAT activity obtained with the cotransfected
+GFP open reading frame alone was set at 100%. The results
+show that cotransfection of either the full-length GFP-CTCF or
+C-terminal deletion GFP-C525 had no significant effect on the
+expression from the APP promoter. In contrast, cotransfection
+of N-terminal deletion GFP-M285 resulted in a reduction in
+APP expression to 30% of the control value (Fig. 7). Under the
+applied conditions these results were highly reproducible, and
+they can be interpreted as demonstrating that the cotrans-
+fected N-terminal deletion competes with endogenous CTCF
+for the binding to the APP promoter. However, because the
+binding of the N-terminal deletion is non-productive in terms of
+transcriptional activation, a reduction in expression from the
+APP promoter occurred. Similarly, the observation that the
+full-length CTCF construct and the C-terminal deletion did not
+increase APP promoter expression suggests that endogenous
+CTCF is not a rate-limiting factor in this cell background. In
+general, these results are consistent with those observed in
+vitro, and they support the notion that transcriptional activa-
+tion by CTCF is dependent upon the N-terminal domain of the
+molecule.
+
+We have previously presented extensive indirect evidence
+that the nuclear factor binding site APB is essential for high
 
 electrophoresis, and in vitro transcription from the APP pro-
 moter was reduced to 23% compared with the undepleted ex-
@@ -846,6 +817,7 @@ nal domain is essential for transcriptional activation, whereas
 the C-terminal domain is dispensable. This conclusion was
 further corroborated by competing endogenous CTCF with the
 deletion fragments. However, it may be pointed out that N-
+
 terminal deletion Met-285 inhibited transcription somewhat
 more effectively than deletion Met-249 (Fig. 4). Although this
 phenomenon was not further investigated systematically, it
@@ -880,7 +852,7 @@ gests that CTCF acts by recruiting additional factors to the
 transcription complex. An essential step in this process would
 then be the binding of such a factor to the N-terminal domain
 of CTCF.
-REFERENCES
+
 1. Glenner, G. G., and Wong, C. W. (1984) Biochem. Biophys. Res. Commun. 122,
 1131–1135
 2. Mann, D. M., Jones, D., Prinja, D., and Purkiss, M. S. (1990) Acta Neuropathol.
@@ -924,9 +896,6 @@ Biol. 17, 1281–1288
 747–755
 21. Awad, T. A., Bigler, J., Ulmer, J. E., Hu, Y. J., Moore, J. M., Lutz, M., Neiman,
 P. E., Collins, S. J., Renkawitz, R., Lobanenkov, V. V., and Filippova, G. N.
-CTCF Activates APP Promoter Transcription
-1626
-
 
 (1999) J. Biol. Chem. 274, 27092–27098
 22. Bigler, J., and Eisenman, R. N. (1995) EMBO J. 14, 5710–5723
@@ -946,6 +915,7 @@ Nucleic Acids Res. 28, 3370–3378
 30. Sambrook, J., Fritsch, E. F., and Maniatis, T. (1989) Molecular Cloning: A
 Laboratory Manual, 2nd Ed, Cold Spring Harbor Laboratory, Cold Spring
 Harbor, NY
+
 31. Quitschke, W. W., and Goldgaber, D. Y. (1992) J. Biol. Chem. 267,
 17362–17368
 32. Danilition, S. L., Frederickson, R. M., Taylor, C. Y., and Miyamoto, N. G.
@@ -964,5 +934,3 @@ Biol. 21, 2221–2234
 63–68
 38. Vostrov, A. A., Quitschke, W. W., Vidal, F., Schwarzman, A., and Goldgaber, D.
 (1995) Nucleic Acids Res. 23, 2734–2741
-CTCF Activates APP Promoter Transcription
-1627

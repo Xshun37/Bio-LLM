@@ -1,39 +1,19 @@
-Molecular and Cellular Biology
-ISSN: 1098-5549 (Online) Journal homepage: www.tandfonline.com/journals/tmcb20
 Recruitment of TATA-Binding Protein–TAFI
 Complex SL1 to the Human Ribosomal DNA
 Promoter Is Mediated by the Carboxy-Terminal
 Activation Domain of Upstream Binding Factor
 (UBF) and Is Regulated by UBF Phosphorylation
-JoAnn C. Tuan, Weiguo Zhai & Lucio Comai
-To cite this article: JoAnn C. Tuan, Weiguo Zhai & Lucio Comai (1999) Recruitment of TATA-
-Binding Protein–TAFI Complex SL1 to the Human Ribosomal DNA Promoter Is Mediated by
-the Carboxy-Terminal Activation Domain of Upstream Binding Factor (UBF) and Is Regulated
-by UBF Phosphorylation, Molecular and Cellular Biology, 19:4, 2872-2879, DOI: 10.1128/
-MCB.19.4.2872
-To link to this article:  https://doi.org/10.1128/MCB.19.4.2872
-Published online: 28 Mar 2023.
-Submit your article to this journal 
-Article views: 67
-View related articles 
-Citing articles: 6 View citing articles 
-Full Terms & Conditions of access and use can be found at
-https://www.tandfonline.com/action/journalInformation?journalCode=tmcb20
-
 
 MOLECULAR AND CELLULAR BIOLOGY,
 0270-7306/99/$04.0010
 Apr. 1999, p. 2872–2879
 Vol. 19, No. 4
-Copyright © 1999, American Society for Microbiology. All Rights Reserved.
+
 Recruitment of TATA-Binding Protein–TAFI Complex SL1 to the
 Human Ribosomal DNA Promoter Is Mediated by the Carboxy-
 Terminal Activation Domain of Upstream Binding Factor
 (UBF) and Is Regulated by UBF Phosphorylation
-JOANN C. TUAN, WEIGUO ZHAI, AND LUCIO COMAI*
-Department of Molecular Microbiology and Immunology and Norris Comprehensive Cancer Center,
-University of Southern California, School of Medicine, Los Angeles, California 90033
-Received 22 September 1998/Returned for modiﬁcation 9 November 1998/Accepted 14 December 1998
+
 Human rRNA synthesis by RNA polymerase I requires at least two auxiliary factors, upstream binding factor
 (UBF) and SL1. UBF is a DNA binding protein with multiple HMG domains that binds directly to the CORE
 and UCE elements of the ribosomal DNA promoter. The carboxy-terminal region of UBF is necessary for tran-
@@ -51,6 +31,7 @@ rylated UBF with nuclear extracts from exponentially growing cells was able to r
 tion. In addition, DNase I footprinting analysis and in vitro-reconstituted transcription assays with phospha-
 tase-treated UBF provided further evidence that UBF phosphorylation plays a critical role in the regulation of
 the recruitment of SL1 to the ribosomal DNA promoter and stimulation of UBF-dependent transcription.
+
 RNA polymerase I (Pol I) directs RNA synthesis from a
 single class of genes, the rRNA genes, which are found in
 multiple tandem arrayed copies in the nucleoli of eukaryotic
@@ -75,6 +56,7 @@ triguingly, while UBF has been cloned from organisms such as
 mice, rats, and Xenopus laevis, a UBF-like activity has not been
 identiﬁed in Saccharomyces cerevisiae and Acanthamoeba cas-
 tellanii (25, 29).
+
 The second essential factor necessary for accurate RNA Pol
 I transcription is the selectivity factor, SL1. SL1 is analogous to
 TFIID and TFIIIB, which are involved in RNA Pol II and III
@@ -105,13 +87,12 @@ with the DNA (1, 32).
 In eukaryotic cells, RNA Pol I activity is tightly linked to the
 signals that control cell growth (25, 29, 30). A number of ex-
 tracellular stimuli, such as serum deprivation, glucocorticoids,
+
 * Corresponding author. Mailing address: Department of Molecular
 Microbiology and Immunology and Norris Comprehensive Cancer
 Center, University of Southern California, School of Medicine, 2011
 Zonal Ave., HMR 509, Los Angeles, CA 90033. Phone: (323) 442-
 3950. Fax: (323) 442-1721. E-mail: comai@hsc.usc.edu.
-2872
-
 
 insulin, and phorbol esters, affect the rate of RNA Pol I tran-
 scription (4, 5, 9, 12, 24). In addition, Pol I transcription is
@@ -156,32 +137,7 @@ data demonstrate that the carboxy-terminal activation domain
 of UBF directly interacts with SL1 and that UBF phosphory-
 lation plays a critical role in the assembly of a stable and
 productive initiation complex at the rRNA promoter.
-MATERIALS AND METHODS
-Plasmid constructs and recombinant proteins. Flag-tagged baculovirus ex-
-pression vectors were constructed by removing UBF deletion mutants from pTb
-STOP vector (generous gift of M.-H. Jantzen) with NdeI-EcoRI and inserting the
-fragments downstream of ﬂag epitope engineered into pVL 1392 HAX (HAX
-was removed) at NdeI-EcoRI (7). Restriction analysis and DNA sequencing
-conﬁrmed the identity of the clones. The synthesis of recombinant baculoviruses
-and infection of Sf9 insect cells were performed as previously described (38).
-Cells were harvested at 36 to 48 h and lysed with an ultrasonic disrupter in TM
-buffer as described in references 7 and 38.
-In vitro protein-protein interaction assays. Flag-tagged UBF full-length pro-
-tein (FL), deletion mutants, and hepatitis C virus Pol (HCV Pol) were afﬁnity
-puriﬁed on anti-Flag M2 resin (Kodak) by nutating at 4°C for 1 h and then
-washing three times in TM 1011 (50 mM Tris [pH 7.9], 12.5 mM MgCl2, 1 mM
-EDTA, 10% glycerol, 0.1% Nonidet P-40 [NP-40])–0.4 M KCl and two times in
-TM 1011–0.1 M KCl. Alternatively, proteins used in the protein-protein inter-
-action assays were immobilized on anti-Flag M2 resin (Kodak) and washed three
-times in dissociation buffer (50 mM Tris [pH 7.9], 1% sodium dodecyl sulfate
-[SDS], 250 mM LiCl, 0.5% NP-40) and two times in TM 1011–0.1 M KCl. An
-aliquot of each protein was resolved on SDS-polyacrylamide gel electrophoresis
-(PAGE) and silver stained, and equivalent amounts of each protein were used
-per reaction. Alkaline phosphatase (AP)-treated UBF was equilibrated in 13 AP
-reaction buffer and then incubated with 0.5 to 1 U of either shrimp or calf
-intestine AP for 15 min at 30°C. Immobilized proteins were then washed twice in
-radioimmunoprecipitation assay buffer (50 mM Tris [pH 7.9], 150 mM KCl, 0.5%
-deoxycholate [DOC], 0.1% SDS, 1% NP-40) and twice in TM 10 (no NP-40)–0.1
+
 M KCl. Reaction mixtures treated with nuclear extracts were incubated with 300
 mg of nuclear extracts prepared from exponentially growing HeLa cells (6) for 10
 min at 30°C in the presence of 1 mM okadaic acid and 1 mM ATP. Reaction
@@ -254,34 +210,39 @@ performed as previously described (6, 38) with the following modiﬁcation: each
 transcription reaction was performed with 30 ng of rRNA template prHu3. RNA
 products were detected by S1 analysis with a single-stranded oligonucleotide
 overlapping the transcription initiation site (from 220 to 140) (2).
-RESULTS
+
+Plasmid constructs and recombinant proteins. Flag-tagged baculovirus ex-
+pression vectors were constructed by removing UBF deletion mutants from pTb
+STOP vector (generous gift of M.-H. Jantzen) with NdeI-EcoRI and inserting the
+fragments downstream of ﬂag epitope engineered into pVL 1392 HAX (HAX
+was removed) at NdeI-EcoRI (7). Restriction analysis and DNA sequencing
+conﬁrmed the identity of the clones. The synthesis of recombinant baculoviruses
+and infection of Sf9 insect cells were performed as previously described (38).
+Cells were harvested at 36 to 48 h and lysed with an ultrasonic disrupter in TM
+buffer as described in references 7 and 38.
+In vitro protein-protein interaction assays. Flag-tagged UBF full-length pro-
+tein (FL), deletion mutants, and hepatitis C virus Pol (HCV Pol) were afﬁnity
+puriﬁed on anti-Flag M2 resin (Kodak) by nutating at 4°C for 1 h and then
+washing three times in TM 1011 (50 mM Tris [pH 7.9], 12.5 mM MgCl2, 1 mM
+EDTA, 10% glycerol, 0.1% Nonidet P-40 [NP-40])–0.4 M KCl and two times in
+TM 1011–0.1 M KCl. Alternatively, proteins used in the protein-protein inter-
+action assays were immobilized on anti-Flag M2 resin (Kodak) and washed three
+times in dissociation buffer (50 mM Tris [pH 7.9], 1% sodium dodecyl sulfate
+[SDS], 250 mM LiCl, 0.5% NP-40) and two times in TM 1011–0.1 M KCl. An
+aliquot of each protein was resolved on SDS-polyacrylamide gel electrophoresis
+(PAGE) and silver stained, and equivalent amounts of each protein were used
+per reaction. Alkaline phosphatase (AP)-treated UBF was equilibrated in 13 AP
+reaction buffer and then incubated with 0.5 to 1 U of either shrimp or calf
+intestine AP for 15 min at 30°C. Immobilized proteins were then washed twice in
+radioimmunoprecipitation assay buffer (50 mM Tris [pH 7.9], 150 mM KCl, 0.5%
+deoxycholate [DOC], 0.1% SDS, 1% NP-40) and twice in TM 10 (no NP-40)–0.1
+
 The carboxy-terminal acidic tail of UBF is necessary for
 protein-protein interaction with SL1. To identify the regions
 of UBF that interact with SL1, we constructed vectors contain-
 ing a series of ﬂag-tagged UBF deletion mutants for expres-
 sion in the baculovirus expression system. Experimental results
-VOL. 19, 1999
-REGULATED BINDING OF SL1 TO UBF
-2873
 
-
-from our laboratory show unequivocally that the recombinant
-UBF is functionally indistinguishable from the UBF isolated
-and puriﬁed from human cells. To begin our studies, we gen-
-erated UBF mutants lacking the carboxy-terminal region (F-
-UBF 670C), lacking the amino-terminal region (F-UBF 381N
-and F-UBF 491N), having deletions of certain HMG boxes
-(F-UBF db12 and F-UBF db34), or having deletions of the
-region between HMG box 4 and the acidic tail (F-UBF dx) as
-schematically represented in Fig. 1A. Each protein was ex-
-pressed in Sf9 insect cells and puriﬁed by afﬁnity chromatog-
-raphy on anti-Flag M2 resin, under high-stringency conditions
-(see Materials and Methods for details). The purity and the
-amount of wild-type and mutant UBF proteins were assessed
-by resolving the proteins on SDS-PAGE and subsequently
-staining the gel with Coomassie blue (Fig. 1B). In addition to
-the series of UBF proteins, recombinant ﬂag-tagged HCV Pol
-(F-HCV Pol) was expressed and puriﬁed from Sf9 cells and
 used as a negative control in the protein-protein interaction
 assays.
 Each of the ﬂag-tagged UBF deletion mutants was then
@@ -348,6 +309,7 @@ untreated wild-type UBF (lane 1). Similarly, two UBF amino-
 terminal deletion mutants, UBF 381N and UBF 491N, which
 can normally associate with SL1 (Fig. 3C, lanes 3 and 6), did
 not bind to SL1 once treated with AP (lanes 2 and 5). The
+
 FIG. 1. UBF deletion mutants. (A) Schematic representation of UBF FL and
 deletion mutations. HMG boxes 1 to 4 and the carboxy-terminal acidic tail are
 indicated in the diagram. The carboxy-terminal deletion (UBF 670C), internal
@@ -360,43 +322,25 @@ db34 (lane 5), F-UBF 381N (lane 6), F-UBF dx (lane 7), and F-UBF 491N (lane
 8). The arrow indicates the position of F-UBF 491N. The asterisks indicate
 immunoglobulin G light chain. Markers at the left of each panel show molecular
 mass in kilodaltons.
-2874
-TUAN ET AL.
-MOL. CELL. BIOL.
 
+from our laboratory show unequivocally that the recombinant
+UBF is functionally indistinguishable from the UBF isolated
+and puriﬁed from human cells. To begin our studies, we gen-
+erated UBF mutants lacking the carboxy-terminal region (F-
+UBF 670C), lacking the amino-terminal region (F-UBF 381N
+and F-UBF 491N), having deletions of certain HMG boxes
+(F-UBF db12 and F-UBF db34), or having deletions of the
+region between HMG box 4 and the acidic tail (F-UBF dx) as
+schematically represented in Fig. 1A. Each protein was ex-
+pressed in Sf9 insect cells and puriﬁed by afﬁnity chromatog-
+raphy on anti-Flag M2 resin, under high-stringency conditions
+(see Materials and Methods for details). The purity and the
+amount of wild-type and mutant UBF proteins were assessed
+by resolving the proteins on SDS-PAGE and subsequently
+staining the gel with Coomassie blue (Fig. 1B). In addition to
+the series of UBF proteins, recombinant ﬂag-tagged HCV Pol
+(F-HCV Pol) was expressed and puriﬁed from Sf9 cells and
 
-ﬁnding that a posttranslational modiﬁcation of UBF is possibly
-involved in the regulation of SL1 binding was further con-
-ﬁrmed by the observation that Escherichia coli-expressed UBF
-mutant 381N, which contains the carboxy-terminal tail, failed
-to bind to SL1 (data not shown). E. coli-expressed full-length
-UBF could not be tested in this assay because it is predomi-
-nantly synthesized as a truncated mutant missing the carboxy-
-terminal tail (37a). Thus, our results indicate that dephosphor-
-ylation by AP treatment strongly affects the ability of UBF to
-interact with SL1 and suggest that this posttranslational mod-
-iﬁcation plays an important role in the regulation of protein-
-protein interactions between UBF and SL1. Moreover, in vitro-
-reconstituted transcription assays show that AP treatment of
-UBF sharply decreases its transcriptional activity (Fig. 3D).
-These results provide further evidence that there is a tight link
-between UBF-dependent activation and UBF-SL1 binding.
-Incubation of AP-treated UBF with HeLa nuclear extract
-rescues the binding to SL1. To determine if the SL1 binding
-activity of dephosphorylated UBF could be restored, AP-treat-
-ed ﬂag-tagged UBF bound to afﬁnity resin was incubated with
-nuclear extracts prepared from exponentially growing HeLa
-cells, in the presence of ATP. After incubation at 30°C, the re-
-action mixture was washed extensively and incubated with hu-
-man SL1, and the resulting complex was detected by immuno-
-blotting with anti-TAFI110, as previously described. As shown
-in Fig. 4A, while the AP-treated UBF fails to interact with SL1
-(lane 3), preincubation of AP-treated UBF with HeLa nuclear
-extracts (lane 4) reestablishes a stable complex formation be-
-tween UBF and SL1 to levels similar to that of the untreated
-UBF (lane 2). Reactivation of SL1 binding is dependent on
-ATP, since the incubation of dephosphorylated UBF with nu-
-clear extracts in the absence of ATP fails to yield a stable UBF-
 FIG. 2. SL1 interacts with the carboxy-terminal domain of UBF. (A) Recom-
 binant ﬂag-tagged proteins were immobilized on anti-Flag M2 resin as bait and
 incubated with human SL1. The resulting complex was eluted, resolved on
@@ -414,10 +358,51 @@ and SL1 (1 ml; 0.8 mg/ml) in reconstituted transcription reactions. UBF amounts
 were estimated by SDS-PAGE and silver staining. In vitro-synthesized transcripts
 were detected by S1 nuclease protection assay. The arrow indicates the protected
 oligonucleotide fragment.
-VOL. 19, 1999
-REGULATED BINDING OF SL1 TO UBF
-2875
 
+ﬁnding that a posttranslational modiﬁcation of UBF is possibly
+involved in the regulation of SL1 binding was further con-
+ﬁrmed by the observation that Escherichia coli-expressed UBF
+mutant 381N, which contains the carboxy-terminal tail, failed
+to bind to SL1 (data not shown). E. coli-expressed full-length
+UBF could not be tested in this assay because it is predomi-
+nantly synthesized as a truncated mutant missing the carboxy-
+terminal tail (37a). Thus, our results indicate that dephosphor-
+ylation by AP treatment strongly affects the ability of UBF to
+interact with SL1 and suggest that this posttranslational mod-
+iﬁcation plays an important role in the regulation of protein-
+protein interactions between UBF and SL1. Moreover, in vitro-
+reconstituted transcription assays show that AP treatment of
+UBF sharply decreases its transcriptional activity (Fig. 3D).
+These results provide further evidence that there is a tight link
+between UBF-dependent activation and UBF-SL1 binding.
+
+Incubation of AP-treated UBF with HeLa nuclear extract
+rescues the binding to SL1. To determine if the SL1 binding
+activity of dephosphorylated UBF could be restored, AP-treat-
+ed ﬂag-tagged UBF bound to afﬁnity resin was incubated with
+nuclear extracts prepared from exponentially growing HeLa
+cells, in the presence of ATP. After incubation at 30°C, the re-
+action mixture was washed extensively and incubated with hu-
+man SL1, and the resulting complex was detected by immuno-
+blotting with anti-TAFI110, as previously described. As shown
+in Fig. 4A, while the AP-treated UBF fails to interact with SL1
+(lane 3), preincubation of AP-treated UBF with HeLa nuclear
+extracts (lane 4) reestablishes a stable complex formation be-
+tween UBF and SL1 to levels similar to that of the untreated
+UBF (lane 2). Reactivation of SL1 binding is dependent on
+ATP, since the incubation of dephosphorylated UBF with nu-
+clear extracts in the absence of ATP fails to yield a stable UBF-
+
+FIG. 3. Role of UBF phosphorylation in SL1 binding. (A) F-UBF FL was immobilized on ﬂag antibody beads and either untreated (lane 1) or treated with 5 mM
+ATP (lane 2), AP buffer alone (lane 3), or with buffer plus AP (lane 4). The binding assay was then performed as previously described. Coimmunoprecipitated SL1
+was detected by Western blot analysis with anti-TAFI110 antibody. Lanes 5 and 6 are negative control and SL1 input, respectively. (B) Silver-stained SDS-PAGE of
+untreated UBF (lane 1) and AP-treated UBF (lane 2) after immunoprecipitation shows faster migration of dephosphorylated UBF. (C) F-UBF 381N and F-UBF 491N
+were immobilized on ﬂag antibody beads and treated either with AP buffer alone (lanes 3 and 6) or with buffer plus AP (lanes 2 and 5). SL1 binding assays were done
+as previously described. (D) In vitro transcription assays containing partially puriﬁed RNA Pol I (10 mg), SL1 (0.8 mg), and increasing amounts (0.25 and 1.25 ng) of
+puriﬁed recombinant UBF (lanes 2 and 3) or dephosphorylated UBF (lanes 5 and 6) were performed as described in Materials and Methods. The transcription assays
+with UBF and AP-treated UBF were quantiﬁed with a phosphorimager. The mean fold activation in the presence of UBF or AP-treated UBF, calculated from two
+independent experiments, is 8.5- and 2.0-fold, respectively. Asterisks in panels A and C indicate immunoglobulin G heavy chain. Markers in panels A to C show
+molecular mass in kilodaltons. The arrow in panel D indicates the protected oligonucleotide fragment.
 
 SL1 complex (compare lane 4 with lane 5). Finally, we show
 that UBF can be readily radiolabeled in the presence of a small
@@ -435,6 +420,7 @@ action is regulated by a phosphorylation-dephosphorylation
 mechanism.
 UBF phosphorylation regulates the recruitment of SL1 to
 the rDNA promoter. The experiments presented so far suggest
+
 that the weak transcriptional activity of dephosphorylated
 UBF is at least in part due to its inability to recruit SL1 to
 the promoter. To establish unambiguously the requirement of
@@ -451,36 +437,7 @@ sults in an enhanced cleavage at position 221 (3). Thus, phos-
 phorylated and AP-treated UBF bind with equal afﬁnities to
 the human rDNA promoter. On the other hand, comparison of
 the footprinting pattern obtained with phosphorylated (Fig.
-FIG. 3. Role of UBF phosphorylation in SL1 binding. (A) F-UBF FL was immobilized on ﬂag antibody beads and either untreated (lane 1) or treated with 5 mM
-ATP (lane 2), AP buffer alone (lane 3), or with buffer plus AP (lane 4). The binding assay was then performed as previously described. Coimmunoprecipitated SL1
-was detected by Western blot analysis with anti-TAFI110 antibody. Lanes 5 and 6 are negative control and SL1 input, respectively. (B) Silver-stained SDS-PAGE of
-untreated UBF (lane 1) and AP-treated UBF (lane 2) after immunoprecipitation shows faster migration of dephosphorylated UBF. (C) F-UBF 381N and F-UBF 491N
-were immobilized on ﬂag antibody beads and treated either with AP buffer alone (lanes 3 and 6) or with buffer plus AP (lanes 2 and 5). SL1 binding assays were done
-as previously described. (D) In vitro transcription assays containing partially puriﬁed RNA Pol I (10 mg), SL1 (0.8 mg), and increasing amounts (0.25 and 1.25 ng) of
-puriﬁed recombinant UBF (lanes 2 and 3) or dephosphorylated UBF (lanes 5 and 6) were performed as described in Materials and Methods. The transcription assays
-with UBF and AP-treated UBF were quantiﬁed with a phosphorimager. The mean fold activation in the presence of UBF or AP-treated UBF, calculated from two
-independent experiments, is 8.5- and 2.0-fold, respectively. Asterisks in panels A and C indicate immunoglobulin G heavy chain. Markers in panels A to C show
-molecular mass in kilodaltons. The arrow in panel D indicates the protected oligonucleotide fragment.
-2876
-TUAN ET AL.
-MOL. CELL. BIOL.
 
-
-5B, lanes 5 and 6) and AP-treated (lanes 13 and 14) UBF in the
-presence of SL1 shows a substantial difference of the protected
-region in both the CORE and the UCE elements. The en-
-hanced protection pattern of UBF over the UCE (site B)
-promoter element in the presence of SL1 is sharply reduced in
-the presence of the dephosphorylated form of UBF. An even
-more dramatic effect is seen in the CORE region, where the
-SL1 protection over the promoter (site B9) is completely abol-
-ished. In summary, our results indicate that UBF phosphory-
-lation-dephosphorylation does not affect the ability of UBF to
-recognize and bind to the rRNA promoter but rather regulates
-the formation of a strong and stable initiation complex with
-SL1, as indicated by the formation of new DNA-protein con-
-tacts at the promoter in the presence of phosphorylated UBF.
-DISCUSSION
 In this report, we have examined the cooperative interaction
 between SL1 and UBF and its relationship to RNA Pol I tran-
 scriptional activation. Transcription of rRNA by RNA Pol I
@@ -545,6 +502,7 @@ UBF to form a productive preinitiation complex. These results
 have two major implications. First, they demonstrate for the
 ﬁrst time that the activation domain of a transactivating pro-
 tein regulates its interaction with a basal component of the
+
 FIG. 4. Reconstitution of SL1 binding with dephosphorylated UBF. (A) The
 protein interaction assay was performed as described in Materials and Methods
 with untreated UBF (lane 2) and AP-treated UBF. Prior to the addition of SL1,
@@ -557,10 +515,29 @@ G heavy chain. Markers show molecular mass in kilodaltons. (B) Immobilized
 [g-32P]ATP in the presence (lane 2) or absence (lane 1) of 300 mg of nuclear
 extracts (NXT) from exponentially growing HeLa cells. Following separation on
 SDS-PAGE, phosphorylation was detected by autoradiography.
-VOL. 19, 1999
-REGULATED BINDING OF SL1 TO UBF
-2877
 
+5B, lanes 5 and 6) and AP-treated (lanes 13 and 14) UBF in the
+presence of SL1 shows a substantial difference of the protected
+region in both the CORE and the UCE elements. The en-
+hanced protection pattern of UBF over the UCE (site B)
+promoter element in the presence of SL1 is sharply reduced in
+the presence of the dephosphorylated form of UBF. An even
+more dramatic effect is seen in the CORE region, where the
+SL1 protection over the promoter (site B9) is completely abol-
+ished. In summary, our results indicate that UBF phosphory-
+lation-dephosphorylation does not affect the ability of UBF to
+recognize and bind to the rRNA promoter but rather regulates
+the formation of a strong and stable initiation complex with
+SL1, as indicated by the formation of new DNA-protein con-
+tacts at the promoter in the presence of phosphorylated UBF.
+
+FIG. 5. UBF phosphorylation mediates SL1 recruitment to the rDNA promoter. (A) DNase I digestion of UBF and hypophosphorylated UBF on the coding strand
+of the human rDNA promoter with UCE and CORE region as indicated on the left. Shown are protection patterns with no protein added (lanes 1, 2, 5, and 6) or with
+increasing amounts of either UBF (lanes 3 and 4) or dephosphorylated UBF (lanes 7 and 8). (B) Footprinting analysis was performed as described for panel A with
+both forms of UBF in the presence of 1 mg of SL1. Shown are results with naked DNA only (lanes 1, 2, 7, 8, 9, 10, 15, and 16), UBF (lanes 3 and 4), AP-treated UBF
+(lanes 11 and 12), increasing amounts of UBF with SL1 (lanes 5 and 6), and increasing amounts of AP-treated UBF with SL1 (lanes 13 and 14). The region of DNA
+protected by UBF is indicated by bracket A, while SL1 extended footprinting is indicated by bracket B (UCE) and bracket B9 (CORE). Hypersensitive sites at positions
+296 and 221 are indicated by asterisks.
 
 transcription complex through phosphorylation and dephos-
 phorylation. Second, they suggest a mechanism of rRNA syn-
@@ -584,6 +561,7 @@ bound to the DNA even in the absence of RNA Pol I tran-
 scription (8). The authors proposed that modiﬁcation of the
 transcriptional machinery might be involved in the inactivation
 of transcription. In view of our results, we could speculate that
+
 the absence of Pol I transcription could be the consequence of
 UBF dephosphorylation. However, we cannot exclude that
 modiﬁcations in one or more of the SL1 subunits may also be
@@ -606,79 +584,13 @@ scriptional activity. The protein kinases involved in this process
 are currently unknown, and previous work has suggested that a
 hierarchic series of phosphorylation events, mediated most
 likely by several cellular kinases, modulates UBF activity (36).
-FIG. 5. UBF phosphorylation mediates SL1 recruitment to the rDNA promoter. (A) DNase I digestion of UBF and hypophosphorylated UBF on the coding strand
-of the human rDNA promoter with UCE and CORE region as indicated on the left. Shown are protection patterns with no protein added (lanes 1, 2, 5, and 6) or with
-increasing amounts of either UBF (lanes 3 and 4) or dephosphorylated UBF (lanes 7 and 8). (B) Footprinting analysis was performed as described for panel A with
-both forms of UBF in the presence of 1 mg of SL1. Shown are results with naked DNA only (lanes 1, 2, 7, 8, 9, 10, 15, and 16), UBF (lanes 3 and 4), AP-treated UBF
-(lanes 11 and 12), increasing amounts of UBF with SL1 (lanes 5 and 6), and increasing amounts of AP-treated UBF with SL1 (lanes 13 and 14). The region of DNA
-protected by UBF is indicated by bracket A, while SL1 extended footprinting is indicated by bracket B (UCE) and bracket B9 (CORE). Hypersensitive sites at positions
-296 and 221 are indicated by asterisks.
-2878
-TUAN ET AL.
-MOL. CELL. BIOL.
-
 
 Ultimately, because of the known correlation between UBF
 phosphorylation and cell growth, the identiﬁcation and bio-
 chemical characterization of this kinase(s) may provide an
 important tool for understanding the biological role of cellular
 kinases during growth and cell proliferation.
-ACKNOWLEDGMENTS
-We are grateful to the members of the Gene Expression Group at
-USC for helpful advice and discussions. We thank H.-M. Jantzen for
-sharing constructs and Tiffany Bui for technical support.
-W.Z. is partially supported by the Heidelberger Predoctoral Schol-
-arship Award in Cancer Research. This work was funded by grant
-RPG-97-058-01-NP from the American Cancer Society.
-REFERENCES
-1. Beckmann, H., J. L. Chen, T. O’Brien, and R. Tijan. 1995. Coactivator and
-promoter-selective properties of RNA polymerase I TAFs. Science 270:
-1506–1509.
-2. Bell, S. P., R. M. Learned, H.-M. Jantzen, and R. Tijan. 1988. Functional
-cooperativity between transcription factors UBF1 and SL1 mediates human
-ribosomal RNA synthesis. Science 241:1192–1197.
-3. Bell, S. P., C. S. Pikaard, R. H. Reeder, and R. Tijan. 1989. Molecular
-mechanisms governing species-speciﬁc transcription of ribosomal RNA. Cell
-59:489–497.
-4. Cavanaugh, A. H., W. M. Hempel, L. J. Taylor, V. Rogalsky, G. Todorov, and
-L. I. Rothblum. 1995. Activity of RNA polymerase I transcription factor
-UBF blocked by Rb gene product. Nature 374:177–180.
-5. Cavanaugh, A. H., and E. A. Thompson. 1986. Hormonal regulation of
-transcription of rDNA. J. Biol. Chem. 261:12738–12744.
-6. Comai, L., N. Tanese, and R. Tijan. 1992. The TATA-binding protein and
-associated factors are integral components of the RNA polymerase I tran-
-scription factor, SL1. Cell 68:965–976.
-7. Comai, L., J. C. B. M. Zomerdijk, H. Beckmann, S. Zhou, A. Admon, and R.
-Tijan. 1994. Reconstitution of transcription factor SL1: exclusive binding of
-TBP by SL1 or TFIID subunits. Science 266:1966–1972.
-8. Gebrane-Younes, J., N. Fomproix, and D. Hernandez-Verdun. 1997. When
-rDNA transcription is arrested during mitosis, UBF is still associated with
-non-condensed rDNA. J. Cell Sci. 110:2429–2440.
-9. Grummt, I., A. V. Smith, and F. Grummt. 1976. Amino acid starvation affects
-the initiation frequency of nucleolar RNA polymerase. Cell 7:439–445.
-10. Gu, W., X.-L. Shi, and R. Roeder. 1997. Synergistic activation of transcription
-by CBP and p53. Nature 387:819–822.
-11. Haltiner, M. M., S. T. Smale, and R. Tijan. 1986. Two distinct promoter
-elements in the human rRNA gene identiﬁed by linker scanning mutagen-
-esis. Mol. Cell. Biol. 6:227–235.
-12. Hammond, L. M., and H. L. Bowman. 1988. Insulin stimulates the translation
-of ribosomal proteins and the transcription of rRNA in mouse myoblast.
-J. Biol. Chem. 263:17785–17791.
-13. Hempel, W. H., A. H. Cavanaugh, R. D. Hannan, L. Taylor, and L. I.
-Rothblum. 1996. The species-speciﬁc RNA polymerase I transcription factor
-SL-1 binds to upstream binding factor. Mol. Cell. Biol. 16:557–563.
-14. Hershey, J. C., M. Hautmann, M. M. Thompson, L. I. Rothblum, T. A. J.
-Haystead, and G. K. Owens. 1995. Angiotensin II-induced hypertrophy of rat
-vascular smooth muscle is associated with increased 18S rRNA synthesis and
-phosphorylation of the rRNA transcription factor, upstream binding factor.
-J. Biol. Chem. 270:25096–25101.
-15. Hunter, T., and M. Karin. 1992. The regulation of transcription through
-phosphorylation. Cell 70:375–387.
-16. Jacob, S. T. 1995. Regulation of ribosomal gene transcription. Biochem.
-J. 306:617–626.
-17. Jantzen, H.-M., A. Admon, S. P. Bell, and R. Tijan. 1990. Nucleolar tran-
-scription factor hUBF contains a DNA-binding motif with homology to
-HMG proteins. Nature 344:830–836.
+
 18. Jantzen, H.-M., A. M. Chow, D. S. King, and R. Tijan. 1992. Multiple
 domains of the RNA polymerase I activator hUBF interact with the TATA-
 binding protein complex hSL1 to mediate transcription. Genes Dev. 6:1950–
@@ -745,6 +657,59 @@ is essential for transactivation. EMBO J. 11:2211–2218.
 38. Zhai, W., J. Tuan, and L. Comai. 1997. SV40 large T antigen binds to the
 TBP-TAFI complex SL1 and coactivates ribosomal RNA transcription.
 Genes Dev. 11:1605–1617.
-VOL. 19, 1999
-REGULATED BINDING OF SL1 TO UBF
-2879
+
+We are grateful to the members of the Gene Expression Group at
+USC for helpful advice and discussions. We thank H.-M. Jantzen for
+sharing constructs and Tiffany Bui for technical support.
+W.Z. is partially supported by the Heidelberger Predoctoral Schol-
+arship Award in Cancer Research. This work was funded by grant
+RPG-97-058-01-NP from the American Cancer Society.
+
+1. Beckmann, H., J. L. Chen, T. O’Brien, and R. Tijan. 1995. Coactivator and
+promoter-selective properties of RNA polymerase I TAFs. Science 270:
+1506–1509.
+2. Bell, S. P., R. M. Learned, H.-M. Jantzen, and R. Tijan. 1988. Functional
+cooperativity between transcription factors UBF1 and SL1 mediates human
+ribosomal RNA synthesis. Science 241:1192–1197.
+3. Bell, S. P., C. S. Pikaard, R. H. Reeder, and R. Tijan. 1989. Molecular
+mechanisms governing species-speciﬁc transcription of ribosomal RNA. Cell
+59:489–497.
+4. Cavanaugh, A. H., W. M. Hempel, L. J. Taylor, V. Rogalsky, G. Todorov, and
+L. I. Rothblum. 1995. Activity of RNA polymerase I transcription factor
+UBF blocked by Rb gene product. Nature 374:177–180.
+5. Cavanaugh, A. H., and E. A. Thompson. 1986. Hormonal regulation of
+transcription of rDNA. J. Biol. Chem. 261:12738–12744.
+6. Comai, L., N. Tanese, and R. Tijan. 1992. The TATA-binding protein and
+associated factors are integral components of the RNA polymerase I tran-
+scription factor, SL1. Cell 68:965–976.
+7. Comai, L., J. C. B. M. Zomerdijk, H. Beckmann, S. Zhou, A. Admon, and R.
+Tijan. 1994. Reconstitution of transcription factor SL1: exclusive binding of
+TBP by SL1 or TFIID subunits. Science 266:1966–1972.
+8. Gebrane-Younes, J., N. Fomproix, and D. Hernandez-Verdun. 1997. When
+rDNA transcription is arrested during mitosis, UBF is still associated with
+non-condensed rDNA. J. Cell Sci. 110:2429–2440.
+9. Grummt, I., A. V. Smith, and F. Grummt. 1976. Amino acid starvation affects
+the initiation frequency of nucleolar RNA polymerase. Cell 7:439–445.
+10. Gu, W., X.-L. Shi, and R. Roeder. 1997. Synergistic activation of transcription
+by CBP and p53. Nature 387:819–822.
+11. Haltiner, M. M., S. T. Smale, and R. Tijan. 1986. Two distinct promoter
+elements in the human rRNA gene identiﬁed by linker scanning mutagen-
+esis. Mol. Cell. Biol. 6:227–235.
+12. Hammond, L. M., and H. L. Bowman. 1988. Insulin stimulates the translation
+of ribosomal proteins and the transcription of rRNA in mouse myoblast.
+J. Biol. Chem. 263:17785–17791.
+13. Hempel, W. H., A. H. Cavanaugh, R. D. Hannan, L. Taylor, and L. I.
+Rothblum. 1996. The species-speciﬁc RNA polymerase I transcription factor
+SL-1 binds to upstream binding factor. Mol. Cell. Biol. 16:557–563.
+14. Hershey, J. C., M. Hautmann, M. M. Thompson, L. I. Rothblum, T. A. J.
+Haystead, and G. K. Owens. 1995. Angiotensin II-induced hypertrophy of rat
+vascular smooth muscle is associated with increased 18S rRNA synthesis and
+phosphorylation of the rRNA transcription factor, upstream binding factor.
+J. Biol. Chem. 270:25096–25101.
+15. Hunter, T., and M. Karin. 1992. The regulation of transcription through
+phosphorylation. Cell 70:375–387.
+16. Jacob, S. T. 1995. Regulation of ribosomal gene transcription. Biochem.
+J. 306:617–626.
+17. Jantzen, H.-M., A. Admon, S. P. Bell, and R. Tijan. 1990. Nucleolar tran-
+scription factor hUBF contains a DNA-binding motif with homology to
+HMG proteins. Nature 344:830–836.

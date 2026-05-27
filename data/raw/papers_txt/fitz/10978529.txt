@@ -1,10 +1,7 @@
 Short sequence-paper
 Characterization of the 5P-£anking region of the gene encoding the
 50 kDa subunit of human DNA polymerase N
-Aymee Perez 1, Argentina Leon, Marietta Y.W.T. Lee *
-Department of Biochemistry and Molecular Biology, New York Medical College, Valhalla, NY 10595, USA
-Received 10 March 2000; received in revised form 29 May 2000; accepted 31 May 2000
-Abstract
+
 DNA polymerase N consists of at least four subunits: p125, p68, p50, and p12 [Liu et al., J. Biol. Chem. 275 (2000) 18739^18744]. We
 have isolated genomic DNA clones covering the gene for the human DNA polymerase N 50 kDa subunit (POLD2) and its 5P-flanking
 sequence. The POLD2 gene is composed of 11 exons and is distributed over 10 kb of genomic DNA. All exon^intron splice junctions
@@ -14,7 +11,7 @@ for AP1, AP2, Sp1, NF-1 and CREB. The functional activity of the regulatory regi
 ability to drive the expression of a chloramphenicol acetyltransferase reporter gene in COS-7 cells.
 ß 2000 Elsevier Science B.V. All rights
 reserved.
-Keywords: DNA polymerase N; POLD2 promoter
+
 DNA polymerases (Pols) are enzymes of central impor-
 tance in DNA replication and repair [2^4]. In eukaryotic
 cells, at least eight Pols, K, L, Q, N, O, j, R and a, have been
@@ -36,6 +33,7 @@ yeast S. cerevisiae and Schizosaccharomyces pombe [6^8].
 The best characterized Pol N from mammalian cells is the
 enzyme puri¢ed from fetal calf thymus tissue. This is a
 heterodimer with a catalytic subunit of 125 kDa encoded
+
 by the POLD1 gene, and a second subunit of 50 kDa,
 encoded by the POLD2 gene [10]. The p50 subunit is re-
 quired for e¤cient stimulation of the polymerase process-
@@ -62,15 +60,22 @@ cDNA probe of the full length human p50 cDNA
 discrete clones with overlapping genomic DNA inserts
 were isolated. One of these, VF4 (Fig. 1A), contained the
 5P-end and all the exon^intron sequences of the POLD2
-0167-4781 / 00 / $ ^ see front matter ß 2000 Elsevier Science B.V. All rights reserved.
-PII: S 0 1 6 7 - 4 7 8 1 ( 0 0 ) 0 0 1 5 3 - 6
+
 * Corresponding author. Fax: +1-914-594-4058;
 E-mail: marietta_lee@nymc.edu
 1 Present address: Department of Cell Biology and Anatomy, Univer-
 sity of Miami School of Medicine, Miami, FL 33101, USA.
-Biochimica et Biophysica Acta 1493 (2000) 231^236
-www.elsevier.com/locate/bba
 
+0167-4781 / 00 / $ ^ see front matter ß 2000 Elsevier Science B.V. All rights reserved.
+PII: S 0 1 6 7 - 4 7 8 1 ( 0 0 ) 0 0 1 5 3 - 6
+
+Fig. 1. (A) Structure of the POLD2 gene. The clone VF4 is represented as horizontal line at the bottom. The 11 exons (1^11), 10 introns and 5P-£ank-
+ing region of the POLD2 gene are shown to scale at the top. The closed boxes represent the coding exons and the open boxes 5P- and 3P-UTRs. The in-
+itiation (ATG) and stop (TGA) codons are indicated. The positions of some restriction sites are shown: Bg, BglII; E, EcoRI; B, BamHI; N, NotI. (B)
+Sequence of the 5P-upstream region of the POLD2 gene. The ATG translation start codon is boxed. The transcription start site is shown and denoted
+`+1'. The putative binding sites for regulatory elements are boxed with the site or factor symbols above the sequence. The sequences of the 5P-upstream
+region and the ¢rst exon are shown in capital letters, and the sequence of the ¢rst intron is shown in lower case letters. The cDNA sequence corre-
+sponding to the ¢rst exon and part of the second exon is underlined. The GenBank accession number is AF185279.
 
 gene. The rest of the clones overlapped each other and
 contain sequences from exon 2 to the 3P-end of the
@@ -84,6 +89,7 @@ fragment was completely sequenced in both orientations.
 The transcription initiation site of the human POLD2
 gene was determined by both primer extension and
 5P-RACE studies using total RNA from HeLa cells. Prim-
+
 er extension analysis was performed with the antisense
 primer GSP3 (Table 1). Several elongation products were
 detected (Fig. 2A), possibly due to premature termination
@@ -96,19 +102,7 @@ site.
 The results from the primer extension experiments were
 con¢rmed by 5P-RACE studies using the gene-speci¢c
 primers GSP1, GSP2, GSP3 and the anchor primers AP,
-Fig. 1. (A) Structure of the POLD2 gene. The clone VF4 is represented as horizontal line at the bottom. The 11 exons (1^11), 10 introns and 5P-£ank-
-ing region of the POLD2 gene are shown to scale at the top. The closed boxes represent the coding exons and the open boxes 5P- and 3P-UTRs. The in-
-itiation (ATG) and stop (TGA) codons are indicated. The positions of some restriction sites are shown: Bg, BglII; E, EcoRI; B, BamHI; N, NotI. (B)
-Sequence of the 5P-upstream region of the POLD2 gene. The ATG translation start codon is boxed. The transcription start site is shown and denoted
-`+1'. The putative binding sites for regulatory elements are boxed with the site or factor symbols above the sequence. The sequences of the 5P-upstream
-region and the ¢rst exon are shown in capital letters, and the sequence of the ¢rst intron is shown in lower case letters. The cDNA sequence corre-
-sponding to the ¢rst exon and part of the second exon is underlined. The GenBank accession number is AF185279.
-Table 1
-Oligonucleotide primers
-Primer
-Sequence
-Strand
-Assay
+
 GSP1
 5P-ACACAGCACTTCTCCTCAGGC-3P
 Antisense
@@ -165,24 +159,10 @@ AUAP
 5P-ACTAGCGGCCGCGTCGACTAGT-3P
 Sense
 RC
+
 Ex-Int, primers for exon^intron splicing junction; PE, primer extension; Seq, sequencing of POLD2 subclones; RC, rapid ampli¢cation of cDNA
 5P-ends (5P-RACE).
-A. Perez et al. / Biochimica et Biophysica Acta 1493 (2000) 231^236
-232
 
-
-and AUAP (Table 1, Fig. 2B). A single transcript of
-167 bp was obtained. This result indicates that transcrip-
-tion is initiated from 93 bp upstream of the translation
-start site, in complete agreement with the results of the
-primer extension analysis. This position of the transcrip-
-tion start site gives it a location 37 bp upstream of the ¢rst
-exon^intron boundary, so that the ¢rst intron is located 56
-bp upstream of the translation start site.
-The structural map of the POLD2 gene for the small
-subunit of Pol N was determined by a combination of
-restriction enzyme digestion, Southern blot hybridization,
-PCR analysis and DNA sequencing. The POLD2 gene is
 Fig. 2. Mapping of exon 1 and determination of transcription initiation site. (A) Mapping of the transcription start site by primer extension analysis.
 Primer extension was performed by standard methods [33]. Primer GSP3 (Table 1) complementary to the POLD2 mRNA was end-labeled with
 [Q-32P]ATP and then annealed to 10 Wg of total HeLa cell RNA at 55³C for 90 min. Yeast tRNA was used as control for extension speci¢city. Reverse
@@ -196,89 +176,24 @@ formed under the following conditions: 94³C for 1 min, 55³C for 30 s, and 72³
 1:100 and was then subjected to a second PCR ampli¢cation with the primers AUAP and GSP3 under the same PCR conditions. The ¢nal PCR prod-
 uct was directly cloned into the PCR-II vector using a TA cloning kit (Invitrogen) for sequence analysis. M, molecular size markers in bp; lane 1 and
 lane 2, 5P-RACE product from HeLa RNA.
+
+and AUAP (Table 1, Fig. 2B). A single transcript of
+167 bp was obtained. This result indicates that transcrip-
+tion is initiated from 93 bp upstream of the translation
+start site, in complete agreement with the results of the
+primer extension analysis. This position of the transcrip-
+tion start site gives it a location 37 bp upstream of the ¢rst
+
+exon^intron boundary, so that the ¢rst intron is located 56
+bp upstream of the translation start site.
+The structural map of the POLD2 gene for the small
+subunit of Pol N was determined by a combination of
+restriction enzyme digestion, Southern blot hybridization,
+PCR analysis and DNA sequencing. The POLD2 gene is
+
 Table 2
 Analysis of exon^intron splice junctions of the POLD2 gene .
-No.
-Intron
-Exon
-Intron
-Position
-Exon size (bp)
-Intron size
-1
-GGCGCGCGGGTGCGCCGCGGG
-gtgagtgggg
-394^357
-37
-1.4 kb
-2
-gttttcgcag
-TGAACCTCCTTCAGCACTGGG
-gtaagtgaga
-356^210
-276
-3.8 kb
-3
-cgtgtcccag
-GCAGTGGAGTTCAGCGAGGAG
-gtgaggcagg
-211^332
-122
-200 kb
-4
-tgcattccag
-CACAACCTGCTCTGGTTACGG
-gtagggagcc
-333^456
-124
-370 bp
-5
-tgctccccag
-GGACTGTCCTTACACAGATAG
-gtgagcagca
-457^571
-115
-117 bp
-6
-tctcccgcag
-GTTTGTGCTATTATCAATAAG
-gtatggagcc
-572^770
-199
-306 bp
-7
-tctattccag
-GCCAAATACCTGCAGCTGAGC
-gtgagcgagc
-771^851
-81
-157 bp
-8
-tgccttccag
-GCCTCAGTGCTATGGAGTCAG
-gtagctggca
-852^1009
-158
-221 bp
-9
-tgccttgcag
-ATTTTTGGGGTGACACTCTAG
-gtaacaggct
-1010^1137
-128
-369 bp
-10
-tctcctccag
-GTTGTTACCCTATCATCCGAG
-gtaatttttg
-1138^1239
-102
-349 bp
-11
-ttctttgcag
-GTCCTGAGGATTGCTGATGCG
-1240^1497
-258
+
 Exon and intron sequences were determined by sequence analysis. Intron 1 interrupts the 5P-UTR of the gene 56 bp upstream of the ATG start codon.
 Intron sizes were determined by a combination of sequencing (intron 1), PCR ampli¢cation of genomic clones using cDNA primers, and restriction di-
 gest analysis of genomic clones. The complete coding sequence of human POLD2 cDNA has been published previously [21]. The exon^intron bound-
@@ -286,9 +201,6 @@ aries for exon 1 were sequenced from the VF4 clone. The remaining exons were seq
 (Table 1), of the VF4 clone and the mRNA for POLD2. The sizes of the introns were determined by sequencing, PCR ampli¢cation and/or restriction
 mapping. The GenBank accession number for the complete POLD2 gene sequence is AF239710. Nucleotide position +1 is assigned to the A residue of
 the ATG translation start site.
-A. Perez et al. / Biochimica et Biophysica Acta 1493 (2000) 231^236
-233
-
 
 approximately 10 kb in length and consists of 11 exons
 interrupted by 10 introns. The exon sequences closely
@@ -329,6 +241,7 @@ for the transcription factors Sp1 (GC box), activator pro-
 tein 1 and 2 (AP1 and AP2), nuclear factor-1 (NF-1),
 cAMP response element binding protein (CREB) and
 NF-Y (CCAAT box) (Fig. 1B, Table 3). Their possible
+
 functions remain to be tested. However, the presence of
 consensus binding sites for transcription factors Sp1, NF-
 Y and AP-1 in the putative promoter of POLD2 is con-
@@ -368,12 +281,10 @@ loss of promoter activity in COS-7 cells as shown by com-
 parison of the construct pCAT2.2 with the pCAT800 con-
 struct (Fig. 3B). These results demonstrate that this region
 of the POLD2 gene could act as a functional regulatory
+
 Table 3
 Putative regulatory elements found in the 5P £anking region of POLD2
-Element
-Position
-Sequence
-Reference
+
 NF-1
 3337 to 3320
 gtcTGGCggggtgacgac
@@ -410,17 +321,11 @@ CAAT
 380 to 363
 acCAATcgctgccctcct
 [40]
+
 A region of 340 bp upstream from the transcription initiation site (GenBank accession number is AF185279) was analyzed for potential transcription
 factor binding sites using the TRANSFAC [29] program. Only core sequences showing perfect matches to consensus transcription factor binding sites
 are listed (upper-case letters). (3) denotes the presence of the element on the cDNA strand.
-A. Perez et al. / Biochimica et Biophysica Acta 1493 (2000) 231^236
-234
 
-
-region that contains the necessary cis-acting elements for
-driving the expression of this gene in COS-7 cells. At the
-same time, these results clearly indicate the existence of
-regulatory element(s) within the distal region of the
 POLD2 promoter that enhance the expression of this
 gene.
 Studies of the expression of genes involved in nucleotide
@@ -451,7 +356,37 @@ GM31973 and a grant from the National Institute of En-
 vironmental Health Sciences, ES07634. A preliminary ac-
 count of this work was presented at the Eukaryotic DNA
 Replication Meeting in Cold Spring Harbor, NY, 1997.
-References
+
+Fig. 3. Functional activity of the POLD2 regulatory regions. pSV40
+plasmid contains the SV40 early promoter and was used as a positive
+control. pCAT3Basic (Promega) contains no promoter and was used as
+the background control and to generate CAT reporter gene constructs.
+p3Kb was generated by cloning a 3.2 kb BglII fragment from phage
+clone VF4 into pBluescript II KS (Stratagene) digested with BamHI and
+dephosphorylated with CIP. pCAT2.2 was generated by cloning a 3.2
+kb KpnI^SacI fragment from p3Kb into the KpnI^SacI cloning site of
+pCAT3Basic, such that POLD2 promoter directs transcription from the
+CAT gene. pCAT2.2 contained 2.2 kb of the promoter region, exon 1
+and 800 bp of intron 1. A 5P deletion mutant of the POLD2 regulatory
+region (pCAT800) was made by excision of the 800 bp BssHII fragment
+(nucleotides 3809 to +2) from plasmid pCAT2.2 and insertion into the
+pCATBasic plasmid. COS-7 cells maintained in Dulbecco's modi¢ed Ea-
+gle's medium (Life Technologies, Inc.) plus 10% fetal bovine serum were
+plated at 40^50% con£uence for transfection using the calcium phos-
+phate procedure [34]. The amounts of reporter constructs used in trans-
+fection experiments are as indicated. All the assays were performed in
+the presence of 2 Wg of a L-galactosidase expression plasmid (pSV L-gal,
+Promega). This was used as an internal control to normalize for varia-
+tions in transfection e¤ciency. The total amount of DNA in each trans-
+fection was standardized to 20 Wg using carrier DNA (pBluescript).
+After 20 h incubation with calcium phosphate-precipitated DNA, the
+cells were washed with medium before incubation for an additional 20^
+24 h. Cellular extracts were prepared and normalized for L-galactosidase
+activity as previously described [35]. Generally, CAT assays contained
+extracts corresponding to 10 U of L-galactosidase. The CAT activity
+was quanti¢ed by scintillation counting. All results were statistically sig-
+ni¢cant at P 6 0.01 using Student's unpaired t-test.
+
 [1] L. Liu, J. Mo, E. Rodriguez-Belmonte, M.Y.W.T. Lee, J. Biol.
 Chem. 275 (2000) 18739^18744.
 [2] X.R. Zeng, Y. Jiang, S.J. Zhang, H. Hao, M.Y.W.T. Lee, J. Biol.
@@ -486,38 +421,11 @@ EMBO J. 15 (1996) 4613^4628.
 Neill, J. Hurwitz, Proc. Natl. Acad. Sci. USA 94 (1997) 11244^11249.
 [20] P. Zhang, J. Mo, A. Perez, A. Leon, L. Liu, N. Mazloum, H. Xu,
 M.Y.W.T. Lee, J. Biol. Chem. 274 (1999) 26647^26653.
-Fig. 3. Functional activity of the POLD2 regulatory regions. pSV40
-plasmid contains the SV40 early promoter and was used as a positive
-control. pCAT3Basic (Promega) contains no promoter and was used as
-the background control and to generate CAT reporter gene constructs.
-p3Kb was generated by cloning a 3.2 kb BglII fragment from phage
-clone VF4 into pBluescript II KS (Stratagene) digested with BamHI and
-dephosphorylated with CIP. pCAT2.2 was generated by cloning a 3.2
-kb KpnI^SacI fragment from p3Kb into the KpnI^SacI cloning site of
-pCAT3Basic, such that POLD2 promoter directs transcription from the
-CAT gene. pCAT2.2 contained 2.2 kb of the promoter region, exon 1
-and 800 bp of intron 1. A 5P deletion mutant of the POLD2 regulatory
-region (pCAT800) was made by excision of the 800 bp BssHII fragment
-(nucleotides 3809 to +2) from plasmid pCAT2.2 and insertion into the
-pCATBasic plasmid. COS-7 cells maintained in Dulbecco's modi¢ed Ea-
-gle's medium (Life Technologies, Inc.) plus 10% fetal bovine serum were
-plated at 40^50% con£uence for transfection using the calcium phos-
-phate procedure [34]. The amounts of reporter constructs used in trans-
-fection experiments are as indicated. All the assays were performed in
-the presence of 2 Wg of a L-galactosidase expression plasmid (pSV L-gal,
-Promega). This was used as an internal control to normalize for varia-
-tions in transfection e¤ciency. The total amount of DNA in each trans-
-fection was standardized to 20 Wg using carrier DNA (pBluescript).
-After 20 h incubation with calcium phosphate-precipitated DNA, the
-cells were washed with medium before incubation for an additional 20^
-24 h. Cellular extracts were prepared and normalized for L-galactosidase
-activity as previously described [35]. Generally, CAT assays contained
-extracts corresponding to 10 U of L-galactosidase. The CAT activity
-was quanti¢ed by scintillation counting. All results were statistically sig-
-ni¢cant at P 6 0.01 using Student's unpaired t-test.
-A. Perez et al. / Biochimica et Biophysica Acta 1493 (2000) 231^236
-235
 
+region that contains the necessary cis-acting elements for
+driving the expression of this gene in COS-7 cells. At the
+same time, these results clearly indicate the existence of
+regulatory element(s) within the distal region of the
 
 [21] J. Zhang, C.K. Tan, B. McMullin, K.M. Downey, A.G. So, Ge-
 nomics 29 (1995) 179^186.
@@ -537,6 +445,7 @@ O.V. Kel, E.V. Ignatieva, E.A. Aranko, O.A. Podkolodnaya, F.A.
 Kolpakov, N.L. Podkolodny, N.A. Kolchanov, Nucleic Acids Res.
 26 (1998) 362^367.
 [30] J.E. Slansky, P.J. Farnham, BioEssays 18 (1996) 55^62.
+
 [31] L. Zhao, L.S. Chang, J. Biol. Chem. 272 (1997) 4869^4882.
 [32] S. Delgado, M. Gomez, A. Bird, F. Anteqera, EMBO J. 17 (1998)
 2426^2435.
@@ -554,5 +463,3 @@ J. Hurwitz, Mol. Cell. Biol. 5 (1985) 964^971.
 [39] Y.X. Zeng, K. Somasundaram, W.S. el-Deiry, Nature Genet. 15
 (1997) 78^82.
 [40] N.C. Jones, P.W.J. Rigby, E.B. Zi¡, Genes Dev. 2 (1988) 267^281.
-A. Perez et al. / Biochimica et Biophysica Acta 1493 (2000) 231^236
-236

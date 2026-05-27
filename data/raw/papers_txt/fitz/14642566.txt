@@ -1,11 +1,9 @@
-DNA Repair 2 (2003) 1371–1385
 The transcription factor, NFI/CTF plays a positive regulatory
 role in expression of the hSMUG1 gene
-Imane Elateri, Susan Muller-Weeks, Sal Caradonna∗
+
 School of Osteopathic Medicine and Graduate School of Biomedical Sciences, University of Medicine and Dentistry of New Jersey,
 Two Medical Center Drive, Stratford, NJ 08084, USA
-Received 8 July 2003; accepted 18 August 2003
-Abstract
+
 SMUG1 is a recently discovered uracil-DNA glycosylase with the ability to remove uracil from single-stranded as well
 as double-stranded DNA. SMUG1 also has the capacity to excise oxidized pyrimidine bases such as 5-hydroxymethyluracil
 and 5-formyluracil from DNA. Very little is known about the regulation of this enzyme. Therefore, we undertook this study
@@ -26,7 +24,7 @@ NFI/CTF binding. Overexpression of NFI-C in NIH-3T3 cells results in an increase
 these data indicate that the NFI/CTF consensus site may function as a cis-element in the SMUG1 promoter and that this
 transcription factor contributes to the positive regulation of SMUG1 gene expression.
 © 2003 Elsevier B.V. All rights reserved.
-Keywords: SMUG1; 5-Hydroxymethyluracil; 5-Formyluracil
+
 Abbreviations:
 UDG/UNG,
 uracil-DNA
@@ -42,18 +40,16 @@ stranded monofunctional uracil-DNA glycosylase
 ∗Corresponding author. Tel.: +1-856-566-6056;
 fax: +1-856-566-6232.
 E-mail address: caradonn@umdnj.edu (S. Caradonna).
-1. Introduction
+
 Uracil can arise in DNA through misincorporation
 of dUMP during DNA replication resulting in U:A
 base pairs [1]. While this is often considered harmless,
 mutant proteins may result due to a transcriptional
 bypass of uracil residues by RNA polymerase [2].
+
 1568-7864/$ – see front matter © 2003 Elsevier B.V. All rights reserved.
 doi:10.1016/j.dnarep.2003.08.009
 
-
-1372
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 Uracil can also arise in DNA via deamination of cyto-
 sine yielding pre-mutagenic G:U mispairs [3]. In the
 absence of repair, the G:U mispairs give rise to G:C
@@ -102,6 +98,7 @@ sent in quiescent cells [10–12]. This control has been
 shown to be at the transcriptional level [13]. Sev-
 eral putative transcription factor-binding elements are
 present in the nuclear promoter of human UDG, which
+
 may contribute to this regulation. In contrast, SMUG1
 activity is not correlated with cellular proliferation
 and, based on initial studies, appears to be constitu-
@@ -118,8 +115,7 @@ a region of the promoter that was particularly active.
 Within this region we identiﬁed a putative NFI/CTF
 site and show that this factor positively regulates
 SMUG1 expression both in vivo and in vitro.
-2. Materials and methods
-2.1. Northern blotting
+
 Northern blot analysis was performed as described
 previously [14]. Brieﬂy, mRNA was isolated from
 18Co (ATCC CRL1459), HeLa S3 (ATCC CCL2.2)
@@ -138,16 +134,13 @@ high stringency for 15 min with 0.2× SSC/0.1% SDS
 at 42 ◦C and twice for 15 min with 0.1× SSC/0.1% at
 68 ◦C. The blots were then exposed to X-ray ﬁlm for
 the indicated times.
-2.2. Isolation and in vitro expression of transcript 2
+
 5′ and 3′ PCR primers corresponding to the start
 of the ﬁrst non-translated exon and the end of the 3′-
 UTR, respectively were designed as follows: 5′hSM-
 UG1.1—5′-AA CGGGATGGGGAGCTGGAC-3′ and
 3′hSMUG1.7423—5′ -GTCAGAAGACCTGGCCTT
 
-
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1373
 TTCATCCCAGC-3′. These primers were used to am-
 plify the hSMUG1 transcripts from HeLa cell cDNA.
 Reactions were carried out for 35 cycles using an an-
@@ -164,7 +157,35 @@ by restriction enzyme digestion. Coupled in vitro tran-
 scription and translation was performed using the TNT
 rabbit reticulocyte lysate system (Promega Corp.) and
 35S-methionine as described previously [14].
-2.3. Construction of hSMUG1 reporter plasmids
+
+polymerase and religated. Plasmids were transformed
+into DH5 Escherichia coli and puriﬁed by cesium
+chloride equilibrium centrifugation. All constructs
+were veriﬁed by DNA sequence analysis performed
+by Davis Sequencing (UC-Davis, California).
+
+293H cells were grown in Dulbecco’s modiﬁed
+Eagle’s medium (DMEM) supplemented with 10%
+fetal bovine serum (Invitrogen), 1% penicillin, 1%
+streptomycin, 1% sodium pyruvate and incubated un-
+der 5% CO2 at 37 ◦C. NIH 3T3 (ATCC CRL1658)
+cells were cultured under the same conditions except
+that DMEM was supplemented with 10% calf serum
+(Invitrogen). Cells were seeded in 6-well plates at a
+density of 5 × 105 cells per well the day before trans-
+fection. NIH 3T3 cells were transfected using lipo-
+fectamine plus and 293H cells were transfected using
+lipofectamine 2000 according to the manufacturer’s
+protocol (Invitrogen). After 48 h, cells were washed
+once with cold PBS and lysed in 100 l of reporter ly-
+sis buffer (Promega). The cells were then subjected to
+two rounds of freeze/thaw followed by sonication. Lu-
+ciferase activity was measured for 30 s in a luminome-
+ter (TD 20/20, Turner Designs) with 20 l of lysate
+per assay. Luciferase activities were measured and
+normalized against beta galactosidase activities gener-
+ated by co-transfection with pSV-beta galactosidase.
+
 A 2165 bp human SMUG1 promoter fragment
 (from −2210 to −45 in relation to the ﬁrst ATG in
 the ﬁrst non-translated exon, Fig. 2A) was obtained
@@ -194,35 +215,7 @@ template. The 3 deletion mutant (−330 to −45) was
 generated directly from the F.L. construct by cleavage
 with SstI and HindIII (at position −330). The result-
 ing plasmid was gel puriﬁed, end-ﬁlled using DNA
-polymerase and religated. Plasmids were transformed
-into DH5 Escherichia coli and puriﬁed by cesium
-chloride equilibrium centrifugation. All constructs
-were veriﬁed by DNA sequence analysis performed
-by Davis Sequencing (UC-Davis, California).
-2.4. Cell culture, transient transfection and
-luciferase assays
-293H cells were grown in Dulbecco’s modiﬁed
-Eagle’s medium (DMEM) supplemented with 10%
-fetal bovine serum (Invitrogen), 1% penicillin, 1%
-streptomycin, 1% sodium pyruvate and incubated un-
-der 5% CO2 at 37 ◦C. NIH 3T3 (ATCC CRL1658)
-cells were cultured under the same conditions except
-that DMEM was supplemented with 10% calf serum
-(Invitrogen). Cells were seeded in 6-well plates at a
-density of 5 × 105 cells per well the day before trans-
-fection. NIH 3T3 cells were transfected using lipo-
-fectamine plus and 293H cells were transfected using
-lipofectamine 2000 according to the manufacturer’s
-protocol (Invitrogen). After 48 h, cells were washed
-once with cold PBS and lysed in 100 l of reporter ly-
-sis buffer (Promega). The cells were then subjected to
-two rounds of freeze/thaw followed by sonication. Lu-
-ciferase activity was measured for 30 s in a luminome-
-ter (TD 20/20, Turner Designs) with 20 l of lysate
-per assay. Luciferase activities were measured and
-normalized against beta galactosidase activities gener-
-ated by co-transfection with pSV-beta galactosidase.
-2.5. Nuclear extracts
+
 Nuclear extracts were prepared from 1 × 108 293H
 cells following the protocol originally described by
 Dignam et al. [15] in 1983. Brieﬂy, the cells were
@@ -239,62 +232,17 @@ hypertonic solution (20 mM HEPES pH 7.9 at 4 ◦C,
 PMSF, 0.5 mM DTT and 25% glycerol) followed
 by centrifugation for 30 min at 10,000 × g at 4 ◦C.
 
-
-1374
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 The supernatant (nuclear extract) was recovered and
 dialyzed against 20 mM HEPES (pH 7.9 at 4 ◦C),
 100 mM KCl, 0.2 mM EDTA, 0.2 mM PMSF, 0.5 mM
 DTT, 20% glycerol and centrifuged at 10,000 × g for
 15 min. The nuclear extract was then aliquoted and
 stored at −80 ◦C.
-2.6. Electrophoretic mobility shift assays (EMSAs)
-The initial analysis of DNA binding activities by
-EMSA was carried out using a 100 bp 32P-radiolabeled
-DNA probe spanning the region of −705 to −604.
-This fragment was ampliﬁed by PCR using primers
-that were 5′ end-labeled with T4 polynucleotide ki-
-nase in the presence of [32P]ATP (Amersham). The
-labeled primers, along with a cloned construct of the
-2165 bp DNA fragment (F.L. construct), was used in
-PCR reactions to generate the radiolabeled probe.
-The 32P-radiolabeled probe (20,000 cpm) was in-
-cubated with crude nuclear extract (5 g) or puriﬁed
-recombinant His-tagged NFI-C (3, 5, and 10 g)
-in 20 ul reaction mixtures containing 20% glycerol,
-5 mM MgCl2, 2.5 mM EDTA, 2.5 mM DTT, 250 mM
-NaCl, 50 mM Tris–Cl (pH 7.5) and 0.25 mg/ml poly
-dI-dC. The reaction mixtures were incubated at 25 ◦C
-for 30 min and then run in a 4% nondenaturing poly-
-acrylamide gel, (40:1 acrylamide/bisacrylamide) in
-0.5× Tris borate–EDTA for 45 min at 250 V at 4 ◦C.
-The gels were then dried and autoradiographed. Com-
-petition experiments were performed using EMSA
-conditions similar to those described above, except
-that the protein extracts were pre-incubated for 10 min
-in the presence of 50, 100, 200 or 500× molar excess
-of unlabeled double stranded oligonucleotides. Fol-
-lowing addition of the labeled probe incubation was
-continued for 20 min. DNA–protein complexes were
-resolved and analyzed as described above.Double
-stranded oligonucleotides, used in competition exper-
-iments were purchased from Geneka and have the
-following sequences:
-NFI oligo:
-5′-GGCACCTGTTTCAATTTGGC
-ACGGAGCCAACAG-3′
-3′-CCGTGGACAAAGTTAAACCG
-TGCCTCGGTTGTC-5′
-NFKappa B
-oligo:
-5′-GCCATGGGGGGATCCCCGA
-AGTCC-3′
-3′-CGGTACCCCCCTAGGGGCTT-
-CAGG-5′
+
 Additional oligonucleotides used in competition
 studies were synthesized and puriﬁed by Integrated
 DNA Technologies Inc.
-2.7. Deoxyribonuclease I (DNase I) footprinting
+
 To identify speciﬁc DNA–protein interaction sites
 within the DNA sequence from −781 to −530 DNase
 I footprinting analysis was performed. To determine
@@ -340,14 +288,45 @@ respective 5′-radiolabeled primer, used to generate
 the probe for DNase protection. The gel was then
 run at 1500 V, dried and visualized by autoradio-
 graphy.
-2.8. Site-directed mutagenesis
+
+The initial analysis of DNA binding activities by
+EMSA was carried out using a 100 bp 32P-radiolabeled
+DNA probe spanning the region of −705 to −604.
+This fragment was ampliﬁed by PCR using primers
+that were 5′ end-labeled with T4 polynucleotide ki-
+nase in the presence of [32P]ATP (Amersham). The
+labeled primers, along with a cloned construct of the
+2165 bp DNA fragment (F.L. construct), was used in
+PCR reactions to generate the radiolabeled probe.
+The 32P-radiolabeled probe (20,000 cpm) was in-
+cubated with crude nuclear extract (5 g) or puriﬁed
+recombinant His-tagged NFI-C (3, 5, and 10 g)
+in 20 ul reaction mixtures containing 20% glycerol,
+5 mM MgCl2, 2.5 mM EDTA, 2.5 mM DTT, 250 mM
+NaCl, 50 mM Tris–Cl (pH 7.5) and 0.25 mg/ml poly
+dI-dC. The reaction mixtures were incubated at 25 ◦C
+for 30 min and then run in a 4% nondenaturing poly-
+acrylamide gel, (40:1 acrylamide/bisacrylamide) in
+0.5× Tris borate–EDTA for 45 min at 250 V at 4 ◦C.
+The gels were then dried and autoradiographed. Com-
+petition experiments were performed using EMSA
+conditions similar to those described above, except
+that the protein extracts were pre-incubated for 10 min
+in the presence of 50, 100, 200 or 500× molar excess
+of unlabeled double stranded oligonucleotides. Fol-
+lowing addition of the labeled probe incubation was
+continued for 20 min. DNA–protein complexes were
+resolved and analyzed as described above.Double
+stranded oligonucleotides, used in competition exper-
+iments were purchased from Geneka and have the
+following sequences:
+
 Site-directed mutagenesis, to introduce mutations
 into the putative NFI/CTF cis-element was performed
 
+• 5′-GGATAGTCCA U GTTACTCGAAGC-3′, and
+• 5′-GCTTCGAGTAAC G TGGACTATCC-3′
 
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1375
-by PCR ampliﬁcation using the Quick ChangeTM
 Site-Directed Mutagenesis Kit of Stratagene Inc. The
 oligonucleotide (and corresponding reverse comple-
 ment) used to mutate the 5′ NFI half site is 5′-GGA-
@@ -362,54 +341,7 @@ lu-
 ciferase construct (Fig. 3) was used as a template.
 Speciﬁc base changes are underlined and delineated
 in Fig. 6B.
-2.9. NFI-C cloning and expression
-The open reading frame of human NFI-C, was
-ampliﬁed by PCR from 34Lu cell cDNA. The 5′
-primer included an EcoRI restriction site as follows:
-5′-GGAATTCATGGATGAGTTCCACCCGTTC-3′.
-The 3′ primer included a XbaI restriction site as fol-
-lows: 5′-GCTCTAGACTATCCCAGATACCAGGAC-
-TGTGC-3′. The resulting PCR product was cloned
-into ProEx-HTa (Invitrogen). This vector introduces a
-poly-histidine tag at the amino terminus of the protein.
-Protein induction and puriﬁcation by Ni-NTA agarose
-were performed according to the manufacturer’s di-
-rections.
-The open reading frame for NFI-C was also
-ampliﬁed by PCR and cloned into the pCINeo
-(Promega) mammalian expression vector. The 5′
-primer included a XhoI restriction site and encoded a
-FLAG epitope tag to facilitate detection as follows:
-5′-CCGCTCGAGATGGACTACAAGGACGACGAC-
-GACAAGGATGAGTTCCACCCGTTCATC-3′. The
-3′ primer is the same as used for cloning into the
-ProEx-Hta vector. NFI-C expression was veriﬁed
-by Western blot using antibody directed against the
-FLAG epitope tag (Sigma Corp.).
-2.10. Enzyme activity assays
-Uracil-DNA glycosylase activity was determined
-using a DNA cleavage assay as described previ-
-ously
-[9].
-Double-stranded
-substrate,
-containing
-a
-centrally
-positioned
-U:G
-mispair
-was
-gen-
-erated
-by
-annealing
-the
-following
-oligonucleo-
-tides:
-• 5′-GGATAGTCCA U GTTACTCGAAGC-3′, and
-• 5′-GCTTCGAGTAAC G TGGACTATCC-3′
+
 Brieﬂy the uracil-containing oligonucleotide was
 5′-end radiolabeled using T4 polynucleotide ki-
 nase and [-32P]ATP. DNA cleavage assays were
@@ -433,7 +365,24 @@ SMUG1 activity, but inhibits UDG activity derived
 from a number of species including humans. Proto-
 cols for the isolation and puriﬁcation of Ugi have
 been presented previously [16].
-2.11. Antibody generation
+
+The open reading frame of human NFI-C, was
+ampliﬁed by PCR from 34Lu cell cDNA. The 5′
+
+primer included an EcoRI restriction site as follows:
+5′-GGAATTCATGGATGAGTTCCACCCGTTC-3′.
+The 3′ primer included a XbaI restriction site as fol-
+lows: 5′-GCTCTAGACTATCCCAGATACCAGGAC-
+TGTGC-3′. The resulting PCR product was cloned
+into ProEx-HTa (Invitrogen). This vector introduces a
+poly-histidine tag at the amino terminus of the protein.
+Protein induction and puriﬁcation by Ni-NTA agarose
+were performed according to the manufacturer’s di-
+rections.
+The open reading frame for NFI-C was also
+ampliﬁed by PCR and cloned into the pCINeo
+(Promega) mammalian expression vector. The 5′
+
 hSMUG1 polyclonal antibodies were generated
 against a F.L., histidine-tagged hSMUG1 protein
 (Covance Inc.), as described previously [9]. Based
@@ -454,12 +403,57 @@ This antibody is capable of neutralizing SMUG1
 activity derived from human as well as mouse cell
 lines.
 
+primer included a XhoI restriction site and encoded a
+FLAG epitope tag to facilitate detection as follows:
+5′-CCGCTCGAGATGGACTACAAGGACGACGAC-
+GACAAGGATGAGTTCCACCCGTTCATC-3′. The
+3′ primer is the same as used for cloning into the
+ProEx-Hta vector. NFI-C expression was veriﬁed
+by Western blot using antibody directed against the
+FLAG epitope tag (Sigma Corp.).
 
-1376
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-3. Results
-3.1. Relative steady-state levels of UDG and
-hSMUG1 mRNA
+Uracil-DNA glycosylase activity was determined
+using a DNA cleavage assay as described previ-
+ously
+[9].
+Double-stranded
+substrate,
+containing
+a
+centrally
+positioned
+U:G
+mispair
+was
+gen-
+erated
+by
+annealing
+the
+following
+oligonucleo-
+tides:
+
+UDG message derived from either HeLa cells (lane
+1) or human ﬁbroblast cells (lane 2). Although there
+are two isoforms of UDG, one targeted to the nu-
+cleus and one targeted to the mitochondria [12], the
+mRNA for each is about 1.8 kb and not separable by
+electrophoresis under these conditions. In contrast
+to UDG, no hSMUG1 message was detected in an
+overnight exposure (data not shown). The northern
+blot was again exposed to X-ray ﬁlm for 10 days. Af-
+ter this length of exposure, hSMUG1 transcripts were
+visible, as shown in Fig. 1, lanes 3, 4 and 5. From
+these data it appears that the steady-state levels of
+hSMUG1 transcript are at least 10-fold lower when
+compared to the steady-state levels of UDG message.
+What is also noted in Fig. 1 is that there are two tran-
+scripts that hybridize to the hSMUG1 probe. These
+transcripts are about 1.6 and 0.7 kb and are expressed
+at comparable levels (relative to each other) in the
+three cell lines examined.
+
 Single-strand-selective monofunctional uracil-DNA
 glycosylase or SMUG1 is a recently discovered mem-
 ber of the family of DNA repair enzymes that remove
@@ -481,40 +475,18 @@ this ﬁnding, Northern blot analysis was performed
 using mRNA derived from a number of cell lines.
 These data are presented in Fig. 1. An overnight ex-
 posure of the blot to X-ray ﬁlm reveal measurable
+
+Previous studies suggested that the 1.6 kb tran-
+script (transcript 1) would encode the functional
+hSMUG-1 protein [17] however, the signiﬁcance of
+
 Fig. 1. Detection of hSMUG1 message in human cells by Northern blot analysis. Five micrograms of each mRNA sample was run on
 a 1.3% agarose-formaldehyde gel and then transferred to a nitrocellulose membrane. The blot labeled “UDG” was probed with sequence
 from the UDG open reading frame. Blots labeled “hSMUG1” were probed with sequence derived from the hSMUG1 open reading frame.
 The UDG transcript is about 1800 bp in length and the two hSMUG1 transcripts are about 1600 and 700 bp in length. The UDG blot was
 exposed to X-ray ﬁlm for approximately 18 h whereas the hSMUG1 blots were exposed to X-ray ﬁlm for 10 days. Lanes 1 and 3; HeLa
 S3 derived mRNA, lanes 2 and 4; 18Co derived mRNA and lane 5 is 293H derived mRNA.
-UDG message derived from either HeLa cells (lane
-1) or human ﬁbroblast cells (lane 2). Although there
-are two isoforms of UDG, one targeted to the nu-
-cleus and one targeted to the mitochondria [12], the
-mRNA for each is about 1.8 kb and not separable by
-electrophoresis under these conditions. In contrast
-to UDG, no hSMUG1 message was detected in an
-overnight exposure (data not shown). The northern
-blot was again exposed to X-ray ﬁlm for 10 days. Af-
-ter this length of exposure, hSMUG1 transcripts were
-visible, as shown in Fig. 1, lanes 3, 4 and 5. From
-these data it appears that the steady-state levels of
-hSMUG1 transcript are at least 10-fold lower when
-compared to the steady-state levels of UDG message.
-What is also noted in Fig. 1 is that there are two tran-
-scripts that hybridize to the hSMUG1 probe. These
-transcripts are about 1.6 and 0.7 kb and are expressed
-at comparable levels (relative to each other) in the
-three cell lines examined.
-3.2. Characterization of a novel hSMUG1
-transcript
-Previous studies suggested that the 1.6 kb tran-
-script (transcript 1) would encode the functional
-hSMUG-1 protein [17] however, the signiﬁcance of
 
-
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1377
 Fig. 2. hSMUG1 genomic organization, transcripts and translation products. (A) Schematic representation of the hSMUG1 gene and
 transcripts. The hSMUG1 gene spans greater than 9 kb and is composed of ﬁve exons. Exons 1 and 2 are transcribed but not translated
 (striped boxes). These two exons contain short open reading frames (6 and 31 codons, respectively) not present in the mature protein. Two
@@ -527,12 +499,14 @@ hSMUG1 alternate transcript. Transcript 2 was cloned into pG3Z and transcribed a
 amounts of transcript (2 and 5 l) were carried out using T7 polymerase in the presence of 35S-methionine. A control reaction ‘C’ was
 also performed using 5 l of vector alone. Protein products were separated by 12.6% SDS–PAGE and visualized by autoradiography.
 Molecular weight markers (in kilodaltons) are indicated on the left. Position of the 20 kDa predicted product is denoted by an arrow.
+
 a second, lower molecular weight transcript (tran-
 script 2) was unknown. To validate the authentic-
 ity of transcript 2, upper and lower PCR primers
 were designed corresponding to the start of the ﬁrst
 non-translated exon and the end of the 3′-UTR, re-
 spectively (Fig. 2A). PCR reactions were performed
+
 and yielded two speciﬁc bands of approximately
 1.6 kb and 650 bp (data not shown). Sequence anal-
 ysis of the products demonstrates that transcript-1
@@ -540,9 +514,6 @@ does in fact contain the known 813 bp hSMUG1
 open reading frame. Transcript 2 arises from an al-
 ternate splicing event within the second coding exon
 
-
-1378
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 (unshaded boxes, Fig. 2A). Surprisingly, this splic-
 ing event removes most of the C-terminal domain,
 which is known to be necessary for catalytic activ-
@@ -556,48 +527,18 @@ product of approximately 20 kDa is indeed generated
 activity as determined by DNA cleavage assays
 (data not shown) and its function at present is
 unknown.
-3.3. Analysis of hSMUG1 promoter activity
-A reasonable hypothesis, based on the observation
-of low steady-state hSMUG1 message, is that either
-hSMUG1 promoter activity is low in unperturbed cells
-or that the hSMUG1 message has a high turnover rate.
-The likelihood is that both mechanisms may func-
-tion to maintain low levels of transcript. We began a
-study of the putative hSMUG1 promoter region uti-
-lizing a luciferase reporter assay system. In addition
-to a fragment of approximately 2000 bp (designated
-F.L.), a series of unidirectional 5′-nested deletions of
-the promoter were generated (in the pGL3 basic plas-
-mid) and designated as 1 to 3. Fig. 3 shows the
-location of the putative hSMUG1 promoter region as
-well as the positions of the deletions that were con-
-structed. We then used these constructs to perform
-transient transfections of 293H and NIH 3T3 cells.
-As shown in Fig. 3, luciferase activity generated by
-the F.L. promoter was signiﬁcant in both of the cell
-lines tested as compared with that generated by a
-promoterless construct (pGL3-basic). Deletion of the
-sequence between −2210 and −718 (2 construct)
-produced a notable increase in the promoter activity.
-This was three- and sixfold higher than the F.L. pro-
-moter in 293H and NIH 3T3 cell lines, respectively.
-These results suggest that elements within this region
-(−2210 to −718) may have a negative regulatory ef-
-fect on hSMUG1 gene expression. Further deletion
-of the DNA sequence from −718 to −330 (3 con-
-struct) resulted in a decrease of reporter gene activity
-by 70 and 44% in 293H and NIH 3T3 cell lines, re-
-spectively (compare the 2 and 3 constructs). This
-ﬁnding indicates that the DNA sequences between po-
+
 sition −718 and −330 contribute to the positive reg-
 ulation of hSMUG1 gene expression. Taken together
 these data show that the hSMUG1 promoter sequence
 contains both positive and negative regulatory ele-
 ments that contribute to the control of hSMUG1 gene
 expression.
+
 3.4. EMSA analysis of the positive regulatory
 promoter element demonstrates speciﬁc nuclear
 protein–DNA interactions in vitro
+
 In a ﬁrst attempt to identify regulatory transcrip-
 tion elements within the −718 to −330 region of
 this gene, we utilized electrophoretic mobility shift
@@ -636,27 +577,62 @@ the ability of NFI-C transcription factor to bind to
 the putative binding site in the hSMUG1 promoter
 sequence.
 
+A reasonable hypothesis, based on the observation
+of low steady-state hSMUG1 message, is that either
+hSMUG1 promoter activity is low in unperturbed cells
+or that the hSMUG1 message has a high turnover rate.
+The likelihood is that both mechanisms may func-
+tion to maintain low levels of transcript. We began a
+study of the putative hSMUG1 promoter region uti-
+lizing a luciferase reporter assay system. In addition
+to a fragment of approximately 2000 bp (designated
+F.L.), a series of unidirectional 5′-nested deletions of
+the promoter were generated (in the pGL3 basic plas-
+mid) and designated as 1 to 3. Fig. 3 shows the
+location of the putative hSMUG1 promoter region as
+well as the positions of the deletions that were con-
+structed. We then used these constructs to perform
+transient transfections of 293H and NIH 3T3 cells.
+As shown in Fig. 3, luciferase activity generated by
+the F.L. promoter was signiﬁcant in both of the cell
+lines tested as compared with that generated by a
+promoterless construct (pGL3-basic). Deletion of the
+sequence between −2210 and −718 (2 construct)
+produced a notable increase in the promoter activity.
+This was three- and sixfold higher than the F.L. pro-
+moter in 293H and NIH 3T3 cell lines, respectively.
+These results suggest that elements within this region
+(−2210 to −718) may have a negative regulatory ef-
+fect on hSMUG1 gene expression. Further deletion
+of the DNA sequence from −718 to −330 (3 con-
+struct) resulted in a decrease of reporter gene activity
+by 70 and 44% in 293H and NIH 3T3 cell lines, re-
+spectively (compare the 2 and 3 constructs). This
+ﬁnding indicates that the DNA sequences between po-
 
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1379
 Fig. 3. Luciferase reporter analysis of the putative hSMUG1 promoter region. Four hSMUG1 promoter constructs were transfected into either 293H or NIH-3T3 cells as
 described in Section 2. “Basic” indicates the negative control (pGL3 plasmid containing the luciferase reporter open reading frame but is lacking a promoter). “Control”
 indicates the positive control where an SV40 promoter is driving luciferase expression. F.L. (full length), 1, 2, and 3 indicate progressive 5′ deletions starting at −2210
 (indicated in the map above). Luciferase activities reported in the bar graph are normalized against -galactosidase activity (pSV-gal co-transfected with the reporter plasmids)
 to control for variability in transfection efﬁciencies. Activities reported for each construct are derived from an average of three separate transfections.
 
-
-1380
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 Fig. 4. EMSA analysis utilizing DNA sequence derived from −705 to −604 of the hSMUG1 promoter region. Analysis of DNA binding
 characteristics by electrophoretic mobility shift assays was conducted using radiolabeled duplex DNA corresponding to region −705 to −604
 relative to the map presented in Fig. 2. (A) EMSA reactions using 293H cell nuclear extracts. Competition experiments were performed by
 incubating the nuclear extracts with unlabeled competitor prior to addition of the labeled probe. The gel was dried and exposed to X-ray
 ﬁlm for 18 h. Lane 0: no protein extract; lane –: 5 g of nuclear protein extract with no competitor, lanes labeled speciﬁc and non-speciﬁc
 refer to the competitor used at increasing concentrations. (B) EMSA reactions using 0, 3, 5 and 10 g of puriﬁed NFI-C protein.
+
 3.5. DNase I footprint analysis reveals interaction at
 both half-sites of the NFI/CTF consensus sequence
 within the hSMUG1 promoter region
+
+encompasses both the 5′ and 3′ half-sites of the puta-
+tive NFI/CTF cis-element. The observation indicates a
+possible conformational change of this region of DNA
+subsequent to protein binding thus rendering it more
+susceptible to DNAse I digestion.
+
 To deﬁne the speciﬁc DNA sequence interactions at
 this putative NFI/CTF binding site, DNase I footprint-
 ing was performed using as probe, region −781 to
@@ -670,13 +646,10 @@ of sequence encompassing the 3′ half-site but not the
 5′ half-site. Interestingly when the opposite (bottom)
 strand is analyzed in this manner, a region hypersen-
 sitive to DNAse I digestion is observed. This region
-encompasses both the 5′ and 3′ half-sites of the puta-
-tive NFI/CTF cis-element. The observation indicates a
-possible conformational change of this region of DNA
-subsequent to protein binding thus rendering it more
-susceptible to DNAse I digestion.
+
 3.6. Characterization of the positive effect of the NFI
 transcription factor on hSMUG1 promoter activity
+
 To characterize in more detail the effect of NFI/CTF
 on hSMUG1 promoter activity, the NFI binding sites
 were mutated. Oligonucleotides containing mutations
@@ -686,13 +659,11 @@ used as competitor fragments in EMSA reactions. The
 encompassed region −705 to −604 as described for
 Fig. 4. Puriﬁed pHis-tagged NFI-C was used to study
 
-
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1381
 Fig. 5. DNase I footprint analysis of the –781 to –530 region within the hSMUG1 promoter. DNase I footprinting was performed for both
 the top and bottom strands within this region of the promoter. Sites of protection and hypersensitivity (light underlining) are indicated with
 the corresponding sequence. The 3′ and 5′ NFI/CTF half-sites are located next to the gel labeled “top” and within the DNA sequence by
 heavy underlining.
+
 the binding characteristics. As illustrated in Fig. 6A,
 when the individual half-sites are disrupted, effective
 competition for binding is still seen (compare lanes 3
@@ -700,17 +671,16 @@ and 4 to lane 2). When both half-sites are disrupted
 competition is eliminated (Fig. 6A, lane 5). This indi-
 cates that there is a contribution to binding by both of
 the individual half-sites. The NFI/CTF transcription
+
 factor is known to function at half-sites alone and in
 certain cases does not appear to need both 5′ and 3′
+
 cis-elements [20].
 We carried this a step further by introducing the
 same mutations into the luciferase reporter constructs,
 described earlier. For these experiments, mutations
 were introduced into the NFI/CTF half-sites of the
 
-
-1382
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 Fig. 6. Site-speciﬁc mutagenesis of the NFI/CTF half-sites. (A) EMSA analysis using NFI/CTF mutant competitor fragments. Reactions
 were performed using the −705 to −604 hSMUG1 probe and competitor oligonucleotides containing 5′ and 3′ NFI half-site mutations
 alone or in combination (as indicated in the sequence in B). In each case, 10 g of puriﬁed NFI-C was used with a 500-fold molar excess
@@ -727,9 +697,6 @@ cells. NIH-3T3 cells were transfected with pCINeo/NFI-C (+) or pCINeo (−). Pro
 activity using a DNA cleavage assay. As indicated in the text, addition of Ugi to the assay mixtures abolishes UDG activity, revealing
 SMUG1 activity. The authenticity of this activity as SMUG1 was veriﬁed by using SMUG1 neutralizing antibody to inhibit this activity.
 
-
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1383
 2 luciferase construct as depicted in Fig. 3. Fig. 6B
 presents the pertinent DNA sequences with the cor-
 responding mutations. As illustrated, either the 5′ or
@@ -769,19 +736,7 @@ veriﬁed by Western blot analysis (data not shown).
 Collectively, our results indicate that the transcription
 factor, NFI/CTF plays a role in the positive regulation
 of hSMUG1 gene expression.
-4. Discussion
-The original strategy, used to isolate SMUG1, was
-based on an in vitro expression cloning procedure that
-utilized synthetic inhibitors designed to bind tightly
-to the active-site of known DNA glycosylases [17].
-These experiments resulted in the identiﬁcation of a
-novel uracil-DNA glycosylase, the SMUG1 repair en-
-zyme. Since this initial report, other investigations
-have uncovered additional activities attributable to this
-enzyme. In addition to the removal of uracil from
-DNA, it has been reported that SMUG1 can excise
-5-hydroxymethyluracil [6,21], 5-formyluracil [22] and
-5-hydroxyuracil [23] from both single-stranded and
+
 double-stranded DNA. Thus it appears that SMUG1
 has a much broader spectrum of enzyme action when
 compared to the prototypical uracil-DNA glycosylases
@@ -831,9 +786,19 @@ Based on the crystal structure of xSMUG1 (Xenopus
 laevis), this alternate protein contains the N-terminal
 motif required for catalysis, but lacks the C-terminal
 
+The original strategy, used to isolate SMUG1, was
+based on an in vitro expression cloning procedure that
+utilized synthetic inhibitors designed to bind tightly
+to the active-site of known DNA glycosylases [17].
+These experiments resulted in the identiﬁcation of a
+novel uracil-DNA glycosylase, the SMUG1 repair en-
+zyme. Since this initial report, other investigations
+have uncovered additional activities attributable to this
+enzyme. In addition to the removal of uracil from
+DNA, it has been reported that SMUG1 can excise
+5-hydroxymethyluracil [6,21], 5-formyluracil [22] and
+5-hydroxyuracil [23] from both single-stranded and
 
-1384
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
 motifs necessary to form the uracil-binding pocket
 [24]. Therefore, it’s signiﬁcance remains unknown.
 Since mRNA is of low abundance in unperturbed
@@ -885,6 +850,7 @@ reporter assays with mutant-containing half-sites in-
 dicate that both sites are involved to some degree. It
 is conceivable that different DNA–protein complexes,
 formed under the different assay conditions, result in
+
 differential afﬁnities for one site or the other, thus
 leading to these seemingly contradictory observations.
 Our data implicate NFI/CTF in the positive regula-
@@ -898,14 +864,14 @@ regulatory elements. These elements may be respon-
 sive to DNA damage that is recognized by hSMUG1,
 allowing for an inducible system to increase the levels
 of hSMUG1 protein.
-Acknowledgements
+
 The research conducted for this publication was
 supported in part by grant CA84421 from the National
 Cancer Institute of the National Institutes of Health
 The authors would like to thank Ms. Jennifer Mc-
 Donough for excellent technical assistance with the
 luciferase reporter assays.
-References
+
 [1] K.
 Brynolf,
 R.
@@ -940,9 +906,6 @@ Cell 5 (2000) 1059–1065.
 [8] H. Nilsen, K.A. Haushalter, P. Robins, D.E. Barnes, G.L.
 Verdine, T. Lindahl, Excision of deaminated cytosine from
 
-
-I. Elateri et al. / DNA Repair 2 (2003) 1371–1385
-1385
 the vertebrate genome: role of the SMUG1 uracil-DNA
 glycosylase, EMBO J. 20 (2001) 4278–4286.
 [9] I. Elateri, B.A. Tinkelenberg, M. Hansbury, S. Caradonna,
@@ -983,6 +946,7 @@ two distinct human uracil-DNA glycosylases, Exp. Cell Res.
 222 (1996) 345–359.
 [17] K.A. Haushalter, M.W. Todd Stukenberg, M.W. Kirschner,
 G.L. Verdine, Identiﬁcation of a new uracil-DNA glycosylase
+
 family by expression cloning using synthetic inhibitors, Curr.
 Biol. 9 (1999) 174–185.
 [18] D. Ghosh, Object-oriented transcription factors database

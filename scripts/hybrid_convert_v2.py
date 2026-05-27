@@ -611,6 +611,10 @@ def _strip_repeated_tokens(text, boundary):
 def repair_page(nougat_text, fitz_text, severity, details):
     """Apply repair strategy based on severity.
 
+    Principle: Nougat is primary (correct Markdown + Greek letters).
+    Only hallucinated paragraphs are replaced with fitz text.
+    Full page replace is a last resort when paragraph-level repair fails.
+
     Returns:
         repaired_text, repair_info
     """
@@ -622,29 +626,48 @@ def repair_page(nougat_text, fitz_text, severity, details):
     if severity == "none":
         return nougat_text, {"action": "keep", "n_replaced": 0}
 
-    if severity == "severe":
-        # Replace entire page with fitz text
-        return fitz_text, {
-            "action": "page_replace",
-            "n_replaced": len(paras),
-        }
-
-    # moderate: replace only bad paragraphs
+    # Always try paragraph-level repair first (even for severe pages)
     alignment = align_paragraphs(paras, fitz_paras, bad_indices=bad_indices)
     repaired_paras = []
     n_replaced = 0
     n_inline = 0
+    n_kept_bad = 0  # bad paragraphs that couldn't be fixed
+
+    # Track seen paragraph text for deduplication
+    seen_para_text = set()
+    for p in repaired_paras:
+        seen_para_text.add(p.strip()[:200])
 
     for i, para in enumerate(paras):
         if i not in bad_indices:
             repaired_paras.append(para)
+            seen_para_text.add(para.strip()[:200])
             continue
 
         result = results[i]
 
-        # Priority 1: replace with fitz paragraph (most reliable — fitz always
-        # extracts the correct text from PDF; inline strip can preserve wrong
-        # content when Nougat hallucinated entirely different text)
+        # Priority 0: dedup for cross_para_dup / line_dup
+        # These are duplicate content — skip if already seen
+        if result["reason"] in ("cross_para_dup", "line_dup"):
+            para_key = para.strip()[:200]
+            if para_key in seen_para_text:
+                # Already have this content, skip (delete duplicate)
+                continue
+            # First occurrence: deduplicate lines within the paragraph
+            if result["reason"] == "line_dup":
+                lines = [l.strip() for l in para.split('\n') if l.strip()]
+                seen_lines = []
+                seen_set = set()
+                for l in lines:
+                    if l not in seen_set:
+                        seen_lines.append(l)
+                        seen_set.add(l)
+                para = '\n'.join(seen_lines)
+            repaired_paras.append(para)
+            seen_para_text.add(para_key)
+            continue
+
+        # Priority 1: replace with fitz paragraph
         fitz_idx = alignment.get(i)
         if fitz_idx is not None and fitz_idx < len(fitz_paras):
             replacement = fitz_paras[fitz_idx]
@@ -656,19 +679,29 @@ def repair_page(nougat_text, fitz_text, severity, details):
         # Priority 2: inline strip for token_rep / char_rep (fallback)
         if result["reason"] in ("token_rep", "char_rep") and result.get("boundary"):
             stripped = _strip_repeated_tokens(para, result["boundary"])
-            # Use inline if result has meaningful content
             if len(stripped) > 50:
                 repaired_paras.append(stripped)
                 n_inline += 1
                 continue
 
-        # Priority 3: keep original
+        # Priority 3: keep original (mark as unfixed)
         repaired_paras.append(para)
+        n_kept_bad += 1
+
+    # Last resort: if too many bad paragraphs remain unfixed, fall back to
+    # full page replace (only for severe pages with >50% bad paras unfixed)
+    n_bad = len(bad_indices)
+    if severity == "severe" and n_bad > 0 and n_kept_bad > n_bad * 0.5:
+        return fitz_text, {
+            "action": "page_replace",
+            "n_replaced": len(paras),
+        }
 
     return "\n\n".join(repaired_paras), {
         "action": "paragraph_replace",
         "n_replaced": n_replaced,
         "n_inline": n_inline,
+        "n_kept_bad": n_kept_bad,
     }
 
 
@@ -771,6 +804,12 @@ def process_paper_full(pdf_path, processor, model):
 
     # Extract fitz text per page (blocks mode for proper paragraph structure)
     fitz_pages = extract_fitz_pages(pdf_path)
+
+    # Save fitz blocks for future reuse
+    os.makedirs(FITZ_DIR, exist_ok=True)
+    fitz_save_path = os.path.join(FITZ_DIR, f"{pmid}.txt")
+    with open(fitz_save_path, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(fitz_pages))
 
     pages_out = []
     nougat_raw_pages = []
@@ -923,20 +962,22 @@ def main():
                 print(f"  [{pmid}] SKIP: no Nougat output")
                 continue
 
-            # Always extract fitz blocks from PDF for proper paragraph structure
-            # (saved FITZ_DIR files use plain text mode without paragraph breaks)
-            pdf_path = os.path.join(PDF_DIR, f"{pmid}.pdf")
-            if os.path.exists(pdf_path):
-                fitz_pages = extract_fitz_pages(pdf_path)
-                fitz_text = "\n\n".join(fitz_pages)
+            # Load fitz blocks: prefer saved file, then extract from PDF
+            fitz_path = os.path.join(FITZ_DIR, f"{pmid}.txt")
+            if os.path.exists(fitz_path):
+                with open(fitz_path, "r", encoding="utf-8") as f:
+                    fitz_text = f.read()
             else:
-                # Fallback: try saved fitz text (old format, less accurate)
-                fitz_path = os.path.join(FITZ_DIR, f"{pmid}.txt")
-                if os.path.exists(fitz_path):
-                    with open(fitz_path, "r", encoding="utf-8") as f:
-                        fitz_text = f.read()
+                pdf_path = os.path.join(PDF_DIR, f"{pmid}.pdf")
+                if os.path.exists(pdf_path):
+                    fitz_pages = extract_fitz_pages(pdf_path)
+                    fitz_text = "\n\n".join(fitz_pages)
+                    # Save fitz blocks for future reuse
+                    os.makedirs(FITZ_DIR, exist_ok=True)
+                    with open(fitz_path, "w", encoding="utf-8") as f:
+                        f.write(fitz_text)
                 else:
-                    print(f"  [{pmid}] SKIP: no PDF or fitz text")
+                    print(f"  [{pmid}] SKIP: no fitz text or PDF")
                     continue
 
             print(f"\n  [{pmid}] Processing (--existing)...")

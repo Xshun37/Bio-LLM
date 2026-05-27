@@ -2,10 +2,9 @@ Small Maf (MafG and MafK) Proteins Negatively Regulate
 Antioxidant Response Element-mediated Expression and
 Antioxidant Induction of the NAD(P)H:Quinone
 Oxidoreductase1 Gene*
-Received for publication, April 26, 2000, and in revised form, September 20, 2000
-Published, JBC Papers in Press, September 29, 2000, DOI 10.1074/jbc.M003531200
-Saravanakumar Dhakshinamoorthy and Anil K. Jaiswal‡
+
 From the Department of Pharmacology, Baylor College of Medicine, Houston, Texas 77030
+
 The antioxidant response element (ARE) is known to
 regulate expression and induction of NQO1, GST Ya, and
 other detoxifying enzyme genes in response to antioxi-
@@ -31,18 +30,7 @@ NQO1 and other detoxifying enzyme genes. In contrast
 to Maf-Nrf2, the Maf-Nrf1 heterodimers failed to bind
 with the NQO1 gene ARE and did not demonstrate the
 repressive effect in transfection assays.
-NAD(P)H:quinone oxidoreductase1 (NQO1)1 is a flavopro-
-tein that catalyzes two-electron reductive metabolism and de-
-toxification of quinones. This protects cells against quinone-
-induced oxidative stress and neoplasia (1, 2). Higher levels of
-NQO1 gene expression were observed in liver, lung, colon, and
-breast tumors, when compared with normal tissues of the same
-origin (3, 4). NQO1 gene transcription is coordinately activated
-with other detoxifying enzyme genes in response to xenobiotics
-(e.g. b-naphthoflavone) and antioxidants (e.g. tert-butylhydro-
-quinone (t-BHQ)) (5, 6). The other detoxifying enzyme genes
-that are coordinately induced with NQO1 include glutathione
-S-transferases (GSTs), which conjugate hydrophobic electro-
+
 philes and ROS with glutathione (7, 8); UDP-glucuronosyl
 transferases, which catalyze the conjugation of glucuronic acid
 with xenobiotics and drugs for excretion (9); epoxide hydrolase,
@@ -92,83 +80,24 @@ GST Ya gene. More recently, a repressive role for MafK and
 MafG in ARE-regulated expression of the g-GCS gene was
 suggested (37).
 Small Maf (MafG, MafK, and MafF) proteins are leucine
-* This work was supported by National Institutes of Health Grant
-GM47466. The costs of publication of this article were defrayed in part
-by the payment of page charges. This article must therefore be hereby
-marked “advertisement” in accordance with 18 U.S.C. Section 1734
-solely to indicate this fact.
-‡ To whom correspondence should be addressed: Dept. of Pharmacol-
-ogy, Baylor College of Medicine, One Baylor Plaza, Houston, TX 77030.
-Tel.: 713-798-7691; Fax: 713-798-3145; E-mail: ajaiswal@bcm.tmc.edu.
-1 The abbreviations used are: NQO1, NAD(P)H:quinone oxidoreduc-
-tase1; GST, glutathione S-transferase; g-GCS, g-glutamylcysteine syn-
-thetase; ARE, antioxidant response element; hARE, human NQO1 gene
-ARE; t-BHQ, tert-butyl hydroquinone; ROS, reactive oxygen species;
-PAGE, polyacrylamide gel electrophoresis.
-THE JOURNAL OF BIOLOGICAL CHEMISTRY
-Vol. 275, No. 51, Issue of December 22, pp. 40134–40141, 2000
-© 2000 by The American Society for Biochemistry and Molecular Biology, Inc.
-Printed in U.S.A.
+
+NAD(P)H:quinone oxidoreductase1 (NQO1)1 is a flavopro-
+tein that catalyzes two-electron reductive metabolism and de-
+toxification of quinones. This protects cells against quinone-
+induced oxidative stress and neoplasia (1, 2). Higher levels of
+NQO1 gene expression were observed in liver, lung, colon, and
+breast tumors, when compared with normal tissues of the same
+origin (3, 4). NQO1 gene transcription is coordinately activated
+with other detoxifying enzyme genes in response to xenobiotics
+(e.g. b-naphthoflavone) and antioxidants (e.g. tert-butylhydro-
+quinone (t-BHQ)) (5, 6). The other detoxifying enzyme genes
+that are coordinately induced with NQO1 include glutathione
+S-transferases (GSTs), which conjugate hydrophobic electro-
+
 This paper is available on line at http://www.jbc.org
 40134
 This is an Open Access article under the CC BY license.
 
-
-zipper proteins that are known to repress, as well as activate,
-transcription of many eukaryotic genes including b-globin gene
-(38–41). Their gene products are closely related to v-Maf, es-
-pecially in the structure of the DNA-binding and leucine zipper
-domains. The products of these small Maf proteins, however,
-lack the amino-terminal domain of v-Maf (39–41). This domain
-is required for the trans-acting activity of v-Maf (39–41). Re-
-cently, small Maf proteins were shown to homodimerize and
-heterodimerize with Nrf1 and Nrf2 (42). Maf-Maf homodimers
-repressed, yet Maf-Nrf heterodimers activated transcription of
-the MARE-regulated b-globin gene (42). Based on the above
-studies, small Maf proteins are expected to play a role in
-hARE-mediated regulation of NQO1 gene expression. This role
-remains unknown. In addition, the relationship of MafG and
-MafK with Nrf2 and Nrf1, in the regulation of ARE-mediated
-expression and induction of NQO1 and other detoxifying en-
-zyme genes, also remains unknown.
-In the present report, we demonstrate that overexpression of
-MafG and MafK, individually or in combination with Nrf2,
-repressed ARE-mediated expression and induction of NQO1
-and GST Ya genes. NQO1 hARE gel shift assays, with in vitro
-translated MafG and MafK, individually and in combination
-with Nrf2, revealed that MafG and MafK proteins bind to the
-NQO1 hARE as homodimers and heterodimers with Nrf2.
-These results indicate that MafG and MafK homodimers and
-possibly MafG-Nrf2 and MafK-Nrf2 heterodimers negatively
-regulate NQO1 and other detoxifying enzyme gene expression
-and induction by antioxidants. In similar experiments, MafG
-and MafK failed to bind to the NQO1 gene ARE as het-
-erodimers with Nrf1.
-EXPERIMENTAL PROCEDURES
-Materials—The enzymes used in this study were purchased from Life
-Technologies, Inc. pcDNA3.1/V-5-His-TOPO and anti-V5 antibody were
-purchased from Invitrogen (Carlsbad, CA). a-Minimum essential me-
-dium was purchased from Life Technologies, Inc. Effectene transfection
-reagent was purchased from Qiagen (Valencia, CA). The Nrf2 antibod-
-ies were purchased from Santa Cruz Biotechnology, Inc. (Santa Cruz,
-CA). t-BHQ and all other chemicals were purchased from Sigma. The
-pGL2 promoter plasmid containing firefly luciferase gene, internal con-
-trol plasmid pRL-TK that encodes Renilla luciferase, the dual luciferase
-assay kit, and the TNT T7/T3 coupled rabbit reticulocyte lysate system
-were obtained from Promega (Madison, WI). The Hybond ECL nitrocel-
-lulose membrane, ECL Western blot analysis kit, and Amplify
-NAMP1000 were purchased from Amersham Pharmacia Biotech.
-Plasmid Construction—The NQO1 gene ARE, mutant ARE, and GST
-Ya ARE were subcloned in the pGL2 vector to generate reporter plas-
-mids pGL2-hARE-Luc, pGL2-mhARE-Luc, and pGL2-GST Ya ARE-
-Luc. The nucleotide sequences of the various AREs are shown in Fig. 1.
-The sense and antisense oligonucleotides corresponding to the AREs
-were synthesized with either NheI/XhoI sites (NQO1 hARE and mutant
-hARE) or NheI/BamHI sites (GST Ya ARE). The oligonucleotides were
-annealed, phosphorylated using T4 polynucleotide kinase, and cloned at
-the respective sites in the pGL2 promoter vector. The GST Ya ARE was
-cloned at the NheI/BglII site. The various constructs were checked by
-DNA sequencing.
 The mouse Nrf2 and Nrf1 cDNAs were kindly provided by Dr. Jef-
 ferson Y. Chan (University of California, San Francisco, CA). The
 full-length Nrf2 and Nrf1 cDNAs were amplified by polymerase chain
@@ -234,6 +163,69 @@ described procedures (25). The in vitro transcription/translation of the
 plasmids encoding Nrf1, Nrf2, MafG-V5, and MafK-V5 were performed
 using the TNT-coupled rabbit reticulocyte lysate system (Promega) by
 procedures as suggested in the manufacturer’s protocol. Redivue
+
+FIG. 1. Nucleotide sequences of NQO1 and GST Ya gene ARE.
+The nucleotide sequence of human NQO1 gene ARE, mutant ARE, and
+rat GST Ya gene ARE are shown. The perfect AP1 site in the hARE was
+mutated to generate mutant hARE. These mutations were previously
+shown to result in the loss of ARE-mediated gene expression (23).
+
+zipper proteins that are known to repress, as well as activate,
+transcription of many eukaryotic genes including b-globin gene
+(38–41). Their gene products are closely related to v-Maf, es-
+pecially in the structure of the DNA-binding and leucine zipper
+domains. The products of these small Maf proteins, however,
+lack the amino-terminal domain of v-Maf (39–41). This domain
+is required for the trans-acting activity of v-Maf (39–41). Re-
+cently, small Maf proteins were shown to homodimerize and
+heterodimerize with Nrf1 and Nrf2 (42). Maf-Maf homodimers
+repressed, yet Maf-Nrf heterodimers activated transcription of
+the MARE-regulated b-globin gene (42). Based on the above
+studies, small Maf proteins are expected to play a role in
+hARE-mediated regulation of NQO1 gene expression. This role
+remains unknown. In addition, the relationship of MafG and
+MafK with Nrf2 and Nrf1, in the regulation of ARE-mediated
+expression and induction of NQO1 and other detoxifying en-
+zyme genes, also remains unknown.
+In the present report, we demonstrate that overexpression of
+MafG and MafK, individually or in combination with Nrf2,
+repressed ARE-mediated expression and induction of NQO1
+and GST Ya genes. NQO1 hARE gel shift assays, with in vitro
+translated MafG and MafK, individually and in combination
+with Nrf2, revealed that MafG and MafK proteins bind to the
+NQO1 hARE as homodimers and heterodimers with Nrf2.
+These results indicate that MafG and MafK homodimers and
+possibly MafG-Nrf2 and MafK-Nrf2 heterodimers negatively
+regulate NQO1 and other detoxifying enzyme gene expression
+and induction by antioxidants. In similar experiments, MafG
+and MafK failed to bind to the NQO1 gene ARE as het-
+erodimers with Nrf1.
+
+Materials—The enzymes used in this study were purchased from Life
+Technologies, Inc. pcDNA3.1/V-5-His-TOPO and anti-V5 antibody were
+purchased from Invitrogen (Carlsbad, CA). a-Minimum essential me-
+dium was purchased from Life Technologies, Inc. Effectene transfection
+reagent was purchased from Qiagen (Valencia, CA). The Nrf2 antibod-
+ies were purchased from Santa Cruz Biotechnology, Inc. (Santa Cruz,
+CA). t-BHQ and all other chemicals were purchased from Sigma. The
+pGL2 promoter plasmid containing firefly luciferase gene, internal con-
+trol plasmid pRL-TK that encodes Renilla luciferase, the dual luciferase
+assay kit, and the TNT T7/T3 coupled rabbit reticulocyte lysate system
+were obtained from Promega (Madison, WI). The Hybond ECL nitrocel-
+lulose membrane, ECL Western blot analysis kit, and Amplify
+NAMP1000 were purchased from Amersham Pharmacia Biotech.
+Plasmid Construction—The NQO1 gene ARE, mutant ARE, and GST
+Ya ARE were subcloned in the pGL2 vector to generate reporter plas-
+mids pGL2-hARE-Luc, pGL2-mhARE-Luc, and pGL2-GST Ya ARE-
+Luc. The nucleotide sequences of the various AREs are shown in Fig. 1.
+The sense and antisense oligonucleotides corresponding to the AREs
+were synthesized with either NheI/XhoI sites (NQO1 hARE and mutant
+hARE) or NheI/BamHI sites (GST Ya ARE). The oligonucleotides were
+annealed, phosphorylated using T4 polynucleotide kinase, and cloned at
+the respective sites in the pGL2 promoter vector. The GST Ya ARE was
+cloned at the NheI/BglII site. The various constructs were checked by
+DNA sequencing.
+
 L-[35S]methionine was substituted for methionine in the reactions. Af-
 ter the coupled transcription/translation, the proteins were checked for
 their correct size on a 10% PAGE and Western analysis. Briefly, 5 ml of
@@ -247,70 +239,7 @@ translated proteins gave the expected sized products.
 The NQO1 gene ARE was end-labeled with [g-32P]ATP and T4
 polynucleotide kinase. The labeled ARE was incubated with nuclear
 extracts or in vitro translated proteins. Band and supershift assays
-FIG. 1. Nucleotide sequences of NQO1 and GST Ya gene ARE.
-The nucleotide sequence of human NQO1 gene ARE, mutant ARE, and
-rat GST Ya gene ARE are shown. The perfect AP1 site in the hARE was
-mutated to generate mutant hARE. These mutations were previously
-shown to result in the loss of ARE-mediated gene expression (23).
-Small Maf Repression of ARE-mediated Gene Expression
-40135
 
-
-were then performed by previously described procedures (25, 31). 10 mg
-of the nuclear extract or equimolar concentrations of in vitro translated
-proteins were used in the gel shift and supershift experiments. The
-supershift assay with nuclear extracts used 20 mg of proteins. 1.5 ml of
-anti-V5 antibody and 3 ml of Nrf2 antibody or preimmune serum were
-used in the supershift assays.
-RESULTS
-The transfection of Hep-G2 cells with expression plasmids
-pcDNA-MafG-V5, pcDNA-MafK-V5, and pcDNA-Nrf2(C) led to
-the overexpression of these respective proteins as determined
-by SDS-PAGE, Western analysis, and antibody probing (data
-not shown). Overexpression of the various proteins was in near
-linear range between 0.1 and 1.0 mg of plasmids used for
-transfecting Hep-G2 cells. In similar experiments, transfection
-of Hep-G2 cells with cDNA in reverse orientation did not result
-in overexpression of the respective proteins.
-Transfection of Hep-G2 cells with the hARE-Luc plasmid
-expressed luciferase activity (Fig. 2). Overexpression of MafG
-in Hep-G2 cells repressed hARE-mediated luciferase activity in
-transfected cells (Fig. 2A, left panel). This repression was MafG
-concentration-dependent.
-The
-transfection
-of
-1.0
-mg
-of
-pcDNA-MafG(C) plasmid repressed 83% of hARE-mediated lu-
-ciferase activity in transfected Hep-G2 cells. Interestingly,
-transfection of Hep-G2 cells with plasmid pcDNA-MafG(R) ex-
-pressing antisense MafG RNA significantly increased the
-hARE-mediated luciferase activity (Fig. 2A, left panel). The
-transfection of 0.5 mg of plasmid pcDNA-MafG(R) caused 3.4-
-fold increase in the hARE-mediated luciferase activity (Fig. 2A,
-left panel). Contrary to MafG, overexpression of Nrf2 in
-Hep-G2 cells led to increased expression of the NQO1 gene
-ARE-mediated luciferase gene (Fig. 2A). In a similar experi-
-ment, the Nrf2-mediated up-regulation of luciferase gene ex-
-pression was repressed because of the overexpression of MafG
-(Fig. 2A, right panel). This repression was also MafG concen-
-tration-dependent. Similar results were also observed with
-Hep-G2 cells overexpressing MafK alone or MafK with Nrf2
-(Fig. 2B). The overexpression of MafK repressed hARE-medi-
-ated luciferase gene expression and its activation by Nrf2.
-Replacement of the reporter plasmid hARE-Luc with mutant
-hARE-Luc resulted in the loss of basal expression and repres-
-sion of the luciferase gene by MafG and MafK (Fig. 2C). In
-related experiments, the overexpression of MafG and MafK
-also repressed GST Ya ARE-mediated luciferase gene expres-
-sion and up-regulation by Nrf2 (Fig. 3). t-BHQ treatment of
-Hep-G2 cells, transfected with hARE-Luc and GST Ya ARE-
-Luc, increased luciferase gene by approximately 2-fold (Fig. 4).
-Interestingly, t-BHQ induction of hARE- and GST Ya ARE-
-mediated luciferase gene expression was also repressed in
-Hep-G2 cells that overexpressed MafG and MafK (Fig. 4). The
 FIG. 2. Effect of overexpression of
 MafG and MafK on NQO1 gene ARE-
 mediated luciferase gene expression
@@ -349,9 +278,70 @@ transfection and assayed for luciferase
 activity. The values represent mean 6
 S.E. of three independent transfection
 experiments.
-Small Maf Repression of ARE-mediated Gene Expression
-40136
 
+were then performed by previously described procedures (25, 31). 10 mg
+of the nuclear extract or equimolar concentrations of in vitro translated
+proteins were used in the gel shift and supershift experiments. The
+supershift assay with nuclear extracts used 20 mg of proteins. 1.5 ml of
+anti-V5 antibody and 3 ml of Nrf2 antibody or preimmune serum were
+used in the supershift assays.
+
+hARE-mediated luciferase activity (Fig. 2A, left panel). The
+transfection of 0.5 mg of plasmid pcDNA-MafG(R) caused 3.4-
+fold increase in the hARE-mediated luciferase activity (Fig. 2A,
+left panel). Contrary to MafG, overexpression of Nrf2 in
+Hep-G2 cells led to increased expression of the NQO1 gene
+ARE-mediated luciferase gene (Fig. 2A). In a similar experi-
+ment, the Nrf2-mediated up-regulation of luciferase gene ex-
+pression was repressed because of the overexpression of MafG
+(Fig. 2A, right panel). This repression was also MafG concen-
+tration-dependent. Similar results were also observed with
+Hep-G2 cells overexpressing MafK alone or MafK with Nrf2
+(Fig. 2B). The overexpression of MafK repressed hARE-medi-
+ated luciferase gene expression and its activation by Nrf2.
+Replacement of the reporter plasmid hARE-Luc with mutant
+hARE-Luc resulted in the loss of basal expression and repres-
+sion of the luciferase gene by MafG and MafK (Fig. 2C). In
+related experiments, the overexpression of MafG and MafK
+also repressed GST Ya ARE-mediated luciferase gene expres-
+sion and up-regulation by Nrf2 (Fig. 3). t-BHQ treatment of
+Hep-G2 cells, transfected with hARE-Luc and GST Ya ARE-
+Luc, increased luciferase gene by approximately 2-fold (Fig. 4).
+Interestingly, t-BHQ induction of hARE- and GST Ya ARE-
+mediated luciferase gene expression was also repressed in
+Hep-G2 cells that overexpressed MafG and MafK (Fig. 4). The
+
+The transfection of Hep-G2 cells with expression plasmids
+pcDNA-MafG-V5, pcDNA-MafK-V5, and pcDNA-Nrf2(C) led to
+the overexpression of these respective proteins as determined
+by SDS-PAGE, Western analysis, and antibody probing (data
+not shown). Overexpression of the various proteins was in near
+linear range between 0.1 and 1.0 mg of plasmids used for
+transfecting Hep-G2 cells. In similar experiments, transfection
+of Hep-G2 cells with cDNA in reverse orientation did not result
+in overexpression of the respective proteins.
+Transfection of Hep-G2 cells with the hARE-Luc plasmid
+expressed luciferase activity (Fig. 2). Overexpression of MafG
+in Hep-G2 cells repressed hARE-mediated luciferase activity in
+transfected cells (Fig. 2A, left panel). This repression was MafG
+concentration-dependent.
+The
+transfection
+of
+1.0
+mg
+of
+pcDNA-MafG(C) plasmid repressed 83% of hARE-mediated lu-
+ciferase activity in transfected Hep-G2 cells. Interestingly,
+transfection of Hep-G2 cells with plasmid pcDNA-MafG(R) ex-
+pressing antisense MafG RNA significantly increased the
+
+FIG. 3. Effect of overexpression of MafG and MafK on GST Ya gene ARE-mediated luciferase gene expression and its up-regulation
+by Nrf2. The Hep-G2 cells were co-transfected with reporter plasmid GST Ya ARE-Luc and expression plasmids pcDNA-MafG(C), pcDNA-Maf(R),
+pcDNA-MafK(C), pcDNA-MafK(R), and pcDNA-Nrf2(C) individually or in combinations as shown. The concentrations (mg) of the various plasmids
+used in the transfections are also shown. 0.01 mg of plasmid pRL-TK encoding Renilla luciferase was used as the internal control in each
+transfection. The cells were harvested 48 h after transfection and assayed for luciferase activity. The values represent the means 6 S.E. of three
+independent transfection experiments.
 
 repression of t-BHQ induced expression was more or less pro-
 portional to the repression of basal expression. In other words,
@@ -402,6 +392,7 @@ Maf-Maf dimers. These bands are also expected to contain
 positive factors including Nrf2-Jun (31). The presence of Nrf2
 and Maf in the upper and lower complexes was determined by
 supershift assays with respective antibodies (Fig. 7B). The
+
 Hep-G2 cells treated with t-BHQ showed increase in binding of
 nuclear proteins in upper and lower bands, as compared with
 Me2SO-treated control (Fig. 7A). This increase is presumably
@@ -427,7 +418,7 @@ Nrf1 are shown in Fig. 9. In band shift experiments, in vitro
 translated Nrf1, alone and combined with MafG or MafK, failed
 to bind to the NQO1 gene ARE as homodimers or heterodimers
 with MafG and MafK (Fig. 9).
-DISCUSSION
+
 Small Maf proteins (MafG, MafK, and MafF) possess leucine
 zipper DNA binding domains but lack transactivation domains
 (39–41, 43). Most studies on the role of small Maf proteins
@@ -440,36 +431,16 @@ whereas heterodimers of Maf and p45 support active transcrip-
 tion in vivo (43). Recently, small Maf proteins were also shown
 to homodimerize and heterodimerize with the ubiquitous fac-
 tors Nrf1/Nrf2 and regulate the MARE-mediated b-globin gene
-FIG. 3. Effect of overexpression of MafG and MafK on GST Ya gene ARE-mediated luciferase gene expression and its up-regulation
-by Nrf2. The Hep-G2 cells were co-transfected with reporter plasmid GST Ya ARE-Luc and expression plasmids pcDNA-MafG(C), pcDNA-Maf(R),
-pcDNA-MafK(C), pcDNA-MafK(R), and pcDNA-Nrf2(C) individually or in combinations as shown. The concentrations (mg) of the various plasmids
-used in the transfections are also shown. 0.01 mg of plasmid pRL-TK encoding Renilla luciferase was used as the internal control in each
-transfection. The cells were harvested 48 h after transfection and assayed for luciferase activity. The values represent the means 6 S.E. of three
-independent transfection experiments.
-Small Maf Repression of ARE-mediated Gene Expression
-40137
 
+FIG. 5. In vitro transcription and translation of Nrf2, Nrf1,
+MafG-V5, and MafK-V5. The in vitro transcription/translation of the
+pcDNA plasmids encoding Nrf2, Nrf1, MafG-V5, and MafK-V5 were
+performed using the TNT-coupled reticulocyte lysate systems (Pro-
+mega) by procedures as suggested in the manufacturer’s protocol. 5 ml
+of the translated proteins were resolved on a 10% PAGE, treated with
+Amplify solution (NAMP 100, Amersham Pharmacia Biotech) to en-
+hance the 35S signal, dried, and autoradiographed.
 
-expression (42). Maf-Maf homodimers repressed yet Maf-Nrf
-heterodimers activated transcription of the b-globin gene (42).
-The Nrf2, Nrf1, and Maf proteins are also known to bind with
-AREs from several detoxifying enzyme genes (32, 37). Nrf2 and
-Nrf1 are known to up-regulate the ARE-mediated expression
-and induction of NQO1, GST Ya, g-GCS, and heme oxygenase-1
-genes (21, 26, 31, 34, 37). However, the role of small Maf
-proteins in the ARE-mediated detoxifying enzyme genes ex-
-pression especially its mechanism of action remains unknown.
-It may be noteworthy that ARE is a distinct element than
-MARE and TRE (22–23, 38). Therefore, the role of Maf-Maf
-homodimers and Nrf-Maf heterodimers in ARE-mediated reg-
-ulation of detoxifying enzyme genes expression remains rela-
-tively unknown.
-In the present report, we demonstrate that small Maf pro-
-teins contribute significantly to the regulation of ARE-medi-
-ated NQO1 and GST Ya gene expression. The small Maf (MafG
-and MafK) proteins negatively regulate ARE-mediated expres-
-sion and antioxidant induction of NQO1 and GST Ya gene
-expression. This conclusion is based on the following observa-
 tions. Overexpression of MafG and MafK repressed ARE-me-
 diated expression, as well as induction, by t-BHQ. The repres-
 sion of t-BHQ induced expression was more or less proportional
@@ -506,6 +477,7 @@ to increase the ARE-mediated gene expression. In essence, the
 increase in Nrf2 concentration with constant concentration of
 MafG showed small decrease in ARE-mediated gene expres-
 sion. This was possible only if Nrf2-MafG acted as negative
+
 FIG. 4. Effect of overexpression of MafG and MafK on antiox-
 idant induction of ARE-mediated luciferase gene expression.
 The Hep-G2 cells were co-transfected with reporter plasmid hARE-Luc
@@ -517,39 +489,28 @@ trol) or 200 mM of t-BHQ 32 h after transfection. The cells were har-
 vested 16 h after the treatment and assayed for luciferase activity. The
 values represent the means 6 S.E. of three independent transfection
 experiments.
-FIG. 5. In vitro transcription and translation of Nrf2, Nrf1,
-MafG-V5, and MafK-V5. The in vitro transcription/translation of the
-pcDNA plasmids encoding Nrf2, Nrf1, MafG-V5, and MafK-V5 were
-performed using the TNT-coupled reticulocyte lysate systems (Pro-
-mega) by procedures as suggested in the manufacturer’s protocol. 5 ml
-of the translated proteins were resolved on a 10% PAGE, treated with
-Amplify solution (NAMP 100, Amersham Pharmacia Biotech) to en-
-hance the 35S signal, dried, and autoradiographed.
-Small Maf Repression of ARE-mediated Gene Expression
-40138
 
+expression (42). Maf-Maf homodimers repressed yet Maf-Nrf
+heterodimers activated transcription of the b-globin gene (42).
+The Nrf2, Nrf1, and Maf proteins are also known to bind with
+AREs from several detoxifying enzyme genes (32, 37). Nrf2 and
+Nrf1 are known to up-regulate the ARE-mediated expression
+and induction of NQO1, GST Ya, g-GCS, and heme oxygenase-1
+genes (21, 26, 31, 34, 37). However, the role of small Maf
+proteins in the ARE-mediated detoxifying enzyme genes ex-
+pression especially its mechanism of action remains unknown.
+It may be noteworthy that ARE is a distinct element than
+MARE and TRE (22–23, 38). Therefore, the role of Maf-Maf
+homodimers and Nrf-Maf heterodimers in ARE-mediated reg-
+ulation of detoxifying enzyme genes expression remains rela-
+tively unknown.
+In the present report, we demonstrate that small Maf pro-
+teins contribute significantly to the regulation of ARE-medi-
+ated NQO1 and GST Ya gene expression. The small Maf (MafG
+and MafK) proteins negatively regulate ARE-mediated expres-
+sion and antioxidant induction of NQO1 and GST Ya gene
+expression. This conclusion is based on the following observa-
 
-regulator of ARE-mediated gene expression. Therefore, there is
-some evidence demonstrating that Nrf2-small Maf hetero-
-dimers also contributes to the negative regulation of ARE-
-mediated gene expression. However, the role of Nrf2-small Maf
-heterodimers in negative regulation of ARE-mediated gene
-expression remains to be confirmed by further experiments.
-Our results on the repressive role of Nrf2-small Maf het-
-erodimers is also supported by a recent report on the repressive
-role of Nrf2-MafK in ARE-mediated gene expression (44). This
-report, however, did not detect the Maf-Maf homodimers in
-band shift assays as observed by us in the present study. The
-possible explanation is that we ran our gel longer than that run
-in the published report. The Maf-Maf homodimers run very
-close to an unspecific band from rabbit reticulocyte lysate and
-could only be separated by running the band shift gels longer
-(Fig. 6). In addition, we used antibodies to demonstrate the
-presence of Maf-Maf homodimers in band shift assays (Fig. 6).
-The supershift assays using specific antibodies were not done
-in the recently published report on the role of MafK in ARE-
-mediated gene expression (44).
-In experiments similar to those described above, Nrf1 be-
 FIG. 6. Band shift assays. NQO1 gene
 ARE was end-labeled with [g-32P]ATP.
 50,000 cpm of the labeled hARE was in-
@@ -571,6 +532,7 @@ polyacrylamide gel. The gel was dried and
 autoradiographed. The asterisk denotes
 the nonspecific band from rabbit reticulo-
 cyte lysate.
+
 FIG. 7. Band shift assays. A, NQO1 gene ARE was end-labeled with
 [g-32P]ATP. 50,000 cpm of the labeled hARE was incubated with 10 mg
 of nuclear extract from Hep-G2 cells treated with Me2SO (control) or
@@ -583,6 +545,7 @@ similar experiment as above, 20 mg of nuclear proteins were used for the
 supershift assay. The Nrf2 and V5 antibodies were used to supershift
 the ARE-nuclear extract complex. SB, shifted bands; SSB, supershifted
 bands
+
 FIG. 8. Effect of varying concentrations of Nrf1 and Nrf2 with
 a constant concentration of MafG on NQO1 gene ARE-mediated
 luciferase gene expression. The Hep-G2 cells were co-transfected
@@ -594,46 +557,44 @@ mg of plasmid pRL-TK encoding Renilla luciferase was used as the
 internal control in each transfection. The cells were harvested 48 h after
 transfection and analyzed for luciferase activity. The values represent
 the means 6 S.E. of three independent transfection experiments.
-Small Maf Repression of ARE-mediated Gene Expression
-40139
 
+band shift assays as observed by us in the present study. The
+possible explanation is that we ran our gel longer than that run
+in the published report. The Maf-Maf homodimers run very
+close to an unspecific band from rabbit reticulocyte lysate and
+could only be separated by running the band shift gels longer
+(Fig. 6). In addition, we used antibodies to demonstrate the
+presence of Maf-Maf homodimers in band shift assays (Fig. 6).
+The supershift assays using specific antibodies were not done
+in the recently published report on the role of MafK in ARE-
+mediated gene expression (44).
+In experiments similar to those described above, Nrf1 be-
 
-haved differently than Nrf2. Interestingly, overexpression of
-Nrf1, along with MafG, did not reveal a role of Nrf1-MafG in
-the negative regulation of hARE-mediated NQO1 gene expres-
-sion. Overexpression of increasing concentration of Nrf1 and
-Nrf2 with a constant concentration of MafG showed different
-results. The increase in Nrf1 and not Nrf2 resulted in increased
-expression of ARE-mediated gene expression in transfected
-cells. In addition, Nrf1-MafG and Nrf1-MafK heterodimers
-were not detected in the band and supershift assays. These
-results led to the conclusion that unlike Nrf2, Nrf1-small Maf
-heterodimers do not bind to the ARE and have more or less no
-effect on the gene expression. Nrf1 is known to form het-
-erodimers with hMaf, which binds to NF-E2 binding site and
-g-GCS ARE (42, 35). It is possible that Nrf1 formed het-
-erodimers with MafG and MafK in our studies. However, Nrf1-
-MafG and Nrf1-MafK heterodimers failed to bind with NQO1
-gene ARE. Nrf1 has also been shown to bind with g-GCS ARE
-as homodimer (35). However, Nrf1 does not bind with NQO1
-gene ARE either as homodimer (Ref. 31 and present studies) or
-as heterodimer (present studies) with small Maf proteins. The
-significance of this difference between NQO1 and g-GCS ARE
-remains unknown. In addition, the differential effect of Nrf2
-and Nrf1 with Maf proteins on NQO1 gene ARE also remains
-unknown.
-A model to demonstrate the negative role of small Maf (MafG
-and MafK) proteins in ARE-mediated expression and induction
-of NQO1 and other detoxifying enzyme genes is depicted in Fig.
-10. The metabolism of antioxidants and xenobiotics generates
-electrophiles and ROS that signal the activation of a battery of
-genes including NQO1 and GST Ya (1). Electrophiles and/or
-ROS lead to the transcriptional activation and/or post-tran-
-scriptional modification of positive regulatory factors including
-Nrf2, c-Jun, and unknown factors. The positive factors bind to
-the ARE and activate transcription of NQO1, GST Ya, and
-other detoxifying enzyme genes by unknown mechanism(s).
-Electrophiles and/or ROS may also lead to the transcriptional
+regulator of ARE-mediated gene expression. Therefore, there is
+some evidence demonstrating that Nrf2-small Maf hetero-
+dimers also contributes to the negative regulation of ARE-
+mediated gene expression. However, the role of Nrf2-small Maf
+heterodimers in negative regulation of ARE-mediated gene
+expression remains to be confirmed by further experiments.
+Our results on the repressive role of Nrf2-small Maf het-
+erodimers is also supported by a recent report on the repressive
+role of Nrf2-MafK in ARE-mediated gene expression (44). This
+report, however, did not detect the Maf-Maf homodimers in
+
+FIG. 10. Model showing the role of MafG and MafK in down-
+regulation of ARE-mediated expression and induction of detox-
+ifying enzyme genes including NQO1.
+
+FIG. 9. Band shift assays. 50,000 cpm of the labeled hARE was
+incubated with in vitro translated Nrf1 alone and in combination with
+MafG-V5 or MafK-V5. Nrf21MafG-V5 or Nrf21MafK-V5 were included
+as positive control. The Nrf1/Maf and Nrf2/Maf were preincubated at
+37 °C for 15 min. before incubation with labeled hARE. The band shift
+experiment was performed at room temperature and analyzed on 5%
+nondenaturing polyacrylamide gel. The gel was dried and autoradio-
+graphed. The asterisk denotes the nonspecific binding of rabbit reticu-
+locyte lysate.
+
 activation and/or post-transcriptional modification of negative
 regulatory factors including the small Maf proteins, c-Fos, Fra,
 and unknown factors, which also bind to ARE and down-regu-
@@ -680,21 +641,43 @@ fensive proteins leads to a significant reduction in the levels of
 free radicals, cells may require negative regulatory factors to
 keep the levels of superoxide from falling below the level
 needed to keep cellular defenses active.
-FIG. 9. Band shift assays. 50,000 cpm of the labeled hARE was
-incubated with in vitro translated Nrf1 alone and in combination with
-MafG-V5 or MafK-V5. Nrf21MafG-V5 or Nrf21MafK-V5 were included
-as positive control. The Nrf1/Maf and Nrf2/Maf were preincubated at
-37 °C for 15 min. before incubation with labeled hARE. The band shift
-experiment was performed at room temperature and analyzed on 5%
-nondenaturing polyacrylamide gel. The gel was dried and autoradio-
-graphed. The asterisk denotes the nonspecific binding of rabbit reticu-
-locyte lysate.
-FIG. 10. Model showing the role of MafG and MafK in down-
-regulation of ARE-mediated expression and induction of detox-
-ifying enzyme genes including NQO1.
-Small Maf Repression of ARE-mediated Gene Expression
-40140
 
+haved differently than Nrf2. Interestingly, overexpression of
+Nrf1, along with MafG, did not reveal a role of Nrf1-MafG in
+the negative regulation of hARE-mediated NQO1 gene expres-
+sion. Overexpression of increasing concentration of Nrf1 and
+Nrf2 with a constant concentration of MafG showed different
+results. The increase in Nrf1 and not Nrf2 resulted in increased
+expression of ARE-mediated gene expression in transfected
+cells. In addition, Nrf1-MafG and Nrf1-MafK heterodimers
+were not detected in the band and supershift assays. These
+results led to the conclusion that unlike Nrf2, Nrf1-small Maf
+heterodimers do not bind to the ARE and have more or less no
+effect on the gene expression. Nrf1 is known to form het-
+erodimers with hMaf, which binds to NF-E2 binding site and
+g-GCS ARE (42, 35). It is possible that Nrf1 formed het-
+erodimers with MafG and MafK in our studies. However, Nrf1-
+MafG and Nrf1-MafK heterodimers failed to bind with NQO1
+gene ARE. Nrf1 has also been shown to bind with g-GCS ARE
+as homodimer (35). However, Nrf1 does not bind with NQO1
+gene ARE either as homodimer (Ref. 31 and present studies) or
+as heterodimer (present studies) with small Maf proteins. The
+significance of this difference between NQO1 and g-GCS ARE
+remains unknown. In addition, the differential effect of Nrf2
+and Nrf1 with Maf proteins on NQO1 gene ARE also remains
+unknown.
+A model to demonstrate the negative role of small Maf (MafG
+and MafK) proteins in ARE-mediated expression and induction
+of NQO1 and other detoxifying enzyme genes is depicted in Fig.
+10. The metabolism of antioxidants and xenobiotics generates
+electrophiles and ROS that signal the activation of a battery of
+genes including NQO1 and GST Ya (1). Electrophiles and/or
+ROS lead to the transcriptional activation and/or post-tran-
+scriptional modification of positive regulatory factors including
+Nrf2, c-Jun, and unknown factors. The positive factors bind to
+the ARE and activate transcription of NQO1, GST Ya, and
+other detoxifying enzyme genes by unknown mechanism(s).
+Electrophiles and/or ROS may also lead to the transcriptional
 
 In conclusion, small Maf protein homodimers and possibly
 Nrf2/small Maf heterodimers negatively regulate ARE-medi-
@@ -703,44 +686,7 @@ detoxifying enzyme genes. Further studies are required to un-
 derstand the role of positive and negative factors in ARE-
 mediated expression and induction of detoxifying enzyme
 genes.
-Acknowledgments—We are grateful to Drs. Jefferson Y. Chan and
-Yuet W. Kan, both from University of California, San Francisco for
-providing us the cDNAs encoding Nrf2 and Nrf1. We are also thankful
-to Dr. Makoto Nishizawa (The Scripps Research Institute, La Jolla, CA)
-for the gift of small Maf protein cDNAs.
-REFERENCES
-1. Radjendirane, V., Joseph, P., and Jaiswal, A. K. (1997) in Oxidative Stress and
-Signal Transduction (Forman, H. J., and Cadenas, E., eds) pp. 441–475,
-Chapman & Hall, New York
-2. Talalay, P., Fahey, J. W., Holtzclaw, W. D., Prestera, T., and Zhang, Y. (1995)
-Toxicol. Lett. 82–83, 173–179
-3. Cresteil, T., and Jaiswal, A. K. (1991) Biochem. Pharmacol. 42, 1021–1027
-4. Schlager, J. J., and Powis, G. (1990) Int. J. Cancer 45, 403–409
-5. Rushmore, T. H., and Pickett, C. B. (1993) J. Biol. Chem. 268, 11475–11478
-6. Dhakshinamoorthy, S., Long II, D. J., and Jaiswal, A. K. (2000) Curr. Top.
-Cell. Regul. 36, 201–216
-7. Pickett, C. B., and Lu, A. Y. H. (1989) Annu. Rev. Biochem. 58, 743–764
-8. Tsuchida, S., and Sato, K. (1992) Crit. Rev. Biochem. Mol. Biol. 27, 337–384
-9. Tephly, T., and Burchell, B. (1990) Trends Pharmacol. 11, 276–279
-10. Oesch, F., Gath, I., Igarashi, T., Glatt, H. R., and Thomas, H. (1991) in
-Molecular Aspects of Monooxygenases and Bioactivation of Toxic Com-
-pounds (Arinc, E., Schenkman, J. B., Hodgson, E., eds) pp, 447–461, Ple-
-num Publishing Corp., New York
-11. Mulcahy, R. T., Wartman, M. A., Bailey, H. H., and Gipp, J. J. (1997) J. Biol.
-Chem. 272, 7445–7454
-12. Wasserman, W., and Fahl, W. E. (1997) Proc. Natl. Acad. Sci. U. S. A. 94,
-5361–5366
-13. Choi, A. M., and Alam, J. (1996) Am. J. Respir. Cell Mol. Biol. 15, 9–19
-14. Jaiswal, A. K. (1994) J. Biol. Chem. 269, 14502–14508
-15. Rushmore, T. H., King, R. G., Paulson, K. E., and Pickett, C. B. (1990) Proc.
-Natl. Acad. Sci. U. S. A. 87, 3826–3830
-16. Rushmore, T. H., and Pickett, C. B. (1990) J. Biol. Chem. 265, 14648–14653
-17. Rushmore, T. H., Morton M. R, and Pickett, C. B. (1991) J. Biol. Chem. 266,
-11632–11639
-18. Friling, R. S., Bensimon, A., Tichauer, Y., and Daniel, V. (1990) Proc. Natl.
-Acad. Sci. U. S. A. 87, 6258–6262
-19. Friling, R. S., Bergelson, S., and Daniel, V. (1992) Proc. Natl. Acad. Sci.
-U. S. A. 89, 668- 672
+
 20. Okuda, A., Imagawa, M., Maeda, Y., Sakai, M., and Muramatsu, M. (1990)
 EMBO J. 9, 1131–1135
 21. Alam, J., Stewart, D., Touchard, C., Boinapally, S., Choi, M. K., and Cook, J. L.
@@ -791,5 +737,42 @@ M. (1994) Nature 367, 568–572
 and Yamamoto, M. (2000) J. Biol. Chem. 275, 16023–16029
 46. Wilkinson, I. V. J., Radjendirane, V., Pfeiffer, G. R., Jaiswal, A. K., and
 Clapper, M. L. (1998) Biochem. Biophys. Res. Commun. 253, 855–858
-Small Maf Repression of ARE-mediated Gene Expression
-40141
+
+Acknowledgments—We are grateful to Drs. Jefferson Y. Chan and
+Yuet W. Kan, both from University of California, San Francisco for
+providing us the cDNAs encoding Nrf2 and Nrf1. We are also thankful
+to Dr. Makoto Nishizawa (The Scripps Research Institute, La Jolla, CA)
+for the gift of small Maf protein cDNAs.
+
+1. Radjendirane, V., Joseph, P., and Jaiswal, A. K. (1997) in Oxidative Stress and
+Signal Transduction (Forman, H. J., and Cadenas, E., eds) pp. 441–475,
+Chapman & Hall, New York
+2. Talalay, P., Fahey, J. W., Holtzclaw, W. D., Prestera, T., and Zhang, Y. (1995)
+Toxicol. Lett. 82–83, 173–179
+3. Cresteil, T., and Jaiswal, A. K. (1991) Biochem. Pharmacol. 42, 1021–1027
+4. Schlager, J. J., and Powis, G. (1990) Int. J. Cancer 45, 403–409
+5. Rushmore, T. H., and Pickett, C. B. (1993) J. Biol. Chem. 268, 11475–11478
+6. Dhakshinamoorthy, S., Long II, D. J., and Jaiswal, A. K. (2000) Curr. Top.
+Cell. Regul. 36, 201–216
+7. Pickett, C. B., and Lu, A. Y. H. (1989) Annu. Rev. Biochem. 58, 743–764
+8. Tsuchida, S., and Sato, K. (1992) Crit. Rev. Biochem. Mol. Biol. 27, 337–384
+9. Tephly, T., and Burchell, B. (1990) Trends Pharmacol. 11, 276–279
+10. Oesch, F., Gath, I., Igarashi, T., Glatt, H. R., and Thomas, H. (1991) in
+Molecular Aspects of Monooxygenases and Bioactivation of Toxic Com-
+pounds (Arinc, E., Schenkman, J. B., Hodgson, E., eds) pp, 447–461, Ple-
+num Publishing Corp., New York
+11. Mulcahy, R. T., Wartman, M. A., Bailey, H. H., and Gipp, J. J. (1997) J. Biol.
+Chem. 272, 7445–7454
+12. Wasserman, W., and Fahl, W. E. (1997) Proc. Natl. Acad. Sci. U. S. A. 94,
+5361–5366
+13. Choi, A. M., and Alam, J. (1996) Am. J. Respir. Cell Mol. Biol. 15, 9–19
+14. Jaiswal, A. K. (1994) J. Biol. Chem. 269, 14502–14508
+15. Rushmore, T. H., King, R. G., Paulson, K. E., and Pickett, C. B. (1990) Proc.
+Natl. Acad. Sci. U. S. A. 87, 3826–3830
+16. Rushmore, T. H., and Pickett, C. B. (1990) J. Biol. Chem. 265, 14648–14653
+17. Rushmore, T. H., Morton M. R, and Pickett, C. B. (1991) J. Biol. Chem. 266,
+11632–11639
+18. Friling, R. S., Bensimon, A., Tichauer, Y., and Daniel, V. (1990) Proc. Natl.
+Acad. Sci. U. S. A. 87, 6258–6262
+19. Friling, R. S., Bergelson, S., and Daniel, V. (1992) Proc. Natl. Acad. Sci.
+U. S. A. 89, 668- 672
