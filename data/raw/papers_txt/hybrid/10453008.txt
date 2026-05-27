@@ -28,6 +28,32 @@ different target cells, they elicit similar responses in cells responsive to all
 revealed that the receptors for the three cytokines are heterodimers
 composed of a cytokine-speciﬁc a-chain (IL-3Ra, IL-5Ra, and
 
+GM-CSFRa) and a common signaling b-chain (bc)5 (7–9). Both
+the a- and b-chains are glycosylated proteins and members of the
+class I cytokine receptor family (10). Although the human bc subunit has no binding capacity by itself, it associates with the low
+afﬁnity a-chains to form a high afﬁnity receptor (11–13). Besides
+its role in high afﬁnity binding, the bc chain plays a major role in
+IL-3-, IL-5-, and GM-CSF-mediated signal transduction, explaining the functional overlap of these cytokines (14). Interestingly,
+the mouse has two b subunits, known as bc (AIC2B) and bIL-3
+(AIC2A) (15, 16). The mouse bc chain is the common b subunit
+for the mouse IL-3, IL-5, and GM-CSF receptors, in analogy with
+the human bc. Although bc and bIL-3 have 91% homology at the
+amino acid level, bIL-3 binds IL-3 with low afﬁnity and does not
+form a high afﬁnity receptor with IL-5Ra and GM-CSFRa, in
+contradiction to bc (17). We previously reported the cloning of the
+human bc gene and the remainders of a bc pseudogene, suggesting
+a loss of bIL-3 in the human rather than a murine-speciﬁc gene
+duplication (18).
+In both the human and murine systems, binding of IL-3/IL-5/
+GM-CSF induces receptor multimerization, most likely in a ligand:
+a:b stoichiometry of 2:2:2 (19). This leads to the activation of
+JAK2 (20), a protein tyrosine kinase that is constitutively associated with the membrane-proximal region of the bc chain (21).
+Subsequently, signaling molecules of several signal transduction
+pathways are activated, including STAT5 (22, 23), p21Ras (24),
+ERK1/2 (25), JNK/SAPK (26), p38 (27), and PI3K (28, 29; for a
+review, see Ref. 30). Because the bc subunit is involved in IL-3,
+IL-5, and GM-CSF signaling, expression of the bc chain is important for all myeloid cells and their precursors. Therefore, elucidating the factors that govern its expression will help to understand the events that regulate myeloid lineage commitment.
+
 The \(\beta\)c chain is already expressed on hemopoietic CD34\({}^{+}\) stem cells (31), while at later stages of differentiation expression of the \(\beta\)c chain is mainly restricted to the myeloid lineages (31). Uncovering the molecular mechanisms that drive its expression will contribute to understanding of the events of myeloid commitment and differentiation. In the last few years it has become clear that PU.1, a hemopoietic-specific member of the Ets family, and the C/EBP family are key transcription factors in myeloid-specific gene activation (32). Receptors that play a significant role in myeloid development, such as GM-CSFR\(\alpha\), G-CSFR, and M-CSFR, have all been shown to be regulated by the combination of PU.1 and C/EBP proteins (33-35). Previous studies described the isolation of the genes for the human and murine \(\beta\)c/\(\beta\)IL-3 subunits (18, 36). We have shown that PU.1 and another, unidentified GGAA binding protein activate the human \(\beta\)c gene by binding to the proximal promoter region (at \(-\)65 and \(-\)45 bp relative to the transcription start site, respectively) (18). PU.1, a hemopoietic-specific member of the Ets transcription factor family (37), is expressed in myeloid and B cells and has been shown to regulate a number of myeloid specific genes, including M-CSFR (33), G-CSFR (34), GM-CSFR\(\alpha\) (35), eosinophil-derived neurotoxin (38), myeloperoxidase (39), and PU.1 itself (40). Other factors that have been shown to be important for myeloid-specific promoter regulation are members of the CCAAT/enhancer binding protein (C/EBP) family. Members of the C/EBP family have been shown to have a changing temporal expression pattern during myeloid differentiation. C/EBP\(\alpha\) is expressed at high levels in early progenitors; C/EBP\(\beta\) and -\(\delta\) become more prominent at later stages, while C/EBP\(\epsilon\) is only expressed during granulopoiesis (41-43). C/EBP\(\alpha\), a basic region leucine zipper transcription factor, originally characterized in liver and adipose tissue (44), is expressed in early myeloid precursors (41) and has also been shown to be important for the expression of M-CSFR, G-CSFR, and GM-CSFR\(\alpha\) (33-35). Another C/EBP member that is important for myeloid gene expression is C/EBP\(\epsilon\), which was recently described to be strongly induced during granulocyte differentiation (42, 43). Gene targeting of both C/EBP\(\alpha\) and C/EBP\(\epsilon\) results in impaired granulopoiesis (45, 46), clearly demonstrating their roles in myeloid development.
 
 Here we show that, analogous to M-CSFR, G-CSFR, and GM-CSFR\(\alpha\), the \(\beta\)c is regulated by C/EBP members. We identified a crucial enhancer located 2 kb upstream of the transcription start site that contains two C/EBP-binding motifs. Both sites are able to bind C/EBP\(\alpha\), -\(\beta\), and -\(\epsilon\), while mutation of the sites results in a complete loss of promoter activity.
@@ -60,6 +86,15 @@ gels and were visualized by autoradiography. In competition experiments,
 a 10- to 100-fold molar excess of wt or mut oligonucleotide was added to
 the reaction mix for 5 min before addition of the labeled probe. For supershift analysis, nuclear extracts were preincubated with 2 mg of Ab for
 40 min on ice before addition of the labeled probe.
+
+21967 to 2289 bp were cloned into the pBLCAT2 vector, a reporter plasmid containing the minimal thymidine kinase promoter
+(48). The generated constructs, 22096/21967CAT2, 22096/
+2289CAT2, and 21967/2289CAT2, were then transfected into
+U937 cells and HL-60 cells and tested for promoter activity. Fig.
+1B shows that 22096/2289CAT2 is active in both cell types,
+while 21967/2289CAT2 has lost this capacity. Indeed, 22096/
+21967CAT2 is highly active in both cell types, clearly demonstrating the presence of an enhancer between 22096 and
+21967 bp.
 
 ## Results
 

@@ -669,7 +669,9 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
   - **简化**：`repair_page()` 去掉 severity 参数，统一走段落级修复
   - **简化**：`process_paper_existing()` 和 `process_paper_full()` 去掉 severity 判断
   - **简化**：stats 输出只保留 `n_replaced`、`n_inline`、`n_deduped`
+  - **修复**：当 Nougat 把多个段落压缩成一个坏段时，插入 fitz 的连续段落（而非只替换一段）
 
 **验证结果**：
 - ✅ 8 篇 PMID 全部正常，4 个原始 bug 保持修复
+- ✅ PMID 10453008 Introduction 现在包含完整的两段内容（"ematopoiesis..." + "GM-CSFRa..."）
 - ✅ 输出更清晰：`[10082553] 177 bad paras → paragraph_replace (replace=1 inline=1 dedup=174)`

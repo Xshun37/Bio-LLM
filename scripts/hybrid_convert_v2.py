@@ -615,6 +615,9 @@ def repair_page(nougat_text, fitz_text, details):
     n_inline = 0
     n_deduped = 0
 
+    # Track which fitz paragraphs have been used (to avoid duplicates when inserting gaps)
+    used_fitz = set()
+
     # Track seen paragraph text for deduplication
     seen_para_text = set()
     for p in repaired_paras:
@@ -650,12 +653,27 @@ def repair_page(nougat_text, fitz_text, details):
             seen_para_text.add(para_key)
             continue
 
-        # Priority 1: replace with fitz paragraph
+        # Priority 1: replace with fitz paragraph(s)
+        # When Nougat compresses multiple paragraphs into one bad paragraph,
+        # we need to insert adjacent fitz paragraphs, but only if they're
+        # truly part of the same section (not from Abstract/other sections)
         fitz_idx = alignment.get(i)
         if fitz_idx is not None and fitz_idx < len(fitz_paras):
+            # Insert the aligned fitz paragraph
             replacement = fitz_paras[fitz_idx]
             if len(replacement.strip()) > 10:
                 repaired_paras.append(replacement)
+                used_fitz.add(fitz_idx)
+
+                # Check if the NEXT fitz paragraph should also be inserted
+                # (handles case where Nougat compressed 2+ paragraphs into 1)
+                # Only insert if it's not already mapped to another Nougat paragraph
+                if fitz_idx + 1 < len(fitz_paras) and (fitz_idx + 1) not in alignment.values():
+                    next_replacement = fitz_paras[fitz_idx + 1]
+                    if len(next_replacement.strip()) > 10:
+                        repaired_paras.append(next_replacement)
+                        used_fitz.add(fitz_idx + 1)
+
                 n_replaced += 1
                 continue
 
