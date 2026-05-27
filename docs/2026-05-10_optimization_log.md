@@ -656,3 +656,20 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 **关键发现**：
 - `cross_para_dup`（跨段落重复）不需要 fitz 替换，直接删除重复即可（保留首次出现）
 - Nougat 为主、fitz 替换幻觉部分 — 这个原则适用于所有 severity，包括 severe
+
+### 40. 简化逻辑：去掉 severity 分类
+
+**问题**：severity 分类（none/moderate/severe）是多余概念，导致 `severe` 页面整页替换丢失 Nougat 格式。
+
+**根因**：修复策略只需要"识别坏段落 → 修复坏段落"，不需要先判断页面严重程度再决定修复方式。severity 引入了不必要的分支逻辑。
+
+**改动**：
+- `scripts/hybrid_convert_v2.py`：
+  - **重命名**：`assess_page()` → `detect_hallucinations()`，只返回 bad_indices 和段落详情，不再返回 severity
+  - **简化**：`repair_page()` 去掉 severity 参数，统一走段落级修复
+  - **简化**：`process_paper_existing()` 和 `process_paper_full()` 去掉 severity 判断
+  - **简化**：stats 输出只保留 `n_replaced`、`n_inline`、`n_deduped`
+
+**验证结果**：
+- ✅ 8 篇 PMID 全部正常，4 个原始 bug 保持修复
+- ✅ 输出更清晰：`[10082553] 177 bad paras → paragraph_replace (replace=1 inline=1 dedup=174)`

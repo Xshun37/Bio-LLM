@@ -224,7 +224,7 @@ def detect_paragraph_hallucination(paragraph):
 
 
 # ═══════════════════════════════════════════════════════════
-#  2. PAGE / TEXT ASSESSMENT
+#  2. HALLUCINATION DETECTION
 # ═══════════════════════════════════════════════════════════
 
 def split_paragraphs(text):
@@ -232,16 +232,15 @@ def split_paragraphs(text):
     return [p.strip() for p in re.split(r"\n{2,}", text) if p.strip()]
 
 
-def assess_page(nougat_text):
-    """Assess hallucination severity for a page of Nougat text.
+def detect_hallucinations(nougat_text):
+    """Detect hallucinated paragraphs in Nougat text.
 
     Returns:
-        severity: "none" | "moderate" | "severe"
-        details:  dict with per-paragraph results
+        details: dict with per-paragraph results and bad_indices
     """
     paras = split_paragraphs(nougat_text)
     if not paras:
-        return "none", {}
+        return {"paragraphs": [], "bad_indices": [], "n_total": 0, "n_bad": 0}
 
     bad_indices = []
     results = []
@@ -266,27 +265,11 @@ def assess_page(nougat_text):
             bad_indices.append(idx)
     bad_indices = sorted(set(bad_indices))
 
-    n_bad = len(bad_indices)
-    n_total = len(paras)
-
-    has_line_dup = any(
-        r["reason"] in ("line_dup", "cross_para_dup")
-        for r in results if r["is_hallucinated"]
-    )
-    if has_line_dup or n_bad > n_total * 0.5:
-        severity = "severe"
-    elif n_bad == 0:
-        severity = "none"
-    elif n_bad <= 2 and n_total >= 3:
-        severity = "moderate"
-    else:
-        severity = "severe"
-
-    return severity, {
+    return {
         "paragraphs": results,
         "bad_indices": bad_indices,
-        "n_total": n_total,
-        "n_bad": n_bad,
+        "n_total": len(paras),
+        "n_bad": len(bad_indices),
     }
 
 
@@ -608,12 +591,11 @@ def _strip_repeated_tokens(text, boundary):
     return result.strip()
 
 
-def repair_page(nougat_text, fitz_text, severity, details):
-    """Apply repair strategy based on severity.
+def repair_page(nougat_text, fitz_text, details):
+    """Repair hallucinated paragraphs in Nougat text using fitz fallback.
 
     Principle: Nougat is primary (correct Markdown + Greek letters).
-    Only hallucinated paragraphs are replaced with fitz text.
-    Full page replace is a last resort when paragraph-level repair fails.
+    Only hallucinated paragraphs are repaired.
 
     Returns:
         repaired_text, repair_info
@@ -623,15 +605,15 @@ def repair_page(nougat_text, fitz_text, severity, details):
     bad_indices = details.get("bad_indices", [])
     results = details.get("paragraphs", [])
 
-    if severity == "none":
-        return nougat_text, {"action": "keep", "n_replaced": 0}
+    if not bad_indices:
+        return nougat_text, {"action": "keep", "n_replaced": 0, "n_inline": 0, "n_deduped": 0}
 
-    # Always try paragraph-level repair first (even for severe pages)
+    # Always try paragraph-level repair
     alignment = align_paragraphs(paras, fitz_paras, bad_indices=bad_indices)
     repaired_paras = []
     n_replaced = 0
     n_inline = 0
-    n_kept_bad = 0  # bad paragraphs that couldn't be fixed
+    n_deduped = 0
 
     # Track seen paragraph text for deduplication
     seen_para_text = set()
@@ -652,6 +634,7 @@ def repair_page(nougat_text, fitz_text, severity, details):
             para_key = para.strip()[:200]
             if para_key in seen_para_text:
                 # Already have this content, skip (delete duplicate)
+                n_deduped += 1
                 continue
             # First occurrence: deduplicate lines within the paragraph
             if result["reason"] == "line_dup":
@@ -684,24 +667,14 @@ def repair_page(nougat_text, fitz_text, severity, details):
                 n_inline += 1
                 continue
 
-        # Priority 3: keep original (mark as unfixed)
+        # Priority 3: keep original (hallucinated but couldn't fix)
         repaired_paras.append(para)
-        n_kept_bad += 1
-
-    # Last resort: if too many bad paragraphs remain unfixed, fall back to
-    # full page replace (only for severe pages with >50% bad paras unfixed)
-    n_bad = len(bad_indices)
-    if severity == "severe" and n_bad > 0 and n_kept_bad > n_bad * 0.5:
-        return fitz_text, {
-            "action": "page_replace",
-            "n_replaced": len(paras),
-        }
 
     return "\n\n".join(repaired_paras), {
         "action": "paragraph_replace",
         "n_replaced": n_replaced,
         "n_inline": n_inline,
-        "n_kept_bad": n_kept_bad,
+        "n_deduped": n_deduped,
     }
 
 
@@ -774,17 +747,16 @@ def process_paper_existing(nougat_text, fitz_text):
     Returns:
         (repaired_text, stats)
     """
-    severity, details = assess_page(nougat_text)
+    details = detect_hallucinations(nougat_text)
 
-    if severity == "none":
+    if not details["bad_indices"]:
         cleaned = clean_nougat_page(nougat_text)
-        return cleaned, {"severity": "none", "action": "keep"}
+        return cleaned, {"action": "keep", "n_bad": 0}
 
-    repaired, repair_info = repair_page(nougat_text, fitz_text, severity, details)
+    repaired, repair_info = repair_page(nougat_text, fitz_text, details)
     repaired = clean_nougat_page(repaired)
 
     return repaired, {
-        "severity": severity,
         **repair_info,
         "n_total_paras": details.get("n_total", 0),
         "n_bad_paras": details.get("n_bad", 0),
@@ -813,7 +785,7 @@ def process_paper_full(pdf_path, processor, model):
 
     pages_out = []
     nougat_raw_pages = []
-    stats = {"nougat": 0, "fitz_full": 0, "fitz_partial": 0, "fitz_inline": 0}
+    stats = {"nougat": 0, "fitz_partial": 0}
 
     for i in range(n_pages):
         # Nougat inference
@@ -826,28 +798,21 @@ def process_paper_full(pdf_path, processor, model):
         # fitz text for this page
         fitz_text = clean_fitz_text(fitz_pages[i]) if i < len(fitz_pages) else ""
 
-        # Assess
-        severity, details = assess_page(nougat_text)
+        # Detect hallucinations
+        details = detect_hallucinations(nougat_text)
 
-        if severity == "none":
+        if not details["bad_indices"]:
             pages_out.append(clean_nougat_page(nougat_text))
             stats["nougat"] += 1
             tag = "Nougat OK"
         else:
-            repaired, repair_info = repair_page(
-                nougat_text, fitz_text, severity, details
-            )
+            repaired, repair_info = repair_page(nougat_text, fitz_text, details)
             pages_out.append(clean_nougat_page(repaired))
-            action = repair_info["action"]
-            if action == "page_replace":
-                stats["fitz_full"] += 1
-                tag = "SEVERE→fitz"
-            elif action == "paragraph_replace":
-                stats["fitz_partial"] += 1
-                tag = f"MOD→replace {repair_info['n_replaced']}para"
-            else:
-                stats["fitz_inline"] += 1
-                tag = "MINOR→inline"
+            stats["fitz_partial"] += 1
+            n_bad = details["n_bad"]
+            n_replaced = repair_info.get("n_replaced", 0)
+            n_deduped = repair_info.get("n_deduped", 0)
+            tag = f"fix {n_bad}bad (replace={n_replaced} dedup={n_deduped})"
 
         print(
             f"    p{i + 1}/{n_pages}: {tag} "
@@ -889,14 +854,13 @@ def generate_detection_report(pmids):
         with open(nougat_path, "r", encoding="utf-8") as f:
             text = f.read()
 
-        severity, details = assess_page(text)
+        details = detect_hallucinations(text)
         paras = details.get("paragraphs", [])
         n_total = details.get("n_total", 0)
         n_bad = details.get("n_bad", 0)
 
         lines.append(f"{'─' * 70}")
-        lines.append(f"PMID: {pmid}  |  Severity: {severity}  |  "
-                      f"Bad paras: {n_bad}/{n_total}")
+        lines.append(f"PMID: {pmid}  |  Bad paras: {n_bad}/{n_total}")
         lines.append(f"File size: {len(text)} chars")
         lines.append("")
 
@@ -907,7 +871,7 @@ def generate_detection_report(pmids):
                           f"{r['preview']}")
 
         lines.append("")
-        summary.append(f"  {pmid}: {severity} ({n_bad}/{n_total} bad)")
+        summary.append(f"  {pmid}: {n_bad}/{n_total} bad")
 
     lines.insert(5, "SUMMARY:")
     for i, s in enumerate(summary):
@@ -992,9 +956,12 @@ def main():
                 f.write(repaired)
 
             print(
-                f"  [{pmid}] severity={stats['severity']} "
-                f"action={stats.get('action', 'keep')} "
-                f"→ {len(repaired)} chars saved"
+                f"  [{pmid}] {stats.get('n_bad_paras', 0)} bad paras → "
+                f"{stats.get('action', 'keep')} "
+                f"(replace={stats.get('n_replaced', 0)} "
+                f"inline={stats.get('n_inline', 0)} "
+                f"dedup={stats.get('n_deduped', 0)}) "
+                f"→ {len(repaired)} chars"
             )
 
         print("\nDone.")
@@ -1022,8 +989,7 @@ def main():
 
             print(
                 f"  [{pmid}] saved ({len(text)} chars) | "
-                f"Nougat={stats['nougat']} fitz_full={stats['fitz_full']} "
-                f"fitz_partial={stats['fitz_partial']} fitz_inline={stats['fitz_inline']}"
+                f"Nougat OK={stats['nougat']} fixed={stats['fitz_partial']}"
             )
 
         print("\nDone.")
