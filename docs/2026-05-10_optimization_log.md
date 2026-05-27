@@ -871,3 +871,16 @@ data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
 **指标定义**：
 - TP_full = 四维全对 | FP_full = 部分匹配 + New Found | FN_full = GT 中未被完全匹配
 - P_full = TP_full / (TP_full + FP_full) | R_full = TP_full / total_GT | F1_full = 2PR/(P+R)
+
+### 51. 添加 seed 参数实现可复现运行
+
+**问题**：temperature=0 时模型输出仍不稳定，PMID 按文件顺序读取（无随机性），无法复现结果。
+
+**改动**：
+- `analysis.py`：`_call_llm()` 新增 `seed` 参数，通过 `extra_body={"seed": seed}` 传给阿里云百炼 API
+- `analysis.py`：`analyze_tf_interaction()` 透传 `seed` 到两轮 `_call_llm` 调用
+- `analysis.py`：`run_analysis()` 新增 `seed` 参数，用 `random.Random(seed).shuffle(pmids)` 随机抽取 PMID
+- `analysis.py`：CLI 新增 `--seed` 参数
+- `snakefile`：从 `config.yaml` 读取 `seed` 并传给分析命令
+
+**使用**：`config.yaml` 设置 `seed: 42` 即可保证 PMID 顺序和 LLM 输出完全一致

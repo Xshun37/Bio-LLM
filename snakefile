@@ -26,6 +26,8 @@ rule analyze_papers:
         workers=config.get("workers", 4),
         text_source=config.get("text_source", "fitz"),
         sample_flag="--sample-size " + str(config["sample_size"]) if config.get("sample_size", 48) != 48 else "",
+        pmid_seed_flag="--pmid-seed " + str(config["pmid_seed"]) if config.get("pmid_seed") is not None else "",
+        seed_flag="--seed " + str(config["seed"]) if config.get("seed") is not None else "",
     shell:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis"
         " --gold-standard {input.gold_standard}"
@@ -34,6 +36,8 @@ rule analyze_papers:
         " --model {params.model} --temperature {params.temperature}"
         " --workers {params.workers}"
         " {params.sample_flag}"
+        " {params.pmid_seed_flag}"
+        " {params.seed_flag}"
         " --debug"
 
 rule generate_report:

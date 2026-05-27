@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -129,11 +130,13 @@ ROUND1_PROMPT = """
 
 **Step 1：扫描论文中的调控事件**
 逐段阅读论文，找出所有 TF 调控基因的事件。
-对每个事件记录：TF（HGNC）、Target（HGNC）、Assay、CellLine。
-如果是引用文献的关系，Assay 标记 Literature。
+- 对每个事件记录：TF（HGNC）、Target（HGNC）、Assay、CellLine；
+- 如果是引用文献的关系，Assay 标记 Literature；
+- 如果检测到复合体（complex）字样，应当要从前后文找到该复合体两个以上亚基。
 
 **Step 2：审查与过滤**
 逐条检查 Step 1 的结果：
+- Literature不必须有Cellline和Assay，禁止因这个理由排除调控关系
 - 排除间接链（TF→B→C 只保留 TF→B）
 - 排除无具体蛋白的家族/结合位点
 - 排除无实验证据的推测
@@ -264,14 +267,16 @@ def _get_client():
     return _client
 
 
-def _call_llm(model, temperature, messages, max_retries=3):
+def _call_llm(model, temperature, messages, max_retries=3, seed=None):
     """调用阿里云百炼 API，传入 messages 列表，自动处理 429 限流重试。"""
     client = _get_client()
+    kwargs = {"model": model, "temperature": temperature, "messages": messages}
+    if seed is not None:
+        kwargs["extra_body"] = {"seed": seed}
+    print(f"  [_call_llm] temperature={temperature}, seed={seed}")
     for attempt in range(max_retries):
         try:
-            return client.chat.completions.create(
-                model=model, temperature=temperature, messages=messages,
-            )
+            return client.chat.completions.create(**kwargs)
         except (RateLimitError, APIStatusError) as e:
             if isinstance(e, APIStatusError) and e.status_code != 429:
                 raise
@@ -319,7 +324,7 @@ def clean_json_text(text):
 
 
 def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL,
-                           temperature=0, debug=False):
+                           temperature=0, debug=False, seed=None):
     round1_text = ROUND1_PROMPT.replace("{abstract_text}", abstract_text)
     round2_text = ROUND2_PROMPT
 
@@ -334,7 +339,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL,
     ]
 
     # ── 第一轮：自由文本分析 ──
-    resp1 = _call_llm(model_name, temperature, messages)
+    resp1 = _call_llm(model_name, temperature, messages, seed=seed)
     if resp1 is None:
         return {"error": "第一轮 API 限流重试已耗尽"}
     reply1 = resp1.choices[0].message.content
@@ -344,7 +349,7 @@ def analyze_tf_interaction(abstract_text, model_name=DEFAULT_MODEL,
 
     # ── 第二轮：结构化 JSON 输出 ──
     messages.append({"role": "user", "content": round2_text})
-    resp2 = _call_llm(model_name, temperature, messages)
+    resp2 = _call_llm(model_name, temperature, messages, seed=seed)
     if resp2 is None:
         return {"error": "第二轮 API 限流重试已耗尽", "round1_analysis": reply1}
     reply2 = resp2.choices[0].message.content
@@ -400,13 +405,17 @@ def _extract_usage(resp):
 
 
 def run_analysis(gold_standard, text_source, output_path, model_name,
-                 temperature=0, workers=1, debug=False, sample_size=None):
+                 temperature=0, workers=1, debug=False, sample_size=None,
+                 pmid_seed=None, seed=None):
     gs_data = load_gold_standard(gold_standard)
     if not gs_data:
         print(f"未找到金标准数据: {gold_standard}")
         return
 
     pmids = list(gs_data.keys())
+    if pmid_seed is not None:
+        rng = random.Random(pmid_seed)
+        rng.shuffle(pmids)
     if sample_size and sample_size < len(pmids):
         pmids = pmids[:sample_size]
 
@@ -430,13 +439,13 @@ def run_analysis(gold_standard, text_source, output_path, model_name,
     results = {}
     debug_info = {}
     worker_count = max(1, min(workers, len(tasks)))
-    print(f"开始分析 {len(tasks)} 篇论文 (source={text_source}, workers={worker_count})...")
+    print(f"开始分析 {len(tasks)} 篇论文 (source={text_source}, workers={worker_count}, pmid_seed={pmid_seed}, seed={seed}, temp={temperature})...")
 
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
         future_map = {
             executor.submit(analyze_tf_interaction, task["abstract"],
                             model_name=model_name, temperature=temperature,
-                            debug=debug): task["pmid"]
+                            debug=debug, seed=seed): task["pmid"]
             for task in tasks
         }
         pbar = _tqdm(total=len(tasks), desc="LLM 分析", unit="PMID",
@@ -500,6 +509,8 @@ def build_parser():
     parser.add_argument("--temperature", type=float, default=0, help="LLM temperature")
     parser.add_argument("--workers", type=int, default=1, help="并行 worker 数量")
     parser.add_argument("--sample-size", type=int, default=None, help="限制 PMID 数量 (快速测试)")
+    parser.add_argument("--pmid-seed", type=int, default=None, help="PMID 随机抽取种子 (控制抽取顺序)")
+    parser.add_argument("--seed", type=int, default=None, help="LLM 输出确定性种子 (控制模型输出)")
     parser.add_argument("--debug", action="store_true", default=False,
                         help="保存中间 LLM 输出到 *_debug.json")
     return parser
@@ -522,6 +533,8 @@ def main():
         workers=args.workers,
         debug=args.debug,
         sample_size=args.sample_size,
+        pmid_seed=args.pmid_seed,
+        seed=args.seed,
     )
 
 
