@@ -15,7 +15,12 @@ Bio-LLM/
 ├── data/
 │   ├── raw/
 │   │   ├── finalresult.tsv     # 人工金标准 (46 PMID, 226 行, 8 列)
-│   │   └── hgnc_complete_set.txt  # HGNC 完整基因集 (gitignore)
+│   │   ├── hgnc_complete_set.txt  # HGNC 完整基因集 (gitignore)
+│   │   ├── papers/             # 下载的 PDF 论文 (gitignore, 48 篇)
+│   │   └── papers_txt/         # PDF→文本转换输出
+│   │       ├── Nougat/         # 纯 Nougat OCR 输出
+│   │       ├── fitz/           # 纯 PyMuPDF (fitz) 输出
+│   │       └── hybrid/         # Nougat + pymupdf4llm 混合输出 (最终使用)
 │   ├── interim/                # 中间文件 (gitignore)
 │   ├── curated/
 │   │   ├── gene_alias_index.json         # HGNC 别名索引 (自动生成)
@@ -28,13 +33,19 @@ Bio-LLM/
 ├── src/bio_llm/
 │   ├── __init__.py              # 包入口
 │   ├── gene_aliases.py          # 基因名标准化 (role-aware + 元数据追踪)
-│   ├── abstracts.py             # 从金标准拉取 PubMed 摘要
+│   ├── abstracts.py             # 从金标准拉取全文/摘要
+│   ├── fulltext.py              # PMC XML 全文获取与解析
 │   ├── analysis.py              # 两轮 LLM 抽取 TF-Target-Assay-CellLine
 │   ├── evaluation.py            # 评估: 金标准加载 + 四维匹配
 │   └── reporting.py             # 生成 HTML 报告 + 统计
 ├── scripts/
 │   ├── build_alias_map.py       # 从 HGNC 构建别名索引
 │   ├── build_ensg_map.py        # 构建 Gene→ENSG 映射表
+│   ├── hybrid_convert_v2.py     # Nougat + pymupdf4llm 混合转换 (主用)
+│   ├── hybrid_convert.py        # v1: Nougat + fitz 整页替换
+│   ├── nougat_convert.py        # 纯 Nougat OCR 转换
+│   ├── pdf_to_txt.py            # 纯 PyMuPDF 转换
+│   ├── clean_pdf_txt.py         # fitz 输出后处理清洗
 │   ├── review_debug.sh          # 一键生成含 debug 面板的报告
 │   └── prompt_debugger.py       # Gradio 提示词调试 Web UI
 ├── run.sh                       # 一键启动入口
@@ -79,6 +90,26 @@ export DASHSCOPE_API_KEY="your_api_key"
 ./run.sh        # 默认全量 46 PMID
 ./run.sh 5      # 快速测试 5 条
 ```
+
+## PDF 转文本
+
+PMC XML 全文仅覆盖 ~15% 论文，其余使用 Nougat OCR + pymupdf4llm 混合方案：
+
+```bash
+# 幻觉检测（无 GPU，快速调试）
+python scripts/hybrid_convert_v2.py --detect
+
+# 已有 Nougat 文本的后处理修复
+python scripts/hybrid_convert_v2.py --existing --pmid 10453008
+
+# 新论文完整流程（Nougat 推理 + pymupdf4llm fallback）
+python scripts/hybrid_convert_v2.py --full --pmids 15184388 15195143
+```
+
+**混合策略**：
+- Nougat 为主（希腊字母正确，自动 Markdown 结构）
+- 5 种幻觉检测器：行级重复、token 重复（backreference 正则）、句子 n-gram、单字符重复、跨段落重复
+- 三级修复：轻度 inline 删除 → 中度段落替换 pymupdf4llm → 重度整页替换
 
 ## 提示词调试器
 
