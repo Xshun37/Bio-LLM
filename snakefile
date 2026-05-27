@@ -8,59 +8,44 @@ for _attr in ("Iterable", "Mapping", "MutableMapping", "Sequence", "MutableSeque
 
 configfile: "config/config.yaml"
 
+OUTDIR = config.get("output_dir", "outputs")
+
 rule all:
     input:
-        "outputs/report.html"
+        f"{OUTDIR}/report.html"
 
-rule generate_fulltexts:
+rule analyze_papers:
     input:
-        "data/raw/finalresult.tsv"
+        gold_standard="data/raw/finalresult.tsv"
     output:
-        "data/interim/abstracts_for_test.txt"
-    params:
-        sample_size=config.get("sample_size", 46),
-        sample_flag="--sample-size " + str(config["sample_size"]) if config.get("sample_size", 46) != 46 else "",
-        seed_str="--seed " + str(config["seed"]) if "seed" in config else "",
-        email=config.get("email", "your_email@example.com"),
-        fulltext_dir=config.get("fulltext_dir", "data/interim/fulltext"),
-        bypass_proxy_flag="--bypass-proxy" if config.get("ncbi_bypass_proxy", False) else "",
-        no_proxy_hosts=config.get(
-            "ncbi_no_proxy_hosts",
-            "eutils.ncbi.nlm.nih.gov,ncbi.nlm.nih.gov,pubmed.ncbi.nlm.nih.gov",
-        )
-    shell:
-        "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.abstracts"
-        " --input {input} --output {output}"
-        " {params.sample_flag} {params.seed_str} --email '{params.email}'"
-        " --fulltext-dir {params.fulltext_dir}"
-        " {params.bypass_proxy_flag} --ncbi-no-proxy-hosts '{params.no_proxy_hosts}'"
-
-rule analyze_abstracts:
-    input:
-        "data/interim/abstracts_for_test.txt"
-    output:
-        results="outputs/analysis_results.json",
-        debug="outputs/analysis_results_debug.json"
+        results=f"{OUTDIR}/analysis_results.json",
+        debug=f"{OUTDIR}/analysis_results_debug.json"
     params:
         model=config.get("model", "qwen3.7-max-2026-05-20"),
         temperature=config.get("temperature", 0),
-        workers=config.get("workers", 4)
+        workers=config.get("workers", 4),
+        text_source=config.get("text_source", "fitz"),
+        sample_flag="--sample-size " + str(config["sample_size"]) if config.get("sample_size", 48) != 48 else "",
     shell:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis"
-        " --input {input} --output {output.results}"
+        " --gold-standard {input.gold_standard}"
+        " --text-source {params.text_source}"
+        " --output {output.results}"
         " --model {params.model} --temperature {params.temperature}"
         " --workers {params.workers}"
+        " {params.sample_flag}"
         " --debug"
 
 rule generate_report:
     input:
-        llm_json="outputs/analysis_results.json",
-        debug_json="outputs/analysis_results_debug.json",
-        abstracts="data/interim/abstracts_for_test.txt",
+        llm_json=f"{OUTDIR}/analysis_results.json",
+        debug_json=f"{OUTDIR}/analysis_results_debug.json",
         gold_standard="data/raw/finalresult.tsv"
     output:
-        "outputs/report.html"
+        f"{OUTDIR}/report.html"
+    params:
+        text_source=config.get("text_source", "fitz"),
     shell:
         "PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.reporting"
-        " --llm-json {input.llm_json} --abstracts {input.abstracts} --output {output}"
+        " --llm-json {input.llm_json} --text-source {params.text_source} --output {output}"
         " --debug-json {input.debug_json} --gold-standard {input.gold_standard}"

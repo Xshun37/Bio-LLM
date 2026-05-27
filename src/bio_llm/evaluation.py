@@ -39,9 +39,15 @@ def load_gold_standard(tsv_path=None):
         pmid = str(row.get("PMID", "")).strip()
         if not pmid:
             continue
+        tf = str(row.get("TF", "")).strip()
+        target = str(row.get("Target", "")).strip()
+        # Skip rows with empty TF/Target (nan or blank — test cases for "no relationship")
+        if tf in ("", "nan") or target in ("", "nan"):
+            result.setdefault(pmid, [])
+            continue
         entry = (
-            str(row.get("TF", "")).strip(),
-            str(row.get("Target", "")).strip(),
+            tf,
+            target,
             str(row.get("Assay", "")).strip(),
             str(row.get("CellLine", "")).strip(),
             str(row.get("ENSG", "")).strip(),
@@ -141,34 +147,60 @@ def match_cellline(llm_cellline, gt_cellline):
 # LLM entry classification
 # ---------------------------------------------------------------------------
 
-# Status labels
-STATUS_CONSISTENT = "Consistent"
-STATUS_NEW_FOUND = "New Found"
-STATUS_NEW = "New"
-STATUS_MISSED = "Missed"
+# Two-level status labels
+# rel_status: relationship-level (TF+Target only)
+STATUS_REL_MATCH = "rel_match"
+STATUS_REL_NEW_FOUND = "new_found"
+STATUS_REL_NEW = "new"
+
+# full_status: full 4D matching (TF+Target+Assay+CellLine)
+STATUS_FULL_MATCH = "full_match"
+STATUS_FULL_PARTIAL = "partial_match"
+STATUS_FULL_NEW_FOUND = "new_found"
+STATUS_FULL_NEW = "new"
 
 
-def classify_llm_entry(llm_tf, llm_target, gt_entries_norm):
-    """Classify a single LLM prediction against gold standard.
+def classify_llm_entry(llm_tf, llm_target, llm_assay, llm_cellline,
+                       gt_entries_norm, claimed_gt=None):
+    """Classify a single LLM prediction against gold standard (two-level).
 
     Args:
         llm_tf: normalized TF symbol from LLM
         llm_target: normalized Target symbol from LLM
-        gt_entries_norm: list of (tf, target, ...) tuples (TF/Target normalized)
+        llm_assay: assay string from LLM
+        llm_cellline: cell line string from LLM
+        gt_entries_norm: list of (tf, target, assay, cellline, ensg) tuples
+        claimed_gt: set of GT indices already claimed (for 1-to-1 matching)
 
     Returns:
-        (status, gt_index)
-        status: 'Consistent' | 'New Found' | 'New'
+        (rel_status, full_status, gt_index)
+        rel_status: 'rel_match' | 'new_found' | 'new'
+        full_status: 'full_match' | 'partial_match' | 'new_found' | 'new'
         gt_index: index of matched GT entry, or -1
     """
-    for idx, gt_entry in enumerate(gt_entries_norm):
-        gt_tf, gt_target = gt_entry[0], gt_entry[1]
-        if fuzzy_gene_match(llm_tf, gt_tf) and fuzzy_gene_match(llm_target, gt_target):
-            return STATUS_CONSISTENT, idx
+    claimed = claimed_gt or set()
 
+    # Try full match first (prefer fully matching entries)
+    for idx, gt in enumerate(gt_entries_norm):
+        if idx in claimed:
+            continue
+        if fuzzy_gene_match(llm_tf, gt[0]) and fuzzy_gene_match(llm_target, gt[1]):
+            assay_ok = match_assays(llm_assay, gt[2])
+            cl_ok = match_cellline(llm_cellline, gt[3])
+            if assay_ok and cl_ok:
+                return STATUS_REL_MATCH, STATUS_FULL_MATCH, idx
+
+    # Try partial match (TF+Target match but Assay/CellLine don't)
+    for idx, gt in enumerate(gt_entries_norm):
+        if idx in claimed:
+            continue
+        if fuzzy_gene_match(llm_tf, gt[0]) and fuzzy_gene_match(llm_target, gt[1]):
+            return STATUS_REL_MATCH, STATUS_FULL_PARTIAL, idx
+
+    # No relationship match found
     if gt_entries_norm:
-        return STATUS_NEW_FOUND, -1
-    return STATUS_NEW, -1
+        return STATUS_REL_NEW_FOUND, STATUS_FULL_NEW_FOUND, -1
+    return STATUS_REL_NEW, STATUS_FULL_NEW, -1
 
 
 def classify_missed_gt(gt_entries_norm, matched_gt_indices):
@@ -184,13 +216,16 @@ def classify_missed_gt(gt_entries_norm, matched_gt_indices):
 # ---------------------------------------------------------------------------
 
 
-def compute_metrics(llm_data, gt_data, abstracts, normalize_tf_fn, normalize_target_fn):
-    """Compute all summary metrics from LLM results and gold standard.
+def compute_metrics(llm_data, gt_data, normalize_tf_fn, normalize_target_fn):
+    """Compute two-level summary metrics from LLM results and gold standard.
+
+    Two levels:
+      - rel (relationship): matching on (TF, Target) only
+      - full: matching on (TF, Target) + Assay ⊆ + CellLine ∩
 
     Args:
         llm_data: dict of {pmid: llm_results}
         gt_data: dict of {pmid: [(tf, target, assay, cellline, ensg), ...]}
-        abstracts: dict of {pmid: {abstract, gold_standard}} from parse_test_file
         normalize_tf_fn: callable to normalize TF gene names
         normalize_target_fn: callable to normalize target gene names
 
@@ -198,26 +233,24 @@ def compute_metrics(llm_data, gt_data, abstracts, normalize_tf_fn, normalize_tar
         dict with all metrics
     """
     total_gt = 0
-    total_matched_gt = 0
     total_llm = 0
-    total_consistent = 0
-    total_new_found = 0
-    total_new = 0
 
-    # Assay / CellLine accuracy (among matched pairs)
-    assay_matched = 0
-    assay_total = 0
-    cellline_matched = 0
-    cellline_total = 0
+    # Relationship-level (TF+Target)
+    tp_rel = 0
+    fp_rel = 0        # new_found (no TF+Target match in GT)
+    total_new = 0     # PMID has no GT entries
 
-    # Experimental-only subset metrics
+    # Full-level (TF+Target+Assay+CellLine)
+    tp_full = 0
+    fp_partial = 0    # TF+Target matched but Assay/CellLine wrong
+    # FP_full = fp_partial + fp_rel (all non-TP predictions)
+
+    # Experimental-only subset (GT assay ≠ Literature)
     exp_gt = 0
-    exp_matched_gt = 0
+    exp_tp_full = 0
 
     for pmid, llm_results in llm_data.items():
-        info = abstracts.get(str(pmid), {})
         gt_raw = gt_data.get(str(pmid)) or []
-        # Normalize TF/Target in GT entries
         gt_norm = [
             (normalize_tf_fn(tf), normalize_target_fn(target), assay, cellline, ensg)
             for tf, target, assay, cellline, ensg in gt_raw
@@ -236,7 +269,8 @@ def compute_metrics(llm_data, gt_data, abstracts, normalize_tf_fn, normalize_tar
             if assay_val and assay_val != "literature":
                 exp_gt += 1
 
-        matched_gt = set()
+        # Greedy 1-to-1 matching per PMID
+        claimed_gt = set()
         for item in llm_list:
             if not isinstance(item, dict):
                 continue
@@ -245,63 +279,77 @@ def compute_metrics(llm_data, gt_data, abstracts, normalize_tf_fn, normalize_tar
             llm_assay = _get_field(item, "assay", "Assay")
             llm_cellline = _get_field(item, "cellLine", "CellLine", "cellline")
 
-            status, gt_idx = classify_llm_entry(
+            rel_status, full_status, gt_idx = classify_llm_entry(
                 normalize_tf_fn(llm_tf), normalize_target_fn(llm_target),
-                gt_norm,
+                llm_assay, llm_cellline,
+                gt_norm, claimed_gt,
             )
-            if gt_idx >= 0:
-                matched_gt.add(gt_idx)
-                total_consistent += 1
+
+            if full_status == STATUS_FULL_MATCH:
+                tp_rel += 1
+                tp_full += 1
+                claimed_gt.add(gt_idx)
 
                 # Check if this matched GT entry is experimental
                 gt_assay = gt_norm[gt_idx][2]
-                gt_cellline = gt_norm[gt_idx][3]
                 if gt_assay.strip().lower() and gt_assay.strip().lower() != "literature":
-                    exp_matched_gt += 1
+                    exp_tp_full += 1
 
-                # Assay and CellLine accuracy (for matched pairs with non-empty GT)
-                if gt_assay.strip():
-                    assay_total += 1
-                    if match_assays(llm_assay, gt_assay):
-                        assay_matched += 1
-                if gt_cellline.strip() and gt_cellline.strip() not in ("-", "nan"):
-                    cellline_total += 1
-                    if match_cellline(llm_cellline, gt_cellline):
-                        cellline_matched += 1
-            elif gt_norm:
-                total_new_found += 1
-            else:
+            elif full_status == STATUS_FULL_PARTIAL:
+                tp_rel += 1
+                fp_partial += 1
+                claimed_gt.add(gt_idx)
+
+            elif full_status == STATUS_FULL_NEW_FOUND:
+                fp_rel += 1
+
+            else:  # STATUS_FULL_NEW
                 total_new += 1
 
-        total_matched_gt += len(matched_gt)
+    # Relationship-level metrics
+    total_missed_rel = total_gt - tp_rel
+    recall_rel = (tp_rel / total_gt * 100) if total_gt > 0 else 0
+    precision_rel = (tp_rel / (tp_rel + fp_rel) * 100) if (tp_rel + fp_rel) > 0 else 0
+    p_r = precision_rel / 100
+    r_r = recall_rel / 100
+    f1_rel = (2 * p_r * r_r / (p_r + r_r) * 100) if (p_r + r_r) > 0 else 0
 
-    total_missed = total_gt - total_matched_gt
-    recall = (total_matched_gt / total_gt * 100) if total_gt > 0 else 0
-    evaluable_llm = total_llm - total_new_found - total_new
-    evaluable_precision = (total_consistent / evaluable_llm * 100) if evaluable_llm > 0 else 0
-    assay_accuracy = (assay_matched / assay_total * 100) if assay_total > 0 else 0
-    cellline_accuracy = (cellline_matched / cellline_total * 100) if cellline_total > 0 else 0
-    exp_recall = (exp_matched_gt / exp_gt * 100) if exp_gt > 0 else 0
+    # Full-level metrics
+    fp_full_total = fp_partial + fp_rel
+    total_missed_full = total_gt - tp_full
+    recall_full = (tp_full / total_gt * 100) if total_gt > 0 else 0
+    precision_full = (tp_full / (tp_full + fp_full_total) * 100) if (tp_full + fp_full_total) > 0 else 0
+    p_f = precision_full / 100
+    r_f = recall_full / 100
+    f1_full = (2 * p_f * r_f / (p_f + r_f) * 100) if (p_f + r_f) > 0 else 0
+
+    # Experimental recall
+    exp_recall = (exp_tp_full / exp_gt * 100) if exp_gt > 0 else 0
 
     return {
         "total_pmids": len(llm_data),
         "total_gt": total_gt,
-        "total_matched_gt": total_matched_gt,
         "total_llm": total_llm,
-        "total_consistent": total_consistent,
-        "total_new_found": total_new_found,
+        # Relationship-level
+        "tp_rel": tp_rel,
+        "fp_rel": fp_rel,
+        "total_missed_rel": total_missed_rel,
+        "precision_rel": precision_rel,
+        "recall_rel": recall_rel,
+        "f1_rel": f1_rel,
+        # Full-level
+        "tp_full": tp_full,
+        "fp_partial": fp_partial,
+        "fp_rel_count": fp_rel,
+        "total_missed_full": total_missed_full,
+        "precision_full": precision_full,
+        "recall_full": recall_full,
+        "f1_full": f1_full,
+        # Counts
         "total_new": total_new,
-        "total_missed": total_missed,
-        "recall": recall,
-        "evaluable_precision": evaluable_precision,
-        "assay_matched": assay_matched,
-        "assay_total": assay_total,
-        "assay_accuracy": assay_accuracy,
-        "cellline_matched": cellline_matched,
-        "cellline_total": cellline_total,
-        "cellline_accuracy": cellline_accuracy,
+        # Experimental
         "exp_gt": exp_gt,
-        "exp_matched_gt": exp_matched_gt,
+        "exp_tp_full": exp_tp_full,
         "exp_recall": exp_recall,
     }
 

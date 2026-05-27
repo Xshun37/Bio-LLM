@@ -8,46 +8,35 @@
 Bio-LLM/
 ├── config/
 │   ├── config.example.yaml     # 配置模版
-│   ├── config.yaml             # 运行参数 (gitignore)
-│   └── prompts/
-│       ├── round1.txt          # Round 1 提示词模板 (可被调试器编辑)
-│       └── round2.txt          # Round 2 提示词模板 (可被调试器编辑)
+│   └── config.yaml             # 运行参数 (gitignore)
 ├── data/
 │   ├── raw/
-│   │   ├── finalresult.tsv     # 人工金标准 (46 PMID, 226 行, 8 列)
+│   │   ├── finalresult.tsv     # 人工金标准 (48 PMID, 8 列)
 │   │   ├── hgnc_complete_set.txt  # HGNC 完整基因集 (gitignore)
 │   │   ├── papers/             # 下载的 PDF 论文 (gitignore, 48 篇)
 │   │   └── papers_txt/         # PDF→文本转换输出
 │   │       ├── Nougat/         # 纯 Nougat OCR 输出
 │   │       ├── fitz/           # 纯 PyMuPDF (fitz) 输出
 │   │       └── hybrid/         # Nougat + pymupdf4llm 混合输出 (最终使用)
-│   ├── interim/                # 中间文件 (gitignore)
 │   ├── curated/
 │   │   ├── gene_alias_index.json         # HGNC 别名索引 (自动生成)
 │   │   ├── gene_alias_map.json           # 旧版别名映射 (向后兼容)
 │   │   ├── gene_alias_overrides.json     # 人工标注覆盖规则 (最高优先级)
 │   │   ├── gene_alias_conflicts.json     # 歧义别名列表 (自动生成)
 │   │   └── gene_ensg_map.json            # Gene → ENSG 映射表
-│   └── archive/                # 旧数据归档 (TRRUST/GS50, gitignore)
+│   └── archive/                # 旧数据/代码归档 (TRRUST/GS50/abstracts.py, gitignore)
 ├── outputs/                     # 输出 (gitignore)
 ├── src/bio_llm/
 │   ├── __init__.py              # 包入口
 │   ├── gene_aliases.py          # 基因名标准化 (role-aware + 元数据追踪)
-│   ├── abstracts.py             # 从金标准拉取全文/摘要
-│   ├── fulltext.py              # PMC XML 全文获取与解析
-│   ├── analysis.py              # 两轮 LLM 抽取 TF-Target-Assay-CellLine
+│   ├── analysis.py              # 两轮 LLM 抽取 + 本地全文加载
 │   ├── evaluation.py            # 评估: 金标准加载 + 四维匹配
 │   └── reporting.py             # 生成 HTML 报告 + 统计
 ├── scripts/
 │   ├── build_alias_map.py       # 从 HGNC 构建别名索引
 │   ├── build_ensg_map.py        # 构建 Gene→ENSG 映射表
 │   ├── hybrid_convert_v2.py     # Nougat + pymupdf4llm 混合转换 (主用)
-│   ├── hybrid_convert.py        # v1: Nougat + fitz 整页替换
-│   ├── nougat_convert.py        # 纯 Nougat OCR 转换
-│   ├── pdf_to_txt.py            # 纯 PyMuPDF 转换
-│   ├── clean_pdf_txt.py         # fitz 输出后处理清洗
-│   ├── review_debug.sh          # 一键生成含 debug 面板的报告
-│   └── prompt_debugger.py       # Gradio 提示词调试 Web UI
+│   └── review_debug.sh          # 一键生成含 debug 面板的报告
 ├── run.sh                       # 一键启动入口
 ├── snakefile                    # Snakemake 工作流
 ├── docs/
@@ -60,15 +49,9 @@ Bio-LLM/
 ## 流程
 
 ```text
-data/raw/finalresult.tsv
-    → data/interim/abstracts_for_test.txt   (abstracts.py)
-    → outputs/analysis_results.json         (analysis.py)
-    → outputs/report.html                   (reporting.py)
-
-提示词:
-    config/prompts/round1.txt              (LLM Round 1 模板)
-    config/prompts/round2.txt              (LLM Round 2 模板)
-    scripts/prompt_debugger.py             (交互式调试)
+data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
+    → outputs/analysis_results.json   (analysis.py, 提示词内嵌在代码中)
+    → outputs/report.html             (reporting.py)
 ```
 
 ## 环境
@@ -87,7 +70,7 @@ export DASHSCOPE_API_KEY="your_api_key"
 ## 快速开始
 
 ```bash
-./run.sh        # 默认全量 46 PMID
+./run.sh        # 默认全量 48 PMID
 ./run.sh 5      # 快速测试 5 条
 ```
 
@@ -111,22 +94,9 @@ python scripts/hybrid_convert_v2.py --full --pmids 15184388 15195143
 - 5 种幻觉检测器：行级重复、token 重复（backreference 正则）、句子 n-gram、单字符重复、跨段落重复
 - 三级修复：轻度 inline 删除 → 中度段落替换 pymupdf4llm → 重度整页替换
 
-## 提示词调试器
-
-```bash
-PYTHONPATH=src python scripts/prompt_debugger.py
-# 浏览器打开 http://localhost:7860
-```
-
-功能：
-- 左右分栏：编辑提示词 / 测试分析
-- 支持选择金标准 PMID 或粘贴摘要文本
-- 实时显示 Round 1/2 输出、解析 JSON、与金标准对比
-- 一键保存提示词到 `config/prompts/`
-
 ## 金标准数据集
 
-`data/raw/finalresult.tsv` 包含 46 篇论文、226 条 TF-target 调控关系：
+`data/raw/finalresult.tsv` 包含 48 篇论文（含 2 篇空测试用例）的 TF-target 调控关系：
 
 | 列名 | 说明 |
 |------|------|
@@ -145,8 +115,7 @@ PYTHONPATH=src python scripts/prompt_debugger.py
 
 - Round 1: 自由文本分析（Q1-Q4 问卷），模型逐句扫描摘要
 - Round 2: 基于 Round 1 分析，输出结构化 JSON（0-10 条关系）
-- 输出字段：TF, Target, direction, confidence, evidence, assay, cellLine
-- 置信度 1-5（基于实验方法 + 证据强度）
+- 输出字段：TF, Target, direction, evidence, assay, cellLine
 
 ### 基因名自动标准化
 
@@ -159,21 +128,35 @@ PYTHONPATH=src python scripts/prompt_debugger.py
 
 ### 评估指标
 
+两级评估：关系级（TF+Target）为辅助参考，完全级（TF+Target+Assay+CellLine）为主指标。
+
+**完全级（主指标）：**
+
 | 指标 | 计算方式 |
 |------|---------|
-| Recall (all) | LLM 匹配到的 GT 数 / GT 总数 |
-| Recall (experimental) | 仅 Assay ≠ Literature 的子集 |
-| Evaluable Precision | 匹配 GT 的预测数 / (总预测 - New Found - New) |
-| Assay Accuracy | 匹配对中 GT assay ⊆ LLM assay 的比例 |
-| CellLine Accuracy | 匹配对中细胞系模糊匹配的比例 |
+| Precision | TP_full / (TP_full + Partial + NewFound) |
+| Recall | TP_full / GT 总数 |
+| F1 | 2PR/(P+R) |
+| Recall (experimental) | 仅 Assay ≠ Literature 子集的 Recall |
+
+**关系级（辅助）：**
+
+| 指标 | 计算方式 |
+|------|---------|
+| Precision | TP_rel / (TP_rel + NewFound) |
+| Recall | TP_rel / GT 总数 |
+| F1 | 2PR/(P+R) |
+
+匹配规则：Assay 使用 GT ⊆ LLM 子集匹配，CellLine 使用交集匹配。Greedy 1-to-1 匹配防止重复计数。
 
 ### 评估分类标准
 
 | 状态 | 含义 |
 |------|------|
-| Consistent | (TF, Target) 在金标准中 |
-| New Found | (TF, Target) 不在金标准 — LLM 新发现 |
-| Missed | 金标准有但 LLM 未找到 |
+| 完全匹配 | TF+Target+Assay+CellLine 全对 |
+| 部分匹配 | TF+Target 对，Assay 或 CellLine 不对 |
+| 新发现 | (TF, Target) 不在金标准 |
+| 遗漏 | 金标准有但 LLM 未找到 |
 
 ## Debug 与评估
 
@@ -191,21 +174,16 @@ PYTHONPATH=src python -m bio_llm.analysis --input ... --output ... --debug
 ## 手动分步运行
 
 ```bash
-# 1. 拉取摘要
-PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.abstracts \
-  --input data/raw/finalresult.tsv \
-  --output data/interim/abstracts_for_test.txt \
-  --sample-size 5
-
-# 2. LLM 分析
+# 1. LLM 分析（直接从 papers_txt/ 读取全文）
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis \
-  --input data/interim/abstracts_for_test.txt \
+  --gold-standard data/raw/finalresult.tsv \
+  --text-source fitz \
   --output outputs/analysis_results.json --debug
 
-# 3. 生成报告
+# 2. 生成报告
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.reporting \
   --llm-json outputs/analysis_results.json \
-  --abstracts data/interim/abstracts_for_test.txt \
+  --text-source fitz \
   --debug-json outputs/analysis_results_debug.json \
   --gold-standard data/raw/finalresult.tsv \
   --output outputs/report.html
@@ -221,11 +199,11 @@ cp config/config.example.yaml config/config.yaml
 
 | 参数 | 默认值 | 说明 |
 |------|--------|------|
-| sample_size | 46 | 选取 PMID 数 (全量金标准) |
+| sample_size | 48 | 选取 PMID 数 (全量金标准) |
 | seed | (无) | 随机种子 |
 | email | (必填) | NCBI Entrez 邮箱 |
 | model | qwen3.7-max-2026-05-20 | 阿里云百炼 Qwen 模型 |
 | temperature | 0 | LLM 温度 (0 = 确定性) |
 | workers | 4 | API 并发数 |
 | ncbi_bypass_proxy | false | 绕过代理直连 PubMed |
-| prompt_dir | config/prompts | 提示词文件目录 |
+| text_source | fitz | 论文文本来源 (fitz/hybrid/nougat) |

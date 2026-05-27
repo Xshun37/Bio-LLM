@@ -700,3 +700,174 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 - ✅ PMID 10453008 Introduction 幻觉段正确替换为 fitz 内容
 - ✅ PMID 10082553 References 仍被正确截断
 - ✅ PMID 10978529 无乱码字符
+
+### 42. 删除 prompt_debugger.py
+
+**问题**：Gradio Web UI 调试器不够健壮，用户决定移除，后续用其他方式调试 prompt。
+
+**改动**：
+- **删除** `scripts/prompt_debugger.py` — 整个文件
+- **修改** `README.md` — 删除 debugger 相关段落（目录树、流程说明、启动命令）
+- `analysis.py`、`abstracts.py`、`fulltext.py` — 核心流程不变
+
+**验证**：
+- ✅ `scripts/prompt_debugger.py` 已删除
+- ✅ README 中无 debugger 引用
+- ✅ snakemake 流程不受影响
+
+### 43. 提示词内嵌到 analysis.py，去掉外部文件依赖
+
+**问题**：提示词存储在 `config/prompts/round1.txt` 和 `round2.txt` 外部文件中，通过 `load_prompt()` 函数加载。用户希望直接在代码中操作提示词，减少文件依赖。
+
+**改动**：
+- `src/bio_llm/analysis.py`：
+  - **新增** `ROUND1_PROMPT` 和 `ROUND2_PROMPT` 字符串常量，嵌入完整提示词内容
+  - **删除** `load_prompt()` 函数
+  - **删除** `DEFAULT_PROMPT_DIR` 常量
+  - **修改** `analyze_tf_interaction()` 默认使用内嵌常量，仍支持 `round1_prompt`/`round2_prompt` 参数覆盖
+- `config/config.example.yaml`：删除 `prompt_dir` 参数
+- `README.md`：删除 `config/prompts/` 目录说明和 `prompt_dir` 参数说明
+
+**保留**：`config/prompts/round1.txt` 和 `round2.txt` 文件不删除，作为备份/版本参考。
+
+**验证**：
+- ✅ `from bio_llm.analysis import ROUND1_PROMPT, ROUND2_PROMPT` 导入正常
+- ✅ 无 `load_prompt`/`DEFAULT_PROMPT_DIR` 残留引用
+- ✅ snakemake 流程不受影响
+
+---
+
+## 2026-05-27 第五次优化记录
+
+### 44. 移除 abstracts_for_test.txt 中间文件，直接从本地全文读取
+
+**问题**：流程依赖 `data/interim/abstracts_for_test.txt` 中间文件作为 `analysis.py` 和 `reporting.py` 的输入，该文件由已归档的 `abstracts.py` 生成。这增加了不必要的 I/O 步骤，且 `abstracts.py` 已不再维护。
+
+**改动**：
+- `src/bio_llm/fulltext.py`：内联了原 `abstracts.py` 中被引用的工具函数（`bypass_proxy_for_ncbi`、`clean_pmids`、`parse_bool_env`、`DEFAULT_NCBI_NO_PROXY_HOSTS`），移除对 `bio_llm.abstracts` 的导入
+- `src/bio_llm/evaluation.py`：移除 `compute_metrics()` 中未使用的 `abstracts` 参数
+- `src/bio_llm/analysis.py`：
+  - **删除** `DEFAULT_INPUT` 常量
+  - **删除** `parse_test_file()` 函数
+  - **修改** `run_analysis()` 接受 `gold_standard` + `text_source` 参数，直接用 `load_local_fulltexts()` 和 `load_gold_standard()` 构建任务
+  - **新增** `--gold-standard`、`--text-source`、`--sample-size` CLI 参数，移除 `--input`
+- `src/bio_llm/reporting.py`：
+  - **删除** `parse_test_file` 导入
+  - **修改** `generate_html_report()` 接受 `text_source` 参数，用 `load_local_fulltexts()` 加载全文用于显示
+  - **修改** `build_parser()` 用 `--text-source` 替换 `--abstracts`
+- `snakefile`：删除 `generate_fulltexts` 规则，`analyze_papers` 直接读取金标准 + text_source，`generate_report` 用 `--text-source` 替换 `--abstracts`
+- `run.sh`：移除 `abstracts_for_test.txt` 删除行
+- `scripts/review_debug.sh`：用 `--text-source fitz` 替换 `--abstracts`
+
+**新流程**：
+```
+data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
+    → outputs/analysis_results.json  (analysis.py)
+    → outputs/report.html            (reporting.py)
+```
+
+**验证**：
+- ✅ 无 `parse_test_file`/`abstracts_for_test`/`DEFAULT_INPUT` 残留引用
+- ✅ 无 `from bio_llm.abstracts import` 残留
+- ✅ 全部 Python 文件语法检查通过
+
+---
+
+## 2026-05-27 第六次优化记录
+
+### 45. 评估指标重构 + 删除 fulltext.py
+
+**问题**：
+1. "可评估精确率" 公式存在数学恒等式：`evaluable_llm = total_llm - total_new_found - total_new`，而 `total_llm = consistent + new_found + new`，所以 `evaluable_llm = consistent`，导致 `evaluable_precision = consistent / consistent = 100%`，始终无意义。
+2. `fulltext.py` 556 行中仅 `load_local_fulltexts()` + `_parse_markdown_sections()` (~90 行) 被主流程使用，其余 PMC 在线获取代码全部冗余。
+
+**改动**：
+
+**评估指标（evaluation.py + reporting.py）**：
+- 删除 `evaluable_precision`（恒等于 100% 的指标）
+- 新增 `strict_precision` = TP / (TP + NewFound)，New Found 全算假阳性，保守估计
+- 新增 `strict_f1` = 2 × P × R / (P + R)，保守精确率与召回率的调和平均
+- HTML 报告统计表格同步更新
+
+**fulltext.py 删除**：
+- `load_local_fulltexts()` + `_parse_markdown_sections()` + `LOCAL_TEXT_DIR` 移入 `analysis.py`
+- `reporting.py` 的 import 从 `bio_llm.fulltext` 改为 `bio_llm.analysis`
+- 丢弃 PMC 在线获取全套代码（`pmid_to_pmcid`, `fetch_pmc_xml`, `parse_pmc_xml`, `fetch_fulltexts`, proxy 工具等 ~400 行）
+
+**验证**：
+- ✅ 语法检查通过
+- ✅ 所有 import 正常
+- ✅ 无 `fulltext.py` 残留引用（README 已更新）
+
+---
+
+## 2026-05-27 第七次优化记录
+
+### 46. 清理 scripts 目录
+
+**问题**：`scripts/` 目录包含 8 个脚本，其中 5 个是 PDF 转换的旧版本或中间实验产物，功能已被 `hybrid_convert_v2.py` 整合。
+
+**改动**：
+- **删除**：`hybrid_convert.py`（v1 整页替换）、`hybrid_merge.py`（段落级合并实验）
+- **归档到 `archive/scripts/`**：`clean_pdf_txt.py`、`nougat_convert.py`、`pdf_to_txt.py`（功能已集成到 v2）
+- **保留**：`build_alias_map.py`、`build_ensg_map.py`、`hybrid_convert_v2.py`、`review_debug.sh`
+
+**验证**：
+- ✅ `scripts/` 只剩 4 个文件
+- ✅ `archive/scripts/` 保留历史版本供参考
+- ✅ README 项目结构已同步更新
+
+### 47. 重构 analysis.py：突出 messages 消息传递模式
+
+**问题**：`analysis.py` 的对话逻辑分散在 `run_conversation()` + `analyze_tf_interaction()` + `test_single()` 三个函数中，messages 列表被隐藏，不易理解和修改。
+
+**改动**：
+- `analysis.py`：合并为 7 个模块（§1-§7），消除 `run_conversation()`、`test_single()`、`extract_model_content()`、`extract_reasoning_content()` 函数
+- §5 `analyze_tf_interaction()` 内直接构建 `messages` 列表，逐轮 append + 调用 `_call_llm(messages)`
+- §4 `_call_llm()` 只接受 `messages` 参数（删除 `prompt=` 快捷方式）
+- §7 CLI 删除 `--test-abstract` 入口
+- 添加第三轮的注释示例，说明如何往 messages 追加消息
+
+**结构**：
+- §1 Constants → §2 Prompts → §3 全文加载 → §4 LLM 客户端 → §5 核心分析（messages 在这里）→ §6 批量运行 → §7 CLI
+
+**验证**：
+- ✅ 语法检查通过
+- ✅ `from bio_llm.analysis import analyze_tf_interaction, load_local_fulltexts, run_analysis` 正常
+- ✅ `reporting.py` 导入正常（无引用已删除函数）
+
+### 48. 移除置信度（confidence）字段
+
+**问题**：置信度评分标准主观（1-5 基于实验方法），模型输出不稳定，且对评估无实质贡献。
+
+**改动**：
+- `analysis.py` §2：删除 ROUND1/ROUND2_PROMPT 中所有 confidence 相关规则、JSON 示例字段、规则编号重排（7→10）
+- `reporting.py`：删除 `.conf-{1-5}` CSS 样式、"置信度" 表头、`confidence` 字段提取及显示逻辑
+- `README.md`：更新输出字段列表，删除置信度描述
+
+### 49. 移除 direction 和 evidence 字段
+
+**问题**：direction 未被评估使用，evidence 增加了提示词复杂度但 ROI 低。LLM 输出字段精简为 TF, Target, assay, cellLine。
+
+**改动**：
+- `analysis.py` §2：ROUND1/ROUND2_PROMPT 删除 direction 和 evidence 相关规则与 JSON 示例字段
+- `reporting.py`：删除"证据"表头列、`llm_dir`/`evidence` 字段提取、表格中对应 `<td>` 单元格；colspan 8→6
+
+### 50. 四维评估策略重构（TF+Target+Assay+CellLine）
+
+**问题**：旧评估只看 (TF, Target) 匹配，Assay/CellLine 准确率独立计算、不影响 P/R/F1。导致 TF+Target 对但 Assay/CellLine 错的预测被计为完整 TP，指标虚高。
+
+**改动**：
+- `evaluation.py`：
+  - `classify_llm_entry()` 签名新增 `llm_assay`, `llm_cellline`, `claimed_gt` 参数，返回 `(rel_status, full_status, gt_idx)` 三元组
+  - 两级匹配：关系级（TF+Target）+ 完全级（4D），Assay 用 GT⊆LLM 子集匹配，CellLine 用交集匹配
+  - `compute_metrics()` 重写：分别计算两级 P/R/F1，greedy 1-to-1 匹配防止重复 claim
+  - 删除独立的 assay_accuracy / cellline_accuracy（已融入完全匹配）
+- `reporting.py`：
+  - 统计表分两级展示：关系级（辅助）+ 完全级（主指标，绿色高亮）
+  - 新增"部分匹配"状态（橙色），表示 TF+Target 对但 Assay 或 CellLine 不对
+  - CSS 新增 `.status-partial` 样式
+
+**指标定义**：
+- TP_full = 四维全对 | FP_full = 部分匹配 + New Found | FN_full = GT 中未被完全匹配
+- P_full = TP_full / (TP_full + FP_full) | R_full = TP_full / total_GT | F1_full = 2PR/(P+R)

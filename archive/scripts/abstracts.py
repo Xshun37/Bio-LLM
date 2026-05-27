@@ -152,13 +152,18 @@ def generate_test_file(
     bypass_proxy=False,
     no_proxy_hosts=DEFAULT_NCBI_NO_PROXY_HOSTS,
     fulltext_dir="data/interim/fulltext",
+    text_source="auto",
 ):
     """Generate test file with full-text articles from PMC.
 
-    Fetches full-text from PMC for each PMID in the gold standard,
-    falling back to abstracts for PMIDs without PMC availability.
+    Args:
+        text_source: Text source for articles:
+          - "auto" (default): PMC fulltext → PubMed abstract fallback
+          - "hybrid": Load from papers_txt/hybrid/ (Nougat + fitz repair)
+          - "fitz": Load from papers_txt/fitz/ (pure PyMuPDF)
+          - "nougat": Load from papers_txt/Nougat/ (pure OCR)
     """
-    from bio_llm.fulltext import fetch_fulltexts  # lazy import to avoid circular
+    from bio_llm.fulltext import fetch_fulltexts, load_local_fulltexts  # lazy import to avoid circular
 
     df = pd.read_csv(input_file, sep="\t", dtype={"PMID": str})
 
@@ -177,26 +182,41 @@ def generate_test_file(
 
     print(f"Gold standard: {len(unique_pmids)} PMIDs, using {len(sampled_pmids)}")
 
-    # Fetch full texts from PMC
-    fulltexts = fetch_fulltexts(
-        sampled_pmids,
-        email=email,
-        output_dir=fulltext_dir,
-        bypass_proxy=bypass_proxy,
-        no_proxy_hosts=no_proxy_hosts,
-    )
-
-    # Fallback: fetch abstracts for PMIDs without PMC full-text
-    missing_pmids = [p for p in sampled_pmids if p not in fulltexts]
+    # Load texts based on source
+    fulltexts = {}
     abstracts = {}
-    if missing_pmids:
-        print(f"  {len(missing_pmids)} 篇无 PMC 全文，降级获取摘要...")
-        abstracts = fetch_abstracts(
-            missing_pmids,
+
+    if text_source in ("hybrid", "fitz", "nougat"):
+        # Local file source
+        fulltexts = load_local_fulltexts(sampled_pmids, source=text_source)
+        # Fallback: fetch abstracts for PMIDs without local files
+        missing_pmids = [p for p in sampled_pmids if p not in fulltexts]
+        if missing_pmids:
+            print(f"  {len(missing_pmids)} 篇无本地全文，降级获取摘要...")
+            abstracts = fetch_abstracts(
+                missing_pmids,
+                email=email,
+                bypass_proxy=bypass_proxy,
+                no_proxy_hosts=no_proxy_hosts,
+            )
+    else:
+        # Default: PMC fulltext → abstract fallback
+        fulltexts = fetch_fulltexts(
+            sampled_pmids,
             email=email,
+            output_dir=fulltext_dir,
             bypass_proxy=bypass_proxy,
             no_proxy_hosts=no_proxy_hosts,
         )
+        missing_pmids = [p for p in sampled_pmids if p not in fulltexts]
+        if missing_pmids:
+            print(f"  {len(missing_pmids)} 篇无 PMC 全文，降级获取摘要...")
+            abstracts = fetch_abstracts(
+                missing_pmids,
+                email=email,
+                bypass_proxy=bypass_proxy,
+                no_proxy_hosts=no_proxy_hosts,
+            )
 
     with open(output_file, "w", encoding="utf-8") as handle:
         handle.write("=== TF-Target Analysis Test Data ===\n\n")
@@ -261,6 +281,12 @@ def build_parser():
         default=os.getenv("BIO_LLM_NCBI_NO_PROXY_HOSTS", DEFAULT_NCBI_NO_PROXY_HOSTS),
         help="NCBI 直连域名列表，逗号分隔。",
     )
+    parser.add_argument(
+        "--text-source",
+        default="auto",
+        choices=["auto", "hybrid", "fitz", "nougat"],
+        help="文本来源: auto (PMC→摘要), hybrid, fitz, nougat",
+    )
     return parser
 
 
@@ -275,6 +301,7 @@ def main():
         bypass_proxy=args.bypass_proxy,
         no_proxy_hosts=args.ncbi_no_proxy_hosts,
         fulltext_dir=args.fulltext_dir,
+        text_source=args.text_source,
     )
 
 

@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 PYTHONPATH="$ROOT/src" python -m bio_llm.reporting \
   --llm-json "$ROOT/outputs/analysis_results.json" \
-  --abstracts "$ROOT/data/interim/abstracts_for_test.txt" \
+  --text-source fitz \
   --debug-json "$ROOT/outputs/analysis_results_debug.json" \
   --gold-standard "$ROOT/data/raw/finalresult.tsv" \
   --output "$ROOT/outputs/report.html"
