@@ -42,9 +42,7 @@ and AUAP (Table 1, Fig. 2B). A single transcript of 167 bp was obtained. This re
 The structural map of the POLD2 gene for the small subunit of Pol \(\delta\) was determined by a combination of restriction enzyme digestion, Southern blot hybridization, PCR analysis and DNA sequencing. The POLD2 gene is
 
 Table 2
-Analysis of exon^intron splice junctions of the POLD2 gene .
-
-Exon and intron sequences were determined by sequence analysis. Intron 1 interrupts the 5P-UTR of the gene 56 bp upstream of the ATG start codon.
+Analysis of exon^intron splice junctions of the POLD2 gene . Exon and intron sequences were determined by sequence analysis. Intron 1 interrupts the 5P-UTR of the gene 56 bp upstream of the ATG start codon.
 Intron sizes were determined by a combination of sequencing (intron 1), PCR ampli¢cation of genomic clones using cDNA primers, and restriction digest analysis of genomic clones. The complete coding sequence of human POLD2 cDNA has been published previously [21]. The exon^intron boundaries for exon 1 were sequenced from the VF4 clone. The remaining exons were sequenced after PCR ampli¢cation, using di¡erent primer combinations
 (Table 1), of the VF4 clone and the mRNA for POLD2. The sizes of the introns were determined by sequencing, PCR ampli¢cation and/or restriction
 mapping. The GenBank accession number for the complete POLD2 gene sequence is AF239710. Nucleotide position +1 is assigned to the A residue of

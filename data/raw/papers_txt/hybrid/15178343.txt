@@ -7,11 +7,7 @@ Neta Erez, Perry Stambolsky, Igor Shats, Michael Milyavsky, Tami Kachko, Varda R
 The recent identification of hypoxia-inducible-factor (HIF) prolyl hydroxylases (PHD1, 2, and 3), which modify HIF-1a in an oxygen-dependent manner, provided an important link between oxygen availability and hypoxia-induced gene expression. However, little is known about the regulation of the PHDs. To investigate the transcriptional regulation of PHD1, we cloned the PHD1 gene promoter. Here, we report that the expression of PHD1 is reduced under hypoxic conditions. Furthermore, we identified binding sites for aryl hydrocarbon nuclear translocator (ARNT/HIF-1f) within the PHD1 promoter, and showed that ARNT is associated in vivo with the PHD1 promoter following hypoxia, which implies a role for ARNT in the hypoxia-dependent regulation of PHD1. Taken together, our findings suggest a hypoxia-induced regulatory loop of PHD1 expression, mediated by ARNT.
 
 0014-5793/$22.00  2004 Published by Elsevier B.V. on behalf of the Federation of European Biochemical Societies.
-doi:10.1016/j.febslet.2004.05.003
-
-18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
-Reverse: 50-GTCCTCTGCGGTCCCTAAGGGC-30. The PCR product was cloned using the pcDNA3.1/V5-His-TOPO TA expression kit
+doi:10.1016/j.febslet.2004.05.003 18733468, 2004, 2-3, Downloaded from https://febs.onlinelibrary.wiley.com/doi/10.1016/j.febslet.2004.05.003 by Peking University Health, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License Reverse: 50-GTCCTCTGCGGTCCCTAAGGGC-30. The PCR product was cloned using the pcDNA3.1/V5-His-TOPO TA expression kit
 (Invitrogen). PHD1promoter-luc reporter plasmid was constructed by
 subcloning the PHD1 promoter into the pGL3-Basic luciferase plasmid (Promega).
 

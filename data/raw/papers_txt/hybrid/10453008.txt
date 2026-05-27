@@ -26,9 +26,7 @@ IL-5, G-CSF, and M-CSF stimulate the late differentiation of eosinophilic, neutr
 Although IL-5, IL-3, and GM-CSF all have distinct effects on
 different target cells, they elicit similar responses in cells responsive to all three cytokines, and they even cross-compete for binding to the same cell (5, 6). Molecular cloning of the receptor components and reconstitution of the functional receptors have
 revealed that the receptors for the three cytokines are heterodimers
-composed of a cytokine-speciﬁc a-chain (IL-3Ra, IL-5Ra, and
-
-GM-CSFRa) and a common signaling b-chain (bc)5 (7–9). Both
+composed of a cytokine-speciﬁc a-chain (IL-3Ra, IL-5Ra, and GM-CSFRa) and a common signaling b-chain (bc)5 (7–9). Both
 the a- and b-chains are glycosylated proteins and members of the
 class I cytokine receptor family (10). Although the human bc subunit has no binding capacity by itself, it associates with the low
 afﬁnity a-chains to form a high afﬁnity receptor (11–13). Besides
@@ -85,9 +83,7 @@ Complexes were then separated through nondenaturing 5% polyacrylamide
 gels and were visualized by autoradiography. In competition experiments,
 a 10- to 100-fold molar excess of wt or mut oligonucleotide was added to
 the reaction mix for 5 min before addition of the labeled probe. For supershift analysis, nuclear extracts were preincubated with 2 mg of Ab for
-40 min on ice before addition of the labeled probe.
-
-21967 to 2289 bp were cloned into the pBLCAT2 vector, a reporter plasmid containing the minimal thymidine kinase promoter
+40 min on ice before addition of the labeled probe. 21967 to 2289 bp were cloned into the pBLCAT2 vector, a reporter plasmid containing the minimal thymidine kinase promoter
 (48). The generated constructs, 22096/21967CAT2, 22096/
 2289CAT2, and 21967/2289CAT2, were then transfected into
 U937 cells and HL-60 cells and tested for promoter activity. Fig.

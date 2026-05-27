@@ -591,6 +591,169 @@ def _strip_repeated_tokens(text, boundary):
     return result.strip()
 
 
+# ═══════════════════════════════════════════════════════════
+#  5b. SENTENCE-LEVEL REPAIR
+# ═══════════════════════════════════════════════════════════
+
+def split_sentences(text):
+    """Split text into sentences, preserving Markdown structure.
+
+    Rules:
+      - Markdown headers (# ...) and table rows (|...|) stay as single units
+      - Normal text splits on sentence-ending punctuation followed by space
+      - Short fragments (< 10 chars) merge with previous sentence
+    """
+    lines = text.split("\n")
+    sentences = []
+
+    for line in lines:
+        stripped = line.strip()
+
+        # Markdown headers: keep as-is
+        if stripped.startswith("#"):
+            sentences.append(stripped)
+            continue
+
+        # Table rows: keep as-is
+        if stripped.startswith("|") and stripped.endswith("|"):
+            sentences.append(stripped)
+            continue
+
+        # Empty lines: skip
+        if not stripped:
+            continue
+
+        # Normal text: split on sentence boundaries
+        # Match: sentence-ending punctuation + space + uppercase/number
+        parts = re.split(r'(?<=[.!?])\s+(?=[A-Z0-9(])', stripped)
+
+        for part in parts:
+            part = part.strip()
+            if not part:
+                continue
+            # Merge short fragments with previous
+            if sentences and len(part) < 15 and not part[0].isupper():
+                sentences[-1] = sentences[-1] + " " + part
+            else:
+                sentences.append(part)
+
+    return sentences
+
+
+def is_sentence_hallucinated(sentence):
+    """Check if a single sentence contains hallucination patterns.
+
+    Reuses existing detectors. Sentences are short, so mainly catches
+    token_rep and char_rep.
+    """
+    is_hall, reason, boundary = detect_paragraph_hallucination(sentence)
+    return is_hall
+
+
+def find_best_fitz_sentence(nougat_sentence, fitz_sentences):
+    """Find the best matching fitz sentence for a Nougat sentence.
+
+    Uses normalized SequenceMatcher. Returns None if no good match.
+    """
+    n_norm = _normalize_for_match(nougat_sentence)
+    if len(n_norm) < 10:
+        return None
+
+    best_score = 0
+    best_fs = None
+
+    for fs in fitz_sentences:
+        f_norm = _normalize_for_match(fs)
+        if len(f_norm) < 10:
+            continue
+        score = SequenceMatcher(None, n_norm, f_norm).ratio()
+        if score > best_score:
+            best_score = score
+            best_fs = fs
+
+    # Threshold: 0.35 (sentences are shorter, more variance)
+    if best_score > 0.35 and best_fs:
+        return best_fs
+    return None
+
+
+def repair_bad_paragraph(nougat_para, fitz_candidates, reason, boundary):
+    """Repair a bad Nougat paragraph at sentence level.
+
+    Strategy:
+      - Split Nougat paragraph into sentences
+      - For each sentence: if hallucinated, replace with best fitz match
+      - If not hallucinated, keep Nougat original (preserves formatting)
+
+    Args:
+        nougat_para: the bad Nougat paragraph text
+        fitz_candidates: list of fitz paragraphs (from alignment)
+        reason: hallucination reason (token_rep, char_rep, etc.)
+        boundary: hallucination boundary info
+
+    Returns:
+        repaired text string
+    """
+    # Split Nougat paragraph into sentences
+    n_sentences = split_sentences(nougat_para)
+
+    # Merge fitz candidates and split into sentences
+    fitz_merged = " ".join(c for c in fitz_candidates if c.strip())
+    f_sentences = split_sentences(fitz_merged)
+
+    if not n_sentences:
+        return fitz_merged  # Nougat para was empty/garbage, use fitz entirely
+
+    if not f_sentences:
+        return nougat_para  # No fitz content, keep Nougat (will be caught by inline strip)
+
+    # Process each Nougat sentence
+    result_sentences = []
+    used_fitz_sentences = set()
+
+    for ns in n_sentences:
+        if not is_sentence_hallucinated(ns):
+            # Good sentence: keep Nougat original
+            result_sentences.append(ns)
+        else:
+            # Bad sentence: find best fitz replacement
+            best = find_best_fitz_sentence(ns, f_sentences)
+            if best and best not in used_fitz_sentences and len(best.strip()) > 10:
+                result_sentences.append(best)
+                used_fitz_sentences.add(best)
+            # else: skip (hallucinated sentence with no fitz equivalent)
+
+    # Join sentences back
+    if not result_sentences:
+        # All sentences dropped — fall back to fitz
+        if fitz_merged.strip():
+            return fitz_merged.strip()
+        return ""
+
+    # Smart join: headers and table rows get newlines, normal sentences get spaces
+    parts = []
+    for s in result_sentences:
+        if s.startswith("#") or (s.startswith("|") and s.endswith("|")):
+            parts.append("\n" + s + "\n")
+        else:
+            parts.append(s)
+
+    result = " ".join(parts)
+    # Clean up extra spaces around newlines
+    result = re.sub(r"\n +", "\n", result)
+    result = re.sub(r" +\n", "\n", result)
+    result = re.sub(r"\n{3,}", "\n\n", result)
+    result = result.strip()
+
+    # Safety check: if result is much shorter than original, sentence-level
+    # repair likely dropped too much (incomplete sentences not detected).
+    # Fall back to full fitz replacement.
+    if len(result) < len(nougat_para) * 0.3 and fitz_merged.strip():
+        return fitz_merged.strip()
+
+    return result
+
+
 def repair_page(nougat_text, fitz_text, details):
     """Repair hallucinated paragraphs in Nougat text using fitz fallback.
 
@@ -653,27 +816,30 @@ def repair_page(nougat_text, fitz_text, details):
             seen_para_text.add(para_key)
             continue
 
-        # Priority 1: replace with fitz paragraph(s)
-        # When Nougat compresses multiple paragraphs into one bad paragraph,
-        # insert consecutive unmapped fitz paragraphs starting from alignment[i]
-        # Stop when we hit a mapped fitz paragraph (which belongs to another Nougat para)
+        # Priority 1: sentence-level repair using fitz
+        # Split bad Nougat paragraph into sentences, only replace hallucinated
+        # sentences with fitz equivalents. Preserves good Nougat formatting.
         fitz_idx = alignment.get(i)
         if fitz_idx is not None and fitz_idx < len(fitz_paras):
-            inserted_count = 0
-            # Insert consecutive unmapped fitz paragraphs
+            # Collect fitz candidate paragraphs (consecutive unmapped)
+            fitz_candidates = []
             for offset in range(len(fitz_paras) - fitz_idx):
                 fi = fitz_idx + offset
                 if fi in alignment.values() and offset > 0:
-                    # This fitz para is mapped to another Nougat para, stop
                     break
                 if fi not in used_fitz and len(fitz_paras[fi].strip()) > 10:
-                    repaired_paras.append(fitz_paras[fi])
+                    fitz_candidates.append(fitz_paras[fi])
                     used_fitz.add(fi)
-                    inserted_count += 1
 
-            if inserted_count > 0:
-                n_replaced += 1
-                continue
+            if fitz_candidates:
+                repaired = repair_bad_paragraph(
+                    para, fitz_candidates,
+                    result.get("reason"), result.get("boundary"),
+                )
+                if len(repaired.strip()) > 50:
+                    repaired_paras.append(repaired)
+                    n_replaced += 1
+                    continue
 
         # Priority 2: inline strip for token_rep / char_rep (fallback)
         if result["reason"] in ("token_rep", "char_rep") and result.get("boundary"):
@@ -687,7 +853,7 @@ def repair_page(nougat_text, fitz_text, details):
         repaired_paras.append(para)
 
     return "\n\n".join(repaired_paras), {
-        "action": "paragraph_replace",
+        "action": "sentence_replace",
         "n_replaced": n_replaced,
         "n_inline": n_inline,
         "n_deduped": n_deduped,

@@ -675,3 +675,28 @@ Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）�
 - ✅ 8 篇 PMID 全部正常，4 个原始 bug 保持修复
 - ✅ PMID 10453008 Introduction 现在包含完整的两段内容（"ematopoiesis..." + "GM-CSFRa..."）
 - ✅ 输出更清晰：`[10082553] 177 bad paras → paragraph_replace (replace=1 inline=1 dedup=174)`
+
+### 41. 句子级修复：Nougat 为骨架，fitz 逐句补正
+
+**问题**：段落级替换会丢失 Nougat 的正确格式和内容。当 Nougat 段落只有部分句子是幻觉时，整段替换会误删正确内容。
+
+**设计原则**：Nougat 提供结构（Markdown 标题、表格格式、希腊字母编码），fitz 提供完整文本。优先保留 Nougat 骨架，只用 fitz 替换幻觉句子。
+
+**改动**：
+- `scripts/hybrid_convert_v2.py`：
+  - **新增** `split_sentences()`：按句子边界拆分，保留 Markdown 结构（标题、表格行不拆）
+  - **新增** `is_sentence_hallucinated()`：复用现有检测器检测单句
+  - **新增** `find_best_fitz_sentence()`：用 SequenceMatcher 找最佳 fitz 句子（阈值 0.35）
+  - **新增** `repair_bad_paragraph()`：句子级修复核心
+    - 拆分 Nougat 坏段为句子
+    - 好句子保留 Nougat 原文
+    - 坏句子用 fitz 对应句替换
+    - 安全检查：若修复后 < 原文 30%，回退到整段 fitz 替换
+  - **修改** `repair_page()` Priority 1：从整段替换改为调用 `repair_bad_paragraph()`
+  - stats action 从 `paragraph_replace` 改为 `sentence_replace`
+
+**验证结果**：
+- ✅ 8 篇 PMID 全部正常处理
+- ✅ PMID 10453008 Introduction 幻觉段正确替换为 fitz 内容
+- ✅ PMID 10082553 References 仍被正确截断
+- ✅ PMID 10978529 无乱码字符
