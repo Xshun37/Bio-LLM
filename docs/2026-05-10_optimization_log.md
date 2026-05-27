@@ -425,3 +425,129 @@
 - `scripts/prompt_debugger.py`：UI 标签同步更新
 
 **验证**：`./run.sh 3` 端到端测试通过（2 篇全文 + 1 篇摘要降级）
+
+---
+
+## 2026-05-27 优化记录
+
+### 34. PDF 转文本方案探索
+
+**问题**：PMC XML 全文覆盖率仅 ~15%（48 篇中 6 篇有完整 XML），需要 PDF→TXT 兜底方案。现有 `scripts/pdf_to_txt.py` 用简单 `page.get_text("text")` 输出噪声严重（表格散乱、图注/页码/running header 混入、参考文献未过滤）。
+
+**探索过程**：
+
+1. **手写 PyMuPDF 规则**：完成初版 `scripts/pdf_to_txt.py`，48 篇全部转换但质量不可用
+
+2. **调研开源库**：
+   - [Marker](https://github.com/datalab-to/marker)（深度学习版面分析，LayoutLMv3）
+   - [Docling](https://github.com/docling-project/docling)（IBM，结构化 JSON）
+   - [pymupdf4llm](https://pypi.org/project/pymupdf4llm/)（PyMuPDF 生态，Markdown 输出）
+
+3. **调研大模型直接读 PDF**：
+   - Qwen 3.7（当前使用）：纯文本模型，不支持
+   - Qwen3-VL：PDF→图片→视觉理解，可行但 token 成本高
+   - Gemini：原生 PDF 直传，最方便但需切换模型
+
+4. **安装 Marker**：`pip install marker-pdf`，遇到 CUDA 兼容问题
+   - 系统驱动 CUDA 12.9，Marker 装了 CUDA 13.0 的 PyTorch → GPU 不可用
+   - 降级到 `torch cu124` → CUDA 可用（RTX 4060 Ti），但 `Recognizing Text` 仍需 ~3 小时/篇（405 个文本块逐个 OCR）
+
+5. **换 pymupdf4llm**：秒级转换，5 篇测试结果 4/5 成功
+   - 11706010（JBC）、16628196（JID）、10453008、22227292：OK
+   - 7876096（1995 JBC 特殊排版）：失败，只提取到表格
+
+**遗留问题**：
+- pymupdf4llm 输出仍有残留：页码、running header、图注、脚注打断段落、References 未过滤
+- PDF 自定义字体编码导致希腊字母乱码（`β-protein` → `-protein`），Marker `--force_ocr` 可解决但速度不可接受
+- 48 篇 PDF 已下载至 `data/raw/papers/`，`data/raw/papers_txt/` 里仍是第一版噪声输出
+
+**环境变更**：
+- 新装：`marker-pdf 1.10.2`、`pymupdf4llm 1.27.2.3`、`pymupdf_layout 1.27.2.3`、`onnxruntime 1.23.2`
+- 降级：`torch 2.6.0+cu124`（从 cu130）
+- 各种 `nvidia-cu*` cu12 + cu13 共存
+
+### 35. Nougat 方案探索与混合策略
+
+**问题**：上一轮（#34）遗留两个核心问题：(1) PDF 自定义字体导致希腊字母乱码；(2) pymupdf4llm 输出仍有页眉/页码/图注噪声。
+
+**方案：Nougat（Meta/Facebook Research）**
+
+Nougat 是 Vision Encoder-Decoder 模型（Swin Transformer encoder + mBART decoder），将 PDF 页面渲染为图片后进行 OCR，输出 Markdown。
+
+- 优点：希腊字母正确（走视觉路径，不依赖 PDF 字体编码）；自动输出带 `#`/`##` 结构的 Markdown；自动移除 References
+- 速度：~8-12s/页（RTX 4060 Ti）
+- 调用方式：通过 HuggingFace `transformers`（`VisionEncoderDecoderModel.from_pretrained('facebook/nougat-base')`），不使用 Nougat CLI（CLI 依赖 albumentations 1.x，与 2.x 不兼容）
+- HuggingFace 镜像：`os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'`
+
+**测试 11706010（9 页）**：成功，51276 chars，希腊字母正确（`β-protein`、`APB_β_`），结构清晰。
+
+**批量转换 48 篇**：先清除旧 pymupdf4llm 输出，后台运行 Nougat。前 8 篇生成后停止（发现幻觉问题）。
+
+**发现幻觉问题**：
+
+Nougat 在部分页面产生重复幻觉（decoder 自回归的固有特性）：
+
+| PMID | 问题页 | 幻觉类型 | 示例 |
+|---|---|---|---|
+| 15178343 | 首页 | 行级重复 | `PREDI, PREDI, PREDI...` 几百次 |
+| 10082553 | 首页 | 行级重复 | 作者名重复几十次 |
+| 10453008 | Introduction | Token 级重复 | `_i.e._, a _i.e._, a _i.e._...`（行内） |
+| 10453008 | M&M | Token 级重复 | `_Hind_III_III_III_III...`（行内） |
+| 11706010 | 部分页 | 表格行重复 | `\(-\) & \(-\) & \(-\)...` |
+
+**其他方案评估**：
+- [MinerU/Magic-PDF](https://github.com/opendatalab/MinerU)（OpenDataLab）：综合能力强但本地部署太重（~20GB 模型权重），放弃
+- Layout Detection 模型：只能帮 fitz 过滤噪声（标注 body text / figure / table 区域），但 fitz 只是备用方案，收益有限，不需要
+
+**解决方案：Nougat + fitz 混合**
+
+`scripts/hybrid_convert.py`：逐页跑 Nougat，检测两类幻觉，幻觉页用 fitz 替换：
+1. **行级重复检测**：非空行去重率 >20% → 幻觉
+2. **Token 级重复检测**：(a) 正则匹配 `_X_X_X` 模式（如 `_Hind_III_III`）；(b) 单行内同一词出现 >10 次且占比 >15%（排除停用词）
+
+**当前状态**：
+- 8 篇已有 Nougat 输出（`papers_txt/`）
+- 48 篇已有 fitz 原始输出（`papers_txt/fitz/`）
+- 混合脚本已更新（增加 token 级检测），正在后台重跑 8 篇（task: `b6a0xur2y`）
+- 输出目录：`papers_txt/hybrid/`
+
+**遗留问题**：
+- 混合策略无法解决 Nougat "编造型" 幻觉（生成不存在的内容），只能检测重复型
+- 希腊字母在 Nougat 正常页正确，在 fitz 兜底页仍乱码
+- 待评估：微调 Nougat 是否能消除幻觉（需要 PMC 配对训练数据，48 篇 ~400 样本偏少，RTX 4060 Ti 8GB 仅够 LoRA）
+
+**新建文件**：
+- `scripts/nougat_convert.py`：纯 Nougat 批量转换
+- `scripts/hybrid_convert.py`：Nougat + fitz 混合转换（幻觉检测 + 兜底）
+- `scripts/hybrid_merge.py`：基于已有 Nougat 输出的后处理合并
+- `scripts/clean_pdf_txt.py`：fitz 输出的后处理清洗
+
+### 36. Nougat + pymupdf4llm 混合转换 v2（段落级修复）
+
+**问题**：v1 (`hybrid_convert.py`) 三个局限：(1) 整页替换丢失同页正常段落的正确希腊字母；(2) raw fitz 输出噪声多；(3) 页面边界丢失。
+
+**改动**：
+- `scripts/hybrid_convert_v2.py`（新建）：段落级幻觉检测 + pymupdf4llm 替代 fitz
+  - **5 种幻觉检测器**：line_dup（行级重复）、token_rep（backreference 正则 + 单词高频）、sentence_rep（8-gram）、char_rep（单字符重复）、cross_para_dup（跨段落重复，新增）
+  - **三级修复策略**：轻度→inline 删除重复 token；中度→段落级替换为 p4 对应段；重度→整页替换 p4
+  - **段落对齐**：section header 锚点 + difflib.SequenceMatcher 模糊匹配 + 位置 fallback
+  - **两种模式**：`--existing`（后处理已有 Nougat 文本，无 GPU）/ `--full`（完整流程）
+  - `clean_p4_text()`：复用 `clean_pdf_txt.py` 元数据模式 + 页码/图片占位符清洗 + References 截断
+
+**8 篇已有 Nougat 输出检测结果**：
+
+| PMID | 严重度 | 坏段/总段 | 检测器 |
+|------|--------|-----------|--------|
+| 10082553 | severe | 177/223 | cross_para_dup（作者名重复） |
+| 10453008 | moderate | 2/41 | token_rep（`_i.e._` + `_Hind_III`） |
+| 10978529 | moderate | 1/30 | token_rep（CTG DNA 重复） |
+| 11013233 | moderate | 1/47 | token_rep（`_M_M_M` 质粒序列） |
+| 11706010 | severe | 1/58 | line_dup（表格行重复） |
+| 11854297 | moderate | 1/54 | — |
+| 14642566 | moderate | 1/61 | — |
+| 15178343 | moderate | 1/30 | — |
+
+**遗留问题**：
+- 编造型幻觉仍无法检测（无重复模式）
+- pymupdf4llm fallback 段落希腊字母乱码（PDF 字体编码）
+- 重度幻觉页整页替换丢失 Nougat 正常段落的正确希腊字母

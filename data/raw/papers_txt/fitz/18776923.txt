@@ -1,0 +1,1124 @@
+SHORT COMMUNICATION
+Glucose-regulated protein 78 as a novel effector of BRCA1 for inhibiting
+stress-induced apoptosis
+BHY Yeung1,5, BWY Kwan1,5, QY He2, AS Lee3, J Liu4 and AST Wong1
+1School of Biological Sciences, University of Hong Kong, Hong Kong, China; 2Institute of Life and Health Engineering, Jinan
+University, Guangzhou, China; 3Department of Biochemistry and Molecular Biology, USC/Norris Comprehensive Cancer Center,
+Los Angeles, CA, USA and 4Department of Molecular Pathology, MD Anderson Cancer Center, Houston, TX, USA
+The tumor suppressor BRCA1 is mutated in a high
+percentage of familial breast and ovarian cancer, but our
+understanding of its mechanisms of action remains
+incomplete. We report here that glucose-regulated protein
+(GRP)-78, a critical regulator of the unfolded protein
+response (UPR), is a novel downstream target of BRCA1.
+We showed that overexpression of wild-type BRCA1
+suppressed the expression of GRP78, whereas expression
+of
+mutant
+BRCA1
+gene
+or
+targeted
+inhibition
+of
+endogenous BRCA1 using small-interfering RNA (siR-
+NA) enhanced GRP78 expression. Knockdown of BRCA1
+also led to induction of other components of UPR, such as
+GRP94 and CHOP. Consistent with a role of BRCA1
+knockdown in mediating cell survival, forced expression of
+GRP78
+stimulated
+cell
+proliferation
+and
+prevented
+apoptosis, including that induced by endoplasmic reticu-
+lum stress and chemotherapy, in ovarian OVCAR-3 and
+breast MCF-7 cancer cells. Overexpression of wild-type
+BRCA1 could increase the apoptosis of GRP78-over-
+expressing cells. Conversely, knockdown GRP78 by
+siRNA sensitized ovarian and breast cancer cells to
+apoptosis. This effect was reduced when the expression
+of BRCA1 was simultaneously knockdown by siRNA,
+indicating that BRCA1 also negatively regulates GRP78-
+mediated cell survival and resistance to apoptosis.
+Oncogene (2008) 27, 6782–6789; doi:10.1038/onc.2008.290;
+published online 8 September 2008
+Keywords: GRP78; unfolded protein response; BRCA1;
+ovarian cancer; breast cancer; apoptosis
+Introduction
+BRCA1 is the most important cancer susceptibility gene
+found in breast and ovarian cancer. Germline mutation
+of BRCA1 is responsible for 30–40% of familial breast
+cancer cases. Familial ovarian cancer comprises at least
+10% of cases (Welcsh and King, 2001). In addition,
+BRCA1 expression is often decreased or absent in
+sporadic breast and ovarian cancers, suggesting that
+BRCA1 may also play a role in nonhereditary tumors
+(Wilson et al., 1999; Zheng et al., 2000). The biological
+function of the BRCA1 protein appears to be complex
+as this protein has been implicated in the regulation of a
+variety of cellular processes including maintenance of
+genome integrity, DNA damage repair, cell cycle control
+and apoptosis (Welcsh and King, 2001). However, its
+molecular function remains unclear. A better under-
+standing of the downstream targets of BRCA1 is
+necessary so that the most appropriate therapeutic
+targets may be identiﬁed.
+Recently, we used a proteomic approach to identify
+previously unknown BRCA1 target proteins by compar-
+ing the protein proﬁles of ovarian surface epithelial
+(OSE) cells from women with a history of familial
+ovarian and/or breast cancer (FH-OSE), i.e., at least
+two ﬁrst-degree relatives with such cancer and/or testing
+positive for BRCA1 mutations, to those without such
+history (He et al., 2005). This led to the discovery that
+the unfolded protein response (UPR) regulator glucose-
+regulated protein (GRP)-78 was upregulated in FH-
+OSE. The association between increased GRP78 and
+malignancy has previously been implicated in various
+ovarian and breast cancer cell lines and tumors,
+suggesting a pathological role for GRP78 in ovarian
+and breast cancers (Fernandez et al., 2000; Shin et al.,
+2003; Lee, 2007).
+GRP78, a 78-kDa protein also referred to as BiP, is a
+major stress-inducible chaperone localized to the en-
+doplasmic reticulum (ER). It facilitates proper folding
+of proteins and assists in their assembly and transport
+out of the cell. Importantly, GRP78 is a key component
+of the UPR required to alleviate ER stress, maintain ER
+function and protect cells against death (Lee, 2005).
+Results and discussion
+Loss of BRCA1 function induces GRP78 gene expression
+To evaluate the ability of BRCA1 to regulate GRP78,
+we ﬁrst transfected OVCAR-3 cells with the wild-type
+BRCA1 construct. Overexpression of wild-type BRCA1
+suppressed the expression of GRP78 (Figure 1a).
+Received 7 March 2008; revised 23 July 2008; accepted 23 July 2008;
+published online 8 September 2008
+Correspondence: Dr AST Wong, School of Biological Sciences,
+University of Hong Kong, 4S-14 Kadoorie Biological Sciences
+Building, Pokfulam Road, Hong Kong, China.
+E-mail: awong1@hku.hk
+5These authors contributed equally to this work.
+Oncogene (2008) 27, 6782–6789
+& 2008 Macmillan Publishers Limited
+All rights reserved 0950-9232/08 $32.00
+www.nature.com/onc
+
+
+Conversely, we asked whether expression of dominant-
+negative
+BRCA1
+truncation
+mutant
+(D1815–1863)
+(Zhou et al., 2003) that represents a common BRCA1
+mutation found in BRCA1-associated ovarian and
+breast cancer families could enhance expression of
+GRP78. The ectopic expression of BRCA1 (D1815–
+1863) was indicated by a truncated protein of 210 kDa
+using anti-BRCA1 (Figure 1b, left panel). This was also
+conﬁrmed by real-time PCR analysis using a sense
+primer designed against sequence from the pcDNA3.1
+vector that was absent in the endogenous transcript and
+an antisense primer located in the transfected BRCA1
+gene (data not shown). We found that expression of the
+mutant BRCA1 (D1815–1863) caused a 2.3-fold increase
+in GRP78 protein and mRNA expression compared
+with the control vector (Figure 1b). The expression of
+b-actin as an internal control was not changed. As an
+alternative approach, we utilized a BRCA1-speciﬁc
+small-interfering RNA (siRNA) approach. This may
+mimic
+the
+underexpression
+of
+BRCA1
+commonly
+observed in ovarian and breast cancers despite the
+underlying
+mechanisms
+(Welcsh
+and
+King,
+2001).
+Western
+blot
+and
+real-time
+(RT)–PCR
+analysis
+conﬁrmed
+inhibition
+of
+endogenous
+BRCA1
+after
+transfection with the BRCA1-speciﬁc siRNA compared
+with the control nonspeciﬁc siRNA (Figure 1c). The
+BRCA1 siRNA had no effect on BRCA2 (data not
+shown).
+siRNA-mediated
+inhibition
+of
+endogenous
+BRCA1 signiﬁcantly (2.4-fold) increased GRP78 protein
+and mRNA compared to controls (Figure 1c). This
+effect was not observed for b-actin. Knockdown of
+BRCA1 also stimulated the induction of other compo-
+nents of UPR, such as GRP94 and CHOP (Figure 1c),
+indicating that loss of BRCA1 activates the UPR stress
+response. Furthermore, overexpression of wild-type
+BRCA1 suppressed GRP78 promoter activity, whereas
+BRCA1 (D1815–1863) and BRCA1 siRNA stimulated
+the GRP78 promoter, a standard indicator for the
+trigger of the UPR (Lee, 2005) (Figure 1d). In addition,
+there was an inverse correlation between BRCA1 and
+GRP78 expression in cell lines (Figure 1e). CaOV-3 and
+MDA-MB-231 cells expressed low levels of BRCA1
+demonstrating higher expression of GRP78 than others
+(Figure 1e). Together, these results suggest a negative
+regulatory role of BRCA1 on GRP78.
+Stable overexpression of GRP78 in ovarian and breast
+cancer cells
+To study the function of GRP78 in ovarian and breast
+cancer, we transfected empty vector or His-tagged
+GRP78 expression constructs (Zeng et al., 2004) into
+OVCAR-3 and MCF-7 that had the lowest endogenous
+level of GRP78 protein of the cell lines tested. Two
+independently isolated G418-resistant clones of each cell
+line were isolated. In each case, parental and empty
+vector controls had little GRP78. Transfected clones
+expressed high levels of GRP78 as determined by
+western blot with anti-GRP78 or with anti-His for the
+presence of the binding epitope (Figure 2a). Whole-cell
+imaging revealed prominent staining in transfected cells
+and was apparent in the perinuclear region, consistent
+with ER localization of GRP78 (Figure 2b). Nonspeciﬁc
+staining was not detected in cells in which the primary
+antibody had been omitted or substituted by mouse
+immunoglobulin G (IgG; data not shown). The known
+ER stress-inducing agents tunicamycin (inhibitor of
+protein glycosylation) and 2-deoxy-D-glucose (hypogly-
+cemia-inducing agent) induced a dose-dependent in-
+crease on GRP78 expression (Figure 2c). GRP78 protein
+levels expressed in the stable cell lines were comparable
+to cells treated with tunicamycin and 2-deoxy-D-glucose
+(Figure 2c), indicating the expression was in the range
+that is attained under experimental ER stress.
+BRCA1 counters GRP78 during stress-induced apoptosis
+Overexpression of GRP78 substantially enhanced apop-
+tosis resistance in both cancer cell lines (Supplementary
+Figure 1). It has been reported that BRCA1 regulates
+apoptosis of breast and ovarian cancer cells in response
+to serum deprivation and a number of other apoptotic
+stimuli (Thangaraju et al., 2000). To evaluate whether
+GRP78 may mediate the protective function of BRCA1
+on cellular apoptosis, GRP78-overexpressing cells were
+exposed to multiple stress conditions, including tunica-
+mycin, 2-deoxy-D-glucose and paclitaxel (the ﬁrst-line
+chemotherapy in ovarian and breast cancer), and
+apoptosis was examined by Hoechst (data not shown),
+4,6-diamidino-2-phenylindole
+(DAPI)
+as
+well
+as
+TdT-mediated dUTP nick end labelling (TUNEL)
+(Figure 3a). Clearly, overexpression of GRP78 signiﬁ-
+cantly decreased the amount of apoptosis induced by
+tunicamycin (OVCAR-3, B50% inhibition; MCF-7,
+B69%
+inhibition),
+2-deoxy-D-glucose
+(OVCAR-3,
+B44.7% inhibition; MCF-7, B75% inhibition) and
+upon treatment with paclitaxel (OVCAR-3, B57%
+inhibition; MCF-7, B65% inhibition) than in parent
+and empty vector controls (Figure 3a). Furthermore,
+overexpression
+of
+wild-type
+BRCA1
+reversed
+the
+GRP78-mediated cell survival in GRP78-overexpressing
+OVCAR-3 and MCF-7 cells (Figure 3b), supporting the
+potential involvement of BRCA1 in regulating GRP78
+action.
+To test further whether BRCA1 acts through GRP78
+and contributes to resistance to apoptotic stimuli, we
+used siRNA to knockdown GRP78 and BRCA1, either
+alone or in combination. The expression of GRP78 and
+BRCA1 protein was substantially reduced by their
+speciﬁc
+siRNA
+as compared
+with control siRNA
+(Figure 4a). Consistent with the above results in
+Figure
+1c,
+the
+siRNA
+against
+BRCA1
+efﬁciently
+increased expression of GRP78, GRP94 and CHOP
+(Figure 4a). Knockdown of GRP78 by siRNA enhanced
+tunicamycin-,
+2-deoxy-D-glucose-
+and
+paclitaxel-in-
+duced increase in apoptosis as compared with cells
+transfected with control siRNA, whereas knockdown of
+BRCA1
+decreased
+cellular
+apoptosis
+(Figure
+4b).
+Furthermore, knockdown of GRP78 signiﬁcantly re-
+duced the decreased apoptosis mediated by knockdown
+of BRCA1. The reduction was more than GRP78
+knockdown alone (Po0.05). These results suggest a
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6783
+Oncogene
+
+
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+pcDNA3.1
+Wt BRCA1
+Relative mRNA level
+GRP78
+GRP78
+β-actin
+BRCA1
+pcDNA3.1
+Wt BRCA1
+0
+0.5
+1
+1.5
+2
+2.5
+3
+NS siRNA
+BRCA1 siRNA
+Relative mRNA level
+BRCA1
+GRP78
+β-actin
+BRCA1
+GRP94
+GRP78
+CHOP
+β-actin
+GRP78
+Relative mRNA level
+GRP78
+GRP94
+CHOP
+BRCA1
+BRCA1
+(∆1815-1863)
+BRCA1 wt
+NS
+siRNA
+BRCA1
+siRNA
+Ctrl
+pcDNA3.1
+BRCA1
+(∆1815-1863)
+pcDNA3.1
+BRCA1
+(∆1815-1863)
+GRP78
+β-actin
+T47D
+MDA-MB-231
+MCF-7
+OVCAR-3
+SKOV-3
+CaOV-3
+GRP78
+β-actin
+BRCA1
+BRCA1
+3
+2.5
+2
+1.5
+1
+0.5
+0
+Luciferase activity
+Luciferase activity
+NS
+siRNA
+BRCA1
+siRNA
+0
+0.5
+1
+1.5
+2
+2.5
+3
+0
+0.5
+1
+1.5
+2
+2.5
+3
+GRP78
+GRP78
+pcDNA3.1
+BRCA1
+(∆1815-1863)
+GRP78
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0
+pcDNA3.1 Wt BRCA1
+Luciferase activity
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6784
+Oncogene
+
+
+MCF-7
+#4
+#6
+Neo
+GRP78
+GRP78
+His-tag
+β-actin
+GRP78
+His-tag
+MCF-7
+#4
+#6
+Neo
+GRP78
+OVCAR-3 0.1
+Tunicamycin
+(µg/ml)
+2-deoxy-D-glucose
+(mM)
+GRP78
+β-actin
+OVCAR-3
+#10
+#11
+GRP78
+GRP78
+β-actin
+Tunicamycin
+2-deoxy-D-glucose
+OVCAR-3
+#10
+#11
+Neo
+GRP78
+OVCAR-3
+#10
+#11
+Neo
+GRP78
+GRP78
+His-tag
+β-actin
+GRP78
+His-tag
+50
+5
+0.5
+1
+Figure 2
+Stable overexpression of GRP78 in OVCAR-3 and MCF-7. (a) Stable transfection of pcDNA3.1 or pcDNA3.1 His-tagged
+GRP78 (Zeng et al., 2004) was performed using Lipofectamine 2000 (Invitrogen) following the manufacturer’s instructions.
+Transfected cells were selected and maintained in medium supplemented with 400 mg/ml of G418. Cell lysates from parental, vector-
+transfected (Neo) or GRP78-overexpressing OVCAR-3 (left panel) and MCF-7 (right panel) cells were analysed by western blot using
+speciﬁc antibodies recognizing GRP78 or His-tag (Novagen, Madison, WI, USA). b-Actin served as the loading control.
+(b) Untransfected, vector-transfected (Neo) or GRP78-overexpressing OVCAR-3 (left panel) and MCF-7 (right panel) cells were
+grown on glass coverslips and immunostained with anti-GRP78 or anti-His antibodies, and then detected with a goat Texas red-
+conjugated anti-mouse immunoglobulin G (IgG; Molecular Probes, Eugene, OR, USA). (c) Total cell lysates from OVCAR-3 cells
+grown in the presence or absence of increasing doses of tunicamycin (0.1 and 1 mg/ml) or 2-deoxy-D-glucose (0.5–50 mM) (Sigma, St
+Louis, MO, USA) were analysed by western blotting for the presence of GRP78 proteins. Expression of GRP78 in tunicamycin (1 mg/
+ml) or 2-deoxy-D-glucose (5 mM) treated and GRP78-overexpressing cells was detected by western blot. b-Actin served as the loading
+control (right panel).
+Figure 1
+BRCA1 regulates GRP78 gene expression. (a) OVCAR-3 cells were transiently transfected with 1 mg of wild-type (Wt)
+BRCA1 using Lipofectamine 2000, in accordance with the manufacturer’s instruction. (b) Cells were transfected with 2 mg of
+pcDNA3.1 empty vector or BRCA1 (D1815–1863) (Zhou et al., 2003). Endogenous BRCA1 (wt) encoded a protein approximately
+220 kDa. BRCA1 (D1815–1863) was a truncated protein of 210 kDa. (c) Cells were transfected with 10 nM of BRCA1 small-interfering
+RNA (siRNA) SMARTpool (catalog no. 003461) or a control nonspeciﬁc (NS) siRNA (Dharmacon, Lafayette, CO, USA) using
+SilentFect (Bio-Rad, Hercules, CA, USA), in accordance with the manufacturer’s protocol. At 48 h after transfection, BRCA1 and
+GRP78 expressions were analysed by western blotting (left panel) with the anti-BRCA1 (556443) polyclonal antibody (PharMingen,
+San Diego, CA, USA) or anti-GRP78 monoclonal antibody (BD Biosciences, San Jose, CA, USA). For real-time PCR analysis, total
+RNA was prepared using TRIzol and reversed transcribed using SuperScript reverse transcriptase (Invitrogen, Carlsbad, CA, USA).
+Real-time PCR was performed using the iCycler iQ Real-Time detection system and the IQ SYBR Green Supermix (Bio-Rad) with
+GRP78 primers: forward, 50-CTGGGTACATTTGATCTGACTGG-30; reverse: 50-GCATCCTGGTGGCTTTCCAGCCA-30 (right
+panel). b-Actin was included as an internal control. siRNA-mediated changes of GRP94 and GRP78 were analysed by anti-KDEL
+monoclonal antibody (StressGen, Victoria, Canada) and CHOP (C/EBP homologous protein) by anti-CHOP/GADD153 monoclonal
+antibody (Santa Cruz, Santa Cruz, CA, USA). The signal intensity was determined by densitometry, and the levels of BRCA1, GRP78,
+GRP94 and CHOP were normalized against that of b-actin. (d) Wt BRCA1-, BRCA1 (D1815–1863)- or siRNA-expressed cells were
+transiently transfected with 1 mg of reporter construct of the GRP78 promoter (-169/Luc) (Lee, 2005). All cells were co-transfected with
+pSV-b-galactosidase (Promega, Madison, WI, USA). After 24 h, the cells were lysed and luciferase activities were determined.
+Luciferase values were normalized for transfection efﬁciency by b-galactosidase activity. The relative luciferase activities were
+calculated relative to pcDNA3.1 or NS siRNA, which as arbitrarily assigned a value of ‘1’. (e) Total cell lysates from ovarian cancer
+cell lines CaOV-3, SKOV-3 and OVCAR-3 (left panel), and breast cancer cell lines MCF-7, MDA-MB-231 and T47D (right panel)
+were analysed by western blot for the presence of BRCA1 and GRP78 proteins. All experiments were repeated three times, and data
+are shown as mean±s.d.
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6785
+Oncogene
+
+
+0
+10
+20
+30
+40
+50
+TUNEL
+DAPI
+MCF-7
+#4
+#6
+Neo
+GRP78
+*
+*
+*
+*
+Tunicamycin
+% of apoptotic cells
+0
+10
+20
+30
+40
+50
+GRP78
+OVCAR-3
+Neo
+#10
+#11
+GRP78
+#10
+#11
+OVCAR-3
+Neo
+*
+*
+*
+*
+DAPI
+TUNEL
+DAPI
+TUNEL
+TUNEL
+DAPI
+% of apoptotic cells
+MCF-7
+#4
+#6
+Neo
+GRP78
+0
+10
+20
+30
+40
+50
+*
+*
+*
+*
+2-deoxy-D-glucose
+MCF-7
+#4
+#6
+Neo
+GRP78
+TUNEL
+DAPI
+MCF-7
+#4
+#6
+Neo
+GRP78
+% of apoptotic cells
+0
+10
+20
+30
+40
+50
+GRP78
+*
+*
+*
+*
+OVCAR-3
+Neo
+#10
+#11
+TUNEL
+DAPI
+DAPI
+TUNEL
+DAPI
+TUNEL
+GRP78
+#10
+#11
+OVCAR-3
+Neo
+% of apoptotic cells
+Figure 3
+Effect of GRP78 overexpression on cell apoptosis. (a) Parental, vector-transfected (Neo) or GRP78-overexpressing OVCAR-3 (left
+panel) and MCF-7 (right panel) cells were treated with 1 mg/ml tunicamycin, 5 mM 2-deoxy-D-glucose (Sigma), and 100 mM paclitaxel (Merck,
+Darmstadt, Germany) for 48 h. Apoptosis was measured by DAPI (4,6-diamidino-2-phenylindole) and TdT-mediated dUTP nick end labelling
+(TUNEL) staining and visualized by ﬂuorescent microscopy. DAPI-stained cells exhibiting condensed, pyknotic or fragmented nuclei were
+representative of apoptotic cells. TUNEL assay was performed using an in situ cell death detection kit (Roche, Indianapolis, IN, USA) per the
+manufacturer’s instructions. Omission of the enzyme was used as a negative control. Data points shown represent the mean percentage of
+apoptotic cells counted in ﬁve ﬁelds in replicate wells from three independent experiments (lower panel). (b) Stable GRP78-expressing OVCAR-
+3 and MCF-7 cells transfected with wild-type (Wt) BRCA1 were treated with tunicamycin, 2-deoxy-D-glucose, and paclitaxel for 48 h.
+Apoptosis was measured by TUNEL staining, and results are mean of three independent experiments. Bars represent s.d. *Po0.05 versus
+parental controls.
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6786
+Oncogene
+
+
+critical role of BRCA1 in the negative regulation of
+GRP78 and show that BRCA1 inactivation inhibits
+stress-induced apoptosis in breast and ovarian cancer
+cells, at least in part, through induction of GRP78.
+Similar results were also obtained when these experi-
+ments were done in CaOV-3, SKOV-3 and MDA-MB-
+231 ovarian and breast cancer cell lines, indicating that
+these ﬁndings were not merely due to a cell line-speciﬁc
+phenotype (data not shown).
+The most interesting aspect of this work was the
+ﬁnding that, in addition to its well-established role in
+transcriptional regulation, BRCA1 may be an important
+modulator
+of
+protein
+homeostasis,
+and
+this
+may
+represent a new antitumoral mechanism of BRCA1.
+Evidence is emerging for a role of BRCA1 in the
+ubiquitination pathway through its interaction with a
+deubiquitinating enzyme, BAP1, and components such
+as BARD1 that contribute to its ubiquitin ligase activity
+(Jensen et al., 1998; Mallery et al., 2002). Along this line,
+it is tempting to speculate that malfolded proteins may
+accumulate in the cytosol upon mutation or loss of
+BRCA1, which may negatively impact ER stress-
+induced protein degradation in the cancer microenvir-
+onment. GRP78 is known to function as a major ER
+GRP78+
+Wt BRCA1
+GRP78+
+Wt BRCA1
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+GRP78+
+Wt BRCA1
+0
+10
+20
+30
+40
+50
+GRP78+
+Wt BRCA1
+GRP78
+GRP78
+GRP78
+0
+10
+20
+30
+40
+50
+*
+*
+*
+*
+Paclitaxel
+MCF-7
+#4
+#6
+Neo
+GRP78
+TUNEL
+DAPI
+MCF-7
+#4
+#6
+Neo
+GRP78
+% of apoptotic cells
+0
+10
+20
+30
+40
+50
+*
+*
+*
+*
+OVCAR-3
+Neo
+#10
+#11
+GRP78
+TUNEL
+DAPI
+DAPI
+TUNEL
+DAPI
+TUNEL
+GRP78
+#10
+#11
+OVCAR-3
+Neo
+% of apoptotic cells
+Tunicamycin
+2-deoxy-D-glucose
+Paclitaxel
+OVCAR-3
+% of apoptotic cells
+% of apoptotic cells
+% of apoptotic cells
+Tunicamycin
+2-deoxy-D-glucose
+Paclitaxel
+MCF-7
+% of apoptotic cells
+% of apoptotic cells
+% of apoptotic cells
+#10
+#10
+#11
+#11
+#10
+#10
+#11
+#11
+#4
+#4
+#6
+#6
+*
+*
+GRP78+
+Wt BRCA1
+GRP78
+#4
+#4
+#6
+#6
+GRP78+
+Wt BRCA1
+GRP78
+#4
+#4
+#6
+#6
+0
+10
+20
+30
+40
+50
+GRP78
+#10
+#10
+#11
+#11
+0
+10
+20
+30
+40
+50
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+Figure 3
+Continued.
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6787
+Oncogene
+
+
+chaperone.
+It
+offers
+protection
+against
+malfolded
+protein
+accumulation
+and
+suppresses
+apoptosis.
+Furthermore, BRCA1 has been reported to upregulate
+chaperone
+activity
+of
+HSP27
+(Ma
+et
+al.,
+2003).
+Our results also suggest a possible role for BRCA1
+beyond DNA repair in the maintenance of genome
+integrity (Gowen et al., 1998; Moynahan et al., 1999).
+GRP78 represents an important pro-survival compo-
+nent of UPR (Lee, 2005). In yeast, UPR has been
+shown to be required for correct chromosome duplica-
+tion
+and
+segregation
+(Lee
+et
+al.,
+2003)
+that
+are
+essential for the maintenance of intact genomes. There
+are reports that BRCA1-deﬁcient mice or cultured cells
+displayed
+various
+chromosome
+abnormalities,
+and
+that this effect was mediated through the ability of
+BRCA1 to stabilize topoisomerase IIa (Xu et al., 2001;
+Lou et al., 2005). Interestingly, topoisomerase IIa
+has also been identiﬁed as a GRP78 target gene and is
+downregulated
+by
+GRP78
+(Reddy
+et
+al.,
+2003).
+The nature and extent to which GRP78 functions in
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+GRP78
+BRCA1
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+Tunicamycin
+2-deoxy-D-glucose
+Paclitaxel
+OVCAR-3
+NS siRNA
+NS siRNA
+GRP78 siRNA
+BRCA1 siRNA
+BRCA1 +
+GRP78 siRNA
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+% of apoptotic cells
+% of apoptotic cells
+% of apoptotic cells
+P = 0.004
+P = 0.0212
+P = 0.0078
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+0
+10
+20
+30
+40
+50
+Tunicamycin
+2-deoxy-D-glucose
+Paclitaxel
+MCF-7
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+% of apoptotic cells
+% of apoptotic cells
+% of apoptotic cells
+P = 0.0111
+P = 0.0104
+P = 0.0041
+GRP94
+CHOP
+MCF-7
+GRP78
+BRCA1
+β-actin
+GRP78 siRNA
+BRCA1 siRNA
+BRCA1 +
+GRP78 siRNA
+GRP94
+CHOP
+OVCAR-3
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+NS
+siRNA
+BRCA1
+siRNA
+BRCA1
++GRP78
+siRNAs
+GRP78
+siRNA
+β-actin
+a
+b
+Figure 4
+BRCA1 is targeting GRP78 in stress-induced apoptosis. OVCAR-3 cells and MCF-7 cells were transfected with 10 nM of
+nonspeciﬁc (NS) small-interfering RNA (siRNA), GRP78 siRNA SMARTpool (catalog no. M-008198) (Dharmacon), or BRCA1
+siRNA, either alone or in combination. (a) Cell lysates were subjected to western blotting with anti-BRCA1, anti-KDEL or anti-CHOP
+antibodies. b-Actin was an internal control. (b) Apoptosis was measured by TdT-mediated dUTP nick end labelling (TUNEL)
+staining. Data points shown represent the mean percentage of apoptotic cells counted in ﬁve ﬁelds in replicate wells from three
+independent experiments. Bars represent s.d.
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6788
+Oncogene
+
+
+the BRCA1-mediated chromosome segregation is un-
+known but raises an intriguing question for future
+investigation.
+In
+conclusion,
+we
+have
+identiﬁed
+a
+previously
+unknown
+function of BRCA1
+in mediating UPR
+that correlated with GRP78 induction. These results
+not only expand the spectrum of biological properties
+of BRCA1, but also suggest the potential role of
+GRP78 as an additional therapeutic target, which, if
+inhibited,
+may
+allow
+BRCA1-deﬁcient
+cells
+to
+become susceptible to environmental stress and drug
+response.
+Acknowledgements
+The present work was supported by Hong Kong Research
+Grants Council Grant (7484/04M) (AST Wong).
+References
+Fernandez PM, Tabbara SO, Jacobs LK, Manning FC, Tsangaris TN,
+Schwartz AM et al. (2000). Overexpression of the glucose-regulated
+stress gene GRP78 in malignant but not benign human breast
+lesions. Breast Cancer Res Treat 59: 15–26.
+Gowen LC, Avrutskaya AV, Latour AM, Koller BH, Leadon SA.
+(1998).
+BRCA1
+required
+for
+transcription-coupled
+repair
+of
+oxidative DNA damage. Science 281: 1009–1012.
+He QY, Zhou Y, Wong E, Ehlen TG, Auersperg N, Chiu JF et al.
+(2005). Proteomic analysis of a preneoplastic phenotype in ovarian
+surface epithelial cells derived from prophylactic oophorectomies.
+Gynecol Oncol 98: 68–76.
+Jensen DE, Proctor M, Marquis ST, Gardner HP, Ha SI, Chodosh LA
+et al. (1998). BAP1: a novel ubiquitin hydrolase which binds to the
+BRCA1 RING ﬁnger and enhances BRCA1-mediated cell growth
+suppression. Oncogene 16: 1097–1112.
+Lee AS. (2005). The ER chaperone and signaling regulator GRP78/BiP
+as a monitor of endoplasmic reticulum stress. Methods 35: 373–381.
+Lee
+AS.
+(2007).
+GRP78
+induction
+in
+cancer:
+therapeutic
+and
+prognostic implications. Cancer Res 67: 3496–3499.
+Lee K, Neigeborn L, Kaufman RJ. (2003). The unfolded protein
+response is required for haploid tolerance in yeast. J Biol Chem 278:
+11818–11827.
+Lou Z, Minter-Dykhouse K, Chen J. (2005). BRCA1 participates in
+DNA decatenation. Nat Struct Mol Biol 12: 589–593.
+Ma XY, Fan S, Xiong J, Yuan R, Meng Q, Gao M et al. (2003).
+Role
+of
+BRCA1
+in
+heat
+shock
+response.
+Oncogene
+22:
+10–27.
+Mallery DL, Vandenberg CJ, Hiom K. (2002). Activation of the E3
+ligase function of the BRCA1/BARD1 complex by polyubiquitin
+chains. EMBO J 21: 6755–6762.
+Moynahan ME, Chiu JW, Koller BH, Jasin M. (1999). Brca1 controls
+homology-directed DNA repair. Mol Cell 4: 511–518.
+Reddy RK, Berndtsson M, Mandic A, Zhou R, Shoshan MC,
+Linder S. (2003). Endoplasmic reticulum chaperone protein GRP78
+protects cells from apoptosis induced by topoisomerase inhibitors:
+role of ATP binding site in suppression of caspase-7 activation.
+J Biol Chem 278: 20915–20924.
+Shin BK, Wang H, Yim AM, Le Naour F, Brichory F, Jang JH et al.
+(2003). Global proﬁling of the cell surface proteome of cancer cells
+uncovers an abundance of proteins with chaperone function. J Biol
+Chem 278: 7607–7616.
+Thangaraju M, Kaufmann SH, Couch FJ. (2000). BRCA1 facilitates
+stress-induced apoptosis in breast and ovarian cancer cell lines.
+J Biol Chem 275: 33487–33496.
+Welcsh PL, King MC. (2001). BRCA1 and BRCA2 and the genetics of
+breast and ovarian cancer. Hum Mol Genet 10: 705–713.
+Wilson CA, Ramos L, Villasenor MR, Anders KH, Press MF, Clarke K
+et al. (1999). Localization of human BRCA1 and its loss in
+high-grade, non-inherited breast carcinomas. Nat Genet 21: 236–240.
+Xu X, Qiao W, Linke SP, Cao L, Li WM, Furth PA et al. (2001).
+Genetic interactions between tumor suppressors Brca1 and p53 in
+apoptosis, cell cycle and tumorigenesis. Nat Genet 28: 266–271.
+Zeng L, Lu M, Mori K, Luo S, Lee AS, Zhu Y et al. (2004). ATF6
+modulates SREBP2-mediated lipogenesis. EMBO J 23: 950–958.
+Zheng W, Luo F, Lu JJ, Baltayan A, Press MF, Zhang ZF et al.
+(2000). Reduction of BRCA1 expression in sporadic ovarian cancer.
+Gynecol Oncol 76: 294–300.
+Zhou C, Smith JL, Liu J. (2003). Role of BRCA1 in cellular resistance
+to paclitaxel and ionizing radiation in an ovarian cancer cell line
+carrying a defective BRCA1. Oncogene 22: 2396–2404.
+Supplementary Information accompanies the paper on the Oncogene website (http://www.nature.com/onc)
+BRCA1 modulates UPR signaling
+BHY Yeung et al
+6789
+Oncogene

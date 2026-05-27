@@ -1,0 +1,946 @@
+Glucose Up-regulates Thrombospondin 1 Gene Transcription and
+Transforming Growth Factor- Activity through Antagonism of
+cGMP-dependent Protein Kinase Repression via Upstream
+Stimulatory Factor 2*
+Received for publication, February 13, 2004, and in revised form, April 12, 2004
+Published, JBC Papers in Press, June 7, 2004, DOI 10.1074/jbc.M401629200
+Shuxia Wang‡§, Jim Skorczewski‡, Xu Feng‡, Lin Mei¶, and Joanne E. Murphy-Ullrich‡
+From the ‡Department of Pathology, Division of Molecular and Cellular Pathology, The Cell Adhesion and
+Matrix Research Center and ¶Department of Neurobiology, University of Alabama at Birmingham,
+Birmingham, Alabama 35294-0019
+Thrombospondin 1 (TSP1) transcription is stimulated
+by glucose, resulting in increased TGF- activation and
+matrix protein synthesis. We previously showed that
+inducible expression of the catalytic domain of cGMP-
+dependent protein kinase (PKG) inhibits glucose-regu-
+lated TSP1 transcription and transforming growth fac-
+tor (TGF)- activity in stably transfected rat mesangial
+cells (RMCs(tr/cd)). However, the molecular mecha-
+nisms by which PKG represses glucose-regulated TSP1
+transcription are unknown. Using a luciferase-promoter
+deletion assay, we now identify a single region of the
+human TSP1 promoter (1172 to 878, relative to the
+transcription start site) that is responsive to glucose.
+Further characterization of this region identified an
+18-bp sequence that specifically binds nuclear proteins
+from mesangial cells. Moreover, binding is significantly
+enhanced by high glucose treatment and is reduced by
+increased PKG activity. Gel mobility shift and super-
+shift assays show that the nuclear proteins binding to
+the 18-bp sequence are USF1 and -2. USF1 and USF2
+bound to the endogenous TSP1 promoter using a chro-
+matin immunoprecipitation assay. Glucose stimulates
+nuclear USF2 protein accumulation through protein ki-
+nase C, p38 MAPK, and extracellular signal-regulated
+kinase pathways. Increased PKG activity down-regu-
+lates USF2 protein levels and its DNA binding activity
+under high glucose conditions, resulting in inhibition of
+glucose-induced TSP1 transcription and TGF- activity.
+Overexpression of USF2 reversed the inhibitory effect of
+PKG on glucose-induced TSP1 gene transcription and
+TGF- activity. Taken together these data present the
+first evidence that USF2 mediates glucose-induced TSP1
+expression and TSP1-dependent TGF- bioactivity in
+mesangial cells, suggesting that USF2 is an important
+transcriptional regulator of diabetic complications.
+It is established that elevated blood glucose levels are a
+significant risk factor for the development of microvascular
+complications of diabetes, including diabetic nephropathy (1).
+Hyperglycemia stimulates an increase in TGF-1 activity (2–
+4), which has been shown to be a major mediator of the fibrotic
+changes in the pathogenesis of diabetic nephropathy (5, 6).
+TGF- is synthesized and secreted as latent complex (Latent
+TGF-). It must be converted to the active state before binding
+to its receptors and eliciting cellular functions. Latent TGF-
+can be activated by a number of factors (7–9). The matricellular
+protein, thrombospondin1 (TSP1), is a major physiological reg-
+ulator of TGF- activation (10–12). TSP1, a 420-kDa homotri-
+mer with individual subunits of 145 kDa, is a multifunctional
+protein whose expression is controlled by many factors (13–16).
+Our earlier work showed that glucose-stimulated increases in
+TSP1 expression are responsible for the activation of TGF- in
+mesangial cells when exposed to high glucose concentrations
+(30 mM), which contributes to the accumulation of extracellular
+matrix proteins (17). Furthermore, high glucose mediates in-
+creases in TSP1 expression and TSP1-dependent TGF- bioac-
+tivity through down-modulation of nitric oxide (NO)/cGMP-de-
+pendent protein kinase (PKG) signaling (18, 19).
+PKG is a serine/threonine kinase consisting of an amino-
+terminal regulatory and a COOH-terminal catalytic domain
+within one polypeptide chain. Binding of cGMP by the regula-
+tory domain leads to activation of the catalytic domain (20).
+Although PKG is best known as a regulator of vascular smooth
+muscle cell (VSMC) contractility, VSMC phenotype, cardiac
+contractility, intracellular calcium signaling, platelet aggrega-
+tion, and cytoskeletal reorganization (21–24), PKG also regu-
+lates expression of multiple genes such as c-fos, mitogen-acti-
+vated protein kinase phosphatase I, gonadotropin-releasing
+hormones, soluble guanylate cyclase, osteopontin, and TSP1
+(18, 19, 22, 24–30). Activation of the cAMP response, serum
+response, activator protein-1 elements, and transcriptional reg-
+ulator TF II-I are reported to be involved in the PKG-regulated
+gene transcription (28, 31–33).
+In our previous studies we generated stably transfected rat
+mesangial cells with tetracycline-regulated expression of the
+catalytic domain of PKG-I to directly regulate the activity of
+PKG independent of cGMP levels (19). Using these stably
+* This work was supported by National Institutes of Health Grants
+DK54624 (to J. M.-U.), AR 47830 (to X. F.), and C06 RR15490 (to A. Lo
+Buglio), Juvenile Diabetes Research Foundation postdoctoral fellow-
+ship 3-2002-345 (to S. W.), a University of Alabama at Birmingham
+Postdoctoral Research Development Award (to S. W.), and a University
+of Alabama at Birmingham Department of Pathology Program for Re-
+search Experience in Pathology summer stipend (to J. S.). The costs of
+publication of this article were defrayed in part by the payment of page
+charges. This article must therefore be hereby marked “advertisement”
+in accordance with 18 U.S.C. Section 1734 solely to indicate this fact.
+§ To whom correspondence should be addressed: Dept. of Pathology,
+Volker Hall, 668C, 1670 University Blvd., Birmingham, AL 35294-
+0019. Tel.: 205-975-9371; Fax: 205-975-9340; E-mail: swang@path.
+uab.edu.
+1 The abbreviations used are: TGF-, transforming growth factor-;
+PKG, cGMP-dependent protein kinase; TSP, thrombospondin; USF,
+upstream stimulatory factor; RMCs, rat mesangial cells; EMSA, elec-
+trophoretic mobility shift assay; MAPK, mitogen-activated protein ki-
+nase; NG, normal glucose concentrations (5 mM glucose); HG, high
+glucose concentrations (30 mM glucose); MEK, MAPK kinase; PKC,
+protein kinase C; Bis, bisindolylmaleimide I.
+THE JOURNAL OF BIOLOGICAL CHEMISTRY
+Vol. 279, No. 33, Issue of August 13, pp. 34311–34322, 2004
+© 2004 by The American Society for Biochemistry and Molecular Biology, Inc.
+Printed in U.S.A.
+This paper is available on line at http://www.jbc.org
+34311
+This is an Open Access article under the CC BY license.
+
+
+transfected rat mesangial cells, we showed that expression of
+the catalytic domain of PKG significantly repressed glucose-
+induced but not basal TSP1 gene transcription and TSP1-de-
+pendent TGF- activation (19). However, the molecular mech-
+anisms by which glucose up-regulates and PKG represses
+glucose induction of TSP1 transcription are unknown.
+In previous work, using the human TSP1 promoter we
+showed that high glucose concentrations (30 mM) up-regulate
+the activity of a 2.033-kilobase region of the human TSP1
+promoter and that increased PKG activity inhibits high glu-
+cose-stimulated reporter activity (19). These data suggest that
+this 2.033-kilobase promoter region contains important regu-
+latory elements required for PKG-mediated repression of glu-
+cose-induced TSP1 gene expression. In the present study we
+investigated the molecular mechanisms by which PKG medi-
+ates repression of glucose-induced TSP1 gene transcription in
+mesangial cells by using a promoter-deletion approach. We now
+report identification of a region 932 to 915 relative to the
+transcription initiation site in the TSP1 promoter (18-bp re-
+gion) that is a binding site for upstream stimulatory factors
+(USFs), which are critical for glucose-induced TSP1 transcrip-
+tion. Furthermore, we now show that PKG represses glucose
+stimulation of TSP1 transcription and TGF- activity through
+down-regulation of USF2 protein and DNA binding, implicat-
+ing USF2 is a significant transcriptional regulator of diabetic
+complications.
+EXPERIMENTAL PROCEDURES
+Chemicals, Reagents, and Antibodies—RPMI 1640 medium with L-
+glutamine without glucose was purchased from Invitrogen. Insulin-
+transferrin-sodium selenite liquid media supplement, minimal essen-
+tial medium nonessential amino acid solution, and sodium pyruvate
+solution were purchased from Sigma. Synthetic oligonucleotides were
+purchased from Qiagen (Valencia, CA). Wild type and mutant USF
+consensus oligonucleotides and antibodies used for supershift assay,
+including USF-1 (sc-229, sc8983), USF-2 (sc-862), c-Myc (sc-674), Max
+(sc-197), were purchased from Santa Cruz Biotechnology, Inc. (Santa,
+Cruz, CA). Monoclonal antibody 133, raised against human platelet
+TSP1 stripped of TGF- activity, was purified by our laboratory in a
+joint effort with the University of Alabama at Birmingham Hybridoma
+Core Facility (34). Luciferase assay reagent, passive lysis buffer, and
+dual-luciferase reporter assay system were purchased from Promega
+(Madison, WI). Human recombinant TGF-1 was purchased from R&D
+Systems, Inc. (Minneapolis, MN)). Neomycin sulfate (G418) was ob-
+tained from ICN Biomedicals Inc. (Aurora, Ohio). MAPK kinase (MEK)
+inhibitor PD 98059, p38 MAPK inhibitor SB 202190, c-Jun amino-
+terminal kinase inhibitor SP600125, and PKC inhibitor bisindolylma-
+leimide I were purchased from Calbiochem. Dominant negative plas-
+mids and control plasmids for MEK and p38 MAPK were obtained from
+Dr. Lin Mei from the University of Alabama at Birmingham. Chromatin
+immunoprecipitation assay kit was obtained from Upstate Biotechnol-
+ogy (Lake Placid, NY).
+Cell Culture—Primary rat mesangial cells (RMCs) (passage 3) were
+a generous gift from Dr. Anne Woods, University of Alabama at Bir-
+mingham. As described previously (19), RMCs were stably transfected
+with pcDNA6/TR and pcDNA4/TO/myc-His C/CD (a construct of the
+catalytic domain of PKG-I). These stable transfectants were labeled as
+RMCs(tr/cd) and cultured in RPMI 1640 medium supplemented with
+20% heat-activated fetal bovine serum, 5 mM D-glucose, 2 mM L-gluta-
+mine, 1% (v/v) nonessential amino acids, 2 mM sodium pyruvate, 10
+g/ml transferrin, 5 ng/ml sodium selenite, 0.6 IU, 1.5 g/ml blasticidin,
+and 250 g/ml zeocin. Serum-free RPMI 1640 media with 5 g/ml
+transferrin, 5 ng/ml sodium selenite, and 5 mM D-glucose were used to
+quiescent RMCs(tr/cd). 1 g/ml tetracycline was used to induce the
+expression of the catalytic domain of PKG to increase PKG activity.
+Mink lung epithelial cells (MLECs-clone 32) stably transfected with
+the TGF- response element of the human plasminogen activator in-
+hibitor-1 gene promoter fused to firefly luciferase reporter gene were a
+generous gift from Dr. D. B. Rifkin (New York University Medical
+Center). Cells were maintained in Dulbecco’s modified Eagle’s medium
+supplemented with 10% calf serum, L-glutamine, and 200 g/ml G418.
+TSP1 Promoter-Reporter Constructs—A luciferase reporter plasmid
+containing the 2033 to 750 region of the human TSP1 gene promoter
+was generously provided by Dr. Paul Bornstein (University of Wash-
+ington) and used as a template. Eight deletion mutants of TSP1
+(1172), TSP1 (1112), TSP1 (1052), TSP1 (992), TSP1 (932),
+TSP1 (878), TSP1 (548), and TSP1 (330) were prepared using
+forward primers derived from different 5 positions (the numbers in
+parentheses contain KpnI site) of the human TSP1 promoter and the
+same reverse primer (5-gctagctgtagcaggaagcacaagag-3, containing
+NheI site). The PCR was performed using TSP (2033/750) as a
+template and high fidelity Pfx polymerase from Invitrogen. PCR prod-
+ucts were digested with KpnI and NheI and subcloned into a luciferase
+plasmid PGL 3-Enhancer vector (Promega), and their sequences were
+confirmed by sequencing.
+Transfection and Luciferase Assay—RMCs(tr/cd) were seeded into
+6-well plates at a density of 3104 cells/ml for 1 day and made quiescent
+in serum-free RPMI 1640 media with or without tetracycline (1 g/ml)
+for 2 days. Then cells were transiently transfected using Effectene
+transfection reagent (Qiagen) with (1 g) TSP1 promoter luciferase
+reporter plasmid. For co-transfection experiments, cells were tran-
+siently transfected with 1 g of TSP1 promoter luciferase reporter
+plasmid as well as different amounts of USF2 expression vector or
+empty vector (pSG5) (generous gifts from Dr. Michele Sawadogo, the
+University of Texas, MD Anderson Cancer Center). pRL-SV40 (0.02 g)
+(Promega) was used as an internal control. Transfected cells were
+treated with normal (5 mM) or high (30 mM) glucose for 1 day, and the
+luciferase activities were assayed using the dual-luciferase assay kit
+(Promega) according to the manufacturer’s directions.
+Nuclear Extract Preparation—RMCs(tr/cd) were cultured in tissue
+culture dishes with growth media (RPMI 1640 media containing 20%
+fetal bovine serum). After reaching 80–85% confluence, cells were made
+quiescent by changing into serum-free RPMI 1640 media for 2 days in
+the presence or absence of 1 g/ml tetracycline (to induce the expression
+of catalytic domain of PKG resulting in increased PKG activity) (19) and
+then cultured in serum-free RPMI 1640 media with 5 or 30 mM glucose.
+After 24 h, cells were washed with cold phosphate-buffered saline (pH
+7.4), scraped off the dishes, and spun down. Then nuclear extracts were
+prepared as described previously (35). Briefly, cell pellets were re-
+suspended in 500 l of hypotonic lysis buffer (10 mM Hepes-KOH (pH
+7.9), 10 mM KCl, 1.5 mM MgCl2, 0.5 mM dithiothreitol, 0.5 mM phenym-
+ethylsulfonyl fluoride) and lysed for 15 min on ice. Then 32 l of 10%
+Nonidet P-40 was added to the suspension and incubated on ice for 10
+min. Nuclei were spun down and re-suspended in 100 l of nuclear
+extraction buffer (20 mM Hepes-KOH (pH 7.9), 420 mM NaCl, 1.2 mM
+MgCl2, 0.2 mM EDTA, 25% glycerol, 0.5 mM dithiothreitol, 0.5 mM
+phenymethylsulfonyl fluoride, 5 g/ml pepstatin, and 5 g/ml leupep-
+tin). The nuclei were incubated with the extraction buffer on ice for 20
+min and spun down. The supernatant (nuclear extract) was stored at
+80 °C. Protein concentration of nuclear extracts was determined using
+the Bio-Rad protein assay kit.
+Western Blot—For detection of USF1 and USF2, equal amounts of
+protein in the nuclear extract from RMCs(tr/cd) were subjected to 10%
+SDS-PAGE gel under reducing conditions. After electrophoretic trans-
+fer to nitrocellulose membranes and blocking, the membranes were
+incubated with polyclonal anti-USF1 and anti USF2 antibodies (1:500
+dilution) for 1 h at room temperature. After intensive washing, second-
+ary antibody (1:10,000 dilution) was used for the detection of immuno-
+reactive bands with the enhanced chemiluminescence detection system
+(Pierce). Equal amounts of protein in the conditioned media from RMC-
+s(tr/cd) were subjected to 8% SDS-PAGE gel under reducing conditions
+and transferred to nitrocellulose membranes to detect TSP1 levels by
+using monoclonal anti TSP1 antibody (antibody 133) as described pre-
+viously (18). Equal loading and transfer of protein samples were as-
+sayed by staining the membranes with Ponceau S.
+Electrophoretic Mobility Shift Assay (EMSA) and Supershift Assay—
+Oligonucleotides (oligos) used for EMSA were end-labeled with 32P by
+T4 polynucleotide kinase (Invitrogen). 2–5  10 4 cpm probe was incu-
+bated with 3 g of nuclear extracts in a 20-l volume of binding reaction
+buffer (10 mM Tris-Cl (pH 7.5), 100 mM NaCl, 10% glycerol, 50 ng/ml
+poly(dI/dC)) on ice for 20 min. In competition experiments, a 50 and/or
+100 excess amount of unlabeled competitor was mixed with the la-
+beled probe before being added to the binding mixture. The binding
+reaction was then allowed to proceed for 20 min on ice. In supershift
+experiments, 3 g of control IgG or 3 g of specific antibodies were
+incubated with 3 g of nuclear extracts in a 20-l volume of binding
+reaction for 20 min on ice followed by incubation with the labeled probe
+on ice for an additional 30 min. All binding mixtures were separated by
+4–20% gradient Tris-buffered TBE gels (Bio-Rad). The gels were dried
+and exposed to film.
+Chromatin Immunoprecipitation Assay—To detect the in vivo asso-
+USF and Glucose-induced TSP1 Transcription
+34312
+
+
+ciation of nuclear proteins with the TSP1 promoter, the chromatin
+immunoprecipitation assay was conducted as described by Upstate
+Biotechnology with some modifications. In brief, primary mesangial
+cells (p3–6) or stably transfected mesangial cells (RMCs(tr/cd)) were
+cultured in a 10-cm culture dish. After being made quiescent in serum-
+free RPMI 1640 media for 2 days, cells were treated with normal
+glucose (5 mM) or high glucose (30 mM) for 24 h. After treatment,
+protein-DNA complexes were fixed by 1% formaldehyde in phosphate-
+buffered saline. The fixed cells were washed and lysed in SDS lysis
+buffer with protease inhibitors and sonicated on ice. After centrifuga-
+tion at 500  g for 1 min, one portion of the precleared supernatant was
+used as DNA input control, and the remaining supernatant was subdi-
+vided into aliquots and then incubated overnight at 4 °C with nonim-
+mune rabbit immunoglobulin G (IgG; Santa Cruz) or IgG antibodies to
+USF1 or USF2. The immunoprecipitated complexes of antibody-pro-
+tein-DNA were collected using a protein A slurry, washed successively
+with low salt buffer (0.1% SDS, 1% Triton X-100, 2 mM EDTA, 20 mM
+Tris-HCl (pH 8.1), 150 mM NaCl), high salt buffer (same as the low-salt
+buffer but with 500 mM NaCl), LiCl buffer (0.25 M LiCl, 1% Nonidet
+P-40, 1% deoxycholate, 1 mM EDTA, 10 mM Tris-HCl (pH 8.1), and
+Tris-EDTA (pH 8.0), and then eluted with elution buffer (1% SDS, 100
+mM NaHCO3). The cross-linking of protein-DNA complexes was reversed
+by incubation with 5 M NaCl at 65 °C for 4 h, and DNA was digested with
+10 mg of proteinase K (Sigma)/ml for 1 h at 45 °C. The DNA was then
+extracted with phenol-chloroform, and the purified DNA pellet was resus-
+pended in H2O and subjected to PCR amplification with the forward
+primer, 5-GTCTGCTCTGTAAATAGCTG-3, and the reverse primer, 5-
+GTGCTTCTTAACGTGACTCC-3, which were specifically designed from
+the TSP1 promoter. The 80-bp PCR products were resolved by 3.5%
+agarose-ethidium bromide gel electrophoresis, visualized by UV.
+Site-directed Mutagenesis—Point mutations were introduced into the
+USF binding site (924 to 919) in the TSP1 promoter reporter con-
+struct (2033/750) using a QuikChange TM site-directed mutagenesis
+kit (Stratagene, La Jolla, CA). The primers used to mutate the USF
+binding
+site
+are
+5-
+gactctggagccagagagttctgcaaattctcc-3
+and
+5-
+ggagaatttgcagaactctctggctccagagtc-3 (purchased from Qiagen). PCR
+was performed in a 50-l volume with Pfu polymerase, 10 ng of DNA
+template TSP1 (2033/750), and 125 ng of each of the primers using
+the following conditions: 95 °C for 30 s for 1 cycle and 95 °C for 30 s,
+55 °C for 1 min, and 68 °C for 12 min for 18 cycles. The PCR products
+were treated with DpnI (10 units) for 60 min at 37 °C. XL1-blue super-
+competent cells were transformed with DpnI-treated PCR mixtures as
+described in the instruction manual and plated on ampicillin plates.
+Plasmids were prepared from individual colonies and sequenced to
+confirm the correctness of introduced mutations.
+TGF- Assay—Total and active TGF- levels in the condition media
+were assayed using the plasminogen activator inhibitor-1/luciferase
+assay as described previously (18). Briefly, mink lung epithelial cells
+were plated into 24-well tissue culture plates at 1.6  105 cells/ml and
+incubated for 3–4 h for optimal attachment. After aspiration of the
+growth medium from the attached cells, 500 l of condition media were
+added. To measure total TGF-, conditioned media samples were heat-
+activated for 3 min at 100 °C. Samples and TGF- standards were
+incubated overnight at 37 °C. After incubation, cells were lysed with
+lysis buffer at room temperature for 20 min. Lysates were analyzed for
+luciferase activity using a microplate Luminometer (Berthold Detection
+Systems) after the injection of 100 l of substrate solution and recorded
+as relative light units. The mean values of triplicate samples were
+converted into concentrations of TGF- (picomolar) using a standard
+curve obtained with human recombinant TGF-1.
+Statistical Analysis—Data are expressed as the mean  S.D. Statis-
+tical evaluation of the data was performed using the paired Student’s t
+test, considering a p value of 0.05 as significant.
+RESULTS
+Glucose-mediated Increases in TSP1 Promoter Activity in
+RMCs(tr/cd) Are Supported by TSP1 Promoter Region 1172 to
+878—We previously showed that high concentrations of glu-
+cose mediate increases in TSP1 expression and TSP1-depend-
+ent TGF- bioactivity through down-modulation of NO-depend-
+ent PKG signaling (18). Moreover, we generated stable
+transfectants expressing the catalytic domain of PKG in me-
+sangial cells using an inducible expression system (tetracy-
+cline-induced gene expression (tet-on)). With the expression of
+the catalytic domain of PKG to increase PKG activity, glucose-
+induced TSP1 expression was inhibited at the transcriptional
+level (19). To identify the promoter elements that regulate
+TSP1 gene transcription in mesangial cells in response to high
+glucose concentrations and increased PKG activity, a series of
+TSP1 promoter-luciferase reporter constructs was generated
+(Fig. 1A) and transiently transfected into RMCs(tr/cd). The
+promoter activity was measured by assaying the luciferase
+activity as described under “Experimental Procedures” and
+was normalized to Renilla luciferase activity. As shown in Fig.
+1B, left panel, the longest construct, TSP (2033), gave rise to
+a 2.3-fold increase in TSP1 promoter activity in response to
+high concentrations of glucose (30 mM). Deletion of a 295-bp
+region (1172 to 878) totally abolished high glucose respon-
+siveness, suggesting that this 295-bp region is important for
+high glucose-induced TSP1 transcription. Increased PKG ac-
+tivity inhibited 30 mM glucose-induced TSP1 promoter activity
+to basal levels (5 mM glucose) (Fig. 1B, right panel). These data
+suggest that the region between 1172 and 878 in the TSP1
+promoter is involved in PKG-mediated repression of TSP1 tran-
+scription under high glucose conditions.
+Localization of a 55-bp TSP1 Promoter Region (932 to
+878) That Binds glucose-induced Nuclear Proteins and Medi-
+ates the Repression of TSP1 Transcription by Increased PKG
+under High Glucose Conditions—To characterize the cis-acting
+elements in the 295-bp region (1172 to 878), first we deter-
+mined whether the 295-bp region binds any nuclear proteins in
+response to high glucose. Five overlapping oligonucleotides
+(Oligo I, II, III, IV, and V) spanning the entire 295-bp TSP1
+promoter region were synthesized (Fig. 2A), labeled, and used
+as probes to perform EMSAs with nuclear extracts from normal
+or high glucose-treated stably transfected mesangial cells
+(RMCs(tr/cd)) in the absence or presence of tetracycline (Fig.
+2B). Only oligo V gave rise to a major band in the EMSA (lane
+1). This band was significantly enhanced by high glucose treat-
+ment (lane 2). Increased PKG activity diminished this protein-
+DNA complex (lane 4), suggesting that oligo V contains cis-acting
+elements involved in PKG-mediated repression of glucose-in-
+duced TSP1 transcription. The specificity of this protein-DNA
+complex was confirmed in the competition assays using cold oligo
+V as the competitor in the EMSA to abrogate the formation of
+this complex (Fig. 2C). To rule out the possibility that the stable
+transfection of mesangial cells alters cell regulation, primary
+cultured mesangial cells were also used in the above EMSA assay
+to confirm the association of oligo V with glucose-induced nuclear
+proteins. Early passage primary mesangial cells (p3-p6) were
+treated with normal or high glucose media for 24 h, and then
+nuclear proteins were extracted, and EMSA were performed.
+As shown in Fig. 2D, oligo V also specifically gave rise a major
+band in EMSA, which was significantly enhanced by high glu-
+cose (30 mM) treatment of primary mesangial cells.
+To determine whether the 55-bp TSP1 promoter region
+(932 to 878) mediates the repression of TSP1 transcription
+by increased PKG activity under high glucose conditions, four
+additional deletion mutants of TSP1 promoter: TSP (1112),
+TSP (1052), TSP (992), and TSP (932) were generated
+(Fig. 3A). These constructs were transiently transfected into
+mesangial cells, and promoter activity was evaluated by quan-
+tifying the luciferase activity (Fig. 3B). Consistent with the
+EMSA results (Fig. 2B), transfection studies with these mu-
+tants indicate that the 55-bp region from 932 to 878 is
+necessary for glucose-induced TSP1 transcription and that it is
+also important for PKG repression of TSP1 transcription.
+Identification of an 18-bp Sequence of the TSP1 Promoter
+That Specifically Binds Glucose-induced USF1 and USF2—To
+identify the nuclear proteins that bind to oligo V (55-bp region
+of TSP1 promoter 932 to 878), we performed a computer
+analysis using the GCG program, which revealed that this 55
+USF and Glucose-induced TSP1 Transcription
+34313
+
+
+bp contains putative binding sequences for several transcrip-
+tion factors, including NF-1, c-Jun, USF, heat shock transcrip-
+tion factor, C/EBP, and E12. To specifically identify which
+transcription factors might be important for glucose regulation
+of TSP1 transcription, we performed competition assays to
+identify the specific nuclear protein binding sequence within this
+55-bp region. Four oligonucleotides (A, B, C, and D) derived from
+the 55-bp oligo V were synthesized and used as competitors in the
+EMSA. As shown in Fig. 4B, only oligo A competed efficiently for
+the nuclear protein binding, suggesting that an 18-bp sequence
+within the 55-bp region specifically binds the nuclear proteins
+induced by high glucose concentrations.
+The 18-bp sequence contains a CAGATG motif at 924 to
+919, which resembles the CANNTG motif of classical E-box
+cognates and binds both Myc family members (36) and USF
+proteins (37, 38). This suggests that the nuclear proteins bind-
+ing to the 18-bp sequence might be members of the Myc family
+or USF proteins. Thus, we immunologically probed the protein-
+DNA complex with antibodies against c-Myc, c-Max, USF-1,
+and USF-2 in gel supershift assays as described under “Exper-
+imental Procedures.” For these experiments, gel shifts were
+carried out with radiolabeled duplex oligo V (55 bp). As shown
+in Fig. 5A, only anti-USF1 and -USF2 antibodies supershifted
+the band (lanes 5, 6, 11, and 12), indicating that the nuclear
+proteins binding to the 18-bp sequence are USF1 and USF2,
+possibly as heterodimers. Competition studies showed that un-
+labeled USF oligonucleotide efficiently competes for USF bind-
+ing, whereas mutant USF oligonucleotide failed to compete
+(Fig. 5B). These data strongly suggest that the 18-bp sequence
+in the TSP1 promoter has a USF binding site.
+Having demonstrated the binding of transcription factors
+USF1 or USF2 to the TSP1 promoter in vitro, we further
+analyzed the in vivo binding of USF to TSP1 promoter by the
+chromatin immunoprecipitation assay. Primary rat mesangial
+cells or the stable mesangial cell line (RMC(tr/cd)) was cultured
+and treated with normal (5 mM) or high glucose (30 mM) for
+24 h. After treatment, formaldehyde was added to cross-link
+the DNA-protein complexes in vivo. After sonication, immuno-
+precipitation, and reversal of cross-linking, the DNA was puri-
+fied and used as a template for PCR amplification using prim-
+ers that encompass the region from 958 to 878 containing
+the putative USF binding site (Fig. 6A). In primary cultured
+mesangial cells, high glucose treatment caused a marked en-
+richment of USF1- or USF2-associated TSP1 promoter DNA
+(Fig. 6B). In stably transfected mesangial cells, glucose also
+induced increased association of USF1 or USF2 with the TSP1
+promoter (Fig. 6C). Moreover, increased PKG activity reduced
+glucose-induced USF association with the TSP1 promoter but
+had no effect on USF association with the TSP1 promoter
+under normal glucose conditions (Fig. 6C). As a negative con-
+trol, chromatin immunoprecipitation was performed with non-
+immune IgG. These data show that the association of USF1 or
+USF2 with the TSP1 promoter in mesangial cells is enhanced
+by high glucose treatment, and increased PKG activity dimin-
+ishes this protein-DNA association.
+The 18-bp USF Binding Sequence Is Functionally Involved in
+Glucose-induced TSP1 Transcription—To determine whether
+the 18-bp USF binding sequence is functionally involved in
+PKG-mediated repression of glucose-induced TSP1 transcrip-
+tion, we introduced point mutations in the 18-bp USF binding
+site. In the CAGATG motif, TG was converted to GA (Fig. 7A).
+Competition assays showed that mutant oligo V failed to com-
+FIG. 1. Glucose-mediated increase in TSP1 promoter activity in RMCs(tr/cd) is supported by TSP1 promoter region 1172 to 878.
+A, construction of five deletion mutants of TSP1 promoter: TSP (2033), TSP (1172), TSP (878), TSP (548), and TSP (330). B, RMCs(tr/cd)
+were cultured in 6-well plates and made quiescent in serum-free media for 2 days in the presence or absence of tetracycline. Then cells were
+transiently cotransfected with a series of TSP1 promoter-luciferase reporter constructs as shown in A and internal-control plasmid pRL-SV40.
+Transfected cells were treated with normal (5 mM) or high glucose (30 mM) media for 1 day. The promoter activity was quantified by assaying
+luciferase activity as described under “Experimental Procedures” and was normalized to Renilla luciferase activity of internal control. The
+experiments were repeated three times, and the representative result is shown. Data are represented as the mean of three replicates  S.D. RLU,
+relative light units.
+USF and Glucose-induced TSP1 Transcription
+34314
+
+
+pete for USF binding (Fig. 7A), indicating that CAGATG in the
+18-bp sequence is a USF binding site. The same mutation was
+introduced into the TSP-luciferase reporter construct (2033)
+to generate a reporter deficient in the USF binding site (mTSP1
+(2033)). mTSP1 (2033) was transiently transfected into
+RMCs(tr/cd). As expected, high glucose (30 mM) significantly
+induced TSP1 (2033) activity, which was inhibited by in-
+creased PKG activity (Fig. 7B). In contrast, high glucose con-
+centrations failed to induce the reporter activity in the pro-
+moter construct with the mutated USF binding site. PKG
+activity did not affect activity of the mutant promoter.
+USF2 Protein Levels Are Regulated in Mesangial Cells by
+Glucose and PKG—We showed that increased PKG activity
+significantly diminished glucose-induced USF binding (Fig.
+2B). To identify whether these changes in USF binding activity
+reflect changes in the nuclear accumulation of USF1 and/or
+USF2 protein levels, we performed immunoblot analyses of
+extracts prepared from RMCs(tr/cd) treated with either normal
+or high glucose concentrations in the absence or presence of
+tetracycline as described under “Experimental Procedures.” As
+FIG. 2. A 55-bp TSP1 promoter region (932 to 878) binds glucose-induced nuclear proteins. A, the diagram of 5 overlapping oligos
+(I, II, III, IV, V) spanning the 295-bp TSP1 promoter region (1172 to 878) was shown. B, oligos I-V shown in A were labeled and used as probes
+to perform EMSA with nuclear extract (N.E.) from RMCs(tr/cd) treated with normal (NG) or high glucose (HG) media for 1 day in the presence or
+absence of tetracycline (Tet). Only oligo V (TSP1 promoter region 932 to 878) assembles a major protein-DNA complex in EMSA. The
+experiments were repeated three times, and the representative result is shown. C, a competition assay was performed using labeled oligo V as
+probe, and nuclear extracts (N.E.) from RMCs(tr/cd) treated with high glucose media in the absence or presence of tetracycline. Excess cold oligo
+V was added as competitor. As the control, no competitor was added in lane 1 and lane 3. D, oligo V was labeled and used as the probe to perform
+the EMSA with nuclear extract from primary mesangial cells treated with 30 mM glucose for 24 h. Excess unlabeled oligo V was used as the
+competitor. The experiments were repeated four times, and the representative result is shown.
+USF and Glucose-induced TSP1 Transcription
+34315
+
+
+FIG. 3. The 55-bp TSP1 promoter region (932 to 878) corresponding to oligo V mediates the repression of TSP1 transcription
+by increased PKG under high glucose conditions. A, 4 deletion mutants of TSP1 promoter, TSP (1112), TSP (1052), TSP (992), and TSP
+(932), were constructed by PCR as described under “Experimental Procedures”. B, RMCs(tr/cd) were transfected with the deletion mutants TSP
+(1112), TSP (1052), TSP (992), and TSP (932) as described in the legend to Fig. 1B. The experiments were repeated four times, and the
+representative result is shown. Data are represented as mean of three replicates  S.D. RLU, relative light units. NG, normal glucose; HG, high
+glucose.
+FIG. 4. Identification of an 18-bp sequence in oligo V (TSP1 promoter region 932 to 878) binding the nuclear proteins using
+competition assay. A, the diagram of 4 overlapping oligos (A, B, C, D) spanning the 55-bp oligo V was shown. B, oligo V was labeled and used
+as a probe to perform EMSA with nuclear extract (N.E.) from RMCs(tr/cd) treated with high glucose media for 1 day in the presence or absence
+of tetracycline (Tet). Excess cold oligos (A–D) were added as competitors (Comp.). Only oligo A (TSP1 promoter region 932 to 915) competes for
+the binding of oligo V to glucose-induced nuclear proteins. The experiments were repeated three times, and the representative result is shown. NG,
+normal glucose; HG, high glucose.
+USF and Glucose-induced TSP1 Transcription
+34316
+
+
+shown in Fig. 8, treatment of RMCs(tr/cd) with high glucose
+up-regulated USF2 (panel B) but not USF1 (panel A) protein
+accumulation. Moreover, increased PKG activity reduced glu-
+cose-induced USF2 to basal levels (5 mM glucose treatment)
+(panel B in Fig. 8), suggesting that regulation of TSP1 promoter
+USF binding activity in mesangial cells by high glucose and PKG
+reflects in part the regulation of USF2 protein accumulation.
+In mesangial cells, high glucose environments activate mi-
+togen-activated protein kinase (MAPK) pathways including ex-
+tracellular signal-regulated kinase, p38 MAPK and c-Jun ami-
+no-terminal kinase (39–42). To determine whether glucose
+signaling through MAPK pathways is involved in USF2 expres-
+sion, RMCs(tr/cd) were incubated with the MEK inhibitor
+PD98059, the p38 MAPK inhibitor SB202190, dominant nega-
+tive MEK, and p38 MAPK plasmids or the c-Jun amino-termi-
+nal kinase inhibitor SP600125 in the presence of 5 or 30 mM
+glucose media for 24 h, and then nuclear USF2 protein levels
+were assayed by immunoblotting. As shown in Fig. 8C, without
+tetracycline induction, both PD98059 (10 M) and SB202190
+(10 M) compounds inhibited 30 mM glucose-mediated USF2
+up-regulation. Neither inhibitor showed a significant effect on
+basal USF2 levels (5 mM glucose treatment). However, with
+tetracycline induction of PKG activity, neither PD98059 nor
+SB202190 compounds affected USF2 protein levels under nor-
+mal or high glucose conditions. Similar results were obtained
+by using dominant negative MEK and p38 MAPK plasmids to
+transfect mesangial cells (Fig. 8, D and E). The c-Jun amino-
+terminal kinase inhibitor had no effect on USF2 protein levels
+FIG. 5. Identification of USF1 and USF2 binding to oligo V (TSP1 promoter region 932 to 878). A, supershift assays. RMCs(tr/cd)
+were cultured and made quiescent for 2 days in the absence or presence of tetracycline (Tet). Then cells were treated with high glucose (HG) media
+for 1 day, and nuclear proteins were extracted as described under “Experimental Procedures.” Oligo V was labeled and used as the probe.
+Supershift assays were performed in the presence of the indicated antibodies and control IgG (3 g each). Anti-USF1 and USF2 antibodies disrupt
+and supershift the DNA-protein complex. The blots shown are the representative of three separate experiments. N.E., nuclear extracts. B,
+competition assays. EMSA was performed using the labeled oligo V and nuclear extracts from RMCs(tr/cd) treated with high glucose media for 1
+day in the presence or absence of tetracycline. Excess cold USF consensus oligonucleotide or USF mutant oligonucleotide (mUSF) was added as
+a competitor. Only USF consensus oligonucleotide competes for the binding of oligo V to glucose-induced nuclear proteins. These experiments were
+repeated four times, and the representative result is shown.
+USF and Glucose-induced TSP1 Transcription
+34317
+
+
+under normal or high glucose conditions in the absence or
+presence of tetracycline (data not shown). These data suggest
+that extracellular signal-regulated kinase and p38 MAPK, but
+not the c-Jun amino-terminal kinase pathways are involved in
+glucose-mediated up-regulation of nuclear USF2 levels. How-
+ever, these pathways do not appear to be important for PKG
+mediated down-regulation of nuclear USF2 levels.
+Glucose-induced activation of the MAPK pathway can be
+mediated by increased PKC activity in mesangial cells (43, 44).
+Moreover, glucose-induced PKC activation has been shown to
+up-regulate TSP1 expression (45). To address the role of PKC
+in the regulation of high glucose-induced USF2 expression, the
+PKC inhibitor (bisindolylmaleimide I (Bis)) was used. In pre-
+liminary dose-response experiments, 100 nM Bis was found to
+be an optimal concentration (data not shown). As shown in Fig.
+8F, without tetracycline induction Bis (100 nM) compound in-
+hibited 30 mM glucose-mediated USF2 up-regulation. However,
+with tetracycline induction of PKG activity, Bis compound did
+not affect USF2 protein levels under normal or high glucose
+conditions. This result suggests that PKC activity is involved in
+glucose-induced USF2 expression.
+Overexpression of USF2 Reverses PKG-mediated Repression
+of Glucose-induced TS P1 Expression (Promoter Activity and
+Protein Levels) and TGF- Bioactivity—To examine the effects
+of USF2 on TSP1 promoter activity and TGF- bioactivity, we
+transiently co-transfected the expression vector for USF2 with
+TSP1-luciferase reporter construct (TSP (2033)) in RMCs(tr/
+cd). 24 h after transfection, conditioned media were collected to
+analyze TSP1 protein levels and measure TGF- activity, and
+cells were harvested to determine the promoter activity by
+assaying the luciferase activity as described under “Experi-
+mental Procedures.” USF2 overexpression significantly aug-
+mented TSP1 promoter activity and TSP1 protein levels under
+normal glucose conditions with or without tetracycline induc-
+tion (data not shown), showing that up-regulation of USF2
+enhances TSP1 gene and protein expression. Furthermore,
+overexpression of USF2 protein abolished PKG-mediated re-
+pression of TSP1 promoter activity (Fig. 9A) and protein levels
+(Fig. 9B) under high glucose conditions in a concentration-de-
+pendent manner in cells treated with tetracycline to induce
+PKG activity. Similarly, the PKG-mediated decrease in active
+TGF- was reversed by the overexpression of USF2 protein
+(Fig. 9C). However, total TGF- production was not altered by
+the overexpression of USF2 protein in mesangial cells (Fig.
+9D). Taken together, these data suggest that decreased protein
+levels and DNA binding activity of USF2 mediates the inhibi-
+tory effect of PKG on glucose-induced TSP1 gene expression
+and TSP1-dependent TGF- activation in mesangial cells.
+DISCUSSION
+Accumulating evidence suggests that TSP1 plays an impor-
+tant role in diabetes and diabetic nephropathy (17, 46–51).
+Previously we demonstrated that high glucose concentrations
+(30 mM) mediate increases in TSP1 expression and TSP1-de-
+pendent TGF- bioactivity in glomerular mesangial cells
+through down-modulation of NO/cGMP-dependent protein ki-
+nase signaling (18). Moreover, increased PKG activity re-
+pressed glucose-induced TSP1 expression at the level of tran-
+scription (19). In this present study, we further investigated
+the molecular mechanisms by which glucose induces and PKG
+represses TSP1 gene transcription in glomerular mesangial
+cells. We identified a glucose-responsive region in TSP1 pro-
+moter from 932 bp to 915 bp (18bp), which is also involved
+in PKG-mediated repression of TSP1 transcription under high
+glucose conditions. Furthermore, we showed that this 18-bp
+region regulates TSP1 promoter activity by binding USF1 and
+USF2. Glucose stimulation of USF2 protein expression through
+PKC, extracellular signal-regulated kinase, or p38 MAPK
+pathways leads to increased DNA binding activity and contrib-
+utes to glucose-induced TSP1 transcription and increased
+TGF- bioactivity in our studies. PKG inhibits the effects of
+glucose on TSP1 expression and TGF- activation through
+down-regulation of glucose-induced USF2 protein levels.
+USFs belong to the basic helix-loop-helix leucine zipper
+FIG. 6. Chromatin immunoprecipitation analysis of USF interaction with the TSP1 promoter in vivo. A, schematic representation
+showing the putative USF binding sites. Two arrows indicate primers used for amplifying the region from 958 to 878 spanning the putative USF
+binding site. Formaldehyde-cross-linked chromatin isolated from primary mesangial cells (B) or a stable cell line of mesangial cells (C) was
+immunoprecipitated (IP) with antibodies and subjected to PCR as described under “Experimental Procedures.” PCR products were electrophoresed
+on 3.5% agarose gel. Input represents 0.2% of chromatin applied for immunoprecipitation. The experiments were repeated three times, and the
+representative result is shown. NG, normal glucose; HG, high glucose; tet, tetracycline.
+USF and Glucose-induced TSP1 Transcription
+34318
+
+
+(b-HLH-LZ) family of transcription factors (52). USFs (USF1
+and USF2) were originally identified by their ability to bind to
+the adenovirus major late promoter (37). USF1 and USF2 are
+also related to the Myc family of transcription factors and have
+a similar polypeptide structure and a similar DNA binding
+specificity (53, 54). USF1 and USF2 are encoded by two distinct
+genes in human, rat and mouse, and these proteins have mo-
+lecular masses of 43 and 44 kDa, respectively (54–57). Struc-
+turally, USF1 and USF2 are related with a highly conserved
+COOH-terminal domain responsible for their dimerization and
+DNA binding (52, 58, 59). The major USF species present in
+most tissues and cell lines is the heterodimer of USF1 and
+USF2. USF1 homodimers are less abundant, and USF2 ho-
+modimers are usually quite rare (58–60). Both USF1 and
+USF2 have been shown to bind to the canonical sequence
+CANNTG (an E-box motif) as either homo- or heterodimers to
+regulate gene transcription (55, 59, 61, 62).
+Although USF1 and USF2 genes are ubiquitously expressed
+in mammalian cells, the relative abundance of USF1 and USF2
+transcripts and protein levels varies among different cell types
+(59, 61). It has also been shown that the function of USFs is
+modulated in a cell-specific manner (62). In liver, Vaulont and
+co-workers (63) demonstrate the contribution of USF1 and
+USF2 to hepatic glucose responses in mice possessing homolo-
+gous disruption of these two transcription factor genes. They
+show that USF1 and USF2 bind in vitro glucose/carbohydrate
+response elements of glycolytic and lipogenic genes, such as
+L-type pyruvate kinase and spot 14 genes, and mediate glu-
+cose-induced transcriptional activation of these genes (63).
+Furthermore, in the liver of USF1-deficient mice, enhanced
+USF2 expression and an increase in the levels of USF2 ho-
+modimers compensated for lack of USF1 in the transcriptional
+FIG. 7. Mutation of USF binding
+site-reduced glucose induced TSP1
+promoter activity. A, the competition
+assay was performed using labeled oligo V
+as the probe and 100 cold wild type (WT)
+oligo V or mutant oligo V as the competi-
+tor. Nuclear extract (N.E.) for this assay
+were from RMCs(tr/cd) treated with high
+glucose media (HG) in the absence or
+presence of tetracycline (Tet). The results
+shown are the representative of three sep-
+arate experiments. B, mutation of TSP
+(2033) (mTSP) was generated by intro-
+ducing two point mutations as shown in
+Fig. 6A. RMCs(tr/cd) were cultured and
+made quiescent in serum-free media in
+the absence or presence of tetracycline for
+2 days. Then cells were transiently trans-
+fected with wild type TSP1 (2033) or
+mutant TSP1 (2033) as well as internal
+control pRL-SV40 under normal (NG) or
+high glucose conditions for 1 day. The pro-
+moter activity was quantified by assaying
+luciferase activity as described under “Ex-
+perimental Procedures” and normalized
+to the Renilla luciferase activity of inter-
+nal control. The experiments were re-
+peated three times, and representative
+data are shown. Data are the means of
+three replicates  S.D. RLU, relative
+light units.
+USF and Glucose-induced TSP1 Transcription
+34319
+
+
+FIG. 8. Regulation of USF1 and USF2 protein levels in RMCs(tr/cd) by glucose and PKG. RMCs(tr/cd) were cultured and made quiescent
+in serum-free media with 5 mM glucose in the presence or absence of tetracycline (Tet) for 2 days. Then cells were treated with PD 98059 (10 M),
+SB 202190 (10 M), or Bis (100 nM) or transfected with dominant negative plasmids for MEK or p38 MAPK (DN-MEK, DN-p38), and control
+plasmids (5 g each) in normal (NG) or high glucose (HG) media for 1 day. Nuclear extracts were prepared, and USF protein levels were assessed
+by immunoblotting as described under “Experimental Procedures.” Actin was used as the internal control. The data shown are representative of
+three separate experiments. Relative USF levels were determined by scanning densitometry of immunoblots. Results are the mean of three
+experiments  S.D. *, p  0.05 for 30 mM glucose versus 5 mM glucose; #, p  0.05 for 30 mM glucose with tetracycline versus without tetracycline;
+ˆ, p  0.05 for 30 mM glucose with PD98059 or SB202190 compounds without tetracycline versus 30 mM glucose without PD98059 or SB202190
+compounds without tetracycline. RLU, relative light units.
+USF and Glucose-induced TSP1 Transcription
+34320
+
+
+response of L-type pyruvate kinase and spot 14 genes to glu-
+cose. However, in USF2 / mice, an impaired glucose respon-
+siveness was observed (64), suggesting that USF2 is essential
+for transcriptional responses of liver genes to glucose.
+Our present work shows for the first time that glucose up-
+regulates USF2 protein accumulation in glomerular mesangial
+cells and enhances protein-DNA interactions on the TSP1 pro-
+moter, resulting in increased TSP1 protein levels and TSP1-de-
+pendent TGF- activation. Furthermore, when the PKC, extra-
+cellular signal-regulated kinase, or p38 MAPK pathways are
+inhibited, glucose-induced USF2 expression is down-regulated,
+suggesting that the PKC, extracellular signal-regulated kinase,
+and p38 MAPK pathways are important for glucose-mediated
+stimulation of USF2 expression. In contrast to USF2, we failed to
+observe glucose stimulation of USF1 protein accumulation. This
+differs from the results of Bidder et al. (65) and Weigert et al. (66).
+FIG. 9. Overexpression of USF2 protein reverses PKG-mediated repression of glucose-induced TSP1 expression (promoter
+activity and protein levels) and TGF- activity. RMCs(tr/cd) were cultured and made quiescent in serum-free media for 2 days in the absence
+or presence of tetracycline (Tet). Then cells were co-transfected with 1 g of TSP (2033) luciferase construct and expression vectors for USF2 in
+normal (NG) or high glucose (HG) media as indicated for 1 day. Empty expression vector (pSG5) was used as control. As described under
+“Experimental Procedures,” conditioned media were collected, TSP1 protein levels were assayed by immunoblotting, and TGF- activity was
+measured in the PAI/1 promoter luciferase assay; cells were harvested, and the promoter activity was quantified by assaying luciferase activity.
+The experiments were repeated three times, and a representative result is shown. Data are represented as the mean of three replicates  S.D. *,
+p  0.05 for 30 mM glucose versus 5 mM glucose; **, p  0.05 for high glucose with tetracycline versus NG with tetracycline; #, p  0.05 for high
+glucose with tetracycline versus high glucose without tetracycline; ##, p  0.05 for high glucose  USF versus high glucose  empty vector. RLU,
+relative light units.
+USF and Glucose-induced TSP1 Transcription
+34321
+
+
+Bidder et al. (65) show that 30 mM glucose treatment of aortic
+smooth muscle cells up-regulates USF1 protein levels with no
+alteration of USF2 protein levels. Weigert et al. (66) show that 30
+mM glucose treatment of porcine mesangial cells enhanced both
+USF1 and USF2 protein levels through the hexosamine biosyn-
+thetic pathway. The reasons for these differences are not clear.
+However, these findings suggest that USF regulation is complex,
+with possible cell-specific and species-specific regulation of USF
+proteins by glucose.
+In our studies, USF2 protein levels are down-regulated by
+increased PKG activity, which contributes to decreased USF
+binding activity, resulting in repression of TSP1 gene tran-
+scription under high glucose conditions. Regulation of USF2 at
+the level of transcription, mRNA stabilization, translation, pro-
+tein degradation, or some combination thereof probably con-
+tributes to the decreased USF2 protein levels mediated by
+PKG. We found no evidence for the involvement of PKC, extra-
+cellular signal-regulated kinase and p38 MAPK pathways in
+PKG-mediated down-regulation of USF2, and the mechanisms
+by which PKG down-regulates USF2 remain to be determined.
+Our studies show that overexpression of USF2 reverses PKG-
+mediatedrepressionofglucose-inducedTSP1expressionandTSP1-
+dependent TGF- activation. However, total TGF- production is
+not altered by the overexpression of USF2 protein in mesangial
+cells (Fig. 9D). This differs from the recent studies of Weigert et
+al. (66), who showed that overexpression of USF1 and/or USF2
+enhanced TGF-1 promoter activity in a simian virus 40 (SV40)-
+transformed mouse mesangial cell line. Experimental conditions
+such as transfection efficiency, SV40 transformation, or species-
+specific regulation of USF-mediated TGF- expression in me-
+sangial cells might contribute to this difference.
+In summary, our data provide the first evidence that USF2
+mediates glucose stimulation of TSP1 gene transcription and
+protein expression and TSP1-dependent TGF- bioactivity in
+mesangial cells, suggesting that USF2 is an important tran-
+scriptional regulator of diabetic nephropathy. Moreover, in-
+creased PKG activity down-regulates glucose-induced USF2
+protein, resulting in a decrease in protein-DNA activity, con-
+tributing to PKG-mediated repression of glucose-induced TSP1
+gene expression and TSP1-dependent TGF- activation.
+Acknowledgments—We thank Dr. Paul Bornstein, University of
+Washington, for the generous gift of TSP1 gene promoter reporter
+constructs and Dr. Michele Sawadogo, University of Texas MD Ander-
+son Cancer Center for providing USF1 and USF2 expression vectors.
+REFERENCES
+1. Diabetes Control and Complications Trial Research Group (1993) N. Engl.
+J. Med. 329, 977–986
+2. Ziyadeh, F. N., Sharma, K., Ericksen, M., and Wolf, G. (1994) J. Clin. Investig.
+93, 536–542
+3. Wolf, G., Sharma, K., Chen, Y., Ericksen, M., and Ziyadeh, F. N. (1992) Kidney
+Int. 42, 647–656
+4. Sharma, K., and Ziyadeh, F. N. (1995) Diabetes. 44, 1139–1146
+5. Ziyadeh, F. N. (1993) Am. J. Kidney Dis. 22, 736–744
+6. Iwano, M., Kubo, A., Nishino, T., Sato, H., Nishioka, H., Akai, Y., Kurioka, H.,
+Fujii, Y., Kanauchi, M., Shiiki, H., and Dohi, K. (1996) Kidney Int. 49,
+1120–1126
+7. Rifkin, D. B., Kojima, S., Abe, M., and Harpel, J. G. (1993) Thromb. Haemo-
+stasis 70, 177–179
+8. Lyons, R. M., Gentry, L. E., Purchio, A. F., and Moses, H. L. (1990) J. Cell Biol.
+110, 1361–1367
+9. Taipale, J., Lohi, J., Saarinen, J., Kovanen, P. T., and Keski-Oja, J. (1995)
+J. Biol. Chem. 270, 4689–4696
+10. Schultz-Cherry, S., Lawler, J., and Murphy-Ullrich, J. E. (1994) J. Biol. Chem.
+269, 26783–26788
+11. Schultz-Cherry, S., and Murphy-Ullrich, J. E. (1993) J. Cell Biol. 122, 923–932
+12. Ribeiro, S. M., Poczatek, M., Schultz-Cherry, S., Villain, M., and Murphy-
+Ullrich, J. E. (1999) J. Biol. Chem. 274, 13586–13593
+13. Donoviel, D. B., Amacher, S. L., Judge, K. W., and Bornstein, P. (1990) J. Cell.
+Physiol. 145, 16–23
+14. Phelan, M. W., Forman, L. W., Perrine, S. P., and Faller, D. V. (1998) J. Lab.
+Clin. Med. 132, 519–529
+15. Bornstein, P. (2001) J. Clin. Investig. 107, 929–934
+16. Hugo, C., Pichler, R., Meek, R., Gordon, K., Kyriakides, T., Floege, J., Born-
+stein, P., Couser, W. G., and Johnson, R. J. (1995) Kidney Int. 48,
+1846–1856
+17. Poczatek, M. H., Hugo, C., Darley-Usmar, V., and Murphy-Ullrich, J. E. (2000)
+Am. J. Pathol. 157, 1353–1363
+18. Wang, S., Shiva, S., Poczatek, M. H., Darley-Usmar, V., and Murphy-Ullrich,
+J. E. (2002) J. Biol. Chem. 277, 9880–9888
+19. Wang, S., Wu, X., Lincoln, T. M., and Murphy-Ullrich, J. E. (2003) Diabetes 52,
+2144–2150
+20. Wernet, W., Flockerzi, V., and Hofmann, F. (1989) FEBS Lett. 251, 191–196
+21. Lohmann, S. M., Vaandrager, A. B., Smolenski, A., Walter, U., and De Jonge,
+H. R. (1997) Trends Biochem. Sci. 22, 307–312
+22. Smolenski, A., Burkhardt, A. M., Eigenthaler, M., Butt, E., Gambaryan, S.,
+Lohmann, S. M., and Walter, U. (1998) Naunyn-Schmiedeberg’s Arch. Phar-
+macol. 358, 134–139
+23. Cornwell, T. L., and Lincoln, T. M. (1989) J. Biol. Chem. 264, 1146–1155
+24. Lincoln, T. M., Dey, N., and Sellak, H. (2001) J. Appl. Physiol. 91, 1421–1430
+25. Gudi, T., Huvar, I., Meinecke, M., Lohmann, S. M., Boss, G. R., and Pilz, R. B.
+(1996) J. Biol. Chem. 271, 4597–4600
+26. Filippov, G., Bloch, D. B., and Bloch, K. D. (1997) J. Clin. Investig. 100,
+942–948
+27. Dey, N. B., Boerth, N. J., Murphy-Ullrich, J. E., Chang, P. L., Prince, C. W.,
+and Lincoln, T. M. (1998) Circ. Res. 82, 139–146
+28. Immenschuh, S., Hinke, V., Ohlmann, A., Gifhorn-Katz, S., Katz, N., Junger-
+mann, K., and Kietzmann, T. (1998) Biochem. J. 334, 141–146
+29. Pawliczak, R., Cowan, M. J., Huang, X., Nanavaty, U. B., Alsaaty, S., Logun,
+C., and Shelhamer, J. H. (2001) J. Biol. Chem. 276, 44613–44621
+30. He, B., and Weber, G. F. (2003) Eur. J. Biochem. 270, 2174–2185
+31. Gudi, T., Chen, J. C., Casteel, D. E., Seasholtz, T. M., Boss, G. R., and Pilz,
+R. B. (2002) J. Biol. Chem. 277, 37382–37393
+32. Casteel, D. E., Zhuang, S., Gudi, T., Tang, J., Vuica, M., Desiderio, S., and Pilz,
+R. B. (2002) J. Biol. Chem. 277, 32003–32014
+33. Sciorati, C., Nistico, G., Meldolesi, J., and Clementi, E. (1997) Br. J. Pharma-
+col. 122, 687–697
+34. Tolsma, S. S., Volpert, O. V., Good, D. J., Frazier, W. A., Polverini, P. J., and
+Bouck, N. (1993) J. Cell Biol. 122, 497–511
+35. Liu, Y., Shi, Z., Silveira, A., Liu, J., Sawadogo, M., Yang, H., and Feng, X.
+(2003) J. Biol. Chem. 278, 20603–20611
+36. Luscher, B. (2001) Gene (Amst.) 277, 1–14
+37. Sawadogo, M. (1988) J. Biol. Chem. 263, 11994–12001
+38. Sawadogo, M., Van Dyke, M. W., Gregor, P. D., and Roeder, R. G. (1988)
+J. Biol. Chem. 263, 11985–11993
+39. Tsiani, E., Lekas, P., Fantus, I. G., Dlugosz, J., and Whiteside, C. (2002) Am. J.
+Physiol. Endocrinol. Metab. 282, 161–169
+40. Wilmer, W. A., Dixon, C. L., and Hebert, C. (2001) Kidney Int. 60, 858–871
+41. Haneda, M., Araki, S., Togawa, M., Sugimoto, T., Isono, M., and Kikkawa, R.
+(1997) Diabetes 46, 847–853
+42. Ingram, A. J., Ly, H., Thai, K., Kang, M. J., and Scholey, J. W. (1999) Kidney
+Int. 56, 1721–1728
+43. Haneda, M., Kikkawa, R., Sugimoto, T., Koya, D., Araki, S., Togawa, M., and
+Shigeta, Y. (1995) J. Diabetes Complications 9, 246–248
+44. Haneda, M., Koya, D., and Kikkawa, R. (2001) Am. J. Kidney Dis. 38, Suppl.
+1, S178–S181
+45. Tada, H., Kuboki, K., Nomura, K., and Inokuchi, T. (2001) J. Diabetes Com-
+plications 15, 193–197
+46. Bayraktar, M., Dundar, S., Kirazli, S., and Teletar, F. (1994) J. Int. Med. Res.
+22, 90–94
+47. Hida, K., Wada, J., Zhang, H., Hiragushi, K., Tsuchiyama, Y., Shikata, K., and
+Makino, H. (2000) J. Lipid Res. 41, 1615–1622
+48. Stenina, O. I., Krukovets, I., Wang, K., Zhou, Z., Forudi, F., Penn, M. S., Topol,
+E. J., and Plow, E. F. (2003) Circulation 107, 3209–3215
+49. Holmes, D. I., Abdel Wahab, N., and Mason, R. M. (1997) Biochem. Biophys.
+Res. Commun. 238, 179–184
+50. Murphy, M., Godson, C., Cannon, S., Kato, S., Mackenzie, H. S., Martin, F.,
+and Brady, H. R. (1999) J. Biol. Chem. 274, 5830–5834
+51. McGregor, B., Colon, S., Mutin, M., Chignier, E., Zech, P., and McGregor, J.
+(1994) Am. J. Pathol. 144, 1281–1287
+52. Littlewood, T. D., and Evan, G. I. (1995) Protein Profile 2, 621–702
+53. Kadesch, T. (1993) Cell Growth Differ. 4, 49–55
+54. Henrion, A. A., Martinez, A., Mattei, M. G., Kahn, A., and Raymondjean, M.
+(1995) Genomics 25, 36–43
+55. Henrion, A. A., Vaulont, S., Raymondjean, M., and Kahn, A. (1996) Mamm.
+Genome 7, 803–809
+56. Aperlo, C., Boulukos, K. E., Sage, J., Cuzin, F., and Pognonec, P. (1996)
+Genomics 37, 337–344
+57. Lin, Q., Luo, X., and Sawadogo, M. (1994) J. Biol. Chem. 269, 23894–23903
+58. Sirito, M., Lin, Q., Maity, T., and Sawadogo, M. (1994) Nucleic Acids Res. 22,
+427–433
+59. Viollet, B., Lefrancois-Martinez, A. M., Henrion, A., Kahn, A., Raymondjean,
+M., and Martinez, A. (1996) J. Biol. Chem. 271, 1405–1415
+60. Sirito, M., Lin, Q., Deng, J. M., Behringer, R. R., and Sawadogo, M. (1998)
+Proc. Natl. Acad. Sci. U. S. A. 95, 3758–3763
+61. Sirito, M., Walker, S., Lin, Q., Kozlowski, M. T., Klein, W. H., and Sawadogo,
+M. (1992) Gene Expr. 2, 231–240
+62. Qyang, Y., Luo, X., Lu, T., Ismail, P. M., Krylov, D., Vinson, C., and Sawadogo,
+M. (1999) Mol. Cell. Biol. 19, 1508–1517
+63. Vallet, V. S., Casado, M., Henrion, A. A., Bucchini, D., Raymondjean, M.,
+Kahn, A., and Vaulont, S. (1998) J. Biol. Chem. 273, 20175–20179
+64. Vallet, V. S., Henrion, A. A., Bucchini, D., Casado, M., Raymondjean, M.,
+Kahn, A., and Vaulont, S. (1997) J. Biol. Chem. 272, 21944–21949
+65. Bidder, M., Shao, J. S., Charlton-Kachigian, N., Loewy, A. P., Semenkovich,
+C. F., and Towler, D. A. (2002) J. Biol. Chem. 277, 44485–44496
+66. Weigert, C., Brodbeck, K., Sawadogo, M., Haring, H. U., and Schleicher, E. D.
+(2004) J. Biol. Chem. 279, 15908–15915
+USF and Glucose-induced TSP1 Transcription
+34322

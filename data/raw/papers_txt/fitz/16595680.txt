@@ -1,0 +1,691 @@
+KLF5 Interacts with p53 in Regulating Survivin Expression
+in Acute Lymphoblastic Leukemia*
+Received for publication,December 27, 2005, and in revised form, March 30, 2006 Published, JBC Papers in Press,April 4, 2006, DOI 10.1074/jbc.M513810200
+Ningxi Zhu‡1, Lubing Gu‡1, Harry W. Findley‡, Ceshi Chen§, Jin-Tang Dong§, Lily Yang¶, and Muxiang Zhou‡2
+From the ‡The Division of Pediatric Hematology/Oncology, §Winship Cancer Institute and Department of Hematology/Oncology,
+¶Department of Surgery, Emory University School of Medicine, Atlanta, Georgia 30322
+The Kruppel-like factor 5 (KLF5) is a transcription factor that
+regulates cellular signaling involved in cell proliferation and onco-
+genesis. Here, we report that KLF5 interacts with tumor suppressor
+p53 in regulating the expression of the inhibitor-of-apoptosis pro-
+tein survivin, which may play a role in pathological process of can-
+cer. The core promoter region of survivin contains multiple GT-
+boxes that have been characterized as KLF5 response elements.
+Deletion and mutation analyses as well as chromatin immunopre-
+cipitation and electronic mobility shift assay indicated that KLF5
+binds to the core survivin promoter and strongly induces its activity.
+Furthermore, we demonstrated that KLF5 protein is able to bind to
+p53 and abrogate the p53-regulated repression of survivin. Trans-
+fection of KLF5 into a KLF5-negative acute lymphoblastic leukemia
+cell line EU-8 enhanced survivin expression, and conversely, silenc-
+ing of KLF5 by small interfering RNA in a KLF5-overexpressing
+acute lymphoblastic leukemia cell line EU-4 down-regulated sur-
+vivin expression. The KLF5 small interfering RNA-mediated down-
+regulation of survivin sensitized EU-4 cells to apoptosis induced
+by chemotherapeutic drug doxorubicin. These findings identify a
+novel regulatory pathway for the expression of survivin under the
+control of KLF5 and p53. Deregulation of this pathway may result
+in overexpression of survivin in cancer, thus contributing to drug
+resistance.
+Survivin is a unique member of the inhibitor-of-apoptosis protein
+family. It plays an important role not only in inhibiting apoptosis but
+also in regulating mitosis (1, 2). Moreover, it is highly expressed in
+almost all types of human cancer but undetected in most adult tissues
+(3). High levels of survivin expression have been associated with cancer
+progression, drug resistance, poor prognosis, and short patient survival
+(4, 5). On the other hand, inhibition of survivin expression or interfer-
+ence with survivin function has been demonstrated to reduce cancer cell
+growth, induce cancer cell death, and sensitize cancer cells to radiation
+or chemotherapy (6, 7). Therefore, survivin is regarded as a promising
+target for cancer treatment, and modulating the expression of survivin
+seems to be one important approach.
+Much effort has been made to explore the mechanisms by which
+survivin expression is regulated. It is well established that survivin
+expression is repressed by wild-type p53 (8–10), while how survivin
+expression is activated remains less clear. Recent studies in colon cancer
+cells suggest that regulation of survivin expression is at least partially
+T-cell factor (TCF)/-catenin-dependent (11–13). Furthermore, a pre-
+vious study to analyze the basal transcriptional requirement of survivin
+gene expression has indicated that the survivin gene promoter contains
+GC-rich sequences, and the Sp1 transcription factor induces survivin
+expression in HeLa cells (14). In addition to GC-rich sequences, the core
+promoter of survivin contains multiple CACCC or GGGTG motifs
+(also called GT-boxes) for Sp1-like proteins and Kruppel-like factors
+(Sp/KLF).3 The Sp/KLF family contains at least 20 members with highly
+related zinc finger proteins that are important components of the
+eukaryotic cellular transcriptional machinery (15). Individual members
+of the Sp/KLF family have preferences for binding different DNA
+sequences in the target gene promoter. For example, Sp1, Sp3, and Sp4
+bind with higher affinity to GC-boxes than to GT-boxes, whereas many
+of the KLF proteins bind preferentially to GT-boxes over GC-boxes
+(16, 17). Sp/KLF can function as activators or repressors depending on
+which promoter they bind and the co-regulators with which they
+interact.
+Although the Sp/KLF family is considered a major transcriptional
+activator for survivin expression, the ability of individual members of
+this family, and in particular those binding GT-boxes, to regulate sur-
+vivin transcription in a given cell type has not been evaluated. Previous
+studies have suggested that members of the Sp/KLF family can interact
+with oncogenes and tumor suppressors, they can be oncogenic them-
+selves, and altered expression of family members has been detected in
+tumors (18). Recently, attention has been given to the involvement of
+Sp/KLF family member KLF5 in oncogenesis. KLF5 is also known as
+basic transcription element-binding protein 2 (BTEB2) and intestine-
+enriched Kruppel-like factor (IKLF). Although KLF5 expression was
+originally found in gut and epithelial tissues, recent studies showed that
+KLF5 is also expressed in other types of tissues and cells such as skin,
+vascular smooth muscle cells, and lymphoid cells (19–21). In lymphoid
+cells, KLF5 is expressed most highly in pro-T-cell and at much lower
+levels in normal thymus and bone marrow (21). KLF5 is expressed
+mainly in proliferating cells and its expression is inducible (22, 23). KLF5
+as a transcription factor activates expression of genes such as SM22
+and -globin through GGGTG or CACCC motif within the gene pro-
+moters (24, 25). Previous studies (26–29) have demonstrated that KLF5
+is a positive regulator of cell proliferation and mediates cell survival and
+tumorigenesis.
+In the present study, we examined the expression of KLF5 in leukemia
+bone marrow cells from children with ALL as well as in a panel of
+leukemia cell lines derived from pediatric ALL. We found that KLF5 is
+widely expressed in both ALL lines and fresh ALL samples and that
+* This work was supported by National Institutes of Health Grant R01 CA82323, The
+Leukemia and Lymphoma Society Grant 6249-05, and by the Children’s Leukemia
+Research Association Inc. and CURE Childhood Cancer Inc. The costs of publication of
+this article were defrayed in part by the payment of page charges. This article must
+therefore be hereby marked “advertisement” in accordance with 18 U.S.C. Section
+1734 solely to indicate this fact.
+1 These authors contributed equally to this work.
+2 To whom correspondence should be addressed: Division of Pediatric Hematology/
+Oncology, Emory University School of Medicine, 2015 Uppergate Dr., Atlanta, GA
+30322. Tel.: 404-727-1426; Fax: 404-727-4455; E-mail: mzhou@emory.edu.
+3 The abbreviations used are: KLF, Kruppel-like factor; CHIP, chromatin immunoprecipi-
+tation; EMSA, electronic mobility shift assay; ALL, acute lymphoblastic leukemia; BCP,
+B-cellprecursor;PBS,phosphate-bufferedsaline;FBS,fetalbovineserum;siRNA,small
+interfering RNA.
+THE JOURNAL OF BIOLOGICAL CHEMISTRY VOL. 281, NO. 21, pp. 14711–14718, May 26, 2006
+© 2006 by The American Society for Biochemistry and Molecular Biology, Inc.
+Printed in the U.S.A.
+MAY 26, 2006•VOLUME 281•NUMBER 21
+JOURNAL OF BIOLOGICAL CHEMISTRY 14711
+This is an Open Access article under the CC BY license.
+
+
+KLF5 expression is consistently associated with high levels of survivin
+expression in this disease. By analyzing the survivin promoter activity,
+we further found that KLF5 is an stimulator for survivin expression and
+that tumor suppressor p53 can down-regulate survivin expression by
+binding to KLF5. These findings suggest that KLF5 may be a novel target
+for therapy of ALL and other tumors with inactivated p53.
+EXPERIMENTAL PROCEDURES
+Patient Cells and Cell Line—Bone marrow aspirates were studied
+from 11 patients with B-cell precursor (BCP) ALL, diagnosed by stand-
+ard immunologic, morphologic, and cytochemical criteria. Mononu-
+clear cells were separated by centrifugation on Ficoll-Hypaque (1.077
+g/ml), washed twice in phosphate-buffered saline (PBS), and resus-
+pended at 106/ml in RPMI 1640 containing 10% fetal bovine serum
+(FBS). The cells were incubated on plastic Petri dishes for 1 h at 37 °C to
+remove monocytes, and nonadherent cells were recovered by gently
+washing the dishes. All specimens for studies of gene expression con-
+tained more than 90% blasts following purification.
+Six BCP-ALL lines were used in this study. The Reh line was obtained
+from C. Rosenfeld (INSERM, Villejuif, France). The five EU cell lines
+were established in our laboratory from pediatric BCP-ALL patients.
+Cultured cells resembled the primary leukemic cells, with Reh, EU-1,
+and EU-3 expressing wild-type p53, EU-2 expressing mutant p53, and
+EU-4 and EU-8 lacking p53 expression (30). Cell lines were grown in
+standard culture medium (RPMI 1640 containing 10% FBS, 2 mmol/
+liter L-glutamine, 50 units of penicillin and 50 g/ml streptomycin) at
+37 °C in 5% CO2-in air.
+Plasmids—The expression plasmid containing KLF5 (pCDNA3.1-
+KLF5) was constructed in our laboratory as described previously (31).
+The expression plasmid containing KLF4 (pMT3-KLF4) was kindly
+provided by Dr. V. Yang (Emory University). The Sp1 expression plas-
+mid (pPacSp1) was provided by Dr. L. S. Phillips (Emory University).
+The wild-type p53 expression plasmid (pc53-SN3) was provided by Dr
+B. Vogelstein (Johns Hopkins University). The KLF6 expression plasmid
+was generated by inserting a cDNA fragment synthesized by reverse
+transcription-PCR into the pcDNA3.1 vector (Invitrogen) at the
+HindIII and XhoI sites. Reverse transcription-PCR was performed
+using total RNA extracted from EU-1 cells and primer pair 5-CCC-
+GACATGGACGTGCT-3 and 5CTCCCTCAGAGGTGCCT-3 de-
+signed from the KLF6 gene.
+Various 5-3 deletion constructs and site-directed mutants of the sur-
+vivin promoter were made. For construction of the putative survivin pro-
+moter deletion constructs pLuc-689, pLuc-269, pLuc-150, pLuc-110,
+pLuc-96, and pLuc-67, PCR primer pairs were determined from the cor-
+responding sites in the sequence of the full-length survivin promoter.
+Mutant pLuc-269m and pLuc-110m constructs, made using mutated
+nested primers at the G and T residues within the GT-boxes, strongly
+interfered with binding to KLF5. Mutated promoter fragments were
+made by site-directed mutagenesis using in vitro site-directed mutagen-
+esis system (Promega). Constructs including different deleted or
+mutated fragments were then ligated to the pGL3 basic vector. DNA
+sequencing was performed to confirm that the sequence of the PCR
+products were correct as compared with the survivin promoter as pub-
+lished in the Human Genome data base.
+Transfection and Luciferase Activity Assay—Gene transfections were
+performed to analyze the effect of KLF5 on survivin expression. EU-4 or
+EU-8 cells in exponential growth were transfected or co-transfected
+with plasmids as described above by electroporation at 280–300 V, 950
+microfarads using a Gene Pulser II system (Bio-Rad). For stable trans-
+fection, the cells were seeded 48 h post-transfection into culture dishes
+for the selection of G418-resistant colonies. For gene reporter assay,
+cells were transiently co-transfected by electroporation with the sur-
+vivin promoter-luciferase constructs and different expression plasmids.
+Briefly, 1  107 cells in exponential growth were mixed with the corre-
+sponding survivin promoter-luciferase constructs plus different doses
+of p53, KLF4, KLF5, KLF6, and Sp1 plasmids and electroporated as
+described above. Transfected cells were resuspended in 10 ml of RPMI
+containing 10% FBS. At 48 h post-transfection, cell extracts were pre-
+pared with 1  lysis buffer, and then 20-l aliquots of the supernatant
+were mixed with 100 l of luciferase assay reagent (Promega) and ana-
+lyzed on a Microplate Luminometer (Turner Designs). Luciferase activ-
+ity was normalized to -galactosidase activity as an internal control.
+CHIP Assay—The CHIP assay as described previously (32) was per-
+formed to analyze the DNA binding activity of KLF5 protein. EU-4 cells,
+which express high level of KLF5, were used for CHIP assay for the
+in vivo binding of KLF5 to survivin promoter. First, formaldehyde was
+added at 1% to the culture media, and cells were incubated at room
+temperature for 10 min with mild shaking to cross-link KLF5 protein to
+the survivin promoter. Then, cells (1  106) were washed twice with
+cold PBS and resuspended in lysis buffer (1% SDS, 10 mM EDTA, 50 mM
+Tris-HCl, pH 8.1) with 1 mM phenylmethylsulfonyl fluoride, 1 g/ml
+aprotinin, and 1 g/ml pepstatin A. After a brief sonication, lysates were
+cleared by centrifugation and were diluted 10-fold with dilution buffer
+(0.01% SDS, 1% Triton X-100, 1.2 mM EDTA, 16.7 mM Tris-HCl, pH 8.1,
+and 167 mM NaCl) containing protease inhibitors as above. Anti-KLF5
+or control antibodies were added at 4 °C overnight with rotation. Immu-
+noprecipitated complexes were collected by protein A/G plus-agarose.
+Precipitants were sequentially washed with low salt wash buffer (0.1%
+SDS, 1% Triton X-100, 2 mM EDTA, 20 mM Tris-HCl, pH 8.1, 150 mM
+NaCl), high salt wash buffer (0.1% SDS, 1% Triton X-100, 2 mM EDTA,
+20 mM Tris-HCl, pH 8.1, 500 mM NaCl), and LiCl wash buffer (0.25 M
+LiCl, 1% Nonidet P-40, 1% deoxycholate, 1 mM EDTA, 10 mM Tris-HCl,
+pH 8.1), once, respectively, followed by two washes with 1  TE buffer
+(10 mM Tris-HCl, pH 8.0, 1 mM EDTA). After the final wash, 250 l of
+elution buffer (1% SDS, 0.1 M NaHCO3) was added and incubated at
+room temperature for 15 min with rotation. Then 5 M NaCl was added
+to reverse the formaldehyde cross-linking by heating at 65 °C for 4 h.
+After precipitation with ethanol, the pellets were resuspended and
+treated with proteinase K. DNA was recovered by phenol/chloroform
+extraction and ethanol precipitation. Pellets were resuspended in TE
+buffer and subjected to PCR amplification using forward and reverse
+primers (5-GATTACAGGCGTGAGCCACT-3 and 5-ATCTGGCG-
+GTTAATGGCGCG-3) selected from the survivin core promoter
+sequence (253 to 234 and 11 to 10, respectively). A pair of primers
+(5-GGATATATTCAAGCTGGG-3 and 5-GGTGTCCACCTGGAC-
+CTG-3) selected from upstream sequence of survivin core promoter
+(2750 to 2733 and 2409 to 2392, respectively) served as control.
+The PCR product was separated by agarose gel electrophoresis.
+EMSA—Sequence-specific DNA binding activity of KLF5 to survivin
+promoter was assayed by EMSA. Nuclear protein extraction was pre-
+pared using a kit (NE-PERTM from Pierce). Nuclear protein (5 g) from
+EU-4 cells, which express high level of KLF5, was incubated for 15 min
+in a binding buffer (10 mM Tri-HCl, 50 mM NaCl, 0.5 mM EDTA, 10%
+glycerol, 1 mM dithiothreitol, 7.5 mM MgCl) plus 0.1 g of poly(dI-dC)
+carrier, and 32P-labeled oligonucleotide probe 5-GCGGGGGGTG-
+GACCGCCTAA-3 spanning the 61/40 of survivin promoter that
+contains the third GT box. A mutated probe with changes of the
+GGGTG core consensus from GT to CA served as control. Anti-KLF5
+and rabbit IgG antibodies as additional controls were used to supershift
+the specific complexes of interest by pretreating the extract for 1 h at
+KLF5 and p53 Regulate Survivin Expression
+14712
+JOURNAL OF BIOLOGICAL CHEMISTRY
+VOLUME 281•NUMBER 21•MAY 26, 2006
+
+
+4 °C with antibodies. The samples were electrophoresed on a 5% poly-
+acrylamide gel, dried, and developed with intensifier screen at 70 °C.
+KLF5 siRNA and Transfection—The siRNA was designed to target
+KLF5 mRNA. Its target sequence was 5-AAAGTATAGACGAGA-
+CAGTGC-3. A scrambled siRNA was used as a control. EU-4 cells were
+transfected with 50–200 nM of chemically synthesized siRNA (Dharma-
+con, Chicago, IL) using LipofectamineTM Reagent (Invitrogen) in
+12-well plates. Briefly, EU-4 cells were seeded at 1  106 per well and
+cultured for overnight. The siRNA solution was then mixed with Lipo-
+fectamineTM Reagent in Opti-MEM I media for 20 min following the
+manufacturer’s protocol and was added to EU-4 cells in a total volume of
+0.5 ml. After 4-h incubation, 1 ml of normal medium was added to the
+cell culture.
+Northern Blot Assay—Total RNA (10 g per lane) was electrophore-
+sed using a 1% agarose, 6% formaldehyde gel and transferred to a nylon
+filter. Probes were prepared by a randomized-labeling approach using
+[-32P]dCTP. Hybridization was performed in 50% (v/v) formamide,
+5  SSC, 1% SDS, 5  Denhardt’s solution, 20% dextran sulfate, 100
+g/ml sheared salmon sperm DNA at 42 °C for 16 h. A final wash was
+carried out in 1  SSC, 0.1% SDS at 65 °C for 30 min. After washing, the
+filter was autoradiographed for 24 h.
+Western Blot Assay—Cells were lysed in a buffer composed of 150 mM
+NaCl, 50 mM Tris, pH 8.0, 5 mM EDTA, 1% (v/v) Nonidet P-40, 1 mM
+phenylmethylsulfonylfluoride,20g/mlaprotinin,and25g/mlleupeptin
+for 30 min at 4 °C. Equal amounts of protein extracts (10 g) were resolved
+by SDS-PAGE and transferred to nitrocellulose filter. After blocking with
+buffer containing 20 mM Tris-HCl, pH 7.5, and 500 mM NaCl, 5% nonfat
+milk for 1 h at room temperature, the filter was incubated with specific
+antibodies for 3 h at room temperature. After washing, the filter was incu-
+bated with horseradish peroxidase-labeled secondary antibody for 1 h.
+Blots were developed using a chemiluminescent detection system (ECL,
+Amersham Biosciences, Buckinghamshire, UK).
+Co-immunoprecipitation—Cells were lysed in a buffer composed of
+50 mM Tris, pH 7.6, 150 mM NaCl, 1% Nonidet P-40, 10 mM sodium
+phosphate, 10 mM NaF, 1 mM sodium orthovanadate, 2 mM phenyl-
+methylsulfonyl fluoride, 10 g/ml aprotinin, 10 g/ml leupeptin, and 10
+g/ml pepstatin. After centrifugation, 30 g of the clarified cell lysate
+was incubated with 15 l protein G plus/protein A-agarose and 1 g of
+p53, KLF5, or MDM2 antibodies, respectively. After 24-h incubation,
+the agarose was centrifuged, washed four times with ice-cold lysis
+buffer, suspended in electrophoresis sample buffer, and boiled for 5 min.
+The immunoprecipitated protein was further analyzed by Western blot-
+ting as described above.
+Determination of Cell Growth Rate—KLF5 siRNA-transfected EU-4
+cells and control cells (EU-4 transfected with irrelevant siRNA) were
+cultured in RPMI 1640 containing 10% FBS at an initial concentration of
+104/ml. Cells were then counted using a hemocytometer under light
+microscope. Triplicate flasks were counted for each time point to deter-
+mine the growth rate.
+Cytotoxicity and Apoptosis Assays—The effect of KLF5 siRNA on
+doxorubicin-induced cytotoxicity in EU-4 cells was determined by the
+WST assay. Briefly, cells were cultured in 96-well microtitre plates with
+different concentrations of doxorubicin for 44 h. WST (25 g/well) was
+then added, and cells were incubated for an additional 4 h. The OD of
+the wells was then read with a microplate reader at a test wavelength of
+450 nm and a reference wavelength of 620 nm. Appropriate controls
+lacking cells were included to determine background absorbance.
+An annexin-V assay (Oncogene, San Diego, CA) was used to quanti-
+tate apoptotic cells. Briefly, cells with or without treatment were washed
+once with PBS and stained with fluorescein isothiocyanate-annexin-V
+and PI for 30 min according to the manufacturer’s instructions. Stained
+cells were detected using the FACScan (BD Biosciences) and analyzed
+using WinList software (Verity Software House Inc).
+RESULTS
+KLF5 Is Widely Expressed in ALL, and Its Expression Is Associated
+with Survivin Expression—Although KLF5 is involved in cell prolifera-
+tion and cancer, the expression of this gene has not been studied in
+many human cancers including leukemia. We examine the expression
+of KLF5 in primary ALL cells and ALL cell lines derived from pediatric
+patients by northern blotting. KLF5 mRNA was expressed in all 11
+freshly isolated ALL specimens, and five of six ALL cell lines, although
+the levels of expression varied among different samples and cell lines
+(Fig. 1A). Interestingly, the expression of KLF5 appeared related to the
+expression of survivin in ALL. The ALL line EU-8 lacking KLF5 expres-
+sion also expressed a very low level of survivin, and furthermore, several
+patient’s samples (unique patient numbers 1–4) expressing relatively
+low levels of KLF5 expressed reduced survivin. However, the expression
+of KLF5 in normal peripheral lymphocytes was not related to survivin,
+with a relatively high level of KLF5 expression and low level of survivin
+tested from one donor.
+To further confirm the association between KLF5 and survivin
+expression in ALL, we performed gene transfection of KLF5 into EU-8
+line. Enforced expression of both KLF5 mRNA and protein in EU-8 cells
+was detected by northern blotting (Fig. 1B) and Western blotting (Fig.
+1C), respectively. As also shown in Fig. 1, B and C, the expression of both
+survivin mRNA and protein was significantly increased in EU-8 cells
+transfected with KLF5 compared with untransfected cells or cells trans-
+fected with a control vector.
+FIGURE 1. Expression of KLF5 and survivin in childhood ALL. A, Northern blot analysis
+for mRNA expression of KLF5 and survivin in fresh isolated bone marrow leukemic cells
+from unique patient number (UPN) of children with ALL, as well as in ALL cell lines. 20 g
+of total RNA from each line or sample and normal peripheral lymphocytes (NPL) was
+electrophoresed on a 1% agarose, 6% formaldehyde gels, transferred to a nylon filter,
+and hybridized with 32P-labeled probes. Actin served as control for equal RNA loading
+andintegrity.B,NorthernblotassayofectopicKLF5andendogenoussurvivinexpression
+in EU-8 cells transfected with KLF5 expression plasmid. Parental EU-8 and EU-8 trans-
+fected with an empty vector (neo) severed as control. Controls also include the 28 and 18
+S RNA shown on agarose gel for equal RNA loading. C, Western blot assay for KLF5 and
+survivin protein expression in EU-8 cells transfected with KLF5. Cell extracts from each
+sample including EU-4 (positive control) were resolved by SDS-PAGE, transferred to
+nitrocellulose paper, and probed with antibodies as indicated. Actin served as control for
+equal protein loading. The upper bands (nonspecific bands) in the upper panel also
+served as control for equal protein loading.
+KLF5 and p53 Regulate Survivin Expression
+MAY 26, 2006•VOLUME 281•NUMBER 21
+JOURNAL OF BIOLOGICAL CHEMISTRY 14713
+
+
+KLF5 Is a Positive Regulator of Survivin Promoter Activity—Since the
+core promoter of survivin contains multiple GT-boxes (GGGTG or
+CACCC, Fig. 2) that are preferentially used for binding and responding
+to KLF proteins, we determined the role of GT-boxes within the core
+promoter of survivin in regulating promoter activity in ALL cells. We
+generated a series of 5-3 deleted and mutated constructs of this region
+and performed transfection and gene reporter assays in EU-4 cells,
+which express high level of KLF5. Our results showed that GT-boxes
+mediated the majority of the promoter activity. When the three GT-
+boxes were mutated, the activity of the promoter construct pLuc-269
+containing the core survivin promoter was only about one-fourth of the
+wild-type promoter activity (Fig. 3, pLuc-269m versus pLuc-269). Sig-
+nificantly, the third GT-box (56/52) regulated approximately half of
+the total promoter activity in EU-4 as shown in Fig. 3, in which the
+activity of construct pLuc-110 containing only the third GT-box was
+50% of total promoter (pLuc-689 and pLuc-269) activity, and the con-
+struct pLuc-96 with deletion of the only third GT-box showed almost
+no promoter activity as compared with control. Regulation of the sur-
+vivin promoter by the third GT-box was further confirmed by mutation
+assay, in which the promoter construct pLuc-110m containing a muta-
+tion in the third GT-box expressed no promoter activity.
+Because the GT-box is the response element for Sp/KLF family pro-
+teins, we tested whether KLF5 but not other members of this family
+specifically induces survivin promoter activity in ALL cells. We per-
+formed co-transfection of the deleted survivin promoter construct
+pLuc-110 with the expression plasmids KLF5 and several Sp/KLF mem-
+bers Sp1, KLF4, and KLF6 in EU-8 line. The expression plasmid of p53
+was also included in this study. As shown in Fig. 4A, co-transfection of
+KLF5 significantly (up to 4-fold) increased the activity of pLuc-110 pro-
+moter construct containing only the third GT box. Co-transfecton of
+KLF4, KLF6, and Sp1 neither increased nor decreased luciferase activity
+of the pLuc-110 construct, although a slight increase and decrease of
+FIGURE 2. Core survivin promoter sequence. The core promoter region contains consensus sequences for binding transcription factors KLF5 (3), Sp1 (1), and p53 as indicated. The
+putative p53-binding site is highly associated with a canonical p53 consensus sequence, i.e. the region contains three-nucleotide (italics) spacers between the two decamer
+“half-sites” of the p53 consensus elements (bold). A vertical arrow marks the cDNA start site, and a horizontal arrow indicates the first codon.
+FIGURE3.Deletionandmutationanalysisofthe
+survivin core promoter activity. A, schematic
+representation of survivin promoter-luciferase
+reporter plasmids: pLuc-689 and pLuc-269 con-
+taining the core promoter region; pLuc-150, pLuc-
+110, pLuc-96, pLuc-67, containing a series of 5-3
+deleted promoters; and pLuc-110m and pLuc-
+269m containing promoters with the putative
+KLF5 response elements mutated by site-directed
+mutagenesis (f). B, transient transfection and
+luciferase assay in EU-4 ALL cells, which express
+high level of KLF5. Cells were transfected with 5
+g of either survivin promoter constructs or con-
+trol plasmid (pGL3 basic). Electroporation was
+performed at 300 V, 950 F. At 48 h post-transfec-
+tion, cell extracts were analyzed for luciferase
+activity. Data represent the mean of three inde-
+pendentexperimentsnormalizedto-galactosid-
+ase activity; bars,  S.D.
+KLF5 and p53 Regulate Survivin Expression
+14714
+JOURNAL OF BIOLOGICAL CHEMISTRY
+VOLUME 281•NUMBER 21•MAY 26, 2006
+
+
+pLuc-110 activity were observed following Sp1 and KLF4 transfection,
+respectively. Consistent with our previous results, p53 repressed sur-
+vivin promoter activity in a dose-dependent manner (Fig. 4B). As also
+shown in Fig. 4B, the p53 repression of pLuc-110 activity was abrogated
+by co-transfection with KLF5.
+To further investigate the role of the GT boxes in the survivin pro-
+moter in regulating the promoter activity in response to KLF5, we per-
+formed EMSA as well as CHIP analyses to evaluate the binding capacity
+of KLF5 to survivin promoter. Results from both CHIP (Fig. 5A) and
+EMSA (Fig. 5B) indicated that KLF5 induced survivin promoter activity
+by directly binding to the GT boxes in the promoter.
+KLF5 Interacts with p53 in Regulating Survivin Expression—Results
+shown in Fig. 4B, in which KLF5 abrogated p53-repressed survivin pro-
+moter activity, suggest that a possible interaction between p53 and
+KLF5 mediates survivin expression. Therefore, we performed a co-im-
+munoprecipitation assay to analyze binding between p53 and KLF5.
+From the data presented in Fig. 6A, it can be seen that p53 and KLF5
+were able to bind each other in Reh cells expressing endogenous p53 and
+KLF5 and in EU-8 cells expressing transfected p53 and KLF5. The bind-
+ing of p53 to MDM2 in Reh cells was detected in the control, whereas
+binding of KLF5 to MDM2 was not detected.
+To further confirm that the physical interaction between p53 and
+KLF5 functions to regulate survivin promoter activity, we co-trans-
+fected p53 and the survivin promoter construct pLuc-269 containing
+three GT-boxes and the p53 consensus sequence into p53-null EU-4
+cells that express high level of KLF5. Co-transfection of p53 and pLuc-
+FIGURE4.Co-transfectionandluciferaseassayfortheeffectofenforcedexpressionoftranscriptionfactorsonsurvivinpromoteractivityinEU-8cells,whichdonotexpress
+endogenous p53 and KLF5. A, cells were co-transfected with 5 g of pLuc-110 construct and 10 g of expression plasmids for p53, Sp1, KLF4, KLF5, and KLF6, respectively.
+Transfection with empty vector (neo) served as control. Transfection and luciferase activity assay were performed as described in the legend to Fig. 3. B, dose-dependent response of
+survivin promoter activity to p53 and KLF5. 5 g of pLuc-110 construct was co-transfected either with increasing amounts (2.5, 5 and 10 g) of p53 (lanes 3–5) or with increasing
+amounts (2.5, 5, and 10 g) of KLF5 in the presence of a fixed amount (10 g) of p53 (lanes 6–8). EU-8 cells were transfected with 5 g of either pGL3 basic vector (lane 1) or pLuc-110
+(lane 2) alone as controls. Total amount of plasmid was adjusted to 25 g per transfection with the neo vector. Titrations of the cellular extracts from plasmid-transfected cells were
+analyzed for p53 and KLF5 by Western blot analysis (inset).
+FIGURE 5. Analyses for binding capacity of KLF5 to survivin promoter. A, agarose gel electrophoresis shows the PCR results from each CHIP assay. EU-4 cells were treated with
+formaldehyde, and then cell extracts were immunoprecipitated (IP) with anti-KLF5 antibody (lanes 3 and 7). For negative controls, immunoprecipitation was performed either using
+anormalrabbitIgGorintheabsenceofantibody(no)ineachexperiment(lanes4and5and8and9,respectively).Lane1showsDNAsizemarkers.Lanes2and6showinputforpositive
+control. The PCR primer pair A is designed from the survivin core promoter region (253 to 234 and 11 to 10) to produce a 262-bp DNA fragment. The primer pair B designed
+from the upstream of survivin promoter (2750 to 2733 and 2409 to 2392) to produce a 359-bp fragment serves as control. B, EMSA to examine the binding of KLF5 to survivin
+promoter. Nuclear extracts from EU-4 cells were incubated in binding reactions with 32P-labeled wild-type (wt) or mutant (mut) probes spanning 61/47 of the survivin promoter
+containing the third GT-box. Samples were run on a nondenaturing 5% polyacrylamide gel and imaged by autoradiography. Lane 1, labeled mutant probe with nuclear extract; lanes
+2–5, labeled wild-type probe with nuclear extracts. In reactions depicted in lane 2, 25-fold molar excess of non-labeled wild-type probe was added. In reactions depicted in lanes 4 and
+5, cell extracts were preincubated with 2 g of either rabbit anti-KLF5 antibody or rabbit IgG for 1 h at 4 °C before probes were added. The specific protein-DNA complexes and
+supershift with antibodies are indicated.
+KLF5 and p53 Regulate Survivin Expression
+MAY 26, 2006•VOLUME 281•NUMBER 21
+JOURNAL OF BIOLOGICAL CHEMISTRY 14715
+
+
+269m containing mutations in the three GT-boxes served as a control.
+As shown in Fig. 6B, transfected p53 down-regulated pLuc-269 but not
+pLuc-269m luciferase activity in a dose-dependent manner, although
+the basal luciferase activity of pLuc-269m construct was significantly
+reduced by mutations of the GT-boxes.
+KLF5 siRNA Inhibits Survivin Expression and Sensitizes ALL Cells to
+Chemotherapeutic Drugs—By gene transfection of KLF5, we have dem-
+onstrated that enforced expression of KLF5 induced survivin expres-
+sion. We next examined the ability of silencing KLF5 in KLF5-overex-
+pressing cells by siRNA to inhibit survivin expression. We chemically
+synthesized a specific KLF5 siRNA based on the sequence that has been
+shown to effectively inhibit KLF5 expression as reported previously (33).
+As seen from Fig. 7A, transfection of KLF5 siRNA into EU-4 cells down-
+regulated KLF5 expression in a dose-dependent manner. Consequently,
+the expresson of survivin in KLF5 siRNA-treated EU-4 cells was
+decreased to the reduction of KLF5 level.
+As we reported previously, EU-4 cells with a high level of survivin
+expression were resistant to apoptosis induced by the chemotherapeu-
+tic drug doxorubicin (10, 34). In this study, we tested the effect of down-
+regulation of KLF5 and survivin by KLF5 siRNA on sensitivity of EU-4
+cells to doxorubicin as well as on cell growth. As shown in Fig. 7B,
+transfection of KLF5 siRNA did not inhibit EU-4 growth as compared
+with control siRNA. However, transfection of KLF5 siRNA sensitized
+EU-4 cells to doxorubicin, as demonstrated in Fig. 7C. A significant
+difference was noted in mean cell survival after 48-h treatment between
+doxorubicin plus control siRNA and doxorubicin plus KLF5 siRNA at
+doxorubicin concentrations of 0.5 M and greater (p  0.01). Consistent
+with these observations, a flow cytometric apoptosis assay showed that
+a increased percentage of EU-4 cells treated with the combination of
+doxorubicin and KLF5 siRNA (from 7 to 63%) were annexin-V-posi-
+tive at 48 h post-treatment as compared with doxorubicin plus control
+siRNA (from 7 to 21%) (Fig. 7D).
+DISCUSSION
+In this study, we demonstrated that the transcription factor KLF5 is
+widely expressed in childhood ALL and is a positive regulator inducing
+the expression of the anti-apoptotic protein survivin. Previous studies
+including those from our group have shown that the expression of sur-
+vivin is repressed by p53 (8–10), and we have characterized a critical
+role of p53-regulated survivin expression in determining sensitivity of
+ALL cells to chemotherapy (10). In the present study, we further found
+that p53-mediated repression of survivin is regulated by KLF5. In ALL
+cells lacking p53 expression, the KLF5-regulated survivin expression
+may play a role in regulating apoptosis induced by chemotherapeutic
+drugs, since silencing of KLF5 by siRNA in KLF5-expressing ALL cells
+sensitized these cells to doxorubicin.
+It is well known that the KLF family proteins are transcription
+factors regulating expression of genes linked to either positive or
+negative regulation of cell proliferation and growth. Therefore, it is
+not surprising that members of this family have also been implicated
+in the pathological process of cancers. Although the majority of KLF
+family members have not been characterized for their cellular func-
+tion, several KLF members have recently been linked to human can-
+cer. For example, KLF6 has been reported to act as a tumor suppres-
+sor and induce apoptosis in cancer cells (35, 36), whereas KLF5 acts
+as a positive regulator of cell proliferation and mediates cell survival,
+transformation, and angiogenesis (26–29, 37), although several pre-
+vious reports (31, 38) claimed a tumor suppressor function of KLF5
+in prostate and breast cancer due to frequent deletion of KLF5 gene
+in these tumors.
+However, the underlying molecular mechanism for KLF5 in the
+pathophysiology of cancer remains largely unclear. In the present study,
+we examined the expression of KLF5 in ALL and its interaction with p53
+in regulating survivin expression, hoping to gain insight into the prop-
+erties of KLF5 in regulating sensitivity of ALL cells to chemotherapy-
+induced apoptosis. We found that KLF5 is widely expressed in both ALL
+cell lines and primary samples, with the majority of primary ALL spec-
+imens overexpressing this gene. However, it is apparent that the level of
+KLF5 expression in ALL cells is not a determinant for cell proliferation
+and sensitivity to apoptosis induced by chemotherapy, because some
+KLF5-overexpressing ALL lines did not show a growth advantage and
+resistance to chemotherapeutic agents (data not shown).
+FIGURE 6. Interaction between p53 and KLF5 in regulating survivin transcription. A, physical interaction of KLF5 and p53 examined by immunoprecipitation (IP)-Western blot
+assays. Cell lysates from Reh cells treated with 10-gray IR for 3 h to induce p53 and from EU-8 cells co-transfected with p53 and KLF5 plasmids were precipitated with antibodies as
+indicated. Normal mouse or rabbit IgG served as control (Con). Proteins in immune complexes were separated on denaturing gels, transferred to filters, and detected by Western
+blotting with antibodies against KLF5, p53, and MDM2 (positive control for p53 binding). Antibodies for Western blotting were from different species than those used in immuno-
+precipitation. B, effect of p53 on KLF5-dependent survivin promoter activity. EU-4 cells were co-transfected with 5 g of either pLuc-269 or pLuc-269m (with mutations of three
+KLF5-binding sites) plus increasing amounts (2.5, 5, and 10 g) of p53 expression plasmid (lanes 2 and 6, 3 and 7, and 4 and 8, respectively) or without addition of p53 (lanes 1 and 5).
+The total amount of plasmid was adjusted to 15 g/transfection using an empty vector. Transfection and luciferase activity assay were performed as described in the legend to Fig. 3.
+KLF5 and p53 Regulate Survivin Expression
+14716
+JOURNAL OF BIOLOGICAL CHEMISTRY
+VOLUME 281•NUMBER 21•MAY 26, 2006
+
+
+We have previously identified a p53-survivin signaling pathway in
+regulating sensitivity of ALL cells to apoptosis induced by the DNA-
+damaging agent doxorubicin (10). Although all of the ALL lines tested
+express similar levels of survivin, lines expressing wild-type p53 were
+sensitive to doxorubicin due to down-regulation of survivin following
+repression by doxorubicin-induced p53. In contrast, ALL cells express-
+ing mutant p53 were resistant to doxorubicin due to mutant p53-medi-
+ated up-regulation of survivin. The p53-null ALL cells (i.e. EU-4) were
+also resistant to doxorubicin, although the mechanism for the resistance
+was not elucidated in the previous study. In the present study, we com-
+pared the EU-4 ALL line with another p53-null ALL line (EU-8) that
+lacks KLF5 expression in terms of sensitivity to doxorubicin. The KLF5-
+overexpressing line EU-4 was resistant to doxorubicin, whereas the
+KLF5-negative line EU-8 was sensitive to doxorubicin (data not shown).
+Therefore, we hypothesized that KLF5 in the absence of p53 may be
+critical in determining sensitivity to doxorubicin. We performed the
+present study to evaluate the cellular consequences of knock-out of
+KLF5 by siRNA in EU-4 cells. Our results show that silencing KLF5 by
+siRNA sensitizes EU-4 cells to doxorubicin.
+We further demonstrate that the role of KLF5 in regulating doxoru-
+bicin resistance is through regulation of survivin. First, we note a corre-
+lation between KLF5 and survivin expression in ALL. EU-8 cells lacking
+KLF5 expression express very low level of survivin, and enforced KLF5
+expression in this line induces survivin expression. In contrast, inhibi-
+tion of KLF5 in EU-4 by siRNA is accompanied by down-regulation of
+survivin. Furthermore, we found that the third GT-box within the sur-
+vivin promoter acts as a major response element for promoter activity,
+and KLF5 specifically and strongly induces survivin promoter activity
+through this GT-box.
+Another finding of the present study is that p53 is involved in KLF5-
+mediated regulation of survivin. Previous studies have demonstrated
+that p53 is able to bind several KLF members such as KLF4 and KLF6,
+which regulate the expression of p21/WAF-1 and IGF-IR genes, respec-
+tively (39, 40). In this study, we found that p53 can also bind KLF5 and
+down-regulate its effect on survivin expression. It is known that tran-
+scriptional repression mediated by p53 is either via direct DNA binding
+or through interactions with other transcription factors (41–43). How-
+ever, with regard to the regulation of survivin by p53, two independent
+studies have reported different results. Data from Hoffman et al. (8)
+demonstrated that p53 binds to the p53-binding sites in the survivin
+promoter, whereas studies from Mirza et al. (9) showed that p53 does
+not bind the survivin promoter and the putative p53-consensus
+FIGURE 7. The effects of KLF5 siRNA on expression of endogenous KLF5 and survivin and on cell growth and apoptosis induced by doxorubicin (Dox). A, EU-4 cells were
+treated with different concentrations of either KLF5 siRNA or control siRNA for 24 h. The expression of endogenous KLF5, survivin, and actin was detected by Western blot analysis.
+The upper bands in the KLF5 blots (two upper panels) were nonspecific bands that served as control for equal protein loading. B, time course of EU-4 growth in suspended culture with
+KLF5 siRNA. Cells were cultured with 200 nM KLF5 siRNA and control siRNA, respectively, in 10 ml of RPMI 1640 medium supplemented with 10% FBS at an initial concentration of
+104/ml. Cells were fed every 3 days with addition of same concentration of siRNA. Cells were counted daily. Data for the total number of cells (mean  S.D. for triplicate cultures) is
+shown. C, EU-4 cells were treated with different concentrations of KLF5 siRNA and doxorubicin alone or with fixed amount (150 nM) of either KLF5 siRNA or control siRNA and different
+doses of doxorubicin as indicated. Cells were incubated for 48 h, and cell viability was determined by WST assay. D, time course of apoptosis induced by doxorubicin in combination
+with either KLF5 siRNA or control siRNA in EU-4 cells. Cells were treated with doxorubicin (1.5 M) plus siRNA (15 nM) for the indicated time, and apoptotic cells were detected by
+annexin-V staining. Data represent the mean percentage of annexin-V-positive cells from three independent experiments; bars,  S.D.
+KLF5 and p53 Regulate Survivin Expression
+MAY 26, 2006•VOLUME 281•NUMBER 21
+JOURNAL OF BIOLOGICAL CHEMISTRY 14717
+
+
+sequence within survivin promoter is not required for transcription
+repression of survivin. Our results support the notion that the putative
+p53-binding site is not necessary for transcriptional regulation as shown
+by the inability of p53 to repress a survivin-promoter construct contain-
+ing a p53 response element but mutated KLF5-binding sites. Indeed,
+our results indicate that p53 represses survivin through interaction
+with KLF5.
+The interaction between p53 and KLF5 in regulating survivin expres-
+sion has possible clinical significance. The majority of pediatric ALL
+patients whose leukemic cells express normal p53 respond well to che-
+motherapeutic treatment. In those patients whose leukemic cells have
+an inactivated p53, KLF5 strongly up-regulates survivin expression,
+which may be important in conferring therapeutic resistance. Targeting
+the KLF5-survivin pathway using siRNA against either KLF5 or survivin
+may be a treatment approach for ALL and other cancers with
+inactivated p53.
+REFERENCES
+1. Li, F., Ambrosini, G., Chu, E. Y., Plescia, J., Tognin, S., Marchisio, P. C., and Altieri,
+D. C. (1998) Nature 396, 580–584
+2. Li, F., Ackermann, E. J., Bennett, C. F., Rothermel, A. L., Plescia, J., Tognin, S., Villa, A.,
+Marchisio, P. C., and Altieri, D. C. (1999) Nat. Cell Biol. 1, 461–466
+3. Ambrosini, G., Adida, C., and Altieri, D. C. (1997) Nat. Med. 3, 917–921
+4. Li, F. (2003) J. Cell. Physiol. 197, 8–29
+5. Rodel, F., Hoffmann, J., Distel, L., Herrmann, M., Noisternig, T., Papadopoulos, T.,
+Sauer, R., and Rodel, C. (2005) Cancer Res. 65, 4881–4887
+6. Olie, R. A., Simoes-Wust, A. P., Baumann, B., Leech, S. H., Fabbro, D., Stahel, R. A.,
+and Zangemeister-Wittke, U. A. (2000) Cancer Res. 60, 2805–2809
+7. Tu, S. P., Jiang, X. H., Lin, M. C., Cui, J. T., Yang, Y., Lum, C. T., Zou, B., Zhu, Y. B.,
+Jiang, S. H., Wong, W. M., Chan, A. O., Yuen, M. F., Lam, S. K., Kung, H. F., and Wong,
+B. C. (2003) Cancer Res. 63, 7724–7732
+8. Hoffman, W. H., Biade, S., Zilfou, J. T., Chen, J., and Murphy, M. (2002) J. Biol. Chem.
+277, 3247–3257
+9. Mirza, A., McGuirk, M., Hockenberry, T. N., Wu, Q., Ashar, H., Black, S., Wen, S. F.,
+Wang, L., Kirschmeier, P., Bishop, W. R., Nielsen, L. L., Pickett, C. B., and Liu, S. (2002)
+Oncogene 21, 2613–2622
+10. Zhou, M., Gu, L., Li, F., Zhu, Y., Woods, W. G., and Findley, H. W. (2002) J. Pharma-
+col. Exp. Ther. 303, 124–131
+11. Zhang, T., Otevrel, T., Gao, Z., Ehrlich, S. M., Fields, J. Z., and Boman, B. M. (2001)
+Cancer Res. 61, 8664–8667
+12. Kim, P. J., Plescia, J., Clevers, H., Fearon, E. R., and Altieri, D. C. (2003) Lancet 362,
+205–209
+13. Ma, H., Nguyen, C., Lee, K. S., and Kahn, M. (2005) Oncogene 24, 3619–3631
+14. Li, F., and Altieri, D. C. (1999) Biochem. J. 344, 305–311
+15. Kaczynski, J., Cook, T., and Urrutia, R. (2003) Genome Biol. 4, 206
+16. Hagen, G., Denning, J., Preiss, A., Beato, M., and Suske, G. (1995) J. Biol. Chem. 270,
+24989–24994
+17. Matsumoto, N., Laub, F., Aldabe, R., Zhang, W., Ramirez, F., Yoshida, T., and Terada,
+M. (1998) J. Biol. Chem. 273, 28229–28237
+18. Black, A. R., Black, J. D., and Azizkhan-Clifford, J. (2001) J. Cell. Physiol. 188, 143–160
+19. Sur, I., Unden, A. B., and Toftgard, R. (2002) Eur. J. Cell Biol. 81, 323–334
+20. Hoshino, Y., Kurabayashi, M., Kanda, T., Hasegawa, A., Sakamoto, H., Okamoto, E.,
+Kowase, K., Watanabe, N., Manabe, I., Suzuki, T., Nakano, A., Takase, S., Wilcox, J. N.,
+and Nagai, R. (2000) Circulation 102, 2528–2534
+21. Yang, X. O., Doty, R. T., Hicks, J. S., and Willerford, D. M. (2003) Blood 101,
+4492–4499
+22. Ohnishi, S., Laub, F., Matsumoto, N., Asaka, M., Ramirez, F., Yoshida, T., and Terada,
+M. (2000) Dev. Dyn. 217, 421–429
+23. Ogata, T., Kurabayashi, M., Hoshino, Y., Sekiguchi, K., Ishikawa, S., Morishita, Y., and
+Nagai, R. (2000) J. Thorac. Cardiovasc. Surg. 119, 983–989
+24. Adam, P. J., Regan, C. P., Hautmann, M. B., and Owens, G. K. (2000) J. Biol. Chem.
+275, 37798–37806
+25. Zhang, P., Basu, P., Redmond, L. C., Morris, P. E., Rupon, J. W., Ginder, G. D., and
+Lloyd, J. A. (2005) Blood Cells Mol. Dis. 35, 227–235
+26. Nandan, M. O., Yoon, H. S., Zhao, W., Ouko, L. K., Chanchevalap, S., and Yang, V. W.
+(2004) Oncogene 23, 3404–3413
+27. Sun, R., Chen, X., and Yang, V. W. (2001) J. Biol. Chem. 276, 6897–6900
+28. Chanchevalap, S., Nandan, M. O., Merlin, D., and Yang, V. W. (2004) FEBS Lett. 578,
+99–105
+29. Chen, C., Benjamin, M. S., Sun, X., Otto, K. B., Guo, P., Dong, X. Y., Bao, Y., Zhou, Z.,
+Cheng, X., Simons, J. W., and Dong, J. T. (2005) Int. J. Cancer 118, 1346–1355
+30. Zhou, M., Yeager, A. M., Smith, S. D., and Findley, H. W. (1995) Blood 85, 1608–1614
+31. Chen, C., Bhalala, H. V., Qiao, H., and Dong, J. T. (2002) Oncogene 21, 6567–6572
+32. Gu, L., Findley, H. W., and Zhou, M. (2002) Blood 99, 3367–3375
+33. Aizawa, K., Suzuki, T., Kada, N., Ishihara, A., Kawai-Kowase, K., Matsumura, T.,
+Sasaki, K., Munemasa, Y., Manabe, I., Kurabayashi, M., Collins, T., and Nagai, R.
+(2004) J. Biol. Chem. 279, 70–76
+34. Zhu, N., Gu, L., Findley, H. W., Li, F., and Zhou, M. (2004) Oncogene 23, 7545–7551
+35. Ito, G., Uchiyama, M., Kondo, M., Mori, S., Usami, N., Maeda, O., Kawabe, T.,
+Hasegawa, Y., Shimokata, K., and Sekido, Y. (2004) Cancer Res. 64, 3838–3843
+36. Benzeno, S., Narla, G., Allina, J., Cheng, G. Z., Reeves, H. L., Banck, M. S., Odin, J. A.,
+Diehl, J. A., Germain, D., and Friedmam, S. L. (2004) Cancer Res. 64, 3885–3891
+37. Shindo, T., Manabe, I., Fukushima, Y., Tobe, K., Aizawa, K., Miyamoto, S.,
+Kawai-Kowase, K., Moriyama, N., Imai, Y., Kawakami, H., Nishimatsu, H., Ishikawa,
+T., Suzuki, T., Morita, H., Maemura, K., Sata, M., Hirata, Y., Komukai, M., Kagechika,
+H., Kadowaki, T., Kurabayashi, M., and Nagai, R. (2002) Nat. Med. 8, 856–863
+38. Chen, C., Bhalala, H. V., Vessella, R. L., and Dong, J. T. (2003) Prostate 55, 81–88
+39. Zhang, W., Geiman, D. E., Shields, J. M., Dang, D. T., Mahatan, C. S., Kaestner, K. H.,
+Biggs, J. R., Kraft, A. S., and Yang, V. W. (2000) J. Biol. Chem. 275, 18391–18398
+40. Rubinstein, M., Idelman, G., Plymate, S. R., Narla, G., Friedman, S. L., and Werner, H.
+(2004) Endocrinology 145, 3769–3777
+41. Lee, K. C., Crowe, A. J., and Barton, M. C. (1999) Mol. Cell. Biol. 19, 1279–1288
+42. Ori, A., Zauberman, A., Doitsh, G., Paran, N., Oren, M., and Shaul, Y. (1998) EMBO
+J. 17, 544–553
+43. Ginsberg, D., Mechta, F., Yaniv, M., and Oren, M. (1991) Proc. Natl. Acad. Sci. U. S. A.
+88, 9979–9983
+KLF5 and p53 Regulate Survivin Expression
+14718
+JOURNAL OF BIOLOGICAL CHEMISTRY
+VOLUME 281•NUMBER 21•MAY 26, 2006

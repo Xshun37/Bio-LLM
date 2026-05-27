@@ -1,0 +1,623 @@
+Transcriptional regulation of human ﬁbroblast growth factor receptor 1 by E2F-1
+Mai Kanai, Etsu Tashiro, Hiroko Maruki, Yusuke Minato, Masaya Imoto ⁎
+Department of Biosciences and Informatics, Faculty of Science and Technology, Keio University, 3-14-1 Hiyoshi, Kohoku-ku,Yokohama 223-8522, Japan
+a b s t r a c t
+a r t i c l e
+i n f o
+Article history:
+Received 24 December 2008
+Received in revised form 24 February 2009
+Accepted 5 March 2009
+Available online 19 March 2009
+Received by A.J. van Wijnen
+Keywords:
+Fibroblast growth factor receptor 1
+Transcriptional regulation
+E2F-1
+pRB
+Overexpression of ﬁbroblast growth factor receptors (FGFRs) has been observed in many types of human
+tumors; however, the regulatory mechanism of human FGFR expression is still largely unknown. In the
+present study, we ﬁrst identiﬁed the transcriptional initiation site in the human FGFR 1 gene by 5′-RACE.
+Furthermore, we show that the expression of human FGFR 1 is regulated by E2F-1. Characterization of the
+human FGFR 1 promoter demonstrated that two non-consensus E2F binding sequences at positions +4
+to +22 and +25 to +43 relative to our identiﬁed transcriptional initiation site in the human FGFR 1 gene
+were critical for E2F-1-mediated transactivation of human FGFR 1 promoter. Mutations of these sites
+completely abolished the response of human FGFR 1 promoter to E2F-1 as well as E2F-1 binding in
+electrophoretic mobility-shift assays. Furthermore, chromatin immunoprecipitation assay showed that E2F-1
+was able to bind in vivo to the human FGFR 1 promoter. Moreover, human FGFR 1 protein expression was up-
+regulated by the overexpression of E2F-1, but down-regulated by the overexpression of pRB in situ,
+suggesting that the expression of human FGFR 1 is regulated by the pRB/E2F pathway. Because disruption of
+the pRB/E2F pathway is frequently observed in tumor cells, our ﬁndings provide valuable information for
+studying the role of FGFR 1 in tumor progression.
+© 2009 Elsevier B.V. All rights reserved.
+1. Introduction
+Fibroblast growth factor receptors (FGFRs) are involved in many
+biological processes during embryo development and homeostasis of
+adult body tissues, and disruption of normal FGFR functions leads to
+pathological conditions in humans. At present, the FGFR gene family
+consists of four highly related genes, FGFR 1–4, encoding polypeptides
+that are 55% to 72% identical in their amino acid sequence (Johnson
+and Williams, 1993). In general, FGFR 1 and FGFR 2 genes exhibit
+broad but distinct patterns of expression during development and in
+adult tissues. On the other hand, FGFR 3 and FGFR 4 genes appear to
+have more restricted expression patterns. Overexpression of FGFR 1
+has been shown to contribute to the malignant proliferation of tumor
+cells, including breast cancer (Adnane et al., 1991), prostate cancer
+(Giri et al., 1999), pancreatic carcinoma (Ohta et al., 1995), and
+melanoma (Yayon et al., 1997); however, the mechanisms of the
+transcriptional regulation of FGFR 1 have not been clariﬁed.
+Transcription factor E2F-1 (E2 promoter-binding factor 1) was
+initially identiﬁed as a cellular DNA-binding factor required for E1A
+(adenovirus 5 early region 1A product)-mediated activation of the
+adenoviral E2 gene (Kovesdi et al., 1986). At present, E2F family
+transcription factors are known to consist of eight genes, E2F-1 to E2F-
+8, in mammals. Generally, E2F family members are divided into two
+classes based on their transcriptional properties. E2F-1, E2F-2, and
+E2F-3a are referred to as “activator” E2Fs because they transcription-
+ally activate E2F target genes. Meanwhile, E2F-3b and E2F-4 to -8 are
+referred to as “repressor” E2Fs because their main functions are as
+transcriptional repressors of E2F target genes. E2F family members
+share the highest homology in their DNA-binding domains, which is
+consistent with the ﬁnding that each member binds to the E2F
+consensus sequence that was originally identiﬁed as “TTTSSCGC” with
+S=C or G in the adenovirus E2 gene promoter (Tao et al., 1997). Our
+previous study showed that the transcription of mouse FGFR 1 was
+stimulated by E2F-1 through the +28/+35 (“TTTGGCGG”) site
+relative to the transcriptional initiation site (Tashiro et al., 2003).
+Furthermore, we isolated a 1245 b.p. genomic fragment of human
+FGFR 1 promoter and found that its transcription was also activated by
+E2F-1; however, the human FGFR 1 promoter does not include the
+sequence corresponding to the +28/+35 E2F-1 binding site in the
+mouse FGFR 1 promoter; therefore, in the present study, we
+investigated the mechanism of how E2F-1 activates the transcription
+of human FGFR 1 promoter. We showed here that the expression of
+the human FGFR 1 transcript is activated by E2F-1 through two non-
+consensus E2F binding sequences at positions +4 to +22 and +25 to
++43 relative to the transcriptional initiation site in the human FGFR 1
+gene. Moreover, we suggested that the expression of human FGFR 1 is
+regulated by the pRB/E2F pathway.
+Gene 438 (2009) 49–56
+Abbreviations: FGFR 1, ﬁbroblast growth factor receptor 1; RT-PCR, reverse
+transcription-polymerase chain reaction; EMSA, electrophoretic mobility-shift assay;
+ChIP, chromatin immunoprecipitation; RACE, rapid ampliﬁcation of cDNA ends; MOI,
+multiplicity of infection.
+⁎ Corresponding author. Tel./fax: +81 45 566 1557.
+E-mail address: imoto@bio.keio.ac.jp (M. Imoto).
+0378-1119/$ – see front matter © 2009 Elsevier B.V. All rights reserved.
+doi:10.1016/j.gene.2009.03.004
+Contents lists available at ScienceDirect
+Gene
+journal homepage: www.elsevier.com/locate/gene
+
+
+2. Materials and methods
+2.1. Cell culture
+Human embryonic kidney HEK293T and HEK293 cells were
+grown in Dulbecco's modiﬁed Eagle's medium (DMEM) supple-
+mented with 10% fetal bovine serum (FBS). Human ﬁbrosarcoma
+(HT1080) cell line was grown in DMEM supplemented with 10%
+FBS. Human colorectal (LoVo) and esophageal (EC17) carcinoma cell
+lines were maintained in RPMI 1640 medium supplemented with
+5% FBS.
+2.2. 5′-Rapid ampliﬁcation of cDNA ends (5′-RACE)
+5′-RACE was performed using a 5′-Full Race Core Set (TaKaRaBio
+Inc., Shiga, Japan). Total RNA from EC17 cells was reverse-transcribed
+with a primer, 5′-TTT CAA ACT GAC CCT CGC TCG GCG-3′, speciﬁc to
+exon 2 of human FGFR 1. First-round PCR was performed with a
+forward primer, 5′-ACC AGC TCC GGC TCC ATT GTT CCC-3′, which
+corresponds to +445 to +468 relative to the transcriptional initiation
+site, and a reverse primer, 5′-GCA GCA CGG GTA CCG TGC GCC CTG CGG
+GGC-3′, which corresponds to +258 to +287. Nested PCR was
+performed with a forward primer, 5′-ACG CGG GCA CAC GCC CGC
+TCG CAC AAG CCA-3′, which corresponds to +586 to +615, and a
+reverse primer, 5′-GGA GAA AAG TCC TTG GGT TCC GCG-3′, which
+corresponds to +218 to +241.
+2.3. Reverse transcription-PCR (RT-PCR)
+Total RNA was isolated from cells with TRIzol reagent (Invitrogen,
+Carlsbad, CA, USA). Total RNA (2 μg) was reverse-transcribed with 2 μg
+oligo(dT) primer using M-MLV reverse transcriptase (Promega,
+Madison, MA, USA) at 42 °C for 1 h. For RT-PCR analysis, the
+synthesized 1st-strand cDNA was analyzed by PCR with the primers
+indicated in Table 1.
+2.4. Plasmid construction and luciferase reporter assay
+The −887/+60, −95/+60, and −95/+10 fragments of the
+human FGFR 1 gene relative to the transcriptional initiation site were
+ampliﬁed from EC17 genomic DNA by PCR and inserted into the vector
+pGL3-basic (Promega, Madison, MA, USA). The primer sequences used
+were as follows: for the −887/+60 fragment, 5′-CCG CTC GAG GCT
+CTT GGC TCC TTC CTG GGA CAG-3′ (forward) and 5′-CCC AAG CTT GGC
+GCC TCA CTT TCC TTG CAG AC-3′ (reverse); for the −95/+60
+fragment, 5′-CCG CTC GAG CGG AAC TAC AAG GCC CAG CAG GC-3′
+(forward) and 5′-GGT GGC TTT ACC AAC AGT ACC GGA ATG CCA AGC-
+3′ (reverse); for the −95/+10 fragment, 5′-CCG CTC GAG CGG AAC
+TAC AAG GCC CAG CAG GC-3′ (forward) and 5′-CCG CTC GAG CGG AGC
+GCT ATG CGC CGG CGA GGC GCG AGG G-3′ (reverse). Site-directed
+mutant constructs were generated based on the −95/+60 construct
+and the primer sequences used were as follows: for the −95/+60
+MT1 fragment, 5′-ATA GCG CTC AGC ACG CTC TTG C-3′ (forward) and
+5′-GCA AGA GCG TGC TGA GCG CTA T-3′ (reverse); for the −95/+60
+MT2 fragment, 5′-TTG CGG CCA CAG ACT AGA CGT CCT C-3′ (forward)
+and 5′-GAG GAC GTC TAG TCT GTG GCC GCA A-3′ (reverse). The −95/
++60 MT3 construct was generated based on the −95/+60 MT1
+construct and the forward primer (5′-TTG CGG CCA CAG ACT AGA CGT
+CCT C-3′) and the reverse primer (5′-GAG GAC GTC TAG TCT GTG GCC
+GCA A-3′) were used.
+For luciferase reporter assays, HEK293T cells were seeded on 24-
+well plates at a density of 5×104 cells/well and transfected with
+150 ng of a generated construct, 0, 10, or 30 ng of pRC/CMV-HA-E2F-1,
+and 1 ng of the control plasmid pCAGGS-lacZ for normalization of
+transfection efﬁciency. The total amounts of plasmid DNA were
+normalized to 181 ng with the pcDNA3 vector (Invitrogen). Transfec-
+tions were carried out using Lipofectamine reagent (Invitrogen)
+following the manufacturer's instructions. Cells were harvested 24 h
+after transfection and assayed for luciferase activity and β-galactosi-
+dase activity with the β-gal reporter gene assay system (Roche,
+Mannheim, Germany).
+2.5. Electrophoretic mobility-shift assay (EMSA)
+EMSAs were performed as described previously (Tashiro et al.,
+2003). The oligonucleotide sequences used were as follows: +4/+22
+probe, 5′-AGC TTT AGC GCT CGG AGC GCT CTT A-3′ (forward) and 5′-
+TAA GAG CGC TCC GAG CGC TAA AGC T-3′ (reverse); +13/+31 probe,
+5′-AGC TTG AGC GCT CTT GCG GCC ACA A-3′ (forward) and 5′-TTG
+TGG CCG CAA GAG CGG TCA AGC T-3′ (reverse); +25/+43 probe, 5′-
+AGC TTG GCC ACA GGC GCG GCG TCC A-3′ (forward) and 5′-TGG ACG
+CCG CGC CTG TGG CCA AGC T-3′ (reverse); +42/+60 probe, 5′-AGC
+TTC CTC GGC GGC GGG CGG CAG A-3′ (forward) and 5′-TCT GCC GCC
+CGC CGC CGA GGA AGC T-3′ (reverse); +4/+22 mutant probe, 5′-
+AGC TTT AGC GCT CAG CAC GCT CTT A-3′ (forward) and 5′-TAA GAG
+CGT GCT GAG CGC TAA AGC T-3′ (reverse); +25/+43 mutant probe,
+5′-AGC TTG GCC ACA GAC TAG ACG TCC A-3′ (forward) and 5′-TGG
+ACG TCT AGT CTG TGG CCA AGC T-3′ (reverse); and adeno E2 probe,
+5′-AGC TTC TAG TTT TCG CGC TTA AAT A-3′ (forward) and 5′-TAT TTA
+AGC GCG AAA ACT AGA AGC T-3′ (reverse).
+2.6. Chromatin immunoprecipitation (ChIP) assay
+ChIP assays were performed using a published protocol with
+minor modiﬁcations (Takahashi et al., 2000). Endogenous E2F-1
+was immunoprecipitated from EC17 cell lysates with monoclonal
+antibodies against E2F-1 (KH95 and C-20; Santa Cruz Biotechnol-
+ogy Inc., Santa Cruz, CA, USA) or control IgG, and the genomic DNA
+bound to E2F-1 was extracted. The recovered DNA was analyzed by
+PCR with primers as follows: 5′-TGG GAG TGA GAG AGC GAG-3′,
+which corresponds to −36 to −19; and 5′-GGA AGG CGA GGT
+CGC
+CGC
+AAT GCG
+CTA CG-3′,
+which
+corresponds
+to +158
+to +186.
+2.7. Adenoviral vectors and adenoviral vector-mediated expression
+To exogenously express E2F-1 and pRB, we used adenovirus Cre/
+loxP-regulated expression vectors (TaKaRaBio Inc.). In these vectors
+pAxCALNLw, a stuffer DNA fragment sandwiched by two loxP
+sequences, is located just upstream of E2F-1 or pRB cDNA and
+interferes with the expression of E2F-1 or pRB. If an adenovirus
+expressing Cre-recombinase (AxCANCre) is introduced into cells
+together, the stuffer is cut out and E2F-1 or pRB begin to be expressed.
+Recombinant adenoviruses (Ad-E2F-1, Ad-pRB, Ad-Cre) were grown
+and concentrated in HEK293 cells. Infection was carried out by the
+addition of recombinant adenoviruses to serum-containing media
+following the manufacturer's instructions. LoVo and HT1080 cells
+seeded on 60 mm dishes were incubated with virus-containing media
+at the indicated multiplicity of infection (MOI) at 37 °C for 1 h with
+constant agitation.
+Table 1
+Primers used in RT-PCR analysis.
+Primer name
+Sequence
+F1
+5′-CGGGGTACCTCCTCGGCGGCGGGCGGCAGCTAG-3′
+F2
+5′-CGGGGTACCATAGCGCTCGGAGCGCTCTTG-3′
+F3
+5′-CGGGGTACCTGGGAGTGAGAGAGCGAG-3′
+F4
+5′-CCGCTCGAGCGGAACTACAAGGCCCAGCAGGC-3′
+R1
+5′-GCGTGAATGGTTCCGCGGCTTTTCAAGCAG-3′
+F: forward primer, R: reverse primer.
+50
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+2.8. Western blotting
+At 72 h after infection, the cells were lysed with extraction buffer
+(50 mM 4-(2-hydroxyethyl)-1-piperazineethanesulphonic acid,
+150 mM NaCl, 2.5 mM ethyleneglycoltetraacetate, 1 mM ethylenedia-
+minetetraacetic acid, 1 mM dithiothreitol, 0.1% Tween 20, 10 mM β-
+glycerophosphate,1 mM NaF, 0.1 mM Na3Vo4,10% glycerol, and 0.1 mM
+phenylmethanesulphonylﬂuoride, pH 7.5). The total cell lysate was
+separated by sodium dodecyl sulfate-polyacrylamide gel electrophor-
+esis (SDS-PAGE), transferred to a Hybond-P membrane (Millipore,
+Billerica, MA, USA), and probed with speciﬁc antibodies. This was
+followed by detection with the Enhanced Chemiluminescence (ECL)
+Western blotting detection system (Millipore) and LAS-1000 (Fuji
+Film, Tokyo, JAPAN). Primary antibodies included rabbit polyclonal
+anti-Flg (FGFR 1) antibody (C-15; Santa Cruz Biotechnology), mouse
+monoclonal anti-E2F-1 antibody (KH-95; Santa Cruz Biotechnology),
+and mouse monoclonal anti-pRB antibody (554136; BD Biosciences,
+Franklin Lakes, NJ, USA). The secondary antibody was horseradish
+peroxidase-conjugated goat anti-rabbit immunoglobulin (Ig)G or anti-
+mouse IgG (GE Healthcare Bio-Sciences Corp., Piscataway, NJ, USA).
+3. Results
+3.1. Identiﬁcation of the transcriptional initiation site in the human
+FGFR 1 promoter
+The nucleotide sequences of human FGFR 1 cDNA and promoter
+region have been reported previously (Genbank accession No.
+BC018128 and No. NG_007729, respectively); however, the transcrip-
+tional initiation site of the human FGFR 1 gene has not yet been clariﬁed.
+Therefore, this was determined by 5′-RACE using total RNA extracted
+from EC17 cells which express human FGFR 1 protein (Fig. 1B). Total
+Fig. 1. Identiﬁcation of the transcriptional initiation site in human FGFR 1 promoter. (A) Complete nucleotide sequence of human and mouse FGFR 1. Asterisks indicate identical
+nucleotides. Arrow indicates the transcriptional initiation site. The E2F-1 binding sequence of mouse FGFR 1 promoter is indicated by a box. (B) Mapping the transcriptional initiation
+site of the human FGFR 1 gene by 5′-RACE using mRNA prepared from EC17 cells (human esophageal carcinoma cell line). The band indicated by an arrow is the extended product. (C)
+Total RNA from EC17 cells was analyzed by RT-PCR with primers F1, F2, F3, or F4 and R1 (see Table 1).
+51
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+RNA extracted from EC17 cells was reverse-transcribed from position
++591 relative to the ﬁrst nucleotide of the published human FGFR 1
+cDNA (Genbank accession No. BC018128), and then the reverse
+transcripts were ligated to each other. Fragments containing the
+junctions of the ligated products were ampliﬁed by PCR. We obtained
+twelve clones of PCR products and sequencing analysis of the PCR
+products revealed that the 5′-end of all clones was positioned at −37
+relative to the ﬁrst nucleotide of the published human FGFR 1 cDNA;
+thus, we denoted this position +1 as the transcriptional initiation site
+of the human FGFR 1 gene (Fig.1A and B). To conﬁrm this result, RT-PCR
+was carried out with four forward primers (F1, F2, F3, and F4) and one
+reverse primer (R1) (Table 1 and Fig. 1C). With the combination of F2
+and R1, an ampliﬁed fragment of the expected size (225 b.p.) was
+detected, but no ampliﬁcationwas observed with the combination of F3
+and R1 (Fig.1C), supporting the position of the transcriptional initiation
+site of human FGFR 1, which was determined by 5′-RACE. Same results
+were obtained by using total RNA extracted from human colorectal
+carcinoma SW480 cells (data not shown). Compared to mice, human
+FGFR 1 shares approximately 70.8% homology (Fig. 1A) and the
+transcriptional initiation site of human FGFR 1 is located near that of
+mouse FGFR 1.
+3.2. Analysis of the regulatory mechanism of the human FGFR 1
+transcript by E2F-1
+Our previous study showed that mouse FGFR 1 promoter is
+regulated by E2F-1 via the E2F-responsive sequence located at +28/
++35 (Tashiro et al., 2003). Furthermore, a human FGFR 1 promoter-
+luciferase construct containing a human FGFR 1 promoter with the 5′-
+end residing at position −887 and the 3′-end at position +60
+(designated the −887/+60 construct) relative to the transcriptional
+initiation site was strongly stimulated by co-expression with wild-
+type E2F-1 (Fig. 2A and B). On the other hand, neither a DNA-binding-
+defective E2F-1 mutant (E2F-1(132E)) nor a transcriptional activity-
+defective E2F-1 mutant (E2F-1 (1–368)) stimulated the luciferase
+activity of the −887/+60 construct (Fig. 2B). These results showed
+that transcription of the human FGFR 1 promoter as well as mouse
+FGFR 1 promoter is activated by E2F-1; however, by comparing the
+nucleotide sequences between the mouse and human FGFR 1
+promoter region, the E2F-responsive sequence located at +28/+35
+in the mouse FGFR 1 promoter is not conserved in the human FGFR 1
+promoter (Fig. 1A); therefore, we addressed the mechanism of E2F-1-
+induced transcriptional activation of the human FGFR 1 promoter.
+E2F activity is accompanied by binding to E2F-binding sequences
+in target genes. The E2F-binding sequence was originally identiﬁed as
+‘TTTCGCGC’ in the adenovirus E2 promoter (Kovesdi et al., 1986).
+Thus, we searched for putative E2F-binding sequences in the human
+FGFR 1 promoter region (−887/+60) using TFSEARCH (ver. 1.3)
+with a threshold score of 85.0, and made three hits at positions
+−351/−344 (A; 5′-GCGCGAAA-3′, score=100), −183/−176 (B; 5′-
+ACGCCAAA-3′, score=87.4), and −114/−107 (C; 5′-TTTGGGGC-3′,
+score=86.2) (Fig. 2A); however, as shown in Fig. 2B, the −95/+60
+construct, which lacked all putative E2F-1-binding sequences,
+remained fully responsive to wild-type E2F-1, indicating that the
+−351/−344, −183/−176, and −114/−107 regions were not
+critical E2F-1-responsive sites. Furthermore, the −95/+10 construct,
+a 3′ deletion mutant of the −95/+60 construct, showed a reduced
+response to E2F-1 (Fig. 2B). These results suggested that the E2F-1-
+responsive sequence would be within the +10/+60 region of
+human FGFR1 promoter.
+3.3. Identiﬁcation of the E2F-1-responsive sequence in the human
+FGFR 1 promoter
+Despite the result that the +10/+60 region clearly accounts for the
+E2F-1 responsiveness of the human FGFR 1 promoter, this region does
+not contain the consensus E2F binding sequence (TTTCGCGC), suggest-
+ing that transcription of the human FGFR 1 gene might be regulated by
+Fig. 2. E2F-1-induced transcriptional activation of human FGFR 1 promoter. (A) Schematic illustration of the human FGFR 1 promoter and its 5′ and 3′ truncation mutants. Putative
+E2F-1 binding sites searched by TFSEARCH (ver. 1.3) are indicated. These mutants were all conﬁrmed by sequencing. (B) HEK293T cells were co-transfected with 150 ng reporter
+constructs, indicated in (A), together with 30 ng HA-tagged E2F-1, E2F-1(132E), or E2F-1(1–368) plasmids. Twenty-four hours after transfection, luciferase activity was measured.
+52
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+E2F-1 via a non-consensus E2F-binding sequence. To address the non-
+consensus E2F-binding sequence within the +10/+60 region, EMSA
+was performed using several human FGFR 1 promoter fragments as
+probes (Fig. 3A). As shown in Fig. 3B, when using an oligonucleotide
+probe with the sequence +4/+22 and +25/+43, shifted bands were
+detected, and these bands were supershifted byanti-E2F-1 antibody. The
+shifted and supershifted bands were also detected with the same
+mobility when using the adeno E2 probe, which contains the consensus
+E2F-1 binding sequence of the adenovirus E2 gene promoter
+(Kovesdi et al., 1986). These results indicated that E2F-1 could
+bind to the +4/+22 and +25/+43 regions in vitro. Next, to
+identify the critical E2F-1-responsive sequence(s) which could
+activate the −95/+60 promoter construct in response to E2F-1, we
+introduced mutations in both +4/+22 and +25/+43 regions by
+Fig. 3. Analysis of the mechanism by which E2F-1 regulates the transcription of human FGFR 1 promoter. (A) Nucleotide sequences of probes used in EMSA. (B) EMSA. Nuclear
+extracts from HEK293T cells co-transfected with HA-tagged E2F-1 and DP-1 were incubated with 32P-labeled probes and the reactions were electrophoresed. (⁎) represents E2F-1/
+DP-1 complex and (⁎⁎) represents supershifted E2F-1/DP-1 complex by anti-E2F-1 antibody (KH95). Adeno E2 was used as the positive control. (C) Schematic illustration of human
+FGFR 1 promoter −95/+60 construct and its E2F-1 binding site mutants. Sequences of site-directed point mutants are shown in italics. (D) Effect of E2F-1-binding site mutants on
+transactivation by E2F-1. HEK293T cells were co-transfected with 150 ng reporter constructs, indicated in (C), together with the indicated concentration of HA-tagged E2F-1 plasmid.
+Twenty-four hours after transfection, luciferase activity was measured. (E) Nucleotide sequences of probes used in EMSA. (F) ChIP assay. Chromatin isolated from EC17 cells was
+precipitated with anti-E2F-1 antibody KH95 or C-20. Immunoprecipitates were then analyzed by PCR using the indicated primer set (−36/−19 and +158/+186). (G) Effect of the
+E2F family of transcription factors. HEK293T cells were co-transfected with 150 ng human FGFR 1 promoter −95/+60 construct or −95/+60 MT3 construct, together with 30 ng of
+HA-tagged E2F family members' plasmids. Twenty-four hours after transfection, luciferase activity was measured.
+53
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+site-directed mutagenesis into the −95/+60 construct (−95/+60
+MT1 and MT2, respectively; Fig. 3C). EMSA conﬁrmed that our
+generated mutant sequences were unable to bind to E2F-1 (Fig. 3B
+and E). The luciferase activities of both the −95/+60 MT1 and MT2
+constructs showed reduced responses to E2F-1 (Fig. 3D). Further-
+more, introduction of mutations in both +4/+22 and +25/+43
+regions into −95/+60 construct (−95/+60 MT3) completely
+abolished the response to E2F-1 (Fig. 3C and D). These results
+clearly indicated that the critical E2F-responsive sequences are at
+position +4/+22 and +25/+43.
+To substantiate the possibility that E2F-1 can be recruited to the
+endogenous human FGFR 1 promoter, we performed chromatin
+immunoprecipitation (ChIP) experiments using two antibodies
+against E2F-1 (KH95 and C-20). As shown in Fig. 3F, a −36/+186
+fragment, which contains both +4/+22 and +25/+43 regions, was
+ampliﬁed from immunoprecipitates by each anti-E2F-1 antibody, but
+not by anti-rabbit IgG antibody, providing evidence of the recruitment
+of E2F-1 to the relevant domain of the human FGFR 1 promoter in vivo.
+Taken together, these results reveal the importance of E2F-1 for
+transcriptional activation of the human FGFR 1 promoter.
+Moreover, we examined whether other members of E2F family
+could regulate human FGFR 1 transcription. As shown in Fig. 3G, E2F-2
+and E2F-3a, “activator” E2Fs, stimulated the luciferase activity of the
+−95/+60 construct as same level as E2F-1. On the other hand, neither
+E2F-4 nor E2F-5, “repressor” E2Fs, could stimulate the luciferase
+activity of the −95/+60 constructs. As the expression levels of E2F-4
+and E2F-5 were not lower than that of E2F-1, E2F-2, and E2F-3a
+evaluated by Western blotting (data not shown), the inability of E2F-4
+and E2F-5 to activate the −95/+60 constructs was not due to the
+expression efﬁciency. Furthermore, to investigate whether the E2F-2
+and E2F-3a also activated human FGFR 1 transcription via +4/+22
+and +25/+43 regions, we used the −95/+60 MT3 construct that
+were introduced mutations in both +4/+22 and +25/+43 regions.
+The luciferase activities of −95/+60 MT3 construct showed reduced
+responses to E2F-2 and E2F-3a as well as E2F-1. These results strongly
+suggested that E2F-2 and E2F-3a could also activate the transcription
+of human FGFR 1 gene by binding to both +4/+22 and +25/+43
+regions.
+3.4. Regulation of human FGFR 1 expression by the pRB/E2F pathway
+To assess the role of E2F-1 in the expression of human FGFR 1
+under more physiological conditions, we next examined whether the
+endogenous protein expression of FGFR 1 could be induced by
+exogenous E2F-1 expression. To overexpress E2F-1 protein in human
+colon carcinoma LoVo cells, we utilized the recombinant adenovirus
+with the Cre/loxP-regulated-expression system. Adenovirus E2F-1
+vector (Ad-E2F-1) has a stuffer DNA fragment sandwiched by two loxP
+sequences located just upstream of E2F-1 cDNA. When an adenovirus
+expressing Cre-recombinase (Ad-Cre) is introduced into cells together
+with Ad-E2F-1, the stuffer DNA fragment is cut out, resulting in the
+expression of E2F-1. As shown in Fig. 4A, exogenous E2F-1 was
+Fig. 3. (continued).
+Fig. 4. Expression of human FGFR 1 is regulated by the pRB/E2F pathway. (A) LoVo cells
+were infected with HA-tagged E2F-1-expressing recombinant adenovirus (Ad-E2F-1;
+MOI 100) together with or without Cre-recombinase-expressing recombinant adeno-
+virus (Ad-Cre; MOI 10) for 72 h, and the expression level of human FGFR 1 was detected
+by Western blotting using anti-E2F-1 and anti-FGFR 1 antibodies. (B) HT1080 cells were
+infected with pRB-expressing recombinant adenovirus (Ad-pRB; MOI 100) together
+with or without Cre-recombinase-expressing adenovirus (Ad-Cre; MOI 10) for 72 h, and
+the expression level of human FGFR 1 was detected by Western blotting using anti-pRB
+and anti-FGFR 1 antibodies.
+54
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+overexpressed when LoVo cells were co-infected with Ad-E2F-1 and
+Ad-Cre, indicating that the adenovirus Cre/loxP system works
+properly. Under this condition, the expression of human FGFR 1 was
+up-regulated by exogenous expression of E2F-1 (Fig. 4A). Next, we
+investigated whether the endogenous expression of FGFR 1 could be
+suppressed by exogenous expression of pRB, because the transcrip-
+tional activity of E2F-1 is known to be inhibited by pRB. As shown in
+Fig. 4B, the protein expression of human FGFR 1 was decreased by
+exogenous expression of pRB, which was overexpressed by infection
+with both Ad-pRB and Ad-Cre in HT1080 cells. These results strongly
+suggested that the endogenous expression of human FGFR 1 is
+regulated by the pRB/E2F pathway.
+4. Discussion
+Signaling through FGFRs is critical for several biological activities,
+including cell growth and differentiation, angiogenesis, malignant
+transformation and embryonal development. Deregulated FGFR
+expression is seen in many types of human tumors, and frequently
+correlates with both tumor progression and a poor prognosis;
+however, the mechanism of the transcriptional regulation of human
+FGFRs has not been well understood. In this study, we identiﬁed the
+transcriptional initiation site of human FGFR 1 gene by 5′-RACE
+(Fig. 1) and characterized the human FGFR 1 promoter to address
+the mechanism by which human FGFR 1 expression is regulated by
+E2F-1.
+Previously, we have reported that overexpression of cyclin D1
+induced FGFR 1 expression via the pRB/E2F pathway in mouse
+rodent ﬁbroblasts and enhanced the mitogenic response to FGF-2
+(Tashiro et al., 2003). Furthermore, more recently, it has been
+reported that the inhibition of cyclin D1 using constitutively active
+cyclin D1 antisense cDNA expression vector resulted in the
+suppression of FGFR 1-IIIc mRNA expression, one of the alternative
+splice variants of FGFR 1, in human pancreatic cancer PANC-1 cells
+(Chen et al., 2008). In the present study, we also found that the
+expression of FGFR 1 is up-regulated in E2F-1-overexpressing LoVo
+cells, and down-regulated in pRB-overexpressing HT1080 cells. Taken
+together, these observations strongly suggested that the expression
+of human FGFR 1 is regulated by the cyclin D1/pRB/E2F pathway in
+human cells.
+Previous studies have suggested that the E2F family members play
+important roles in the transcriptional regulation of various genes
+through the consensus E2F binding sequence, TTTSSCGC (S=C or G).
+On the other hand, in this study we demonstrated that transcription of
+the human FGFR 1 gene is regulated by E2F-1 through two non-
+consensus E2F-1 responsive sequences located at both +4/+22 and
++25/+43. It has also been shown that several E2F-regulated genes,
+such as human cyclin A promoter (AGTCGCGG), mouse cyclin E
+promoter (GCGCGA and GCGGGA), human cyclin D3 promoter
+(CGCGCGCGC), and human ASK-1 promoter (GGGCGGGC), do not
+contain consensus E2F binding sequences (Schulze et al.,1995; Botz et
+al., 1996; Ma et al., 2003; Kherrouche et al., 2006). Recently, the
+combination of chromatin immunoprecipitation (ChIP) and high-
+throughput DNA microarray technology (chip) has provided a power-
+ful method (ChIP-chip) for mapping protein–DNA interactions in vivo.
+This technique can identify target genes whose regulatory regions are
+bound by transcription factors through both protein–DNA and
+protein–protein interactions. To identify the E2F-1 target genes,
+Bieda et al. (2006) examined the localization of E2F-1-binding sites
+using ChIP-chip analysis. In their report, they predicted that only ∼12%
+of the experimentally determined E2F-1-binding sequences possess
+the consensus motif, but ∼50% of the experimentally determined E2F-
+1-binding sequences possess the 1–3 b.p. mismatch compared to
+consensus E2F-binding sequences. Recently, it has been proposed that
+mainly four types of speculated models account for E2F-1-induced
+transactivation via non-consensus E2F-1 binding sequences (Rabino-
+vich et al., 2008). (1) E2F-1 indirectly binds to a non-consensus
+sequence via association with another DNA-binding protein. (2) E2F-1
+binds to a consensus sequence located at a distance from the
+transcriptional initiation site and cross-links to the proximal promoter
+region because of a looping mechanism. (3) E2F-1 is recruited to the
+DNA via protein–protein interactions, and interaction of the complex
+with the promoter region is stabilized by E2F-1 binding to a non-
+consensus sequence. (4) E2F-1 directly binds to a non-consensus
+sequence. In the case of human FGFR 1 promoter, apart from two non-
+consensus sequences that are responsible for E2F-1-mediated tran-
+scriptional regulation, we found another three consensus E2F-1
+binding sequences located in position −351/−344 (GCGCGAA),
+−183/−176 (ACGCCAAA) and −114/−107 (TTTGGGGC) in the
+promoter. Among them, the distal consensus sequence (−351/
+−344) could directly bind to E2F-1 in vitro evaluated by EMSA (data
+not shown); however, luciferase activity of the −95/+60 construct of
+human FGFR 1 promoter, which eliminates the distal consensus
+sequence (−351/−344), could be activated by E2F-1 at the same level
+as that of −887/+60 construct (Fig. 2B), suggesting that a looping
+E2F/DNA interaction (model (2)) is not involved in the regulation
+mechanism of human FGFR 1 promoter. We also demonstrated that
+both +4/+22 and +25/+43 sequences might directly bind to E2F-1
+in vitro, as judged from EMSA (Fig. 3B), strongly suggesting that direct
+interaction (model (3 or 4)) but not indirect interaction (model (1)) of
+E2F-1 with non-consensus sequence is responsible for the transcrip-
+tional regulation of human FGFR 1 promoter.
+If model (3) were the case, another factor would be involved in this
+model. So far, there have been several reports that E2F family
+members and another factor cooperatively activate target genes; for
+example, it has been reported that the interaction between YY1 and
+E2F-2 is believed to allow stable recruitment of E2F-2 to the cdc6
+promoter (Schlisio et al., 2002) whereas the interaction of E2F-3 with
+TFE3 is crucial in determining E2F-3-speciﬁc target genes (Giangrande
+et al., 2003). E2F-1 was reported to activate the POLA1 promoter via
+interaction with CUX1 (Truscott et al., 2008). The human FGFR 1
+promoter lacks CUX1- and YY1-binding sequence motifs, but contains
+several GC boxes and Sp1-binding sequence motifs. It has been
+described that E2F-1 and Sp1 synergistically act in activating the DHFR
+promoter (Lin et al.,1996). The transcription of ARF promoter was also
+reported to be cooperatively regulated by E2F and Sp1-like factor
+(Parisi et al., 2002). Furthermore, it has been shown that Sp1 is an
+activator of chicken FGFR 1 gene transcription (Parakati and DiMario,
+2002). We also observed that the responsiveness of human FGFR 1
+promoter to Sp1 binding-defective E2F-1 mutant (E2F-1 del (113–
+120) (Lin et al.,1996)) was weaker than that to wild-type E2F-1. These
+observations suggest that transcription of the human FGFR 1 gene is
+cooperatively activated by E2F-1 and Sp1. Further studies would be
+required to elucidate the involvement of Sp1 in E2F-1-induced FGFR 1
+promoter transactivation.
+Overexpression
+of
+human
+FGFR
+1
+is
+observed
+in
+many
+pathological conditions (Adnane et al., 1991; Ohta et al., 1995;
+Yayon et al., 1997; Giri et al., 1999) and the pRB/E2F pathway has
+shown to be deregulated in a large majority of human tumors;
+therefore, our ﬁndings provide valuable information to not only
+understand the molecular mechanism of E2F-1 to recognize the
+non-consensus E2F binding sequence but also to study the role of
+FGFR 1 in tumor progression.
+Acknowledgements
+This study was partly funded by a Grant-in-Aid for Young Scientists
+(B) from the Ministry of Education, Culture, Sports, Science and
+Technology of Japan. This study was supported in part by the 21st
+Century Center-of-Excellent (COE) program for Life Science and
+Global COE program for Human Metabolomic Systems Biology from
+MEXT, Japan.
+55
+M. Kanai et al. / Gene 438 (2009) 49–56
+
+
+References
+Adnane, J., et al., 1991. BEK and FLG, two receptors to members of the FGF family, are
+ampliﬁed in subsets of human breast cancers. Oncogene 6, 659–663.
+Bieda, M., Xu, X., Singer, M.A., Green, R., Farnham, P.J., 2006. Unbiased location analysis
+of E2F1-binding sites suggests a widespread role for E2F1 in the human genome.
+Genome Res. 16, 595–605.
+Botz, J., et al., 1996. Cell cycle regulation of the murine cyclin E gene depends on an E2F
+binding site in the promoter. Mol. Cell Biol. 16, 3401–3409.
+Chen, G., Wang, J., Liu, Z., Kornmann, M., 2008. Exon III splicing of ﬁbroblast growth factor
+receptor 1 is modulated by growth factors and cyclin D1. Pancreas 37, 159–164.
+Giangrande, P.H., Hallstrom, T.C., Tunyaplin, C., Calame, K., Nevins, J.R., 2003.
+Identiﬁcation of E-box factor TFE3 as a functional partner for the E2F3 transcription
+factor. Mol. Cell Biol. 23, 3707–3720.
+Giri, D., Ropiquet, F., Ittmann, M., 1999. Alterations in expression of basic ﬁbroblast
+growth factor (FGF) 2 and its receptor FGFR-1 in human prostate cancer. Clin.
+Cancer Res. 5, 1063–1071.
+Johnson, D.E., Williams, L.T.,1993. Structural and functional diversity in the FGF receptor
+multigene family. Adv. Cancer Res. 60, 1–41.
+Kherrouche, Z., Blais, A., Ferreira, E., De Launoit, Y., Monte, D., 2006. ASK-1 (apoptosis
+signal-regulating kinase 1) is a direct E2F target gene. Biochem. J. 396, 547–556.
+Kovesdi, I., Reichel, R., Nevins, J.R., 1986. Identiﬁcation of a cellular transcription factor
+involved in E1A trans-activation. Cell 45, 219–228.
+Lin, S.Y., Black, A.R., Kostic, D., Pajovic, S., Hoover, C.N., Azizkhan, J.C., 1996. Cell cycle-
+regulated association of E2F1 and Sp1 is related to their functional interaction. Mol.
+Cell. Biol. 16, 1668–1675.
+Ma, Y., Yuan, J., Huang, M., Jove, R., Cress, W.D., 2003. Regulation of the cyclin D3
+promoter by E2F1. J. Biol. Chem. 278, 16770–16776.
+Ohta, T., et al., 1995. Expression of basic ﬁbroblast growth factor and its receptor in
+human pancreatic carcinomas. Br. J. Cancer 72, 824–831.
+Parakati, R., DiMario, J.X., 2002. Sp1- and Sp3-mediated transcriptional regulation of the
+ﬁbroblast growth factor receptor 1 gene in chicken skeletal muscle cells. J. Biol.
+Chem. 277, 9278–9285.
+Parisi, T., Pollice, A., Di Cristofano, A., Calabro, V., La Mantia, G., 2002. Transcriptional
+regulation of the human tumor suppressor p14(ARF) by E2F1, E2F2, E2F3, and
+Sp1-like factors. Biochem. Biophys. Res. Commun. 291, 1138–1145.
+Rabinovich, A., Jin, V.X., Rabinovich, R., Xu, X., Farnham, P.J., 2008. E2F in vivo binding
+speciﬁcity: comparison of consensus versus nonconsensus binding sites. Genome
+Res. 18, 1763–1777.
+Schlisio, S., Halperin, T., Vidal, M., Nevins, J.R., 2002. Interaction of YY1 with E2Fs,
+mediated by RYBP, provides a mechanism for speciﬁcity of E2F function. EMBO J. 21,
+5775–5786.
+Schulze, A., et al., 1995. Cell cycle regulation of the cyclin A gene promoter is mediated
+by a variant E2F site. Proc. Natl. Acad. Sci. U. S. A. 92, 11264–11268.
+Takahashi, K., Saitoh, S., Yanagida, M., 2000. Application of the chromatin immunopre-
+cipitation method to identify in vivo protein–DNA associations in ﬁssion yeast. Sci.
+STKE 2000, PL1.
+Tao, Y., Kassatly, R.F., Cress, W.D., Horowitz, J.M., 1997. Subunit composition determines
+E2F DNA-binding site speciﬁcity. Mol. Cell Biol. 17, 6994–7007.
+Tashiro, E., Maruki, H., Minato, Y., Doki, Y., Weinstein, I.B., Imoto, M., 2003.
+Overexpression of cyclin D1 contributes to malignancy by up-regulation of
+ﬁbroblast growth factor receptor 1 via the pRB/E2F pathway. Cancer Res. 63,
+424–431.
+Truscott, M., Harada, R., Vadnais, C., Robert, F., Nepveu, A., 2008. p110 CUX1 cooperates
+with E2F transcription factors in the transcriptional activation of cell cycle-
+regulated genes. Mol. Cell. Biol. 28, 3127–3138.
+Yayon, A., Ma, Y.S., Safran, M., Klagsbrun, M., Halaban, R., 1997. Suppression of
+autocrine cell proliferation and tumorigenesis of human melanoma cells and
+ﬁbroblast growth factor transformed ﬁbroblasts by a kinase-deﬁcient FGF
+receptor 1: evidence for the involvement of Src-family kinases. Oncogene 14,
+2999–3009.
+56
+M. Kanai et al. / Gene 438 (2009) 49–56

@@ -9,3 +9,5 @@ data/archive/
 outputs/
 config/config.yaml
 data/raw/hgnc_complete_set.txt
+data/raw/papers/
+data/raw/papers_txt/pymupdf4llm/

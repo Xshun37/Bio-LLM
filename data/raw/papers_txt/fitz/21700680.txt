@@ -1,0 +1,1964 @@
+DNA Damage and Cellular Stress Responses
+BRCA1 Loss Induces GADD153-Mediated Doxorubicin
+Resistance in Prostate Cancer
+Paola De Luca1, Elba S. Vazquez1, Cristian P. Moiola1, Florencia Zalazar1, Javier Cotignola1,
+Geraldine Gueron1, Kevin Gardner2, and Adriana De Siervi1
+Abstract
+BRCA1 plays numerous roles in the regulation of genome integrity and chemoresistance. Although BRCA1
+interaction with key proteins involved in DNA repair is well known, its role as a coregulator in the transcriptional
+response to DNA damage remains poorly understood. In this study, we show that BRCA1 plays a central role in
+the transcriptional response to genotoxic stress in prostate cancer. BRCA1 expression mediates apoptosis, cell-cycle
+arrest, and decreased viability in response to doxorubicin treatment. Xenograft studies using human prostate
+carcinoma PC3 cells show that BRCA1 depletion results in increased tumor growth. A focused survey of BRCA1-
+regulated genes in prostate carcinoma reveals that multiple regulators of genome stability and cell-cycle control,
+including BLM, FEN1, DDB2, H3F3B, BRCA2, CCNB2, MAD2L1, and GADD153, are direct transcriptional
+targets of BRCA1. Furthermore, we show that BRCA1 targets GADD153 promoter to increase its transcription in
+response to DNA damage. Finally, GADD153 depletion significantly abrogates BRCA1 influence on cell-cycle
+progression and cell death in response to doxorubicin treatment. These findings define a novel transcriptional
+pathway through which BRCA1 orchestrates cell fate decisions in response to genotoxic insults, and suggest that
+BRCA1 status should be considered for new chemotherapeutic treatment strategies in prostate cancer. Mol Cancer
+Res; 9(8); 1078–90. 2011 AACR.
+Introduction
+Germline mutations in the tumor suppressor gene
+BRCA1 (breast cancer susceptibility gene 1) are responsible
+for a large percentage of the inherited predisposition to
+breast and ovarian cancers (1) and are associated with a
+more aggressive clinical course for prostate cancer (2–4).
+BRCA1 loss induces genomic instability (5, 6), an almost
+universal characteristic of solid tumors in humans (7). Cells
+with dysfunctional BRCA1 show defects in survival and
+proliferation,
+increased
+radiosensitivity,
+chromosomal
+abnormalities, G2/M checkpoint loss, and impaired homo-
+logous recombination (HR) repair (8).
+Defining parameters important for treatment and prog-
+nosis are a key objectives in oncologic care, thus an
+important concern for patients may be how BRCA1
+mutation will impacts therapy design and clinical out-
+come. BRCA1- and p53-deficient mouse mammary
+tumors are highly sensitive to drugs that induce double-
+strand breaks, but cannot be eradicated and readily acquire
+resistance to treatment with docetaxel, doxorubicin, ola-
+parib, or topotecan (9–11). Moreover, though BRCA1-
+deficient human cancers show a good response to plati-
+num analogues, such as cisplatin, and to PARP inhibitors
+(12, 13), over time the majority of these cancers become
+resistant and patients die from refractory diseases. One
+recent study showed that acquired resistance to platinum
+analogues or PARP inhibitors in tumors carrying frame-
+shift BRCA1 mutations came from restored BRCA1
+expression and HR function due to secondary intragenic
+mutations that corrected the open reading frames of
+mutated BRCA1 (14, 15). Hence, new drugs or drug
+combinations that selectively kill BRCA1-deficient tumor
+cells are required to achieve complete eradication of
+BRCA1-mutated and BRCA1-like cancers. Understand-
+ing the mechanisms of resistance may therefore lead to
+improved treatment.
+The mechanism whereby BRCA1 modulates the ther-
+apeutic response to DNA-damaging agents is in part
+mediated by transcriptional regulation. Finding target genes
+regulated by BRCA1 overexpression in human cell lines
+might give insight into genetic pathways disrupted in cells
+that have mutated BRCA1. It had been published that
+BRCA1 controls the transcription of several genes (16–18)
+Authors' Affiliations: 1Laboratory of Cancer and Apoptosis, Department
+of Biological Chemistry, School of Sciences, University of Buenos Aires,
+CONICET, Buenos Aires, Argentina; and 2Laboratory of Receptor Biology
+and Gene Expression, National Cancer Institute, NIH, Bethesda, Maryland
+Corresponding Author: Adriana De Siervi, Intendente Guiraldes 2160 Pab
+II, 2do piso, CM1, Laboratorio de Cancer y Apoptosis, Departamento de
+Química Biologica, Ciudad Universitaria, FCEN, University of Buenos
+Aires, Buenos Aires, C1428EGA, Argentina. Phone: 5411-4576-3300;
+Fax: 5411-4576-3342; E-mail: adesiervi@qb.fcen.uba.ar
+doi: 10.1158/1541-7786.MCR-11-0155
+2011 American Association for Cancer Research.
+Molecular
+Cancer
+Research
+Mol Cancer Res; 9(8) August 2011
+1078
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+including its own transcription (19, 20). Understanding
+BRCA1 transcriptional targets and their functions will
+better explain the diverse role that BRCA1 plays in the
+control of DNA repair and cell-cycle progression. To
+accomplish this, an important goal will be to define how
+many of these BRCA1-controlled genes are targeted directly
+through gene-specific BRCA1 recruitment.
+In this study, we showed that BRCA1 plays a central role
+in modulating doxorubicin resistance in prostate cancer. We
+identified several BRCA1 target genes involved in cell-cycle
+regulation and DNA damage response, and focus on
+GADD153 as an important mediator of the increased
+sensitivity to genotoxic stress in BRCA1-expressing cells.
+Finally, using a prostate cancer xenograft model in nu/nu
+mice, we show that BRCA1 silencing influences prostate
+tumor growth in vivo.
+Materials and Methods
+Cell culture and treatments
+PC3 (ATCC: CRL-1435), LNCaP (ATCC: CRL-1740),
+22Rv1 (ATCC: CRL-2505), and C4-2 (derived from
+LNCaP) cells were grown in RPMI with 10% FBS. PC3
+stable cell lines [pcDNA3, pcDNA3 BRCA1, short hairpin
+RNA (shRNA) scramble, and shRNA BRCA1] were pre-
+viously described (19). Doxorubicin (Rontag S.A.) was
+prepared in dimethyl sulfoxide (DMSO). UV treatment
+was previously described (21).
+Plasmids
+GADD153 promoter luciferase reporter plasmid has been
+previously described (22). BRCA1 expression vector
+(pcDNA3 BRCA1) has also been previously described
+(23). shRNA scramble control and shRNA BRCA1 were
+from Upstate. siRNA control and siRNA GADD153 were
+from Santa Cruz Biotechnology.
+Western blot
+PC3 cells were exposed to different treatments, lysed, and
+immunobloted as previously described (24), using antibo-
+dies against GADD153 (R20), BRCA1 (19), p21WAF1/CIP1
+(C-19), cyclin D1 (HD11), cyclin E (HE12), cyclin A (C-
+19), cyclin B1 (GNS1), Lamin A/C (636), and actin B (I19)
+proteins from Santa Cruz Biotechnology. Protein quantita-
+tion was determined by Image J 1.41 software.
+RNA isolation, cDNA synthesis, and quantitative PCR
+PC3 cells were exposed to different treatments and total
+RNA was isolated by using RNeasy MINI kit (Qiagen).
+cDNA was synthesized from 2 mg of RNA by using
+RevertAid First Strand (Fermentas). Quantitative PCR
+(qPCR) was carried out as previously described (19, 25),
+using Taq Polimerase (Fermentas) in a DNA Engine
+Opticon (MJ Research; BioRad). Three biological indepen-
+dent replicates were carried out. Figures show media and SD
+from 3 independent experiments. Primer sequences were as
+follows: FEN1, 50-GGCAACCCCGAACCAAGC-30 and
+50-GCTCATAGAGGCATCAATGGC-30;
+GADD153,
+50-AAGGCACTGAGCGTATCATGTTAAA-30 and 50-
+TTTCAGGTGTGGTGATGTATGAAGA-30; BLM, 50-
+GAATGGTTAAGCAGCGATG-30 and 50-TCAATACA-
+TGGAACTTTCTCAG-30;
+H3F3B,
+50-AAAGCCGC-
+CAGGAAAAGC-30
+and
+50-CAGACCCACCAGGTA-
+CGC-30; BRCA2, 50-AAGCATTGGAGGAATATCGTA-
+GG-30 and 50-CAGGTTCAGAATTATAGGGTGGAG-
+30; CCNB2, 50-TTCTGATGCCTTGCTCTGC-30 and
+50-ATGCGTCCATTTATATCTCTTCC-30; DDB2, 50-
+TCACTTCCAGCACCTCACAC-30
+and
+50-ACGTC-
+GATCGTCCTCAATTC-30; MAD2L1, 50-AATACGGA-
+CTCACCTTGCTTGTAACTAC-30 and 50-TGCCATC-
+TTTCCAGGACCTCACC-30; ACTB (actin B), 50-AA-
+GATCATTGCTCCTCCTGAGC-30 and 50-CATACT-
+CCTGCTTGCTGAT CCA-30.
+Reporters
+PC3 cells were transiently transfected by using lipofecta-
+mine 2000 (Invitrogen) with 1 mg of GADD153 luciferase
+plasmid or cotransfected with 1 mg of pcDNA3. After 24
+hours, cells were exposed to genotoxic agents as indicated
+(50 J/m2 UV or 1 mmol/L doxorubicin), harvested, and
+lysed with 40 mL of Steady Glomax Luciferase System
+(Promega). Luciferase activity was measured in Lumin-
+ometer (Glomax Multi Detection System; Promega). Data
+were normalized to total protein.
+Chromatin immunoprecipitation
+BRCA1 chromatin immunoprecipitation (ChIP) experi-
+ments were conducted as previously described (19) from
+PC3 cells exposed or nonexposed to doxorubicin (1 mmol/
+L, 24 hours), using BRCA1 antibody and nonspecific
+antibody control (GAL4 or IgG). ChIP-DNA was amplified
+by qPCR by using primers mapping at 1.9 or 0.2 kb
+upstream or 0.3 kb downstream from GADD153 transcrip-
+tion start site (TSS) or the proximal promoter region for the
+other targets. Primer sequences were as follows: FEN1, 50-
+CCTCTCGCCCTTAGAAATCG-30 and 50-TAGACG-
+CTCCTGGAACC TC-30; BLM, 50-CATGGAGGCATC-
+TGAGTGTG-30
+and 50–TCTCTGTTTCACCCGTA-
+CCC-30;
+H3F3B,
+50-GGGTAAACCTACGAACGCC-
+TA-30 and 50-GTCGGAGAAGTGGCCTAAAAC-30; BR-
+CA2, 50-CCCGCCCACTACCACTAAG-30 and 50-GAT-
+GTTCTCTCAAGACCTGTTCC-30; CCNB2, 50-AACA-
+CACCAGAAGAGGAATAAAGG-30 and 50-GGAACT-
+GTCTCATTGGGAAAGC-30; DDB2, 50-GAGGCTG-
+AGGTGGGAGGATCGCTTG-30 and 50-GGTCTGG-
+CTCTGTCGCTCACTCTGG-30; MAD2L1, 50-ATCA-
+CAGGAAGGCTGAGAGAAAG-30 and 50-CGTCGTC-
+AGGTCCTTTGCG-30; and GADD153 1.9 kb upstream,
+50-CCAATCCCAGCCCTCCTCAG-30 and 50-TCAAG-
+TCCCAGCACACTACCC-30; 0.2 kb upstream, 50-CCT-
+CCGTGAAGCCTCGTGAC-30
+and
+50-CTCGCAT-
+CCGCCACTCAGG-30; and 0.3 kb downstream, 50-
+TTTCTTCTTGCCTTTAGGG-30
+and
+50-TCTTG-
+CCTCACTGTTACC-30. Fold enrichment was calculated
+normalizing data to input and nonspecific binding as
+previously described (25).
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1079
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+Binding assay
+Nuclear extract isolation was done from PC3 cells
+exposed to doxorubicin as previously described (19).
+Probe–protein complexes were analyzed by Western blot
+(WB) by using anti-BRCA1 antibody. GADD153–biotin
+probe was obtained by PCR by using Taq HotStart (Qia-
+gen). Primer sequences were 50-biotin-CCACTGAGCC-
+CGGCCAGGAGACCTC-30 and 50-biotin-GCTCTGT-
+CGCTGCCACCCGCTCA-30.
+Cell-cycle analysis
+PC3 stable cell lines were exposed to doxorubicin,
+stained with propidium iodide (PI), and analyzed by
+fluorescence-activated cell sorting (FACS) as previously
+described (26). Alternatively, cells were transfected with
+50 pmol of siRNA GADD153 or siRNA scramble by
+using lipofectamine 2000 (Invitrogen), and cells were
+treated with doxorubicin and analyzed by FACS 48 hours
+posttransfection.
+Apoptotic cell measurement by Annexin V–FITC and
+PI staining
+After exposure to doxorubicin, PC3 stable cell lines were
+stained with Annexin V–FITC/PI and analyzed by FACS
+as described (26). Alternatively, PC3 pcDNA3 and
+pcDNA3
+BRCA1
+were
+transfected
+with
+50
+pmol
+of siRNA GADD153 by using lipofectamine 2000, treated
+with doxorubicin, stained, and analyzed by FACS.
+Cell viability (MTS)
+Cell viability was assayed by MTS (Cell Titer 96 wells
+Aqueous non-Radioactive Cell Proliferation Assay; Pro-
+mega) following the manufacture instructions.
+Xenografts
+Six-week-old male nu/nu mice, each weighting at least
+20 g were housed under pathogen-free conditions following
+the University of Buenos Aires animal care guidelines. Mice
+were randomized into 2 groups: shRNA scramble or shRNA
+BRCA1. Tumor cells (4.8  106 cells) were inoculated s.c.
+into the right flank of the mice. After 14 days, when the
+tumors reached approximately 50 mm3, mice were ran-
+domly distributed into 2 groups (5 mice per group) and
+injected intraperitoneally (i.p.) with doxorubicin (8 mg/kg
+mouse). A second injection was administered after 9 days
+and the mice were sacrificed 24 hours after the last injection.
+RNA was isolated from tumors as described (24). Tumor
+size was measured 3 times per week by using digital caliper
+and the volume was calculated by using the formula: 0.523
+ width2  length, where width is the smallest side of the
+tumor.
+Statistical analysis
+All results are given as mean  SD of "n" separate
+independent
+experiments,
+unless
+stated
+otherwise.
+Student's t tests were used to ascertain statistical signifi-
+cance with a threshold of P < 0.05. Comparisons for
+C
+Cell viability
+120
+*
+*
+100
+80
+Cell viability
+Cell viability
+60
+40
+20
+0
+120
+140
+160
+100
+80
+60
+40
+20
+0
+0
+5
+10
+Time
+pcDNA3 BRCA1, Doxorubicin (2 µmol/L)
+pcDNA3, Etoposide (5 µmol/L)
+pcDNA3 BRCA1, Etoposide (5 µmol/L)
+pcDNA3, Doxorubicin (2 µmol/L)
+shRNA BRCA1, Doxorubicin (2 µmol/L)
+shRNA BRCA1, Etoposide (5 µmol/L)
+shRNA scramble, Doxorubicin (2 µmol/L)
+shRNA scramble, Etoposide (5 µmol/L)
+15
+20
+25 h
+0
+5
+10
+Time
+15
+20
+25 h
+PC3 cells:
+BRCA1 overexpression
+LNCaP cells:
+BRCA1 knockdown
+PC3
+BRCA1
+Lamin A/C
+BRCA1
+PC3 cells
+A
+B
+LNCaP cells
+pcDNA3 pcDNA3
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+Lamin A/C
+BRCA1
+Lamin A/C
+BRCA1
+Actin B
+1.0
+0.1
+1.0
+2.3
+1.0
+0.2
+1.0
+30
+1.4
+5.9
+LNCaP
+22Rv1
+C4-2
+Figure 1. BRCA1 increases
+doxorubicin sensitivity in prostate
+cancer. A, BRCA1 expression was
+determined by WB in human
+prostate cancer cell lines. B, PC3
+(pcDNA3, pcDNA3 BRCA1,
+shRNA scramble, and shRNA
+BRCA1) and LNCaP (shRNA
+scramble and shRNA BRCA1)
+stable cell lines were generated
+and BRCA1 expression was
+determined by WB. C, cells were
+exposed to doxorubicin or
+etoposide and viability was
+determined by MTS. Each sample
+was assayed in triplicate in 2
+biological independent
+experiments.
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1080
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+in vivo experiments were made with 1-way ANOVA
+followed by Dunnett's test, with P < 0.05 as the criterion
+for statistical significance.
+Results
+BRCA1 is required for doxorubicin sensitivity
+in prostate cancer cells
+Despite many studies in diverse cell types, the transcrip-
+tional role of BRCA1 in the DNA damage response in
+human prostatic cancer cell lines has remained relatively
+unexplored (27). In this study, we first assessed BRCA1
+expression levels in different human prostate cancer cell
+lines: PC3 (androgen insensitive and p53 deficient), LNCaP
+(androgen sensitive and p53 wild type), 22Rv1 (androgen
+insensitive and p53 wild type), and C4-2 (androgen insen-
+sitive and p53 wild type). LNCaP cells showed the highest
+levels of BRCA1, whereas the lowest expression was found
+in PC3 cells (Fig. 1A).
+To investigate BRCA1 influence on DNA damage
+sensitivity in prostate cancer, we next generated stable
+PC3 cells with both BRCA1-depleted and -overexpressed
+levels, and LNCaP cells with stable depletion of BRCA1
+expression (Fig. 1B). We analyzed viability of these cells
+Figure 1. (Continued) D, cells
+were stained with Annexin V–FITC
+and PI and analyzed by FACS after
+doxorubicin treatment (2 mmol/L,
+24 hours). The average from 3
+biological independent
+experiments (bottom) or 1
+representative experiment (top) is
+shown. E, cells were treated with
+doxorubicin, fixed, and stained
+with PI. DNA content was
+determined by FACS. Histogram
+shows the percentage of cells in
+G1, S, and G2/M phases. The
+figure depicts the result of 3
+biological independent
+experiments. F, cells were
+exposed to doxorubicin and WB
+analysis was carried out by using
+anti-p21Waf1/Cip1, -lamin A/C,
+or -cyclin D1, E, A, and B1
+antibodies. In the Western blots,
+the numbers under the bands
+indicate BRCA1 quantitation
+normalized to actin B and PC3
+cells (A) or control (B, F).
+*, P < 0.05.
+E
+F
+Cell cycle
+pcDNA3
+0
+2
+6
+0
+2
+6
+Doxorubicin
+(µmol/L, 24 h)
+0
+G1
+S
+G2/M
+2
+6
+0
+2
+6
+Doxorubicin
+(µmol/L, 24 h)
+Doxorubicin
+Wafi/Cip1
+pcDNA3
+BRCA1
+pcDNA3
+p21
+1.0
+1.3
+1.7
+1.2
+1.0
+1.1
+0.5
+0.5
+1.0
+0.7
+0.7
+0.3
+1.0
+0.7
+0.7
+0.3
+1.0
+1.4
+1.0
+0.8
+Cyclin D1
+Cyclin E
+Cyclin A
+Cyclin B1
+Actin B
+–
+–
++
+pcDNA3
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+120
+100
+80
+60
+% of cells
+% of cells
+40
+20
+0
+120
+100
+80
+60
+40
+20
+0
+BRCA1
+overexpression
+BRCA1
+knockdown
+D
+Apoptosis
+pcDNA3
+pcDNA3
+BRCA1
+DMSO
+Doxorubicin (2 µmol/L, 24 h)
+pcDNA3
+DMSO
+shRNA scramble
+DMSO
+shRNA scramble
+Doxorubicin
+shRNA BRCA1
+DMSO
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA BRCA1
+Doxorubicin
+pcDNA3 BRCA1
+DMSO
+Annexin V–FITC
+Annexin V–FITC
+pcDNA3 BRCA1
+Doxorubicin
+13.7%
+11.0%
+17.0%
+7.2%
+8.3%
+12.6%
+13.2%
+1.2%
+9.5%
+15.2%
+8.8%
+1.7%
+Propidium lodide
+Propidium lodide
+31.7%
+10.6%
+21.1%
+14.0%
+30
+*
+*
+25
+20
+15
+10
+% of early apoptosis
+16
+14
+12
+10
+8
+6
+4
+2
+0
+% of early apoptosis
+5
+0
+pcDNA3
+Doxorubicin
+BRCA1
+overexpression
+BRCA1
+knockdown
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1081
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+after doxorubicin or etoposide treatment as DNA-dama-
+ging agents by MTS assay. We found that BRCA1 over-
+expression in PC3 cells significantly decreased cell viability
+after doxorubicin treatment (Fig. 1C) showing a cell
+growth inhibition 50 (GI50) at 2 mmol/L doxorubicin
+for the pcDNA3 BRCA1 compared with 9 mmol/L for
+control (PC3 pcDNA3) at 24 hours. In addition, BRCA1
+knockdown increased doxorubicin resistance in PC3 (data
+not shown) and LNCaP cells (Fig. 1C). All cell lines were
+resistant to etoposide treatment suggesting that the sensi-
+tivity to this agent is independent of BRCA1 status
+(Fig. 1C). On the basis of these results and due to the
+lack of good chemotherapeutic options for advanced
+prostate cancer, we explored further the role of BRCA1
+in the doxorubicin-induced cytotoxicity in PC3 cells
+because these cells represent a more aggressive phenotype.
+We assessed the effect of BRCA1 modulation over
+doxorubicin-dependent apoptosis by Annexin V/PI dou-
+ble staining and FACS analysis. Consistent with the
+reduced viability in the BRCA1-overexpressing cells, there
+was a significant increase of early apoptotic cells under
+doxorubicin treatment (Fig. 1D). Accordingly, BRCA1
+silencing markedly decreased the percentage of early
+apoptotic cells induced by this agent (Fig. 1D). Cas-
+pase-3 activity was significantly diminished on BRCA1
+silencing PC3 cells after doxorubicin exposure confirming
+the BRCA1 role on doxorubicin-mediated apoptosis (data
+not shown).
+We also investigated the requirement for BRCA1 in
+cell-cycle regulation after doxorubicin treatment in PC3
+cells. We determined DNA content by PI staining and
+FACS in BRCA1-overexpressing cells, BRCA1 knock-
+down cells, and controls, exposed to doxorubicin or
+vehicle. Doxorubicin treatment increased the percentage
+of S-phase cells (P ¼ 0.02; Fig. 1E) which correlates with
+an increase of p21WAF1/CIP1 expression (Fig. 1F) suggest-
+ing that doxorubicin induces cell-cycle arrest. Notably,
+BRCA1 overexpression significantly induced G2/M cells
+accumulation after doxorubicin treatment (P ¼ 0.02;
+Fig. 1E). In addition, BRCA1 overexpression and doxor-
+ubicin exposure clearly induced p21WAF1/CIP1 with a
+marked diminution of cyclin D1, E, A, and B1 expression
+(Fig. 1F) indicating a loss of G1 cells due to an arrest of
+cells in G2/M checkpoint. Consistently, BRCA1 silencing
+abolished the cell-cycle arrest induced by doxorubicin
+(Fig. 1E).
+Altogether, these results show that BRCA1 is required for
+doxorubicin sensitivity in prostate cancer cells.
+BRCA1 binds and regulates several targets involved in
+cell-cycle and DNA damage response in vitro and in vivo
+To identify new candidates for BRCA1-induced sensi-
+tivity in doxorubicin-treated PC3 cells, we selected several
+BRCA1 targets obtained from a previously reported BRCA1
+ChIP-chip experiment (19): FEN1 (flap structure-specific
+endonuclease 1), GADD153 (growth arrest and DNA
+damage gene 153), BLM (Bloom syndrome), H3F3B (his-
+tone 3 family 3B), BRCA2, CCNB2 (cyclin B2), DDB2
+(DNA damage-binding protein 2), and MAD2L1 (mitotic
+arrest-deficient 2 homologue-like 1). These genes were
+selected because of their role in DNA damage and cell-
+cycle regulation. We first validated BRCA1 binding to the
+promoters of these genes by anti-BRCA1 ChIP-qPCR in
+PC3 cells exposed to doxorubicin or vehicle. As shown in
+Figure 2, BRCA1 binds to all the selected promoters. On
+the basis of BRCA1 binding to the promoters, 3 different
+clusters of genes were identified: cluster 1, genes that
+showed enrichment for BRCA1 when the cells were exposed
+to doxorubicin (FEN1 and GADD153); cluster 2, genes that
+showed enrichment for BRCA1 when the cells were
+untreated (BLM, H3F3B, BRCA2, and CCNB2); and
+cluster 3, genes that showed enrichment for BRCA1 when
+the cells were exposed or not to doxorubicin (DDB2 and
+MAD2L1).
+To further investigate whether the 8 BRCA1-bound
+genes were directly regulated by BRCA1, RNA was isolated
+from doxorubicin exposed pcDNA3 BRCA1 or control
+stable cell lines, and gene specific expression was analyzed
+by reverse transcriptase quantitative PCR (RT-qPCR). As
+shown in Figure 3A, the expression of all 8 genes was
+modulated by BRCA1. Furthermore, BRCA1 silencing also
+significantly affected the expression of all these genes
+(Fig. 3B). All the cluster 1 genes were induced by BRCA1
+overexpression and the cluster 2 genes were repressed
+(Fig. 3A). These findings were validated in BRCA1 knock-
+down cells (Fig. 3B). In addition, BRCA1 modulation in
+PC3 cells also modified these genes expression after dox-
+orubicin treatment (Fig. 3). Although cluster 3 expression
+genes were sensitive to BRCA1 and/or doxorubicin treat-
+ment, further studies should be done to understand the
+mechanism of these genes regulation and to identify other
+factors involved in this response.
+To elucidate whether the 8 BRCA1 targets are regulated
+by doxorubicin in vivo, in this study we injected BRCA1
+knockdown PC3 or control cells in athymic nu/nu mice.
+Tumor volume was measured every 2 days during 25 days.
+After 14 days, mice were randomly distributed into 2 groups
+(5 mice per group) and injected i.p. with doxorubicin as
+described in methods. No significant difference was
+observed in the body weight of mice throughout the
+experiment (data not shown). Tumor growth was increased
+(3-fold; P < 0.05) in shRNA BRCA1 xenografts compared
+with controls. BRCA1 knockdown in the xenografts was
+confirmed after the mice were sacrificed by RT-qPCR (data
+not shown). In addition, as shown in Figure 4, GADD153,
+BLM, BRCA2, and DDB2 genes were modulated by
+BRCA1 and/or doxorubicin treatment in the xenografts
+at 25 days after inoculation.
+In summary, BRCA1 regulates several important targets
+involved in cell-cycle progression and/or DNA damage
+response in prostate cancer in vitro and in vivo.
+DNA damage induces GADD153 expression in prostate
+cancer cells
+There is a need to develop new therapies for treating
+prostate cancer recurrence after the failure of antiandrogen
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1082
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+therapy. In this context, to identify new pathways regu-
+lated in prostate cancer, it is crucial to test new treatment
+strategies that target different pathways to improve ther-
+apeutic response. In addition, a better understanding of
+drug resistance mechanisms in the BRCA1 mutated
+tumors will help to develop more effective treatment
+options for prostate cancer. In this study, we found that
+BRCA1 targeted GADD153. This gene is a proapoptotic
+transcription factor regulated by DNA damage and endo-
+plasmic reticulum (ER) stress, both pathways highly
+induced by cytotoxic therapies (28–30). Thus, GADD153
+is likely to be a major functional target of BRCA1 in the
+transcriptional response to genotoxic insult.
+We first assessed GADD153 regulation after DNA
+damage. We exposed PC3 cells to genotoxic stress produced
+by different UV doses and examined GADD153 expression
+by immunoblotting. As shown in Figure 5A, UV treatment
+elevated GADD153 protein levels (2-fold). This induction
+is due to an increase of transcription because both
+GADD153 mRNA levels (Fig. 5B) and GADD153 pro-
+moter transcriptional activity (Fig. 5C) are elevated in
+response to DNA damage produced by either UV or
+doxorubicin.
+BRCA1 binds and induces GADD153 transcription
+after DNA damage
+To further investigate the mechanisms of GADD153
+regulation by DNA damage we examined BRCA1 binding
+region within GADD153 promoter by measuring the
+enrichment of the BRCA1 ChIP at several positions (pri-
+mers located at 1,900 or 200 bp upstream, or 300 bp
+downstream from the TSS of the GADD153 gene) by real-
+time PCR. We found that BRCA1 binds to GADD153
+promoter in PC3 cells with higher affinity in the region of
+200 bp upstream from the TSS after doxorubicin exposure
+(Fig. 5D). To further confirm this interaction, the binding
+of endogenous BRCA1 to GADD153 promoter probe was
+measured in vitro by a pull-down assay by using a biotiny-
+lated fragment mapping 0.7 kb upstream of the GADD153
+TSS. As shown in Figure 5E, BRCA1 binds with higher
+affinity
+after
+doxorubicin
+treatment
+to
+biotinylated
+GADD153 promoter sequences and not to the control
+without probe. Both in vivo ChIP and in vitro binding
+assay results indicate that BRCA1 is associated to the
+GADD153 proximal promoter region following exposure
+to genotoxic agents.
+To show the direct role of BRCA1 as a regulator of
+GADD153 transcription in response to DNA damage,
+PC3 cells were cotransfected with GADD153 reporter
+construct containing 1 kb of the GADD153 upstream
+regulatory region and BRCA1 wild type expression vector
+or shRNA BRCA1 silencing vector (Fig. 5F). The tran-
+scriptional activity of GADD153 promoter was again
+increased after doxorubicin exposure and this activity
+was significantly induced by BRCA1 overexpression.
+Accordingly, BRCA1 depletion with shRNA significantly
+decreased GADD153 promoter activity in the presence of
+DNA damage (Fig. 5F).
+These data revealed that BRCA1 directly regulates
+GADD153 transcription in response to DNA damage.
+Doxorubicin sensitivity induced by BRCA1 is mediated
+by GADD153
+GADD153 induction leads to the activation of caspase-3
+and the proapoptotic molecules Bax and Bak (31). To
+further test the linkage between BRCA1 and GADD153
+in PC3 cells, we estimated doxorubicin-induced apoptosis
+and the percentage of cells in the different cell-cycle phases
+after BRCA1 overexpression and/or GADD153 depletion.
+Interestingly, we found that the levels of apoptosis following
+doxorubicin treatment were significantly reduced from
+BRCA1-ChIP: qPCR
+FEN1
+50
+14
+12
+10
+8
+6
+4
+2
+0
+14
+12
+10
+8
+6
+4
+2
+0
+14
+16
+12
+10
+8
+6
+4
+2
+0
+12
+10
+8
+6
+4
+2
+0
+40
+30
+20
+10
+0
+50
+60
+70
+Enrichment
+(normalized to input and GAL4 Ab)
+40
+30
+20
+10
+0
+50
+60
+40
+30
+10
+0
+0
+2
+4
+6
+8
+0
+2
+4
+6
+8
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO doxorubicin
+DMSO
+BRCA1 Ab, DMSO
+BRCA1 Ab, Doxorubicin
+(1 µmol/L, 24 h)
+doxorubicin
+DMSO doxorubicin
+GADD153
+BLM
+H3F3B
+BRCA2
+CCNB2
+DDB2
+β-Globin
+MAD2L1
+*
+**
+*
+**
+**
+*
+*
+*
+*
+Figure 2. BRCA1 protein binds several genes involved in cell-cycle and
+DNA damage response. BRCA1-ChIP was conducted from PC3 cells
+exposed to doxorubicin. DNA-ChIP was analyzed by qPCR by using
+primers located at the proximal promoter region of BLM, FEN1, DDB2,
+H3F3B, BRCA2, CCNB2, GADD153, and MAD2L1 genes or b-Globin as
+negative control. Fold enrichment was calculated normalizing data to input
+and GAL4 antibody. *, P < 0.05; **, P < 0.01.
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1083
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+DMSO
+Doxorubicin (1 µmol/L, 24 h)
+DMSO
+Doxorubicin (1 µmol/L, 24 h)
+RT-qPCR: BRCA1 overexpression
+A
+B
+RT-qPCR: BRCA1 knockdown
+pcDNA3
+pcDNA3
+BRCA1
+H3F3B
+1.2
+1.0
+0.8
+0.6
+0.4
+Fold induction
+0.2
+0.0
+*
+pcDNA3
+pcDNA3
+BRCA1
+DDB2
+0
+1
+2
+3
+4
+*
+pcDNA3
+pcDNA3
+BRCA1
+CCNB2
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+**
+pcDNA3
+pcDNA3
+BRCA1
+BLM
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+*
+pcDNA3
+pcDNA3
+BRCA1
+GADD153
+14
+**
+*
+12
+10
+8
+6
+4
+2
+0
+pcDNA3
+pcDNA3
+BRCA1
+3.0
+FEN1
+**
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+pcDNA3
+pcDNA3
+BRCA1
+BRCA2
+**
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+pcDNA3
+pcDNA3
+BRCA1
+MAD2L1
+*
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+FEN1
+*
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+H3F3B
+Fold induction
+**
+3.0
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+DDB2
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+MAD2L1
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+*
+shRNA
+scramble
+shRNA
+BRCA1
+BRCA2
+*
+3.0
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+CCNB2
+**
+25
+20
+15
+5
+2.5
+0
+shRNA
+scramble
+shRNA
+BRCA1
+GADD153
+*
+**
+3.0
+3.5
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+BLM
+0
+1
+2
+3
+4
+**
+shRNA
+scramble
+shRNA
+BRCA1
+Figure 3. BRCA1 protein regulates several genes involved in cell-cycle and DNA damage response. pcDNA3 and pcDNA3 BRCA1 (A) or shRNA
+scramble and shRNA BRCA1 (B) stable cell lines were exposed to doxorubicin (1 mmol/L; 24 hours). mRNA expression levels for the indicated genes
+were analyzed by RT-qPCR. Data were normalized to actin B. Media and SD from 3 biological independent experiments are shown. *, P < 0.05;
+**, P < 0.01.
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1084
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+39.1% to 28.2% (25%) after BRCA1 overexpression
+and GADD153 depletion (P < 0.05; Fig. 6B). These
+findings suggest that BRCA1 regulates apoptosis at least
+in part through GADD153 transcriptional modulation.
+GADD153 expression was significantly reduced after
+siRNA GADD153 transfection (Fig. 6A).
+Similarly, cell-cycle analysis showed that GADD153
+silencing decreased the percentage of G2/M blocked cells
+induced by doxorubicin (P < 0.05; Fig. 6C, bars 2 and 4),
+independent of BRCA1 expression (Fig. 6C, bars 4 and 8).
+These data reveal that GADD153 depletion significantly
+abrogates BRCA1 influence on cell-cycle progression in
+response to doxorubicin treatment.
+In summary, BRCA1 plays a central role in the transcrip-
+tional pathways mediating PC3 sensitivity to doxorubicin
+treatment.
+Discussion
+In this study we showed that BRCA1 induces doxoru-
+bicin sensitivity through the transcriptional regulation of
+several genes. A major pathway in this response is the direct
+control of GADD153 transcription. We showed that this
+interaction governs the ability of BRCA1 to induce
+GADD153-mediated apoptosis and cell-cycle arrest in
+response to genotoxic stress.
+Previous studies indicate that both DNA damage-induced
+and growth-related signals enhanced GADD153 transcrip-
+tion (28). However, the transcriptional and posttranscrip-
+tional mechanisms responsible for controlling GADD153
+expression in response to DNA damage are poorly under-
+stood. Conflicting results on the role of BRCA1 in the
+control of GADD153 have previously been reported.
+Although gene-depletion studies have shown that BRCA1
+represses GADD153 expression (17, 32), other studies
+showed that BRCA1 induces GADD153 in response to
+DNA damage (33). Furthermore, MacLachlan and collea-
+gues showed that GADD153 induction by BRCA1 follow-
+ing DNA damage is cell specific, occurring primarily in cells
+with mutant p53 (33). These finding are consistent with the
+data presented here, as PC3 cells have mutant p53. Notably,
+we found that GADD153 regulation by BRCA1 is dimin-
+ished in LNCaP, a prostate cancer cell line that expresses
+wild-type p53. In addition, restored expression of p53 in
+PC3 cells abolishes the induction of GADD153 by BRCA1
+under genotoxic stress (unpublished findings not shown).
+Several studies indicate that GADD153 expression is
+induced in response to a variety of cellular stresses. It
+was reported that a balance between the expressions of
+GADD153 versus GRP78 determines the cell fate decisions
+in response to the unfolded protein response (UPR); with
+the former protein favoring apoptosis and the later favoring
+survival (34). Recently, BRCA1 was shown to play a
+regulatory role in the UPR through its ability to represses
+expression of GRP78 tipping the scale toward apoptosis
+(32). Though inhibition of BRCA1 expression resulted in
+both elevated levels of GRP78 and GADD153, it is tempt-
+ing to speculate that this level of titration will also be cell
+specific and dependent on the cellular p53 status. Future
+studies will have to focus on how BRCA1 may influence the
+direct transcriptional regulation of GADD153 following
+UPR activation and how p53 status is involved in this
+regulation.
+Recently, Wu and colleagues (35) tested the hypothesis
+that proapoptotic ER stress response could be exploited as
+a mechanism to sensitize cancer cells to chemotherapeutic
+DMSO
+Doxorubicin (8 mg/kg mouse)
+Xenografts: RT-qPCR:
+FEN1
+GADD153
+*
+*
+*
+*
+BLM
+H3F3B
+BRCA2
+DDB2
+MAD2L1
+CCNB2
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+1.6
+1.8
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+1.6
+1.8
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+1.6
+1.8
+2.0
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+Fold induction
+0
+1
+2
+3
+4
+5
+2.0
+1.5
+1.0
+0.5
+0.0
+2.0
+2.5
+1.5
+1.0
+0.5
+0.0
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+scramble
+shRNA
+BRCA1
+Figure 4. BRCA1 induces several target genes expression in response to
+doxorubicin in prostate cancer xenografts. Nu/nu mice were inoculated
+with PC3 stable cells. Mice were injected i.p. with doxorubicin (8 mg
+doxorubicin/kg mouse) or vehicle (DMSO) on days 14 and 24. Mice were
+sacrificed 24 hours after the last injection and RT-qPCR analysis of
+candidate genes was carried out. Graph bar represents the average and
+SD from 5 tumors. Data were normalized to actin B. *, P < 0.05.
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1085
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+drugs. They showed that ER stress inducers, such as
+thapsigargin and methylseleninic acid (MSA) increased
+the cell killing potency of paclitaxel or docetaxel. Further-
+more, knocking down GADD153 by siRNA also reduced
+the cell killing effect of MSA triggering apoptosis. Our
+study may support the hypothesis that ER stress apoptotic
+response contributes to chemotherapeutic sensitization as
+an alternative for cancer therapy.
+Severe ER stress can cause cell death, usually by activat-
+ing intrinsic apoptosis (36). Moreover, the UPR may
+upregulate the autophagy machinery (37). Although
+autophagy is mainly activated to protect cells against death
+(38), in the case of the UPR, stimulation of autophagy can
+be required to activate the cell death machinery (39).
+Certain promising anticancer regimens have been shown
+to activate concomitantly ER stress and autophagy in
+cancer cells (40). In addition, genetic studies have shown
+that GADD153 loss of function results in cytoprotection,
+whereas GADD153 gain of function enhances sensitivity
+to a variety of stresses (41, 42). We propose here that when
+the tumor cells are exposed to doxorubicin, BRCA1
+induces apoptosis and cell-cycle arrest mainly through
+A
+C
+D
+F
+B
+E
+Binding assay
+GADD153 promoter
+probe
+No probe
+Doxorubicin
+WB
+BRCA1
+Input
++
++
++
+–
+–
+–
++
++
+GADD153-luc
+Luciferase activity
+DMSO
+Doxorubicin
+(1 µmol/L 24 h)
+pcDNA3
+pcDNA3
+BRCA1
+pcDNA3
+pcDNA3
+BRCA1
+12
+10
+8
+6
+4
+2
+0
+**
+*
+Luciferase activity
+shRNA
+scramble
+shRNA
+scramble
+shRNA
+BRCA1
+shRNA
+BRCA1
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+**
+**
+30
+25
+20
+15
+10
+5
+0
+Fold induction
+0
+4
+**
+**
+6
+16 18 24 Doxorubicin
+(h, 1 µmol/L)
+Luciferase activity
+Control
+14,000
+12,000
+10,000
+8,000
+6,000
+4,000
+2,000
+0
+6
+18
+24
+**
+**
+Doxorubicin
+(h, 1 µmol/L)
+RT-qPCR: GADD153
+Western blot
+4
+3
+2
+1
+0
+Fold induction
+Control
+10
+*
+50 UV (J/m2)
+UV (Jm–2)
+GADD153
+0
+10
+25
+50
+75
+1
+2
+2
+1.8
+1.8
+Actin
+GADD153-luc
+Luciferase activity
+Control
+30
+60 Min after UV
+(50 J/m2)
+35,000
+30,000
+25,000
+20,000
+15,000
+10,000
+5,000
+0
+**
+**
+BRCA1-ChIP
+Fold enrichment
+DMSO
+Doxorubicin
+(1 µmol/L 24 h)
+–1900 pb
+GADD153 promoter
+–200 pb
++300 pb
+14
+12
+10
+8
+6
+4
+2
+0
+*
+Figure 5. BRCA1 binds and regulates GADD153 promoter in prostate cancer cells. A, PC3 cells were exposed to different UV doses, incubated for 1 hour,
+and analyzed by WB by using anti-GADD153 and -actin antibodies. The numbers under the bands indicate GADD153 quantitation normalized to actin B
+and control. B, PC3 cells were exposed to different UV doses or doxorubicin and GADD153 mRNA expression levels were determined by RT-qPCR. Data were
+normalized to actin B (ACTB). One result from 3 biological independent experiments is shown. C, PC3 cells were transiently transfected with GADD153
+luciferase plasmid, after 24 hours cells were treated as before, harvested, and luciferase activity was quantified. Data were normalized to total protein.
+All transfections were done in triplicate and each experiment was repeated 3 times. D, BRCA1-ChIP experiments were conducted from PC3 cells untreated or
+treated with doxorubicin as was described in Materials and Methods. qPCR was carried out with primers located at 1,900 or 200 bp upstream or 300 bp
+downstream from the TSS of the GADD153 gene. Fold enrichment was calculated normalizing data to input and IgG. E, binding assay was carried out from PC3
+cells exposed or not to doxorubicin (1 mmol/L; 24 hours). F, PC3 stable cells were cotransfected with GADD153 luciferase plasmid and treated with doxorubicin
+(1 mmol/L; 24 hours) and harvested 48 hours posttransfection. Luciferase activity was measured. Transfections were done in triplicate in 3 biological
+independent experiments. *, P < 0.05; **, P < 0.01.
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1086
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+GADD153 regulation. However, as shown, the effects of
+doxorubicin on cell viability are much greater than the
+effects on apoptosis or cell cycle. These findings and the
+mentioned previous reports suggest that it is plausible that
+other additional effects are involved as autophagy activa-
+tion. Further studies are needed to understand the precise
+molecular mechanisms that regulate the extent of autop-
+hagy activation in response to doxorubicin in connection
+with BRCA1/GADD153 pathway.
+Mutations in BRCA1 have been associated with
+increased risk of breast, ovarian, and more recently, with
+high grade prostate cancer (3, 4). However, whereas
+mutations in BRCA1 may influence familial prostate
+cancer progression, few studies have examined BRCA1
+protein expression in prostate cancer tumor tissue. Fior-
+entino and colleagues (43) had addressed this important
+point and they found that human prostate tumor samples
+stained positive for BRCA1 had significantly higher Glea-
+son score, PSA at diagnosis, and tumor proliferation as
+well as significantly worse prognosis than those with
+negative BRCA1 staining. Additionally, our results show-
+ing that BRCA1 loss of function is also involved in the
+differential response to DNA damage agents can also
+explain why the evolution of the disease could be favored
+or not by the presence of BRCA1 mutation.
+Preclinical and clinical data indicate that BRCA1 can
+modulate the response to chemotherapeutic agents. More
+specifically, loss of BRCA1 function leads to increased
+A siRNA GADD153
+B
+3.8%
+4.1%
+3.9%
+4.3%
+7.6%
+1.8%
+28.2%
+13.3%
+39.1%
+11.6%
+10.9%
+10.4%
+10.3%
+1.0%
+6.7%
+0.6%
+pcDNA3
+siRNAScramble
+DMSO
+pcDNA3
+siRNA GADD153
+DMSO
+pcDNA3
+siRNAScramble
+doxorubicin
+pcDNA3
+siRNA GADD153
+doxorubicin
+pcDNA3,BRCA1
+siRNAScramble
+DMSO
+Propidium iodide
+pcDNA3,BRCA1
+siRNA GADD153
+DMSO
+Annexin V–FITC
+pcDNA3,BRCA1
+siRNAScramble
+doxorubicin
+pcDNA3, BRCA1
+siRNA GADD153
+doxorubicin
+Apoptosis
+C
+Cell cycle
+WB
+C
+1
+1.7 0.3
+72
+48
+*
+*
+72
+h
+RT-qPCR
+siRNA control
+siRNA GADD153
+140
+120
+100
+80
+60
+40
+20
+0
+48 h 72 h
+GADD153
+siRNA
+GADD153
+Lamin A/C
+Fold induction
+Doxorubicin
+–
+–
+–
+–
+–
++
++
++
++
++
++
++
+G1             S           G2/M
++
+–
+–
+–
+siRNA,GADD153
+pcDNA3
+pcDNA3
+BRCA1
+% of cells
+120
+100
+80
+60
+40
+20
+0
+Figure 6. BRCA1 regulates doxorubicin-induced apoptosis and cell-cycle arrest through GADD153. A, PC3 cells were transfected with 50 pmol siRNA
+GADD153 and 72 hours posttransfection cells were harvest and GADD153 expression was determined by WB and RT-qPCR. The numbers under the bands
+indicate GADD153 quantitation normalized to actin B and control. B, PC3 stable cell lines (pcDNA3 or pcDNA3BRCA1) were transiently transfected with siRNA
+scramble or siRNA GADD153, exposed to doxorubicin (6 mmol/L) or vehicle (DMSO) during 24 hours, and double stained with Annexin-FITC and PI for
+FACS analysis. One representative experiment of 3 biological independent experiments is shown. C, alternatively, cells were exposed to doxorubicin
+(2 mmol/L; 24 hours) and then stained with PI for FACS analysis. Histogram shows the percentage of G1, S, and G2/M cells from 1 representative experiment
+from 3 biological independent experiments. *, P < 0.05.
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1087
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+sensitivity of tumor cells to DNA-damaging chemother-
+apeutic agents such as cisplatin, bleomycin, and etopo-
+side (44–48). However, other studies show that BRCA1
+defective cells are resistant to doxorubicin (49). Our
+findings extend these finding by showing BRCA1 tran-
+scriptional role in doxorubicin sensitivity showing for the
+first time several BRCA1 targets involved in this
+response.
+Therapeutic agents commonly used in breast and ovar-
+ian cancer treatments can damage DNA through various
+mechanisms. There is a group of agents, including etopo-
+side, mitoxantrone, irinotecan, and topotecan, which
+inhibits topoisomerases I and II and introduce temporary
+breaks in the DNA strands. Inhibition of topoisomerases
+stabilizes the topoisomerase–DNA complex and causes the
+arrest of DNA replication forks and double-strand DNA
+breaks (50). This group of agents also includes anthracy-
+clines, such as doxorubicin and epirubicin, that inhibit
+topoisomerase II, but these drugs have additional mechan-
+isms of action, such as DNA interstrand cross-linking and
+generation of oxygen free radicals (50). In this context,
+prostate cancer is a heterogeneous disease with a variable
+natural history that is not accurately predicted by currently
+used prognostic tools. Here, we suggest that BRCA1-
+associated prostate cancer affect chemotherapy response,
+establishing a new subset of patients that may require
+alternative therapies. There has been little progress in the
+systemic management of prostate cancer beyond androgen
+deprivation therapy, and a novel therapeutic approach is
+urgently needed. Thus, BRCA1 mutations might confer a
+more aggressive clinical course for men with localized
+prostate cancer and personalized interventions may be
+warranted. In addition, due to p53 gene mutation is a
+late event in prostate cancer progression and is associated
+with advanced stage, loss of differentiation, and the
+transition from androgen-dependent to androgen-inde-
+pendent growth (51), testing patients for p53/BRCA1
+genes mutations may provide useful prognostic informa-
+tion and could influence the recommended course of
+treatment.
+In this study we found that BRCA1 directly modulates
+several important targets in DNA damage response and cell-
+cycle regulation processes, such as FEN1, GADD153, BLM,
+H3F3B, BRCA2, CCNB2, DDB2, and MAD2L1. Specifi-
+cally, BLM and BRCA2 were significantly repressed by
+BRCA1 in vivo. It was reported that mutations in the
+BLM gene are responsible for Bloom syndrome, an auto-
+somal recessive disorder characterized by chromosomal
+instability; and BLM is also implicated in gastrointestinal
+tumorigenesis (52). BRCA2 is induced by regulatory path-
+ways involved in the control of cell proliferation and
+differentiation (53). Mutations in the DNA damage-bind-
+ing protein 2 (DDB2) gene give rise to xeroderma pigmen-
+tosum group E, a disease characterized by increased skin
+tumorigenesis in response to UV irradiation. We found that
+doxorubicin induces DDB2 expression in vivo, and BRCA1
+silencing abolishes that regulation. Similar results were
+observed for GADD153, and because of its role in cell-
+cycle regulation we focus on that gene to understand the
+BRCA1 role in DNA damage response regulation. Further
+studies will be directed at to deciphering the how integrated
+regulation of these genes by BRCA1 impacts cellular func-
+tion under diverse conditions.
+In summary, breast and ovarian cancer risk is higher if
+BRCA1 is mutated. Because most chemotherapeutic
+agents function by damaging DNA, the role of BRCA1
+as a regulator of chemotherapy-induced DNA damage has
+been the subject of several investigations. This work
+established for the first time that BRCA1 status plays a
+central role in doxorubicin resistance in prostate cancer.
+We found that BRCA1 directly modulates several targets
+in DNA damage response and cell-cycle regulation pro-
+cesses in vitro and in vivo, and focused on GADD153 as an
+important mediator in this response. Because BRCA1
+mutations confer a more aggressive clinical course for
+men with prostate cancer, and p53 gene mutation is
+associated with advanced stage of this disease, testing
+patients for p53/BRCA1 gene mutations may influence
+the recommended course of treatment. Hence, the linkage
+between BRCA1/GADD153 and p53 arises as an attrac-
+tive target for the development of new chemotherapeutic
+strategies for advance prostate cancer.
+Disclosure of Potential Conflicts of Interest
+No potential conflicts of interest were disclosed.
+Acknowledgments
+We thank Dr. Monica Kotler for her kind help with the caspase 3 measurement
+technique. E. Vazquez, J. Cotignola and A. De Siervi are members of the career of
+scientific researcher at the National Research Council (CONICET). G. Gueron holds
+postdoctoral fellowship from CONICET. P. De Luca, C. Moiola and F. Zalazar hold
+PhD scholarships from CONICET. K. Gardner is a principal investigator at the NCI-
+NIH. These results are part of Paola De Luca's PhD thesis.
+Grant Support
+This research was supported by the Argentinean Agency of Science and
+Technology (ANPCyT, PICT 2006-00228 and PICT 2006-00367).
+The costs of publication of this article were defrayed in part by the
+payment of page charges. This article must therefore be hereby marked
+advertisement in accordance with 18 U.S.C. Section 1734 solely to indicate this
+fact.
+Received April 7, 2011; revised June 6, 2011; accepted June 20, 2011;
+published OnlineFirst June 23, 2011.
+References
+1.
+Miki Y, Swensen J, Shattuck-Eidens D, Futreal PA, Harshman K,
+Tavtigian S, et al. A strong candidate for the breast and ovarian
+cancer susceptibility gene BRCA1. Science 1994;266:66–71.
+2.
+Ford D, Easton DF, Bishop DT, Narod SA, Goldgar DE. Risks of cancer
+in BRCA1-mutation carriers. Breast Cancer Linkage Consortium.
+Lancet 1994;343:692–5.
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1088
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+3.
+Douglas JA, Levin AM, Zuhlke KA, Ray AM, Johnson GR, Lange EM,
+et al. Common variation in the BRCA1 gene and prostate cancer risk.
+Cancer Epidemiol Biomarkers Prev 2007;16:1510–6.
+4.
+Gallagher DJ, Gaudet MM, Pal P, Kirchhoff T, Balistreri L, Vora K, et al.
+Germline BRCA mutations denote a clinicopathologic subset of pros-
+tate cancer. Clin Cancer Res 2010;16:2115–21.
+5.
+Xu X, Weaver Z, Linke SP, Li C, Gotay J, Wang XW, et al. Centrosome
+amplification and a defective G2-M cell cycle checkpoint induce
+genetic instability in BRCA1 exon 11 isoform-deficient cells. Mol Cell
+1999;3:389–95.
+6.
+Liu X, Holstege H, van der Gulden H, Treur-Mulder M, Zevenhoven J,
+Velds A, et al. Somatic loss of BRCA1 and p53 in mice induces
+mammary tumors with features of human BRCA1-mutated basal-like
+breast cancer. Proc Natl Acad Sci U S A 2007;104:12111–6.
+7.
+Pihan G, Doxsey SJ. Mutations and aneuploidy: co-conspirators in
+cancer? Cancer Cell 2003;4:89–94.
+8.
+Venkitaraman AR. Cancer susceptibility and the functions of BRCA1
+and BRCA2. Cell 2002;108:171–82.
+9.
+Rottenberg S, Nygren AO, Pajic M, van Leeuwen FW, van der Heijden I,
+van de Wetering K, et al. Selective induction of chemotherapy resis-
+tance of mammary tumors in a conditional mouse model for hereditary
+breast cancer. Proc Natl Acad Sci U S A 2007;104:12117–22.
+10. Rottenberg S, Jaspers JE, Kersbergen A, van der Burg E, Nygren AO,
+Zander SA, et al. High sensitivity of BRCA1-deficient mammary
+tumors to the PARP inhibitor AZD2281 alone and in combination with
+platinum drugs. Proc Natl Acad Sci U S A 2008;105:17079–84.
+11. Zander SA, Kersbergen A, van der Burg E, de Water N, van Tellingen
+O, Gunnarsdottir S, et al. Sensitivity and acquired resistance of
+BRCA1;p53-deficient mouse mammary tumors to the topoisomerase
+I inhibitor topotecan. Cancer Res 2010;70:1700–10.
+12. Foulkes WD. BRCA1 and BRCA2: chemosensitivity, treatment out-
+comes and prognosis. Fam Cancer 2006;5:135–42.
+13. Bhattacharyya A, Ear US, Koller BH, Weichselbaum RR, Bishop DK.
+The breast cancer susceptibility gene BRCA1 is required for sub-
+nuclear assembly of Rad51 and survival following treatment with
+the DNA cross-linking agent cisplatin. J Biol Chem 2000;275:
+23899–903.
+14. Wang W, Figg WD. Secondary BRCA1 and BRCA2 alterations and
+acquired chemoresistance. Cancer Biol Ther 2008;7:1004–5.
+15. Swisher EM, Sakai W, Karlan BY, Wurz K, Urban N, Taniguchi T.
+Secondary BRCA1 mutations in BRCA1-mutated ovarian carcinomas
+with platinum resistance. Cancer Res 2008;68:2581–6.
+16. Wang RH, Zheng Y, Kim HS, Xu X, Cao L, Luhasen T, et al. Interplay
+among BRCA1, SIRT1, and Survivin during BRCA1-associated tumor-
+igenesis. Mol Cell 2008;32:11–20.
+17. Bae I, Rih JK, Kim HJ, Kang HJ, Haddad B, Kirilyuk A, et al. BRCA1
+regulates gene expression for orderly mitotic progression. Cell Cycle
+2005;4:1641–66.
+18. Mullan PB, Quinn JE, Harkin DP. The role of BRCA1 in transcriptional
+regulation and cell cycle control. Oncogene 2006;25:5854–63.
+19. De Siervi A, De Luca P, Byun JS, Di LJ, Fufa T, Haggerty CM, et al.
+Transcriptional autoregulation by BRCA1. Cancer Res 2010;70:532–42.
+20. Di LJ, Fernandez AG, De Siervi A, Longo DL, Gardner K. Transcrip-
+tional regulation of BRCA1 expression by a metabolic switch. Nat
+Struct Mol Biol 2010;17:1406–13.
+21. Scassa ME, Marazita MC, Ceruti JM, Carcagno AL, Sirkin PF,
+Gonzalez-Cid M, et al. Cell cycle inhibitor, p19INK4d, promotes cell
+survival and decreases chromosomal aberrations after genotoxic
+insult due to enhanced DNA repair. DNA Repair (Amst)2007;6:626–38.
+22. Smith JL, Freebern WJ, Collins I, De Siervi A, Montano I, Haggerty CM,
+et al. Kinetic profiles of p300 occupancy in vivo predict common
+features of promoter structure and coactivator recruitment. Proc Natl
+Acad Sci U S A 2004;101:11554–9.
+23. Aprelikova ON, Fang BS, Meissner EG, Cotter S, Campbell M, Kuthiala
+A, et al. BRCA1-associated growth arrest is RB-dependent. Proc Natl
+Acad Sci U S A 1999;96:11866–71.
+24. Gueron G, De Siervi A, Ferrando M, Salierno M, De Luca P, Elguero B,
+et al. Critical role of endogenous heme oxygenase 1 as a tuner of the
+invasive potential of prostate cancer cells. Mol Cancer Res 2009;7:
+1745–55.
+25. De Siervi A, De Luca P, Moiola C, Gueron G, Tongbai R, Chan-
+dramouli GV, et al. Identification of new Rel/NFkB regulatory net-
+works by focused genome location analysis. Cell Cycle 2009;8:
+2093–100.
+26. Lahusen T, De Siervi A, Kunick C, Senderowicz AM. Alsterpaullone, a
+novel cyclin-dependent kinase inhibitor, induces apoptosis by activa-
+tion of caspase-9 due to perturbation in mitochondrial membrane
+potential. Mol Carcinog 2003;36:183–94.
+27. Yuli C, Shao N, Rao R, Aysola P, Reddy V, Oprea-llies G, et al.
+BRCA1a has antitumor activity in TN breast, ovarian and prostate
+cancers. Oncogene 2007;26:6031–7.
+28. Fornace AJ Jr, Alamo I Jr, Hollander MC. DNA damage-inducible
+transcripts in mammalian cells. Proc Natl Acad Sci U S A 1988;85:
+8800–4.
+29. Luethy JD, Holbrook NJ. Activation of the gadd153 promoter by
+genotoxic agents: a rapid and specific response to DNA damage.
+Cancer Res 1992;52:5–10.
+30. Ron D, Habener JF. CHOP, a novel developmentally regulated nuclear
+protein that dimerizes with transcription factors C/EBP and LAP and
+functions as a dominant-negative inhibitor of gene transcription.
+Genes Dev 1992;6:439–53.
+31. Wei MC, Zong WX, Cheng EH, Lindsten T, Panoutsakopoulou V, Ross
+AJ, et al. Proapoptotic BAX and BAK: a requisite gateway to mito-
+chondrial dysfunction and death. Science 2001;292:727–30.
+32. Yeung BH, Kwan BW, He QY, Lee AS, Liu J, Wong AS. Glucose-
+regulated protein 78 as a novel effector of BRCA1 for inhibiting stress-
+induced apoptosis. Oncogene 2008;27:6782–9.
+33. MacLachlan TK, Somasundaram K, Sgagias M, Shifman Y, Muschel
+RJ, Cowan KH, et al. BRCA1 effects on the cell cycle and the DNA
+damage response are linked to altered gene expression. J Biol Chem
+2000;275:2777–85.
+34. Kim R, Emi M, Tanabe K, Murakami S. Role of the unfolded protein
+response in cell death. Apoptosis 2006;11:5–13.
+35. Wu Y, Fabritius M, Ip C. Chemotherapeutic sensitization by endo-
+plasmic reticulum stress: increasing the efficacy of taxane against
+prostate cancer. Cancer Biol Ther 2009;8:146–52.
+36. Szegezdi E, Logue SE, Gorman AM, Samali A. Mediators of endo-
+plasmic reticulum stress-induced apoptosis. EMBO Rep 2006;7:
+880–5.
+37. Ogata M, Hino S, Saito A, Morikawa K, Kondo S, Kanemoto S, et al.
+Autophagy is activated for cell survival after endoplasmic reticulum
+stress. Mol Cell Biol 2006;26:9220–31.
+38. Mizushima N, Levine B, Cuervo AM, Klionsky DJ. Autophagy fights
+disease through cellular self-digestion. Nature 2008;451:1069–75.
+39. Levine B, Yuan J. Autophagy in cell death: an innocent convict? J Clin
+Invest 2005;115:2679–88.
+40. Verfaillie T, Salazar M, Velasco G, Agostinis P. Linking ER stress to
+autophagy: potential implications for cancer therapy. Int J Cell Biol
+2010;2010:930509 [Epub 2010 Jan 17].
+41. McCullough KD, Martindale JL, Klotz LO, Aw TY, Holbrook NJ.
+Gadd153 sensitizes cells to endoplasmic reticulum stress by
+down-regulating Bcl2 and perturbing the cellular redox state. Mol
+Cell Biol 2001;21:1249–59.
+42. Zinszner H, Kuroda M, Wang X, Batchvarova N, Lightfoot RT, Remotti
+H, et al. CHOP is implicated in programmed cell death in response to
+impaired
+function
+of
+the
+endoplasmic
+reticulum.
+Genes
+Dev
+1998;12:982–95.
+43. Fiorentino M, Judson G, Penney K, Flavin R, Stark J, Fiore C, et al.
+Immunohistochemical expression of BRCA1 and lethal prostate can-
+cer. Cancer Res ;70:3136–9.
+44. Quinn JE, Kennedy RD, Mullan PB, Gilmore PM, Carty M, Johnston
+PG, et al. BRCA1 functions as a differential modulator of chemother-
+apy-induced apoptosis. Cancer Res 2003;63:6221–8.
+45. Taron M, Rosell R, Felip E, Mendez P, Souglakos J, Ronco MS, et al.
+BRCA1 mRNA expression levels as an indicator of chemoresistance in
+lung cancer. Hum Mol Genet 2004;13:2443–9.
+46. Shen SX, Weaver Z, Xu X, Li C, Weinstein M, Chen L, et al. A
+targeted disruption of the murine Brca1 gene causes gamma-
+irradiation
+hypersensitivity
+and
+genetic
+instability.
+Oncogene
+1998;17:3115–24.
+BRCA1 Modulates Doxorubicin Sensitivity
+www.aacrjournals.org
+Mol Cancer Res; 9(8) August 2011
+1089
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026
+
+
+47. Husain A, He G, Venkatraman ES, Spriggs DR. BRCA1 up-regulation
+is associated with repair-mediated resistance to cis-diamminedichlor-
+oplatinum(II). Cancer Res 1998;58:1120–3.
+48. Carey LA. Targeted chemotherapy? Platinum in BRCA1-dysfunctional
+breast cancer. J Clin Oncol 2010;28:361–3.
+49. Tassone P, Tagliaferri P, Perricelli A, Blotta S, Quaresima B, Martelli
+ML, et al. BRCA1 expression modulates chemosensitivity of BRCA1-
+defective HCC1937 human breast cancer cells. Br J Cancer
+2003;88:1285–91.
+50. Minotti G, Menna P, Salvatorelli E, Cairo G, Gianni L. Anthracyclines:
+molecular advances and pharmacologic developments in antitumor
+activity and cardiotoxicity. Pharmacol Rev 2004;56:185–229.
+51. Navone NM, Troncoso P, Pisters LL, Goodrow TL, Palmer JL, Nichols
+WW, et al. p53 protein accumulation and gene mutation in the
+progression of human prostate carcinoma. J Natl Cancer Inst
+1993;85:1657–69.
+52. Calin G, Herlea V, Barbanti-Brodano G, Negrini M. The coding region
+of the Bloom syndrome BLM gene and of the CBL proto-oncogene is
+mutated in genetically unstable sporadic gastrointestinal tumors.
+Cancer Res 1998;58:3777–81.
+53. Rajan JV, Wang M, Marquis ST, Chodosh LA. Brca2 is coordinately
+regulated with Brca1 during proliferation and differentiation in
+mammary epithelial cells. Proc Natl Acad Sci U S A 1996;93:
+13078–83.
+De Luca et al.
+Mol Cancer Res; 9(8) August 2011
+Molecular Cancer Research
+1090
+Downloaded from http://aacrjournals.org/mcr/article-pdf/9/8/1078/3148361/1078.pdf by guest on 26 May 2026

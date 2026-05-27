@@ -1,0 +1,715 @@
+STAT3 signaling is activated in human skeletal muscle following acute
+resistance exercise
+Marissa K. Trenerry,1 Kate A. Carey,1 Alister C. Ward,2 and David Cameron-Smith1
+1School of Exercise and Nutrition Science and 2School of Life and
+Environmental Sciences, Deakin University, Burwood, Victoria, Australia
+Submitted 12 October 2006; accepted in ﬁnal form 22 December 2006
+Trenerry MK, Carey KA, Ward AC, Cameron-Smith D.
+STAT3 signaling is activated in human skeletal muscle following
+acute resistance exercise. J Appl Physiol 102: 1483–1489, 2007. First
+published January 4, 2007; doi:10.1152/japplphysiol.01147.2006.—
+The transcription factor signal transducer and activator of transcrip-
+tion 3 (STAT3) has been identiﬁed as a mediator of cytokine signaling
+and implicated in hypertrophy; however, the importance of this
+pathway following resistance exercise in human skeletal muscle has
+not been investigated. In the present study, the phosphorylation and
+nuclear localization of STAT3, together with STAT3-regulated genes,
+were measured in the early recovery period following intense resis-
+tance exercise. Muscle biopsy samples from healthy subjects (7 males,
+23.0  0.9 yr) were harvested before and again at 2, 4, and 24 h into
+recovery following a single bout of maximal leg extension exercise (3
+sets, 12 repetitions). Rapid and transient activation of phosphorylated
+(tyrosine 705) STAT3 was observed at 2 h postexercise. STAT3
+phosphorylation paralleled the transient localization of STAT3 to the
+nucleus, which also peaked at 2 h postexercise. Downstream tran-
+scriptional events regulated by STAT3 activation peaked at 2 h
+postexercise, including early responsive genes c-FOS (800-fold),
+JUNB (38-fold), and c-MYC (140-fold) at 2 h postexercise. A delayed
+peak in VEGF (4-fold) was measured 4 h postexercise. Finally, genes
+associated with modulating STAT3 signaling were also increased
+following exercise, including the negative regulator SOCS3 (60-fold).
+Thus, following a single bout of intense resistance exercise, a rapid
+phosphorylation and nuclear translocation of STAT3 are evident in
+human skeletal muscle. These data suggest that STAT3 signaling is an
+important common element and may contribute to the remodeling and
+adaptation of skeletal muscle following resistance exercise.
+signal transducer and activator of transcription-3; inﬂammation; re-
+generation; hypertrophy
+INTENSE
+MUSCULAR
+ACTIVITY, particularly eccentric muscular
+contractions, results in a rapid and localized muscle inﬂamma-
+tory response (5). In the minutes to hours of recovery, a diverse
+range of proinﬂammatory cytokines is released by the damaged
+muscle ﬁbers, and resident neutrophils are rapidly mobilized
+and activated (30, 42). Typical of the actions of intense
+exercise is the marked increase in IL-6 (43), which signals via
+a heterodimer of IL-6 receptor (IL-6R) and glycoprotein 130
+(gp130). gp130 is a common element of signal transduction
+events for a diverse range of cytokine receptors, including
+those for IL-11, IL-27, leukemia inhibitory factor (LIF), car-
+diotropin-1, ciliary neurotrophic factor, and oncostatin M (39),
+which all signal through a common receptor, gp130 (16).
+gp130 receptor binding activates the signal transducers and
+activators of transcription (STATs) family via the Janus family
+of tyrosine kinases (JAKs) (8, 18). Among the seven members
+of the STAT family (STAT1–4, 5A, 5B, and 6), STAT3 is
+activated by a wide spectrum of cytokines that signal via the
+cytokine type II receptor ligands (including IL-6, IL-10, and
+prolactin), as well as a diverse range of growth factors [includ-
+ing IGF-I, hepatocyte growth factor, epidermal growth factor,
+PDGF, and basic ﬁbroblast growth factor (16)], ANG II, and
+mechanical stretch (Rho A) (20, 32, 41) The heterogeneity of
+signals that may mediate signaling via STAT3 activation sug-
+gests that STAT3 is a common and important element to the
+regenerative responses initiated in the recovery period after
+intense physical activity.
+Activation and phosphorylation of STAT3 elicits dimeriza-
+tion and translocation to the nucleus where it participates in the
+regulation of many target genes. Subcellular localization of
+STAT3 in skeletal muscle has been identiﬁed in rats following
+muscle crush injury (21). However, the activation of the
+STAT3 signaling pathway in human skeletal muscle in re-
+sponse to a remodeling stimulus such as resistance exercise has
+not been investigated. Importantly, STAT3 activation may be a
+signiﬁcant regulator of the transcriptional control of myoﬁbers
+in the adaptation and recovery following resistance exercise.
+First, within proliferating satellite cells, the resident pluripotent
+stem cell population located within the muscle bed, STAT3
+activation is evident (21, 36). Second, within many cell types,
+STAT3 is important in cell proliferation, differentiation, and
+survival by mediating the expression of the cell cycle regula-
+tors c-myc, cyclinD1 (23, 27), the antiapoptotic genes Bcl-2
+and Bcl-XL (23, 27, 46), intermediate early response genes
+such as c-fos and junB (33), and the angiogenic factor vascular
+endothelial growth factor (VEGF) (7). These diverse actions
+have been described in cardiac myocytes, where STAT3
+activation mediates cardiac hypertrophy and protection in
+response to cardiomyopathy induced by ischemia or drug
+treatment (24, 25).
+Therefore, in the present study we investigated the activation
+of STAT3 signaling following an acute bout of heavy resis-
+tance exercise in healthy male volunteers. It was hypothesized
+that the STAT3 protein would be phosphorylated during the
+early recovery period following exercise and that this would be
+accompanied by the subsequent transcriptional activation of
+STAT3-responsive genes.
+MATERIALS AND METHODS
+Subjects. Seven untrained but recreationally active male subjects
+volunteered to participate in this study. The mean (SE) age, height,
+Address for reprint requests and other correspondence: D. Cameron-Smith,
+School of Exercise and Nutrition Sciences, Deakin Univ., 221 Burwood Highway,
+Burwood, Victoria 3125, Australia (e-mail: david.cameron-smith@deakin.edu.au).
+The costs of publication of this article were defrayed in part by the payment
+of page charges. The article must therefore be hereby marked “advertisement”
+in accordance with 18 U.S.C. Section 1734 solely to indicate this fact.
+J Appl Physiol 102: 1483–1489, 2007.
+First published January 4, 2007; doi:10.1152/japplphysiol.01147.2006.
+8750-7587/07 $8.00 Copyright © 2007 the American Physiological Society
+http://www.jap.org
+1483
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+weight, and body mass index of the subjects were 23.0  0.9 yr,
+1.78  0.04 m, 76.7  4.5 kg, and 24.1  0.1 kg/m2, respectively.
+Exclusion criteria included resistance training within the past 6 mo,
+medications, or a previous history of a diagnosed condition or illness
+that would endanger the subjects during strenuous resistance exercise.
+Informed written consent was obtained from each subject before
+participation in the study and after the nature, purpose, and risks of the
+study were explained. All experimental procedures were performed in
+accordance with the Helsinki declaration and were formally approved
+by the Deakin University Human Research Ethics Committee.
+Familiarization. Each subject completed a familiarization session
+on a Cybex NORM dynamometer (Cybex International) to become
+familiar with the execution of the exercise. The familiarization session
+involved assessment of isokinetic maximal voluntary contraction
+(MVC) during a knee extension-ﬂexion exercise. MVC and peak
+torque (Nm) were determined at 60°/s over 12 maximal repetitions
+during concentric and eccentric phases. Subjects were instructed to
+maximally push up and contract and were verbally encouraged
+throughout the test. The familiarization session took place at least 7
+days before the trial to prevent any residual effects of the strength test.
+Experimental design. For the 24 h preceding exercise, and the day
+of the trial, subjects consumed a standard diet (20% fat, 14% protein,
+and 66% carbohydrate) and abstained from alcohol, caffeine, tobacco,
+and additional exercise. On the morning of the trial, subjects presented
+to the laboratory in the fasted state. Following 30 min of supine
+resting, a muscle sample was collected from the vastus lateralis under
+local anesthesia (1% Xylocaine) by percutaneous needle biopsy tech-
+nique (2) modiﬁed to include suction (11). Excised muscle tissue from
+each biopsy was immediately frozen and stored in liquid nitrogen for
+later analysis. Following this, subjects completed an acute bout of
+concentric and eccentric isokinetic leg extension exercise. All exercise
+was completed using the dominant limb on a Cybex NORM dyna-
+mometer at a constant speed of 60°/s. Subjects completed three sets of
+12 repetitions of maximal single-legged knee extension exercise with
+2 min of rest between each set. The system provided visual graphical
+feedback for both the subject and the investigator. Subjects were
+instructed to push up and contract maximally and were verbally
+encouraged to do so throughout each set. Further muscle samples were
+collected from the exercised leg at 2 and 4 h after the exercise.
+Subjects were provided with lunch (30 min following the 4 h muscle
+biopsy) and dinner (at 1800 for all subjects) on trial day. The
+following morning, subjects again reported to the laboratory in a
+fasted state for the collection of a ﬁnal muscle sample 24 h postex-
+ercise. To minimize the potential for interference, serial biopsy sam-
+ples were collected at least 2 cm from previous biopsy sites.
+Protein extraction and Western blot analysis. Tissue samples were
+homogenized in lysis buffer (20 mM Tris  HCl, 5 mM EDTA, 10 mM
+Na-pyrophosphate, 100 mM NaF, 2 mM Na3VO4, 1% Igepal, 10
+g/ml aprotinin, 10 g/ml leupeptin, 3 mM benzamidine, 1 mM
+PMSF) using a handheld homogenizer. The homogenate was rotated
+at 4°C for 1 h, then centrifuged at 13,000 rpm at 4°C for 10 min, and
+the supernatant was collected. Protein samples (50 g) were dena-
+tured in sample buffer and separated by 8% SDS-PAGE. The proteins
+were transferred onto a nitrocellulose membrane and blocked in 5%
+(wt/vol) BSA in Tris-buffered saline with 0.1% (vol/vol) Tween 20
+(TBST) for 2 h at room temperature. Primary antibodies diluted in
+blocking buffer were applied and incubated overnight at 4°C. Mem-
+branes were subsequently washed with TBST and incubated for 1 h at
+room temperature with horseradish peroxidase (HRP)-conjugated sec-
+ondary antibodies before being washed again. Proteins were visual-
+ized by enhanced chemiluminescence (Western Lighting Chemilumi-
+nescence Reagent Plus, Perkin-Elmer, Boston, MA). The density of
+the bands was quantiﬁed using Kodak Imaging software, Kodak ID
+3.5 (Perkin Elmer Life Sciences, Boston MA). The positive control for
+pSTAT3 was protein extracted from human vastus lateralis cells,
+treated with the cytokine IL-6 (M. K. Trenerry, unpublished observa-
+tions). The positive control for phospho-STAT5 (pSTAT5) was pro-
+tein extracted from human 293T cells and cotransfected with a
+hyperactive JAK2a and STAT5 for zebra ﬁsh (26). Total-STAT3 (no.
+9132) and phospho-STAT3 (tyrosine 705) (no. 9131) antibodies were
+purchased from Cell Signaling Technology (Danvers, MA), total-
+STAT5 from BD Biosciences (no. 610191; San Jose, CA). and
+pSTAT5 (tyrosine 694) (no. 71–6900) from Zymed Laboratories (San
+Francisco, CA). Anti-mouse (no. 31430, Quantum Scientiﬁc) and
+anti-rabbit (no. AP342P, Chemicon) HRP-conjugated secondary an-
+tibodies were used.
+Immunoﬂuorescence. A small section from each biopsy was dis-
+sected free of any connective tissue, blotted dry, and then mounted in
+TissueTek (ProSciTech) and frozen in isopentane cooled in liquid
+nitrogen. Tissue sections (10 m) were ﬁxed with 4% (wt/vol)
+paraformaldehyde in PBS for 10 min, permeated with 5% (vol/vol)
+Triton X-100 for 5 min, and blocked in 3% (wt/vol) BSA in PBS
+overnight at 4°C. Primary antibodies were diluted in blocking reagent
+[as follows: anti-pSTAT3 1:100 and anti-myosin heavy chain slow
+isoform (A4.840) 1:50 (Developmental Studies Hybridoma Bank)]
+and left overnight at 4°C. After four washes with PBS, sections were
+incubated at room temperature for 2 h with appropriate secondary
+antibody-coupled ﬂuorophores, Alexa Fluor goat anti-mouse 488 (no.
+A21202) or donkey anti-rabbit 594 (no. A21207) (Molecular Probes).
+Nuclei were stained by incubating with the DNA binding dye bisben-
+zimide (Hoechst 33285) (Sigma, St. Louis, MO) for 10 min, followed
+by extensive washing. Immunostained sections were visualized with
+an Olympus IX70 ﬂuorescent microscope, and digital images were
+collected using Spot RT slider camera and Magniﬁre Software (Olym-
+pus). Digitally captured images (200 magniﬁcation) with four ﬁelds
+of view per muscle cross section (30  1 ﬁbers per ﬁeld of view) were
+processed using ImageJ software (NIH Image). The total number of
+type I ﬁbers was 12  0 (per ﬁeld of view) and type II ﬁbers was 18 
+2 (per ﬁeld of view). Muscle nuclei were selected based on bisbenz-
+amide staining (74  4 per ﬁeld of view).
+RNA extraction and RT-PCR. Total cellular RNA was extracted
+using a modiﬁcation of the phenol-chloroform extraction and isopro-
+panol precipitation protocol, using the ToTALLY RNA Kit (Ambion,
+Austin, TX). RNA quality and concentration were determined using
+the Agilent 2100 Bioanalyzer (Agilent Technologies, Palo Alto, CA).
+First-strand cDNA was generated from 0.5 g total RNA using the
+AMV RT kit (Promega, Madison, WI). RT-PCR was performed using
+the GenAmp 7500 sequence detection system (Applied Biosystems,
+Foster City, CA). PCR was performed in duplicate with reaction
+volumes of 20 l, containing SYBR/green 1 (Applied Biosystems),
+forward and reverse primers, and cDNA template (diluted 1:20). Data
+were analyzed using a comparative critical threshold (Ct) method
+where the amount of target normalized to the amount of endogenous
+control relative to control value is given by 2Ct (Applied Biosys-
+tems). The efﬁcacy of GAPDH as endogenous controls was examined
+using the equation 2Ct . No changes in the expression of this gene
+were observed (data not shown), so it was considered an appropriate
+endogenous control for this study. Primers were designed using
+Primer Express software package version 3.0 (Applied Biosystems)
+from gene sequences obtained from GenBank (see Table 1 for details).
+Primers were designed spanning intron-exon boundaries to prevent
+ampliﬁcation of the target region for any contaminating DNA. Primer
+sequence speciﬁcity was also conﬁrmed using Basic Local Alignment
+Search Tool (BLAST). A melting point dissociation curve was gen-
+erated by the PCR instrument for all PCR products to conﬁrm the
+presence of a single ampliﬁed product.
+Statistical analysis. Statistical analysis was performed using
+GraphPad Prism 4.1 (GraphPad Software, San Diego, CA). Means
+were compared using one-way ANOVA, and any signiﬁcant differ-
+ences were analyzed using a Newman-Keuls multiple comparison test.
+Data are presented as means  SE. A probability level of P  0.05
+1484
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+was adopted throughout to determine statistical signiﬁcance unless
+otherwise stated.
+RESULTS
+STAT3 is phosphorylated in skeletal muscle following acute
+resistance exercise. To examine STAT3 activation in skeletal
+muscle, STAT3 phosphorylation (pSTAT3) at tyrosine 705
+was examined in vastus lateralis samples from human subjects
+following a single bout of resistance exercise. At rest, pSTAT3
+was undetectable in skeletal muscle (Fig. 1A). By 2 h postex-
+ercise, pSTAT3 had increased signiﬁcantly before returning to
+near resting levels by 4 h. To conﬁrm that the increased
+phosphorylation observed was not due to an increase in STAT3
+protein levels, the density of the pSTAT3 band was normalized
+against total STAT3 protein, which remained constant across
+the samples.
+STAT5 phosphorylation is not detectable in skeletal muscle
+following exercise. We next sought to determine if STAT3 is
+preferentially phosphorylated in muscle following exercise by
+examining the activation of another member of the STAT
+family, STAT5. Interestingly, while STAT5 protein was ex-
+pressed in skeletal muscle (Fig. 1B), there was no detectable
+phosphorylation at any time point following exercise, although
+it was readily detectable in a positive control sample.
+Phosphorylated STAT3 translocates to the nucleus postex-
+ercise. Phosphorylated STAT3 is able to form homo- and
+heterodimers and translocates to the nucleus, where it can
+activate the expression of various target genes. To further
+explore STAT3 signaling events in skeletal muscle following
+exercise, the cellular localization of pSTAT3 protein was
+examined in muscle tissue sections collected at rest, as well as
+2, 4, and 24 h postexercise. Immunohistochemical analysis
+revealed overwhelming translocation of pSTAT3 from within
+the muscle ﬁbers to the nucleus 2 h after exercise (Fig. 2B),
+which again returned to resting levels by 4 h. Double immu-
+nostaining for pSTAT3 protein and the myosin heavy chain
+slow protein isoform showed that cytoplasmic pSTAT3 was
+preferentially localized to the type 2 (fast) ﬁbers (Fig. 2A).
+STAT3-responsive genes are transcriptionally activated fol-
+lowing acute exercise. We next sought to determine if the
+increased activation of STAT3 signaling resulted in a concom-
+itant increase in the expression of potential downstream genes
+c-FOS, JUNB, VEGF, and c-MYC (Fig. 3). Interestingly,
+Table 1. Details of primers used for real-time PCR analysis
+Gene
+GenBank Accession No.
+Forward Primer (5–3)
+Reverse Primer (5–3)
+GAPDH
+NM_002046
+CATCCATGACAACTTTGGTATCGT
+CAGTCTTCTGGGTGGCAGTGA
+SOCS3
+NM_003955
+GACCAGCGCCACTTCTTCA
+CTGGATGCGCAGGTTCTTG
+c-FOS
+NM_005252
+CGAGCCCTTTGACTTCCT
+GGAGCGGGCTGTCTCAGA
+JUNB
+NM_002229
+GCACTAAAATGGAACAGCCCTT
+GGCTCGGTTTCAGGAGTTTG
+VEGF
+AY047581
+GCGCAAGAAATCCCGGTATA
+GCTTTCTCCGCTCTGAGCAA
+IL-6
+NM_000600
+GGTACATCCTCGACGGCATCT
+GTGCCTCTTTGCTGCTTTCAC
+IL-6R
+NM_000565
+GCGAAAGGATGAAAGTGACCAT
+AGACAAGCCCAGCAATGAAAA
+LIF
+NM_002309
+GAACCAGATCAGGAGCCACATG
+CCACATAGCTTGTCCAGGTTGTT
+c-MYC
+NM_002457
+CGTCTCCACACATCAGCACAA
+TCTTGGCAGCAGGATAGTCCTT
+Primer sequences were designed using Primer Express version 2.0 software (Applied Biosystems) using sequences accessed through GenBank and checked
+for speciﬁcity using Nucleotide-Nucleotide Blast search. LIF, leukemia inhibitory factor; SOCS3, suppression of cytokine signaling 3; IL-6R, IL-6 receptor;
+VEGF, vascular endothelial growth factor.
+Fig. 1. Activation of signal transducer and activator of transcription 3
+(STAT3) in human skeletal muscle following acute resistance exercise. A:
+representative Western blots of protein extracted from samples taken at rest
+and 2, 4, or 24 h postexercise, with the inclusion of a positive control, probed
+with anti-phospho-STAT3 (Tyr705) (pSTAT3) or stripped and reprobed with
+anti-total STAT3 (tSTAT3). Phosphorylation of STAT3 increased signiﬁcantly
+2 h following an acute bout of exercise. The arrow indicates the pSTAT3 band
+at 86 kDa. The graph shows arbitrary units of pSTAT3 normalized to tSTAT3
+representing the mean  SE of 7 individuals. **Signiﬁcantly different from
+resting value (P  0.01). B: representative Western blots of the same samples
+as in A, with the inclusion of a positive control sample probed with anti-
+pSTAT5 (Tyr694). No phosphorylation of STAT5 was observed in skeletal
+muscle samples at any time point.
+1485
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+marked increases in expression were observed for all genes
+investigated, although differences in magnitude and timing
+were evident. Signiﬁcant increases in the expression of the
+early response genes c-FOS and JUNB (800-fold and 38-fold,
+respectively) were observed at 2 h postexercise. This increased
+expression appeared to be largely transient, with a marked
+reduction evident by 4 and 24 h. Similarly, an increase in
+c-MYC expression peaked at 2 h postexercise (140-fold) before
+returning toward resting levels at 4 and 24 h. In comparison,
+VEGF mRNA expression increases were slightly delayed and
+of a smaller magnitude, with a fourfold increase observed at
+4 h post-resistance exercise.
+Genes associated with STAT3 signaling are transiently up-
+regulated following acute resistance exercise. Last, we sought
+to investigate the expression of several genes implicated in the
+regulation of STAT3 signaling (Fig. 4). IL-6 and LIF, two
+cytokines that strongly activate STAT3, demonstrated marked
+transcriptional activation (85-fold and 120-fold, respectively)
+at 2 h following exercise. However, because of considerable
+between-subject variability, the change in LIF failed to reach
+statistical signiﬁcance. The expression of IL-6R, through which
+IL-6 acts, was subsequently investigated. Although no signif-
+icant changes were observed, a trend toward increased expres-
+sion was evident at 4 h postexercise (8-fold, P 	 0.08). Finally,
+we investigated the expression of suppressor of cytokine sig-
+naling 3 (SOCS3), a well-established negative regulator of
+STAT3 signaling. Interestingly, the expression of this gene was
+also markedly increased (60-fold) 2 h after exercise.
+DISCUSSION
+Skeletal muscle remodeling in response to resistance exer-
+cise shares common features with many of the signaling events
+regulating the regenerative processes following muscle injury.
+Growth factors and cytokines are central mediators of repair
+and adaptation in skeletal muscle (42, 45), although the exact
+signaling pathways activated have yet to be fully elucidated.
+STAT3 signaling has been identiﬁed as a possible mediator of
+skeletal muscle regeneration (21), but the importance of this
+Fig. 2. Nuclear translocation of pSTAT3
+following acute resistance exercise. Thin
+(10-m) sections of skeletal muscle biopsy
+samples taken at rest (A) and 2 h (B), 4 h (C),
+or 24 h (D) following exercise were analyzed
+with anti-pSTAT3 antibodies (Tyr705) and
+anti-myosin heavy chain (slow isoform)
+[MHC(I)] to examine the cellular localiza-
+tion of activated STAT3 and ﬁber type dis-
+tribution [pSTAT3 is shown in red using the
+Alexa Fluor 594 while MHC(I) is shown in
+green using the Alexa Fluor 488]. The de-
+gree of translocation was examined by com-
+paring the percentage of pSTAT3-positive
+nuclei to total nuclei (E), which increased
+signiﬁcantly 2 h postexercise. Bars represent
+means  SE of 7 individuals. ***Signiﬁ-
+cantly different from resting values (P 
+0.001).
+1486
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+pathway in the adaptive response of human skeletal muscle to
+resistance exercise has not been investigated.
+The results of the present study demonstrate that an acute
+bout of resistance exercise in young healthy males rapidly and
+transiently activates STAT3 signaling in human skeletal mus-
+cle. Phosphorylation of STAT3 at tyrosine 705 was undetect-
+able in resting muscle but was markedly increased sevenfold
+within 2 h following a single session of strenuous leg extension
+exercise. Tyrosine phosphorylation of STAT3 at this site res-
+idue is essential for the formation of homo- or heterodimers,
+nuclear translocation, and subsequent STAT3-dependent in-
+creases in the transcriptional activity of responsive genes (9).
+Corresponding to the increased phosphorylation was the
+demonstration of increased nuclear accumulation of the
+phosphorylated STAT3 to the nucleus (10-fold) at 2 h
+postexercise. Interestingly, double labeling for myosin
+heavy chain I isoforms revealed preferential localization of
+cytoplasmic phosphorylated STAT3 to the fast (type II
+myosin heavy chain isoform) ﬁbers. It is possible that
+greater STAT3 protein is resident within fast ﬁbers or that a
+greater STAT3 activation is present within these ﬁbers.
+Further analysis is then required to more adequately de-
+scribe localization and mechanisms of activation of STAT3
+following exercise.
+Fig. 3. Increased expression of STAT3 target
+genes following exercise. mRNA for c-FOS
+(A), JUNB (B), VEGF (C), and c-MYC (D)
+were examined in the skeletal muscle of
+young healthy males at rest or following an
+acute bout of resistance exercise. Values are
+arbitrary units normalized to the expression
+levels of the housekeeping gene GAPDH rep-
+resenting the mean  SE for 7 individuals.
+Signiﬁcantly different from resting levels:
+*P  0.05, **P  0.01.
+Fig. 4. Altered expression of genes modulat-
+ing STAT3 signaling following exercise. Ex-
+pression of mRNA for IL-6 (A), IL-6 receptor
+(IL-6R; B), leukemia inhibitory factor (LIF;
+C), and suppressor of cytokine signaling 3
+(SOCS3; D) were examined as described in
+Fig. 3. Signiﬁcantly different from resting
+levels: **P  0.01, ***P  0.001.
+1487
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+To further examine the signiﬁcance of STAT signaling in
+skeletal muscle, we also investigated the activation of another
+member of the STAT family, STAT5. This has been shown to
+be activated in skeletal muscle cells by growth hormone (12)
+and insulin (34), but its activation following resistance exercise
+has not been described. In contrast to STAT3, we observed no
+detectable level of STAT5 phosphorylation within skeletal
+muscle following exercise. While it is conceivable that STAT5
+activation occurred outside the time points examined, these
+results more likely indicate differential activation of the
+STAT3 and STAT5 family members by acute exercise in
+human subjects.
+The full spectrum of STAT3-regulated genes in skeletal
+muscle has not yet been characterized; however, potential
+targets of STAT3 have been known to include c-FOS and
+JUNB (13, 19), VEGF (14, 29), and c-MYC (3), among others.
+Having established activation and nuclear translocation of
+STAT3 in skeletal muscle following exercise, we next sought
+to determine if this activation was concomitant with increased
+transcription of STAT3 target genes. Of the genes investigated,
+the expressions of c-FOS, JUNB, and c-MYC were markedly
+but transiently upregulated within 2 h after the exercise stim-
+ulus, while the increase in VEGF expression peaked at 4 h.
+Increased expressions of members of the fos and jun gene
+family have previously been observed within minutes follow-
+ing an acute bout of cycling exercise (33). Fos and Jun proteins
+constitute the transcription factor complex AP-1, which is
+purported to regulate the transcriptional activity of genes that
+contribute to muscle adaptation (15). Increased mRNA levels
+of VEGF, an important regulator of angiogenesis, are evident
+in skeletal muscle during hypertrophy before increased capil-
+larization is detected (10, 40). Increases in VEGF expression in
+human muscle following resistance exercise of a similar mag-
+nitude to that described in this study have been reported
+previously (6). c-MYC, a protooncogene, is a key factor regu-
+lating cell growth, transformation, and apoptosis induction in
+many tissues. In cardiac muscle, increased c-MYC mRNA is
+observed following exercise (17), while STAT3-induced
+c-MYC has been demonstrated to mediate cell cycle progres-
+sion in skeletal muscle (22). However, the precise functions of
+each of these genes in muscle following resistance exercise are
+currently unknown. Equally, it cannot be categorically as-
+sumed that their upregulation following exercise was a direct
+result of increased STAT3 signaling and not a result of a
+myriad of other potential signaling pathways.
+Last, we investigated the expression of several genes that
+positively or negatively regulate STAT3 signaling. While
+STAT3 is activated by many different ligands, the most widely
+studied activators in skeletal muscle are IL-6 and LIF. Both
+IL-6 and LIF mRNA increased markedly within 2 h of the
+completion of exercise although this increase was transient
+with levels having returned to their resting state by 4 h. It is
+generally well established that LIF and IL-6 are released from
+damaged and exercised muscle (31, 36, 38). LIF has also been
+established as an important mediator of skeletal muscle hyper-
+trophy in response to increased loading (35). Activation of
+STAT3 signaling by IL-6 and LIF may contribute to the
+regeneration and remodeling of skeletal muscle. Conversely,
+we also demonstrated a marked upregulation in the expression
+of SOCS3, a negative regulator of STAT signaling, which
+draws a parallel with previous studies in rat skeletal muscle
+(37) . The SOCS3 gene is itself thought to be a direct target of
+STAT signaling (4, 28), suggesting that its transcriptional
+regulation forms part of a classical negative-feedback loop.
+Such tight control over the magnitude and length of STAT3
+signaling is likely to have marked impacts on the physiological
+outcomes achieved. While the ultimate outcome of STAT3
+signaling in this context is not clear, it is intriguing to speculate
+a role for this signaling pathway in the repair or remodeling of
+muscle following resistance exercise. Further support for this
+hypothesis is provided in cardiac tissue where STAT3 signal-
+ing may be critical for the development of cardiac hypertrophy
+(1, 44). Importantly, ongoing research is necessary to fully
+elucidate the intricacies of the STAT3 signaling pathway and
+its role in skeletal muscle remodeling.
+Collectively, the results of this study describe the activation
+of the STAT3 signaling pathway in human skeletal muscle
+following an acute bout of resistance exercise. Although the
+signiﬁcance of this signaling in skeletal muscle remains to be
+determined, the present study suggests that STAT3 signaling
+may contribute to the remodeling and adaptation of skeletal
+muscle following resistance exercise.
+ACKNOWLEDGMENTS
+We thank Dr Rowena Lewis for the STAT5 positive control sample, Dr.
+Andrew Garnham (Deakin University) for all muscle biopsy procedures, and
+the participants for volunteering in this study protocol.
+The anti-myosin heavy chain slow isoform (A4.840) was obtained from the
+Developmental Hybridoma Bank developed under the auspices of the National
+Institute of Child Health and Human Development and maintained by the
+Department of Biological Sciences, University of Iowa (Iowa City, IA).
+REFERENCES
+1. Ancey C, Menet E, Corbi P, Fredj S, Garcia M, Rucker-Martin C,
+Bescond J, Morel F, Wijdenes J, Lecron JC, Potreau D. Human
+cardiomyocyte hypertrophy induced in vitro by gp130 stimulation. Car-
+diovasc Res 59: 78–85, 2003.
+2. Bergstro¨m J. Muscle electrolytes in man. Scand J Clin Lab Invest 14:
+1–110, 1962.
+3. Bowman T, Broome MA, Sinibaldi D, Wharton W, Pledger WJ,
+Sedivy JM, Irby R, Yeatman T, Courtneidge SA, Jove R. Stat3-
+mediated Myc expression is required for Src transformation and PDGF-
+induced mitogenesis. Proc Natl Acad Sci USA 98: 7319–7324, 2001.
+4. Chen XP, Losman JA, Rothman P. SOCS proteins, regulators of
+intracellular signaling. Immunity 13: 287–290, 2000.
+5. Chen YW, Hubal MJ, Hoffman EP, Thompson PD, Clarkson PM.
+Molecular responses of human muscle to eccentric exercise. J Appl
+Physiol 95: 2485–2494, 2003.
+6. Coffey VG, Shield A, Canny BJ, Carey KA, Cameron-Smith D,
+Hawley JA. Interaction of contractile activity and training history on
+mRNA abundance in skeletal muscle from trained athletes. Am J Physiol
+Endocrinol Metab 290: E849–E855, 2006.
+7. Cohen T, Nahari D, Cerem LW, Neufeld G, Levi BZ. Interleukin 6
+induces the expression of vascular endothelial growth factor. J Biol Chem
+271: 736–741, 1996.
+8. Darnell JE Jr. STATs and gene regulation. Science 277: 1630–1635,
+1997.
+9. Decker T, Kovarik P. Transcription factor activity of STAT proteins:
+structural requirements and regulation by phosphorylation and interacting
+proteins. Cell Mol Life Sci 55: 1535–1546, 1999.
+10. Degens H, Moore JA, Alway SE. Vascular endothelial growth factor,
+capillarization, and function of the rat plantaris muscle at the onset of
+hypertrophy. Jpn J Physiol 53: 181–191, 2003.
+11. Evans W, Phinney S, Ivy J. Suction applied to a muscle biopsy maxi-
+mises sample size. Med Sci Sports Exer 14: 101–102, 1982.
+1488
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026
+
+
+12. Frost RA, Nystrom GJ, Lang CH. Regulation of IGF-I mRNA and
+signal transducers and activators of transcription-3 and -5 (Stat-3 and -5)
+by GH in C2C12 myoblasts. Endocrinology 143: 492–503, 2002.
+13. Fu AK, Fu WY, Ng AK, Chien WW, Ng YP, Wang JH, Ip NY.
+Cyclin-dependent kinase 5 phosphorylates signal transducer and activator
+of transcription 3 and regulates its transcriptional activity. Proc Natl Acad
+Sci USA 101: 6728–6733, 2004.
+14. Funamoto M, Fujio Y, Kunisada K, Negoro S, Tone E, Osugi T,
+Hirota H, Izumi M, Yoshizaki K, Walsh K, Kishimoto T, Yamauchi-
+Takihara K. Signal transducer and activator of transcription 3 is required
+for glycoprotein 130-mediated induction of vascular endothelial growth
+factor in cardiac myocytes. J Biol Chem 275: 10561–10566, 2000.
+15. Goswami SK, Shaﬁq S, Siddiqui MA. Modulation of MLC-2v gene
+expression by AP-1: complex regulatory role of Jun in cardiac myocytes.
+Mol Cell Biochem 217: 13–20, 2001.
+16. Hirano T, Ishihara K, Hibi M. Roles of STAT3 in mediating the cell
+growth, differentiation and survival signals relayed through the IL-6
+family of cytokine receptors. Oncogene 19: 2548–2556, 2000.
+17. Iemitsu M, Maeda S, Jesmin S, Otsuki T, Kasuya Y, Miyauchi T.
+Activation pattern of MAPK signaling in the hearts of trained and
+untrained rats following a single bout of exercise. J Appl Physiol 101:
+151–163, 2006.
+18. Ihle JN. Cytokine receptor signalling. Nature 377: 591–594, 1995.
+19. Joo A, Aburatani H, Morii E, Iba H, Yoshimura A. STAT3 and MITF
+cooperatively induce cellular transformation through upregulation of c-fos
+expression. Oncogene 23: 726–734, 2004.
+20. Kakisis JD, Liapis CD, Sumpio BE. Effects of cyclic strain on vascular
+cells. Endothelium 11: 17–28, 2004.
+21. Kami K, Senba E. In vivo activation of STAT3 signaling in satellite cells
+and myoﬁbers in regenerating rat skeletal muscles. J Histochem Cytochem
+50: 1579–1589, 2002.
+22. Kataoka Y, Matsumura I, Ezoe S, Nakata S, Takigawa E, Sato Y,
+Kawasaki A, Yokota T, Nakajima K, Felsani A, Kanakura Y. Recip-
+rocal inhibition between MyoD and STAT3 in the regulation of growth
+and differentiation of myoblasts. J Biol Chem 278: 44178–44187, 2003.
+23. Kiuchi N, Nakajima K, Ichiba M, Fukada T, Narimatsu M, Mizuno K,
+Hibi M, Hirano T. STAT3 is required for the gp130-mediated full
+activation of the c-myc gene. J Exp Med 189: 63–73, 1999.
+24. Kunisada K, Hirota H, Fujio Y, Matsui H, Tani Y, Yamauchi-
+Takihara K, Kishimoto T. Activation of JAK-STAT and MAP kinases
+by leukemia inhibitory factor through gp130 in cardiac myocytes. Circu-
+lation 94: 2626–2632, 1996.
+25. Kunisada K, Negoro S, Tone E, Funamoto M, Osugi T, Yamada S,
+Okabe M, Kishimoto T, Yamauchi-Takihara K. Signal transducer and
+activator of transcription 3 in the heart transduces not only a hypertrophic
+signal but a protective signal against doxorubicin-induced cardiomyopa-
+thy. Proc Natl Acad Sci USA 97: 315–319, 2000.
+26. Lewis RS, Stephenson SE, Ward AC. Constitutive activation of ze-
+braﬁsh Stat5 expands hematopoietic cell populations in vivo. Exp Hematol
+34: 179–187, 2006.
+27. Matsui T, Kinoshita T, Hirano T, Yokota T, Miyajima A. STAT3
+down-regulates the expression of cyclin D during liver development.
+J Biol Chem 277: 36167–36173, 2002.
+28. Naka T, Fujimtoto M, Kishimoto T. Negative regulation of cytokine
+signaling: STAT-induced STAT inhibitor. Trends Biochem Sci 24: 394–
+398, 1999.
+29. Niu G, Wright KL, Huang M, Song L, Haura E, Turkson J, Zhang S,
+Wang T, Sinibaldi D, Coppola D, Heller R, Ellis LM, Karras J,
+Bromberg J, Pardoll D, Jove R, Yu H. Constitutive Stat3 activity
+upregulates VEGF expression and tumor angiogenesis. Oncogene 21:
+2000–2008, 2002.
+30. Peake J, Nosaka K, Suzuki K. Characterization of inﬂammatory re-
+sponses to eccentric exercise in humans. Exerc Immunol Rev 11: 64–85,
+2005.
+31. Pedersen BK, Febbraio M. Muscle-derived interleukin-6—a possible
+link between skeletal muscle, adipose tissue, liver, and brain. Brain Behav
+Immun 19: 371–376, 2005.
+32. Pelletier S, Duhamel F, Coulombe P, Popoff MR, Meloche S. Rho
+family GTPases are required for activation of Jak/STAT signaling by G
+protein-coupled receptors. Mol Cell Biol 23: 1316–1333, 2003.
+33. Puntschart A, Wey E, Jostarndt K, Vogt M, Wittwer M, Widmer HR,
+Hoppeler H, Billeter R. Expression of fos and jun genes in human
+skeletal muscle after exercise. Am J Physiol Cell Physiol 274: C129–
+C137, 1998.
+34. Sadowski CL, Choi TS, Le M, Wheeler TT, Wang LH, Sadowski HB.
+Insulin induction of SOCS-2 and SOCS-3 mRNA expression in C2C12
+skeletal muscle cells is mediated by Stat5. J Biol Chem 276: 20703–20710,
+2001.
+35. Spangenburg EE, Booth FW. Leukemia inhibitory factor restores the
+hypertrophic response to increased loading in the LIF(/) mouse.
+Cytokine 34: 125–130, 2006.
+36. Spangenburg EE, Booth FW. Multiple signaling pathways mediate
+LIF-induced skeletal muscle satellite cell proliferation. Am J Physiol Cell
+Physiol 283: C204–C211, 2002.
+37. Spangenburg EE, Brown DA, Johnson MS, Moore RL. Exercise
+increases SOCS-3 expression in skeletal muscle: potential relationship to
+IL-6 expression. J Physiol 572: 839–848, 2006.
+38. Steensberg A, Keller C, Starkie RL, Osada T, Febbraio MA, Pedersen
+BK. IL-6 and TNF-
+ expression in, and release from, contracting human
+skeletal muscle. Am J Physiol Endocrinol Metab 283: E1272–E1278,
+2002.
+39. Taga T, Kishimoto T. Gp130 and the interleukin-6 family of cytokines.
+Annu Rev Immunol 15: 797–819, 1997.
+40. Takahashi A, Kureishi Y, Yang J, Luo Z, Guo K, Mukhopadhyay D,
+Ivashchenko Y, Branellec D, Walsh K. Myogenic Akt signaling regu-
+lates blood vessel recruitment during myoﬁber growth. Mol Cell Biol 22:
+4803–4814, 2002.
+41. Takeda K, Akira S. STAT family of transcription factors in cytokine-
+mediated biological responses. Cytokine Growth Factor Rev 11: 199–207,
+2000.
+42. Tidball JG. Inﬂammatory processes in muscle injury and repair. Am J
+Physiol Regul Integr Comp Physiol 288: R345–R353, 2005.
+43. Tomiya A, Aizawa T, Nagatomi R, Sensui H, Kokubun S. Myoﬁbers
+express IL-6 after eccentric exercise. Am J Sports Med 32: 503–508, 2004.
+44. Uozumi H, Hiroi Y, Zou Y, Takimoto E, Toko H, Niu P, Shimoyama
+M, Yazaki Y, Nagai R, Komuro I. gp130 plays a critical role in pressure
+overload-induced cardiac hypertrophy. J Biol Chem 276: 23115–23119,
+2001.
+45. Vierck J, O’Reilly B, Hossner K, Antonio J, Byrne K, Bucci L, Dodson
+M. Satellite cell regulation following myotrauma caused by resistance
+exercise. Cell Biol Int 24: 263–272, 2000.
+46. Zushi S, Shinomura Y, Kiyohara T, Miyazaki Y, Kondo S, Sugimachi
+M, Higashimoto Y, Kanayama S, Matsuzawa Y. STAT3 mediates the
+survival signal in oncogenic ras-transfected intestinal epithelial cells. Int J
+Cancer 78: 326–330, 1998.
+1489
+STAT3 SIGNALING FOLLOWING EXERCISE
+J Appl Physiol • VOL 102 • APRIL 2007 • www.jap.org
+Downloaded from journals physiology org/journal/jappl at Peking Univ Hlth Sci Lib (240C:C001:0001:2134:5D3B:4143:7E31:D32B) on May 26 2026

@@ -1,0 +1,858 @@
+ORIGINAL PAPER
+The role of upstream stimulatory factor 1 in the transcriptional
+regulation of the human TBX21 promoter mediated
+by the T-1514C polymorphism associated with systemic lupus
+erythematosus
+Junggang Li & Jirong Li & Yi You & Song Chen
+Received: 9 November 2011 /Accepted: 23 December 2011 /Published online: 19 January 2012
+# Springer-Verlag 2012
+Abstract T-bet is a key regulator for the lineage commit-
+ment in CD4+ T helper (Th) 1 cells by activating the hall-
+mark production of interferon-γ. Previously, two single
+nucleotide polymorphisms (SNPs) in the TBX21 promoter,
+T-1993C and T-1514C, have been shown by statistic studies
+to associate with systemic lupus erythematosus (SLE). The
+effect of −1993 SNP on the Yin Yang 1 transcription factor-
+mediated promoter activity has been already indicated. This
+study aimed to investigate roles of the T-1514C SNP on
+TBX21 transcription and its functional effect by luciferase
+reporter, electrophoretic mobility shift assay (EMSA), chro-
+matin immunoprecipitation (ChIP) assay, and flow cytomet-
+ric analysis of intracellular T-bet, IFN-γ, and IL-4
+expression in activated CD4+ T cells. The TBX21 promoter
+carrying −1514C possessed significantly lower transcrip-
+tional activity than that of −1514T and was markedly down-
+regulated by the overexpression of upstream stimulatory
+factor 1 (USF-1) when compared with the promoter carrying
+−1514T. EMSA indicated that the transcription factor USF-
+1 was bound to the −1514C allele probe with the affinity
+higher than that to the −1514T allele probe. ChIP assay
+suggested that USF-1 bound around −1514 of TBX21 ge-
+nomic DNA in vivo in the human T cell line Jurkat with
+−1514C/T. The individuals carrying −1514C allele were
+determined to have significantly diminished expression of
+T-bet and IFN-γ and increased IL-4 production in CD4+ T
+cells compared with those of −1514T allele. The findings
+demonstrate that the T-1514C polymorphism affects TBX21
+gene expression and Th1 cytokine production by binding
+USF-1 to the SNP site.
+Keywords TBX21 . Single nucleotide polymorphism . Gene
+regulation . Systemic lupus erythematosus
+Abbreviations
+bp
+Base pair
+EMSA
+Electrophoretic mobility shift assay
+IFN-γ
+Interferon-γ
+IL-4
+Interleukin-4
+PCR-RFLP
+Polymerase chain reaction–restriction
+fragment length polymorphism
+SNP
+Single nucleotide polymorphism
+SD
+Standard deviation
+Th cells
+T helper cells
+T-bet
+T-box expressed in T cells
+Introduction
+Th1 immune effector cells are derived from naïve precursor
+T cells. Differentiation of T cells into Th1 cell is mediated
+via antigen, co-stimulatory molecules, and/or cytokines.
+The Th1-inducing cytokines is IL-12 and mediates its sig-
+nal via Stat4 (Jacobson et al. 1995). The differentiation of
+naïve Th cells along a Th1 pathway is directed by the
+Junggang Li and Jirong Li contributed equally to this work.
+J. Li: S. Chen (*)
+Institute of Infectious Diseases, Southwest Hospital,
+Third Military Medical University,
+Chongqing 400038, China
+e-mail: cs196@medmail.com.cn
+J. Li
+Medical Team, Force 75135 of Chinese People’s Liberation Army,
+Guigang Municipality,
+Guangxi 537103, China
+Y. You
+Department of Dermatology, Southwest Hospital,
+Third Military Medical University,
+Chongqing 400038, China
+Immunogenetics (2012) 64:361–370
+DOI 10.1007/s00251-011-0597-6
+
+
+transcription factor T-bet (Mullen et al. 2001). T-bet is a
+member of T-box family of transcription factors and is
+expressed in Th1 but not Th2 cells (Szabo et al. 2000). Ectopic
+expression of T-bet in Th2 polarized cells alters their com-
+mitment from Th2 into Th1 type by inducing IFN-γ pro-
+duction and suppressing IL-4 and IL-5 production (Szabo
+et al. 2000). T-bet has a central role in the pathogenesis of
+autoimmune diseases like systemic lupus erythematosus
+(SLE) (Lit et al. 2007; Chan et al. 2007) and rheumatoid
+arthritis (RA) (Kawashima and Miossec 2005).
+The human T-bet gene (TBX21) is located on chromo-
+some 17q21.32. The constitutive expression of T-bet in
+monocytes and lymphocytes is low (Szabo et al. 2000). T-
+bet production is mostly regulated at the transcriptional level
+(Yu et al. 2007). Several studies have suggested that the
+capacity to produce T-bet is influenced by genetic factors
+(Miller and Weinmann 2010; Höhler et al. 2005). According
+to the results of a twin study, there are striking inter-
+individual differences in T-bet production following mito-
+gen stimulation (Miller and Weinmann 2010). It has been
+suggested that 93% of the variation in the T-bet production
+are genetically determined. Indeed, the high T-bet produc-
+tion associated with autoimmune diseases like SLE may be
+a genetic risk factor for disease susceptibility (Lit et al.
+2007; Chan et al. 2007).
+The basis for heritable differences in T-bet production is
+not known. The TBX21 gene promoter is polymorphic, and
+promoter-reporter studies have identified several positive and
+negative regulatory promoter sequences within the 2-kb re-
+gion upstream of the transcription start site (Yu et al. 2007; Li
+et al. 2011; Shin et al. 2009). Three single nucleotide poly-
+morphisms (SNPs) at −1993(C/T), −1514(C/T), −999(G/A)
+upstream of the transcription start site have been identified
+(Suttner et al. 2009).
+Recently, T-1993C and T-1514C polymorphisms in the
+human TBX21 promoter have been shown to be associated
+with autoimmune diseases. For example, the associations
+between SNP haplotypes at −1514 and −1993 and SLE
+(You et al. 2010), between T-1993C polymorphism and
+autoimmune hepatitis (Chen et al. 2011), and between T-
+1514C polymorphism and RA have been reported (Chae et
+al. 2009). We previously analyzed the effect of a T-1993C
+polymorphism on the function of the TBX21 gene and
+found that the occurrence of an additional Yin Yang 1
+(YY1) motif in the −1993C allele resulted in higher affinity
+to YY1, which subsequently caused lower transactivation
+of the promoter (Li et al. 2011). The aim of the current
+study was to investigate the functional significance of T-
+1514C polymorphism in the TBX21 promoter by observ-
+ing its association with TBX21 expression and CD4+ T
+lymphocytes activation in response to ex vivo mitogens
+stimulation and its direct effect on cis-acting transcription-
+al regulation of TBX21.
+Materials and methods
+Cell culture
+Jurkat cells (a CD4+ human T lymphoblast cell line) and
+THP-1 cells (a human monocytic cell line) were cultured as
+described previously (Li et al. 2011).
+Plasmid construction
+A promoter fragment of the 5′ flanking region in three
+TBX21 haplotypes (−1993T/−1514T, −1993C/−1514T,
+or −1993C/−1514C), from −2211 to −212 relative to the
+transcription start site, was amplified from human genomic
+DNA (the −1993TT/−1514 TT- and −1993CC/−1514 TC-
+genotypic donors) by PCR using a pair of primers (5′-
+GCACTCGAGAGCCAAGCACTGAGCAAAAATGT-3′
+a n d
+5 ′ - TA A A G C T T C T G T C A C TA G A G T C G
+CAGCGCTTT-3′; underlined sequences indicate recogni-
+tion sequences for Xho I or Hind III, respectively)
+(Fig. 1a). After digestion of the PCR fragment using Xho I
+and Hind III (Takara Bio Inc.), each fragment was subcloned
+in sense orientation into the Xho I and Hind III sites of pGL3
+firefly luciferase vector (Promega) for propagation in bacteria.
+After propagation, the plasmids were isolated from bacteria
+using a HiSpeed Plasmid Midi kit (Qiagen). Each plasmid was
+named pGL3-2211 (−1993T/−1514T), pGL3-2211 (−1993C/
+−1514T), or pGL3-2211 (−1993C/−1514C), respectively.
+The 5′-deleted promoter fragments from −1773 to −212
+were amplified from pGL3-2211 (−1993T/−1514T) and
+pGL3-2211 (−1993C/−1514C) by PCR using a pair of primers
+(5′-AACTCGAGGTCAGGCTGGGACAGAAATG
+TAGA-3′ and 5′-TAAAGCTTCTGTCACTAGAGTCG
+CAGCGCTTT-3′, underlined sequence indicates recogni-
+tion sequence for Xho I or Hind III, respectively). These
+fragments were also subcloned into pGL3 vectors, and
+the plasmids were isolated from bacteria. These con-
+structs were named pGL3-1773(-1514T) or pGL3-1773
+(-1514C), respectively.
+To exchange the −1993T nucleotide of pGL3-2211
+(−1993C/−1514C) for the-1993 C nucleotide, a fragment
+from −2211 to −1579 of TBX21 was amplified from
+pGL3-2211 (−1993T/−1514T) using a primer pair (5′-
+GCACTCGAGAGCCAAGCACTGAGCAAAAATGT-3′
+and 5′-AAGCTTCTCCACAAGGTGTCATGGAATAT-3′,
+underlined sequences indicate recognition sequences for Xho
+I or Hind III, respectively). After digestion of the PCR frag-
+ment and pGL3-1773 (−1514C) using Xho I and Hind III, the
+fragment was subcloned in sense orientation into the digested
+pGL-1773 (−1514C). This construct was named pGL3-2211
+(-1993T/-1514C). All the constructs were sequenced to ensure
+fidelity. The pCMV-upstream stimulatory factor 1 (USF-1)
+362
+Immunogenetics (2012) 64:361–370
+
+
+vector expressing full-size USF-1 and its control pCMV6-
+XL5 were obtained from OriGene.
+Cell transfection and reporter assays
+For transfection, Jurkat cells were plated on 24-well plates in
+1 ml of medium at 2×105/ml. The cells were transiently trans-
+fected for 24 h with 0.5 mg of each reporter construct and 20 ng
+of pRL-TK Renilla reporter plasmid (Promega) using transfec-
+tion reagent FuGene 6 (Roche Diagnostics, Mannheim,
+Germany), according to the manufacturer’s protocol. After
+transfection, the cells were washed once in phosphate-
+buffered saline solution and cultured in 10 ml of complete
+medium at 37°C for 24 h. The cells were then stimulated with
+1 μg/ml PHA and 0.5 μg/ml ionomycin for 12 h. The cells were
+then lysed with the passive lysis buffer (Promega), and the cell
+lysate was analyzed using a Dual-Luciferase Reporter Assay
+System kit (Promega). The firefly and Renilla luciferase were
+measured on GloMax® 20/20 Luminometer (Promega), and the
+relative luciferase activity was calculated. Where indicated, co-
+transfection with pCMV-USF1 was performed. The ratio be-
+tween reporter vector and USF-1 expression vector DNA is 2:1.
+EMSA
+The EMSA was performed based on the method described
+previously (Li et al. 2011). Synthesized oligonucleotides, 5′-
+ATATATTTGTGCATGTGTGCAAAAGAC-3′ (corresponding
+to −1527/−1501 of the human TBX21 gene with −1514 T) and
+5′-ATATATTTGTGCACGTGTGCAAAAGAC-3′ (-1514C),
+labeled with biotin at the 5′-end were annealed with each com-
+plementary oligonucleotide labeled with biotin at the 5′-end.
+Nuclear extracts were prepared from Jurkat and THP-1 as
+previously described (Höhler et al. 2005). Abs against USF-1
+(C-20) and C/EBPα (G-10) were purchased from Santa Cruz
+Biotechnology. For the competition assay, non-labeled dsDNA
+with the following sequences were used: USF-1 (5′-CAGT
+CATTTGATCACATGGGCTTG-3′), C/EBP (5′-TGCA
+GATTGCGCAATCTGCA-3′), and the sequences containing
+−1514Tor −1514C. All EMSA experiments were repeated more
+than three times; a typical result for each experiment is shown.
+ChIP assay
+Chromatin immunoprecipitation (ChIP) assay was performed
+with the ChIP-IT Express kit (Active Motif, Carlsbad, CA,
+USA) as in the previous report (Li et al. 2011). Rabbit poly-
+clonal anti-USF-1 antibody (C-20; Santa Cruz Biotechnology)
+or rabbit polyclonal IgG (Santa Cruz Biotechnology) were
+used. PCR was performed with primers 5′-CCATGA
+CACCTTGTGGAGTGAA-3′ and 5′-ACCCCAAATTC
+CACCCCCTAAA-3′, designed to amplify a 270-bp product
+of the TBX21 promoter. ChIP assay for RNA polymerase II
+binding to the GAPDH promoter was used as the positive
+control.
+Fig. 1 Effect of T-1993C and T-1514C SNPs on the transcription activity
+of human TBX21 promoter. a Diagram shows TBX21 promoter–reporter
+constructs used in transfection assays, indicating the identified YY1 site of
+T-1993C SNP and the putative USF-1 site of T-1514C SNP in relation to
+cloning sites in the proximal promoter. b Jurkat T cells were transiently
+transfected with pGL3-2211 (−1993T/−1514T), pGL3-2211 (−1993C/
+−1514T), pGL3-2211 (−1993C/−1514C), pGL3-2211 (−1993T/−1514C),
+or pGL3-Basic. The relative luciferase activity is represented as the ratio of
+the activity to that of pGL3-Basic. *P00.006, **P00.004, ***P00.036,
+****P00.023. Data represent the average of three independent transfection
+experiments, with error bars representing the SD
+Immunogenetics (2012) 64:361–370
+363
+
+
+Genotyping
+A total of 370 healthy individuals (men 258; women 112),
+with a median age of 37 (ranging from 21 to 57), were
+recruited for this study from the Health Examination Center
+of Southwest Hospital, Chongqing, China. They are Han
+Chinese and live in Chongqing. The protocol for this study
+was approved by the Ethical and Protocol Review Committee
+of the Third Military Medical University. An informed con-
+sent was obtained from each subject.
+We extracted genomic DNA from peripheral blood leuko-
+cytes of 5 ml whole blood using salting out method. DNA
+samples were diluted to 8 ng/μl and distributed to 96-well
+plates (DNA panels), each of which contained 94 samples and
+two DNA-free control water. The T-1993C and T-1514C
+polymorphisms in the TBX21 gene promoter were genotyped
+using PCR–restriction fragment length polymorphism assay
+as described previously (Chen et al. 2011).
+Assessment of intracellular T-bet and cytokine production
+in CD4+ T cells
+The experiments were performed in whole blood using BD
+FastImmune CD4 Intracellular Cytokine Detection Kit (cat#
+340970, BDIS, San Jose, CA, USA) following the manu-
+facturer’s instructions. Briefly, 0.5 ml of heparinized whole
+blood was stimulated by 2.5 μg/ml PHA and 0.5 μg/ml
+ionomycin along with co-stimulatory monoclonal antibodies
+ant-CD28/ant-CD49d (final concentration 1 μg/ml). The
+samples were vortexed gently, incubated at 37°C for 2 h,
+and then 10-μg/ml Brefeldin A (BDIS) were added to each
+sample. After incubation for 4 h at 37°C, 2-mM EDTA were
+added to each tube, vortexed, and incubated for 15 min at
+22°C (RT). Blood samples were then lysed and fixed in
+10 ml of 1× FACS Lysing SolutionTM (BDIS) for 10 min
+at RT. Cells were washed in PBS and frozen at −70°C in a
+freezing medium containing 10% DMSO and 1% BSA in
+PBS. Ant-CD28/ant-CD49d monoclonal antibodies were
+added alone for unstimulated control of the same subject
+in each experiment.
+For intracellular staining, frozen cells were thawed rapidly
+at 37°C, aliquoted into staining tubes at approximately 5×105
+cells per tube, and washed once with cold wash buffer (PBS,
+0.5% BSA, 0.1% NaN). Cells were subsequently resuspended
+in 0.5 ml of FACSTM Permeabilizing Solution (BDIS) for
+10 min at RT. After permeabilization, cells were washed once
+and staining was performed for 30 min at RT in the dark using
+a titrated mixture of fluorescent conjugated monoclonal anti-
+bodies. For a five-color analysis of a CD4+ cytokine response,
+the staining antibody cocktail consisted of anti-IFN-γ FITC/
+CD69 PE/CD4 PerCP-Cy5.5 (BDIS), anti-T-bet Alexa-Flour
+647 (eBioscience, San Diego, CA, USA), and phycoerythrin-
+Cy7 (PE-CY7) anti-interleukin-4 (IL-4) (BDIS). Isotype-
+matched control antibodies were included to detect non-
+specific binding to cells.
+Flow cytometric analysis
+The samples were analyzed with a five-color flow cytometer
+(FACS Arial II flow cytometer, BD) using CellQuest™Pro
+Software. At least 10,000 CD4+ Tcells were collected for each
+sample. Cells were gated using FSC versus SSC to isolate the
+lymphocytes and then SSC versus CD4+ T cells to isolate
+CD4+ T cells. Dot plots showed events that were displayed
+as cytokine+ versus CD69+ T cells. The specific response of
+CD4+ T cells to PHA/ionomycin stimulation is obtained by
+subtracting the % positive events in the unstimulated sample
+from % positive events in the activated sample and then
+subtracts the isotype-corrected response of the unstimulated
+sample from that of the activated sample.
+Statistical analysis
+Allele frequencies for the T-1993C and T-1514C SNPs were
+determined by gene counting, and the χ2 test was used to
+analyze the Hardy–Weinberg equilibrium. While pairwise
+linkage disequilibrium measures were analyzed by using a
+linkage disequilibrium analyzer, haplotype frequencies
+were estimated and calculated using the PHASE package.
+Student’st tests were used to analyze the luciferase activities
+and the results of intracellular T-bet, IFN-γ, or IL-4 staining
+by fluorescent cytometry. A P value of less than 0.05 was
+considered significant. Statistical analysis was performed
+using SPSS software (version 13.0, SPSS Inc., Chicago,
+IL, USA).
+Results
+The T-1993C and T-1514C SNPs affect the transcription
+activity of human TBX21 promoter
+To evaluate the effects of SNPs at −1993 and −1514 in the
+TBX21 gene on transcription activity, we prepared four report-
+er plasmids carrying the luciferase gene under control of the
+human TBX21 promoter −2200/−200 region. These four plas-
+mids possess sequence variations at −1993 and −1514 of the
+TBX21 promoter as shown in Fig. 1b. Each of these reporter
+plasmids was transfected into the CD4+ human T lymphoblast
+cell line Jurkat. The −1993T/−1514T promoter exhibited the
+highest promoter activity, whereas the −1993C/−1514C pro-
+moter showed the lowest activity (Fig. 1b). The other two
+promoters, −1993C/−1514T and −1993T/−1514C, resulted in
+intermediate strength activity. Thus, the −1993T and −1514T
+alleles result greater promoter activities than the −1993C
+and −1514C alleles, respectively. The effect of the T-1993C
+364
+Immunogenetics (2012) 64:361–370
+
+
+SNP on promoter activity coincides well with our previous
+observation, although the role of T-1514C SNP was not dis-
+cussed in that study. The comparable activity of the −1993C/
+−1514T and −1993T/−1514C promoters suggests that each of
+the SNPs at −1993 and −1514 contributes equally to promoter
+activity in vitro.
+The above-mentioned results suggested that nucleotide
+C at −1514 was critical for showing decreased transcription
+activity of the TBX21 promoter. Interestingly, in the pro-
+moter with −1514C, an additional E-box-binding site core
+motif (5′-CACGTG) is present at −1516/−1511 (Fig. 1a).
+To confirm the involvement of USF-1 in TBX21 promoter
+activity, we cotransfected a USF-1 expression vector with
+luciferase expression vectors driven by the TBX21 promot-
+er constructs truncated at position −1761. As shown in
+Fig. 2, the luciferase activity derived from −1514C promot-
+er was 4-fold lower in the presence of overproduced USF-1
+and that from −1514T promoter decreased about only 2-
+fold. Thus, −1514C promoter responded to USF-1 better
+than −1514T promoter.
+Identification of a nuclear protein binding at T-1514C locus
+YY1-mediated differential transactivation via T-1993C has
+been indicated in a previous study (Lit et al. 2007). Similarly,
+the significant effect of the SNP at -1514 on promoter activity
+suggests that a different transcription factor might recognize
+each SNP. Using an online transcription factor search program
+TFSEARCH, we found a USF-1- and a C/EBP-responsive
+element at −1514 locus. We then performed EMSA with
+nuclear extracts from THP-1 and Jurkat cells using double-
+stranded oligonucleotides with T-1514C SNP as the probe. As
+demonstrated in Fig. 3a, nuclear extracts from human T cell
+line Jurkat contained one specific, slowly migrating complex
+(complex 1) that bound both the C and the T allele and was
+cross-competed by excess unlabeled −1514C and −1514T
+oligonucleotides (Fig. 3a, lanes 1–6), and binding of protein
+to the −1514C probe was always more efficient than that to
+the −1514T probe. A different profile with several different
+bands was observed using the extracts from human monocytic
+cell line THP-1 (Fig. 3b). EMSAs were repeated with nuclear
+extract from Jurkat cells using the USF-1 or C/EBP consensus
+oligonucleotides (Fig. 3a, lanes 7–10). The higher molecular
+weight complex contained only USF-1 because formation of
+the complex was abrogated by excess unlabeled USF-1 con-
+sensus oligonucleotides, but not by C/EBP consensus sequen-
+ces. Furthermore, the band was specifically eliminated by an
+anti-USF-1 antibody, but not by a control IgG (rabbit poly-
+clonal C/EBPα) (Fig. 3c, lanes 2–3 and 6–7). A prominent
+middle band (complex 2) seen in the EMSA should be con-
+sidered to be the USF-1 degradation products because the
+shifted band was eliminated by competition with excess
+unlabeled USF-1 consensus probe (Fig. 3a (lanes 3–6),
+c (lanes 4 and 5)).
+To determine whether the USF-1 protein binds the promot-
+er region of the TBX21 gene with the −1514C allele in vivo,
+we used the ChIP assay. The human T cell line Jurkat, which
+was confirmed to be T/C heterozygous at −1514 by sequenc-
+ing analysis, was used for this ChIP assay. As shown in
+Fig. 3d, USF-1 binding to the −1514 region of the TBX21
+promoter was detected in the T cell line (Fig. 3d, lane 3). To
+confirm the specificity of antibody immunoprecipitation, a
+rabbit IgG was used as a control. This protein does not interact
+with this region of the TBX21 promoter as determined by
+EMSA, and the antibody was not able to immunoprecipitate a
+DNA fragment containing the −1514 residue (Fig. 3d, lane 2).
+Frequencies of −1993 and −1514 SNPs in the Chinese
+population
+The above-mentioned reporter assay result suggests that
+both SNPs at −1993 and −1514 equally affect TBX21
+promoter activity (Fig. 1). Previously, several statistical
+analyses showed a positive association between T-1993C
+SNP (Chen et al. 2011) or T-1514 C SNP (You et al. 2010;
+Chae et al. 2009) and autoimmune diseases. These observa-
+tions indicate that both SNPs are involved in autoimmune
+diseases by affecting promoter activity. However, the relation-
+ship between T-1993C and T-1514C SNP is controversial
+(Suttner et al. 2009; You et al. 2010), which may reflect
+statistical interdependence. In the present study, we determined
+the genotypes of −1993 and −1514 in the Chinese population
+to examine the relationship of the two SNPs. A genotype
+−1993TT/−1514TT carrying major homo at both SNP sites
+was found with the highest frequency (86%), whereas three
+genotypes, −1993TT/−1514CC, −1993TC/−1514CC, and
+Fig. 2 Effect of overexpression of USF-1 on −1514T allele or −1514C
+allele promoter activity. A total of 0.5 mg of each of reporter plasmids,
+pGL3-Basic, pGL3-1773 (-1514T), or pGL3-1773 (-1514C), was tran-
+siently transfected with 0.5 mg of pCMV-USF1 or pCMV6-XL5 (mock)
+to Jurkat cells. The relative luciferase activity is represented as the ratio of
+the activity to the luciferase activity in the cells transfected with the empty
+control vector pCMV6-XL5. *P00.004, **P00.001. Data represent the
+average of three independent transfection experiments, with error bars
+representing the SD
+Immunogenetics (2012) 64:361–370
+365
+
+
+−1993CC/−1514CC, were absent (Table 1). The parameters
+of LD calculated from Table 1 were D′00.855 and r200.372.
+The order of haplotype frequencies was as follows:
+−1993T/−1514T>−1993C/−1514T>−1993C/−1514C, and
+−1993T/−1514C was rare (Table 2). These results suggest that
+the LD between −1993 and −1514 is not in complete
+concordance, as shown by the r2 value, due to the pres-
+ence of three haplotypes, while the two loci have a
+relationship without recombination as indicated by the
+high value of D′.
+Fig. 3 Analysis of nuclear factor binding to the sequence con-
+taining the T-1514C SNP in the TBX21 promoter by EMSA and
+ChIP assay. a EMSA analysis with −1514T and −1514C oligonu-
+cleotide probes (top) and nuclear extract from Jurkat T cells was
+performed. In competition EMSA, the labeled probes were incubated
+with 50-fold excess of unlabeled competitor probes, C/EBP or USF-1
+consensus probes. b EMSAs were performed with biotin-labeled probes
+carrying −1514T and −1514C and nuclear extracts from THP-1 and
+Jurkat cells. c A supershift assay with nuclear extract from Jurkat cells
+with biotin-labeled oligonucleotides was performed in the presence of
+anti-USF-1 and C/EBPα antibodies. The labeled probes represent the C
+and T forms of the TBX21 promoter at position −1514. d ChIP assay with
+Jurkat cells in the presence of anti-USF-1 antibodies. Chromatin immu-
+noprecipitation from Jurkat cells was performed in the presence of anti-
+USF-1, anti-RNA Polymerase II (positive control) antibodies, or control
+IgG (negative control). The immunoprecipitated chromatin fraction was
+amplified by PCR with primers specific for the TBX21 promoter and
+control primers for the GAPDH promoter, and PCR products were
+analyzed on a 2% agarose gel
+366
+Immunogenetics (2012) 64:361–370
+
+
+T-bet production by stimulated CD4+ T cells in association
+with the TBX21 −1514 SNPs
+To analyze the effect of T-1514C SNP on T-bet produc-
+tion, we compared the percentage of T-bet-producing
+CD4+ cells among −1514TT (n08) and −1514TC geno-
+typic (n06) individuals. As seen in Fig. 4a, PHA/iono-
+mycin stimulation of the −1514TT-genotypic T cells after
+priming with anti-CD28 plus anti-CD46d mAb resulted
+in a significant increase in percentage of T-bet-producing
+CD4+ cells compared with those carrying the −1514TC geno-
+type (−1993TT/−1514TT+−1993TC/−1514TT versus
+−1993TC/−1514TC+−1993CC/−1514TC, 5.1% versus 3.1%,
+P00.004). These findings suggest that CD4+ cells carrying
+−1514 T allele express higher amount of T-bet production than
+those carrying −1514 C allele.
+Figure 4b, c shows the composite cytokine profiles of
+CD4+ T cells obtained from cultures primed with anti-
+CD28 and anti-CD46d mAb in the absence or presence of
+PHA/ionomycin. As seen in Fig. 4b, the −1514TT-geno-
+typic T cells resulted in a significant increase in percentage
+of IFN-γ-producing CD4+ cells compared with those carry-
+ing the −1514TC genotype (−1993TT/−1514TT+−1993TC/
+−1514TT versus −1993TC/−1514TC+−1993CC/−1514TC,
+4.1 versus 2.2%, P00.002). In contrast, CD4+ cells carrying
+the −1514TC genotype showed a trend toward an increase in the
+percentages of IL-4-secreting cells as compared with those
+carrying −1514TT genotype (Fig. 4c). These findings suggest
+that individuals with the −1514T allele have a more prominent
+proinflammatory cytokine profile, while subjects with the
+−1514 C allele have a prominent Th2 cytokine profile.
+Discussion
+The T-box transcription factor T-bet is a member of the
+T-box transcription factor family and has been shown to
+be a positive “master” transcriptional regulator of IFN-γ
+production in CD4+ T cells (Szabo et al. 2000), NK
+cells (Townsend et al. 2004), and effector CD8+ T cells
+(Sullivan et al. 2003) and important for the commitment
+of CD4+ T cells to Th1 development (Mullen et al.
+2001). T-bet has also recently been shown to regulate
+murine IFN-γ production by B effector cells (Harris et
+al. 2005). In addition, T-bet is elective transducer of IFN-
+γ-mediated IgG2a class switching in B cells (Peng et al.
+2002) and likely to contribute significantly to the impor-
+tance of this regulation in the pathogenesis of humorally
+mediated autoimmunity. Generally, enforced expression
+of T-bet is associated with increased susceptibility and
+severity to organ-specific and systemic autoimmunity
+(Lazarevic and Glimcher 2011). Relatively smaller in-
+crease in expression of T-bet contributes to the break-
+down of self-tolerance (Lazarevic and Glimcher 2011).
+Recent data suggest that increased expression of T-bet is
+correlated with SLE and especially with lupus disease
+activity. Peripheral blood monocytes of SLE patients pro-
+duced significantly higher levels of T-bet than that of healthy
+controls (Lit et al. 2007). T-bet expression of urinary cells was
+significantly higher in SLE patients with active nephritis than
+those with inactive disease (Chan et al. 2007). Cytokine assay
+of peripheral blood suggests that SLE is a Th2-mediated
+disease at the early stage, but the Th1 pathway may become
+predominant with the progression of disease and development
+of active nephritis (Miyake et al. 2011). An imbalance in the
+Th1/Th2 cytokine ratio is thought to contribute to autoim-
+mune responses (Chan et al. 2007). These observations call
+for a detailed investigation of mechanisms involved in regu-
+lation of the TBX21 gene.
+Acquired and genetic factors regulate the expression of T-
+bet and influence its regulatory potential. Data from several
+groups demonstrated differential modulation of T-bet expres-
+sion in human monocytes and lymphocytes by cytokines
+suggesting that alterations in cytokine levels common during
+inflammatory and autoimmune reactions could cause
+changes in T-bet expression (Jacobson et al. 1995; Peng et
+al. 2002; Yu et al. 2006; Takeda et al. 2003). A role for
+hormones in the regulation of TBX21 gene expression was
+revealed when estrogen was found to promote T-bet expres-
+sion (Karpuzoglu et al. 2007), suggesting a role for sex hor-
+mones in the onset and progression of autoimmune diseases.
+Table 1 Genotypes of −1993 and −1514 SNPs on TBX21 in the
+Chinese population
+−1514
+T/T
+T/C
+C/C
+Total
+−1993
+C/C
+1
+3
+0
+4
+T/C
+43
+42
+0
+85
+T/T
+275
+6
+0
+281
+Total
+319
+51
+0
+370
+Table 2 Frequencies of haplotypes in the Chinese population
+Haplotypes
+Number of alleles
+Ratio
+−1993
+−1514
+C
+C
+45
+0.060
+C
+T
+49
+0.067
+T
+C
+6
+0.009
+T
+T
+640
+0.864
+Total allele
+740
+100
+Immunogenetics (2012) 64:361–370
+367
+
+
+Recently, You et al. (2010) showed that the T-1993C
+and T-1514C SNPs is associated with susceptibility to
+SLE in a Chinese population. We have previously indi-
+cated that the T-1993C SNP, which affects promoter
+activity via different binding affinity to YY1, associates
+with autoimmune hepatitis in allele frequency and with
+T-bet expression levels, without considering the T-1514C
+SNP (Chen et al. 2011). In the present study, we found that
+promoter activities of −1993C/−1514T and −1993T/−1514C
+are intermediate between those of −1993T/−1514T and
+−1993C/−1514C (Fig. 1), suggesting that the effect of both
+SNPs on TBX21 promoter activity is almost equal in a basic
+molecular analysis. Furthermore, Chae et al. (2009) reported
+that a SNP at −1514 is associated with RA in a Korean
+population, without considering a T-1993C SNP. Interestingly,
+these two SNPs at −1993 and −1514 were concluded to be
+judged to be in LD in You’s report. The latter study showed
+allele frequency including both SNPs, i.e., −1993T/−1514T is
+the most common, and the two haplotype variants −1993C/
+−1514T and −1993C/−1514C occur with similar frequency,
+whereas the frequency of −1993T/−1514C is very low in
+Chinese population. If the two SNPs are linked to each other,
+the result of comparison between −1993Tand −1993C may be
+partly influenced by T-1514C SNP. It was found that the
+frequency of haplotype −1993T/−1514C (0.9%) was very
+low in our study involving 370 additional individuals. There-
+fore, the statistical analysis of T-1514C SNP may be partly
+affected by T-1993C SNP because the absence of −1993T/
+−1514C suggests the possibility that a comparison of −1514T
+versus −1514C is one of (−1993C alone) versus (−1993T plus
+Fig. 4 T-bet and cytokine expression in CD4+ T cells from peripheral
+bloods of TBX21 −1514 homozygous and −1514 heterozygous individ-
+uals. Whole blood was stimulated for 4 h by PHA/ionomycin along with
+ant-CD28/ant-CD49d monoclonal antibodies as described in “Materials
+and methods.” Stimulated cells were stained with CD4 PerCP, CD69 PE,
+anti-T-bet Alexa Flour 647, anti-IL-4 PE-CY7, and anti-IFN-γ FITC, and
+10,000 CD4+ events were analyzed for the upregulation of intracellular
+T-bet or cytokines and CD69. The enlarged green dots represent the
+double-positive events (cytokine+/CD69+) with the percentages dis-
+played in the upper right corner of the plots. Plots in a depict the PHA/
+ionomycin-stimulated response and plots in b the response in the unsti-
+mulated control culture (which contains ant-CD28/ant-CD49d) of the
+same subject. The experiment presented is representative of four different
+experiments with cells from −1993TT/−1514TT, −1993TC/−1514TC,
+and −1993CC/−1514TC genotype carriers. c–e Increased percentage of
+cells positive for T-bet and cytokine expression in stimulated CD4+ T
+cells from peripheral bloods of −1514TT genotype (n08) and −1514TC
+genotype healthy individuals (n06). Genotypes of −1993 and −1514
+SNPs are as follows: closed square TT/TT, closed circle TC/TC, open
+square TC/TT, open circle CC/TC. *P00.07, **P00.004, ***P00.002
+368
+Immunogenetics (2012) 64:361–370
+
+
+−1993C). When expression level of T-bet in stimulated CD4+
+cells was analyzed, T-1514C SNP was significantly associated
+with percentage of T-bet-producing CD4+ cell. In addition,
+percentage of T-bet-producing CD4+ cells of −1993T/C geno-
+type was lower than that of −1993T/T genotype. This obser-
+vation indicates the same tendency as in our previous study (Li
+et al. 2011). To further clarify the contribution of both SNPs to
+autoimmune diseases, a statistical analysis considering the
+relationship between the two SNPs is in progress.
+In electrophoretic mobility shift assays, we were able to
+show a stronger binding affinity of the −1514C allele to
+Jurkat nuclear factors in comparison with the −1514T al-
+lele. Moreover, we characterized this promoter region as an
+E-box-binding site. Transcription factors of the E-box fam-
+ily are key regulators of genes involved in the immune
+response and cellular proliferation. The −1514C allele
+matches the CACGTG E-box-binding site core motif,
+whereas the −1514T allele differs. The oligonucleotide
+encompassing promoter position −1514 contains a C/
+EBP-consensus motif a few bases downstream of the SNP,
+which also might bind C/EBP transcription factors. How-
+ever, two specific complexes were not shown to be an
+integral part of C/EBP, based on competition with the C/
+EBP consensus sequence and supershift assay. Therefore,
+the C/EBP consensus sequence does not bind transcriptions
+factors. The specific transcription factor was further char-
+acterized as USF-1, an E-box family member expressed in
+peripheral T cells (Cippitelli et al. 1996). The binding of
+USF-1 to TBX21 promoter was detected in the ChIP assay
+using the Jurkat cell line carrying C/T heterozygous
+at −1514. This supports that USF-1 bind around −1514 of
+TBX21 genomic DNA within living cells. USF-1 has been
+shown to either directly or indirectly regulate the expres-
+sion of MHC genes and cytokine expression (Howcroft et
+al. 1999; Zhong et al. 1999; Weigert et al. 2004), such as
+TGF-β1. Our results show that the −1514C allele confers
+optimal binding affinity for the transcription factor USF-1
+which inhibits gene expression. Therefore, we suggest
+USF-1 act as a repressor of TBX21 transcription in Jurkat
+cells. Negative regulatory function of USF-1 has been de-
+scribed in the regulation of other genes (Cippitelli et al.
+1996). Whether repression of TBX21 expression is exerted
+by USF-1 alone or by interactions with other transcription
+factors remains unclear.
+We observed a lower level of IFN-γ production from
+CD4+ T cells in the TBX21–1514TC-genotypic carriers as
+compared with −1514TT-genotypic individuals, whereas the
+opposite changes in IL-4 production from CD4+ T cells were
+found in the −1514TC-genotypic versus −1514TT-genotypic
+carriers. The potential influence of TBX21 polymorphisms in
+the Th1/Th2 cytokine balance observed in our study may also
+be of importance in lupus nephritis, a disease in which there is
+an increase in the Th1 pathway (Miyake et al. 2011). This
+analysis will be performed using larger population including
+SLE patients with enough number of rare alleles.
+In summary, we demonstrated preferential binding of USF-
+1 to the TBX21 gene −1514C allele resulting in lower tran-
+scriptional activity. The differences in transcriptional activity
+between −1514T and −1514C alleles may potentially be of
+some biological importance in CD4+ T cells in which the
+potential effect of 1514T>C variant on the proximal promoter
+would not be easily masked by potent influences of T-1993C
+polymorphism. The associations between TBX21 polymor-
+phism and IFN-γ production in CD4+ T cells and/or SLE
+may result from haplotypic interplay between functional
+T-1993C and T-1514C polymorphisms. We also think that it
+is necessary to find polymorphism in other loci of the genome
+and analyze its association with T-1993C and T-1514C poly-
+morphisms for further elucidation of genomic background for
+SLE.
+Acknowledgments
+This study is supported by the Chinese National
+Natural Science Foundation grants (no. 30972595).
+Conflicts of interest
+We declare that we have no conflict of interest
+to disclose.
+References
+Chae SC, Shim SC, Chung HT (2009) Association of TBX21 poly-
+morphisms in a Korean population with rheumatoid arthritis. Exp
+Mol Med 41:33–41
+Chan RW, Lai FM, Li EK, Tam LS, Chow KM, Li PK, Szeto CC
+(2007) Expression of T-bet, a type 1 T-helper cell transcription
+factor, in the urinary sediment of lupus patients predicts disease
+flare. Rheumatology 46:44–48
+Chen S, Zhao W, Tan W, Luo X, Dan Y, You Z, Kuang X, Wang Y,
+Deng G (2011) Association of TBX21 promoter polymorphisms
+with type 1 autoimmune hepatitis in a Chinese population. Hum
+Immunol 72:69–73
+Cippitelli M, Ye J, Viggiano V, Sica A, Ghosh P, Gulino A et al (1996)
+Retinoic acid-induced transcriptional modulation of the human
+interferon-g promoter. J Biol Chem 272:26783–26793
+Harris DP, Goodrich S, Gerth AJ, Peng SL, Lund FE (2005) Regulation
+of IFN-gamma production by B effector 1 cells: essential roles for
+T-bet and the IFN-gamma receptor. J Immunol 174:6781–6790
+Höhler T, Reuss E, Adams P, Bartsch B, Weigmann B, Wörns M et al
+(2005) A genetic basis for IFN-gamma production and T-bet
+expression in humans. J Immunol 175:5457–5462
+Howcroft TK, Murphy C, Weissman JD, Huber SJ, Sawadogo M, Singer
+DS (1999) Upstream stimulatory factor regulates major histocom-
+patibility complex class I gene expression: the U2DeltaE4 splice
+variant abrogates E-box activity. Mol Cell Biol 19:4788–4797
+Jacobson NG, Szabo SJ, Weber-Nordt RM, Zhong Z, Schreiber RD,
+Darnell JE, Murphy KM (1995) Interleukin 12 signaling in T
+helper type 1 (Th1) cells involves tyrosine phosphorylation of
+signal transducer and activator of transcription (Stat)3 and Stat4. J
+Exp Med 181:1755–1762
+Karpuzoglu E, Phillips RA, Gogal RM Jr, Ansar Ahmed S (2007) IFN-
+gamma-inducing transcription factor, T-bet is upregulated by estrogen
+in murine splenocytes: role of IL-27 but not IL-12. Mol Immunol
+44:1808–1814
+Immunogenetics (2012) 64:361–370
+369
+
+
+Kawashima M, Miossec P (2005) mRNA quantification of T-bet, GATA-
+3, IFN-gamma, and IL-4 shows a defective Th1 immune response in
+the peripheral blood from rheumatoid arthritis patients: link with
+disease activity. J Clin Immunol 25:209–214
+Lazarevic V, Glimcher LH (2011) T-bet in disease. Nat Immunol
+12:597–606
+Li JR, Li JG, Deng GH, Zhao WL, Dan YJ, Wang YM, Chen S (2011)
+A common promoter variant of TBX21 is associated with allele
+specific binding to Yin–Yang 1 and reduced gene expression.
+Scand J Immunol 73:449–458
+Lit LC, Wong CK, Li EK, Tam LS, Lam CW, Lo YM (2007) Elevated
+gene expression of Th1/Th2 associated transcription factors is
+correlated with disease activity in patients with systemic lupus
+erythematosus. J Rheumatol 34:89–96
+Miller SA, Weinmann AS (2010) Molecular mechanisms by which T-bet
+regulates T-helper cell commitment. Immunol Rev 238:233–246
+Miyake K, Akahoshi M, Nakashima H (2011) Th subset balance in
+lupus nephritis. J Biomed Biotechnol 2011:980286
+Mullen AC, High FA, Hutchins AS, Lee HW, Villarino AV, Livingston
+DM, Kung AL, Cereb N, Yao TP, Yang SY, Reiner SL (2001) Role
+of T-bet in commitment of TH1 cells before IL-12-dependent selec-
+tion. Science 292:1907–1910
+Peng SL, Szabo SJ, Glimcher LH (2002) T-bet regulates IgG class
+switching and pathogenic autoantibody production. Proc Natl
+Acad Sci USA 99:5545–5550
+Shin HJ, Lee JB, Park SH, Chang J, Lee CW (2009) T-bet expression is
+regulated by EGR1-mediated signaling in activated T cells. Clin
+Immunol 131:385–394
+Sullivan BM, Juedes A, Szabo SJ, von Herrath M, Glimcher LH (2003)
+Antigen-driven effector CD8 T cell function regulated by T-bet.
+Proc Natl Acad Sci USA 100:15818–15823
+Suttner K, Rosenstiel P, Depner M, Schedel M, Pinto LA, Ruether A,
+Adamski J, Klopp N, Illig T, Vogelberg C, Schreiber S, von
+Mutius E, Kabesch M (2009) TBX21 gene variants increase
+childhood asthma risk in combination with HLX1 variants. J
+Allergy Clin Immunol 123:1062–1068
+Szabo SJ, Kim ST, Costa GL, Zhang X, Fathman CG, Glimcher LH
+(2000) A novel transcription factor, T-bet, directs Th1 lineage
+commitment. Cell 100:655–669
+Takeda A, Hamano S, Yamanaka A, Hanada T, Ishibashi T, Mak
+TW, Yoshimura A, Yoshida H (2003) Cutting edge: role of
+IL-27/WSX-1 signaling for induction of T-bet through acti-
+vation of STAT1 during initial Th1 commitment. J Immunol
+170:4886–4890
+Townsend MJ, Weinmann AS, Matsuda JL, Salomon R, Farnham PJ,
+Biron CA, Gapin L, Glimcher LH (2004) T-bet regulates the
+terminal maturation and homeostasis of NK and Valpha14i NKT
+cells. Immunity 20:477–494
+Weigert C, Brodbeck K, Sawadogo M, Häring HU, Schleicher ED
+(2004) Upstream stimulatory factor (USF) proteins induce
+human TGF-beta1 gene activation via the glucose-response
+element-1013/-1002 in mesangial cells: up-regulation of USF
+activity by the hexosamine biosynthetic pathway. J Biol
+Chem 279:15908–15915
+You Y, Zhao W, Chen S, Tan W, Dan Y, Hao F, Deng G (2010)
+Association of TBX21 gene haplotypes in a Chinese popula-
+tion with systemic lupus erythematosus. Scand J Rheumatol
+39:254–258
+Yu J, Wei M, Becknell B, Trotta R, Liu S, Boyd Z, Jaung MS, Blaser
+BW, Sun J, Benson DM Jr, Mao H, Yokohama A, Bhatt D, Shen
+L, Davuluri R, Weinstein M, Marcucci G, Caligiuri MA (2006)
+Pro- and antiinflammatory cytokine signaling: reciprocal antago-
+nism regulates interferon-gamma production by human natural
+killer cells. Immunity 24:575–590
+Yu J, Wei M, Boyd Z, Lehmann EB, Trotta R, Mao H, Liu S, Becknell
+B, Jaung MS, Jarjoura D, Marcucci G, Wu LC, Caligiuri MA
+(2007) Transcriptional control of human T-BET expression: the
+role of Sp1. Eur J Immunol 37:2549–2561
+Zhong G, Fan T, Liu L (1999) Chlamydia inhibits interferon gamma-
+inducible major histocompatibility complex class II expression by
+degradation of upstream stimulatory factor 1. J Exp Med
+189:1931–1938
+370
+Immunogenetics (2012) 64:361–370

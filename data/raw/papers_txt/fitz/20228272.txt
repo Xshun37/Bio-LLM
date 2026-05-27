@@ -1,0 +1,521 @@
+LYMPHOID NEOPLASIA
+Brief report
+Aproto-oncogene BCL6 is up-regulated in the bone marrow microenvironment in
+multiple myeloma cells
+Teru Hideshima,1 Constantine Mitsiades,1 Hiroshi Ikeda,1 Dharminder Chauhan,1 Noopur Raje,1 Gullu Gorgun,1
+Hiromasa Hideshima,1 Nikhil C. Munshi,1,2 Paul G. Richardson,1 Daniel R. Carrasco,1 and Kenneth C. Anderson1
+1Jerome Lipper Myeloma Center, Department of Medical Oncology, Dana-Farber Cancer Institute, Boston, MA; and 2Veterans Administration Boston Healthcare,
+Department of Research, West Roxbury, MA
+Constitutive B-cell lymphoma 6 (Bcl-6)
+expression was undetectable in multiple
+myeloma (MM) cell lines, except U266
+cells. However, it was up-regulated by
+coculture with bone marrow (BM) stromal
+cell-culture supernatant (SCCS). Bcl-6 ex-
+pression in patient MM cells in the BM
+was positive. Anti–interleukin-6 (IL-6)–
+neutralizing antibody signiﬁcantly blocked
+SCCS-induced Bcl-6 in MM cells. Indeed,
+IL-6 strongly triggered Bcl-6 expression
+in MM cells, whereas Janus kinase inhibi-
+tor and STAT3 siRNA down-regulated
+Bcl-6. Tumor necrosis factor- (TNF-)
+also triggered Bcl-6, but independently of
+STAT3, whereas IB kinase inhibitor
+down-regulated TNF-–induced Bcl-6,
+indicating that the canonical nuclear
+factor-B
+pathway
+mediates
+TNF-–
+induced Bcl-6 expression. Importantly,
+down-regulation of Bcl-6 by shRNAsigniﬁ-
+cantly inhibited MM cell growth in the
+presence of SCCS. Our results therefore
+suggest that Bcl-6 expression in MM cells
+is modulated, at least in part, via Janus
+kinase/STAT3
+and
+canonical
+nuclear
+factor-B pathways and that targeting
+Bcl-6, either directly or via these cas-
+cades, inhibits MM cell growth in the BM
+milieu. (Blood. 2010;115(18):3772-3775)
+Introduction
+B-cell lymphoma 6 (Bcl-6) is a 95-kDa nuclear protein belong-
+ing to the Pox virus zinc ﬁnger transcription factor family. It is a
+proto-oncogene encoding a transcriptional repressor, which
+regulates germinal center B-cell differentiation. BCL6 is consti-
+tutively expressed in a signiﬁcant fraction of B-cell lymphomas.
+Importantly, Bcl-6 is deregulated either by chromosomal translo-
+cations (3q27) or aberrant somatic hypermutation in a subset
+(35%-40%) of diffuse large B-cell lymphomas (DLBCLs),1,2
+and its biologic signiﬁcance has been extensively studied in this
+setting.3
+Bcl-6 function is regulated by acetylation; speciﬁcally, histone
+deacetylase-2 (HDAC2) binds to Bcl-6 and modulates its function.4
+Conversely, inhibition of HDAC2 induces hyperacetylation of
+Bcl-6, resulting in loss of its function. Therefore, HDAC inhibitors
+(especially class I inhibitors) have been used for functional inhibi-
+tion of Bcl-6.5 Most importantly, a small peptide inhibitor of
+BCL-6 induces cytotoxicity in primary human DLBCL cells both
+in vitro and in vivo, without affecting normal lymphoid tissue,6,7
+suggesting that Bcl-6 is a promising novel therapeutic target in
+DLBCLs. However, the biologic signiﬁcance of Bcl-6 in multiple
+myeloma (MM) has not yet been elucidated.
+Methods
+Detailed information pertinent to tumor cell lines and primary tumor
+specimens, growth of long-term bone marrow stromal cells (BMSCs),
+reagents, immunoblotting, cell growth assays, real-time polymerase chain
+reaction (RT-PCR), and shRNA infection are included in the supplemental
+data (available on the Blood Web site; see the Supplemental Materials link
+at the top of the online article).8-13 Primary CD138 tumor cells from MM
+patients were obtained using negative selection, as previously described8
+after Institutional Review Board–approved informed consent (Dana-Farber
+Cancer Institute) and in accordance with the Declaration of Helsinki
+protocol.
+Results and discussion
+To examine whether patient MM cells in the BM express Bcl-6, we
+ﬁrst performed immunohistochemical analysis on BM tissue mi-
+croarrays from both healthy donors (NBM) and MM patients.
+Importantly, Bcl-6 was strongly expressed within the nucleus in
+MM cells of all cases (Figure 1A), suggesting that Bcl-6 might play
+a role in MM pathogenesis. To examine whether soluble factors
+modulated Bcl-6 expression in MM cells in the context of the BM
+microenvironment, MM.1S and RPMI8226 cells were cultured
+with stromal cell-culture supernatants (SCCSs) or BMSCs for
+12 hours. Induction of Bcl-6 was similarly up-regulated by SCCS
+and BMSC coculture (Figure 2B), suggesting that induction of
+Bcl-6 by BMSCs was predominantly by soluble factors, and we
+carried out further experiments using SCCSs. Although MM cell
+lines express weak or undetectable constitutive Bcl-6 expression, it
+is markedly up-regulated by SCCSs (Figure 2C). Because the
+pattern of Bcl-6 induction by SCCSs was similar to phospho-
+STAT3 and phospho-ERK, we hypothesized that interleukin-6
+(IL-6) in SCCSs may be triggering Bcl-6 in MM cells. We therefore
+Submitted February 19, 2010; accepted February 22, 2010. Prepublished
+online as Blood First Edition paper, March 12, 2010; DOI 10.1182/blood-2010-
+02-270082.
+The online version of this article contains a data supplement.
+The publication costs of this article were defrayed in part by page charge
+payment. Therefore, and solely to indicate this fact, this article is hereby
+marked ‘‘advertisement’’ in accordance with 18 USC section 1734.
+3772
+BLOOD, 6 MAY 2010  VOLUME 115, NUMBER 18
+Downloaded from http://ashpublications.org/blood/article-pdf/115/18/3772/1325727/zh801810003772.pdf by guest on 26 May 2026
+
+
+cultured MM cell lines with recombinant IL-6 and conﬁrmed that
+Bcl-6 was markedly up-regulated, as was p-STAT3 (Figure 2D).
+Interestingly, U266 has high baseline Bcl-6 and p-STAT3 expres-
+sion, which is associated with constitutive phosphorylation of
+gp130 (supplemental Figure 1). Dose-dependent (Figure 2E) and
+time-dependent (Figure 2F) effects of IL-6 on Bcl-6 expression
+showed maximum induction by 4 hours with 3 and 10 ng/mL IL-6.
+Importantly, IL-6 also triggered Bcl-6 expression in patient MM
+cells (Figure 2G). Real-time RT-PCR showed that IL-6, in a
+time-dependent fashion, signiﬁcantly increased Bcl-6 mRNA lev-
+els in INA6 cells (Figure 2H), indicating that IL-6–induced
+transcriptional up-regulation of Bcl-6. We also examined the
+kinetics of Bcl-6 down-regulation after IL-6 withdrawal. As shown
+in Figure 2I, Bcl-6 expression rapidly decreased to baseline levels
+at 5 to 10 hours after IL-6 withdrawal.
+To deﬁne the extent to which IL-6 accounts for SCCS-induced
+Bcl-6 expression, we next cultured MM cells with SCCSs, in the
+presence or absence of neutralizing anti–IL-6 antibodies. Neutraliz-
+ing anti–IL-6 antibodies only partially inhibited SCCS-induced
+Bcl-6 and p-STAT3 expression (Figure 2A). Because other gp130
+family cytokines also trigger phosphorylation of STAT3 and ERK,
+and BMSCs also secrete oncostatin M (OSM; supplemental Figure
+MM.1S INA6
+RPMI
+U266
+SCCS
+Bcl-6
+p-STAT3
+p-Akt
+p-ERK
+α-tubulin
+STAT3
+-
++
+-
++
+-
++
+-
++
+MM.1S
+U266
+INA6
+RPMI
+IL-6
+Bcl-6
+STAT3
+p-STAT3
+-
++
+-
++
+-
++
+-
++
+Bcl-6
+IL-6 (h)
+p-STAT3
+STAT3
+0
+4
+12 24
+Bcl-6
+p-STAT3
+IL-6 -
++
+-
++
+-
++
+Pat #1 Pat #2 Pat #3
+α-tubulin
+Bcl-6
+C
+IL-6 starvation (h)
+p-STAT3
+STAT3
+2.5 5 10 14
+0
+Bcl-6
+IL-6 (ng/mL) 
+p-STAT3
+STAT3
+0
+1
+3 10
+0
+1
+3 10
+MM.1S
+INA6
+A
+B
+C
+D
+E
+F
+G
+H
+Bcl-6
+MM.1S
+RPMI
+GAPDH
+C S Sc C S Sc
+0
+100
+200
+300
+0
+3
+8
+incubation (h)
+relative expression
+8
+*
+*
+*
+IL-6
+SCCS
+NBM
+MM2
+MM1
+MM3
+MM6
+MM5
+MM4
+MM7
+Cont
+I
+Figure 1. IL-6 in SCCSs induces Bcl-6. (A) Immunohistochemical analysis for Bcl-6 expression was performed on bone marrow (BM) tissue microarrays from healthy donors
+(NBM) and multiple myeloma (MM) patients. Representative results are shown. CD138 is stained in red; Bcl-6 is stained in brown. Control sample was stained without
+anti–Bcl-6 antibodies or anti-CD138. See supplemental Methods for image-acquisition information. (B) MM.1S and RPMI8226 cells were cultured with stromal cell–culture
+supernatants (SCCSs; S) or bone marrow stromal cells (BMSCs; Sc) for 12 hours. (C) MM.1S, interleukin-6 (IL-6)–starved INA6, RPMI8226, and U266 cells were cultured with
+SCCSs for 12 hours. (D) MM.1S, IL-6–starved INA6, RPMI8226, and U266 cells were cultured with IL-6 (5 ng/mL) for 12 hours. (E) MM.1S cells were cultured with IL-6
+(5 ng/mL) for the indicated time periods. (F) MM.1S and IL-6–starved INA6 cells were cultured with IL-6 (1, 3, or 10 ng/mL) for 12 hours. (G) Patient MM cells were cultured with
+IL-6 (5 ng/mL) for 12 hours. (H) INA6 cells were cultured with IL-6 (5 ng/mL for 3 hours and 8 hours) or SCCSs for 8 hours. Total RNAwas extracted, and Bcl-6 gene expression
+was examined by real-time RT-PCR (
+) and normalized to expression of glyceraldehyde-3-phosphate dehydrogenase (), which served as an internal control. *P  .01.
+(I) INA6 cells were cultured with or without IL-6 (5 ng/mL) for 12 hours. Cells were then washed and cultured for the indicated time periods. Whole-cell lysates were subjected to
+immunoblotting with indicated antibodies. Phospho-STAT3 served as positive control for IL-6–induced signal transduction.
+MM.1S
+U266
+Bcl-6
+p-STAT3
+STAT3
+C IL-6 SC
+C IL-6 SC
+SCCS
+Bcl-6
+p-JNK2/3
+p-STAT3
+STAT3
+p38MAPK
+GAPDH
+p-p38MAPK
+C
+#1
+#2
+#3
+p-STAT3
+GAPDH
+Bcl-6
+STAT3
+C IL6 TNF SC
+Bcl-6
+GAPDH
+C
+M
+T T+M
+Bcl-6
+STAT3
+p-p38MAPK
+p38MAPK
+GAPDH
+p-STAT3
+C
+M
+S S+M
+Bcl-6
+cont
+SC 
+SC+IL-6Ab
+SC+MLN
+cont
+SC
+SC+IL-6Ab
+SC+MLN
+SCCS #1
+SCCS #2
+cont
+SC
+SC+IL-6Ab
+SC+MLN
+p-STAT3
+STAT3
+GAPDH
+SCCS #3
+A
+B
+C
+D
+E
+F
+G
+p-STAT3
+Bcl-6
+IL6
+STAT3
+0
+6
+10
+10 h
+TNFα
+p-JNK2/3
+Figure 2. TNF- up-regulates Bcl-6 expression.
+(A) MM.1S and U266 cells were cultured with IL-6
+(5 ng/mL) or SCCSs (SC) for 12 hours. (B) RPMI8226
+cells were cultured with 3 different SCCS (#1, #2, #3) for
+12 hours. (C) RPMI8226 cells were cultured with tumor
+necrosis factor- (TNF-; 2.5 ng/mL) or IL-6 (5 ng/mL) for
+the indicated time periods. (D) Patient MM cells were
+cultured with IL-6 (5 ng/mL), TNF- (2.5 ng/mL), or SCCSs
+(SC) for 12 hours. (E) RPMI8226 cells were cultured with
+or without SCCSs (S), in the presence or absence of
+MLN120B (M, 10M) for 12 hours. (F) Patient MM cells
+were cultured with TNF- (T) for 12 hours in the presence
+or absence of MLN120B (M, 10M). (G) RPMI8226 cells
+were cultured with 3 different SCCSs (sc#1, sc#2, and
+sc#3), in the presence or absence of neutralizing IL-6
+antibodies (5 g/mL) or MLN120B (M, 10M) for 12 hours.
+Whole cell lysates were subjected to immunoblotting with
+indicated antibodies.
+Bcl-6 IN MULTIPLE MYELOMA CELLS
+3773
+BLOOD, 6 MAY 2010  VOLUME 115, NUMBER 18
+Downloaded from http://ashpublications.org/blood/article-pdf/115/18/3772/1325727/zh801810003772.pdf by guest on 26 May 2026
+
+
+2), we examined whether exogenous OSM also triggered Bcl-6 in
+MM cell lines. As expected, OSM markedly up-regulated Bcl-6
+expression in MM.1S and INA6 cell lines, associated with
+induction of p-STAT3 (supplemental Figure 3). In contrast,
+other cytokines, including insulin-like growth factor-1, vascular
+endothelial growth factor, stromal cell–derived factor-1, or
+IL-3, did not induce Bcl-6 expression (data not shown). These
+results suggest that gp130 family cytokines trigger Bcl-6
+expression in MM cells.
+Our studies indicated that phosphorylation of both ERK and
+STAT3 is correlated with Bcl-6 expression (Figure 1C). MEK
+inhibitor U0126 completely blocked both constitutive and
+IL-6–induced phospho-ERK; however, it did not inhibit phospho-
+STAT3 or Bcl-6 expression (supplemental Figure 4A). In
+contrast, pan-Janus kinase (JAK) inhibitor AG490 markedly
+down-regulated phospho-STAT3 and Bcl-6 expression (supple-
+mental Figure 4B). We further conﬁrmed the signiﬁcance of
+STAT3 down-regulation using STAT3 siRNA: STAT3 siRNA
+transfectants have lower levels of Bcl-6 than scrambled siRNA
+transfectants (supplemental Figure 4C). Taken together, these
+results suggest that IL-6–induced Bcl-6 expression is modulated
+via JAK/STAT3 pathway.
+We next examined the impact of IL-6 on Bcl-6 expression in
+MM cells in the context of the BM microenvironment by culturing
+2 IL-6 responsive of MM cell lines (MM.1S, U266) with SCCSs or
+IL-6. IL-6 was a more potent inducer of p-STAT3 than SCCSs;
+however, SCCSs more potently induced Bcl-6 than IL-6 in MM.1S
+(Figure 2A). We further examined 3 distinct SCCSs and observed
+that induction of Bcl-6 by SCCSs was correlated with phosphoryla-
+tion of JNK and p38MAPK (Figure 2B). Because we have
+previously shown that transcription and secretion of IL-6 by
+BMSCs are regulated by nuclear factor-B (NF-B)14 and tumor
+necrosis factor- (TNF-) is a potent activator of NF-B, JNK, and
+p38MAPK, we hypothesized that TNF- in SCCSs may also
+trigger Bcl-6 expression. As expected, TNF- markedly up-
+regulated Bcl-6 in RPMI8226 cells (Figure 2C). This up-regulation
+was completely independent of p-STAT3, indicating that IL-6 or
+other gp130 family cytokines were not induced by the TNF-–
+NF-B axis in this setting. Importantly, both SCCSs and TNF-
+also triggered Bcl-6 in patient MM cells even when IL-6 did not
+(Figure 2D). We have previously shown that IB kinase inhibitor
+MLN120B blocks TNF-–induced NF-B activation.15 We next
+showed that MLN120B completely blocked TNF-–induced Bcl-6
+expression in patient MM cells (Figure 2E) and RPMI8226 cells
+(Figure 2F), suggesting that TNF-–induced Bcl-6 expression is
+mediated via the canonical NF-B pathway. Because secretion
+of cytokines from primary BMSCs varies, we further compared
+the induction of Bcl-6 in RPMI8226 cells by SCCSs from
+3 different persons, in the presence or absence of neutralizing
+anti–IL-6 antibodies or MLN120B (Figure 2F). All SCCSs
+markedly induced Bcl-6 expression; however, the inhibitory
+effect of neutralizing anti–IL-6 antibodies or MLN120B on
+Bcl-6 induction varied (Figure 2G). These results suggest that
+SCCSs may have different cytokines and that the signaling
+cascades triggering Bcl-6 may therefore also differ. These
+results indicate that up-regulation of Bcl-6 by SCCS is not
+induced by a single cytokine but the total effect of cytokines in
+the BM milieu.
+To determine the biologic signiﬁcance of Bcl-6, we next
+knocked down Bcl-6 expression by lentiviral Bcl-6 shRNA.
+MM.1S cells were cultured with SCCS to induce Bcl-6. Both sh
+#1 and sh #2 constructs sufﬁciently down-regulated Bcl-6
+expression (supplemental Figure 5A). Importantly, Bcl-6 knock-
+down infectants had decreased numbers of viable cells com-
+pared with noninfected or Sc shRNA infectants (supplemental
+Figure 5B). Analogous experiments were carried out in U266
+cells with high constitutive Bcl-6 expression without SCCSs,
+and we observed that Bcl-6 shRNA showed cell growth
+inhibition associated with down-regulation of Bcl-6 (supplemen-
+tal Figure 6). In this study, our results therefore suggest that
+Bcl-6 expression is mediated via both JAK/STAT3 and NF-B
+pathways in MM cells and that targeting these cascades could
+both inhibit Bcl-6 expression and inhibit growth of MM cells in
+the BM microenvironment.
+Acknowledgments
+This work was supported by the National Institutes of Health
+(SPORE IP50 grants CA10070, PO-1 78378, and RO-1 CA50947),
+the Multiple Myeloma Research Foundation (T.H., D.C., N.R.,
+C.M.), and the LeBow Family Fund to Cure Myeloma (K.C.A.).
+Authorship
+Contribution: T.H. performed experiments and prepared the manu-
+script; C.M., D.C., and K.C.A. designed experiments and analyzed
+the data; H.I., G.G., and H.H. performed experiments; N.R.
+designed experiments; N.C.M. and P.G.R. analyzed the data; and
+D.R.C. designed and performed the experiments.
+Conﬂict-of-interest disclosure: C.M. has received consultant
+honoraria from Millennium, Novartis, Bristol-Myers Squibb, Merck,
+Kosan, and Pharmion, as well as research funding from Amgen,
+AVEO Pharma, EMD Serono, and Sunesis. K.C.A., N.C.M., and
+N.R. are consultants and on the advisory boards for Millennium,
+Celgene, and Novartis. P.G.R. is a consultant and on the advisory
+boards for Millennium and Celgene. The remaining authors declare
+no competing ﬁnancial interests.
+Correspondence: Kenneth C. Anderson, Dana-Farber Cancer
+Institute, 44 Binney St, Boston, MA 02115; e-mail: kenneth_
+anderson@dfci.harvard.edu.
+References
+1. Kerckaert JP, Deweindt C, Tilly H, Quief S,
+Lecocq G, Bastard C. LAZ3, a novel zinc-ﬁnger
+encoding gene, is disrupted by recurring chromo-
+some 3q27 translocations in human lymphomas.
+Nat Genet. 1993;5(1):66-70.
+2. Ye BH, Lista F, Lo Coco F, et al. Alterations of a
+zinc ﬁnger-encoding gene, BCL-6, in diffuse
+large-cell lymphoma. Science. 1993;262(5134):
+747-750.
+3. Ci W, Polo JM, Melnick A. B-cell lymphoma 6 and
+the molecular pathogenesis of diffuse large B-cell
+lymphoma. Curr Opin Hematol. 2008;(4):15:381-
+390.
+4. Bereshchenko OR, Gu W, Dalla-Favera R. Acety-
+lation inactivates the transcriptional repressor
+BCL6. Nat Genet. 2002;32(4):606-613.
+5. Lemercier C, Brocard MP, Puvion-Dutilleul F, Kao
+HY, Albagli O, Khochbin S. Class II histone
+deacetylases are directly recruited by BCL6 tran-
+scriptional repressor. J Biol Chem. 2002;277(24):
+22045-22052.
+6. Polo JM, Dell’Oso T, Ranuncolo SM, et al. Spe-
+ciﬁc peptide interference reveals BCL6 transcrip-
+tional and oncogenic mechanisms in B-cell lym-
+phoma cells. Nat Med. 2004;10(12):1329-1335.
+7. Cerchietti LC, Yang SN, Shaknovich R, et al.
+A peptomimetic inhibitor of BCL6 with potent anti-
+lymphoma effects in vitro and in vivo. Blood.
+2009;113(15):3397-3405.
+8. Hideshima T, Chauhan D, Kiziltepe T, et al. Bio-
+logic sequelae of IB kinase (IKK) inhibition in
+multiple myeloma: therapeutic implications.
+Blood. 2009;113(21):5228-5236.
+3774
+HIDESHIMA et al
+BLOOD, 6 MAY 2010  VOLUME 115, NUMBER 18
+Downloaded from http://ashpublications.org/blood/article-pdf/115/18/3772/1325727/zh801810003772.pdf by guest on 26 May 2026
+
+
+9. Wen D, Nong Y, Morgan JG, et al. A selective
+small molecule IB kinase  inhibitor blocks
+nuclear factor B-mediated inﬂammatory re-
+sponses in human ﬁbroblast-like synoviocytes,
+chondrocytes, and mast cells. J Pharmacol Exp
+Ther. 2006;317(3):989-1001.
+10. Hideshima T, Catley L, Yasui H, et al. Perifosine,
+an oral bioactive novel alkylphospholipid, inhibits
+Akt and induces in vitro and in vivo cytotoxicity in
+human multiple myeloma cells. Blood. 2006;
+107(10):4053-4062.
+11.
+Hideshima T, Chauhan D, Teoh G, et al. Char-
+acterization of signaling cascades triggered by
+human interleukin-6 versus Kaposi’s sarcoma-
+associated herpes virus-encoded viral interleu-
+kin 6. Clin Cancer Res. 2000;6(3):1180-1189.
+12. Carrasco DR, Sukhdeo K, Protopopov M, et al.
+The differentiation and stress response factor
+XBP-1 drives multiple myeloma pathogenesis.
+Cancer Cell. 2007;11(4):349-360.
+13. Hideshima T, Catley L, Raje N, et al. Inhibition of
+Akt induces signiﬁcant downregulation of survivin
+and cytotoxicity in human multiple myeloma cells.
+Br J Haematol. 2007;138(6):783-791.
+14. Chauhan D, Uchiyama H, Akbarali Y, et al. Mul-
+tiple myeloma cell adhesion-induced interleukin-6
+expression in bone marrow stromal cells involves
+activation of NF-B. Blood. 1996;87(3):1104-
+1112.
+15. Hideshima T, Ikeda H, Chauhan D, et al. Bor-
+tezomib induces canonical nuclear factor-B acti-
+vation in multiple myeloma cells. Blood. 2009;
+114(5):1046-1052.
+Bcl-6 IN MULTIPLE MYELOMA CELLS
+3775
+BLOOD, 6 MAY 2010  VOLUME 115, NUMBER 18
+Downloaded from http://ashpublications.org/blood/article-pdf/115/18/3772/1325727/zh801810003772.pdf by guest on 26 May 2026

@@ -1,0 +1,942 @@
+Dimethylcelecoxib induces an inhibitory complex consisting of HDAC1/NF-κB(p65)
+RelA leading to transcriptional downregulation of mPGES-1 and EGR1
+Klaus Deckmann, Florian Rörsch, Gerd Geisslinger, Sabine Grösch ⁎
+Pharmazentrum Frankfurt/ZAFES, Institute of Clinical Pharmacology, Goethe-University Frankfurt, Theodor Stern Kai 7, 60590 Frankfurt/Main, Germany
+a b s t r a c t
+a r t i c l e
+i n f o
+Article history:
+Received 17 August 2011
+Accepted 24 September 2011
+Available online 1 October 2011
+Keywords:
+Dimethylcelecoxib
+mPGES-1
+COX-inhibitor
+EGR1
+NF-κB
+RelA
+HDAC1
+Dimethylcelecoxib, a non-COX-2 inhibiting derivative of celecoxib, inhibits PGE2 synthesis by transcriptional in-
+hibition of mPGES-1. Previously we demonstrated that DMC downregulates EGR1 expression and increases nu-
+clear NF-κB in human cervical cancer cells (HeLa) [1]. Both transcription factors are important regulators of
+mPGES-1 expression. Here we show that treatment of HeLa cells with DMC inhibits EGR1 promoter activity by
+inﬂuencing the transactivation activity of NF-κB. Mutation of the NF-κB motif as well as downregulation of
+NF-κB(p65)RelA using siRNA repealed the inhibitory effect of DMC on the EGR1 promoter. The transactivation
+activity of NF-κB is regulated by various co-activators or co-repressors. One of these co-repressors is HDAC1.
+DMC did not inﬂuence HDAC1 expression, but the HDAC activity was enhanced under DMC inﬂuence. After
+DMC treatment NF-κB co-immunoprecipitated with HDAC1. Electromobility shift assays depicted an increased
+interaction between NF-κB–HDAC1 and DNA containing NF-κB binding motives. Performing CHIP-assays we ﬁ-
+nally demonstrated the interaction of NF-κB and HDAC1 at the EGR1 promoter that was in part reversed by the
+HDAC1 inhibitor trichostatin A. Using siRNA against HDAC1 we could repeal the inhibitory effect of DMC on the
+EGR1 promoter. In conclusion we demonstrated that treatment of HeLa cells with DMC leads to an enhanced for-
+mation of a complex consisting of NF-κB and HDAC1 that binds to the EGR1 promoter resulting in downregula-
+tion of EGR1 expression which plays a major role for transcriptional inhibition of mGPES-1 expression. How
+these effects of DMC may contribute to a potential therapeutical beneﬁt of various diseases is discussed.
+© 2011 Elsevier Inc. All rights reserved.
+1. Introduction
+Prostaglandin E2 (PGE2) plays an important role in physiological
+and pathophysiological processes. It is produced along the enzy-
+matic pathway consisting of phospholipases, cyclooxygenases and
+PGE synthases. The mPGES-1, one of three PGE2 synthases, is barely
+basally expressed, but is inducible by different stimuli and frequently
+co-expressed with COX-2. COX-2, mPGES-1 and PGE2 are enhanced
+during pain, inﬂammatory processes and in several cancer cells [2–5].
+Inhibition of PGE2 production is therefore a common mechanism to
+treat pain and inﬂammatory diseases using unselective or selective
+COX-2 inhibitors such as ibuprofen and diclofenac, or celecoxib and
+etoricoxib, respectively. Due to the fact that long-term treatment with
+COX-inhibitors is associated with severe side effects like thromboem-
+bolic events, liver and skin toxicity, alternatives are sought after to in-
+hibit PG production, especially PGE2 production more selectively. DMC
+(dimethylcelecoxib={4-[5-(2,5-dimethylphenyl)-3(triﬂuoromethyl)-
+1H-pyrazol-1yl]benzenesulfonamide}) is a derivative of celecoxib, but
+without cyclooxygenase inhibiting properties up to high concentra-
+tions. Nevertheless, after stimulation of various human cell lines with
+IL-1β/TNFα and simultaneous treatment with DMC PGE2 synthesis
+is inhibited [6]. Our investigations revealed that DMC inhibits
+mPGES-1 activity and prevents mPGES-1 upregulation after IL-1β/TNFα
+treatment in these cells [6]. We demonstrated that DMC inhibits
+Cellular Signalling 24 (2012) 460–467
+Abbreviations: ANOVA, analyzed using univariate analysis of variance; cPGES, cyto-
+solic prostaglandin E synthase; p300-CBP, p300 (E1A binding protein p300)/CBP (also
+known as CREB-binding protein); CREB, cAMP-responsive element-binding protein 1;
+c-Rel, v-rel reticuloendotheliosis viral oncogene homolog; COX-1/2, cyclooxygenase-
+1/2; DMC, dimethylcelecoxib; DMSO, dimethyl sulfoxide; DTT, dithiotreitol; DTTC,
+3,3′-Diethylthiatricarbocyanine iodide; EDTA, ethylenediamine-tetraacetic acid; EGR1,
+early growth response 1; EMSA, Electrophoretic Mobility Shift Assay; FCS, fetal calf
+serum; HDAC1, histondeacetylases 1; HEPES, 4-(2-hydroxyethyl)-1-piperazineethanesul-
+fonic acid; IgG, immunoglobulin G; IκB, IkappaB, inhibitor of NF-κB; IL-1β, interleukin-1
+beta; LC/MS–MS, liquid chromatography tandem mass spectrometry; LPS, lipopolysaccha-
+ride; mPGES-1, microsomal prostaglandin E synthase-1; mPGES-2, microsomal prosta-
+glandin E synthase-2; NF-κB(p65)RELA, nuclear factor of kappa light polypeptide gene
+enhancer in B-cells (p65) v-rel reticuloendotheliosis viral oncogene homolog A (avian),
+NF-κB, nuclear factor NF-kappa-B p65; NSAID, non-steroidal anti-inﬂammatory drug;
+NP-40, nonidet 40; p50, NF-KB1; PBS, phosphate buffered saline; PGE, prostaglandin E;
+PGH, prostaglandin H; PGES, prostaglandin E synthase; PIPES, piperazine-N,N′-bis(2-etha-
+nesulfonic acid); PMSF, phenyl-methylsulfonylﬂuride; RELA/B, v-rel reticuloendotheliosis
+viral oncogene homolog A (avian)/B; RIPA, radioimmunoprecipitation assay buffer; SDS-
+PAGE, sodiumdodecylsulfate-polyacrylamide gel electrophoresis; S.E.M., standard error
+of the mean; siRNA, small interference RNA; SP1, speciﬁcity protein 1; TKM, Tris–potassi-
+um–magnesium; TNFα, tumor necrosis factor alpha; Tris–HCl, tris(hydroxymethyl)ami-
+nomethane–HCl; TSA, trichostatin A.
+⁎ Corresponding author at: Institute for Clinical Pharmacology, Johann Wolfgang
+Goethe-University, Theodor Stern Kai 7, 60590 Frankfurt/Main, Germany. Tel.: +49 69
+6301 7820; fax: +49 69 6301 7636.
+E-mail address: groesch@em.uni-frankfurt.de (S. Grösch).
+0898-6568/$ – see front matter © 2011 Elsevier Inc. All rights reserved.
+doi:10.1016/j.cellsig.2011.09.025
+Contents lists available at SciVerse ScienceDirect
+Cellular Signalling
+journal homepage: www.elsevier.com/locate/cellsig
+
+
+mPGES-1 expression by interacting with EGR1 and NF-κB [1]. EGR1 is
+the key regulation factor of mPGES-1 expression [7]. DMC leads on
+the one hand to a repression of EGR1 expression and on the other
+hand it induces NF-κB translocations into the nucleus. Further inves-
+tigations revealed out that DMC treatment leads to an enhanced bind-
+ing capacity of NF-κB to speciﬁc NF-κB binding motives, but this was
+accompanied by an inhibition of transcription [1]. The transcriptional
+activity of NF-κB is regulated by different mechanisms. In unstimulated
+cells NF-κB complexes are retained in the cytoplasm by a family of in-
+hibitory proteins known as inhibitors of NF-κB (IκBs) [8]. After activa-
+tion of the cells NF-κB is released of this IκBs and translocates to the
+nucleus. The NF-κB family consists of ﬁve members (RelA(p65), RelB,
+c-Rel, p50/p105, p52/p100), that form complexes from their homo- or
+heterodimer. Furthermore, regulation of NF-κB transcription activity is
+also mediated by various posttranslational modiﬁcations like phosphor-
+ylation, acetylation, methylation and ubiquitination mechanisms at sev-
+eral amino-acid residues [9]. It is known that NF-κB can interact with
+proteins acting as transcriptional co-activators or co-repressors [8].
+However, a NF-κB binding site is located at the anti-sense strand of
+the mPGES-1 promoter. Therefore, it is questionable whether NF-κB
+has a direct or indirect effect on mPGES-1 transcriptional regulation or
+whether another NF-κB binding site is located further upstream of the
+mPGES-1 promoter [10]. The DMC mediated downregulation of EGR1
+may also be related to transcriptional regulation mechanisms. The
+human EGR1 promoter contains several putative transcription factor
+binding sites [11] which also includes a NF-κB binding motif, that has
+been shown to be involved in transcriptional regulation of EGR1 expres-
+sion [12].
+To further clarify the molecular mechanism leading to inhibition
+of EGR1 transcription and therefore inhibition of mPGES-1 and PGE2
+production after DMC treatment we investigated the role of NF-κB
+in this pathway.
+2. Materials and methods
+2.1. Cells and reagents
+HeLa (human cervix carcinoma) cells were purchased from
+“Deutsche Sammlung für Mikroorganismen und Zellkulturen” (DSMZ,
+Braunschweig, Germany) and cultured in RPMI medium 1640. Medium
+contained high glucose, GlutaMAX, 10% FCS. Medium and FCS were
+purchased from Invitrogen (Germany) as well as 100 units/ml peni-
+cillin G and 100 mg/ml streptomycin. Cells were cultured at 37 °C in
+an atmosphere containing 5% CO2. DMC was synthesized by WITEGA
+Laboratorien Berlin-Adlershof GmbH. The identity and purity of
+dimethylcelecoxib was determined using 1H NMR and liquid chro-
+matography tandem mass spectrometry (LC/MS–MS) as described
+previously [13–14] and was N99%. Recombinant human interleukin
+1 beta (IL-1β) and recombinant human tumor necrosis factor alpha
+(TNFα) were purchased from PeproTech (London, UK).
+2.2. Plasmid constructs
+The genomic DNA fragment of the human EGR1 promoter
+(Fig. 1A) was ampliﬁed by PCR with primers containing a KPNI or
+XhoI restriction site (5′-ggc cgg tac ccg tcg gtt cgc tct cac ggt ccc-3′
+and 5′-gca gct cga ggc tgg atc tct cgc gac tcc-3′) using genomic DNA
+of HeLa cells as template and HotStartTaq Plus DNA Polymerase
+(Qiagen). PCR conditions: 10 min 95 °C, 3 min 95 °C, 1 min 63 °C,
+2 min 72 °C, repeated 30 times, ending with a ﬁnal 72 °C step for
+10 min. The resulting EGR1 promoter PCR product was digested
+with XhoI and KPNI and cloned into the pGL4.10 vector (Promega;
+a kind gift of AG Suess) and further designated as EGR1 promoter
+(Fig. 1B). The EGR1 promoter construct containing a mutated NF-κB
+binding site, freely adapted from Thierry Virolle [12], was generated
+by site directed mutagenesis PCR with primers containing the KPNI or
+a MluI restriction site (5′-ggc cgg tac ccg tcg gtt cgc tct cac ggt ccc-3′
+and 5′-tgc tcc tta tat gga cgc gtc ggg tcg cag ct-3′) using the EGR promot-
+er construct of the pGL4.10 vector (Fig. 1B) as template and HotStartTaq
+Plus DNA Polymerase (Qiagen). PCR conditions: 10 min 95 °C, 3 min
+95 °C, 1 min 68.5 °C, 2 min 72 °C, repeated 30 times, ending with a
+ﬁnal 72 °C step for 10 min. The resulting PCR product was used as prim-
+er in a second PCR with an additional primer containing a XhoI restric-
+tion site (5′-gca gct cga ggc tgg atc tct cgc gac tcc-3′). Template was
+again the EGR promoter construct of the pGL4.10 vector (Fig. 1B). The
+resulting PCR product was digested with XhoI and KPNI and cloned
+into the pGL4.10 vector and further designated as EGR1 promoter mut
+NF-κB (Fig. 1B). The MluI restriction site was used as positive control
+to verify the insertion of the point mutation. All PCR products were ver-
+iﬁed by sequencing.
+2.3. Transfection and luciferase assay
+Transient transfection was performed with TransPass HeLa trans-
+fection reagent (New England Biolabs) according to the manufac-
+turer's protocol for adherent cells. HeLa cells (1×105) were seeded
+on Greiner 6 well or 12 well plates with 1 ml or 500 μl of culture me-
+dium 1 day before transfection. The cells were transfected with 1.5 μg
+or 0.7 μg of the distinct ﬁreﬂy luciferase reporter vectors and 1 μg or
+0.5 μg of the Renilla luciferase control reporter vector (pRL-TK, Pro-
+mega) using 7.5 μl or 4 μl TransPass HeLa transfection reagent. In
+siRNA experiments 25 nM Silencer© Select siRNA of NF-κB(p65)
+RelA, HDAC1 or Silencer© Select Negative Control purchased from
+Ambion (Invitrogen GmbH; Darmstadt; Germany) was used. 1 day
+after transfection, the cells were incubated for 24 h with or without
+TNFα (5 ng/ml)+IL-1β (1 ng/ml) and simultaneously treated with
+different concentrations of DMC (0.1–20 μM) or 0.1% DMSO (dimeth-
+yl sulfoxide) (DMC was solved in DMSO). The luciferase assay was
+performed with luciferase substrate puffer (Tricine 20 mM; (MgCO3)
+4 Mg(OH)2×5H2O 2.67 mM; MgSO4×7H2O 1.07 mM; Ethylenedia
+mine-tetraacetic acid (EDTA) 100 μM; 3,3′-Diethylthiatricarbocyanine
+iodide (DTTC) 0.33 mg/ml; Co-Enzyme A 0.213 mg/ml; D-Luciferin
+470 mM) and a luminometer (Mithras LB 940, Berthold technologies
+GmbH & Co.KG, Bad Wildbad, Germany) according to the manufac-
+turer's instructions. The activity of ﬁreﬂy luciferase was normalized to
+the RLU of Renilla luciferase (0.1 M NaCl; 25 mM Tris–HCl [pH 7.5];
+0.147 mg/ml CaCl2; 900 nM Coelenterazine). Data represent the
+mean+/−S.E.M. of at least three independent experiments.
+2.4. Western blot assay
+HeLa cells were seeded at a density of 1.8 ×106 cells per dish in
+medium containing 10% FCS and incubated for 48 h at 37 °C. Cells
+C
+A
+C
+H3
+F
+F
+F
+SP1
+SP1
+SP1
+NF
+B
+434
+EGR1
+B
+O
+F
+N
+N
+CH3
+SP1
+SP1
+SP1
+NF
+B
+434
+Luciferase
+-723 to -1
+Dimethylcelecoxib
+(DMC)
+S
+O
+NH2
+SP1
+SP1
+SP1
+mut
+NF
+B
+434
+Luciferase
+-723 to -1 
+-723 to -1
+TATA
+TATA
+TATA
+Fig. 1. EGR1 promoter luciferase constructs, and structure of DMC. (A) The human EGR1
+promoter. (B) EGR1 luciferase reporter gene constructs −723 to −1 bp and with a
+mutated NF-κB binding site (about −434). (C) structural formula of dimethylcelecoxib.
+461
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+were then stimulated with or without TNFα (5 ng/ml)+IL-1β
+(1 ng/ml) and simultaneously treated with increasing concentra-
+tions of DMC (10–30 μM) for 1 h. Nuclear extracts for western blot
+were prepared in the following manner: Cells were gently scrapped
+and washed in ice-cold phosphate-buffered saline. Cells were aspi-
+rated in NP-40 lysis buffer (10 mM Tris–HCl [pH 7.4]; 10 mM NaCl;
+3 mM MgCl2; 1 mM EDTA; 0.1% NP-40 and Roche complete (Roche
+Mannheim)) and centrifuged for 10 min at 4 °C. Pellets were washed
+with TKM (TKM=Tris–potassium–magnesium) buffer (50 mM Tris–
+HCl [pH 7.4]; 250 mM sucrose; 25 mM KCl; 5 mM MgCl2; 1 mM EDTA
+and Roche complete), brieﬂy centrifuged and resuspended by soniﬁca-
+tion in TKM buffer. Whole cell extracts for western blot were prepared
+by the following procedure: Cells were gently scrapped and washed in
+ice-cold phosphate-buffered saline. Cells were aspirated in lysis buffer
+(50 mM Tris–HCl [pH 7.4]; 250 mM NaCl; 0.5% NP-40; 10% glycerol;
+0.1 mM EDTA; Roche complete (Roche Mannheim)) and disrupted by
+repeated passage through a 21-gauge, followed by a constant agitation
+for 30 min on ice and a centrifugation step of 20 min at 12,000 rpm. The
+supernatant contains the whole cell extract. Immunoblotting was
+performed as described previously [15]. Brieﬂy, the protein content
+of lysates was quantiﬁed using the Bradford method (Biorad, Germany).
+Aliquots of 50 μg protein were separated onto a 10–15% SDS-polyacryl-
+amide gel and transferred to a nitrocellulose membrane (Hybond-C,
+Amersham). Blocked membranes were incubated with the respective
+primary antibody directed against NF-κB (rabbit polyclonal, NF-κB
+(p65); Cell Signaling) or HDAC1 (rabbit polyclonal, HDAC1, Cell Signal-
+ing). Anti-β-actin antibody (mouse monoclonal; Sigma) was used
+as loading control. The blots were incubated with IRDye 680 con-
+jugated goat anti-rabbit IgG(H +L) or IRDye 800CW conjugated
+goat
+anti-mouse
+IgG(H+L)
+secondary
+antibodies
+purchased
+from LI-COR (Bad Homburg, Germany). Membranes were analyzed
+with the Odyssey infrared scanner from LI-COR (Bad Homburg,
+Germany).
+2.5. Nuclear extract preparation and Electrophoretic Mobility Shift Assay
+(EMSA)
+HeLa cells were seeded and treated as described above for western
+blot assay. Nuclear extracts for EMSA were prepared as following:
+Cells were gently scrapped and washed in ice-cold phosphate-buffered
+saline. Then the cells were allowed to swell in ice-cold hypotonic buffer
+containing 10 mM HEPES–KOH [pH 7.9]; 10 mM KCl; 1.5 mM MgCl2;
+0.5 mM DTT; 1 mM PMSF; 1 mM Na3VO4 and Roche complete for
+15 min on ice. Afterwards NP-40 was added to a ﬁnal concentration of
+0.5%. The nuclei were recovered by centrifugation (2500 rpm, 5 min,
+4 °C). The pellets were resuspended in high-salt buffer containing
+20 mM HEPES [pH 7.9]; 420 mM NaCl; 1.2 mM MgCl2; 0.5 mM DTT;
+0.2 mM EDTA; 25% glycerol; 0.5 mM PMSF; 1 mM Na3VO4 and Roche
+complete, followed by incubation on ice for 20 min. The nuclear extracts
+were recovered by centrifugation and protein concentration was deter-
+mined by the method of Bradford (Bio-Rad). Synthetic double-stranded
+oligonucleotides corresponding to the NF-κB binding motif 5′-
+GGGRNNYYCC-3′ (5′-agt tga ggg gac ttt ccc agg-3′) 5′-labeled with
+IRD700 were used. For competition assays the identical unlabeled oligo-
+nucleotide was used. Binding reactions were conducted with 5 μg of nu-
+clear extract, 1 μg of poly-(dI-dC) and 250 fmol IRD700 end labeled
+oligonucleotide in binding buffer (12 mM HEPES [pH 7.9]; 4 mM Tris–
+HCl [pH 7.9]; 60 mM KCl; 0.6 mM DTT; 0.6 mM EDTA; 5 mM MgCl2
+and 12% glycerol) at 22 °C for 30 min in a ﬁnal volume of 20 μl. For
+supershift assays, an antibody against NF-κB(p65)RelA or HDAC1
+(3 μg/reaction) was incubated with the reaction mixture for 30 min at
+22 °C before the addition of IRD700 labeled oligonucleotide. For com-
+petition assays, 100-fold molar excess consensus oligonucleotide
+was used. Binding complexes were resolved in a non-denaturating
+4% polyacrylamide gel electrophoresis in a tris borate buffer
+system, after which the gel was analyzed with an infrared Odyssey
+scanner.
+2.6. Immunoprecipitation
+Whole cell extract was produced as described for western blot.
+Whole cell extract was precleared by incubation with 1.0 μg of the
+appropriate control IgG (corresponding to the host species of the pri-
+mary antibody (anti-rabbit, Santa Cruz)), together with 20 μl of ap-
+propriate suspended Protein A/G-Agarose (Santa Cruz) for 30 min
+at 4 °C. Bead pellet was kept as negative control (NC). 2 μg of
+HDAC1 antibody (rabbit polyclonal, HDAC1, Cell Signaling) was
+added to 500 μg total cellular protein and incubated overnight at
+4 °C. 30 μg of cell lysates was used as positive control (PC). 20 μl of
+Protein A/G PLUS-Agarose was added and incubated at 4 °C on a ro-
+tating device for 1 h. Precipitates were collected by centrifugation
+at 2500 rpm for 5 min at 4 °C. Pellet and NC were washed three
+times (10 min) with 1.0 ml IP buffer. Last washing was performed
+with Tris–HCl [pH 7.4] for 10 min. After ﬁnal wash, pellets were
+resuspended in Lämmlibuffer and analyzed by SDS PAGE.
+2.7. Chromatin Immunoprecipitation assay (ChIP Assay)
+1.8 mil HeLa cells were seeded in 15 cm dishes. Cells were stimulat-
+ed with or without TNFα (5 ng/ml)+IL-1β (1 ng/ml) and simulta-
+neously treated with DMC (10 μM) for 1 h. For inhibition of HDAC
+activity we used trichostatin A (Cayman Chemical Company) in a ﬁnal
+concentration of 1 μM. Stimulation was stopped by adding formalde-
+hyde at a ﬁnal concentration of 1% and incubate at room temperature
+for 15 min to cross-link proteins with DNA. Cross-linking reaction was
+terminated by adding glycine to a ﬁnal concentration of 0.125 M. Cells
+were pelleted by centrifugation and washed twice with ice cold PBS.
+The nuclei were extracted by an incubation on ice for 10 min with
+Pipes-buffer (5 mM PIPES [pH 8.0]; 85 mM KCl, 0.5% NP40) followed
+by soniﬁcation and centrifugation. Protein concentration of supernatant
+was determined by Bradford method (Biorad, Germany). For the immu-
+noprecipitation step 500 μg protein was used, another 500 μg was taken
+as input control. The chromatin solution was precleared by adding 20 μl
+Protein A/G PLUS-Agarose and 1.0 μg of the appropriate control IgG
+(corresponding to the host species of the primary antibody (anti-rabbit,
+Santa Cruz)) followed by an incubation for 30 min at 4 °C. Bead pellet
+was kept as negative control (NC). 2 μg of HDAC1 antibody (rabbit poly-
+clonal, HDAC1, Cell Signaling) was added to the protein/DNA extract
+and incubated overnight at 4 °C. The next day 20 μl Protein A/G PLUS-
+Agarose was added and incubated for 2 h at 4 °C on a spinning wheel.
+Beads were harvested by centrifugation, washed twice with 1 ml
+RIPA-buffer 5 min (10 mM Tris–HCl [pH 8.1]; 150 mM NaCl; 1% NP-
+40; 10% SDS; 0.5% Na-desoxycholate), afterwards pellets were washed
+four times with TE Buffer (10 mM Tris–HCl [pH 8.1]; EDTA 1 mM) and
+resuspended in 250 μl elution-buffer (1% SDS; 0.1 M NaHCO3). Cross-
+links were reversed by incubating the immunoprecipitate at 67 °C to-
+gether with 20 μl NaCl 5 M and 6 μl RNase A (Machery Nagel) overnight.
+Next day 30 μl of 1 M Tris–HCl [pH 6.5]:0.5 M EDTA in a 2:1 relation was
+added together with proteinase K (Invitrogen) and incubated at 45 ° C
+for 60 min. Proteins were removed by phenol–chloroform extraction.
+DNA was precipitated by adding Na-acetate (3 M), ethanol 96% and
+1 μl glycogen (as DNA vehicle) (Invitrogen) for 30 min at −20 °C.
+After centrifugation the DNA-pellet washed with 70% ethanol, dried
+and solved in water. Afterwards the EGR1 promoter was ampliﬁed by
+PCR (Primers: 5′-ggc cgg tac ccg tcg gtt cgc tct cac ggt ccc-3′ and 5′-
+gca gct cga ggc tgg atc tct cgc gac tcc-3′) using 1 μl DNA as template
+and HotStartTaq Plus DNA Polymerase (Qiagen). PCR conditions:
+10 min 95 °C, 3 min 95 °C, 1 min 63 °C, 2 min 72 °C, repeated 30
+times, ending with a ﬁnal 72 °C step for 10 min. The resulting PCR-
+product was separated on an agarose gel and stained with ethidium
+bromide.
+462
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+2.8. HDAC activity assay
+To determine HDAC activity we used a HDAC activity assay kit
+from Cayman Chemical Company and perform it according to the
+manufacturer. Positive control in the kit is human recombinant
+HDAC1. For inhibition of HDAC activity it is recommended to use tri-
+chostatin A in a ﬁnal concentration of 1 μM.
+2.9. Statistics
+Data are presented as mean+/−standard error of the mean
+(S.E.M.). The GraphPad Prism 5 computer software was used for sta-
+tistical analyses. Statistics were analyzed using univariate analysis of
+variance (ANOVA) followed by t-tests. p values of b0.05 were consid-
+ered statistically signiﬁcant.
+3. Results
+3.1. DMC inhibits EGR1 promoter activity by inﬂuencing NF-κB
+Our previous data demonstrated that DMC inhibits mPGES-1
+expression after stimulation of HeLa cells with IL-1β and TNFα by
+interacting with EGR1 and NF-κB [6]. DMC inhibited thereby EGR1
+expression and induced the translocation of NF-κB to the nucleus.
+Even nuclear NF-κB bound to DNA containing NF-κB binding sites
+the transactivation activity of NF-κB was inhibited. As the human
+EGR1 promoter contains similar transcription factor binding sites
+like the human mPGES-1 promoter we examined if inhibition of
+EGR1 expression after DMC treatment is mediated by a repression
+of the EGR1 promoter activity. Therefore, HeLa cells were transiently
+transfected with the human EGR1 promoter-luciferase construct
+(Fig. 1B), stimulated with IL-1β/TNFα and co-treated with increasing
+concentrations of DMC or vehicle. Treatment of HeLa cells with IL-
+1β/TNFα increased luciferase activity of the transfected EGR1 pro-
+moter-luciferase construct about twofold. Simultaneous treatment
+with increasing concentrations of DMC led to a dose-dependent, sig-
+niﬁcant downregulation of luciferase activity of about 20% (Fig. 2A).
+Next we mutated the NF-κB binding motif within the EGR1 promoter
+construct (Fig. 1B) und transfected HeLa cells with this EGR1 promoter
+mut NF-κB construct. As shown in Fig. 2B the inhibitory effect of DMC
+after IL-1β/TNFα stimulation was abolished in the EGR1 promoter
+mut NF-κB construct, indicating that the inhibitory effect of DMC on
+the EGR1 promoter could be repealed by a mutation of the NF-κB bind-
+ing motif.
+3.2. DMC and NF-κB(p65)RelA
+Next we determined which subunits of NF-κB (e.g. p50, p65) are
+responsible for the inhibitory effect of DMC on EGR1 transcription.
+Therefore, we transfected HeLa cells with 25 nM NF-κB(p65)RelA
+siRNA or siRNA negative control and additionally with the EGR1 pro-
+moter-luciferase construct, treated these cells with IL-1β/TNFα and
+DMC and measured the luciferase activity. We observed that downre-
+gulation of the EGR1 promoter activity by DMC could be prevented by
+downregulation of NF-κB(p65)RelA protein expression using siRNA
+(Fig. 3A). Inhibition of NF-κB(p65)RelA expression was veriﬁed by
+western blot analysis (Fig. 3B).
+3.3. DMC and HDAC1
+After nuclear translocation NF-κB, especially (p65)RelA, associates
+with several transcriptional co-activators or co-repressors such as
+p300/CBP or HDAC1-3, respectively [8]. Especially binding of NF-κB
+to HDAC1 is associated with inhibition of the transactivation activity
+of NF-κB [16]. Therefore, we examined the effect of DMC on the
+nuclear expression level of HDAC1 protein in HeLa cells after IL-
+1β/TNFα treatment by western blot analysis. The nuclear protein
+level of HDAC1 was not affected, neither by treatment of HeLa cells
+with IL-1β/TNFα nor by co-treatment with DMC (Fig. 4A). Next we
+investigated a possible inﬂuence of DMC on the HDAC activity. Using
+a commercial available HDAC activity assay we detected a signiﬁcant
+increase of HDAC activity in nuclear extract of IL-1β/TNFα stimulat-
+ed and DMC treated HeLa cells in comparison to stimulated HeLa
+cells without DMC treatment (Fig. 4B). Taken together we show
+that DMC does not inﬂuence the nuclear HDAC1 expression level,
+but the HDAC activity is enhanced under DMC inﬂuence.
+To demonstrate a direct interaction between NF-κB(p65)RelA
+and HDAC1 after treatment of HeLa cells with DMC we performed
+A
+***
+***
+B
+*
+**
+**
+DMC [µM]   0
++
+0
++
+10
++
+20
++
+0.01
++
+5
++
+1
++
+0.1
+Luciferase
+TATA
+Luciferase
+TATA
+mut
+NF-κB
+NF-κB
+IL-1β β / TNFα
+IL-1β β / TNFα
+DMC [µM]    
+0
++
+10
++
+20
++
+5
++
+0
+SP1
+SP1
+SP1
+434
+SP1
+SP1
+SP1
+434
+Fig. 2. EGR1-promoter-luciferase activity in HeLa cells after IL-1β/TNFα stimulation and DMC treatment. (A) HeLa cells were transiently transfected with the human EGR1 promoter
+luciferase construct and stimulated with IL-1β/TNFα, simultaneously treated with increasing concentrations (0–20 μM) of DMC and analyzed in luciferase assay. (B) HeLa cells were
+transiently transfected with the EGR1 promoter constructs with or without the mutated NF-κB motif and stimulated with IL-1β/TNFα and simultaneously treated with 5 μM; 10 μM
+and 20 μM of DMC. Luciferase activity was detected using D-Luciferin and measured by a luminometer according to the manufacturer's instructions. Renilla luciferase was used as
+transfection control. All experiments were carried out at least three times; data are mean±S.E.M.*pb0.05;**pb0.01;***pb0.001.
+463
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+co-immunoprecipitation experiments of NF-κB(p65)RelA and HDAC1
+(Fig. 5). Immunoprecipitations were performed on whole-cell extracts
+using an anti-HDAC1 antibody. As shown in Fig. 5 NF-κB(p65)RelA
+was co-immunoprecipitated with HDAC1 and the level of NF-κB(p65)
+RelA was signiﬁcantly increased after DMC treatment. In conclusion,
+treatment of HeLa cells with DMC leads to the formation of a complex
+between NF-κB(p65)RelA and HDAC1.
+3.4. NF-κB(p65)RelA/HDAC1 complex binds to NF-κB speciﬁc binding
+sites or the EGR1 promoter after DMC treatment
+Next we investigated whether or not the complex between NF-κB
+(p65)RelA and HDAC1 is also detectable in complex with DNA. First
+we tested the DNA binding properties of the NF-κB(p65)RelA–
+HDAC1 complex on DNA-oligonucleotides that comprise the NF-κB
+consensus binding site by Electrophoretic Mobility Shift Assays. We
+extracted nuclear proteins of unstimulated cells, IL-1β/TNFα simulat-
+ed cells and stimulated cells that were additionally treated with DMC.
+As shown in Fig. 6 binding of NF-κB to the oligonucleotide increases
+after stimulation and could be further enhanced by co-treatment of
+cells with DMC. Speciﬁcity of binding was conﬁrmed using a 100-
+fold molar excess of unlabeled oligonucleotides containing the con-
+sensus NF-κB binding sites. To verify the protein composition of the
+detected DNA-protein complex we performed supershift experiments
+using speciﬁc antibodies against NF-κB(p65)RelA and HDAC1, respec-
+tively. Co-incubation of nuclear protein with speciﬁc antibodies
+against DNA-binding proteins, leads either to a supershift, detectable
+as an additional band with higher molecular weight, or to quenching
+of the respective DNA-protein binding complex, due to the fact, that
+binding of the antibody to the protein anticipates its binding to the
+DNA. Fig. 6 demonstrates that the signal of the DNA–protein complex
+could be diminished by co-incubation of nuclear extracts of stimulat-
+ed and DMC treated cells with antibodies directed against NF-κB
+(p65)RelA and HDAC1, respectively. These data indicate, that in stim-
+ulated HeLa-cells co-treated with DMC a protein complex is generat-
+ed composed of NF-κB and HDAC1 that binds to the NF-κB consensus
+sequence. Furthermore, to ensure that the NF-κB–HDAC1–DNA com-
+plex interacts also with the EGR1 promoter we performed chromatin-
+immunoprecipitation assays. We treated HeLa cells with IL-1β/TNFα
+with or without 10 μM DMC for 1 h. Moreover TSA was used as an
+inhibitor of HDAC activity. The cells were subjected to 1% formalde-
+hyde which cross-links proteins with DNA. Nuclear extract was
+***
+A
+B
+*** ***
+***
+DMC [μM]   
+0
++
+0
++
+10
++
+20
++
+30
+37 kDa
+HDAC1
+62 kDa
+   
+0
++
+0
++
+10
++
+20
++
+30
+IL-1β β / TNFα
+IL-1β β / TNFα
+DMC [μM]
+β-actin
+Fig. 4. Western blot analysis of HDAC1 and HDAC activity after DMC treatment. (A) Western blot analysis of HDAC1 in stimulated HeLa cells incubated with increasing amount of
+DMC. Nuclear extract of HeLa cells was prepared and 50 µg protein was separated onto a 12% SDS polyacrylamide gel and transferred to nitrocellulose membranes. HDAC1 was
+detected using speciﬁc rabbit polyclonal antibodies. The expression of β-actin was used as loading control. (B) HDAC1 activity assay. Stimulated HeLa cells were incubated with
+increasing amount of DMC. Whole cell extracts were produced and HDAC1 activity was analyzed according to the assay manual. All experiments were carried out in at least
+three times; data are mean±S.E.M. *pb0.05; **pb0.01; ***pb0.001.
+A
+***
+DMC [µM]   
+0
++
+0
++
+10
+0
++
++
+0
++
++
+10
++
+siRNA RelA
+siRNA
+RelA
+siRNA
+negative
+control
+NF-κ
+ 
+B
+ 
+IL-1β β / TNFα
+B(p65)
+RelA
+65 kDa
+β-actin
+37 kDa
+Fig. 3. Repression of NF-κB(p65)RelA expression using siRNA and its inﬂuence on the
+EGR1 promoter. (A) Stimulated HeLa cells were transiently transfected with the
+EGR1 promoter construct and additionally treated with NF-κB(p65)RelA siRNA, with
+or without co-treatment of 10 μM DMC. The luciferase activity was measured by
+chemiluminescence. All experiments were carried out at least three times; data are
+mean±S.E.M. *pb0.05; **pb0.01; *** pb0.001. (B) HeLa cells were transiently trans-
+fected with NF-κB(p65)RelA siRNA, harvested and analyzed by western blot analysis.
+Whole cell extracts of HeLa cells were prepared, 50 μg protein was separated onto a
+12% SDS polyacrylamide gel and transferred to nitrocellulose membranes. NF-κB
+(p65)RelA was detected using a speciﬁc anti-NF-κB(p65)RelA rabbit polyclonal anti-
+body. The expression of β-actin was used as loading control. A representative experi-
+ment out of three is shown.
+464
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+immunoprecipitated with a speciﬁc anti-HDAC1 antibody, which led
+to a co-precipitation of the possible cross-linked DNA. Subsequently,
+DNA was applied to PCR using speciﬁc primers for the EGR1 promoter.
+As shown in Fig. 7 we detected an increased level of the EGR1 promoter
+PCR-fragment in stimulated HeLa cells co-treated with DMC. TSA co-
+treatment diminished this effect so the HDAC1 activity seems to be nec-
+essary for this interaction. So we could show in ChIP Assay and EMSA an
+increased interaction between the NF-κB(p65)RelA–HDAC1-complex
+and the NF-κB binding motif in the EGR1 promoter in the presence of
+DMC.
+3.5. HDAC1 and the EGR1 promoter in the presence of DMC
+Since DMC treated cells formed a NF-κB(p65)RelA–HDAC1 complex
+which binds to the EGR1 promoter dependent on the HDAC1 activity,
+we treated stimulated HeLa cells, transfected with the EGR1 promoter-
+luciferase construct, with DMC and siRNA against HDAC1. DMC treat-
+ment inhibited EGR1 promoter activity induced by stimulation of
+HeLa cells with IL-1β/TNFα. Repression of HDAC1 expression (Fig. 8A)
+repealed the inhibitory effect of DMC on EGR1 promoter activity
+(Fig. 8B). In conclusion, treatment of HeLa cells with DMC led to an en-
+hanced formation of a complex consisting of NF-κB and HDAC1 that
+bound to the EGR1 promoter responsible for downregulation of EGR1
+expression. EGR1 downregulation seems to be the major effect of
+DMC leading to transcriptional inhibition of mPGES-1.
+4. Discussion
+Our previous work demonstrated that treatment of IL-1β/TNFα
+stimulated HeLa cells with DMC leads to a repression of mPGES-1
+transcription and therefore to a reduced PGE2 production, that was
+mainly due to a downregulation of EGR1 and interference with
+NF-κB [1]. Downregulation of EGR1 after DMC treatment seems to
+be the most important mechanism responsible for the observed re-
+pression of mPGES-1, as we demonstrated that mPGES-1 expression
+was fully reconstituted by EGR1 overexpression [1]. Here we describe,
+NF-κB(p65)
+RelA
+DMC [μM]   
+0
++
+0
++
+10
++
+0
++
++
+10
++
++
+0
++
+Anti  RelA  
+Anti  HDAC1  
+100x Consensus  
++
+10
++
++
+0
++
++
+10
++
+IL-1β β / TNFα
+Fig. 6. Determination of NF-κB binding capability at a NF-κB consensus motif by Electrophoretic Mobility Shift Assay. HeLa cells were treated with IL-1β/TNFα and 10 μM DMC for
+1 h. Nuclear extracts (5 μg) were incubated with a IR700-labeled oligonucleotide containing a NF-κB consensus binding motif. anti-NF-κB(p65)RelA and anti-HDAC1 antibodies
+were used for supershift experiments. Speciﬁcity of binding was conﬁrmed using 100-fold molar excess of unlabeled oligonucleotides containing the consensus NF-κB binding
+site. A representative result of at least three independent experiments is shown.
+****
+NF-κB(p65)
+RelA
+DMC [μM]
+0
++
+0
++
+10
+whole cell
+extract control
+65 kDa
+IgG  
+control
+IP antibody
+HDAC1
+IP control
+HDAC1 
+ 
+62 kDa
+IP antibody
+IgG
+ 
+ 
+IL-1β β / TNFα
+Fig. 5. Co-immunoprecipitation of NF-κB(p65)RelA with HDAC1 after DMC treatment. HeLa cells were unstimulated, stimulated or stimulated and incubated with 10 μM DMC.
+Whole cell extracts of HeLa cells were prepared and 500 μg protein was incubated and precipitated with speciﬁc HDAC1 rabbit polyclonal antibodies. Proteins of the precipitate
+were reclaimed and separated onto a 12% SDS polyacrylamide gel and transferred to nitrocellulose membranes. NF-κB(p65)RelA was detected using speciﬁc mouse polyclonal
+antibodies. The precipitate of HDAC1 was used as loading control. Additional a whole cell extract as control and IgG antibody as negative control was used. All experiments were
+carried out in at least three times; data are mean±S.E.M. *pb0.05; **pb0.01; ***pb0.001.
+465
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+that the transactivation activity of NF-κB is inhibited after treatment
+of HeLa cells with DMC and that thereby also EGR1 expression is
+reduced.
+The EGR1 promoter includes a NF-κB binding motif that is impor-
+tant for the regulation of EGR1 [12]. After DMC treatment a complex
+containing NF-κB(p65)RelA and HDAC1 binds to this NF-κB binding
+motif and represses EGR1 transcription. Association of RelA with
+HDAC1 is dependent on phosphorylation of two threonine residues
+(T435 and T505) that could be phosphorylated by checkpoint kinase
+1 (Chk1) and an unknown kinase [17–18]. Thus DMC may inﬂuence
+these kinase activities. Another possibility is that DMC interacts di-
+rectly with HDAC1. Until now several potential target proteins of
+DMC have been proposed but a direct binding of DMC at these target
+proteins could not be demonstrated [19]. We could show that DMC
+intercalates in cellular membranes leading to changes in the physico-
+chemical properties of the membrane [20]. Possibly due to this bio-
+physical interplay DMC inﬂuences cellular signaling pathways.
+DMC has been often compared to its chemical derivative cele-
+coxib and it is obvious that both substances inﬂuence similar target
+proteins [19]. Only the prostaglandin synthesis pathway seems to
+be an exception as celecoxib inhibits COX-2-activity and mPGES-1
+activity, whereas DMC inhibits mPGES-1 activity and expression
+but has no effect on COX-2 activity or expression [6]. This is of inter-
+est as activation of NF-κB is an important mechanism for the induc-
+tion of COX-2 and mPGES-1 expression after various stimuli [21].
+Nevertheless, COX-2 expression is regulated by further mechanisms
+like additional transcription factors (like Wnt/β-catenin) [22], mRNA
+stabilization mechanisms (HUR, CUG-binding protein 2, etc.) and trans-
+lational regulation mechanisms [23]. So in humans mPGES-1 expression
+can be affected independently of COX-2 expression which depicts that
+selective inhibition of PGE2 production by transcriptional targeting
+mPGES-1 is possible. This is of importance as COX-inhibition is related
+to various side effects which limited the long term use of selective or
+unselective COX-inhibitors in clinical treatment regimes. Nevertheless,
+celecoxib as well as other COX-2 inhibitors (e.g. rofecoxib) had gotten
+attention due to their beneﬁcial effects on various diseases like their
+anti-tumorigenic effects in patients with familial adenomatous polypo-
+sis (FAP) [24], as well as the prevention of experimental autoimmune
+encephalomyelitis (EAE) [25–26]. Both effects are mediated by COX-
+dependent and COX-independent mechanisms [15,25–27]. The COX-
+dependent mechanisms are mainly ascribed to the inhibition of PGE2
+production. Therefore, selective inhibition of PGE2 production may be
+as useful as inhibition of the complete prostanoid synthesis. This is con-
+ﬁrmed by several experiments using mPGES-1 (−/−) mice. These mice
+showed less severe symptoms of EAE [28] as well as a reduced incidence
+of intestinal tumorigenesis [29], indicating that selective inhibition of
+mPGES-1 is a promising therapeutic target for multiple sclerosis and
+cancer. Furthermore, also the formation of a complex between NF-κB
+(p65)RelA and HDAC1 after DMC treatment could have a beneﬁcial ef-
+fect on multiplesclerosis, as very recently it has been published that
+complex formation and deacetylation of NF-κB(p65)RelA by HDAC1/2
+is a critical mechanism for Schwann cell myelination [30]. NF-κB and
+HDAC1/2 act thereby in a coordinate fashion to regulate transcriptional-
+ly Schwann cell differentiation. Enhancing this effect, for example by
+DMC treatment, may have a therapeutic beneﬁt for several diseases
+where defects in myelin repair play a critical role.
+5. Conclusion
+In conclusion, we could demonstrate that treatment of cells with
+DMC leads to the formation of a complex between NF-κB(p65)RelA
+and HDAC1 that is mainly responsible for the inhibition of EGR1 tran-
+scription and subsequently inhibition of mPGES-1 transcription and
+PGE2 production. Inhibition of PGE2 production and complex formation
+between NF-κB(p65)RelA and HDAC1 are important anti-carcinogenic
+or EAE-protective mechanisms. Therefore, a substance like DMC, lacking
+siRNA
+HDAC1
+siRNA
+negative
+control
+62 kDa
+HDAC1
+A
+β-actin
+37 kDa
+B
+***
+IL-1β / TNFα
+0
++
+0
++
+10
+0
++
+0
++
+10
++
++
++
+siRNA HDAC1
+Fig. 8. The inﬂuence of HDAC1 siRNA on the human EGR1 promoter activity. (A) HeLa cells
+were transiently transfected with HDAC1 siRNA, harvested and analyzed by western blot
+analysis. Whole cell extract of HeLa cells was prepared and 50 μg protein was separated
+onto a 12% SDS polyacrylamide gel and transferred to nitrocellulose membranes. HDAC1
+was detected using an anti-HDAC1 speciﬁc rabbit polyclonal antibody. The expression of
+β-actin was used as loading control. A representative experiment is shown. (B) Stimulated
+HeLa cells were transiently transfected with the EGR1 promoter construct and addi-
+tionally treated with HDAC1 siRNA, with or without co-treatment of 10 μM DMC.
+The luciferase activity was measured by chemiluminescence. All experiments were
+carried out at least three times; data are mean±S.E.M.*pb0.05;**pb0.01;***pb0.001.
+IP HDAC1
+input
+EGR1 promoter
+(723 bp)
+EGR1 promoter
+**
+*
+(723 bp)
+IgG
+negative
+control
+input
+IL-1β / TNFα
+0
+0
++
+0
+0
++
+10
+0
++
+10
+1
+Fig. 7. Chromatin Immunoprecipitation assay. HeLa cells were treated with IL-1β/TNFα
+and 10 μM DMC for 1 h. TSA was used as an inhibitor of HDAC1 activity. DNA and pro-
+tein were cross-linked with 1% formaldehyde. Nuclear extracts were prepared and
+500 μg protein incubated and precipitated with a speciﬁc anti-HDAC1 rabbit polyclonal
+antibody. Co-immunoprecipitated DNA was recaptured and ampliﬁed by PCR using
+EGR1 promoter speciﬁc primers. Afterwards the PCR products were analyzed on a 1%
+agarose gel. Total input was used as loading control and a IgG antibody was used as
+negative control. All experiments were carried out at least three times; data are
+mean±S.E.M. *pb0.05; **pb0.01; ***pb0.001.
+466
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467
+
+
+the ability to block COX-2 but inhibiting PGE2 production as well as tar-
+geting various other proteins, may be a promising candidate for the use
+as anti-cancer drug and/or for multiple sclerosis.
+Acknowledgment
+The work was supported by European Graduate School “Roles of
+Eicosanoids in Biology and Medicine” (DFG GRK 757/1 and DFG Ge
+695).
+References
+[1] K. Deckmann, F. Rorsch, R. Steri, M. Schubert-Zsilavecz, G. Geisslinger, S. Grosch,
+Biochemical Pharmacology 80 (9) (2010) 1365–1372.
+[2] T.L. McLemore, W.C. Hubbard, C.L. Litterst, M.C. Liu, S. Miller, N.A. McMahon, J.C.
+Eggleston, M.R. Boyd, Cancer Research 48 (11) (1988) 3140–3147.
+[3] B. Rigas, I.S. Goldman, L. Levine, The Journal of Laboratory and Clinical Medicine
+122 (5) (1993) 518–523.
+[4] E.E. Vanderveen, R.C. Grekin, N.A. Swanson, K. Kragballe, Archives of Dermatology
+122 (4) (1986) 407–412.
+[5] D. Kamei, M. Murakami, Y. Nakatani, Y. Ishikawa, T. Ishii, I. Kudo, Journal of
+Biological Chemistry 278 (21) (2003) 19396–19405.
+[6] I. Wobst, S. Schiffmann, K. Birod, T.J. Maier, R. Schmidt, C. Angioni, G. Geisslinger,
+S. Grosch, Biochemical Pharmacology 76 (1) (2008) 62–69.
+[7] H. Naraba, C. Yokoyama, N. Tago, M. Murakami, I. Kudo, M. Fueki, S. Oh-Ishi, T.
+Tanabe, Journal of Biological Chemistry 277 (32) (2002) 28601–28608.
+[8] N.D. Perkins, Nature Reviews Molecular Cell Biology 8 (1) (2007) 49–62.
+[9] B. Huang, X.D. Yang, A. Lamb, L.F. Chen, Cellular Signalling 22 (9) (2010)
+1282–1290.
+[10] H. Fahmi, Current Opinion in Rheumatology 16 (5) (2004) 623–627.
+[11] J.L. Schwachtgen, C.J. Campbell, M. Braddock, DNA Sequence 10 (6) (2000)
+429–432.
+[12] R. Thyss, V. Virolle, V. Imbert, J.F. Peyron, D. Aberdam, T. Virolle, EMBO Journal 24
+(1) (2005) 128–137.
+[13] L. Brautigam, J.U. Nefﬂen, G. Geisslinger, Journal of Chromatography. B, Analytical
+Technologies in the Biomedical and Life Sciences 788 (2) (2003) 309–315.
+[14] R. Franzen, A. Pautz, L. Brautigam, G. Geisslinger, J. Pfeilschifter, A. Huwiler,
+Journal of Biological Chemistry 276 (38) (2001) 35382–35389.
+[15] T.J. Maier, K. Schilling, R. Schmidt, G. Geisslinger, S. Grosch, Biochemical Pharma-
+cology 67 (8) (2004) 1469–1478.
+[16] B.P. Ashburner, S.D. Westerheide, A.S. Baldwin Jr., Molecular and Cellular Biology
+21 (20) (2001) 7065–7077.
+[17] J.M. O'Shea, N.D. Perkins, The Biochemical Journal 426 (3) (2010) 345–354.
+[18] K.J. Campbell, J.M. Witty, S. Rocha, N.D. Perkins, Cancer Research 66 (2) (2006)
+929–935.
+[19] A.H. Schonthal, Neurosurgical Focus 20 (4) (2006) E21.
+[20] T.J. Maier, S. Schiffmann, I. Wobst, K. Birod, C. Angioni, M. Hoffmann, J.J. Lopez, C.
+Glaubitz, D. Steinhilber, G. Geisslinger, S. Grosch, Journal of Molecular Medicine
+87 (10) (2009) 981–993.
+[21] M.C. Catley, J.E. Chivers, L.M. Cambridge, N. Holden, D.M. Slater, K.J. Staples, M.W.
+Bergmann, P. Loser, P.J. Barnes, R. Newton, FEBS Letters 547 (1–3) (2003) 75–79.
+[22] F. Nunez, S. Bravo, F. Cruzat, M. Montecino, G.V. De Ferrari, PloS One 6 (4) (2011)
+e18562.
+[23] K.A. Harper, A.J. Tyson-Capper, Biochemical Society Transactions 36 (Pt 3) (2008)
+543–545.
+[24] G. Steinbach, P.M. Lynch, R.K. Phillips, M.H. Wallace, E. Hawk, G.B. Gordon, N.
+Wakabayashi, B. Saunders, Y. Shen, T. Fujimura, L.K. Su, B. Levin, The New England
+Journal of Medicine 342 (26) (2000) 1946–1952.
+[25] K. Miyamoto, S. Miyake, M. Mizuno, N. Oka, S. Kusunoki, T. Yamamura, Brain 129
+(Pt 8) (2006) 1984–1992.
+[26] J. Ni, Y.Y. Shu, Y.N. Zhu, Y.F. Fu, W. Tang, X.G. Zhong, H. Wang, Y.F. Yang, J. Ren,
+M.W. Wang, J.P. Zuo, Journal of Neuroimmunology 186 (1–2) (2007) 94–103.
+[27] S. Grosch, T.J. Maier, S. Schiffmann, G. Geisslinger, Journal of the National Cancer
+Institute 98 (11) (2006) 736–747.
+[28] Y. Kihara, T. Matsushita, Y. Kita, S. Uematsu, S. Akira, J. Kira, S. Ishii, T. Shimizu,
+Proceedings of the National Academy of Sciences of the United States of America
+106 (51) (2009) 21807–21812.
+[29] M. Nakanishi, D.C. Montrose, P. Clark, P.R. Nambiar, G.S. Belinsky, K.P. Claffey, D.
+Xu, D.W. Rosenberg, Cancer Research 68 (9) (2008) 3251–3259.
+[30] Y. Chen, H. Wang, S.O. Yoon, X. Xu, M.O. Hottiger, J. Svaren, K.A. Nave, H.A. Kim,
+E.N. Olson, Q.R. Lu, Nature Neuroscience 14 (4) (2011) 437–441.
+467
+K. Deckmann et al. / Cellular Signalling 24 (2012) 460–467

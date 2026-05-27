@@ -1,0 +1,4714 @@
+e
+ n v
+ i r o
+ n m
+ e n t a l
+ t o
+ x
+ i c o l o
+ g y a
+ n
+ d p h a r m a c o
+ l o
+ g y 3 3 ( 2 0 1 2 ) 205–211
+Available
+ online
+ at
+ www.sciencedirect.com
+jo
+ u
+ r
+ n
+ al
+ hom
+ ep
+ age:
+ www.elsevier.com/locate/etap
+Characterization
+ of  human  DNA  polymerase
+   promoter
+ in
+response
+ to  benzo[a]pyrene
+ diol  epoxide
+Huifang
+ Zhu a,b, Yanfeng
+ Fan a, Jing
+ Shen a, Hongyan
+ Qi a, Jimin
+ Shao a,∗
+a Department
+ of
+ Pathology
+ and
+ Pathophysiology,
+ Zhejiang
+ University
+ School
+ of
+ Medicine,
+ Hangzhou
+ 310058,
+ China
+b Molecular
+ Medicine
+ and
+ Cancer
+ Research
+ Center,
+ Chongqing
+ Medical
+ University,
+ No.
+ 1
+ Medical
+ College
+ Road,
+ Chongqing
+ 400016,
+ China
+a
+ r  t  i  c
+ l
+ e  
+i  n  f  o
+Article
+ history:
+Received
+ 28
+ June
+ 2011
+Received
+ in
+ revised
+ form
+18 November
+ 2011
+Accepted
+ 4
+ December
+ 2011
+Available
+ online
+ 10
+ December
+ 2011
+Keywords:
+DNA
+ polymerase
+  (Pol
+ )
+Translesion
+ DNA
+ synthesis
+ (TLS)
+Promoter
+(±)-anti-Benzo[a]pyrene-7,8-diol-
+9,10-epoxide
+(BPDE)
+a
+ b  s
+ t  r  a  c  t
+DNA
+ polymerase
+ 
+ (Pol
+ ),
+ a
+ member
+ of
+ Y-family
+ DNA
+ polymerases,
+ can
+ synthesize
+ DNA
+with  moderate
+ ﬁdelity
+ on
+ undamaged
+ DNAs
+ and
+ replicate
+ accurately
+ in
+ vitro
+ thymine
+ gly-
+col,
+ 8-oxo-G
+ and
+ aromatic
+ adducts
+ such
+ as
+ benzo[a]pyrene
+ diol
+ epoxide
+ (BPDE).
+ However,
+ few
+studies
+ have
+ been
+ done
+ on
+ the
+ transcriptional
+ regulation
+ of
+ Pol
+ .
+ In
+ this
+ study,
+ we
+ predicted
+and
+ cloned
+ the
+ promoter
+ region
+ of
+ the
+ human
+ POLK
+ gene.
+ Through
+ the
+ analysis
+ of
+ deletion
+constructs
+ of
+ the
+ POLK
+ promoter,
+ we
+ demonstrated
+ that
+ the
+ region
+ −336/−141
+ contained
+repressing
+ elements
+ and
+ the
+ region
+ −141/+226
+ contained
+ positive
+ regulatory
+ elements
+ for
+transcription
+ of
+ human
+ Pol
+ . Furthermore,
+ quantitative
+ RT-PCR
+ showed
+ that
+ human
+ POLK
+mRNA
+ expression
+ was
+ dysregulated
+ in
+ FL
+ cells
+ treated
+ by
+ BPDE.
+ The
+ transcriptional
+ activ-
+ities
+ of
+ the
+ POLK
+ promoter
+ regions
+ −336/+437
+ and
+ +20/+437
+ were
+ signiﬁcantly
+ reduced
+ by
+BPDE
+ treatment,
+ indicating
+ that
+ transcription
+ factors
+ in
+ this
+ two  regions,
+ such
+ as
+ HSF1,
+ may
+regulate
+ the
+ transcription
+ of
+ human
+ POLK
+ gene
+ in
+ response
+ to
+ BPDE.
+©
+ 2011
+ Elsevier
+ B.V.
+ All
+ rights
+ reserved.
+1.
+ 
+Introduction
+In
+ eucaryote
+ cells
+ the
+ highly
+ stringent
+ replicative
+ DNA
+ poly-
+merases
+  and
+ 
+ are
+ unable
+ to
+ accommodate
+ the
+ damaged
+bases
+ in
+ their
+ active
+ sites,
+ resulting
+ the
+ progress
+ of
+ the
+ DNA
+replication
+ fork
+ was blocked
+ by
+ most
+ types
+ of
+ DNA
+ damage.
+However,
+ a
+ specialized
+ family
+ of
+ DNA
+ polymerases
+ are
+ able
+to
+ substitute
+ for
+ the
+ blocked
+ replicative
+ polymerase,
+ and
+ can
+bypass
+ the
+ damaged
+ bases
+ (Friedberg
+ et
+ al.,
+ 2005).
+ Most
+ of
+these
+ specialized
+ translesion
+ synthesis
+ polymerases
+ belong
+to
+ the
+ Y-family.
+ And
+ the
+ Y-family
+ of
+ DNA
+ polymerases
+ con-
+tains
+ four
+ in
+ human
+ cells:
+ Pol
+ , Pol
+ ,
+ Pol
+ , and
+ REV1
+ (Ogi
+ and
+Lehmann,
+ 2006).
+ They
+ can
+ carry
+ out
+ translesion
+ synthesis
+ with
+error-prone
+ and
+ error-free
+ depending
+ on
+ the
+ speciﬁc
+ lesion.
+ Pol
+ is
+ the
+ only
+ Y-family
+ of
+ polymerase
+ found
+ in
+ humans
+ which
+∗Corresponding
+ author.
+ Tel.:
+ +86
+ 571
+ 8820
+ 8209.
+E-mail
+ address:
+ shaojimin@zju.edu.cn
+ (J.
+ Shao).
+has
+ homologs
+ in
+ both
+ bacteria
+ (Din
+ B
+ or
+ Pol
+ IV
+ in
+ Escherichia
+ coli)
+and
+ archaea
+ (Dbh
+ in
+ Sulfolobus
+ acidocaldrius
+ and
+ Dpo4
+ in
+Sufolobus
+ solfataricus)  (Jarosz
+ et
+ al.,
+ 2007).
+ Pol
+ 
+ is
+ character-
+ized
+ by
+ its
+ ability
+ to
+ accurately
+ bypass
+ several
+ DNA
+ adducts
+ in
+vitro,
+ e.g.
+ thymine
+ glycol,
+ 8-oxo-G
+ and
+ aromatic
+ adducts
+ such
+as
+ benzo[a]pyrene
+ diol
+ epoxide
+ (Bavoux
+ et
+ al.,
+ 2005a)
+ and
+ has
+the
+ highest
+ potential
+ to
+ create
+ frameshift
+ mutations
+ opposite
+the
+ abasic
+ site
+ (Sherrer
+ et
+ al.,
+ 2011).
+ Pol
+  synthesizes
+ DNA
+ with
+a
+ low
+ to
+ moderate
+ ﬁdelity
+ with
+ the
+ error
+ frequencies
+ ranging
+from
+ 10−3 to
+ 10−4. It
+ is
+ specialized
+ for
+ the
+ efﬁcient
+ extension
+step
+ of
+ lesion
+ bypass
+ (Carlson
+ et
+ al.,
+ 2006;
+ Vasquez-Del
+ Carpio
+et
+ al.,
+ 2011)
+ and
+ plays
+ a
+ role
+ in
+ the
+ ﬁnal
+ nucleotide
+ excision
+repair
+ (NER)
+ DNA
+ gap-ﬁlling
+ step
+ (Ogi
+ and
+ Lehmann,
+ 2006).
+Benzo[a]pyrene
+ (BaP)
+ is
+ one
+ of
+ the
+ most
+ widely
+ stud-
+ied
+ polycyclic
+ aromatic
+ hydrocarbons
+ (PAHs),
+ which
+ are
+widespread
+ environmental
+ pollutants
+ that
+ have
+ been
+ found
+1382-6689/$
+ – see
+ front
+ matter
+ ©
+ 2011
+ Elsevier
+ B.V.
+ All
+ rights
+ reserved.
+doi:10.1016/j.etap.2011.12.002
+
+
+206
+ 
+e n v i r o
+ n m
+ e
+ n t a l t o
+ x
+ i c o l
+ o g
+ y a n d
+ p h
+ a r
+ m a c o l o
+ g
+ y
+ 3 3 ( 2 0 1 2 ) 205–211
+in
+ cigarette
+ smoke
+ and
+ charred
+ food,
+ as
+ well as
+ the
+ exhaust
+from
+ internal
+ combustion
+ engines
+ and
+ coal-burning
+ fac-
+tories.
+ BaP
+ is
+ metabolized
+ by
+ cytochrome
+ P450s
+ to
+ form
+the
+ 
+ultimate
+ 
+carcinogen,
+ 
+(±)-anti-benzo[a]pyrene-7,8-diol-
+9,10-epoxide
+ (BPDE).
+ BPDE
+ can
+ bind
+ covalently
+ to
+ DNA
+ or
+non-covalently
+ intercalate
+ into
+ double-stranded
+ DNA,
+ which
+result
+ in
+ bulky-adduct
+ DNA
+ damage
+ and
+ conformational
+abnormalities,
+ respectively
+ (Yang
+ and
+ Li,
+ 2005).
+ Our
+ research
+has
+ found
+ that
+ BPDE
+ could
+ lead
+ to
+ many
+ change
+ of
+ proteins
+that
+ be
+ involved
+ in
+ regulation
+ of
+ transcription,
+ cell
+ cycle,
+ apo-
+ptosis,
+ transport,
+ signal
+ transduction,
+ metabolism,
+ and
+ so
+forth
+ (Lu
+ et
+ al.,
+ 2009,
+ 2010;
+ Wang
+ et
+ al.,
+ 2011).
+ Low-ﬁdelity
+translesion
+ DNA
+ polymerase
+ can
+ be
+ activated
+ to
+ synthesis
+on
+ the
+ damaged
+ DNA
+ templates,
+ which
+ leads
+ to
+ mutagenesis
+and
+ can
+ account
+ for
+ the
+ cigarette
+ smoking-induced
+ lung
+ can-
+cers
+ (Chiapperino
+ et
+ al.,
+ 2005).
+ BPDE
+ treatment
+ induced
+ the
+re-localization
+ of
+ Pol
+  to
+ nuclear
+ foci
+ in
+ human
+ lung
+ carci-
+noma
+ H1299
+ cells,
+ and
+ Rad18-mediated
+ PCNA
+ ubiquitination
+can
+ regulate
+ the
+ location
+ of
+ Pol
+ 
+ (Bi
+ et
+ al.,
+ 2006).
+ Moreover,
+Pol
+ −/−mouse
+ embryonic
+ ﬁbroblasts
+ (MEFs)
+ failed
+ to
+ recover
+from
+ BPDE-induced
+ S-phase
+ arrest
+ (Bi
+ et
+ al.,
+ 2005),
+ suggest-
+ing
+ that
+ Pol
+  plays
+ a
+ role
+ in
+ translesion
+ synthesis
+ across
+ the
+BPDE-induced
+ DNA
+ damage.
+ However,
+ the
+ transcription
+ fac-
+tors
+ that
+ be
+ involved
+ in
+ the
+ regulation
+ of
+ the
+ POLK
+ gene
+ in
+BPDE
+ treatment
+ are
+ unknown.
+In
+ this
+ study,
+ using
+ bioinformatics
+ analysis
+ and
+ reporter
+gene
+ assays,
+ we  have
+ predicted,
+ cloned
+ and
+ characterized
+the
+ human
+ POLK
+ promoter
+ and
+ explored
+ crucial
+ transcrip-
+tion
+ factors
+ for
+ its
+ expression.
+ Furthermore,
+ we
+ found
+ that
+POLK
+ mRNA
+ expression
+ was dysregulated
+ in
+ FL
+ cells
+ treated
+by
+ BPDE.
+ The
+ transcription
+ factors
+ that
+ bind
+ to
+ this
+ two
+regions
+ −336/−141
+ and
+ +20/+226
+ of
+ the
+ POLK
+ promoter,
+ such
+as
+ HSF1,
+ may
+ regulate
+ the
+ transcription
+ of
+ human
+ POLK
+ gene
+in
+ response
+ to
+ BPDE.
+ This
+ research
+ may
+ help
+ to
+ further
+ under-
+stand
+ the
+ molecular
+ mechanism
+ of
+ transcriptional
+ regulation
+of
+ human
+ POLK
+ gene
+ in
+ response
+ to
+ chemical
+ mutagen
+ and
+carcinogen-induced
+ DNA
+ damages.
+2.
+ 
+Materials
+ and
+ methods
+2.1.
+ 
+Cell
+ culture
+ and
+ carcinogen
+ treatment
+Human
+ amniotic
+ epithelial
+ cells
+ (FL
+ cells)
+ (ATCC
+ CCL-62,
+ Man-
+assas,
+ VA)
+ were
+ cultured
+ in
+ Eagle’s
+ minimal
+ essential
+ medium
+(MEM)
+ (Gibco-Invitrogen,
+ Carlsbad,
+ CA)
+ supplemented
+ with
+10%
+ newborn
+ bovine
+ serum
+ (Gibco-Invitrogen),
+ 100
+ units/mL
+penicillin,
+ and
+ 100
+ g/mL
+ streptomycin
+ in
+ a
+ water-saturated,
+5%
+ CO2 atmosphere
+ at
+ 37 ◦C.
+(±)-anti-benzo[a]pyrene-7,8-diol-9,10-epoxide
+ (BPDE,
+ CAS:
+58917-67-2)
+ was bought
+ from
+ the
+ National
+ Cancer
+ Institute
+Chemical
+ Carcinogen
+ Reference
+ Standard
+ Repository
+ (Kansas
+City,
+ MO).
+ BPDE
+ stock
+ solution
+ was prepared
+ in
+ anhydrous
+dimethyl
+ sulphoxide
+ (DMSO)
+ and
+ used
+ immediately.
+ FL
+ cells
+in
+ logarithmic
+ growth
+ were
+ exposed
+ to
+ indicated
+ dose
+ of
+ BPDE
+and
+ DMSO
+ vehicle
+ control
+ (0.1%)
+ in
+ serum-free
+ medium
+ for
+2
+ h.
+ Following
+ this,
+ the
+ cultures
+ were
+ rinsed
+ with
+ phosphate
+buffer
+ solution,
+ and
+ incubated
+ in
+ fresh
+ serum-supplemented
+medium
+ for
+ another
+ time.
+2.2.
+Software
+Software
+ used
+ in
+ the
+ promoter
+ prediction
+ were:
+ (1)
+ FirstEF:
+http://rulai.cshl.org/tools/FirstEF/,  (2)
+ Promoter
+ Scan:
+ http://
+www-bimas.cit.nih.gov/molbio/proscan/,
+ 
+(3)
+ 
+Neural
+ 
+Net-
+work
+ Promoter
+ Prediction:
+ http://www.fruitﬂy.org/seq tools/
+promoter.html,
+ 
+(4)
+ 
+Promoter
+ 
+2.0:
+ 
+http://www.cbs.dtu.dk/
+services/promoter/,
+ 
+(5)
+ 
+CPG
+ 
+Islands
+ 
+Prediction:
+ 
+http://
+www.ualberta.ca/∼stothard/javascript/cpg
+ islands.html,
+http://www.ebi.ac.uk/Tools/emboss/cpgplot/index.html,
+http://pbil.univ-lyon1.fr/software/cpgprod.html.
+ 
+Software
+used
+ 
+in
+ 
+the
+ 
+prediction
+ 
+of
+ 
+transcription
+ 
+factor
+ 
+binding
+sites
+ were:
+ (1)
+ P-Match-Public
+ 1.0
+ Public:
+ http://www.gene-
+regulation.com/cgi-bin/pub/programs/pmatch/bin/p-match.
+cgi,
+ (2)
+ Match-1.0
+ Public:
+ http://www.gene-regulation.com/
+cgi-bin/pub/programs/match/bin/match.cgi,
+ (3)
+ SiteGA
+ Site
+recognition
+ by
+ Genetic
+ Algorithm:
+ http://wwwmgs.bionet.
+nsc.ru/cgi-bin/mgs/sitega/index.pl\,
+ 
+(4)
+ 
+TFSEARCH
+ 
+ver.1.3
+©1995
+ Yutaka
+ Akiyama
+ (Kyoto
+ Univ.):
+ http://www.cbrc.jp/
+research/db/TFSEARCH.html.
+2.3.
+Plasmids
+ and
+ constructs
+The
+ putative
+ promoter
+ region
+ of
+ the
+ human
+ POLK
+ gene,
+corresponding
+ to
+ chromosome
+ 5:
+ 74,842,788–74,843,773,
+ was
+ampliﬁed
+ from
+ the
+ extracted
+ genomic
+ DNA
+ of
+ human
+ FL
+cells
+ by
+ polymerase
+ chain
+ reaction
+ (PCR)
+ with
+ PrimeSTARTM
+HS
+ DNA
+ Polymerase
+ (TaKaRa,
+ Dalian,
+ China),
+ using
+ the
+sense
+ 
+primer
+ 
+5′-ATTGCTAGCTGGAGGCTCGACAACCGA-3′
+(contains
+ 
+an
+ 
+NheI
+ 
+site)
+ 
+and
+ 
+the
+ 
+antisense
+ 
+primer
+ 
+5′-
+CGGAGGCTTCCTTGGCACTAGTAGCTC-3′ (contains
+ a
+ HindIII
+site).
+ The
+ PCR
+ products
+ were
+ gel
+ puriﬁed
+ using
+ an
+ AxyPrepTM
+DNA
+ gel
+ extraction
+ kit
+ (Axygen,
+ Hangzhou,
+ China)
+ and
+inserted
+ into
+ the
+ NheI
+ (Fermentas,
+ EU,
+ Germany)-HindIII
+ (Fer-
+mentas)
+ sites
+ of
+ pGL3-basic
+ ﬁreﬂy
+ luciferase
+ expression
+ vector
+(Promega,
+ Madison,
+ WI,
+ USA).
+ This
+ recombinant
+ plasmid
+(pGL3-K(−549/+437))
+ was
+ used
+ as
+ template
+ for
+ PCR
+ ampliﬁca-
+tion
+ to
+ generate
+ a
+ series
+ of
+ deletion
+ constructs.
+ The
+ following
+primers
+ were
+ synthesized
+ and
+ used
+ in
+ the
+ deletion
+ constructs:
+5′-ATTGCTAGCGAAGCCTACCCTTCCAGC-3′
+for
+ 
+pGL3-
+K(−336/+437),
+ 5′-GAAGCTAGCCCTGGCCCACTATTTACC-3′ for
+pGL3-K(−141/+437),
+ 5′-GAAGCTAGCGACGACGGGTAGAAAAGC-
+3′
+for
+ 
+pGL3-K(+20/+437),
+ 
+5′-TAAGCTAGCGACAGTTGCGTG-
+ACCAGC-3′ for
+ pGL3-K(+226/+437),
+ and
+ the
+ antisense
+ primer
+was the
+ same
+ as
+ for
+ pGL3-K(−549/+437).
+ The
+ sense
+ primers
+contained
+ an
+ NheI
+ site
+ at
+ their
+ 5′ end
+ to
+ facilitate
+ positional
+cloning.
+ The
+ resultant
+ DNA
+ fragments
+ were
+ ligated
+ into
+ the
+NheI–HindIII
+ site
+ of
+ the
+ pGL3-basic
+ ﬁreﬂy
+ luciferase
+ expres-
+sion
+ vector.
+ The
+ sequences
+ of
+ all
+ constructs
+ were
+ conﬁrmed
+by
+ DNA
+ sequencing
+ (Invitrogen,
+ Shanghai,
+ China).
+2.4.
+Transient
+ transfection
+ and
+ reporter
+ gene
+ assays
+Human
+ FL
+ cells
+ were
+ plated
+ to
+ 24-well
+ plates
+ at
+ 1
+ ×
+ 105
+cells
+ per
+ well the
+ day
+ prior
+ to
+ transfection.
+ The
+ cells
+were
+ co-transfected
+ with
+ 0.8
+ g
+ ﬁreﬂy
+ luciferase
+ reporter
+constructs
+ and
+ 0.02
+ g
+ pRL-SV40
+ renilla
+ luciferase
+ reporter
+plasmids
+ (Promega)
+ using
+ the
+ SuperFect® transfection
+ reagent
+according
+ to
+ the
+ manufacturer’s
+ protocol
+ (Qiagen,
+ Hilden,
+Germany).
+ The
+ pRL-SV40
+ plasmid
+ was used
+ to
+ normalize
+ the
+
+
+e
+ n v
+ i r o n
+ m
+ e n t a l t o x
+ i c o l o
+ g
+ y
+ a n d p
+ h a r m a c o
+ l
+ o g y 3 3 ( 2 0 1 2 ) 205–211
+ 
+207
+transfection
+ efﬁciency.
+ Two
+ days
+ after
+ transfection,
+ cells
+ were
+lysed
+ with
+ passive
+ lysis
+ buffer
+ (Promega).
+ Or
+ after
+ transfection
+(24
+ h),
+ cells
+ were
+ exposed
+ to
+ 500
+ nM
+ BPDE
+ (Sigma,
+ St.
+ Louis,
+MO,
+ USA)
+ or
+ the
+ solvent
+ control
+ DMSO
+ (Sigma)
+ in
+ serum-free
+medium
+ for
+ 2
+ h,
+ replaced
+ by
+ fresh
+ complete
+ medium
+ and
+ incu-
+bated
+ for
+ 12
+ h,
+ and
+ then
+ lysed
+ with
+ passive
+ lysis
+ buffer.
+ The
+luciferase
+ activity
+ was assayed
+ by
+ Dual-Luciferase
+ reporter
+assay
+ system
+ (Promega)
+ following
+ the
+ manufacturer’s
+ instruc-
+tion.
+2.5.
+ 
+Quantitative
+ real-time
+ RT-PCR
+Logarithmically
+ growing
+ FL
+ cells
+ were
+ exposed
+ to
+ indicated
+dose
+ of
+ BPDE
+ or
+ the
+ solvent
+ control
+ DMSO
+ for
+ 2
+ h
+ in
+ serum-
+free
+ medium.
+ After
+ completely
+ removing
+ the
+ chemicals,
+ cells
+were
+ recovered
+ in
+ fresh
+ complete
+ medium
+ and
+ collected
+ at
+ dif-
+ferent
+ time
+ points.
+ Total
+ RNA
+ was isolated
+ with
+ RNAsio
+ plus
+reagents
+ according
+ to
+ the
+ manufacturer’s
+ protocol
+ (TaKaRa).
+RNA
+ integrity
+ was veriﬁed
+ by
+ 1%
+ agarose
+ gel
+ electrophoresis
+and
+ the
+ quantity
+ was determined
+ by
+ spectrophotometry.
+ First-
+strand
+ cDNA
+ was synthesized
+ with
+ 500
+ ng
+ total
+ RNA
+ using
+a
+ PrimeScriptTM RT
+ reagent
+ kit
+ (TaKaRa).
+ Quantitative
+ real-
+time
+ RT-PCR
+ (qRT-PCR)
+ was performed
+ using
+ SYBR® Premix
+Ex
+ TaqTM (TaKaRa)
+ on
+ an
+ ABI
+ Prism
+ 7500
+ Real-time
+ PCR
+ Sys-
+tem
+ (Applied
+ Biosystems,
+ Foster
+ City,
+ CA).
+ The
+ reaction
+ system
+in
+ each
+ well
+ contained
+ about
+ 0.02
+ g
+ cDNA
+ template,
+ 0.2
+ M
+each
+ of
+ the
+ primers,
+ ROX
+ reference
+ dye
+ II,
+ and
+ SYBR® Pre-
+mix
+ Ex
+ Taq.
+ The
+ thermal
+ cycling
+ process
+ started
+ with
+ 95 ◦C
+for
+ 20
+ s,
+ and
+ continued
+ with
+ 40
+ cycles
+ of
+ 95 ◦C
+ for
+ 10
+ s
+ and
+60 ◦C
+ for
+ 34
+ s.
+ The
+ relative
+ quantiﬁcation
+ analysis
+ was
+ per-
+formed
+ with
+ ABI
+ Prism
+ SDS
+ 2.1.1
+ software.
+ The
+ endogenous
+control
+ -actin
+ was used
+ to
+ normalize
+ differences
+ in
+ the
+input
+ amount
+ of
+ total
+ cDNA.
+ Normalized
+ Ct
+ values
+ were
+used
+ to
+ determine
+ the
+ statistical
+ signiﬁcance
+ of
+ differential
+expression
+ between
+ the
+ BPDE-exposed
+ and
+ control
+ samples
+using
+ Student’s
+ paired,
+ two-tailed
+ t-test.
+ Fold
+ changes
+ were
+calculated
+ using
+ the
+ comparative
+ Ct
+ method
+ as
+ described
+in
+ the
+ ABI
+ Prism
+ 7500
+ user
+ guide.
+ The
+ primers
+ used
+ for
+the
+ qPCR
+ were:
+ 5′-CCGAGCTGTGAGTAAAGAGG-3′ (sense)
+ and
+5′-CTTCCTTTCCTGGATTATCA-3′ (antisense)
+ for
+ the
+ human
+POLK
+ gene,
+ 5′-AGCGAGCATCCCCCAAAGTT-3′ (sense)
+ and
+ 5′-
+GGGCACGAAGGCTCATCATT-3′ (antisense)
+ for
+ -ACTIN.
+3.
+ 
+Results
+3.1.
+ 
+The
+ expression
+ of
+ human
+ POLK
+ after
+ BPDE
+treatment
+To
+ examine
+ the
+ transcriptional
+ regulation
+ of
+ the
+ human
+ POLK
+gene
+ in
+ response
+ to
+ BPDE-induced
+ DNA
+ damage,
+ we
+ treated
+ FL
+cells
+ with
+ BPDE.
+ By
+ qRT-PCR,
+ we
+ showed
+ that
+ low
+ dose
+ of
+ BPDE
+(50
+ nM)
+ treatment
+ up-regulated
+ the
+ expression
+ of
+ the
+ human
+POLK
+ gene
+ after
+ 12
+ h
+ (P
+ <
+ 0.01,
+ Fig.
+ 1)
+ and
+ median
+ dose
+ of
+ BPDE
+(500
+ nM)
+ dysregulated
+ the
+ expression.
+ 500
+ nM
+ BPDE
+ treatment
+down-regulated
+ the
+ expression
+ of
+ the
+ human
+ POLK
+ gene
+ after
+1
+ h,
+ but
+ signiﬁcantly
+ up-regulated
+ the
+ expression
+ after
+ 12
+ h
+and
+ 24
+ h
+ (P
+ <
+ 0.05,
+ Fig.
+ 1).
+ Our
+ data
+ indicate
+ that
+ the
+ expres-
+sion
+ of
+ the
+ human
+ POLK
+ gene
+ was reduced
+ immediately
+ after
+median
+ dose
+ of
+ BPDE
+ treatment,
+ and
+ along
+ with
+ the
+ time,
+ the
+Fig.
+ 1
+ – The
+ expression
+ of
+ the
+ human
+ POLK
+ gene
+ in
+response
+ to
+ BPDE
+ by
+ qRT-PCR.
+ The
+ data
+ were
+ analyzed
+ by
+the
+ Student’s
+ t-test
+ as
+ compared
+ to
+ the
+ control
+ (DMSO).
+*P
+ <
+ 0.05,
+ **P
+ <
+ 0.01.
+expression
+ was
+ returned
+ to
+ normal
+ level
+ and
+ increased
+ at
+ the
+transcriptional
+ level.
+3.2.
+ 
+Promoter
+ prediction
+ of
+ human
+ POLK
+ gene
+The
+ sequence
+ from
+ −3000
+ to
+ +1000
+ relative
+ to
+ the
+ tran-
+scription
+ start
+ position
+ of
+ the
+ POLK
+ gene
+ was
+ acquired
+ from
+the
+ UCSC
+ database
+ (http://genome.ucsc.edu/). The
+ sequences
+of
+ human,
+ mouse
+ and
+ rat
+ were
+ aligned
+ by
+ Clustal
+ W
+(http://www.clustal.org/)
+ to
+ extract
+ the
+ conserved
+ regions
+ that
+may
+ be
+ important
+ regulatory
+ regions
+ for
+ the
+ POLK
+ gene
+(data
+ not
+ shown).
+ From
+ the
+ alignment,
+ the
+ conserved
+ region
+−863/−166
+ was
+ found.
+ Meantime,
+ promoter
+ prediction
+ in
+ the
+human
+ sequence
+ −3000/+1000
+ was
+ performed
+ using
+ multiple
+bioinformatics
+ software
+ (Table
+ 1).
+ The
+ promoter
+ regions
+ pre-
+dicted
+ from
+ Promoter
+ Scan
+ and
+ from
+ Promoter
+ 2.0
+ occurred
+in
+ the
+ region
+ −549/+127
+ and
+ −900
+ or
+ +200,
+ respectively.
+ And
+many CPG
+ islands
+ were
+ located
+ in
+ the
+ region
+ −1172/+540.
+ Com-
+paring
+ the
+ conserved
+ regions
+ with
+ the
+ prediction
+ promoter
+regions,
+ the
+ region
+ from
+ −549
+ to
+ +437,
+ corresponding
+ to
+ chr
+5:
+ 74,842,788–74,843,773,
+ was
+ chosen
+ as
+ the
+ putative
+ promoter
+of
+ the
+ human
+ POLK
+ gene
+ for
+ further
+ functional
+ analysis.
+3.3.
+ 
+The
+ construction
+ of
+ ﬁreﬂy
+ luciferase
+ plasmid
+containing
+ POLK
+ putative
+ promoter
+ and
+ the
+transcriptional
+ activity
+ analysis
+ of
+ the
+ putative
+ promoter
+To
+ further
+ characterize
+ the
+ 5′ regulatory
+ region,
+ a
+ set
+ of
+luciferase
+ reporter
+ gene
+ constructs,
+ containing
+ successive
+ 5′
+deletion
+ sequence
+ of
+ the
+ human
+ POLK
+ promoter,
+ were
+ pre-
+pared
+ and
+ transfected
+ into
+ human
+ amnion
+ FL
+ cells.
+ Reporter
+gene
+ assays
+ showed
+ that
+ all
+ the
+ deletion
+ constructs
+ mani-
+fested
+ different
+ transcriptional
+ activity
+ (Fig.
+ 2).
+ The
+ putative
+promoter
+ region
+ from
+ −549
+ to
+ +437
+ has
+ relative
+ strong
+ tran-
+scriptional
+ activity.
+ Deletion
+ of
+ the
+ 5′ sequence
+ up
+ to
+ −336
+did
+ not
+ result
+ in
+ the
+ change
+ of
+ promoter
+ activity.
+ Deletion
+from
+ −336
+ to
+ −141
+ resulted
+ in
+ a
+ signiﬁcant
+ increase
+ of
+ pro-
+moter
+ activity,
+ indicating
+ the
+ presence
+ of
+ repressing
+ elements
+
+
+208
+ 
+e n v i r o
+ n m
+ e
+ n t a l t o
+ x
+ i c o l
+ o g
+ y a n d
+ p h
+ a r
+ m a c o l o
+ g
+ y
+ 3 3 ( 2 0 1 2 ) 205–211
+Table
+ 1
+ – Promoter
+ prediction
+ of
+ human
+ POLK
+ gene.
+Software
+ 
+Predicted
+ promoter
+ region
+FirstEF
+http://rulai.cshl.org/tools/FirstEF/
+Promoter
+ of
+ predictions
+ on
+ the
+ direct
+ strand
+ was
+ −549/+127,
+ and
+ promoter
+ of
+predicted
+ on
+ the
+ complementary
+ strand
+ was
+ +438/−516
+Promoter
+ Scan
+http://www-bimas.cit.nih.gov/molbio/proscan/
+Promoter
+ region
+ predicted
+ on
+ reverse
+ strand
+ in −562
+ to
+ −812,
+ and
+ TATA
+found
+ at
+ −791,
+ Est.Tss
+ = −823
+Software
+Predicted
+ promoter
+ region
+Start
+ 
+End
+ 
+Score
+ 
+Promoter
+ sequence
+Neural
+ Network
+ Promoter
+ Prediction
+http://www.fruitﬂy.org/seq tools/
+promoter.html
+−2637
+ 
+−2587
+ 
+0.85
+ 
+atatttctaatataaatttacccaagcccattccaaatccaccccatttt
+−2384
+ 
+−2334
+ 
+0.82
+ 
+cagaaaactgtatataaccataaattggtaaatctcaggaaaatttcctt
+−1728
+ 
+−1678
+ 
+0.89
+ 
+ttctagacattataaaagcctaatatgaaacaattccacaaataatgtcc
+−1543
+ 
+−1493
+ 
+0.93
+ 
+cagccatgtctaaaaaagtttaacaggaagggagagagaagtcaaaaagg
+−1473
+ 
+−1423
+ 
+0.95
+ 
+caaaaacttaaaaaaaaaatccccacaactatgtaatatcaagagatcat
+−1372
+ 
+−1322
+ 
+0.83
+ 
+ttaaaaaatatataaaagataaaacatcttttccttaccctcgacccctt
+−1019
+ 
+−969
+ 
+0.90
+ 
+accaacctcttttaagaggtccgacttgaaccgctcccatgcccagtcgt
+−809
+ 
+−759
+ 
+0.98
+ 
+gacagtgcccctatatccccgcctcatccctagtcgctgcagcaacactc
+Software
+ 
+Predicted
+ promoter
+ region
+Position
+ 
+Score
+ 
+Likelihood
+Promoter
+ 2.0http://www.cbs.dtu.dk/services/promoter/
+ 
+−2100
+ 
+1.152
+ 
+Highly
+ likely
+ prediction
+−1200
+ 
+1.167
+ 
+Highly
+ likely
+ prediction
+−900
+ 
+0.568
+ 
+Marginal
+ prediction
++200
+ 
+0.558
+ 
+Marginal
+ prediction
+Software
+ 
+Predicted
+ promoter
+ region
+CPG Islands
+ Prediction
+http://www.ualberta.ca/∼stothard/javascript/cpg
+ islands.html
+Many
+ CPG
+ islands
+ were
+ found
+ in
+ region
+ −1172
+ to
+ +540
+CPG Islands
+ Prediction
+http://www.ebi.ac.uk/Tools/emboss/cpgplot/index.html
+Length
+ 266
+ (−1115/−850)
+ and
+ length
+ 1036
+ (−629/+406)
+CPG Islands
+ Prediction
+http://pbil.univ-lyon1.fr/software/cpgprod.html
+One
+ CPG
+ islands
+ was
+ found
+ with
+ %GC
+ 0.
+ 5881
+ in −1337
+ to
+ +672
+in
+ the
+ region
+ from
+ −336
+ to
+ −141.
+ This
+ region
+ −336/−141
+ con-
+tains
+ CF1/USP
+ and
+ HSF
+ transcription
+ factors
+ binding
+ sites
+(Fig.
+ 3).
+ Further
+ deletion
+ to
+ +20
+ decreased
+ promoter
+ activ-
+ity,
+ and
+ deletion
+ to
+ +226
+ substantially
+ decreased
+ promoter
+activity,
+ suggesting
+ that
+ enhanced
+ elements
+ located
+ in
+ this
+region
+ (−141/+226),
+ especially
+ the
+ region
+ +20/+226.
+ The
+ region
+−141/+226
+ contains
+ several
+ binding
+ sites
+ for
+ Sp1,
+ STATx,
+ Olf-
+1,
+ GATA-2,
+ MZF1,
+ HNF-4
+ and
+ CREB,
+ which
+ may transactivate
+the
+ expression
+ of
+ human
+ POLK
+ (Fig.
+ 3).
+ And
+ the
+ shortest
+ dele-
+tion
+ construct
+ containing
+ the
+ region
+ +226/+437
+ has
+ the
+ lowest
+luciferase
+ activity,
+ a
+ little
+ higher
+ than
+ that
+ of
+ empty
+ vector.
+Taken
+ together,
+ these
+ results
+ indicated
+ that
+ CF1/USP
+ and
+ HSF
+Fig.
+ 2
+ –
+ Transcriptional
+ activity
+ analysis
+ of
+ 5′-deletion
+ constructs
+ of
+ the
+ human
+ POLK
+ promoter
+ by
+ reporter
+ gene
+ assays.
+ Left:
+schematic
+ representation
+ of
+ the
+ promoter-reporter
+ constructs
+ containing
+ the
+ promoter
+ fragments
+ of
+ different
+ lengths
+ cloned
+into
+ pGL3-basic
+ vector.
+ Arrows
+ indicates
+ the
+ transcription
+ start
+ position.
+ The
+ deletion
+ constructs
+ were
+ separately
+transfected
+ into
+ FL
+ cells
+ with
+ pRL-SV40.
+ Right:
+ relative
+ luciferase
+ activity
+ normalized
+ to
+ pRL-SV40
+ values
+ for
+ each
+ construct.
+The
+ results
+ are
+ the
+ average
+ of
+ three
+ independent
+ experiments
+ performed
+ in
+ duplicate.
+
+
+e
+ n v
+ i r o n
+ m
+ e n t a l t o x
+ i c o l o
+ g
+ y
+ a n d p
+ h a r m a c o
+ l
+ o g y 3 3 ( 2 0 1 2 ) 205–211
+ 
+209
+Fig.
+ 3
+ – Bioinformatics
+ prediction
+ of
+ transcription
+ factor
+ binding
+ sites
+ for
+ the
+ human
+ POLK
+ promoter.
+ The
+ numbers
+ on
+ the
+left
+ indicate
+ the
+ nucleotide
+ order
+ relative
+ to
+ the
+ transcription
+ start
+ position
+ (tsp,
+ position
+ +1)
+ of
+ the
+ human
+ POLK
+ gene.
+Putative
+ binding
+ sites
+ of
+ transcription
+ factors
+ are
+ in
+ bold
+ and
+ underlined.
+may
+ negatively
+ regulate
+ the
+ expression
+ of
+ human
+ POLK,
+ and
+Sp1,
+ STATx,
+ Olf-1,
+ GATA-2,
+ MZF1,
+ HNF-4
+ and
+ CREB
+ may trans-
+activate
+ the
+ expression.
+3.4.
+ 
+BPDE
+ treatment
+ affected
+ the
+ activity
+ of
+ the
+putative
+ human
+ POLK
+ promoter
+In
+ order
+ to
+ analyze
+ the
+ transcription
+ factors
+ that
+ regulate
+ the
+expression
+ of
+ human
+ POLK
+ in
+ response
+ to
+ BPDE,
+ the
+ transcrip-
+tional
+ activities
+ of
+ deletion
+ constructs
+ were
+ measured
+ after
+BPDE
+ treatment
+ (Fig.
+ 4).
+ The
+ activity
+ of
+ the
+ longest
+ promoter
+region
+ −549/+437
+ was not
+ affected
+ by
+ BPDE
+ treatment,
+ while
+the
+ activity
+ of
+ the
+ region
+ −336/+437
+ was signiﬁcantly
+ reduced
+(P
+ <
+ 0.05,
+ Fig.
+ 4).
+ Deletion
+ to
+ −141
+ abolished
+ the
+ response
+ to
+BPDE,
+ and
+ further
+ deletion
+ to
+ +20
+ resumed
+ the
+ response
+(P
+ <
+ 0.05,
+ Fig.
+ 4).
+ Our
+ data
+ indicated
+ that
+ the
+ regions
+ −336/−141
+and
+ +20/+226
+ probably
+ contained
+ BPDE-responsive
+ elements.
+The
+ region
+ −336/−141
+ contains
+ CF1/USP
+ and
+ HSF
+ binding
+sites
+ and
+ these
+ transcription
+ factors
+ may
+ negatively
+ regu-
+late
+ the
+ promoter
+ activity,
+ so
+ we
+ speculated
+ that
+ CF1/USP
+and
+ HSF
+ may
+ be
+ activated
+ to
+ down-regulate
+ the
+ expres-
+sion
+ of
+ human
+ POLK
+ in
+ response
+ to
+ BPDE
+ treatment.
+ The
+region
+ +20/+226
+ contains
+ binding
+ sites
+ for
+ Sp1,
+ STATx,
+ Olf-
+1,
+ GATA-2,
+ and
+ MZF1,
+ and
+ these
+ binding
+ sites
+ may positively
+regulate
+ the
+ promoter
+ activity,
+ so
+ that
+ Sp1,
+ STATx,
+ Olf-1,
+ GATA-
+2,
+ and
+ MZF1
+ may
+ be
+ down-regulated
+ in
+ response
+ to
+ BPDE
+treatment.
+Fig.
+ 4
+ – Transcriptional
+ activity
+ analysis
+ of
+ the
+ deletion
+constructs
+ of
+ the
+ human
+ POLK
+ promoter
+ in
+ response
+ to
+500
+ nM
+ BPDE.
+ The
+ deletion
+ constructs
+ were
+ separately
+transfected
+ into
+ FL
+ cells
+ together
+ with
+ pRL-SV40.
+ The
+ day
+following
+ transfections,
+ cells
+ were
+ treated
+ with
+ 500
+ nM
+BPDE
+ for
+ 2
+ h,
+ and
+ 12
+ h
+ later
+ luciferase
+ activities
+ were
+determined.
+ The
+ relative
+ luciferase
+ activities
+ were
+normalized
+ to
+ pRL-SV40
+ values.
+ The
+ values
+ are
+ the
+ average
+of
+ three
+ independent
+ experiments.
+ *P
+ <
+ 0.05,
+ **P
+ <
+ 0.01,
+compared
+ to
+ the
+ control
+ (DMSO).
+
+
+210
+ 
+e n v i r o
+ n m
+ e
+ n t a l t o
+ x
+ i c o l
+ o g
+ y a n d
+ p h
+ a r
+ m a c o l o
+ g
+ y
+ 3 3 ( 2 0 1 2 ) 205–211
+4.
+ 
+Discussion
+In
+ this
+ study,
+ by
+ bioinformatics
+ methods
+ and
+ deletions
+ con-
+structs
+ analysis,
+ we  found
+ that
+ Sp1,
+ STATx,
+ Olf-1,
+ GATA-2,
+MZF1,
+ HNF-4
+ and
+ CREB
+ located
+ in
+ the
+ region
+ −141/+226
+ of
+ the
+human
+ POLK
+ promoter
+ may
+ transactivate
+ the
+ expression
+ of
+human
+ POLK.
+ Sp1
+ and
+ CREB
+ can
+ bind
+ to
+ the
+ human
+ POLK
+ pro-
+moter
+ (Lemee
+ et
+ al.,
+ 2007),
+ indicating
+ that
+ they
+ could
+ regulate
+the
+ expression
+ of
+ POLK.
+ Sp1
+ can
+ bind
+ to
+ GC-rich
+ recogni-
+tion
+ elements
+ (GC-boxes)
+ to
+ activate
+ or
+ repress
+ transcription
+of
+ many
+ gene
+ and
+ generally
+ regulates
+ the
+ genes
+ that
+ lack
+a
+ TATA-box,
+ and
+ human
+ POLK
+ promoter
+ region
+ contained
+ a
+high
+ GC
+ content.
+ Sp1
+ can
+ regulate
+ expression
+ of
+ numerous
+genes
+ particularly
+ those
+ that
+ regulate
+ the
+ biosynthesis
+ and
+metabolism
+ of
+ nucleic
+ acids
+ (e.g.,
+ thymidylate
+ synthase,
+ ade-
+nine
+ deaminase
+ and
+ DNA
+ polymerase)
+ and
+ the
+ cell
+ cycle
+ and
+proliferation
+ (Safe
+ and
+ Abdelrahim,
+ 2005).
+ And
+ we
+ have
+ found
+that
+ Sp1
+ plays
+ an
+ important
+ role
+ in
+ the
+ transcriptional
+ regula-
+tion
+ of
+ the
+ human
+ POLI
+ gene,
+ which
+ also
+ belongs
+ to
+ Y
+ family
+of
+ DNA
+ polymerase
+ (Zhu
+ et
+ al.,
+ 2010).
+ CREB,
+ cAMP-response-
+element-binding
+ protein,
+ belonging
+ to
+ the
+ basic
+ leucine
+ zipper
+(bZIP)
+ family,
+ is
+ activated
+ through
+ phosphorylation
+ at
+ Ser133
+and/or
+ nuclear
+ translocation
+ of
+ transducer
+ of
+ regulated
+ CREB
+activity
+ (TORC)
+ coactivators
+ in
+ response
+ to
+ various
+ stimuli.
+CREB
+ can
+ regulate
+ the
+ gene
+ that
+ involved
+ in
+ the
+ DNA
+ damage
+and
+ DNA
+ repair,
+ such
+ as
+ BRCA1.
+ And
+ previous
+ reports
+ from
+our
+ laboratory
+ have
+ shown
+ that
+ CREB
+ was phosphorylated
+after
+ the
+ carcinogen
+ N-methyl-N′-nitro-N-nitrosoguanidine
+(MNNG)
+ treatment,
+ and
+ the
+ phosphorylated
+ CREB
+ can
+ mediate
+the
+ up-regulation
+ of
+ DNA
+ polymerase
+ , a
+ translesion
+ synthe-
+sis
+ polymerase
+ (Wang
+ et
+ al.,
+ 2001).
+The
+ analysis
+ of
+ deletion
+ constructs
+ activities
+ indicated
+ that
+transcription
+ factor
+ HSF
+ may
+ be
+ activated
+ in
+ response
+ to
+ BPDE
+treatment.
+ HSF,
+ that
+ is
+ heat
+ shock
+ factor,
+ can
+ speciﬁc
+ bind
+ to
+the
+ heat
+ shock
+ element
+ and
+ transactivate
+ many
+ genes
+ that
+are
+ induced
+ by
+ heat
+ or
+ other
+ stress.
+ Among
+ the
+ four
+ HSFs,
+HSF1
+ is
+ considered
+ the
+ master
+ regulator
+ for
+ heat
+ shock
+ protein
+(HSP)
+ genes
+ (Akerfelt
+ et
+ al.,
+ 2007).
+ Under
+ unstressed
+ condi-
+tions,
+ HSF1
+ is
+ localized
+ in
+ the
+ cytosol
+ and
+ is
+ inactivated
+ in
+a
+ protein
+ complex
+ including
+ HSP90.
+ In
+ response
+ to
+ different
+forms
+ of
+ cellular
+ stress,
+ HSF1
+ dissociates
+ from
+ the
+ HSP90
+ pro-
+tein
+ complex,
+ becomes
+ trimerized
+ and
+ phosphorylated,
+ and
+then
+ translocates
+ into
+ the
+ nucleus
+ to
+ bind
+ to
+ regulatory
+ DNA
+elements
+ present
+ in
+ the
+ genes
+ coding
+ for
+ proteins
+ partici-
+pating
+ in
+ diverse
+ cellular
+ processes,
+ including
+ cell
+ signaling
+and
+ maintenance
+ of
+ cell
+ integrity
+ (Guettouche
+ et
+ al.,
+ 2005;
+Westerheide
+ et
+ al.,
+ 2009).
+ Under
+ the
+ stress
+ of
+ DNA
+ damage
+induced
+ by
+ BPDE,
+ HSF1
+ may be
+ activated
+ and
+ regulate
+ many
+genes
+ conding
+ the
+ proteins
+ that
+ protect
+ cell
+ to
+ safely
+ cross
+ the
+difﬁculty.
+The
+ regulation
+ of
+ POLK
+ gene
+ may be
+ different
+ between
+in
+ mice
+ and
+ in
+ human.
+ Pol
+  mRNA and/or
+ protein
+ in
+ mice
+is
+ induced
+ by
+ UV
+ radiation
+ or
+ by
+ ionizing
+ radiation
+ in
+ sev-
+eral
+ organs,
+ and
+ all
+ these
+ up-regulations
+ depend
+ on
+ p53.
+While
+ treatment
+ of
+ different
+ human
+ cell
+ lines
+ with
+ ioniz-
+ing
+ radiation,
+ UV,
+ doxorubicine,
+ H2O2 or
+ cisPt
+ did
+ not
+ affect
+POLK
+ mRNA
+ levels,
+ whatever
+ the
+ p53
+ status.
+ However,
+ the
+transcriptional
+ regulation
+ of
+ human
+ POLK
+ gene
+ seems
+ to
+depend
+ on
+ p53,
+ since
+ transfection
+ of
+ p53
+ indeed
+ repress
+ POLK
+expression
+ in
+ lung
+ cancer
+ cells.
+ Previous
+ reports
+ found
+ that
+POLK
+ is
+ up-regulated
+ in
+ mice
+ treated
+ with
+ 3MC
+ (3
+ methyl-
+cholanthrene)
+ that
+ is
+ a
+ polycyclic
+ aromatic
+ hydrocarbon
+similar
+ to
+ B(a)P
+ (benzo(a)pyrene).
+ And
+ murine
+ POLK
+ gene
+is
+ under
+ the
+ control
+ of
+ XRE
+ (xenobiotic
+ responsive
+ ele-
+ments),
+ that
+ bind
+ in
+ vitro
+ to
+ 3MC-AhR/Arnt
+ complexes.
+ These
+indicated
+ that
+ under
+ the
+ treatment
+ of
+ 3MC,
+ 3MC-AhR/Arnt
+complexes
+ may bind
+ to
+ XRE
+ to
+ transactivate
+ the
+ expression
+of
+ murine
+ POLK.
+ In
+ human,
+ XRE
+ elements
+ could
+ mediate
+ an
+adaptive
+ response
+ after
+ exposure
+ to
+ aromatic
+ compounds
+ in
+the
+ lung,
+ an
+ organ
+ particularly
+ exposed
+ to
+ such
+ carcinogenic
+agents.
+ And
+ in
+ our
+ study,
+ we
+ found
+ that
+ human
+ POLK
+ gene
+ is
+up-regulated
+ in
+ human
+ FL
+ cell
+ treated
+ by
+ BPDE,
+ a
+ ultimate
+ car-
+cinogen
+ of
+ B(a)P.
+ However,
+ the
+ putative
+ POLK
+ promoter
+ region
+containing
+ XRE
+ element
+ did
+ not
+ response
+ to
+ BPDE
+ treatment.
+BPDE
+ could
+ bind
+ directly
+ to
+ DNA,
+ but
+ does
+ not
+ activate
+ AhR
+(Hockley
+ et
+ al.,
+ 2007).
+ So
+ AhR
+ may not
+ take
+ part
+ in
+ the
+ regula-
+tion
+ of
+ POLK
+ in
+ human
+ cells
+ treated
+ by
+ BPDE.
+ The
+ transcription
+factors
+ that
+ transactivate
+ the
+ expression
+ of
+ human
+ POLK
+ have
+been
+ unknown
+ and
+ need
+ to
+ be
+ explored.
+BPDE
+ can
+ bind
+ convalently
+ to
+ DNA
+ or
+ non-convalently
+intercalate
+ into
+ double-stranded
+ DNA.
+ The
+ DNA
+ adducts
+BPDE-N2-dG
+ can
+ be
+ bypassed
+ by
+ Pol
+ 
+ in
+ vitro
+ in
+ an
+ efﬁcient
+and
+ mostly
+ accurate
+ manner,
+ predominantly
+ incorporating
+dC.
+ Our
+ study
+ found
+ that
+ BPDE
+ treatment
+ induced
+ the
+ up-
+regulation
+ of
+ the
+ human
+ POLK
+ gene
+ in
+ cells
+ treated
+ for
+ 12
+ h
+and
+ 24
+ h.
+ The
+ elevated
+ Pol
+  may
+ participate
+ in
+ the
+ synthesis
+across
+ the
+ damaged
+ DNA.
+ However,
+ the
+ ﬁdelity
+ of
+ Pol
+ 
+ ranges
+from
+ 10−3 to
+ 10−4 on
+ undamaged
+ DNAs,
+ which
+ is
+ much
+ higher
+than
+ that
+ of
+ DNA
+ polymerases
+  and
+ . The
+ elevated
+ Pol
+ 
+ may
+accelerate
+ the
+ accumulation
+ of
+ mutations,
+ like
+ in
+ lung
+ cancers
+(Bavoux
+ et
+ al.,
+ 2005b).
+In summary,
+ we
+ have
+ predicted,
+ cloned,
+ and
+ characterized
+the
+ putative
+ promoter
+ of
+ the
+ human
+ POLK
+ gene.
+ The
+ results
+demonstrates
+ that
+ the
+ region
+ −336/−141
+ contains
+ repressing
+elements
+ and
+ the
+ region
+ −141+226
+ contains
+ positive
+ regula-
+tory
+ elements
+ for
+ transcription
+ of
+ human
+ Pol
+ . Furthermore,
+human
+ POLK
+ mRNA
+ expression
+ can
+ be
+ dysregulated
+ in
+ cells
+exposed
+ to
+ BPDE.
+ And
+ the
+ activities
+ of
+ the
+ promoter
+ regions
+−336/+437
+ and
+ +20/+437
+ were
+ signiﬁcantly
+ reduced
+ by
+ BPDE
+treatment.
+ So
+ the
+ transcription
+ factors
+ in
+ this
+ two regions,
+such
+ as
+ HSF1,
+ may regulate
+ the
+ transcription
+ of
+ human
+ POLK
+gene
+ in
+ response
+ to
+ BPDE.
+ This
+ present
+ study
+ provides
+ an
+initial
+ effort
+ to
+ explore
+ the
+ molecular
+ mechanism
+ of
+ transcrip-
+tional
+ activation
+ of
+ human
+ POLK
+ gene
+ and
+ should
+ facilitate
+further
+ studies
+ to
+ decode
+ its
+ complex
+ regulatory
+ process.
+Conﬂict
+ of
+ interest
+ statement
+The
+ authors
+ declare
+ that
+ there
+ are
+ no
+ conﬂicts
+ of
+ interest.
+Acknowledgements
+This
+ research
+ was supported
+ by
+ the
+ National
+ Natural
+ Science
+Foundation
+ of
+ China
+ (30770831),
+ Zhejiang
+ Provincial
+ Natural
+Science
+ Foundation
+ for
+ Excellent
+ Research
+ Groups
+ (R207153)
+and
+ the
+ Research
+ Foundation
+ from
+ the
+ State
+ Education
+ Min-
+istry
+ of
+ China
+ (J20100041).
+
+
+e
+ n v
+ i r o n
+ m
+ e n t a l t o x
+ i c o l o
+ g
+ y
+ a n d p
+ h a r m a c o
+ l
+ o g y 3 3 ( 2 0 1 2 ) 205–211
+ 
+211
+r  e  f  e  r  e  n
+ c  e  s
+Akerfelt,
+ M.,
+ Trouillet,
+ D.,
+ Mezger,
+ V.,
+ Sistonen,
+ L.,
+ 2007.
+ Heat
+shock
+ factors
+ at
+ a
+ crossroad
+ between
+ stress
+ and
+ development.
+Ann.
+ N.
+ Y.
+ Acad.
+ Sci.
+ 1113,
+ 15–27.
+Bavoux,
+ C.,
+ Hoffmann,
+ J.S.,
+ Cazaux,
+ C.,
+ 2005a.
+ Adaptation
+ to
+ DNA
+damage
+ and
+ stimulation
+ of
+ genetic
+ instability:
+ the
+double-edged
+ sword
+ mammalian
+ DNA
+ polymerase
+ kappa.
+Biochimie
+ 87
+ (7),
+ 637–646.
+Bavoux,
+ C.,
+ Leopoldino,
+ A.M.,
+ Bergoglio,
+ V.,
+ O-Wang,
+ J.,
+ Ogi,
+ T.,
+Bieth,
+ A.,
+ Judde,
+ J.G.,
+ Pena,
+ S.D.,
+ Poupon,
+ M.F.,
+ Helleday,
+ T.,
+et
+ al.,
+ 2005b.
+ Up-regulation
+ of
+ the
+ error-prone
+ DNA
+polymerase
+ {kappa}
+ promotes
+ pleiotropic
+ genetic
+ alterations
+and
+ tumorigenesis.
+ Cancer
+ Res.
+ 65
+ (1),
+ 325–330.
+Bi,
+ X.,
+ Barkley,
+ L.R.,
+ Slater,
+ D.M.,
+ Tateishi,
+ S.,
+ Yamaizumi,
+ M.,
+Ohmori,
+ H.,
+ Vaziri,
+ C.,
+ 2006.
+ Rad18
+ regulates
+ DNA
+ polymerase
+kappa
+ and
+ is
+ required
+ for
+ recovery
+ from
+ S-phase
+checkpoint-mediated
+ arrest.
+ Mol.
+ Cell.
+ Biol.
+ 26
+ (9),
+ 3527–3540.
+Bi,
+ X.,
+ Slater,
+ D.M.,
+ Ohmori,
+ H.,
+ Vaziri,
+ C.,
+ 2005.
+ DNA
+ polymerase
+kappa
+ is
+ speciﬁcally
+ required
+ for
+ recovery
+ from
+ the
+benzo[a]pyrene-dihydrodiol
+ epoxide
+ (BPDE)-induced
+ S-phase
+checkpoint.
+ J.
+ Biol.
+ Chem.
+ 280
+ (23),
+ 22343–22355.
+Carlson,
+ K.D.,
+ Johnson,
+ R.E.,
+ Prakash,
+ L.,
+ Prakash,
+ S.,
+ Washington,
+M.T.,
+ 2006.
+ Human
+ DNA
+ polymerase
+ kappa
+ forms
+nonproductive
+ complexes
+ with
+ matched
+ primer
+ termini
+ but
+not
+ with
+ mismatched
+ primer
+ termini.
+ Proc.
+ Natl.
+ Acad.
+ Sci.
+U.S.A.
+ 103
+ (43),
+ 15776–15781.
+Chiapperino,
+ D.,
+ Cai,
+ M.,
+ Sayer,
+ J.M.,
+ Yagi,
+ H.,
+ Kroth,
+ H.,
+ Masutani,
+C.,
+ Hanaoka,
+ F.,
+ Jerina,
+ D.M.,
+ Cheh,
+ A.M.,
+ 2005.
+ Error-prone
+translesion
+ synthesis
+ by
+ human
+ DNA
+ polymerase
+ eta
+ on
+DNA-containing
+ deoxyadenosine
+ adducts
+ of
+7,8-dihydroxy-9,10-epoxy-7,8,9,10-tetrahydrobenzo[a]pyrene.
+J.
+ Biol.
+ Chem.
+ 280
+ (48),
+ 39684–39692.
+Friedberg,
+ E.C.,
+ Lehmann,
+ A.R.,
+ Fuchs,
+ R.P.,
+ 2005.
+ Trading
+ places:
+how
+ do
+ DNA
+ polymerases
+ switch
+ during
+ translesion
+ DNA
+synthesis?
+ Mol.
+ Cell
+ 18
+ (5),
+ 499–505.
+Guettouche,
+ T.,
+ Boellmann,
+ F.,
+ Lane,
+ W.S.,
+ Voellmy,
+ R.,
+ 2005.
+Analysis
+ of
+ phosphorylation
+ of
+ human
+ heat
+ shock
+ factor
+ 1
+ in
+cells
+ experiencing
+ a
+ stress.
+ BMC
+ Biochem.
+ 6,
+ 4.
+Hockley,
+ S.L.,
+ Arlt,
+ V.M.,
+ Brewer,
+ D.,
+ Te
+ Poele,
+ R.,
+ Workman,
+ P.,
+Giddings,
+ I.,
+ Phillips,
+ D.H.,
+ 2007.
+ AHR-
+ and
+DNA-damage-mediated
+ gene
+ expression
+ responses
+ induced
+by
+ benzo(a)pyrene
+ in
+ human
+ cell
+ lines.
+ Chem.
+ Res.
+ Toxicol.
+ 20
+(12),
+ 1797–1810.
+Jarosz,
+ D.F.,
+ Godoy,
+ V.G.,
+ Walker,
+ G.C.,
+ 2007.
+ Proﬁcient
+ and
+accurate
+ bypass
+ of
+ persistent
+ DNA
+ lesions
+ by
+ DinB
+ DNA
+polymerases.
+ Cell
+ Cycle
+ 6
+ (7),
+ 817–822.
+Lemee,
+ F.,
+ Bavoux,
+ C.,
+ Pillaire,
+ M.J.,
+ Bieth,
+ A.,
+ Machado,
+ C.R.,
+ Pena,
+S.D.,
+ Guimbaud,
+ R.,
+ Selves,
+ J.,
+ Hoffmann,
+ J.S.,
+ Cazaux,
+ C.,
+ 2007.
+Characterization
+ of
+ promoter
+ regulatory
+ elements
+ involved
+ in
+downexpression
+ of
+ the
+ DNA
+ polymerase
+ kappa
+ in
+ colorectal
+cancer.
+ Oncogene
+ 26
+ (23),
+ 3387–3394.
+Lu,
+ X.,
+ Shao,
+ J.,
+ Li,
+ H.,
+ Yu,
+ Y.,
+ 2009.
+ Early
+ whole-genome
+transcriptional
+ response
+ induced
+ by
+ benzo[a]pyrene
+ diol
+epoxide
+ in
+ a
+ normal
+ human
+ cell
+ line.
+ Genomics
+ 93
+ (4),
+ 332–342.
+Lu,
+ X.,
+ Shao,
+ J.,
+ Li,
+ H.,
+ Yu,
+ Y.,
+ 2010.
+ Temporal
+ gene
+ expression
+changes
+ induced
+ by
+ a
+ low
+ concentration
+ of
+ benzo[a]pyrene
+diol
+ epoxide
+ in
+ a
+ normal
+ human
+ cell
+ line.
+ Mutat.
+ Res.
+ 684
+(1–2),
+ 74–80.
+Ogi,
+ T.,
+ Lehmann,
+ A.R.,
+ 2006.
+ The
+ Y-family
+ DNA
+ polymerase
+kappa
+ (pol
+ kappa)
+ functions
+ in
+ mammalian
+nucleotide-excision
+ repair.
+ Nat.
+ Cell
+ Biol.
+ 8
+ (6),
+ 640–642.
+Safe,
+ S.,
+ Abdelrahim,
+ M.,
+ 2005.
+ Sp
+ transcription
+ factor
+ family
+ and
+its
+ role
+ in
+ cancer.
+ Eur.
+ J.
+ Cancer
+ 41
+ (16),
+ 2438–2448.
+Sherrer,
+ S.M.,
+ Fiala,
+ K.A.,
+ Fowler,
+ J.D.,
+ Newmister,
+ S.A.,
+ Pryor,
+ J.M.,
+Suo,
+ Z.,
+ 2011.
+ Quantitative
+ analysis
+ of
+ the
+ efﬁciency
+ and
+mutagenic
+ spectra
+ of
+ abasic
+ lesion
+ bypass
+ catalyzed
+ by
+human
+ Y-family
+ DNA
+ polymerases.
+ Nucleic
+ Acids
+ Res.
+ 39
+ (2),
+609–622.
+Vasquez-Del
+ Carpio,
+ R.,
+ Silverstein,
+ T.D.,
+ Lone,
+ S.,
+ Johnson,
+ R.E.,
+Prakash,
+ L.,
+ Prakash,
+ S.,
+ Aggarwal,
+ A.K.,
+ 2011.
+ Role
+ of
+ human
+DNA
+ polymerase
+ kappa
+ in
+ extension
+ opposite
+ from
+ a
+ cis-syn
+thymine
+ dimer.
+ J.
+ Mol.
+ Biol.
+ 408
+ (2),
+ 252–261.
+Wang,
+ G.,
+ Yu,
+ Y.,
+ Chen,
+ X.,
+ Xie,
+ H.,
+ 2001.
+ Low
+ concentration
+N-methyl-N′-nitro-N-nitrosoguanidine
+ activates
+ DNA
+polymerase-beta
+ expression
+ via
+ cyclic-AMP-protein
+ kinase
+A-cAMP
+ response
+ element
+ binding
+ protein
+ pathway.
+ Mutat.
+Res.
+ 478
+ (1–2),
+ 177–184.
+Wang,
+ Q.,
+ Jiang,
+ H.,
+ Fan,
+ Y.,
+ Huang,
+ X.,
+ Shen,
+ J.,
+ Qi,
+ H.,
+ Li,
+ Q.,
+ Lu,
+ X.,
+Shao,
+ J.,
+ 2011.
+ Phosphorylation
+ of
+ the
+ alpha-subunit
+ of
+ the
+eukaryotic
+ initiation
+ factor-2
+ (eIF2alpha)
+ alleviates
+benzo[a]pyrene-7,8-diol-9,10-epoxide
+ induced
+ cell
+ cycle
+ arrest
+and
+ apoptosis
+ in
+ human
+ cells.
+ Environ.
+ Toxicol.
+ Pharmacol.
+ 31
+(1),
+ 18–24.
+Westerheide,
+ S.D.,
+ Anckar,
+ J.,
+ Stevens
+ Jr.,
+ S.M., Sistonen,
+ L.,
+Morimoto,
+ R.I.,
+ 2009.
+ Stress-inducible
+ regulation
+ of
+ heat
+ shock
+factor
+ 1
+ by
+ the
+ deacetylase
+ SIRT1.
+ Science
+ 323
+ (5917),
+1063–1066.
+Yang,
+ Y.,
+ Li,
+ Z.,
+ 2005.
+ Roles
+ of
+ heat
+ shock
+ protein
+ gp96
+ in
+ the
+ ER
+quality
+ control:
+ redundant
+ or
+ unique
+ function?
+ Mol.
+ Cells
+ 20
+(2),
+ 173–182.
+Zhu,
+ H.,
+ Fan,
+ Y.,
+ Jiang,
+ H.,
+ Shen,
+ J.,
+ Qi,
+ H.,
+ Mei,
+ R.,
+ Shao,
+ J.,
+ 2010.
+Response
+ of
+ human
+ DNA
+ polymerase
+ iota
+ promoter
+ to
+N-methyl-N′-nitro-N-nitrosoguanidine.
+ Environ.
+ Toxicol.
+Pharmacol.
+ 29
+ (1),
+ 79–86.

@@ -1,0 +1,1171 @@
+Molecular and Cellular Biology
+ISSN: 1098-5549 (Online) Journal homepage: www.tandfonline.com/journals/tmcb20
+Regulation of the Protocadherin Celsr3 Gene
+and Its Role in Globus Pallidus Development and
+Connectivity
+Zhilian Jia, Ya Guo, Yuanxiao Tang, Quan Xu, Baojie Li & Qiang Wu
+To cite this article: Zhilian Jia, Ya Guo, Yuanxiao Tang, Quan Xu, Baojie Li & Qiang Wu (2014)
+Regulation of the Protocadherin Celsr3 Gene and Its Role in Globus Pallidus Development and
+Connectivity, Molecular and Cellular Biology, 34:20, 3895-3910, DOI: 10.1128/MCB.00760-14
+To link to this article:  https://doi.org/10.1128/MCB.00760-14
+Published online: 20 Mar 2023.
+Submit your article to this journal 
+Article views: 136
+View related articles 
+View Crossmark data
+Citing articles: 2 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tmcb20
+
+
+Regulation of the Protocadherin Celsr3 Gene and Its Role in Globus
+Pallidus Development and Connectivity
+Zhilian Jia,a,b,c Ya Guo,a,b,c Yuanxiao Tang,a,b,c Quan Xu,a,b,c Baojie Li,c Qiang Wua,b,c
+Key Laboratory of Systems Biomedicine (Ministry of Education), Center for Comparative Biomedicine, Institute of Systems Biomedicine, Shanghai Jiao Tong University,
+Shanghai, Chinaa; State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, School of Medicine, Shanghai Jiao Tong University,
+Shanghai, Chinab; Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders, Ministry of Education, Bio-X Center, School of Life Sciences and
+Biotechnology, Shanghai Jiao Tong University, Shanghai, Chinac
+The globus pallidus (GP) is a central component of basal ganglia whose malfunctions cause a variety of neuropsychiatric disor-
+ders as well as cognitive impairments in neurodegenerative diseases such as Parkinson’s disease. Here we report that the proto-
+cadherin gene Celsr3 is regulated by the insulator CCCTC-binding factor (CTCF) and the repressor neuron-restrictive silencer
+factor (NRSF, also known as REST) and is required for the development and connectivity of GP. Speciﬁcally, CTCF/cohesin and
+NRSF inhibit the expression of Celsr3 through speciﬁc binding to its promoter. In addition, we found that the Celsr3 promoter
+interacts with CTCF/cohesin-occupied neighboring promoters. In Celsr3 knockout mice, we found that the ventral GP is occu-
+pied by aberrant calbindin-positive cholinergic neurons ectopic from the nucleus basalis of Meynert. Furthermore, the guide-
+post cells for thalamocortical axonal development are missing in the caudal GP. Finally, axonal connections of GP with striatum,
+subthalamic nucleus, substantia nigra, and raphe are compromised. These data reveal the essential role of Celsr3 in GP develop-
+ment in the basal forebrain and shed light on the mechanisms of the axonal defects caused by the Celsr3 deletion.
+T
+he genes Celsr1, Celsr2, and Celsr3 are members of the mam-
+malian nonclustered protocadherin (Pcdh) family that are ho-
+mologous to the ﬂy ﬂamingo gene (1). The ﬂamingo gene plays
+important roles in dendrite development and self-avoidance, ax-
+onal projection, and planar cell polarity (PCP) in Drosophila (2–
+7). The mammalian Celsr genes are the so-called core PCP genes
+that have conserved as well as newly diversiﬁed functions. In par-
+ticular, the vertebrate Celsr3 gene has been shown to regulate ax-
+onal projections, dendrite development, neuronal migration, cil-
+iogenesis, and retina circuit development (8–16). However, very
+little is known about Celsr gene regulation.
+The globus pallidus (GP) is a central nucleus of the basal gan-
+glia (BG) (17, 18). Malfunctions of GP lead to several neuropatho-
+logical conditions, such as Parkinson’s disease, as well as many
+neuropsychiatric diseases (19). The mouse GP, which corre-
+sponds to the GPe in primates, contains approximately 44% of
+parvalbumin-positive (PV) neurons and 1% of calretinin-posi-
+tive (CR) interneurons, but calbindin-positive (CB) cells are
+rare (20, 21). The GP is traditionally thought to be derived from
+the medial ganglionic eminence (MGE) (22); however, recent
+studies have revealed that, in addition to MGE, subpopulations of
+GP cells are also generated from the lateral ganglionic eminence
+(LGE) and preoptic area (POA) (21, 23). The molecular require-
+ments for GP development are not known, but speciﬁc transcrip-
+tion factors appear to be essential. For example, Nkx2-1 is required
+for the generation of most GP neurons except the Npas1 type
+from LGE (23). In addition, Lhx6/8 double-mutant mice do not
+have a well-deﬁned GP (24).
+The GP functions through extensive axonal connections with
+other brain nuclei. For example, GP receives GABAergic axons
+from the striatum, glutamatergic ﬁbers from the subthalamic nu-
+cleus (STN), dopaminergic axons from the substantia nigra pars
+compacta (SNc), and serotonergic axons from the raphe (18, 20).
+In turn, GP sends GABAergic ﬁbers to the output nuclei: the en-
+topeduncular nucleus (EP, or GPi in primates) and the STN
+(18–20). Finally, the cells close to or associated with the develop-
+ing GP might assist in the development of the major thalamocor-
+tical and corticofugal pathways as guidepost cells in the ventral
+forebrain (25–29). However, little is known about the molecular
+mechanisms of the development of GP connectivity.
+We report that the transcription factors CCCTC-binding fac-
+tor (CTCF) and neuron-restrictive silencer factor (NRSF) regulate
+the expression of Celsr3 by directly binding to its promoter region.
+In particular, the Celsr3 promoter interacts with several other pro-
+moters, most of which are enriched with the histone mark
+H3K4me3 and CTCF/cohesin, through long-distance DNA loop-
+ing. In addition, we report the critical role of Celsr3 in GP devel-
+opment and connectivity. Speciﬁcally, we have found that the ven-
+tral region of the Celsr3 mutant GP is occupied by cholinergic
+neurons ectopic from the nucleus basalis of Meynert (NB) and
+that the axonal connections of the GP with other nuclei are com-
+promised. Taken together, these data suggest that Celsr3, regu-
+lated by CTCF/cohesin and NRSF, is essential for GP development
+and connectivity.
+MATERIALS AND METHODS
+Plasmid construction. The sequences for the mouse full-length Celsr3
+open reading frame (ORF) (9,930 bp) were cloned from brain total RNA
+preparations by reverse transcriptase PCR (RT-PCR) experiments. We
+ﬁrst designed four pairs of primers (F1, AGTAG ATGGT GCCCA
+GAGAG CAGTG; R1, GTGCT GATGG CAAAT CGGTT CCGAG; F2,
+ACAGC GCCAT CAGCT ACCAA ATCAC; R2, CGTTG CAGTC ATCCA
+Received 3 June 2014 Returned for modiﬁcation 9 July 2014
+Accepted 1 August 2014
+Published ahead of print 11 August 2014
+Address correspondence to Qiang Wu, qwu123@gmail.com.
+Copyright © 2014, American Society for Microbiology. All Rights Reserved.
+doi:10.1128/MCB.00760-14
+October 2014
+Volume 34
+Number 20
+Molecular and Cellular Biology
+p. 3895–3910
+mcb.asm.org
+3895
+
+
+CGCTC AACAC; F3, CAGGA GGCCT GAGTG ACGGA CAATG; R3,
+GCTGG CCTTG TTTCC TCAGG AGCTG; F4, TTGGA CACCA GCCTG
+TCTAG GCAAG; R4, AGGAG TGACC CTCGC TTCTG GGAAC) to
+amplify four overlapping fragments of 2,552, 2,553, 3,646, and 1,589 bp,
+respectively. We then ampliﬁed the ﬁrst half (4,896 bp) of the Celsr3 ORF
+by PCR with the primer pair F5 (CGGAA TTCGC CACCA TGGCG
+AGGCG GCCTC TATGG TG with the EcoRI site) and R2 by using the
+ﬁrst two fragments as templates. The PCR product was digested and
+cloned between the EcoRI and XbaI sites of the pCAG-Myc expression
+vector. The second half (5,322 bp) of the Celsr3 ORF was cloned similarly
+with the primer pair F6 (ACCCA GCGGG CTACT CTTCT ACAAC) and
+R5 (CCCAA GCTTG AGTGA CCCTC GCTTC TGGGA AC) and inserted
+between the XbaI and HindIII sites. The ﬁnal Celsr3 clone was conﬁrmed
+by sequencing with 16 primers covering the entire length. The cloned
+sequence contains a total of 36 exons, including a novel 15-nucleotide (nt)
+alternative exon (exon 17).
+The human full-length NRSF was cloned from the HEC-1-B total
+RNA preparation by RT-PCR into pTNT vector (Promega) between the
+EcoRI and XbaI sites. The primer set was GGAAT TCAAC ATGGC
+CACCC AGGTA ATG and GCTCT AGATT ACTCC TGCCC TTGAG
+CT. The region encoding the ZF1-8 domain of NRSF was then subcloned
+with a Myc tag coding sequence added to the 3= end. The primers were
+CGGAA TTCAC CATGG GTGCT CCAGA TATTT ACA and GCTCT
+AGATT ACAGA TCCTC TTCTG AGATG AGTTT TTGTT CGGTA
+ATATT ATCAG GCAA. The human full-length CTCF was cloned previ-
+ously (30).
+The knockdown plasmids for NRSF and Celsr3 were constructed by
+ligating the annealed primer pairs into pLKO.1 (Sigma) between the
+EcoRI and AgeI sites. For plasmids used to generate the gel-shift probes,
+the human CELSR3 promoter region containing putative CTCF or NRSF
+motifs was ampliﬁed by PCR from the human genomic DNA and cloned
+into the pGEM-T vectors (Promega) (CELSR3-CTCF, ACCCA AGCTT
+ACCAC AGCAT CCCCG ACG and GGGGT ACCCA CCACT GCACT
+CCGAA AGA; CELSR3-NRSF, TCGCC GAGGT TACTT TCCTG and
+TTTTT GATTC GGCAC CACGG). For in situ hybridization, the se-
+quences of probes for Er81, Lhx6, and Lmo3 were ampliﬁed from the
+mouse brain cDNA using speciﬁc primer pairs (Allen Brain Atlas) and
+then cloned into pGEM-T vectors. All constructs were conﬁrmed by se-
+quencing.
+Cell culture. HEC-1-B, HepG2, IMR-32, and SK-N-SH cells were cul-
+tured in minimal essential medium (MEM) (Gibco), supplemented with
+10% fetal bovine serum (FBS) (Gibco), 1% penicillin-streptomycin
+(Gibco), 2 mM Glutamax (Gibco), and 1 mM sodium pyruvate (Sigma).
+HEK 293T cells were cultured in Dulbecco’s modiﬁed Eagle medium
+(DMEM) (HyClone), supplemented with 10% FBS and 1% penicillin-
+streptomycin. Cells were maintained at 37°C in a 5% CO2 incubator.
+4C-seq. Circular chromosome conﬁrmation capture (4C) libraries for
+high-throughput sequencing (4C-seq) were constructed as described pre-
+viously (31), with some modiﬁcations. Brieﬂy, an E18.5 fetal brain was
+dispersed by collagenase (Sigma) treatment in 500 l of 10% FCS-DMEM
+for 45 min at 37°C with shaking at 700 rpm. Cells were then ﬁltered
+through a 40-m cell strainer (BD Biosciences) to make single-cell sus-
+pensions and cross-linked with 1% formaldehyde for 10 min at 37°C.
+Human SK-N-SH cells were cross-linked directly. The cross-linked DNA
+was digested with HindIII (NEB) overnight with shaking at 900 rpm and
+then ligated using T4 DNA ligase (NEB). After phenol-chloroform extrac-
+tion and ethanol precipitation, the puriﬁed DNA was digested with the
+secondary restriction enzyme DpnII (NEB) and ligated again. Finally,
+4C-seq libraries were ampliﬁed from the religated DNA using PCR with
+inverse primers, including Illumina adapter sequences (human CELSR3,
+AATGA TACGG CGACC ACCGA GATCT ACACT CTTTC CCTAC
+ACGAC GCTCT TCCGA TCTCA GGAAC AGCAG CTTAC TATGG
+AAG and CAAGC AGAAG ACGGC ATACG AGATC GTGAT GTGAC
+TGGAG TTCAG ACGTG TGCTC TTCCG ATCGA ACCTA AGCAG
+AGTCC TTGTG AG; mouse Celsr3, AATGA TACGG CGACC ACCGA
+GATCT ACACT CTTTC CCTAC ACGAC GCTCT TCCGA TCTCT
+GGTGA AGGTG CTTGG TGTCC and CAAGC AGAAG ACGGC
+ATACG AGATC GTGAT GTGAC TGGAG TTCAG ACGTG TGCTC
+TTCCG ATCAG TGCTG CTCAG GCAAC TCGTA C). Sequencing was
+performed using 50-bp single-end reads on an Illumina HiSeq 2000 sys-
+tem according to the manufacturer’s speciﬁcations. The 4C experiments
+were performed in duplicate. Sequenced reads were analyzed and mapped
+to the human (GRCh37/hg19) or mouse reference genome (NCBI37/
+mm9) by the r3Cseq and visualized in normalized reads per million
+(RPM) (32).
+ChIP sequencing (ChIP-seq). Chromatin immunoprecipitation
+(ChIP) was performed using reagents from the Millipore according to the
+manufacturer’s instructions. Brieﬂy, SK-N-SH cells were cross-linked
+with 1% formaldehyde for 10 min at 37°C. After quenching with glycine at
+a ﬁnal concentration of 0.125 M, the cells were lysed and sonicated using
+a Vibra-Cell ultrasonic processor (Sonics). The lysate was immunopre-
+cipitated with antibodies against H3K4me3 (Millipore), H3K27me3 (Mil-
+lipore), CTCF (Millipore), or RAD21 (Abcam). The immunoprecipitated
+complexes were isolated by using protein G-agarose beads. Following elu-
+tion, cross-linked DNA-protein complexes were incubated at 65°C to re-
+verse the cross-linking. The DNA was then puriﬁed and quantiﬁed using
+PicoGreen reagent (Invitrogen) for library construction. The libraries
+were sequenced using the Illumina HiSeq 2000 platform. Sequenced reads
+were mapped to the human genome (GRCh37/hg19) using the program
+Bowtie (version 1.0.0) (33), and peaks of H3K4me3, H3K27me3, CTCF,
+and RAD21 were determined using MACS software (version 1.4.2) (34).
+Recombinant protein production and EMSA. The recombinant hu-
+man CTCF and the truncated NRSF (zinc ﬁnger 1 to 8) proteins were
+synthesized from pTNT-CTCF (30) and pTNT-NRSF(ZF1-8)-myc plas-
+mids, respectively, using a TNT T7 quick coupled transcription/transla-
+tion system (Promega). All wild-type and mutation probes were produced
+by PCR with 5= biotin-labeled primers, and the probes were gel-puriﬁed
+(CELSR3-CTCF, GAACA ACTGG ACACC TGT and GGAGG CGGGG
+CTTCT GCG; CELSR3-RE1a, TGTCT TCCAG GGGCC TCG and
+AACCT GATGC AGGAG CTGTC; CELSR3-RE1b, CTGCA TCAGG
+TTCAG CACC and AAGAG ACCCC GGGAG CG; CELSR3-RE1b-Mut1,
+TGTCT TCCAG GGGCC TCG and AACCT GATGC AGGAG AGGTA).
+Gel shift experiments were carried out using the chemiluminescent re-
+agent LightShift (Thermo) according to the manufacturer’s instructions.
+Monoclonal CTCF antibody (BD Biosciences) and Myc antibody (Milli-
+pore) were used for supershift and Western blot experiments.
+Lentivirus cloning, packaging, and transduction for shRNA knock-
+down. Lentivirus was packaged by cotransfecting 293T cells with the
+knockdown plasmid targeting Celsr3, NRSF, CTCF, or Rad21 and two
+helper plasmids, the envelope plasmid pMD2.G and the packaging plas-
+mid psPAX2. The sequences of the short hairpin RNAs (shRNAs) were
+GGAGC AAGTC CTTAT TGAAG T (NRSF), CCTCT TTGTT TACAA
+GTGAA A (Celsr3), GTCGA GCTGG ACGGC GACGT A (GFP), and
+CAACA AGATG AAGAG CACCA A (scrambled control). Knockdown
+efﬁciency was assayed by infecting human 293T cells or mouse primary
+cortical neurons with the lentivirus for knocking down NRSF or Celsr3,
+respectively. Five days after infection, cells were harvested, and total RNA
+was extracted using TRIzol (Ambion). Real-time PCR was used to assay
+the knockdown efﬁciency. For the knockdown of NRSF and Celsr3, we
+screened three shRNAs for each gene and found one with high efﬁciency.
+The CTCF and RAD21 knockdown plasmids were previously reported
+(30).
+Real-time PCR. Total RNA was isolated from cultured human or
+mouse cells by using TRIzol (Ambion). The reverse-transcription reac-
+tion was performed by using a reverse transcription system (Promega)
+with 1 g total RNA. Real-time PCR was then performed with primer
+pairs in at least three independent experiments (CELSR3, GCTGG
+CATTT CGGAC ACG and AGAAG GAGAT GGGAA GCACG G; CTCF,
+TCTGG ACGAC AATGA GGATG AG and GCACC TGTAT TCTGG
+TCTTC AAC; RAD21, GAGAG AAGAA GTTGG GAACA TCAG and
+Jia et al.
+3896
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+TAATA GGAGG TTAGA AGTAG TAGTG CT; NRSF, GGATA ATGAG
+CGAGT CTACA AGTG and TATGG GCGTT CTCCT GTATG; GAPDH,
+GGAGT CCACT GGCGT CTTCA C and GCAGG AGGCA TTGCT
+GATGA T; mouse Celsr3, GCAGT CCTCA AGCAC TCCCT C and
+CCTGG TGGCT CCTCA TTCG; mouse NRSF, CGTAT AAATG TGAAC
+TTTGT CCT and CCCGT TGTGA ACCTG TCTT; mouse -actin,
+TTGTT ACCAA CTGGG ACGAC and CTGGG GTGTT GAAGG TCTC).
+Statistical analysis was performed using Student’s t test.
+Cell differentiation. The neuroblastoma IMR-32 cells were main-
+tained at 37°C in a saturated humidity atmosphere containing 5% CO2.
+After 24 h of plating, all-trans retinoic acid (RA) was added to a ﬁnal
+concentration of 10 M to induce differentiation. Dimethyl sulfoxide
+(DMSO) (0.1%) was added for the vehicle control. The cells were main-
+tained for 5 additional days, with the RA- or DMSO-containing medium
+being changed every 2 days.
+Animals. The Celsr3 deletion mice were previously described (11).
+Genotyping was performed by PCR with the primers CCCCC TGAAC
+CTGAA ACATA AAATG, ACTTC AGCAC TGCAC CCGAC TTAC and
+GCCCT GCGAG AACTA CATGA AATG. All animal experiments were
+approved by the Institutional Animal Care and Use Committee (IACUC)
+of Shanghai Jiao Tong University.
+Histology and immunohistochemistry. The day on which the vaginal
+plug was found was deﬁned as E0.5. The ages of embryos were judged by
+the plugging date in combination with age-speciﬁc developmental fea-
+tures. Nissl staining was performed as described previously (11).
+Dams at the appropriate pregnancy date were anesthetized with so-
+dium pentobarbital (20 mg/ml) at a dose of 100 mg/kg. Embryos were
+obtained by Caesarean section of the dams. The E13.5 embryonic heads
+were decollated and immediately immersion ﬁxed in cold 0.1 M phos-
+phate-buffered saline (PBS; pH 7.4) with 4% paraformaldehyde (PFA) for
+2 to 6 h. The brains of embryos older than E13.5 were removed and ﬁxed.
+Adult mice were anesthetized and perfused with PBS, followed by 4% PFA
+in PBS. Their brains were then removed and postﬁxed for 4 to 6 h. After
+washed in PBS, the ﬁxed brains were cryoprotected with increasing grades
+of sucrose (15% to 30%) in 0.1 M PBS, embedded in optimum cutting
+temperature compound (OCT) (Sakura), and sectioned at 14 to 20 m
+with a microtome (Leica).
+For immunohistochemistry, sections were washed three times in PBS,
+blocked in 3% bovine serum albumin (BSA)–0.1% Triton X-100 for 1 h at
+room temperature (RT), and then incubated with primary antibodies at
+4°C overnight. The primary antibodies used were rabbit anti-green ﬂuo-
+rescent protein (anti-GFP) (1:2,000; Abcam), rabbit anti-GFP (1:1,000;
+Invitrogen), rabbit anti-tyrosine hydroxylase (anti-TH) (1:500; Milli-
+pore), rabbit anti-CR (1:2,000; Swant), rabbit anti-CB (1:3,000; Swant),
+rabbit anti-activated caspase 3 (1:500; Cell Signaling Technology), mouse
+anti-Islet1 (1:100; Developmental Studies Hybridoma Bank [DSHB]),
+goat anti-choline acetyltransferase (anti-ChAT) (1:100; Millipore), rabbit
+anti-VGLUT2 (1:1,000; Synaptic Systems), rabbit anti-Olig2 (1:500; Mil-
+lipore), rabbit anti-NG2 (1:200; Millipore), mouse anti-Nkx2-1 (1:100;
+Labvision), mouse anti-glial ﬁbrillary acidic protein (anti-GFAP) (1:
+500; Millipore), and rabbit anti-SERT (1:1,000; Immunostar).
+For GFAP staining, the ﬁxation time was shortened to 20 min. For
+staining with Islet1, Nkx2-1, and SERT antibodies, sections were treated
+by antigen retrieval in 10 mM sodium citrate (pH 6.0) before blocking.
+After incubation with primary antibodies, sections were washed in PBS
+and then incubated with Cy3- or Alexa Fluor 488-conjugated secondary
+antibodies (Jackson ImmunoResearch) for 1 h at RT. The sections were
+washed again with PBS and mounted with Vectashield DAPI-containing
+mounting medium (Vector Laboratories).
+Acetylcholinesterase (AChE) histochemistry. For AChE histochem-
+istry, we used the protocol described in reference 35, with minor modiﬁ-
+cations. Brieﬂy, E18.5 brains were removed and ﬁxed in 4% PFA in PBS
+for 2 h. The brains were cryoprotected with 15% and 30% sucrose, em-
+bedded in OCT, and sectioned. All the following steps were performed on
+a laboratory rotator at 80 rpm. After being rinsed twice in 0.1 M acetate
+buffer (pH 6.0), slides were incubated in the reaction solution for 16 h in
+the dark. The reaction solution contained 0.12% acetylthiocholine iodide,
+0.065 M sodium acetate, 4 mM sodium citrate, 3 mM cupric sulfate, and
+0.1 mM potassium ferricyanide. Slides were then rinsed ﬁve times (1 min
+each) in the acetate buffer, incubated with 1% ammonium sulﬁde solu-
+tion for 5 min and washed ﬁve times (1 min each) with 0.1 M sodium
+nitrate. Finally, slides were immersed in 0.1% silver nitrate for 5 min,
+followed by ﬁve changes of 0.1 M sodium nitrate and dehydrated, and
+coverslipped before imaging.
+Cell birth dating. Pregnant dams at E10.5, E11.5, E12.5, and E13.5
+received bromodeoxyuridine (BrdU) (Sigma) at 50 mg/kg with intraper-
+itoneal injections. Embryos were harvested at E18.5. For BrdU (1:1,000;
+DSHB) labeling, slides were treated with HCl (2 N) for 10 min. BrdU and
+total cells within the GP region were quantiﬁed. The counted areas con-
+tained at least 150 cells.
+Western blotting. For the analyses of Celsr3 and NRSF protein ex-
+pression, P21 Celsr3/ brains and spleens (as a nonneural control) were
+removed. Brains were freshly cut at 200 m with a vibratome. GP, stria-
+tum, and cortex regions were then separated under a dissecting micro-
+scope. For the comparison of TH or Tau expression levels between control
+and Celsr3/ mice, the telencephalon and diencephalon were removed
+from E18.5 brains. These tissues were immediately homogenized in radio-
+immunoprecipitation assay (RIPA) buffer (Sigma) and centrifuged at
+12,000  g for 20 min at 4°C to remove the pellets. Western blot experi-
+ments were performed according to the standard protocol, with -actin as
+a loading control. The antibodies used were rabbit anti-GFP (1:1,000;
+Invitrogen), rabbit anti-NRSF (1:1,000; Millipore), rabbit anti-TH (1:
+1,000; Millipore), rabbit anti-Tau (1:1,000; Abcam), and mouse anti--
+actin (1:10,000; Abcam).
+In situ hybridization. In situ hybridization was performed as de-
+scribed previously (11). Digoxigenin (DIG)-labeled cRNA probes were
+synthesized by in vitro transcriptions with T7 or SP6 polymerase. The
+probe targets were as follows: Er81 (nucleotides 1781 to 2454 of
+NM_007960.3), Lhx6 (nucleotides 1723 to 2126 of NM_008500.2), and
+Lmo3 (nucleotides 735 to 1509 of NM_207222.2).
+DiI tracing. After dissection, brains were ﬁxed overnight with 4% PFA
+solution. Single crystals of 1,1=-dioctadecyl-3,3,3=,3=-tetramethyl indo-
+carbocyanine perchlorate (DiI) (Molecular Probes) were inserted into
+various brain regions under a dissecting microscope with ﬁne forceps.
+For dorsal thalamus implantation, E13.5 and E14.5 brains were em-
+bedded in 5% agarose (Amresco). We ﬁrst sectioned the brain coronally
+from the caudal to the rostral levels with a vibratome to expose the dorsal
+thalamus. Single crystals of DiI were then inserted into the dorsal thala-
+mus using ﬁne forceps under a dissecting microscope. The brains with DiI
+implanted were kept in the 4% PFA solution at RT for 2 weeks in the dark
+to allow dye diffusion. Finally, the brains were sectioned coronally from
+the dorsal thalamus toward the telencephalon at 150 m with a vi-
+bratome. The sections were counterstained with 4=,6-diamidino-2-phe-
+nylindole (DAPI) before being imaged with a Zeiss microscope.
+For striatum implantation, the agarose-embedded E18.5 brains were
+cut coronally from the olfactory bulb toward the striatum with a vi-
+bratome. When the striatum was exposed, single crystals of DiI were in-
+serted. After 2 weeks of incubation with the 4% PFA solution, brains were
+sectioned further caudally at 150 m. Sections with GP were collected,
+counterstained with DAPI, and imaged.
+For GP implantation, rostral parts of the brains were removed to ex-
+pose GP. After DiI insertion, brains were kept in 4% PFA for 6 weeks at
+RT. Finally, the brains were sectioned caudally at 150 m. Sections at the
+desired levels were collected and imaged.
+In utero electroporation. For in utero electroporation, we used the
+protocol described in reference 36, with minor modiﬁcations. Brieﬂy,
+dams at E12.5 were anesthetized with pentobarbital sodium. After the
+abdomen had been cleaned, laparotomy was performed and the uteri were
+exposed. For electroporation of two vectors, a mixture of pCAG-GFP (2
+g/l) and pLKO.1-shCelsr3 (2.5 g/l) or control constructs was pre-
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3897
+
+
+pared at a molar ratio of 1:1. The expression vectors were then mixed with
+0.05% fast green as a tracer and injected through the uterine wall into the
+lateral ventricle. Five electrical pulses were applied at 32 V for a duration
+of 50 ms at 900-ms intervals. Six days later, the pregnant mice were sacri-
+ﬁced, and embryonic brains were ﬁxed overnight. The brains were then
+mounted with 5% agarose and sectioned at 50 m with a vibratome.
+Imaging and cell counting. Slides were imaged with a Zeiss Axiovert
+200 microscope. The pictures in Fig. 3B, Fig. 9D, and Fig. 10D to F and H
+were photo merged from small pictures. Cell counting was performed on
+images at magniﬁcations of 200. At least three sections of the rostral,
+middle, and caudal GP levels were counted. Data were expressed as
+means  standard deviations (SD). The signiﬁcance of differences was
+assessed using the two-tailed Student t test.
+Nucleotide sequence accession number. The sequence cloned here
+can be accessed through GenBank accession number KJ954288.
+RESULTS
+Inhibition of CELSR3 by NRSF. To understand the mechanisms
+of developmental regulation of the Celsr3 gene, we ﬁrst investi-
+gated the expression levels of the Celsr3 proteins in several mouse
+brain regions by Western blotting with an anti-enhanced-GFP
+(anti-eGFP) antibody using an eGFP reporter mouse line (Fig.
+1A) (11). The mouse line was constructed by inserting an eGFP
+reporter in frame with the ﬁrst four amino acid residues of the
+Celsr3 protein under the control of the endogenous transcription
+and translational signals. We found that Celsr3 is expressed at high
+levels in the GP, cortex, and striatum, in contrast to no expression
+in the spleen and several nonneural tissues (Fig. 1A and B). This
+is consistent with previous reports that the expression of Celsr3 is
+neuron speciﬁc (37). Interestingly, we found that NRSF, which is
+a transcription factor suppressing the expression of neuron-spe-
+ciﬁc genes in nonneural tissues (38), is expressed at high levels in
+the mouse nonneural tissues but at low levels in the brain (Fig. 1A
+and B). We found two putative NRSF binding sites located in
+tandem in the promoter region of CELSR3 (Fig. 1C), although
+most genes contain only one NRSF binding site (39). The two sites
+FIG 1 Inhibition of CELSR3 expression by NRSF. (A) Schema of the wild-type (WT) and mutant (Mut) proteins and Western blot of Celsr3 and NRSF in brain
+tissues of the P21 Celsr3/ mice, with spleen as a control. EC, cadherin ectodomain; LG, Laminin-A globular domain; 7-TM, seven transmembrane segments.
+(B) Quantitative real-time PCR of Celsr3 and NRSF in P21 mouse tissues. (C) Two noncanonical NRSF motifs located in tandem in the CELSR3 promoter region.
+(D) Western blot of the in vitro-translated NRSF proteins. (E) Gel shift and supershift of NRSF with wild-type and mutated NRSF motifs. (F) Relative expression
+of CELSR3 genes upon the NRSF knockdown in three different nonneuronal cell lines. Data are means  SD (n  3). Signiﬁcance was determined with Student’s
+t test. *, P 	 0.05; **, P 	 0.01.
+Jia et al.
+3898
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+contain exactly the same binding motifs (Fig. 1C). Gel shift and
+supershift experiments with recombinant NRSF showed that it
+binds to both motifs (Fig. 1D and E). Knockdown of NRSF in
+several nonneuronal cell lines results in signiﬁcant increases of
+CELSR3 expression (Fig. 1F). Thus, NRSF binds directly to the
+CELSR3 promoter region and inhibits its expression.
+Role of CTCF and cohesin in CELSR3 gene regulation. To
+further investigate the mechanisms of Celsr3 gene regulation, we
+performed 4C-seq experiments by using the Celsr3 promoter re-
+gion as an anchor in the mouse brain as well as in the human
+neural cell line SK-N-SH. We found that the Celsr3 promoter is
+looped with the promoter regions of several neighboring genes as
+well as several nonpromoter regions in the mouse brain (Fig. 2A).
+Similarly, the human CELSR3 promoter also interacts with pro-
+moters of several neighboring genes (Fig. 2B). ChIP-seq experi-
+ments revealed that all of these looped promoters are occupied by
+the active histone mark H3K4me3 (Fig. 2B). In particular, the
+CELSR3 promoter is marked by H3K4me3 as well as the chromo-
+somal architectural proteins CTCF and cohesin subunit RAD21
+(Fig. 2C). Manual inspections identiﬁed a putative CTCF-binding
+motif in the CELSR3 promoter region. Gel shift experiments
+showed that CTCF and the motif form a retarded band which is
+supershifted with a CTCF-speciﬁc antibody and is abolished by
+mutation of the core sequences (Fig. 2D and E). We noted that the
+vast majority of the looped promoters are enriched with CTCF
+and RAD21 (Fig. 2B and F). Finally, knockdown of CTCF or
+RAD21 results in signiﬁcant increases of CELSR3 expression (Fig.
+2G). Importantly, genome-wide analysis revealed that CTCF/co-
+hesin complexes, as well as the H3K4me3 mark, are speciﬁcally
+enriched immediately upstream of transcription start sites (TSS)
+in SK-N-SH cells (Fig. 2H), suggesting an architectural role of
+CTCF/cohesin in mediating genome-wide promoter-promoter in-
+teractions. Taken together, we conclude that CTCF-mediated chro-
+matin looping interactions between neighboring promoters are im-
+portant in the regulation of Celsr3 gene expression.
+Celsr3 expression patterns in GP. To investigate whether
+Celsr3 expression is regulated during neural differentiation, we
+used retinoic acid (RA) to induce differentiation of the human
+neuroblastoma cell line IMR-32. We found signiﬁcant increases of
+human CELSR3 expression upon RA-induced differentiation of
+IMR-32 cells (Fig. 3A), consistent with a previous report that
+Celsr3 is expressed in differentiated brain nuclei (37). Interest-
+ingly, we found that Celsr3 is especially enriched in the differenti-
+ated ventral forebrain nuclei of the GP in the developing mouse
+embryos (Fig. 3B). Costaining with the GP marker Nkx2-1 (21,
+23) demonstrated that the vast majority of GP cells express Celsr3
+(Fig. 3C to E). Quantiﬁcation revealed that 77.2%  2.8% (n  3
+mice) of Nkx2-1 (GP) cells express Celsr3 at E15.5 (out of 506
+Nkx2-1 cells quantiﬁed, 391 cells are Celsr3), 85.7%  4.6%
+(n  8 sections from 3 mice) at E18.5 (out of 675 Nkx2-1 cells
+quantiﬁed, 578 cells are Celsr3), and 97.0%  1.0% (n  8 sec-
+tions from 3 mice) in the adult (out of 327 Nkx2-1 cells quanti-
+FIG 2 Spatial interactome of the Celsr3 promoter region. (A and B) Chromosomal maps of 4C signals, in reads per million (RPM), anchored with the Celsr3
+promoter in E18.5 mouse brain tissues (A) and human SK-N-SH cells (B). (C) ChIP-seq signals of H3K4me3, H3K27me3, CTCF, and RAD21 in the CELSR3
+promoter. (D and E) Gel shift and supershift of CTCF with wild-type (WT) or mutated (Mut) probes of CELSR3. (F) Read density of H3K4me3, H3K27me3,
+CTCF, and RAD21, as well as 4C signals, in three interacting promoters. (G) Relative expression of CELSR3 upon CTCF and RAD21 knockdown. (H)
+Genome-wide localization of CTCF, RAD21, and H3K4me3 immediately upstream of TSS. Data are means  SD (n  3). Signiﬁcance was determined with
+Student’s t test. **, P 	 0.01; ***, P 	 0.001.
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3899
+
+
+ﬁed, 318 cells are Celsr3) (Fig. 3F). This prominent expression of
+Celsr3 in the GP suggests that Celsr3 may play an important role in
+GP development and function.
+Abnormal GP in Celsr3 mutant mice. To investigate whether
+there are developmental defects of the GP in Celsr3-targeted mice,
+we performed DAPI and Nissl staining and found that an aberrant
+region where cells are sparse appears at E14.5 in the developing
+ventral GP of the Celsr3 mutant mice (Fig. 4A). In addition, this
+defect is progressively more pronounced from E14.5 to E18.5 (Fig.
+4A). Finally, we found many more GFAP astrocytes in the mu-
+tant GP than in the control, suggesting reactive gliosis resulting
+from potential increases of apoptosis (Fig. 4B). Indeed, activated
+caspase 3 immunostaining showed an increase of apoptosis in the
+mutant GP (Fig. 4C).
+We analyzed the GP defect with its marker Nkx2-1 by serial
+coronal sectioning from rostral to caudal levels and found that the
+distribution of Nkx2-1 cells is disrupted by the same region with
+sparse cells (Fig. 4A and D). In particular, this region appears at
+the middle and caudal levels (Fig. 4D). Quantiﬁcation revealed
+that the densities of Nkx2-1 cells increase in the mutant dorsal
+GP but decrease in the mutant ventral GP (Fig. 4E). In addition,
+the difference in cell densities is progressively more pronounced
+from the middle to caudal levels (Fig. 4D and E).
+Aberrant CB cells in the mutant GP. To investigate the eti-
+ology of the abnormal GP morphology, we performed in situ hy-
+bridization with a set of GP-speciﬁc transcription factor genes,
+such as Er81, Lhx6, and Lmo3 (23). We found that mutant GP cells
+maintain the same levels of their expression, suggesting no fate
+determination defects in GP (Fig. 5A). In addition, we performed
+immunostaining with Olig2 and NG2, which are oligodendrocyte
+markers in GP (23), and found no change of oligodendrocytes in
+the mutant GP (Fig. 5B and C). Third, we performed birth-dating
+experiments with BrdU injection at E10.5, E11.5, E12.5, and
+E13.5, which are the main stages of GP neurogenesis (21), and
+found no difference in birth timing of GP cells (Fig. 5D). Finally,
+we performed CB staining and found aberrant CB cells in the
+mutant ventral GP (Fig. 5E). These CB cells in the mutant ventral
+GP have relatively big soma with leading processes pointing in
+different directions (Fig. 5E). Surprisingly, these CB cells do not
+express the GP marker Nkx2-1 (Fig. 5F). This suggests that the
+CB cells in the mutant GP are of ectopic origin.
+CB cells are cholinergic neurons. GP contains cholinergic
+neurons that represent an extension from the basal magnocellular
+complex (Ch4) (21). This Ch4 complex comprises cholinergic
+neurons scattered throughout the ventral pallidum, ansa lenticu-
+laris, substantia innominata, magnocellular preoptic nucleus
+(MCPO), and NB (40, 41). To determine the origin of the CB
+cells in the mutant ventral GP, we performed costaining with CB
+and ChAT, a marker of cholinergic neurons, and found that most
+of the CB cells in the mutant ventral GP are ChAT (Fig. 6A).
+Quantiﬁcation showed that the vast majority of CB cells
+(88.9%  7.6%; n  3 mice) coexpress ChAT (out of 118 CB
+cells quantiﬁed, 103 cells are ChAT) (Fig. 6B). Consistently,
+AChE histochemistry showed that the mutant ventral GP has
+more AChE signals than controls at the middle to caudal levels
+(Fig. 6C). Quantiﬁcation revealed that cholinergic cells in the mu-
+tant GP are signiﬁcantly increased, especially at the middle to cau-
+dal levels (Fig. 6D). Together, these data demonstrated that CB
+cells in the mutant ventral GP are cholinergic neurons.
+Aberrant CB ChAT cells are of ectopic origin. The expres-
+sion of the LIM-homeobox transcription factor Islet1 is speciﬁ-
+cally excluded from GP (42). However, there are aberrant Islet1
+expression patterns in the mutant ventral GP (Fig. 7A). Costaining
+of CB and Islet1 revealed that the vast majority of CB cells
+(91.6%  3.7%; n  3 mice) in the mutant ventral GP also express
+Islet1 (out of 69 CB cells quantiﬁed, 63 cells are Islet1) (Fig. 7B
+and C). We costained ChAT and Islet1 and found that they are
+coexpressed in the mutant ventral GP (Fig. 7D). Quantiﬁcation
+revealed that 81.2%  4.1% (n  3 mice) of cholinergic neurons
+in the mutant ventral GP coexpress Islet1 (out of 137 ChAT cells
+quantiﬁed, 111 cells are Islet1) (Fig. 7E). The property of coex-
+pression of ChAT and Islet1 of these aberrant cells in the mutant is
+FIG 3 Prominent expression of Celsr3 in GP. (A) Expression level of Celsr3 in RA-treated IMR-32 cells. (B) Celsr3 expression pattern in the mouse forebrain.
+(C to E) Expression of Celsr3 (green) and Nkx2-1 (red) in GP. Examples of coexpressed cells are indicated by arrows. (F) Quantiﬁcation of the expression of
+Celsr3 in Nkx2-1 GP cells. Data are means  SD (n  3 mice). Signiﬁcance was determined with Student’s t test. ***, P 	 0.001. Scale bars, 300 m (B) and 50
+m (C to E).
+Jia et al.
+3900
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+similar to that of ChAT Islet1 NB cells in the control (Fig. 7D
+and E). Collectively, the data lead us to conclude that these aber-
+rant CB ChAT Islet1 cells are of ectopic origin.
+Ectopic CB ChAT Islet1 neurons are from NB. We found
+that the vast majority of cholinergic neurons in NB and MCPO
+express Celsr3 (Fig. 8A and B). However, CB is expressed in cho-
+linergic neurons from NB (43) but not MCPO, consistent with the
+fact that there is no difference between the MCPO regions of mu-
+tant and control mice (Fig. 8C). The strong expression of CB by
+the cholinergic neurons in the mutant ventral GP (Fig. 6A) sug-
+gests that these neurons may be ectopic from NB. Indeed, the
+region ventral to GP contains numerous cholinergic NB neurons
+in control mice (Fig. 8D). In mutant mice, however, the cholin-
+ergic neurons of NB appear to be located within the ventral GP,
+and there are no cholinergic neurons ventral to GP (Fig. 8D). As
+Islet1 is expressed in about 80% of cholinergic neurons in NB in
+the ventral telencephalon (41) (Fig. 7D and E), and taking this in
+conjunction with the fact that NB is absent in the corresponding
+region of the mutant mice (Fig. 8D), we concluded that the
+ChAT CB Islet1 neurons in the mutant ventral GP are ectopic
+from NB, as shown in the schema in Fig. 8E. To see whether Celsr3
+plays cell-autonomous or non-cell-autonomous roles in GP, we
+transiently expressed Celsr3 in GP by in utero electroporation and
+found that the ventral GP still has similar defects (Fig. 8F), sug-
+gesting a non-cell-autonomous role of Celsr3 that is consistent
+with its known cell adhesion activities (2).
+Missing guidepost cells in the caudal GP. Expression of Celsr3
+in the basal forebrain is required for the thalamocortical axon
+(TCA) pathﬁnding (8, 10). However, the underlying mechanisms
+are unknown. It has been proposed that cells associated with de-
+veloping internal capsule (IC cells) act as transient guideposts for
+TCA pathﬁnding (25–28, 44). We ﬁrst conﬁrmed the role of Celsr3
+in the development of thalamocortical connections by transiently
+knocking down Celsr3 in the ventral forebrain through in utero
+electroporation using CR as a marker for TCA (Fig. 9A and B) (8,
+10, 42). Second, we found that Nkx2-1 cells in the mutant GP
+FIG 4 Abnormal GP morphology in Celsr3 mutant mice. (A) DAPI and Nissl staining of the E14.5 and E18.5 GP, respectively. The GP region is indicated. (B)
+GFAP staining of the E18.5 GP. (C) Activated caspase 3 staining of the E18.5 GP. (D) Nkx2-1 and DAPI staining of the E18.5 GP at different rostrocaudal levels.
+The asterisk indicates the abnormal region with sparse cells in the mutant ventral GP. (E) Quantiﬁcation of the Nkx2-1 cell densities in the dorsal and ventral
+GP at different rostrocaudal levels. dGP, dorsal GP; vGP, ventral GP. Data are means  SD (n  3 mice). Signiﬁcance was determined with Student’s t test. *, P 	
+0.05; **, P 	 0.01. Scale bars, 200 m.
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3901
+
+
+cannot extend caudally at E13.5 and E14.5 (Fig. 9C), stages coin-
+ciding with those when TCA makes a sharp turn to the basal fore-
+brain from the thalamus (42). The Nkx2-1 cells in the caudal
+extension of GP send axons to the dorsal thalamus to guide the
+TCA development and are the so-called IC cells (26–29, 45, 46).
+Finally, by inserting DiI in the E13.5 and E14.5 dorsal thalamus,
+we found no retrogradely labeled cells in the mutant basal fore-
+brain, suggesting the absence of guidepost IC cells (Fig. 9D). To-
+FIG 5 Aberrant CB cells in the mutant ventral GP. (A) In situ hybridization of Er81, Lhx6, and Lmo3 with a sense probe as the control. (B and C) Olig2 and NG2
+staining (B) and quantiﬁcation (C) of the oligodendrocytes in the GP. (D) Birth dating of the GP cells with BrdU injected at E10.5, E11.5, E12.5, and E13.5. (E)
+CB staining and the schema of the E18.5 control and mutant GP. Abnormal CB cells are indicated by arrows. (F) CB and Nkx2-1 staining of GP. Note that CB
+and Nkx2-1 are not colocalized (arrows). Data are means  SD (n  3 mice). Scale bars, 200 m (A to E) and 100 m (F).
+Jia et al.
+3902
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+gether, these data lead us to propose that the absence of caudal GP
+IC cells underlies the TCA pathﬁnding defects in the Celsr3 mu-
+tant mice.
+Absence of GP axonal connections. In addition to the absence
+of IC cells causing TCA pathﬁnding defects, we found novel GP
+axonal connection defects with several brain nuclei. Speciﬁcally,
+staining with antibodies against CR, VGLUT2, TH, and SERT
+revealed no signals in the E18.5 mutant GP, suggesting dramatic
+defects of multitude afferent axonal projections to the GP from
+other brain nuclei such as the forebrain STN, midbrain SNc, and
+hindbrain dorsal raphe (Fig. 10A). To see whether it was caused by
+axonal pathﬁnding defects or axon degeneration after the connec-
+tions had been established, we analyzed CR, VGLUT2, TH,
+and SERT axonal ﬁbers in the E15.5 and E13.5 GP. We found
+that the mutant GP is free of these axons at both stages (Fig. 10B
+and C), suggesting that Celsr3 affects the early axonal pathﬁnding.
+To conﬁrm the axonal connectivity defects, we performed Dil
+tracing experiments by inserting DiI in GP or striatum. We found
+that DiI inserted in GP resulted in no signals in EP, STN, and SN in
+mutants compared with strong signals in controls (Fig. 10D). In
+addition, DiI inserted in striatum resulted in no signals in the
+mutant GP (Fig. 10E). Taken together, these data indicate that
+there is no axonal connectivity between GP and other brain nuclei.
+To investigate the underlying mechanism of GP axonal path-
+ﬁnding defects, we stained sagittal sections with the TH antibody
+and found that TH axons from SNc cannot pass through the tel-
+encephalon-diencephalon boundary (TDB) and instead turn ven-
+trally toward the hypothalamus (Fig. 10F). Western blot con-
+ﬁrmed the absence of TH proteins in the telencephalon (Fig. 10G).
+In fact, CR, VGLUT2, and SERT axons all have similar defects
+(Fig. 10H). Thus, we propose that these axons projecting to GP
+from discrete brain nuclei are stalled at the TDB (Fig. 10I).
+DISCUSSION
+GP plays a central role in the neural circuits of BG, and its dys-
+functions cause a repertoire of devastating heterogeneous neuro-
+logical disorders (19, 47, 48). Here, we report that the protocad-
+herin gene Celsr3, a member of core mammalian PCP genes, is
+regulated by transcription factors CTCF and NRSF and is required
+for GP development. We found that the ventral GP is occupied by
+FIG 6 CB cells in the mutant GP are cholinergic neurons. (A) CB and ChAT staining of the E18.5 GP. Costained CB ChAT neurons are indicated by arrows.
+(B) Quantiﬁcation of ChAT CB neurons in the mutant GP. (C) AChE labeling of the ventral telencephalon. Note the aberrant AChE signals in the mutant
+middle and caudal GP (arrows). (D) Quantiﬁcation of the density of ChAT neurons in the rostral, middle, and caudal GP. NB, nucleus basalis. Data are means 
+SD (n  3 mice). Signiﬁcance was determined with Student’s t test. **, P 	 0.01; ***, P 	 0.001. Scale bars, 100 m (A) and 400 m (C).
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3903
+
+
+aberrant cholinergic cells ectopic from NB. Furthermore, we pro-
+vide evidence that Celsr3 is required for the development of axonal
+projections between GP and the brain nuclei of the striatum, EP,
+STN, SN, and raphe. Taken together, our data reveal a new role of
+the protocadherin gene Celsr3 in the morphogenesis of GP and
+provide mechanistic insights into the axonal guidance in the
+brain.
+The Pcdh genes constitute a large subfamily of the cadherin
+superfamily that are expressed mainly in the central nervous sys-
+tem in a cell- or tissue-speciﬁc or developmental-stage-speciﬁc
+manner (49, 50). In particular, the clustered Pcdh genes are orga-
+nized into variable and constant regions and generate enormous
+neural diversity by stochastic promoter choice combined with al-
+ternative pre-mRNA splicing (51–53). Recently, the neural ex-
+pression of the clustered Pcdh genes was found to be controlled by
+both CTCF and NRSF (30, 38, 54, 55). In particular, the CTCF/
+cohesin complex plays a pivotal role in the promoter choice of the
+clustered Pcdh genes by mediating speciﬁc DNA looping interac-
+tions between enhancers and selective variable promoters (30).
+However, virtually nothing is known about the developmental
+regulation of members of the Celsr subfamily of nonclustered Pcdh
+genes. Here, we found that the Pcdh Celsr3 gene is regulated by
+both the insulator CTCF and the repressor NRSF. Speciﬁcally, by
+a combination of bioinformatics analyses and biochemical exper-
+iments, in conjunction with genome-wide ChIP-seq and 4C-seq,
+we found that NRSF binds to two sites and CTCF binds to one site
+in the Celsr3 promoter region and that the Celsr3 promoter inter-
+acts with several neighboring promoters through long-distance
+DNA looping. This suggests that CTCF/cohesin-mediated chro-
+matin looping is involved in the regulation of the Celsr3 gene.
+Interestingly, recent chromatin interaction analysis with paired-
+end tag sequencing (ChIA-PET) experiments revealed widespread
+CTCF-mediated promoter-promoter or promoter-enhancer in-
+teractions (56), and Hi-C experiments revealed largely invariant
+topologically associating domains (TADs) in different human and
+mouse cell types or tissues (57). Given the enrichment of CTCF
+and localization of the active histone mark H3K4me3 in the pro-
+moter regions of Celsr3 and several neighboring genes (Fig. 2C
+and F), these genes may be coregulated in a TAD by CTCF. Finally,
+our data suggested that, in nonneural cells, NRSF represses the
+expression of Celsr3 by binding directly to its promoter (Fig. 1).
+However, there is no NRSF binding site in the promoter regions of
+the Celsr1 and Celsr2 genes, and knockdown of CTCF in SK-N-SH
+results in no alteration of Celsr2 gene expression (data not shown),
+suggesting that CTCF and NRSF speciﬁcally regulate Celsr3 but
+not Celsr2.
+In the basal forebrain, CB cells are heterogenous, and one
+subtype is cholinergic neurons (43). We found that CB/ChAT
+FIG 7 CB ChAT cells in the mutant are not endogenous GP cells. (A) Islet1 expression pattern in striatum and GP. Note the exclusion of Islet1 cells in the
+control but not the mutant GP. (B) Costaining of CB and Islet1 (coexpressing cells are indicated by arrows). (C) Quantiﬁcation of CB and Islet1 coexpression.
+(D) Coexpression of Islet1 and ChAT in the control NB and mutant ventral GP. (E) Quantiﬁcation of the percentages of Islet cells in different cholinergic
+neuron groups. MCPO, magnocellular preoptic nucleus; NB, nucleus basalis. Data are means  SD (n  3 mice). Scale bars, 100 m.
+Jia et al.
+3904
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+FIG 8 Aberrant CB ChAT cells are ectopic from NB. (A and B) Coexpression of Celsr3 and ChAT (A) and its quantiﬁcation (B) in NB and MCPO cholinergic
+neurons. (C) Costaining of CB and ChAT. Note that most cholinergic neurons in MCPO are CB negative. (D) ChAT and DAPI staining showing relative positions
+of GP and NB. (E) Schema of the Celsr3 mutant model. (F) Western blot conﬁrmation of the recombinant Celsr3 expression and in utero electroporation of Celsr3
+into the mutant GP. Data are means  SD (n  3 mice). Scale bars, 200 m.
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3905
+
+
+cells are mislocalized in the ventral GP of the Celsr3 mutant fore-
+brain. There are four groups of cholinergic neurons in the ventral
+telencephalon that originate from both subpallium and pallium
+(22, 58, 59). Ch1 neurons in the medial septum and Ch2 neurons
+in the vertical limb of the diagonal band project to the hippocam-
+pus. Ch3 neurons in the horizontal limb of the diagonal band
+project to the olfactory bulb. Ch4 neurons from the basal magno-
+cellular complex project to the neocortex (40, 60). The basal mag-
+nocellular complex includes NB and MCPO. Abnormality of Ch4
+neurons causes impairment in attention and memory, which are
+implicated in cognitive defects in Parkinson’s and Alzheimer’s
+diseases (61).
+Without Celsr3, ectopic cholinergic cells are aberrantly local-
+ized in the ventral GP. These ectopic Ch4 neurons appear to be
+speciﬁcally from NB but not from MCPO. First, although Ch4
+neurons in both NB and MCPO express Celsr3 (Fig. 8A and B), the
+Ch4 neurons in MCPO are not altered by the loss of Celsr3 (Fig.
+8C). Second, in contrast to NB cells, MCPO cells do not coexpress
+CB and ChAT (Fig. 8C) (43). Finally, while about 80% of cholin-
+ergic neurons in NB express Islet1 (Fig. 7D and E) (41), only about
+30% of ChAT cells express Islet1 in the MCPO (Fig. 7E) (41).
+Thus, these CB ChAT Islet1 neurons in the mutant ventral GP
+are ectopic from NB but not MCPO.
+The ventral telencephalon is central for axonal projections
+of TCA and corticothalamic axon (CTA) (62). For example, the
+GP in the mantle zone of the MGE constitutes a critical deci-
+sion region for the early projection of TCA (25, 29, 62). The
+Nkx2-1 gene is a speciﬁc marker for GP, and the Nkx2-1 cell
+domain in the mantle region of the MGE is equivalent to that of
+the GP (22, 27, 28).
+The Nkx2-1 GP region transiently extends a caudal cell do-
+main associated with the internal capsule (IC) at the early embry-
+onic stage of E13.5 to E14.5 (Fig. 9C) (27). This Nkx2-1 cell
+domain, referred to as VTel1 (27), is required for TCA to cross the
+TDB and reach the internal capsule of the ventral telencephalon
+(27–29, 46, 63). The TCA then traverses the internal capsule cor-
+ridor in close proximity to GP en route to the cortex (42, 64).
+Their projections are thought to be guided by the so-called guide-
+post cells, aka Nkx2-1 IC cells, to pass through TDB and the
+Islet1 corridor (27–29, 42, 46). The phenotype of absence of
+caudal extension of Nkx2-1 IC cell domain in the Pcdh Celsr3
+mutant is very similar to that of the Pcdh10 mutant (28). Due to
+this defect, TCA cannot cross the crucial TDB (28; also this study).
+Thus, our data demonstrate a critical role of Celsr3 in patterning
+axonal guidance cues and provide a mechanistic insight into the
+function of Celsr3 in TCA pathﬁnding.
+Both clustered Pcdh genes and nonclustered Pcdh genes play
+roles in diverse cellular functions in neurodevelopment, such as
+cell adhesion (65), neuronal migration (11, 13), dendrite develop-
+ment (9, 66, 67), spine morphogenesis (66), axon outgrowth (8,
+10, 68, 69), and synaptogenesis (70). The molecular mechanisms
+underlying these diverse cellular processes are not known; how-
+ever, they may regulate actin cytoskeletal dynamics through mo-
+lecular switches of small GTPase proteins (66). In particular,
+FIG 9 Absence of IC guidepost cells in the mutant ventral forebrain. (A) Celsr3 knockdown in the basal forebrain by in utero electroporation. CR staining showed
+the decrease of CR TCA projections in the striatum and cortex. (B) Knockdown efﬁciency of shCelsr3. (C) Nkx2-1 and DAPI staining of the E13.5 and E14.5
+basal forebrain. (D) Retrograde tracing of IC cells (arrows) by inserting DiI in the E13.5 and E14.5 dorsal thalamus and sectioning rostrally, with a schema. TDB,
+telencephalon-diencephalon boundary; ic, internal capsule. Scale bars, 200 m (A and C) and 400 m (D). Data are means  SD (n  3).
+Jia et al.
+3906
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+FIG 10 Absence of GP axonal connections in the Celsr3 mutant. (A and B) CR, VGLUT2, TH, and SERT staining of the mutant and control E18.5 (A) and E15.5
+(B) GP. (C) CR and TH staining of the E13.5 GP. (D) Axonal tracing with DiI inserted in the E18.5 GP and observed at caudal levels (n  3 mice). (E) Axonal
+tracing at E18.5 by inserting DiI in the rostral striatum and sectioning to GP levels (n  3 mice). (F) TH staining of forebrain sagittal sections. (G) Western blot
+of TH and Tau in the telencephalon and diencephalon with -actin as a control. (H) CR, VGLUT2, and SERT staining of sagittal sections. (I) Schema depicting
+the GP axonal connectivity defects. EP, entopeduncular nucleus; STN, subthalamic nucleus; SN, substantia nigra; Dien, diencephalon; Tel, telencephalon; TDB,
+telencephalon-diencephalon boundary. Scale bars, 100 m (A to C), 400 m (D to F), and 200 m (H).
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3907
+
+
+recent studies identiﬁed 
+120 diverse membrane-associated pro-
+teins, including numerous protocadherins with a conserved
+WAVE regulatory complex (WRC)-interacting receptor sequence
+(WIRS) motif that may regulate the actin dynamics during cell
+migration through the pentamer WRC (69, 71). Interestingly, we
+found that the Celsr3 cytoplasmic domain contains a perfect
+WIRS motif (LASFNS) that may stimulate actin dynamics during
+cell migration. This is consistent with our previous ﬁnding of in-
+terneuron migration defects in the Celsr3 deletion mice (11). Sim-
+ilar defects may occur for the migration of NB cells; in view of the
+increased apoptosis in GP, we favor the idea that GP structure is
+altered due to cell loss and the NB simply ﬁlls the space left by the
+dead cells. Strikingly, Pcdh10 also contains WIRS motifs that stim-
+ulate activity of the WRC complex (71). Given the high similarity
+of the IC cell domain defects in the caudal GP, it is tempting to
+speculate that both Celsr3 and Pcdh10 regulate actin dynamics in
+the caudal GP at the ventral forebrain through the common
+downstream WRC complex.
+In summary, we found that Celsr3 is essential for axonal con-
+nections between GP and other brain nuclei. Dopaminergic, sero-
+tonergic, CR, and glutamatergic axons all have pathﬁnding de-
+fects through the TDB to the GP in the Celsr3 mutant mice. The
+defects of GP connectivity cause diverse human diseases (19).
+Celsr3 mutant mice may be a useful model for investigating nor-
+mal GP development and its malfunctions in human neurological
+diseases.
+ACKNOWLEDGMENTS
+This work was supported by grants 31171015 and 30970669 from the
+National Natural Science Foundation of China, 2009CB918701 from the
+Ministry of Science and Technology of China, and 13XD1402000 and
+14JC1403600 from the Science and Technology Commission of Shanghai
+Municipality.
+We thank Ying-hui Fu, Zoltán Molnár, Louis Ptácˇek, Yuan Wang,
+Xiaohong Helena Yang, Yuan Zhu, and Yimin Zou for critical reading of
+the manuscript and Zoltán Molnár for helpful suggestions on DiI tracing
+experiments.
+REFERENCES
+1. Wu Q, Maniatis T. 2000. Large exons encoding multiple ectodomains are
+a characteristic feature of protocadherin genes. Proc. Natl. Acad. Sci.
+U. S. A. 97:3124–3129. http://dx.doi.org/10.1073/pnas.97.7.3124.
+2. Usui T, Shima Y, Shimada Y, Hirano S, Burgess RW, Schwarz TL,
+Takeichi M, Uemura T. 1999. Flamingo, a seven-pass transmembrane
+cadherin, regulates planar cell polarity under the control of Frizzled. Cell
+98:585–595. http://dx.doi.org/10.1016/S0092-8674(00)80046-X.
+3. Chae J, Kim MJ, Goo JH, Collier S, Gubb D, Charlton J, Adler PN, Park
+WJ. 1999. The Drosophila tissue polarity gene starry night encodes a
+member of the protocadherin family. Development 126:5421–5429.
+4. Gao FB, Kohwi M, Brenman JE, Jan LY, Jan YN. 2000. Control of
+dendritic ﬁeld formation in Drosophila: the roles of ﬂamingo and compe-
+tition between homologous neurons. Neuron 28:91–101. http://dx.doi
+.org/10.1016/S0896-6273(00)00088-X.
+5. Lee RC, Clandinin TR, Lee CH, Chen PL, Meinertzhagen IA, Zipursky
+SL. 2003. The protocadherin Flamingo is required for axon target selec-
+tion in the Drosophila visual system. Nat. Neurosci. 6:557–563. http://dx
+.doi.org/10.1038/nn1063.
+6. Chen WS, Antic D, Matis M, Logan CY, Povelones M, Anderson GA,
+Nusse R, Axelrod JD. 2008. Asymmetric homotypic interactions of the
+atypical cadherin ﬂamingo mediate intercellular polarity signaling. Cell
+133:1093–1105. http://dx.doi.org/10.1016/j.cell.2008.04.048.
+7. Matsubara D, Horiuchi SY, Shimono K, Usui T, Uemura T. 2011. The
+seven-pass transmembrane cadherin Flamingo controls dendritic self-
+avoidance via its binding to a LIM domain protein, Espinas, in Drosophila
+sensory neurons. Genes Dev. 25:1982–1996. http://dx.doi.org/10.1101
+/gad.16531611.
+8. Tissir F, Bar I, Jossin Y, De Backer O, Gofﬁnet AM. 2005. Protocadherin
+Celsr3 is crucial in axonal tract development. Nat. Neurosci. 8:451–457.
+http://dx.doi.org/10.1038/nn1428.
+9. Shima Y, Kawaguchi SY, Kosaka K, Nakayama M, Hoshino M,
+Nabeshima Y, Hirano T, Uemura T. 2007. Opposing roles in neurite
+growth control by two seven-pass transmembrane cadherins. Nat. Neu-
+rosci. 10:963–969. http://dx.doi.org/10.1038/nn1933.
+10. Zhou L, Bar I, Achouri Y, Campbell K, De Backer O, Hebert JM, Jones
+K, Kessaris N, de Rouvroit CL, O’Leary D, Richardson WD, Gofﬁnet
+AM, Tissir F. 2008. Early forebrain wiring: genetic dissection using con-
+ditional Celsr3 mutant mice. Science 320:946–949. http://dx.doi.org/10
+.1126/science.1155244.
+11. Ying G, Wu S, Hou R, Huang W, Capecchi MR, Wu Q. 2009. The
+protocadherin gene Celsr3 is required for interneuron migration in the
+mouse forebrain. Mol. Cell. Biol. 29:3045–3061. http://dx.doi.org/10.1128
+/MCB.00011-09.
+12. Fenstermaker AG, Prasad AA, Bechara A, Adolfs Y, Tissir F, Gofﬁnet A,
+Zou Y, Pasterkamp RJ. 2010. Wnt/planar cell polarity signaling controls the
+anterior-posterior organization of monoaminergic axons in the brainstem. J.
+Neurosci. 30:16053–16064. http://dx.doi.org/10.1523/JNEUROSCI.4508-10
+.2010.
+13. Qu Y, Glasco DM, Zhou L, Sawant A, Ravni A, Fritzsch B, Damrau C,
+Murdoch JN, Evans S, Pfaff SL, Formstone C, Gofﬁnet AM, Chan-
+drasekhar A, Tissir F. 2010. Atypical cadherins Celsr1-3 differentially
+regulate migration of facial branchiomotor neurons in mice. J. Neurosci.
+30:9392–9401. http://dx.doi.org/10.1523/JNEUROSCI.0124-10.2010.
+14. Tissir F, Qu Y, Montcouquiol M, Zhou L, Komatsu K, Shi D, Fujimori
+T, Labeau J, Tyteca D, Courtoy P, Poumay Y, Uemura T, Gofﬁnet AM.
+2010. Lack of cadherins Celsr2 and Celsr3 impairs ependymal ciliogenesis,
+leading to fatal hydrocephalus. Nat. Neurosci. 13:700–707. http://dx.doi
+.org/10.1038/nn.2555.
+15. Lewis A, Wilson N, Stearns G, Johnson N, Nelson R, Brockerhoff SE.
+2011. Celsr3 is required for normal development of GABA circuits in the
+inner retina. PLoS Genet. 7:e1002239. http://dx.doi.org/10.1371/journal
+.pgen.1002239.
+16. Feng J, Xu Y, Wang M, Ruan Y, So KF, Tissir F, Gofﬁnet A, Zhou L.
+2012. A role for atypical cadherin celsr3 in hippocampal maturation and
+connectivity. J. Neurosci. 32:13729–13743. http://dx.doi.org/10.1523
+/JNEUROSCI.1965-12.2012.
+17. Gerfen CR. 2004. Basal ganglia, p 455–508. In George P (ed), The rat
+nervous system, 3rd ed. Academic Press, Burlington, MA.
+18. Mallet N, Micklem BR, Henny P, Brown MT, Williams C, Bolam JP,
+Nakamura KC, Magill PJ. 2012. Dichotomous organization of the exter-
+nal globus pallidus. Neuron 74:1075–1086. http://dx.doi.org/10.1016/j
+.neuron.2012.04.027.
+19. Albin RL, Young AB, Penney JB. 1989. The functional anatomy of basal
+ganglia disorders. Trends Neurosci. 12:366–375. http://dx.doi.org/10
+.1016/0166-2236(89)90074-X.
+20. Gerfen CR. 1992. The neostriatal mosaic: multiple levels of compartmen-
+tal organization in the basal ganglia. Annu. Rev. Neurosci. 15:285–320.
+http://dx.doi.org/10.1146/annurev.ne.15.030192.001441.
+21. Nóbrega-Pereira S, Gelman D, Bartolini G, Pla R, Pierani A, Marin O.
+2010. Origin and molecular speciﬁcation of globus pallidus neurons. J.
+Neurosci. 30:2824–2834. http://dx.doi.org/10.1523/JNEUROSCI.4023
+-09.2010.
+22. Sussel L, Marin O, Kimura S, Rubenstein JL. 1999. Loss of Nkx2.1
+homeobox gene function results in a ventral to dorsal molecular respeci-
+ﬁcation within the basal telencephalon: evidence for a transformation of
+the pallidum into the striatum. Development 126:3359–3370.
+23. Flandin P, Kimura S, Rubenstein JL. 2010. The progenitor zone of the
+ventral medial ganglionic eminence requires Nkx2-1 to generate most of
+the globus pallidus but few neocortical interneurons. J. Neurosci. 30:
+2812–2823. http://dx.doi.org/10.1523/JNEUROSCI.4228-09.2010.
+24. Flandin P, Zhao Y, Vogt D, Jeong J, Long J, Potter G, Westphal H,
+Rubenstein JL. 2011. Lhx6 and Lhx8 coordinately induce neuronal ex-
+pression of Shh that controls the generation of interneuron progenitors.
+Neuron 70:939–950. http://dx.doi.org/10.1016/j.neuron.2011.04.020.
+25. Métin C, Godement P. 1996. The ganglionic eminence may be an inter-
+mediate target for corticofugal and thalamocortical axons. J. Neurosci.
+16:3219–3235.
+26. Molnár Z, Adams R, Blakemore C. 1998. Mechanisms underlying the
+early establishment of thalamocortical connections in the rat. J. Neurosci.
+18:5723–5745.
+Jia et al.
+3908
+mcb.asm.org
+Molecular and Cellular Biology
+
+
+27. Tuttle R, Nakagawa Y, Johnson JE, O’Leary DD. 1999. Defects in
+thalamocortical axon pathﬁnding correlate with altered cell domains in
+Mash-1-deﬁcient mice. Development 126:1903–1916.
+28. Uemura M, Nakao S, Suzuki ST, Takeichi M, Hirano S. 2007.
+OL-protocadherin is essential for growth of striatal axons and
+thalamocortical projections. Nat. Neurosci. 10:1151–1159. http://dx
+.doi.org/10.1038/nn1960.
+29. Molnár Z, Garel S, López-Bendito G, Maness P, Price DJ. 2012. Mech-
+anisms controlling the guidance of thalamocortical axons through the
+embryonic forebrain. Eur. J. Neurosci. 35:1573–1585. http://dx.doi.org
+/10.1111/j.1460-9568.2012.08119.x.
+30. Guo Y, Monahan K, Wu H, Gertz J, Varley KE, Li W, Myers RM,
+Maniatis T, Wu Q. 2012. CTCF/cohesin-mediated DNA looping is re-
+quired for protocadherin alpha promoter choice. Proc. Natl. Acad. Sci.
+U. S. A. 109:21081–21086. http://dx.doi.org/10.1073/pnas.1219280110.
+31. Splinter E, de Wit E, van de Werken HJ, Klous P, de Laat W. 2012.
+Determining long-range chromatin interactions for selected genomic sites
+using 4C-seq technology: from ﬁxation to computation. Methods 58:221–
+230. http://dx.doi.org/10.1016/j.ymeth.2012.04.009.
+32. Thongjuea S, Stadhouders R, Grosveld FG, Soler E, Lenhard B. 2013.
+r3Cseq: an R/Bioconductor package for the discovery of long-range
+genomic interactions from chromosome conformation capture and next-
+generation sequencing data. Nucleic Acids Res. 41:e132. http://dx.doi.org
+/10.1093/nar/gkt373.
+33. Langmead B, Trapnell C, Pop M, Salzberg SL. 2009. Ultrafast and memory-
+efﬁcient alignment of short DNA sequences to the human genome. Genome
+Biol. 10:R25. http://dx.doi.org/10.1186/gb-2009-10-3-r25.
+34. Zhang Y, Liu T, Meyer CA, Eeckhoute J, Johnson DS, Bernstein BE,
+Nusbaum C, Myers RM, Brown M, Li W, Liu XS. 2008. Model-based
+analysis of ChIP-Seq (MACS). Genome Biol. 9:R137. http://dx.doi.org/10
+.1186/gb-2008-9-9-r137.
+35. Hedreen JC, Bacon SJ, Price DL. 1985. A modiﬁed histochemical tech-
+nique to visualize acetylcholinesterase-containing axons. J. Histochem.
+Cytochem. 33:134–140. http://dx.doi.org/10.1177/33.2.2578498.
+36. Saito T, Nakatsuji N. 2001. Efﬁcient gene transfer into the embryonic
+mouse brain using in vivo electroporation. Dev. Biol. 240:237–246. http:
+//dx.doi.org/10.1006/dbio.2001.0439.
+37. Tissir F, De-Backer O, Gofﬁnet AM, Lambert de Rouvroit C. 2002. Devel-
+opmental expression proﬁles of Celsr (Flamingo) genes in the mouse. Mech.
+Dev. 112:157–160. http://dx.doi.org/10.1016/S0925-4773(01)00623-2.
+38. Kehayova P, Monahan K, Chen W, Maniatis T. 2011. Regulatory ele-
+ments required for the activation and repression of the protocadherin-
+alpha gene cluster. Proc. Natl. Acad. Sci. U. S. A. 108:17195–17200. http:
+//dx.doi.org/10.1073/pnas.1114357108.
+39. Johnson DS, Mortazavi A, Myers RM, Wold B. 2007. Genome-wide
+mapping of in vivo protein-DNA interactions. Science 316:1497–1502.
+http://dx.doi.org/10.1126/science.1141319.
+40. Zhao Y, Marín O, Hermesz E, Powell A, Flames N, Palkovits M,
+Rubenstein JL, Westphal H. 2003. The LIM-homeobox gene Lhx8 is
+required for the development of many cholinergic neurons in the mouse
+forebrain. Proc. Natl. Acad. Sci. U. S. A. 100:9005–9010. http://dx.doi.org
+/10.1073/pnas.1537759100.
+41. Elshatory Y, Gan L. 2008. The LIM-homeobox gene Islet-1 is required for
+the development of restricted forebrain cholinergic neurons. J. Neurosci.
+28:3291–3297. http://dx.doi.org/10.1523/JNEUROSCI.5730-07.2008.
+42. López-Bendito G, Cautinat A, Sanchez JA, Bielle F, Flames N, Garratt
+AN, Talmage DA, Role LW, Charnay P, Marin O, Garel S. 2006.
+Tangential neuronal migration controls axon guidance: a role for neu-
+regulin-1 in thalamocortical axon navigation. Cell 125:127–142. http://dx
+.doi.org/10.1016/j.cell.2006.01.042.
+43. Côté PY, Parent A. 1992. Calbindin D-28k and choline acetyltransferase
+are expressed by different neuronal populations in pedunculopontine nu-
+cleus but not in nucleus basalis in squirrel monkeys. Brain Res. 593:245–
+252.
+44. Molnár Z, Higashi S, López-Bendito G. 2003. Choreography of early
+thalamocortical development. Cereb. Cortex 13:661–669. http://dx.doi
+.org/10.1093/cercor/13.6.661.
+45. Molnár Z, Cordery P. 1999. Connections between cells of the internal
+capsule, thalamus, and cerebral cortex in embryonic rat. J. Comp. Neurol.
+413:1–25. http://dx.doi.org/10.1002/(SICI)1096-9861(19991011)413:1
+	1::AID-CNE13.0.CO;2-5.
+46. Lakhina V, Falnikar A, Bhatnagar L, Tole S. 2007. Early thalamocortical
+tract guidance and topographic sorting of thalamic projections requires
+LIM-homeodomain gene Lhx2. Dev. Biol. 306:703–713. http://dx.doi.org
+/10.1016/j.ydbio.2007.04.007.
+47. Alexander GE, Crutcher MD. 1990. Functional architecture of basal
+ganglia circuits: neural substrates of parallel processing. Trends Neurosci.
+13:266–271. http://dx.doi.org/10.1016/0166-2236(90)90107-L.
+48. Kita H. 2007. Globus pallidus external segment. Prog. Brain Res. 160:111–
+133. http://dx.doi.org/10.1016/S0079-6123(06)60007-1.
+49. Halbleib JM, Nelson WJ. 2006. Cadherins in development: cell adhesion,
+sorting, and tissue morphogenesis. Genes Dev. 20:3199–3214. http://dx
+.doi.org/10.1101/gad.1486806.
+50. Chen WV, Maniatis T. 2013. Clustered protocadherins. Development
+140:3297–3302. http://dx.doi.org/10.1242/dev.090621.
+51. Wu Q, Maniatis T. 1999. A striking organization of a large family of
+human neural cadherin-like cell adhesion genes. Cell 97:779–790. http:
+//dx.doi.org/10.1016/S0092-8674(00)80789-8.
+52. Tasic B, Nabholz CE, Baldwin KK, Kim Y, Rueckert EH, Ribich SA,
+Cramer P, Wu Q, Axel R, Maniatis T. 2002. Promoter choice determines
+splice site selection in protocadherin alpha and gamma pre-mRNA splicing.
+Mol. Cell 10:21–33. http://dx.doi.org/10.1016/S1097-2765(02)00578-6.
+53. Wang X, Su H, Bradley A. 2002. Molecular mechanisms governing
+Pcdh-gamma gene expression: evidence for a multiple promoter and cis-
+alternative splicing model. Genes Dev. 16:1890–1905. http://dx.doi.org
+/10.1101/gad.1004802.
+54. Tan YP, Li S, Jiang XJ, Loh W, Foo YK, Loh CB, Xu Q, Yuen WH, Jones
+M, Fu J, Venkatesh B, Yu WP. 2010. Regulation of protocadherin gene
+expression by multiple neuron-restrictive silencer elements scattered in
+the gene cluster. Nucleic Acids Res. 38:4985–4997. http://dx.doi.org/10
+.1093/nar/gkq246.
+55. Hirayama T, Tarusawa E, Yoshimura Y, Galjart N, Yagi T. 2012. CTCF
+is required for neural development and stochastic expression of clustered
+Pcdh genes in neurons. Cell Rep. 2:345–357. http://dx.doi.org/10.1016/j
+.celrep.2012.06.014.
+56. Handoko L, Xu H, Li G, Ngan CY, Chew E, Schnapp M, Lee CW, Ye C,
+Ping JL, Mulawadi F, Wong E, Sheng J, Zhang Y, Poh T, Chan CS, Kunarso
+G, Shahab A, Bourque G, Cacheux-Rataboul V, Sung WK, Ruan Y, Wei
+CL. 2011. CTCF-mediated functional chromatin interactome in pluripotent
+cells. Nat. Genet. 43:630–638. http://dx.doi.org/10.1038/ng.857.
+57. Dixon JR, Selvaraj S, Yue F, Kim A, Li Y, Shen Y, Hu M, Liu JS, Ren
+B. 2012. Topological domains in mammalian genomes identiﬁed by anal-
+ysis of chromatin interactions. Nature 485:376–380. http://dx.doi.org/10
+.1038/nature11082.
+58. Xu Q, Tam M, Anderson SA. 2008. Fate mapping Nkx2.1-lineage cells in
+the mouse telencephalon. J. Comp. Neurol. 506:16–29. http://dx.doi.org
+/10.1002/cne.21529.
+59. Pombero A, Bueno C, Saglietti L, Rodenas M, Guimera J, Bulfone A,
+Martinez S. 2011. Pallial origin of basal forebrain cholinergic neurons in
+the nucleus basalis of Meynert and horizontal limb of the diagonal band
+nucleus. Development 138:4315–4326. http://dx.doi.org/10.1242/dev
+.069534.
+60. Mesulam MM, Mufson EJ, Wainer BH, Levey AI. 1983. Central cholin-
+ergic pathways in the rat: an overview based on an alternative nomencla-
+ture (Ch1-Ch6). Neuroscience 10:1185–1201. http://dx.doi.org/10.1016
+/0306-4522(83)90108-2.
+61. Bohnen NI, Albin RL. 2011. The cholinergic system and Parkinson dis-
+ease. Behav. Brain Res. 221:564–573. http://dx.doi.org/10.1016/j.bbr
+.2009.12.048.
+62. López-Bendito G, Molnár Z. 2003. Thalamocortical development: how
+are we going to get there? Nat. Rev. Neurosci. 4:276–289. http://dx.doi.org
+/10.1038/nrn1075.
+63. Zhou L, Qu Y, Tissir F, Gofﬁnet AM. 2009. Role of the atypical cadherin
+Celsr3 during development of the internal capsule. Cereb. Cortex
+19(Suppl 1):i114–119. http://dx.doi.org/10.1093/cercor/bhp032.
+64. Marín O, Baker J, Puelles L, Rubenstein JL. 2002. Patterning of the basal
+telencephalon and hypothalamus is essential for guidance of cortical pro-
+jections. Development 129:761–773.
+65. Schreiner D, Weiner JA. 2010. Combinatorial homophilic interaction
+between gamma-protocadherin multimers greatly expands the molecular
+diversity of cell adhesion. Proc. Natl. Acad. Sci. U. S. A. 107:14893–14898.
+http://dx.doi.org/10.1073/pnas.1004526107.
+66. Suo L, Lu HN, Ying GX, Capecchi MR, Wu Q. 2012. Protocadherin
+clusters and cell adhesion kinase regulate dendrite complexity through
+Rho GTPase. J. Mol. Cell Biol. 4:362–376. http://dx.doi.org/10.1093/jmcb
+/mjs034.
+Celsr3 in Globus Pallidus Development
+October 2014
+Volume 34
+Number 20
+mcb.asm.org
+3909
+
+
+67. Lefebvre JL, Kostadinov D, Chen WV, Maniatis T, Sanes JR. 2012. Proto-
+cadherins mediate dendritic self-avoidance in the mammalian nervous sys-
+tem. Nature 488:517–521. http://dx.doi.org/10.1038/nature11305.
+68. Prasad T, Weiner JA. 2011. Direct and indirect regulation of spinal cord
+Ia afferent terminal formation by the gamma-protocadherins. Front. Mol.
+Neurosci. 4:54. http://dx.doi.org/10.3389/fnmol.2011.00054.
+69. Biswas S, Emond MR, Duy PQ, Hao le T, Beattie CE, Jontes JD. 2014.
+Protocadherin-18b interacts with Nap1 to control motor axon growth and
+arborization in zebraﬁsh. Mol. Biol. Cell 25:633–642. http://dx.doi.org/10
+.1091/mbc.E13-08-0475.
+70. Hoshina N, Tanimura A, Yamasaki M, Inoue T, Fukabori R, Kuroda T,
+Yokoyama K, Tezuka T, Sagara H, Hirano S, Kiyonari H, Takada M,
+Kobayashi K, Watanabe M, Kano M, Nakazawa T, Yamamoto T. 2013.
+Protocadherin 17 regulates presynaptic assembly in topographic cortico-
+basal ganglia circuits. Neuron 78:839–854. http://dx.doi.org/10.1016/j
+.neuron.2013.03.031.
+71. Chen BY, Brinkmann K, Chen ZC, Pak CW, Liao YX, Shi SY, Henry L,
+Grishin NV, Bogdan S, Rosen MK. 2014. The WAVE regulatory complex
+links diverse receptors to the actin cytoskeleton. Cell 156:195–207. http:
+//dx.doi.org/10.1016/j.cell.2013.11.048.
+Jia et al.
+3910
+mcb.asm.org
+Molecular and Cellular Biology

@@ -1,0 +1,595 @@
+Downregulation of stathmin expression is mediated directly by Egr1 and associated
+with p53 activity in lung cancer cell line A549
+Lin Fang a,1, Long Min a,1, Yan Lin a,1, Gao Ping b, Wang Rui a, Zhang Ying a, Wang Xi a, He Ting a, Liu Li a,
+Dong Ke a, Ren Jihong a, Zhang Huizhong a,⁎
+a Department of Clinical Laboratory and Research Center, Tangdu Hospital, Fourth Military Medical University, Xinsi Road, Xi′an, Shaanxi Province 710038, China
+b Department of Gynecology and Obstetrics, Tangdu Hospital, Fourth Military Medical University, Xi′an, China
+a b s t r a c t
+a r t i c l e
+i n f o
+Article history:
+Received 24 August 2009
+Accepted 14 September 2009
+Available online 25 September 2009
+Keywords:
+Egr1
+Stathmin
+Promoter
+Regulation
+p53
+Stathmin is overexpressed in a variety of assessed human malignancies and is correlated with tumor
+progression and poor prognosis. Downregulation of its expression will contribute to optimize therapeutic
+outcomes in the treatment of various malignancies. However, the mechanisms of stathmin gene
+overexpression are not completely elucidated at present. Early growth response 1 (Egr1) is a transcription
+factor that triggers transcription of downstream genes mediating cell growth and angiogenesis upon various
+stimulations. Following the previous computational identiﬁcation of a site that was thought to be an Egr1
+consensus binding sequence at −85 to −94 region in stathmin gene promoter, we analyzed the role of Egr1
+in the regulation of stathmin gene expression in lung cancer cell line A549. The results showed that Egr1
+transcription factor bound to the sequence 5′-GCGGGGGCG-3′ within human stathmin gene promoter; and
+in reporter gene assays and overexpression experiments, both stathmin gene promoter activity and stathmin
+gene expression level were downregulated following endogenous or exogenous expression of Egr1. Using
+wild type Egr1 and knockout Egr1 cell lines, we demonstrated that p53 negatively regulates stathmin
+expression through Egr1 pathway. In summary, Egr1 is a novel regulator of stathmin expression and p53
+mediates the transcriptional repression of stathmin by Egr1 in human lung cancer cells.
+© 2009 Elsevier Inc. All rights reserved.
+1. Introduction
+Stathmin is a major cytosolic phosphoprotein that plays a crucial role
+in the control of cellular division and proliferation by regulating the
+dynamics of the microtubules that make up the mitotic spindle [1–3].
+Stathmin is expressed at high levels in a wide variety of human
+malignancies including lung cancer, uterine cervix cancer, bladder
+cancer, breast cancer, osteosarcoma, showing that the overexpression of
+stathmin gene plays an important role in maintenance of malignant
+phenotype in human malignancies [4–6]. Our previous studies on
+stathmin have shown that inhibition of stathmin expression in
+malignant cells can abolish their transformed phenotype [7–9],
+however, why and how stathmin is overexpressed in a lot of human
+malignancies is not fully understood. One strategy is to investigate the
+transcriptional regulation of stathmin gene expression.
+Our computer-assisted analysis of the unique proximal promoter
+of human stathmin gene, which contains multiple GC-rich regions,
+identiﬁed a potential binding site for Egr1 transcription factor at −85
+to −94 region. Egr1 preferentially binds to the GC-rich sequence 5′-
+GCGGGGGCG-3′ [10,11].
+Egr1 (also called Zif268, Krox24, NGFI-A, Tis8) is a zinc-ﬁnger nuclear
+phosphoprotein and belongs to the family of cellular immediate early
+genes of transcription factor and is rapidly induced by various mitogens,
+growth factors, and ionizing radiation [12–14]. Phorbol 12-myristate-13-
+acetate (PMA) is a potent mitogen and can strongly upregulate Egr1
+biosynthesis [15]. Egr1 is mainly regulated by posttranscriptional
+mechanisms, such as phosphorylation [16]. It has been shown that Egr1
+stimulates the synthesis of growth and differentiation factor via direct
+promoter activation, and in this way, Egr1 acts as an important regulator
+of cell growth and differentiation [17–19]. In contrast to this growth
+stimulating function, Egr1 binds to the transcription factor c-Jun and
+increases the activity of c-Jun to promote cell apoptosis [20]. In our
+previous studies, we found that stathmin was overexpressed and Egr1
+expression level was low in A549 cells (Fig. 1F and G).
+The facts that stathmin gene promoter contains a potential binding
+site for Egr1 transcription factor by computational analysis and Egr1 can
+also be upregulated by tumor suppressor gene p53, which leads to p53-
+dependent apoptosis [21], and p53 is also involved in the negative
+regulation of stathmin gene expression [22], while there was no p53
+Cellular Signalling 22 (2010) 166–173
+Abbreviations: siRNA, small interfering RNA; CMV, cytomegalovirus; Neo, Neomycin;
+EMSA, Electrophoretic mobility shift assay; PMA, phorbol 12-myristate-13-acetate; ChIP,
+Chromatin immunoprecipitation.
+⁎ Corresponding author. Tel.: +86 29 84777470; fax: +86 29 84777470.
+E-mail address: Zhz328@yahoo.com.cn (Z. Huizhong).
+1 Lin Fang, Long Min and Yan Lin should be regarded as joint ﬁrst authors for equal
+contributions.
+0898-6568/$ – see front matter © 2009 Elsevier Inc. All rights reserved.
+doi:10.1016/j.cellsig.2009.09.030
+Contents lists available at ScienceDirect
+Cellular Signalling
+journal homepage: www.elsevier.com/locate/cellsig
+
+
+binding site in stathmin gene promoter using computational analysis,
+led us to question whether there is a relationship between stathmin
+gene expression and p53 regulation through Egr1, which would help
+identify the biological function of stathmin and better understand the
+p53-regulated cellular responses. Nevertheless, the complete regulation
+of stathmin gene expression is not fully understood, we investigated the
+regulation of stathmin gene promoter by Egr1 in this study, which may
+have signiﬁcant implications for the functional activity of stathmin gene
+and reveal additional approaches for new cancer therapeutic strategies.
+2. Materials and methods
+2.1. Cells and culture conditions
+Human lung cancer cell line A549 (wild type p53 and Egr1) and
+human embryonic kidney cell line 293 (HEK293) were cultured in
+Dulbecco′s Modiﬁed Eagle′s medium (Invitrogen, USA) supplemented
+with 10% fetal bovine serum and penicillin (100U/ml)/streptomycin
+(0.1 mg/ml). All cells were maintained under the atmosphere of 5% CO2
+with humidity at 37°C. Peripheral blood mononuclear cells (PBMCs)
+from healthy donors were isolated by gradient centrifugation (Sigma,
+USA), and were cultured in RPMI-1640 medium (Invitrogen, USA).
+Donors willing to participate were required to complete a written donor
+afﬁdavitform,consentingtodonateresiduebloodfor researchpurposes.
+For treatment, cells were cultured in the presence of 10 ng/ml phorbol
+12-myristate-13-acetate (PMA; Sigma, USA) or 0.5 μg/ml Doxorubicin
+(DOX; Sigma, USA).
+2.2. UV treatment
+Ultraviolet lamps (FS72T12-UVB-HO; National Biological Corp,
+USA) which emit UVB (290–320 nm; 75–80% of the total energy) and
+UVA (320–375 nm; 20–25% of the total energy) were used in all
+experiments. The medium was removed from the dishes and the cells
+were rinsed twice with phosphate-buffered saline (PBS) at 37°C,
+drained, and irradiated with the indicated doses of UV. Fresh medium
+at 37°C was added after the irradiation.
+2.3. RT-PCR (reverse transcription polymerase chain reaction) analysis
+Total cellular RNA was extracted using TRIzol reagent (Invitrogen,
+USA) and 5 μg of RNA was used to synthesize cDNA using Superscript
+First-Strand Synthesis Kit (Promega, USA) according to the manufac-
+turer′s protocols. The following primers were used at the indicated
+annealing temperature: stathmin gene (AB451319) sense: 5′-
+ATGGCTTCTTCTGATATCCAG-3′ (1–21), and antisense: 5′-TTAGTCAGCTT-
+CAG TCTCGTC-3′ (429–450) at 60°C for 30cycles, a predicted band was
+450 bp;Egr1(NM_001964)sense:5′-AGCCCTACGAGCACCTGAC-3′(554–
+572) and antisense: 5′-TGGGTTGG TCATGCTCACTA-3′ (752–771) at 62°C
+for 30cycles, a predicted band was 218 bp; β-actin (X00351) gene was
+used as an internal standard and was ampliﬁed with primers, sense: 5′-
+CTACAATGAGCTGCGTG-3′ (311–327), and antisense: 5′-GGTCTCAAA-
+CATGATC-3′(404–419)at58°Cfor30cycles,apredictedbandwas109 bp.
+Then RT-PCR products were electrophoresed through a 1.5% agarose gel
+with ethidium bromide. Signals were quantiﬁed by densitometric analysis
+Fig. 1. Downregulation of stathmin by DNA-damaging reagents or stress is Egr1 dependent. (A, B, C and D) Egr1 and stathmin were assessed by RT-PCR and western blotting assays in
+A549 cells that were treated with DOX, UV or PMA. (E) A549 cells were transiently transfected with pSilencer4.1-Egr1-siR vector or pSilencer4.1-control vector. After 24 h, cells were
+treated with PMA. Egr1 and stathmin were assessed by western blotting. (F and G) Egr1 and stathmin were assessed by RT-PCR and western blotting in some human cell lines. Actin
+was used as a loading control. The experimental details are described in the Materials and methods section.
+167
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+usingLabworks ImageAcquisition(UVP,Inc.,Upland,CA,USA).All RT-PCR
+reactions were performed in duplicates. As control, β-actin expres-
+sion was used to normalize mRNA expression levels of stathmin and
+Egr1.
+2.4. Western blotting
+The cells were harvested by suspension in RIPA buffer on ice for
+30 min. The protein concentrations were measured using Bio-Rad
+protein assay kit (Bio-Rad, Hercules, CA, USA). An equal volume of
+lysate was electrophoresed on a 12% SDS polyacrylamide gel
+electrophoresis. The separated proteins in the gel were transferred
+to the nitrocellulose membrane. The membrane was blocked with
+Tris-buffered saline plus 0.1% Tween-20 (TBST) containing 5%
+skimmed milk for 2 h at room temperature, then incubated with the
+appropriate primary antibodies in TBST containing 5% skimmed milk
+overnight at 4 °C, followed by incubation with horseradish peroxi-
+dase-conjugated secondary immunoglobulin antibodies (Santa Cruz
+Biotechnology, CA, USA) for 2 h at room temperature. Western
+blotting analyses were carried out using the following primary
+antibodies: anti-p53, anti-Egr1, anti-β-actin antibodies and anti-
+stathmin. All primary antibodies all came from Santa Cruz Biotech-
+nology (CA, USA). Finally, the bands were visualized by chemilumi-
+nescence using a chemiluminescence kit (NENTM Life Science
+Products Inc, Boston, MA, USA) and the speciﬁc bands were recorded
+on X-ray ﬁlm. β-actin was used to normalize protein levels.
+2.5. Construction of plasmids
+To construct luciferase vector, a 2883 bp stathmin gene promoter
+fragment from the 5′ end of stathmin gene (−1130 bp to 1753 bp)
+(GenBank: AL033528) was ampliﬁed by PCR method which intro-
+duced KpnI and BglII restriction enzyme sites by using A549 cells
+genomic DNA as template. The primers were as follow: sense: 5′-
+GCGGTACCTC AAAGCAGGTGTCTTGG-3′ (13,044–13,061) and anti-
+sense: 5′-GGAGATCTGGTGAATAG AAGACAAGC-3′ (15,909–15,926)
+(restriction sites underlined). The PCR product was then excised from
+agarose gel and isolated using the gel extraction kit (Promega). The
+puriﬁed stathmin gene promoter was then inserted into KpnI and BglII
+sites of pGL3-Basic luciferase vector. The recombinant vector was
+named pGL3-stathmin-Egr1.
+Site-speciﬁc mutations (Egr1 binding site: 5′-GCGGGGGCG-3′→5′-
+GCGATCGCG-3′) were introduced into pGL3-stathmin vector using
+Quickchange Mutagenesis Kit (Stratagene, USA) and the incorporation
+of the mutations were veriﬁed by DNA sequencing. The recombinant
+vector was named pGL3-stathmin-Egr1-mut.
+To construct wild type Egr1 expression vector, Egr1 gene cDNA
+was ampliﬁed by PCR method using PBMCs cDNA as template. The
+following primers were synthesized according to the sequence of Egr1
+gene (NM_001964) obtained from GeneBank with EcoRI and XhoI
+restriction enzyme sites introduced and used at the indicated
+annealing temperature: Egr1 sense: 5′-GCGAATTCATGGCCGCGGC-
+CAAGGCCGA-3′ (271–290), and antisense: 5′-GGCTCGAGTTAG-
+CAAATTTCAATTGT-3′ (1885–1902) (restriction sites underlined) at
+60 °C for 30cycles, a predicted band was 1632 bp. The PCR products
+were then inserted into the EcoRI and XhoI site of pcDNA3.1(+)
+vector, and named pcDNA3.1-Egr1.
+To construct wild type p53 expression vector, p53 gene cDNA was
+ampliﬁed by PCR method using A549 cDNA as template. The following
+primers were synthesized according to the sequence of p53 gene
+(NM_000546) obtained from GeneBank with EcoRI and XhoI
+restriction enzyme sites introduced and used at the indicated
+annealing temperature: p53 sense: 5′-GCGAATTC ATGGAGGAGCCG-
+CAGTCAGA-3′ (252–271) and antisense: 5′-GGCTCGAGTCAGT
+CTGAGTCAGGCCCTT-3′ (1414–1433) (restriction sites underlined)
+at 63 °C for 30cycles, a predicted band was 1182 bp. The PCR products
+were then inserted into the EcoRI and XhoI site of pcDNA3.1(+)
+vector, and named pcDNA3.1-p53.
+All recombinant plasmids described above were ﬁnally veriﬁed by
+DNA sequencing (BioAsia bioengineering Inc, Shanghai, China).
+2.6. Construction of siRNA expression vector speciﬁc for Egr1
+The sequence in Egr1 gene cDNA (NM_001964) was chosen as our
+target sites for design of siRNA using siRNA design software from internet
+(http://www.ambion.com). The siRNA designed towards a non-speciﬁc
+(NS) sequence was used as control. BLAST search against EST libraries was
+performed to conﬁrm that no other human gene was targeted. DNA
+template encoding Egr1 shRNA was designed and synthesized (BioAsia
+bioengineering Inc, Shanghai, China) as follows: 19-nt target sequence
+(sense, 5′-CCCCTCTGTCTACTATTAA-3′, 1129–1148) as sense strand
+followed by a 9-nt spacer and complementary antisense strand and a
+minimal poly(A) sequence (sense, 5′-GATCCCCCCTCTGTCTACTATTAATT-
+CAAGAGATTAATAGTAGACAGAGGGGTTA-3′; antisense, 5′-AGCTT-
+AACCCCTCTGTCTACTATTAATCTCTTGAATTAATAGTAGACAGA GGGGG-
+3′). The underlined sequences are BamHI and HindIII enzyme sites,
+the sequence in the box is the loop. The shRNAs were subcloned into
+pSilencer4.1-CMVneo (Amibion, Austin, TX, USA) BamHI and HindIII
+enzyme sites downstream of CMV promoter and named as pSilencer4.1-
+Egr1-siR. The recombinant vector was conﬁrmed by the digestion
+analysis of restriction endonuclease and all inserted sequences were
+veriﬁed by DNA sequencing.
+2.7. Transfection of plasmids
+Cells were seeded in 6-well plates at 2.0×105 cells per well
+respectively and cultured overnight to 80% conﬂuence prior to
+transfection. All transfections were performed using LipofectAMINE
+Plus (Invitrogen, USA) according to the manufacturer's speciﬁcations.
+G418 (600 μg/ml, Invitrogen) was used to screen neomycin-resistant
+cells. For stable transfection, single colonies were obtained after
+selection with G418 for 2 weeks. All colonies used in this experiment
+were analyzed using western blotting.
+2.8. Luciferase assays
+Cells were seeded in 6-well plates at 2.0×105 cells per well
+respectively and cultured overnight to 80% conﬂuence prior to
+transfection. For luciferase assays, cotransfections were performed
+with 1 μg luciferase reporter gene vector (pGL3-stathmin vector or
+pGL3-stathmin-Egr1-mut vector) and 1 μg either pcDNA3.1(+) vector
+or recombinant pcDNA3.1 vector. The Renilla luciferase vector was also
+cotransfected as an internal control to normalize the transfection
+efﬁciency. After 36 h of transfection, cells were washed twice with PBS
+and exposed to 250 μl of 1× passive lysis buffer. Luciferase activity was
+assayed with 20 μl lysis supernatant and 100 μl luciferase assay reagent
+using a luminometer. Luciferase activity was measured using Dual-
+luciferase Reporter Assay System (Promega). Luciferase assays were
+performed as triplicates in 3 independent experiments.
+2.9. Chromatin immunoprecipitation
+Chromatin immunoprecipitation (ChIP) assay was performed
+using ChIP Assay Kit (Upstate Biotechnology, Charlottesville, VA,
+USA). In brief, 1×107 cells were cross-linked with 1% formaldehyde
+for 10 min at room temperature. Then cells were washed with ice-
+cold PBS, harvested by scraping and resuspended in lysis buffer
+containing protease inhibitors. After incubation for 5 min on ice, cells
+were sonicated to generate about 500 bp DNA fragments, and
+centrifugated for 10 min at 4 °C. The supernatants were incubated
+with anti-Egr1 (Santa Cruz), IgG or no antibody as control at 4 °C
+overnight with rotation. The immune complexes were precipitated
+168
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+with salmon sperm DNA/protein A-agarose (Santa Cruz) for 2 h at
+4 °C, then were recovered, washed, eluted with the ChIP elution buffer
+and reverse cross-linked by heating at 65 °C for 4 h. Before
+immunoprecipitation, a small chromatin-protein sample was exclud-
+ed and used as input sample for a positive control for the PCR reaction.
+DNA was extracted with phenol/chloroform, precipitated with
+ethanol and then used as templates for PCR ampliﬁcation, using
+primers ﬂanking Egr1 binding site in stathmin gene promoter or the
+control region. PCR was performed using the following primers: stap-
+Egr1 sense: 5′-GTTCTCGAGAATGGGGAGCT-3′ (13,861–13,880) and
+antisense: 5′-AGCAGGGGG TCGCTGCCA-3′ (14,293–14,310); control
+sense: 5′-CAACCCTGGCCCTGTAGTCA-3′ (17,901–17,920) and anti-
+sense: 5′-CTTAATGGTATCTGGATGA-3′ (18,332–18,350), both at 60 °C
+for 30cycles. ChIP assays were performed in duplicates.
+2.10. Electrophoretic mobility shift assays
+Electrophoretic mobility shift assay (EMSA) was performed according
+to EMSA Kit (Pierce, USA). Nuclear extracts were prepared from A549 cells
+treated with or without PMA or transfected with pcDNA3.1-Egr1 vector
+expressing wild type Egr1. Then Egr1 protein was prepared using the
+nuclear extraction reagent (NER) and cytoplasmic extraction reagents
+(CER). In brief, 1×107 cells were resuspended in 200 μl CER I containing
+protease inhibitors and incubated on ice for 10 min, thenwere added with
+11 μl of CER II and incubated for 1 min on ice. After centrifugation, the cell
+pellets were resuspended in 50 μl NER containing protease inhibitors and
+rotated at 4 °C for 1 h. Supernatants with nuclear proteins were recovered
+by centrifugation. The candidate Egr1 binding site in stathmin gene
+promoter and the corresponding complementary sequence (5′-
+TTGTGGGGGGCGGGGGCGGCACGTGCCGCC-3′) were prepared as probes,
+named stap-wt-Egr1BSs. A mutant version (5′-TTGTGGGGGGCGATCGCG-
+GCACGTGCCGCC-3′) was also prepared and named stap-mut-Egr1BSs. A
+5′-biotin modiﬁcation was included in all probes except for the
+competitor oligonucleotides, which did not contain any modiﬁcations.
+Nuclear proteins were incubated with biotin-labeled stap-wt-Egr1BSs or
+stap-mt-Egr1BSs, and DNA–protein complexes were separated on a 6%
+nondenaturing polyacrylamide gel in 0.5×TBE with 2.5% glycerol and
+transferredtopositivelychargednylonmembranes.Themembraneswere
+blocked with blocking buffer and incubated with HRP-conjugated
+streptavidin. The blots were developed with chemiluminescence sub-
+strate solution and exposed to X-ray ﬁlm. For competition assays, 50- or
+100-fold excess of unlabeled probes were added to the reaction mixture
+for 1 h at room temperature before the addition of the labeled probe.
+2.11. Adenovirus infection
+Adenoviruses carrying wild type Egr1 (Ad-Egr1) or the negative
+control lacZ (Ad-lacZ) were purchased from Ben Yuan Zheng Yang
+Company (Beijing, China). The multiplicity of infection (MOI) was
+determined for A549 cells.
+2.12. Statistical analysis
+Data are expressed as the mean±SD. Statistical analyses were
+performed with SPSS software (version 10.0; SPSS, Chicago, IL, USA)
+by using the t-test for independent groups. Statistical signiﬁcance was
+based on a value of P<0.05.
+3. Results
+3.1. Downregulation of stathmin by DNA-damaging agents or stress is
+Egr1 dependent
+It has been demonstrated that Doxorubicin (DOX), as a topoi-
+somerase II inhibitor, is able to induce double-strand DNA break and
+consequently activates Egr1, which results in the induction of Egr1
+target genes expression [23]. To explore the relationship between
+stathmin and Egr1, we ﬁrst examined the changes of stathmin gene
+mRNA and protein levels in response to Egr1 activation by DOX, PMA
+and UV. The results showed that DOX treatment resulted in decreased
+expression of stathmin gene on both mRNA and protein level in A549
+cells as measured by RT-PCR and western blotting (Fig. 1A and B), and
+the same results were obtained in the other two classical Egr1
+inducible treatment of PMA and UV, which could also downregulate
+the expression of stathmin in mRNA and protein level (Fig. 1C and D).
+To further conﬁrm that downregulation of stathmin gene expression
+is Egr1-dependent, A549 cells were transfected with pSilencer4.1-
+Egr1-siR vector to knock down endogenous Egr1. After 24 h of
+transfection, cells were treated with PMA. As shown in Fig. 1E,
+reduction of endogenous Egr1 markedly attenuated PMA-induced
+decrease of stathmin (Fig. 1E). These data strongly suggest that the
+decreased expression of stathmin by DNA-damaging agents or stress
+is Egr1 dependent.
+3.2. Ectopic expression of Egr1 results in downregulation of stathmin
+To directly investigate whether Egr1 can downregulate stathmin
+expression, we examined the effectof exogenous Egr1 on the expression
+Fig. 2. Ectopic expression of Egr1 results in downregulation of stathmin. (A and B) Egr1 and stathmin were assessed by western blotting in A549 cells that were infected with the negative
+control (NC, Ad-lacZ)or different MOI Ad-Egr1 for 48 h or with 40 MOI Ad-Egr1 for 0, 12, 24 and 48 h.(C) The levels ofEgr1 and stathmintranscripts were measuredbyRT-PCR inA549 cells
+that were infected with the negative control (NC, Ad-lacZ) for 24 h or with 40 MOI Ad-Egr1 for 0, 12, 24 and 48 h. (D) A549 cells were transfected with pcDNA3.1 or pcDNA3.1-Egr1,
+respectively. After 48 h of transfection, Egr1 and stathmin were determined by western blotting. Actin was used as a loading control.
+169
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+of stathmin in A549 cells. Results showed that stathmin expression on
+mRNA and protein level was downregulated following the increase of
+exogenous Egr1 expression via adenoviral bearing Egr1 cDNA infection
+in A549 cells (Fig. 2A, B and C), which the relationship was further
+conﬁrmed by a differentexogenous Egr1 gene transfection of pcDNA3.1-
+Egr1 (Fig. 2D). The results suggested that Egr1 downregulated the
+expression of stathmin at the transcriptional level and stathmin might
+be an Egr1 target gene.
+3.3. Stathmin promoter activity was correlated with Egr1 and its binding
+site on the promoter
+Several regulatory promoter elements of stathmin gene promoter
+have been identiﬁed so far, e.g. NF-Y and members of the RB/E2F family.
+To analyze other transcription factors which may be involved in the
+regulation of stathmin gene, we performed a computer-assisted analysis
+of the binding sites in the promoter (Fig. 3A). Sequences were directly
+Fig. 3. Stathmin promoter activity was correlated with Egr1 and its binding site on the promoter. (A) Sequence of the proximal stathmin gene promoter. The transcription factors,
+which have been predicted for stathmin gene by computer-assisted analysis, are boxed. The new putative binding site for an Egr1 transcription factor is also boxed and the
+oligonucleotide employed for EMSA is denoted (underlined). Arrows indicate the positions of a main transcription start site. (B) Regulation of Egr1 binding site in stathmin gene
+promoter by Egr1. HEK293 cells and A549 cells were individually cotransfected with reporter vectors and either pcDNA3.1 vector or pcDNA3.1-Egr1 vector. (C) Regulation of Egr1
+binding site in stathmin gene promoter by endogenous Egr1 in response to PMA treatment in HEK293 cells and A549 cells. (D) A549 cells were transfected with pSilencer4.1-Egr1-
+siR vector and stable clones were generated (A549-KE cells). (E) Regulation of Egr1 binding site in stathmin gene promoter by endogenous Egr1 in response to PMA treatment in
+A549-KE cells. Renilla luciferase vector pRL-CMV was also cotransfected as an internal control vector. The histograms represent the average of three independent experiments with
+error bars showing the SD. ⁎P<0.05 among each compared group.
+170
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+imported into the Web site and analyzed using Transfac 4 (TESS:
+Transcription Element Search Software, Computational Biology and
+Informatics Laboratory, School of Medicine, University of Pennsylvania,
+URL: http://www.cbil.upenn.edu/tess). A putative binding site for Egr1
+transcription factors was revealed within the −85/−94 bp fragment (5′-
+GCGGGGGCG-3′) (Fig. 3A). To determine whether the putative binding
+site within this region of stathmin gene promoter was responsive to Egr1,
+a 2883 bp fragment (−1130 bp to 1753 bp) from the 5′ end of stathmin
+gene was ampliﬁed and cloned into pGL3-Basic luciferase vector (pGL3-
+stathmin). The luciferase assays in HEK293 cells and A549 cells were
+performed to test the inhibition effect of stathmin gene promoter by Egr1.
+The expression vectors (wild type Egr1 or control vector) driven by CMV
+promoter were cotransfected with pGL3-stathmin vector and, as
+transfection control, with pRL-CMV vector into HEK293 cells and A549
+cells. We found that Egr1 was capable of decreasing the luciferase activity
+driven by stathmin gene promoter markedly, while the control vector did
+not change the activity of stathmin gene promoter. The luciferase activity
+was nearly inhibited up to 50% (Fig. 3B) after transfection with wild type
+Egr1 expression vector, which indicated that stathmin gene promoter
+activity was signiﬁcantly decreased by Egr1. These results conﬁrmed the
+ﬁndings of the transcription experiments, where the expression levels of
+stathmin were also reduced up to 50% by endogenous Egr1. When Egr1
+binding site in stathmin gene promoter was mutated, Egr1-mediated
+downregulation of stathmin gene expression was signiﬁcantly
+Fig. 4. Egr1 binds to the putative Egr1 binding site of stathmin gene promoter in vivo and in vitro. (A) Binding of Egr1 to Egr1 binding site in stathmin gene promoter in vivo by ChIP assay.
+Genomic DNA and input chromatin (input), which represent portions of sonicated chromatin before immunoprecipitation, were both used as positive controls. (B and C) Binding of Egr1 to
+Egr1 binding sitein stathmin genepromoterinvitro was measured byEMSA. Nuclear extracts were preparedand incubatedwith biotin-labeledwt ormutantprobes for Egr1 binding sitein
+stathmin gene promoter [stap-wt-Egr1BSs (wt-Egr1); stap-mut-Egr1BSs (mut-Egr1)], or together with competitive unlabeled probes (wt-Egr1-un; mut-Egr1-un). DNA–protein
+complexes were separated on a 6% TBE gel, transferred to nylon membranes and shifted probes were detected with HRP-conjugated streptavidin.
+171
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+diminished (Fig. 3B), implying that Egr1 binding site of stathmin gene
+promoter is required for responsiveness to Egr1. Taken together, Egr1
+mediates the transcriptional repression of stathmin gene promoter.
+We then examined the effect of endogenous Egr1 via PMA treatment
+on the regulation of the stathmin gene promoter by luciferase activity
+assay. We found that the luciferase activity of pGL3-stathmin was
+markedly decreased in A549 cells after treatment with PMA (Fig. 3C).
+A549 cells were transfected with pSilencer4.1-Egr1-siR vector to knock
+down endogenous Egr1 and the stable transfectants after selection with
+G418 were named A549-KE cells. In contrast, PMA treatment failed to
+decrease the transcriptional activity of pGL3-stathmin in A549-KE cells
+(Fig. 3D and E). Together, these results demonstrated that Egr1 binding
+site in stathmin gene promoter was responsible for that Egr1 mediates
+stathmin gene.
+3.4. Egr1 binds directly to Egr1 binding site in stathmin gene promoter
+To further verify that stathmin gene is an Egr1 target gene, ChIP and
+EMSA were performed to examine whether Egr1 directly bound to
+Egr1 binding site in stathmin gene promoter. Firstly, we demonstrated
+that Egr1 could bind Egr1 binding site in stathmin gene promoter using
+ChIP assay in vivo. As shown in Fig. 4A, in A549 cells treated with PMA
+and transfected with pcDNA3.1-Egr1 vector expressing wild type Egr1,
+the fragment containing Egr1 binding site in stathmin gene promoter
+was ampliﬁed by PCR from DNA–protein complexes that were
+coimmunoprecipitated using the anti-Egr1 antibody. In contrast, a
+control DNA sequence far from Egr1 binding site in stathmin gene
+failed to be coimmunoprecipitated and ampliﬁed. In A549-KE cells, the
+fragment containing Egr1 binding site in stathmin gene promoter was
+also not ampliﬁed by PCR (Fig. 4A).
+Next, we used EMSA method to conﬁrm this interaction in vitro. As
+shown in Fig. 4B and C, when the labeled probe (stap-wt-Egr1BSs)
+designed for Egr1 binding site in stathmin gene promoter was incubated
+with extracts from A549 cells transfected with pcDNA3.1-Egr1 vector
+expressing wild type Egr1 or treated with PMA, without PMA, a clear
+band shift was detected (Fig. 4B and C). However, when using the
+mutant Egr1 probe (stap-mut-Egr1BSs), we did not observe band shifts
+with extracts from either A549 cells transfected with pcDNA3.1-Egr1
+vector expressing wild type Egr1 (Fig. 4B) or treated with PMA (Fig. 4C).
+The unlabeled stap-wt-Egr1BSs probe, rather than themutant version,is
+able toreducethe DNA–protein complex formation ina dose-dependent
+manner when included in the reaction as a competitor (Fig. 4B and C).
+Taken together, these results demonstrated that stathmin gene was a
+direct target gene of Egr1.
+3.5. p53 downregulates stathmin expression by Egr1-dependent way
+To investigate the functional role of p53-regulated pathway in
+stathmin gene expression, A549-KE (knock down Egr1) cells and A549
+(wild type Egr1) cells were used to test the p53 regulation effect on the
+stathmin gene promoter activity. The expression vectors (wild type p53
+or control vector) driven by CMV promoter were cotransfected with
+pGL3-stathmin vector and, as transfection control, with pRL-CMV vector.
+As depicted in Fig. 5A, stathmin gene promoter activity was decreased by
+wild type p53 in A549 cells, while the control vector did not change the
+activity of stathmin gene promoter. Therefore, wild type p53 expression
+vector inhibited the activity of stathmin gene promoter in A549 cells. Two
+other classical p53 inducible treatment (DOX and UV) also down-
+regulated the expression of luciferase in A549 cells (Fig. 5B and C), while
+DOX and UV did not change the activity of luciferase in A549-KE (knock
+down Egr1)cells.Theactivityofstathmin genepromoterwassigniﬁcantly
+decreased by endogenous p53 expression. To further conﬁrm that
+downregulation of stathmin by p53 is Egr1-dependent, we transfected
+wild type p53 into A549-KE cells and A549 cells, then observed the
+Fig. 5. p53 downregulates stathmin expression by Egr1-dependent pathway. (A) A549 cells and A549-KE (knock down Egr1) cells were cotransfected with wild type p53 or empty
+vectors and pGL3-stathmin vector. (B and C) A549 cells and A549-KE cells were transfected with pGL3-stathmin, and 24 h later, the cells were treated with DOX for 24 h and UV for
+2 h. (D) A549 cells and A549-KE cells were transfected with wild type p53, or empty vectors. A549 cells and A549-KE cells were treated with DOX for 24 h and UV for 2 h.
+172
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173
+
+
+change of stathmin protein level. As shown in Fig. 5D, induction of Egr1
+following p53 upregulation markedly decreased protein level of stathmin
+(Fig. 5D) in A549 cells. In contrast, p53 upregulation did not change
+protein level of Egr1 and stathmin in A549-KE cells. Two other classical
+p53 inducible treatments (DOX and UV) also got the same result. All these
+results demonstrated that downregulation of stathmin gene promoter
+activity by p53 was mediated through Egr1.
+4 . Discussion
+Stathmin is aberrantly overexpressed in the majority of human
+malignancies, but the mechanisms for its overexpression in these
+tumors have not been fully determined [4]. Although it has been
+shown that E2F and NF-Y can bind to stathmin gene promoter and
+regulate stathmin expression, stathmin expression is controlled by
+multiple signals involved in cell cycle and the regulation of stathmin is
+very complicated [24–26]. Our results demonstrated that Egr1 is a
+new regulator of stathmin expression.
+Decreased levels of stathmin mRNA and protein occurred not only
+after treatment with the DNA-damaging agents or stress, which
+activates endogenous Egr1, but also following ectopic expression of
+Egr1 in A549 cells. Moreover, knock down of endogenous Egr1 markedly
+attenuated PMA-induced decrease of stathmin, indicating that this
+effect requires intact Egr1. So we hypothesized that stathmin gene
+might also be an Egr1 target gene.
+While stathmin has an Egr1 responsive element in its promoter, we
+identiﬁed one candidate sequence for Egr1 binding site. Our experiments
+demonstrate that the putative Egr1 binding site within stathmin gene
+promoter is a functional one in response to wild type Egr1, as shown in
+reporter assays. Reporter constructs carrying stathmin gene promoter
+region and containing Egr1 binding site, exhibited decreased transcrip-
+tional activity upon Egr1 regulation. Using ChIP and EMSA, we
+demonstrated that Egr1 binding site form DNA–protein complexes in
+A549 cells treated with PMA and transfected with wild type Egr1,
+suggesting that Egr1 binding site of stathmin gene promoter can bind to
+Egr1 after its activation or DNA damage. Collectively, we provide
+compelling evidence that Egr1 directly regulate the expression of
+stathmin via Egr1 binding site.
+p53 is a tumor suppressor protein that regulates many cellular
+processes through gene transcription [27–31]. As shown in previous
+reports, wild type p53 can downregulate stathmin transcription [22], and
+p53/p73-mediated negative regulation of stathmin may occur mainly
+through the induction of p21/CDKN1A gene [32]. But the mechanisms of
+transcriptional repression of stathmin by p53 remain unclear at present.
+Our study proved that Egr1 can directly regulate the expression of
+stathmin. Meanwhile, Egr1 is upregulated by p53, which leads to p53-
+dependent apoptosis, and Egr1 is also a transcriptional regulator of p53/
+p73 [21]. This led us to question whether there is a relationship between
+stathmin and p53 by Egr1. Therefore, we investigate the regulation of
+stathmin gene promoter, to reveal the relationship of p53, Egr1 and
+stathmin. As shownin Fig. 5, induction of Egr1 following p53 upregulation
+markedly decreases protein level of stathmin in A549 cells. In contrast,
+p53 upregulation did not change protein level of Egr1 and stathmin in
+A549-KE cells. Two other classical p53 inducible treatments (DOX
+and UV) also got the same result. Taken together, p53 mediates the
+transcriptional repression of stathmin gene promoter by Egr1. Additional
+experiments will be needed to understand and identify the correct
+interaction of Egr1 and p21 on stathmin regulation.
+In summary, two important new ﬁndings are described in this
+paper. One is the interdependency on transcription factor Egr1 for the
+regulation of stathmin expression. The second ﬁnding is that p53
+mediates the transcriptional repression of stathmin by Egr1. These
+results will help elucidate the mechanisms by which alterations in
+stathmin expression occur in response to signals that promote either
+cell cycle arrest or cellular proliferation. Furthermore, they have
+implications for the origins and progression of human malignancies.
+Acknowledgement
+This work was supported by a grant from the National Natural
+Science Foundation of China (no. 30772181).
+References
+[1] P. Niethammer, P. Bastiaens, E. Karsenti, Science 303 (5665) (Mar 2004) 1862.
+[2] C.I. Rubin, G.F. Atweh, J Cell Biochem. 93 (2) (Oct 2004) 242.
+[3] L. Cassimeris, Curr. Opin. Cell Biol. 14 (1) (Feb 2002) 18.
+[4] S. Rana, P.B. Maples, N. Senzer, J. Nemunaitis, Expert. Rev. Anticancer Ther. 8 (9)
+(Sep 2008) 1461.
+[5] S.J. Mistry, G.F. Atweh, Mt. Sinai J. Med. 69 (5) (Oct 2002) 299.
+[6] H.Z. Zhang, P. Gao, L. Yan, F. Lin, Ai Zheng. 23 (5) (May 2004) 493.
+[7] H.Z. Zhang, Y. Wang, P. Gao, F. Lin, L. Liu, B. Yu, J.H. Ren, H. Zhao, R. Wang, Cancer
+Biol. Ther. 5 (11) (Nov 2006) 1457.
+[8] Fang Lin, Ping Gao, Li Liu, Rui Wang, Hui-zhong Zhang, J. Mod. Oncol. 15 (4) (April
+2007) 485.
+[9] R Wang, K Dong, F Lin, X Wang, P Gao, S.H. Wei, S.Y. Cheng, H.Z. Zhang, Mol. Med.
+13 (11–12) (Nov–Dec 2007) 567.
+[10] B. Christy, D. Nathans, Proc. Natl. Acad. Sci. U. S. A. 86 (22) (Nov 1989) 8737.
+[11] X. Cao, R. Mahendran, G.R. Guy, Y.H. Tan, J. Biol. Chem. 268 (23) (Aug 1993) 16949.
+[12] M.M. Ahmed, Curr. Cancer Drug Targets. 4 (1) (Feb 2004) 43.
+[13] C. Hodge, J. Liao, M. Stofega, K. Guan, C. Carter-Su, J. Schwartz, J. Biol. Chem. 273
+(47) (Nov 1998) 31327.
+[14] R. Datta, E. Rubin, V. Sukhatme, S. Qureshi, D. Hallahan, R.R. Weichselbaum, D.W.
+Kufe, Proc. Natl. Acad. Sci. U. S. A. 89 (21) (Nov 1992) 10149.
+[15] I. Bauer, M. Hohl, A. Al-Sarraj, C. Vinson, G. Thiel, Arch. Biochem. Biophys. 438 (1)
+(Jun 2005) 36.
+[16] X. Cao, R. Mahendran, G.R. Guy, Y.H. Tan, J. Biol. Chem. 267 (18) (Jun 1992) 12991.
+[17] V.P. Sukhatme, X.M. Cao, L.C. Chang, C.H. Tsai-Morris, D. Stamenkovich, P.C.
+Ferreira, D.R. Cohen, S.A. Edwards, T.B. Shows, T. Curran, M.M. Le Beau, E.D.
+Adamson, Cell 53 (Apr. 1988) 37.
+[18] K. Krishnaraju, B. Hoffman, D.A. Liebermann, Blood 92 (1998) 1957.
+[19] P. Nair, S. Muthukkumar, S.F. Sells, S.S. Han, V.P. Sukhatme, V.M. Rangnekar, J. Biol.
+Chem. 272 (1997) 20131.
+[20] Y. Levkovitz, J.M. Baraban, J. Neurosci. 22 (10) (May 2002) 3845.
+[21] J. Yu, V. Baron, D. Mercola, T. Mustelin, E.D. Adamson, Cell Death Differ. 14 (3)
+(Mar 2007) 436.
+[22] J.I. Johnsen, O.N. Aurelio, Z. Kwaja, G.E. Jörgensen, N.S. Pellegata, R. Plattner, E.J.
+Stanbridge, J.F. Cajot, Int. J. Cancer 88 (5) (Dec 2000) 685.
+[23] M. Arai, A. Yoguchi, T. Takizawa, T. Yokoyama, T. Kanda, M. Kurabayashi, R. Nagai,
+Circ. Res. 86 (1) (Jan 2000) 8.
+[24] R.G. Polzin, H. Benlhabib, J. Trepel, J.E. Herrera, Gene 341 (Oct 2004) 209.
+[25] S. Polager, D. Ginsberg, J. Biol. Chem. 278 (3) (Jan 2003) 1443.
+[26] H. Benlhabib, J.E. Herrera, Gene 377 (Aug 2006) 177.
+[27] A.J. Levine, Cell 88 (3) (Feb 1997) 323.
+[28] J.S. Fridman, S.W. Lowe, Oncogene 22 (56) (Dec 2003) 9030.
+[29] B. Vogelstein, K.W. Kinzler, Nat. Med. 10 (8) (Aug 2004) 789.
+[30] B. Vogelstein, D. Lane, A.J. Levine, Nature 408 (6810) (Nov 2000) 307.
+[31] R.V. Sionov, Y. Haupt, Oncogene 18 (45) (Nov 1999) 6145.
+[32] K. Löhr, C. Möritz, A. Contente, M. Dobbelstein, J. Biol. Chem. 278 (35) (Aug 2003)
+32507.
+173
+L. Fang et al. / Cellular Signalling 22 (2010) 166–173

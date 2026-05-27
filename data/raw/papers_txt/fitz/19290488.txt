@@ -1,0 +1,1019 @@
+ORIGINAL ARTICLE – TRANSLATIONAL RESEARCH AND BIOMARKERS
+Loss of RUNX3 Expression Correlates with Differentiation, Nodal
+Metastasis, and Poor Prognosis of Gastric Cancer
+Ping-I. Hsu, MD1, Hsiao-Ling Hsieh, PhD2, Jihjong Lee, DVM3, Li-Fang Lin, MS1, Hui-Chun Chen, MD4,
+Pei-Jung Lu, PhD5, and Michael Hsiao, DVM, PhD2
+1Department of Internal Medicine, Kaohsiung Veterans General Hospital and National Yang-Ming University, Kaohsiung,
+Taiwan; 2Genomics Research Center, Academia Sinica, Taipei, Taiwan; 3Department and Graduate Institute of Veterinary
+Medicine, School of Veterinary Medicine, National Taiwan University, Taipei, Taiwan; 4Department of Radiation
+Oncology, Kaohsiung Chang Gung Memorial Hospital, Kaohsiung, Taiwan; 5Institute of Clinical Medicine, School of
+Medicine, National Cheng-Kung University, Tainan, Taiwan
+ABSTRACT
+Background. RUNX3 is a major growth regulator of
+gastric epithelial cells that is involved in gastric tumori-
+genesis in both humans and mice. In this study, we
+investigated the involvement of RUNX3 in tumor pro-
+gression, and in the prognosis of human gastric cancer.
+Methods. We analyzed the extent of RUNX3 protein
+expression by immunohistochemistry in 95 primary gastric
+adenocarcinomas, and correlated expression levels with
+clinicopathological parameters. We examined the effects of
+pFlag/RUNX3 on cell growth, apoptosis, and caspase-3
+expression in AGS and SNU1 gastric cancer cell lines by
+colony-forming assay, terminal deoxynucleotidyl transferase
+(TdT)-mediate deoxyuridine triphosphatase (dUTP) nick-end
+labeling (TUNEL) assay, and Western blot analysis, respec-
+tively. The pFlag/RUNX3 effects on AGS invasion and
+migration potentials were also evaluated.
+Results. RUNX3 expression was lost in 37 (39%) cases of
+gastric cancer. The expression of RUNX3 in diffuse- and
+mixed-type cancers was less frequent than expression in
+intestinal-type cancer (P \ 0.001 and P = 0.001, respec-
+tively). In addition, the loss of RUNX3 expression was
+associated with lymph node metastasis (P = 0.02), and cor-
+related with poor gastric cancer survival (P = 0.018). The
+growth of gastric cancer cells was suppressed after pFlag/
+RUNX3 transfection. The re-expression of RUNX3 resulted
+in the upregulation of caspase-3 and promoted apoptosis.
+Furthermore, Re-expression of RUNX3 induced signiﬁcant
+inhibitions of AGS cell invasion and migration in vitro.
+Conclusions. This work shows that loss of RUNX3
+expression is highly associated with lymph node metastasis
+and poor prognosis of gastric cancer. The re-expression of
+RUNX3 may induce apoptosis and inhibit the growth as
+well as invasion/migration of cancer cells. These results
+indicate that the targeting of the RUNX3 pathway could
+represent a potential modality for treating gastric cancer.
+Gastric cancer is one of the leading causes of cancer death
+throughout the world, and it often presents with a dismal
+prognosis.1 Tumorigenesis of gastric cancer is attributable to
+the
+interactions
+between
+environmental
+and
+genetic
+factors.2–5 In addition to dietary factors, the relationship
+between gastric carcinoma and Helicobacter pylori has
+attracted increased attention.6–9 Many genetic and epige-
+netic alterations in oncogenes, tumor suppressor genes, cell-
+cycle regulators, cell adhesion molecules, DNA repair genes,
+and genetic instability as well as telomerase activation are
+known to participate in the genesis or progression of gastric
+cancer. A more thorough understanding of gastric carcino-
+genesis is vital to improving diagnosis and treatment.10
+Gastric cancer can be divided into two distinct histo-
+logical subtypes: intestinal and diffuse.11 These subtypes
+differ not only in morphology, but also in their clinical
+characteristics and spectrum of genetic changes.12 Over-
+expression of p53 and c-ErbB-2 is more common in early
+intestinal
+than
+in
+early
+diffuse
+gastric
+cancer.13,14
+ Society of Surgical Oncology 2009
+First Received: 31 May 2008;
+Published Online: 17 March 2009
+P.-J. Lu, PhD
+e-mail: pjlu2190@mail.ncku.edu.tw
+M. Hsiao, DVM, PhD
+e-mail: mhsiao@gate.sinica.edu.tw
+Ann Surg Oncol (2009) 16:1686–1694
+DOI 10.1245/s10434-009-0428-2
+
+
+Additionally, loss of heterozygosity of adenomatous pol-
+yposis coli (APC) is more common in intestinal gastric
+cancer irrespective of the stage, but occurs only rarely in
+diffuse gastric cancer.13 In contrast, overexpression of c-
+Met and loss of E-cadherin expression occur more com-
+monly in diffuse than in intestinal gastric cancer.15,16
+Several recent studies have suggested that RUNX3 is a
+novel tumor suppressor of gastric cancer.17,18 Human
+RUNX genes encode the a-subunit of the Runt domain, an
+evolutionarily conserved region of 128 amino acids which
+is required for DNA binding and heterodimerization with
+the b-subunit PEBP2/CBF.19 RUNX3 genes are crucially
+involved in the proliferation and differentiation of human
+cells.20 Recent investigations have established that RUNX3
+participates in the tumorigenesis of gastric epithelium.
+RUNX3 is frequently hypermethylated and downregulated
+in human gastric carcinomas.18 Promoter hypermethylation
+seems to be the main mechanism responsible for abolishing
+the function of RUNX3 in cancer.21 However, mutations
+that affect the RUNX3 DNA-binding ability and subcel-
+lular mislocalization of the protein may also contribute to
+the
+RUNX3-related
+gastric
+tumor
+development.22,23
+Transforming growth factor b1 (TGF-b1) is known to
+arrest cell growth by activating CDKN1A (p21WAF1/Cip1),
+which encodes a cyclin-dependent kinase inhibitor.24
+RUNX3 is required for the TGF-b1-dependent induction of
+the expression of p21 in gastric epithelial cells.24 RUNX3-
+R122C, a mutation identiﬁed in a gastric cancer patient,
+prevented activation of the p21 promoter. Moreover, the
+gastric mucosa of RUNX3-null mice develop gastric epi-
+thelial hyperplasia because of increased cell proliferation
+and suppressed apoptosis, accompanied by a reduced sen-
+sitivity to TGF-b1.20 Targeted restoration of RUNX3
+expression in gastric cancer cells inhibited tumor growth
+and prevented metastasis in nude mice.24
+Several studies have suggested that RUNX3 exhibits bio-
+logical and genetic characteristics that are typical of a tumor
+suppressor gene, and that it may have an important role in the
+progression of cancer. In this study, we investigated the
+relationship between RUNX3 expression and clinicopatho-
+logical characteristics and prognoses in gastric cancer
+patients. We also evaluated the effects of RUNX3 re-expres-
+sion on the proliferation and apoptosis of gastric cancer cells.
+PATIENTS AND METHODS
+Patients’ Clinicopathological Data and Sample
+Preparation
+A total of 95 patients with primary gastric adenocarci-
+noma were enrolled in this study. These patients underwent
+subtotal or total gastrectomy in the Kaohsiung Veterans
+General Hospital, Kaohsiung, Taiwan between July 1995
+and July 1997. Samples used in this study were obtained
+with the approval of the Committee for Ethical Review of
+Research Involving Human Subjects at Kaohsiung Veter-
+ans General Hospital. None of the patients received
+chemotherapy before surgical operation. Clinical informa-
+tion was obtained from medical records. Samples were
+taken from the representative cancerous lesions and from
+adjacent noncancerous tissues. Clinical data on gender,
+age, operation methods, extent of lymph node involvement,
+and cancer recurrence were obtained from medical records
+and data on depth of tumor invasion, location, tumor size,
+histological differentiation, and Lauren classiﬁcation were
+obtained from pathologic reports. Samples were handled
+according to the guidelines of the Japanese Research
+Society for Gastric Cancer, and written informed consent
+was obtained from each patient before tissue acquisition.25
+Tissues were ﬁxed in 10% buffered formalin, embedded in
+parafﬁn, and sectioned. The sections were stained with a
+hematoxylin and eosin stain and assessed by pathologists
+without knowledge of clinical data. Gastric cancer was
+classiﬁed according to Lauren’s criteria.11
+Recombinant RUNX3 Protein Puriﬁcation
+and Antibody Production
+A recombinant protein with the C-terminal fragment of
+RUNX3 was cloned into pET vector (abbreviated pET-
+RX3C’) and puriﬁed by sodium dodecyl sulfate poly-
+acrylamide gel electrophoresis (SDS-PAGE). A gel slice
+containing RX3C0 was used to immunize rabbits as previ-
+ously described, to generate speciﬁc antibodies recognizing
+human RUNX3 protein.26 New Zealand white rabbits were
+used to prepare polyclonal antibodies. On day 1, 1 ml
+complete Freund’s adjuvant (CFA; Sigma, St. Louis, MO)
+plus antigen (6:4) was injected into multiple sites, on
+shaved areas adjacent to the vertebral column. Each
+injection site received no more than 0.3 ml. On day 10, and
+on every subsequent tenth day, the rabbits were boosted
+with 1 ml incomplete Freund’s adjuvant (IFA; Sigma, St
+Louis, MO) plus antigen (6:4), which was administered as
+described for CFA treatment. After secondary boosts,
+12 ml blood was collected every 3 days. The collected
+blood was stood at room temperature overnight, and then
+centrifuged to obtain sera. The anti-RUNX3 antibody was
+obtained, and the speciﬁcity of antibody was tested by
+Western blot analysis as described previously.26
+Immunohistochemistry Analysis
+We carried out immunohistochemical studies to investi-
+gate RUNX3 protein expression in the 95 gastric cancer
+tumor samples. Gastric tissue specimens were ﬁxed with
+Correlates of RUNX3 Expression Loss
+1687
+
+
+3.75% formalin overnight, embedded in parafﬁn, and sec-
+tioned with a thickness of 4 lm. The sections were
+permeated in sodium citrate solution (pH 6.4), facilitated by
+microwave oven heating for 10 min. The sections were
+stained with hematoxylin and endogenous RUNX3 was
+detected by immunohistochemistry. We used anti-RX3C0
+antibody (1:2,000) to detect presence of endogenous human
+RUNX3 protein in the sections. RUNX3 protein expression
+was
+visualized
+using
+a
+biotin-conjugated
+anti-rabbit
+antibody, followed by incubation with avidin–biotin–per-
+oxidase. A positive reaction was indicated by a reddish-
+brown precipitate in the nuclei. Based on the percentage of
+positive cells and on the intensity of staining, RUNX3
+expression levels were classiﬁed into one of three groups:
+negative, weakly positive, and strongly positive.27 Speciﬁ-
+cally, the percentage of positive cells was divided into ﬁve
+grades (percentage cores): B10% (0), 11–25% (1), 26–50%
+(2), 51–75% (3), and [75% (4). Intensity of staining was
+divided into four grades (intensity scores): no staining (0),
+light brown (1), brown (2), and dark brown (3). RUNX3
+staining positivity was determined by the formula: overall
+scores = percentage score 9 intensity score. Overall score
+of B3 was deﬁned as negative, score of[3 but B6 as weakly
+positive, and score of[6 as strongly positive.
+Cell Culture
+Human gastric cancer cell lines AGS and SNU-1 were
+purchased from the American Type Culture Collection
+(Manassas, VA). AGS cells were maintained in HAM’S/
+F12 medium supplemented with 10% fetal bovine serum,
+sodium
+pyruvate,
+100 U/ml
+penicillin
+G,
+100 lg/ml
+streptomycin, and 1% L-glutamine, while SNU-1 cells
+were maintained in Dulbecco’s modiﬁed Eagle medium
+(DMEM)with the same supplements. The cells were grown
+at 37C in a humidiﬁed atmosphere of 5% CO2.
+RNA Extraction and RT-PCR Analysis
+RNA from gastric cancer cell lines and gastric tissue
+specimens was extracted using Trizol solution according to
+the
+manufacturer’s
+protocols (Invitrogen, CA).
+After
+chloroform separation, the supernatants were collected and
+precipitated by adding 1 ml ice-cold 100% isopropanol.
+RNA precipitates were spun down at 12,000 rpm for 5 min
+in a microcentrifuge. After washing once with 75% etha-
+nol, we air-dried the pellets for 10 min and proceeded to
+determine concentrations. Complementary DNA (cDNA)-
+was synthesized from total RNA isolated from cell lines
+using a Stratascript cDNA synthesis kit (Stratagene, CA).
+Eleven microliters total RNA (up to 5 lg) was mixed with
+1 ll oligo-dT 12-18 (0.5 lg/ll), and incubated at 70C for
+10 min. The mixture was then incubated on ice for an
+additional 1 min. Seven microliters of reaction mixture,
+consisting of 2 ll 10 9 polymerase chain reaction (PCR)
+buffer, 2 ll 25 mM MgCl2, 1 ll 10 mM deoxyribonucle-
+otide
+triphosphate
+(dNTP)
+mix,
+and
+2 ll
+0.1 M
+dithiothreitol (DTT), was added and incubated at 42C for
+5 min. One microliter of reverse transcriptase (200 U) was
+added, and the mixture was incubated at 42C for 50 min.
+The reaction was terminated at 70C for 15 min, and then
+chilled on ice. One microliter of RNase H was added, and
+the mixture was incubated at 37C for 20 min. We used the
+synthesized cDNA for PCR ampliﬁcation. We used the
+following primers to detect RUNX3 expression: forward
+primer 50-TCG ATG GTG GAC GTG CTG GC-30 and
+reverse primer 50–GGT CTG CCG TGG CCG TCT TC-30.
+Reverse-transcription (RT)-PCR reactions were ampliﬁed
+using the following conditions: 15 ll of mixture containing
+2 ll cDNA, 5 ll 10 9 PCR buffer (500 mM KCl, 100 mM
+Tris-HCl at pH 9.0, containing 1% Triton X-100 and
+2.5 mM MgCl2), 1 ll 10 mM dNTP, 0.5 ll Taq polymer-
+ase (5 U/ll), and 25 pmoles of each primer. The RT-PCR
+products were separated by 1.0 % TAE agarose gel elec-
+trophoresis, and stained with 0.5 lg/ml ethidium bromide.
+Western Blot Analysis
+Total cell lysates were prepared by adding protein lysis
+buffer (20 mM imidazole-HCl [pH 6.8], 100 mM KCl,
+2 mM MgCl2, 20 mM EGTA [pH 7.0], 300 mM sucrose,
+1 mM NaF, 1 mM Na-vanadate, 1 mM Na molybetadate,
+and 0.2% Triton X-100) for 1 h at 4C. Protein (10 lg/
+sample assessed by BCA protein assay, Pierce Chemical
+Co., IL) from each lysate was subjected to 10% SDS-Tris
+glycine gel electrophoresis, and transferred to a polyvinyl-
+idene ﬂuoride (PVDF) membrane (Millipore, USA). The
+membrane was blocked with 5% nonfat milk in TBST buffer
+(10 mM Tris [pH 7.5], 100 mM NaCl, and 0.1% Tween 20),
+and incubated with rabbit anti-RUNX3 antibody (1:1,000)
+for 1 h at room temperature. Both pro- and active caspase-3
+antibodies (Cell Signaling, USA) (1:1000) were used to
+conﬁrm apoptosis induced by RUNX3 in Western blots.
+Peroxidase conjugated anti-mouse antibody (1:5,000) was
+used as secondary antibody (Jackson Lab, USA). The
+membrane was
+developed using Renaissance protein
+detection kit (DuPont NEN, MA) and exposed to Fuji X-ray
+ﬁlm (Fuji, Japan). The membrane was further stripped in
+solution containing 100 mM 2-mercaptoethanol, 2% SDS,
+and 62.5 mM Tris-HCl (pH 6.7). Anti-caspase-3 antibodies
+were purchased from Upstate (Lake Placid, NY).
+Gene Transfection and Cell Proliferation Assay
+Human RUNX3 cDNA (nucleotides 1 to 1,248; GenBank
+accession no. NM_004350) was subcloned into the pCMV2-
+1688
+P.-I. Hsu et al.
+
+
+ﬂag-CPO vectors at the RsrII site to yield plasmid pFlag/
+RUNX3. Cells were plated into six-well plates at a density of
+200 sorted cells/dish. The cells were transfected with pFlag
+vector as a control or with pFlag/RUNX3 at graded concen-
+trations from 2.5 to 5 lg for 24 h. The transfected cells were
+cultured in a 37C, 5% CO2 incubator for 14 days. Individual
+colonies ([50 cells/colony) were ﬁxed and stained using a
+solution of 1% crystal violet in methanol for 30 min. The
+colonies were counted using a UMAX MagicScan.
+TUNEL Assay
+Cells were ﬁxed 48 h after transfection with 4% para-
+formaldehyde. Apoptotic cells were detected by the TdT-
+mediated dUTP nick-end labeling (TUNEL) method, using
+an in situ cell death detection kit (Roche, Germany), as
+described
+elsewhere.28
+Cells
+were
+double-stained
+by
+TUNEL and 40,6-diamidino-2-phenylindole (DAPI) to
+identify the nuclei.
+In Vitro Invasion Assay
+Methods for testing the invasion and migration capabil-
+ities of tumor cells were performed in two-compartment
+Boyden chambers (Neuro Probe Inc., USA). For invasion
+assay, polycarbonate ﬁlters (8 lm pore size, 25 9 80 mm,
+Neuro Probe Inc., USA) were precoated with 10 lg human
+ﬁbronectin (Sigma, MO, USA) on the lower nonshiny side.
+Fifty micrograms of ice-cold Matrigel (BD Biosciences,
+CA) was diluted in 100 ll DMEM without fetal calf serum
+(FCS) and then applied to the upper surface of the ﬁlters.
+Thirty microliters of medium containing 10% FCS was
+added to each well of the lower compartment of the cham-
+ber. pFlag and pFlag/RUNX3 transfected cells were
+harvested and resuspended in serum-free medium contain-
+ing 0.1% bovine serum albumin, and 50 ll cell suspension
+at the concentration of 3 9 105 cells/ml were added to each
+well of the upper compartment. The cells were incubated for
+16 h at 37C in 5% CO2. At the end of the incubation, ﬁlters
+were ﬁxed in 100% methanol for 10 min and were then
+stained with 10% Giemsa solution (Merck, Germany) for
+1 h. Nonmigrating cells were completely removed by wip-
+ing with cotton swabs. Cells that had invaded through the
+pores to the lower surface of the ﬁlter were counted under
+light microscope (200 9 , ten random ﬁelds from each
+well). All experiments were performed in quadruplicate.
+Wound Healing Assay
+To test the migration ability in various cell lines, wound
+colonization assay was employed in this study. Brieﬂy,
+cells were allowed to reach 90–100% conﬂuence, and a
+straight and uniform scratch was made on the monolayer
+with a 200-ll plastic pipette tip. Monolayer was washed
+gently and incubated for 24 h at 37C in the medium with
+0.5% serum. For each experimental condition, the area of
+the wound was photographed in ten ﬁelds initially marked
+for reference under light microscope (1009). Results of
+photographs were then analyzed by PhotoShop version
+7.01 image editing software (Adobe, CA). The grid func-
+tion was applied to each photo and grid points covering
+wounded surface areas that were not covered by migrating
+cells at each observation time point were counted and
+tested against original wound surface areas. The result was
+then statistically analyzed. The difference in areas repre-
+sented
+by
+grid
+number
+covered
+by
+migrating
+cells
+immediately after wound inﬂiction or migrating cell repair
+were expressed as mean ± standard deviation (SD). All
+experiments were performed in triplicate.
+Statistical Analysis
+Correlations between expression of RUNX3 and the
+clinicopathological variables were analyzed by chi-square
+test. Survival rates were calculated by Kaplan–Meier
+method. Log-rank test was used for comparison of survival
+curves. Also, the inﬂuence of each variable on survival was
+assessed by the Cox proportional hazard model. For in vitro
+studies, each experiment was done independently at least
+twice with similar results. The data were compared by
+Student’s t-test. SPSS software (version 11.05, SPSS, Inc.,
+Chicago, IL) was used for the analyses. A P value less than
+0.05 was regarded as statistically signiﬁcant.
+RESULTS
+RUNX3 Protein Expression in Gastric Cancer Tissue
+Specimens
+We analyzed the expression of RUNX3 protein in 95
+gastric cancer tissues by immunohistochemistry. RUNX3
+was strongly expressed in the nuclei of surface epithelial
+cells of normal gastric mucosa (Fig. 1a, left). In gastric
+cancer tissues, RUNX3 expression was negative (Fig. 1a,
+right) in 37 (39%) cases, weakly positive in 40 (42%)
+cases, and strongly positive (Fig. 1a, center) in 18 (19%)
+cases. Table 1 summarizes the relationships between
+RUNX3 expression and clinicopathological parameters.
+Loss of RUNX3 expression was observed in 16.7% (10/37)
+of intestinal-type cancers, 82.6% (19/37) of diffuse-type
+cancers, and 66.7% (8/37) of mixed-type gastric cancers.
+RUNX3 expression was more frequent in intestinal-type
+cancer (P \ 0.001) and mixed-type cancer (P = 0.001)
+than in diffuse-type cancer (Fig. 1a). Additionally, loss of
+RUNX3 expression was associated with lymph node
+metastasis (P = 0.02), and the frequencies of RUNX3
+Correlates of RUNX3 Expression Loss
+1689
+
+
+expression differed marginally between early and advanced
+gastric cancers (P = 0.07).
+In this work, patients were followed up for at least
+3 years after operations. The survival of the 37 patients
+who had gastric tumors without RUNX3 expression was
+signiﬁcantly worse than that of the 58 patients with
+RUNX3 expression in gastric tumors (log-rank test:
+P = 0.018; Fig. 1b). In a Cox proportional hazards model
+for multivariate analysis, loss of RUNX3 expression was a
+borderline independent factor for poor survival when
+adjusted for age, sex, histological type, and other clinico-
+pathological parameters (P = 0.092).
+Expression of RUNX3 mRNA and Protein in Gastric
+Cancer Cells
+We examined the expression of RUNX3 messenger
+RNA (mRNA) in AGS and SNU1 gastric cancer cell lines
+by Northern blot analysis. Normal gastric mucosa speci-
+mens were used as references for RUNX3 expression.
+Figure 2a shows that the expression of RUNX3 mRNA in
+both AGS and SNU1 cells was remarkably decreased.
+Additionally, Western blot analysis also demonstrated that
+the expression of RUNX3 protein was substantially
+decreased in AGS and SNU-1 gastric cancer cell lines
+(Fig. 2b).
+Effect of Re-Expression of RUNX3 on Cell Proliferation
+in Gastric Cancer Cells
+To determine the effect of RUNX3 reintroduction on
+gastric tumor cell proliferation, we counted the number of
+AGS cell colonies following pFlag/RUNX3 transfection
+using UMAX MagicScan. The colonies of AGS cells
+1.0
+0.9
+0.8
+0.7
+0.6
+0.5
+0
+40
+Time after Operation (Months)
+20
+30
+10
+Proportion
+Surviving
+b
+RUNX3 (+)
+RUNX3 (-)
+Normal gastric tissue
+a
+Intestinal type
+gastric cancer
+Diffuse type
+gastric cancer
+p = 0.018
+FIG. 1 Protein expression of RUNX3 in normal gastric mucosa and
+in different subtypes of gastric adenocarcinomas. a RUNX3 was
+expressed in the nuclei of normal foveolar epithelial cells (left) and in
+intestinal-type gastric cancers (center, strongly positive expression,
+weakly positive expression). No RUNX3 expression was observed in
+a diffuse-type gastric cancer (right) by immunohistochemical stain-
+ing. All ﬁgures were photographed at 4009 magniﬁcation. b Kaplan–
+Meier survival curves for patients subdivided according to RUNX3
+expression of primary gastric tumors. The survival of the 58 patients
+who had gastric cancer with positive RUNX3 expression was
+signiﬁcantly longer than that of the 37 patients with negative RUNX3
+expression. Loss of RUNX3 expression was signiﬁcantly associated
+with poor prognosis (log-rank test, P = 0.018)
+TABLE 1 Relationship between RUNX3 expression and clinico-
+pathological characteristics of gastric adenocarcinoma
+Characteristics
+RUNX3 expression
+P value
+Negative
+(n = 37)
+Positive
+(n = 58)
+Age
+1.00
+\40 years
+3 (42.8%)
+4 (57.2%)
+C40 years
+34 (38.6%)
+54 (61.4%)
+Sex
+0.29
+Male
+28 (36.4%)
+49 (63.6%)
+Female
+9 (50.0%)
+9 (50.0%)
+Blood type
+0.92
+Non-A
+24 (39.3%)
+37 (60.7%)
+A
+13 (38.2%)
+21 (61.8%)
+Histological type
+Intestinal
+10 (19.2%)
+42 (80.8%)
+—
+Diffuse
+19 (82.6%)
+4 (17.4%)
+\0.001*
+Mixed
+8 (66.7%)
+4 (33.3%)
+0.001*
+Stage
+0.07
+Early
+6 (24.0%)
+19 (76.0%)
+Advanced
+31 (44.2%)
+39 (55.8%)
+Invasion of adjacent organ
+0.24
+No
+30 (36.6%)
+52 (63.4%)
+Yes
+7 (53.8%)
+6 (46.2%)
+Peritoneal seeding
+0.10
+No
+26 (34.7%)
+49 (65.3%)
+Yes
+11 (55.0%)
+9 (45.0%)
+Lymph node metastasis
+0.02
+No
+11 (26.2%)
+31 (73.8%)
+Yes
+26 (49.0%)
+27 (51.0%)
+Distant metastasis
+0.93
+No
+31 (38.8%)
+49 (61.2%)
+Yes
+6 (40.0%)
+9 (60.0%)
+* Compared with the intestinal-type gastric cancer
+1690
+P.-I. Hsu et al.
+
+
+transfected with plasmid pFlag/RUNX3 were signiﬁcantly
+fewer than colonies of cells transfected with vector control
+(Fig. 3). Moreover, the clonogenicity of AGS cells trans-
+fected by 5.0 lg plasmid pFlag/RUNX3 was lower than
+that of AGS cells transfected by 2.5 lg plasmid pFlag/
+RUNX3.
+Induction of Apoptosis Through Caspase 3 Activation in
+Gastric Cancer Cells After pFlag/RUNX3 Transfection
+Forty-eight hours after pFlag/RUNX3 transfection, we
+harvested the cells and detected apoptosis by TUNEL
+assay. The percentage of TUNEL-positive cells was sig-
+niﬁcantly higher in the pFlag/RUNX3 transfected AGS
+cells compared with the control group (P \ 0.01; Fig. 4a,
+b). The same experiment in SNU1 cells yielded similar
+results (data not shown). These ﬁndings indicated that the
+re-expression of RUNX3 induces apoptosis in AGS and
+SNU1 cells. Activated caspase-3 levels were signiﬁcantly
+elevated in AGS and SNU1 cells 48 h after pFlag/RUNX3
+transfection
+compared
+with
+mock-transfected
+cells
+(Fig. 4c). This data indicated that the re-expression of
+RUNX3 leads to the upregulation of activated caspase-3 in
+AGS and SNU1 cells.
+RUNX3 Re-Expression Inhibits Gastric Cancer Cell
+Invasion and Migration In Vitro
+We
+further
+determined
+the
+effects
+of
+RUNX3
+re-expression on AGS cell invasion and migration poten-
+tials. Twenty-four hours after pFlag/RUNX3 transfection,
+the cells were harvested and plated into the upper well of
+the Boyden Chamber layered with Matrigel. Figure 5a
+shows the morphology of AGS cells after invading through
+399bp
+371bp
+44 kDa
+42 kDa
+RUNX3
+Normal
+gastric tissue
+AGS
+SNU1
+Normal
+gastric tissue
+AGS
+SNU1
+GAPDH
+RUNX3
+β-actin
+b
+a
+FIG. 2 Endogenous RUNX3 mRNA and RUNX3 protein expression
+in human normal gastric tissue and gastric cancer cell lines. a RUNX3
+mRNA expression was assessed by Northern blot analysis. Expression
+of RUNX3 mRNA was remarkably decreased in both AGS and SNU1
+cells as compared with normal gastric mucosa. b RUNX3 protein
+expression was determined by Western blot analysis. Normal gastric
+tissue was included as positive controls. Lower bands show the
+expression of beta-actin as internal control for protein loading.
+RUNX3 protein expression was substantially decreased in both AGS
+and SNU1 cells compared with normal gastric mucosa (P \ 0.01 for
+both)
+100
+Percent of
+Colonies
+b
+a
+a
+b
+c
+d
+40
+20
+60
+80
+Mock
+pFlag
+2.5ug pFlag/
+RUNX3
+5ug pFlag/
+RUNX3
+*
+*
+FIG. 3 Effect of RUNX3 re-expression on the growth of gastric
+cancer cells. a AGS cells were transfected with vector or plasmid
+pFlag/RUNX3 at 2.5 or 5.0 lg for 24 h. Cell colonies were counted
+14 days after transfection in AGS cells: (a) mock, (b) 5.0 lg pFlag
+vector, (c) 2.5 lg pFlag/RUNX3, and (d) 5.0 lg of pFlag/RUNX3. b
+histograms representing the colony counting results in (a) based on
+the average of three independent experiments (*denotes P \ 0.01
+compared control group)
+Correlates of RUNX3 Expression Loss
+1691
+
+
+the 8 lm pore. As noted, cell invasion was signiﬁcantly
+suppressed
+(55.0 ± 14.0%,
+P \ 0.05)
+after
+RUNX3
+expressions (Fig. 5b; pFlag group, 71 ± 8 cells per 209
+ﬁeld; pFlag/RUNX3 group, 32 ± 9 cells per 20 9 ﬁeld).
+In cell scratch wound healing test, there was signiﬁcant
+delay in wound closure after RUNX3 expression compared
+with pFlag transfected control (Fig. 5c, d, 37.7 ± 8.2%
+versus 66.0 ± 4.9%, P \ 0.05).
+DISCUSSION
+Runt domain family members are master regulators of
+gene expression in major developmental pathways, and are
+critically involved in cellular proliferation and differentia-
+tion. The loss of RUNX3 expression is suggested to be
+causally related to gastric cancer mainly because of the hy-
+permethylation of the RUNX3 promoter.23 In this study, we
+investigated the expression of RUNX3 protein in gastric
+cancer tissues in 95 primary tumor samples by immunohis-
+tochemistry. We found that RUNX3 was expressed in the
+nuclei of surface epithelial cells in normal gastric mucosa,
+but was not detectable in 37 of 95 (39%) primary tumors of
+gastric cancer patients. This ﬁnding was consistent with
+earlier reports, in which 30–60% of gastric cancer samples
+exhibited loss of RUNX3 expression.18,23,29 The data indi-
+cate that the perturbation of RUNX3 expression may be
+involved in the multistep processes of gastric carcinogenesis.
+Previous reports have shown that RUNX3 is required for
+the TGF-b1-dependent induction of p21 expression in gas-
+tric epithelial cells. TGF-b1 arrests cell growth by activating
+p21, which encodes a cyclin-dependent kinase inhibitor, and
+this signal cascade is regarded as a tumor suppressor path-
+way.30 The loss of RUNX3 expression may therefore
+eliminate the ability of TGF-b1 to activate the p21 promoter,
+and may lead to an imbalance between cell proliferation and
+apoptosis.24 In this study, we detected a borderline associ-
+ation between the loss of RUNX3 expression and advanced
+tumor stages. Additionally, a striking association between
+the loss of RUNX3 expression and lymph node metastasis
+was observed (P = 0.02). Furthermore, the survival of
+gastric cancer patients without RUNX3 expression was
+signiﬁcantly worse than that of cancer patients with RUNX3
+expression
+(P = 0.018).
+These
+ﬁndings
+indicate
+that
+RUNX3 is a novel tumor suppressor and an important
+prognostic factor in gastric cancer. In our study, we showed
+signiﬁcant inhibitions of invasion as well as migration in
+AGS gastric cancer cells (Fig. 5). The data were also sup-
+ported by experiments demonstrating that the enforced
+restoration of RUNX3 expression led to downregulation of
+cyclin D1, upregulation of apoptotic protein expression, and
+abrogation of metastasis in animal models.29,30
+Several proliferation- and apoptosis-associated genes
+are regulated by RUNX3 in gastric cancer cell lines, as
+shown in cDNA microarray analyses.31,32 It has also been
+suggested that the suppression of cell proliferation by
+20
+Percent TUNEL
+Positive Cells
+b
+c
+a
+Mock
+DAPI
+TUNEL
+Merge
+pFlag
+pFlag/
+RuNX3
+pFlag
+Inactive
+caspase-3
+Active
+caspase-3
+β-actin
+5
+10
+15
+Mock
+pFlag/RUNX3
+pFlag/
+RUNX3
+pFlag
+pFlag/
+RUNX3
+AGS
+SNU-1
+pFlag
+*
+FIG. 4 Induction of apoptosis and caspase-3 activation in pFLAG/
+RUNX3 transfected gastric cancer cells. a Microscopic pictures of
+transfected AGS cells with DAPI and TUENL stainings. b Histo-
+grams representing the TUNEL assay results in (a) based on the
+average of three experiments. *Signiﬁcantly different results with P
+value less than 0.01. c Both active and inactive caspase-3 antibodies
+were used to determine the caspase activities in transfected AGS and
+SNU-1 cells by Western blot analysis. The levels of active caspase-3
+protein in both pFlag/RUNX3 transfected AGS and SNU1 cells were
+remarkably higher than that of mock transfection. b-actin was used as
+an internal control for the Western blot analysis
+1692
+P.-I. Hsu et al.
+
+
+RUNX3 is dependent on the death-receptor mitochondria-
+mediated apoptotic pathway.32 We studied the effect of the
+re-expression of RUNX3 on gastric cancer cell lines to
+further elucidate biological activities of RUNX3 in gastric
+cancer cells. AGS cells were transfected with pFlag/
+RUNX3 plasmid, and the cell colonies were counted
+14 days after transfection. There were signiﬁcantly fewer
+colonies of AGS cells transfected with plasmid pFlag/
+RUNX3 than there were colonies of AGS cells transfected
+with vector control. Moreover, the clonogenicity of AGS
+cells transfected with 5.0 lg pFlag/RUNX3 plasmid was
+lower than that of AGS cells transfected with 2.5 lg pFlag/
+RUNX3 plasmid. The results indicate that the restoration of
+RUNX3 expression inhibits the growth of gastric cancer
+cells in a dose-dependent manner.
+In this study, we investigated the effect of RUNX3 re-
+expression on gastric cancer cell apoptosis by TUNEL
+assay. Transfection with pFlag/RUNX3 markedly pro-
+moted the apoptosis of AGS and SNU1 cells. Additionally,
+the enforced expression of RUNX3 also resulted in the
+activation of caspase-3 in AGS and SNU1 cells. These
+results indicate that the re-expression of RUNX3 may
+suppress tumor growth, at least in part, by inducing active
+caspase-3 expression and thereby upregulating apoptosis.
+Previous studies have established that many genetic and
+epigenetic
+alterations
+in
+oncogenes,
+tumor-suppressor
+genes, cell-cycle regulators, cell adhesion molecules, DNA
+repair genes, and genetic instability participate in the
+multistep process of human gastric carcinogenesis.33 In this
+work, RUNX3 expression was eliminated in 19% of
+80
+Average Cell #
+per 20X Field
+b
+a
+20
+40
+60
+pFlag/RUNX3
+0 h
+24 h
+pFlag
+pFlag/RUNX3
+pFlag
+pFlag/RUNX3
+pFlag
+*
+700
+Wound
+Width (Pixels)
+d
+c
+400
+500
+100
+200
+300
+600
+pFlag/RUNX3
+pFlag
+*
+0 h
+24 h
+FIG. 5 RUNX3 expression results in decreased AGS cell invasion
+and migration. a microscopic pictures of pFlag or pFlag/RUNX3
+transfected AGS cells after invading through Matrigel and 8 lm pore
+(2009 magniﬁcation). b Quantiﬁcation of AGS cells that invaded
+through Matrigel-coated membrane after transfection with pFlag/
+RUNX3 or pFlag vector control. Note that equal numbers of cells
+(1.5 9 104) were added to the trans-well chambers to determine the
+effect of RUNX3 on invasion over 16 h (*P \ 0.05). Error bars
+represent standard deviation of quadruple experiments. c Effect of
+RUNX3 on AGS migration using a wound-healing assay in compar-
+ison with control. Note signiﬁcant wound width difference between
+pFlag/RUNX3 and pFlag transfected AGS cells at 24 h. d Graphical
+representation of the effect of RNUX3 on wound healing. The
+quantiﬁcation of the wound width was based on calculating the
+average areas of the wound in ten photographed ﬁelds initially
+marked for reference under light microscope (1009). (*P \ 0.05).
+Error bars represent standard deviation of triplicate experiments
+Correlates of RUNX3 Expression Loss
+1693
+
+
+intestinal gastric cancers, 83% of diffuse gastric cancers,
+and 67% of mixed gastric cancers. RUNX3 expression was
+more common in intestinal gastric cancer than in diffuse.
+These data demonstrate that expression of RUNX3 is sig-
+niﬁcantly correlated with differentiation status of gastric
+cancer cells. Our observations correlate with the ﬁnding
+that RUNX3 is involved in T-cell differentiation and neu-
+rogenesis in dorsal root ganglia.34
+In conclusion, RUNX3 expression is lost in 39% of
+gastric cancers. The loss of RUNX3 expression may con-
+tribute
+to
+lymph
+node
+metastasis,
+reduced
+cellular
+differentiation, and inferior survival duration. Re-expres-
+sion of RUNX3 leads to the upregulation of caspase-3 and
+subsequent apoptosis, and suppresses the growth of human
+gastric cancer cells. Targeting of the RUNX3 pathway may
+constitute a potential treatment modality for gastric cancer.
+ACKNOWLEDGEMENT
+This work was supported in part by
+grants from the National Science Council (to P. I.Hsu, P. J. Lu, and
+M. H.); and Academia Sinica (to M. H.).
+REFERENCES
+1. Parkin DM, Pisani P, Fearly J. Estimates of worldwide incidence of
+eighteen major cancers in 1985. Int J Cancer. 1993;54:594–606.
+2. Chyou PH, Nomura AM, Hankin JH, et al. A case-cohort study of
+diet and stomach cancer. Cancer Res. 1990;50:7501–4.
+3. Nomura A, Grove JS, Stemmermann GN, et al. A prospective
+study of stomach cancer and its relation to diet, cigarettes, and
+alcohol consumption. Cancer Res. 1990;50:627–31.
+4. Inoue M, Tajima K, Hirose K, et al. Lifestyle and subsite of gastric
+cancer—joint effect of smoking and drinking habits. Int J Cancer.
+1994;56:494–9.
+5. El-Omar EM, Carrington M, Chow WH, et al. Interleukin-1
+polymorphisms associated with increased risk of gastric cancer.
+Nature. 2000;404:398–402.
+6. Watanabe T, Tada M, Nagai H, et al. Helicobacter pylori infection
+induces gastric cancer in Mongolian Gerbils. Gastroenterology.
+1998;115:642–8.
+7. Parorsonnet J, Friedman GD, Vandersteen DP, et al. Helicobacter
+pylori infection and the risk of gastric carcinoma. N Eng J Med.
+325: 1127–31, 1991.
+8. Hsu PI, Lai KH, Chien AJ, et al. Impact of bacterial eradication on
+the cell proliferation and p53 protein accumulation in Helicobacter
+pylori-associated gastritis. Anticancer Res. 2000;20:1221–8.
+9. Hsu PI, Hwang IR, Cittelly D, et al. Clinical presentation in
+relation to diversity within the Helicobacter pylori cag pathoge-
+nicity island. Am J Gastroenterol. 2002;97:2231–8.
+10. Thompson GB, Van Heerden JA, Sarr MG. Adenocarcinoma of
+the stomach: are we making progress? Lancet. 1993;342:713–8.
+11. Lauren, P. The two histological main types of gastric carcinoma.
+Diffuse and so-called intestinal type carcinoma. An attempt at
+histoclinical
+classiﬁcation.
+Acta
+Pathol
+Microbiol
+Scand.
+1965;64,31–49.
+12. Tahra E. Molecular mechanism of stomach carcinogenesis. J
+Cancer Res Clin Oncol. 1993;119:265–72.
+13. Wu MS, Shun CT, Wang HP, et al. Genetic alterations in gastric
+cancer: relation to hsitological subtypes, tumor stage, and Heli-
+cobacter pylori infection. Gastroenterology. 1997;112:1457–65.
+14. Solcia E, Fiocca R, Luinetti O, et al. Intestinal and diffuse gastric
+cancers arise in a different background of Helicobacter pylori
+gastritis through different gene involvement. Am J Surg Path.
+1996;20:S8–22.
+15. Mayer B, Johnson JP, Leitl F, et al. E-cadherin expression in pri-
+mary and metastatic gastric cancer: down-regulation correlates
+with cellular dedifferentiation and glandular disintegration. Cancer
+Res. 1993;53:1690–5.
+16. Chen HH, Chu RY, Hsu PN, et al. Loss of E-cadherin expression
+correlates with poor differentiation and invasion into adjacent
+organs in gastric adenocarcinomas. Cancer Lett. 2003;201:97–106.
+17. Lund AH, van Lohuizen M. RUNX: a trilogy of cancer genes.
+Cancer Cell. 2002;1:213–5.
+18. Li QL, Ito K, Sakakura C, et al. Causal relationship between the loss
+of RUNX3 expression and gastric cancer. Cell. 2002;109:113–24.
+19. Ito Y. Molecular basis of tissue-speciﬁc gene expression medi-
+ated by the runt domain transcription factor PEBP2/CBF. Genes
+Cells. 1999;4:685–96.
+20. Yang S, Wei D, Wang D, et al. In vitro and in vivo synergistic
+interactions between the Runx2/Cbfa1 transcription factor and
+bone morphogenetic protein-2 in stimulating osteoblast differ-
+entiation. J Bone Miner Res. 2003;18:705–15.
+21. Puig-Kroger A, Corbi A. RUNX3: a new player in myeloid gene
+expression and immune response. J Cell Biochem. 2006;98:744–
+56.
+22. Kim WJ, Kim EJ, Jeong P, et al. RUNX3 inactivation by point
+mutations and aberrant DNA methylation in bladder tumors.
+Cancer Res. 2005;65:9347–54.
+23. Ito K, Liu Q, Salto-Tellez M, et al. RUNX3, a novel tumor
+suppressor, is frequently inactivated in gastric cancer by protein
+mislocalization. Cancer Res. 2005;65:7743–50.
+24. Chi XZ, Yang JO, Lee KY, et al. RUNX3 suppresses gastric
+epithelial cell growth by inducing p21(WAF1/Cip1) expression in
+cooperation with transforming growth factor b-activated SMAD.
+Mol Cell Biol. 2005;18:8097–107.
+25. Kajitani T. The general rules for the gastric cancer study in
+surgery and pathology. Part I. Clinical classiﬁcation. Jpn J Surg.
+1981;11:127–39.
+26. Shen M, Stukenberg PT, Kirschner MW, et al. The essential
+mitotic peptidyl-prolyl isomerase Pin1 binds and regulates
+mitosis-speciﬁc phosphproteins. Genes Dev. 1998;12:706–20 .
+27. Wang L, Wei D, Huang S, et al. Transcription factor Sp1
+expression is a signiﬁcant predictor of survival in human gastric
+cancer. Clin Cancer Res. 2003;9:6371–80.
+28. Kasagi N, Gomyo Y, Shirai H, et al. Apoptotic cell death in
+human gastric carcinoma: analysis by terminal deoxynuceotidyl
+transferase-mediated dUTP-biotin nick end labeling. Jpn J Can-
+cer Res. 1994;85:939–45.
+29. Wei D, Gong W, Oh SC, et al. Loss of RUNX3 expression sig-
+niﬁcantly affects the clinical outcome of gastric cancer patients
+and its restoration causes drastic suppression of tumor growth and
+metastasis. Cancer Res. 2005;65:4809–16.
+30. Moustakas A, Pardali K, Gaal A, et al. Mechanisms of TGF-beta
+signaling in regulation of cell growth and differentiation. Immu-
+nol Lett. 2002;82:85–91.
+31. Sakakura C, Hasegawa K, Miyagawa K, et al. A. Possible
+involvement of RUNX3 silencing in the peritoneal metastases of
+gastric cancers. Clin Cancer Res. 2005;11:6479–88.
+32. Nagahama Y, Ishimaru M, Osaki M, et al. Apoptotic pathway
+induced by transduction of RUNX3 in the human gastric carci-
+noma cell line MKN-1. Cancer Sci. 2008;99:23–30.
+33. Tahara E. Genetic pathways of tow types of gastric cancer. IARC
+Sci Publ. 2004;157:327–49.
+34. Bae SC, Choi JK. Tumor suppressor activity of RUNX3. Onco-
+gene. 2004;23:4336–40.
+1694
+P.-I. Hsu et al.

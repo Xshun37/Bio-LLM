@@ -1,0 +1,1135 @@
+Intestinal adenoma formation and MYC activation are
+regulated by cooperation between MYB and Wnt
+signaling
+D Ciznadija1,2,8, R Tothill3, ML Waterman4, L Zhao5, D Huynh1,2, RM Yu1,2, M Ernst6, S Ishii7, T Mantamadiotis1,2,9, TJ Gonda5,
+RG Ramsay*,1,2 and J Malaterre1
+Aberrant Wnt signaling mediated by mutations affecting APC (adenomatous polyposis coli) or b-catenin initiates the majority of
+human colorectal cancers (CRC) and drives tumorigenesis through the activation of speciﬁc genes such as MYC. We report here
+a novel association whereby another oncogenic transcription factor, MYB/c-Myb, is necessary for intestinal adenoma
+development directed by activated Wnt signaling. APCMin/ þ mice in which c-myb is haploinsufﬁcient survive longer than wild-
+type APCMin/ þ animals due to a delay in adenoma formation. Intestinal adenomas from APCMin/ þ mice were assessed and found
+to have high levels of c-myc gene expression. We explored the relationship between activated Wnt signaling and MYB in
+regulating MYC and found activated b-catenin in combination with MYB induces robust upregulation of MYC promoter activity,
+as well as endogenous MYC mRNA and protein expression, in human cells. This cooperation occurred through independent
+binding of MYB and b-catenin to the MYC promoter. These data highlight a cooperative function for MYB in the context of
+activated Wnt signaling and provide a molecular basis for the expression of MYC in CRC.
+Cell Death and Differentiation (2009) 16, 1530–1538; doi:10.1038/cdd.2009.94; published online 17 July 2009
+Robust expression of the transcription factor MYB/c-Myb is
+principally restricted to immature cells in the hemopoietic
+system and colon epithelium. Experiments in c-myb mutant
+mice show that two copies of the c-myb gene are required for
+cell
+survival
+during
+emergency responses
+to
+cytotoxic
+damage in both these compartments.1 In addition, colon-
+speciﬁc loss of Myb disrupts not only colon formation in the
+developing mouse, but also crypt homeostasis in adults.2
+Levels of MYB expression become progressively higher as
+human colonic epithelium undergoes transformation whereas
+persistent expression blocks cytodifferentiation in both mouse
+and human colon cells. A large number of colorectal cancer
+(CRC) cell lines and clinical samples show elevated levels of
+MYB, with altered transcriptional elongation control under-
+pinning this increase.1 Nevertheless, in the context of CRC
+development, the primary focus in both mouse and human
+cells has been on canonical Wnt signaling through b-catenin
+activation.
+b-Catenin is normally targeted for degradation by a complex
+of proteins including APC, AXIN, and glycogen synthase
+kinase-3b.3,4 Wnt binding to its receptor disrupts this complex
+and leads to the cytoplasmic stabilization of de novo
+synthesized and non-phosphorylated b-catenin.5 b-Catenin
+subsequently translocates to the nucleus where it associates
+with TCF/LEF factors. This partnership converts b-catenin
+into a transcriptional activator and enhances the expression of
+Wnt target genes, such as MYC and CYCLIND1, which in turn
+promote colon transformation. A number of reports indicate
+that mutations in APC or CTNNB1 (b-catenin) initiate the
+majority of CRC.6–9
+Given that a signiﬁcant proportion of CRC isolates over-
+express MYB and that this likely occurs in a background of
+activated Wnt signaling, we considered the contribution that
+MYB makes to CRC development initiated by Wnt pathway
+activation. We report here the convergence of MYB expres-
+sion with Wnt signaling in regulating intestinal adenoma
+formation. In vivo mouse studies showed that reduced c-myb
+expression positively affects survival and that c-myb expres-
+sion is a necessary feature of the carcinogenic process
+initiated by activated Wnt signaling. Further, to understand
+how c-Myb is contributing to CRC formation, expression
+proﬁling studies were undertaken, conﬁrming a signiﬁcant
+correlation between c-myb and c-myc expression in adeno-
+mas from APCMin/ þ mice and in human CRC. As the human
+MYC and mouse c-myc promoter landscapes are rich with
+previously characterized TCF/LEF and MYB binding sites, we
+Received 15.10.08; revised 03.6.09; accepted 11.6.09; Edited by KH Vousden; published online 17.7.09
+1Differentiation and Transcription Laboratory, Peter MacCallum Cancer Centre, East Melbourne, Victoria, Australia; 2Department of Pathology, The University of
+Melbourne, Parkville, Victoria, Australia; 3Cancer Genomics and Genetics Laboratory, Peter MacCallum Cancer Centre, East Melbourne, Victoria, Australia;
+4Department of Microbiology and Molecular Genetics, University of California, Irvine, CA, USA; 5Diamantina Institute for Cancer, Immunology and Metabolic Medicine,
+University of Queensland, Brisbane, Queensland, Australia; 6Melbourne Tumour Biology Branch, Ludwig Institute for Medical Research, Royal Melbourne Hospital,
+Parkville, Victoria, Australia and 7Laboratory of Molecular Genetics, RIKEN Tsukuba Institute, Tsukuba, Ibaraki, Japan
+*Corresponding author: RG Ramsay, Differentiation and Transcription Laboratory, Peter MacCallum Cancer Centre, St Andrews Place, East Melbourne, Victoria, 3002,
+Australia. Tel: þ 61 3 9656 1863; Fax: þ 61 3 9656 1411; E-mail: rob.ramsay@petermac.org
+8Current address: Department of Molecular Biology, Memorial Sloan-Kettering Cancer Center, New York, NY, USA.
+9Current address: Laboratory of Physiology, Medical School, University of Patras, Patras, Greece.
+Keywords: b-catenin; MYB; MYC; colon cancer; APC; min mice
+Abbreviations: APC, adenomatous polyposis coli; FAP, familal adenomatous polyposis; ChIP, chromatin immunoprecipitation
+Cell Death and Differentiation (2009) 16, 1530–1538
+& 2009 Macmillan Publishers Limited
+All rights reserved 1350-9047/09 $32.00
+www.nature.com/cdd
+
+
+explored the possibility that MYB cooperates with b-catenin to
+activate MYC transcription directly. Molecular analysis con-
+ﬁrmed that MYB and b-catenin are required in concert to
+enhance activation of reporters containing the human MYC
+promoter. This effect was mirrored when endogenous MYC
+gene expression was followed and occurred through the
+binding of both factors to the MYC promoter. These binding
+events induced distinct changes in histone acetylation. These
+ﬁndings thus further the paradigm of intestinal adenoma
+development through Wnt pathway activation by demonstrat-
+ing the need for MYB as an accessory factor to drive MYC
+overexpression and subsequent colonic neoplasia.
+Results
+Maximum adenoma formation in APCMin/ þ mice is c-myb
+dependent. To explore the potential relationship between
+MYB and Wnt signaling in CRC development, we took a
+genetic approach whereby APCMin/ þ mice were crossed with
+Myb þ / mice, extending the observation that APCMin/ þ mice
+have a prolonged life span when crossed onto a c-myc þ /
+background.10 Although APCMin/ þ mice started to show
+signs of distress by week 10, including wasting and bleeding
+from the anus, APCMin/ þ mice on a c-myb þ / background
+showed delayed onset of symptoms. When equal numbers
+of APCMin/ þ male and female mice were followed over
+time, APCMin/ þ mice on a c-myb þ / background survived
+signiﬁcantly longer before developing symptoms severe
+enough to require mandatory killing (P ¼ 0.01; unpaired
+t-test) (Figure 1a). On average these mice survived beyond
+the death of all mice in the APCMin/ þ cohort (P ¼ 0.03; log-
+rank (Mantel–Cox) test) (Figure 1b). These results clearly
+demonstrate that c-Myb is a critical determinant of adenoma
+progression
+initiated
+through
+the
+deregulation
+of
+Wnt
+signaling.
+Coordinate expression of c-myb and c-myc in adenomas
+from APCMin/ þ mice. It is evident that factors such as
+activated b-catenin and MYB promote tumorigenesis by
+regulating the activity of speciﬁc genes, particularly those
+having well-established functions in the carcinogenic process
+such as CYCLIND1, MYC, and COX-2.4,11–13 Speciﬁcally,
+many studies point to the involvement of b-catenin in the
+activation of MYC in CRC, whereas activation of the human
+MYC promoter and endogenous gene by MYB/c-Myb has
+also
+been
+established.14,15
+To
+continue
+exploring
+the
+relationship between activated Wnt signaling and MYB, we
+used real-time PCR to assess expression of c-myc in intes-
+tinal adenomas developing in APCMin/ þ mice (Figure 1c). As
+expected from previous analyses, c-myc mRNA expression
+was markedly increased in adenomas from both the colon
+and small intestine (SI).10,16 Furthermore, consistent with
+earlier reports and data from our own lab, c-myb mRNA
+expression was similarly elevated in adenomas from both
+sites (Figure 1d).
+As c-myb haploinsufﬁciency signiﬁcantly impeded the rate
+of adenoma formation in APCMin/ þ mice and c-myc expres-
+sion concordantly increased in these adenomas, the relative
+levels c-myc mRNA in adenomas formed in APCMin/ þ 
+c-myb þ / mice were accordingly investigated. In a series
+of adenomas taken from both the SI and colon of double
+heterozygous mice, c-myc levels were signiﬁcantly lower
+than in an equivalent series removed from APCMin/ þ mice
+(Po0.0001 and o0.006, respectively). Furthermore, c-myb
+0
+10
+20
+30
+40
+50
+Myb+/-x APC Min/+
+Myb+/-xAPCMin/+
+APCMin/+
+Weeks to Cull
+Percent survival
+Relative expression
+to GAPDH
+Relative expression
+to GAPDH
+0
+10
+20
+30
+40
+0
+1
+2
+3
+4
+mucosa
+mucosa
+Colon
+Colon
+adenomas
+adenomas
+mucosa
+mucosa
+SI
+SI
+adenomas
+adenomas
+c-myc
+c-myb
+**
+Weeks
+APCMin/+
+0
+10
+20
+30
+40
+50
+0
+20
+40
+60
+80
+100
+Figure 1
+Two normal c-myb alleles are required for the rapid development of adenomas in APC min/ þ mice. When APC min/ þ mice were crossed onto a c-myb þ /
+background the weeks to killing was extended signiﬁcantly (P ¼ 0.01) (a). Accordingly a Kaplan–Meier plot also indicates that survival is increased on a c-myb heterozygous
+background (P ¼ 0.03) (b). The analysis of mRNA levels for c-myc (c) and c-myb (d) for adenomas from APC min/ þ mice (35 colon, 8 mice; 44 SI, 6 mice) and histologically
+normal mucosa (3 colon; 4 SI) dissected from APC min/ þ mice was conducted and assessed by quantitative real-time RT-PCR
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1531
+Cell Death and Differentiation
+
+
+expression
+was
+also
+signiﬁcantly
+decreased
+in
+these
+adenomas (P40.0001) (Supplementary Figure 1).
+MYC expression correlates with MYB expression in
+human CRC. To link these expression data from adenoma-
+prone APCMin/ þ mice to human CRC, mRNA expression
+analysis of 229 tumor samples belonging to 13 histological
+types, including colon, was performed focusing on MYB and
+MYC and standardized against an 11-cell-line set frequently
+used for this type of comparison.17 These data, represented
+by a fold expression plot, emphasized consistently high MYB
+expression in CRC, as well as breast and gastric cancers
+(Figure 2a). When data for MYB and MYC were analyzed for
+each CRC alone and plotted for relative expression, an
+apparent association between MYB and MYC expression
+was evident (Figure 2b). The relative expression of b-catenin
+mRNA was also plotted to highlight the lack of correlation
+between the expression level of this gene and MYC
+(Figure 2b). This is consistent with literature showing that
+the mode of activation for b-catenin is typically at the level of
+protein abundance and/or localization rather than increases
+in mRNA expression levels.3,4
+A correlation coefﬁcient of r ¼ 0.51 between MYB and MYC
+expression in CRC was calculated using the cDNA micro-
+array data from 23 CRC specimens (Figure 2c, Pearson’s
+correlation; r ¼ 0.51, P ¼ 0.014). By contrast, the value for
+MYB
+MYC
+-2
+-1
+0
+1
+2
+r = 0.51
+p = 0.014
+-2
+-1
+0
+1
+2
+3
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 11 12 13 14 15 16 17 18 19 20 21 22 23
+MYB
+MYC
+β-Catenin
+CRC only
+0
+20
+40
+MYB expression
+Fold Expression
+Relative Expression (Log2)
+Human primary epithelial cancers
+ME
+O
+PA P
+SCC
+GA
+CO
+TE
+PR
+V
+O
+BR
+RE
+UT
+LU
+ML
+0
+0.5
+1
+1.5
+2
+2.5
+3
+Figure 2
+MYB is overexpressed in colorectal (CRC) and breast carcinomas. (a) A microarray gene expression analysis was performed for MYB. Fold expression of MYB in
+a range of epithelial cancers was compared to an 11-cell-line pooled control. The 13 tumor types are as follows: BR, breast; CO, colon; GA, gastric; LU, lung; ML, melanoma;
+ME, mesothelioma; OV, ovarian; PA, pancreas; PR, prostate; RE, renal; SCC, squamous-cell carcinoma; TE, testicular; UT, uterine. (b) The relative expression of MYB, MYC,
+and b-catenin for 23 CRC specimens was plotted to give an indication of whether there was an association between these three genes. (c) Using the cDNA microarray data,
+we calculated a Pearson’s correlation (r ¼ 0.51; P ¼ 0.014) between MYB (median signal from two features on the array) and MYC (representing a single feature on the array)
+suggesting a there is a signiﬁcant correlation between the two genes
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1532
+Cell Death and Differentiation
+
+
+coexpression of MYB and MYC in all other cancers was
+17-fold lower (r ¼ 0.03, P ¼ 0.651), indicating that the obser-
+ved correlation between MYB and MYC is highly signiﬁcant in
+human CRC compared to 12 other cancer types.
+siRNA knockdown of MYB reduces MYC expression in
+CRC cells. In view of the observations that MYB and MYC
+were coordinately upregulated in adenomas developing in
+APCMin/ þ mice and coexpressed in human CRC where
+mutations in APC prevail, we pursued the relationship bet-
+ween MYB and MYC in a context of activated Wnt signaling.
+Although MYB and MYC are commonly overexpressed in
+CRC cells, the potential dependency of MYC expression on
+MYB has not been explored in this cancer type. We therefore
+used lentivirus infection to generate stable pools of Colo201
+CRC cells that expressed either a doxycycline-inducible
+shRNA against MYB or a scrambled sequence control.
+Colo201 CRC cells express robust levels of MYB and MYC
+and also harbor activating mutations in the Wnt pathway.18,19
+When MYB expression in this cell line is inhibited by
+induction
+of
+the
+shRNA
+(Figure
+3a),
+we
+observed
+a
+corresponding decline in MYC expression (Figure 3b).
+Notably, the scrambled sequence control also led to some
+reduction in MYB expression when in the presence of
+doxycycline. The basis for this was unclear, but again
+emphasized that MYC expression levels in a background
+of activated Wnt signaling are inﬂuenced by the presence of
+MYB. Taken together, our results suggest involvement of
+MYB in the maintenance of MYC expression in CRC cells
+where canonical Wnt pathway mutations are also present.
+b-Catenin
+does
+not
+induce
+MYB
+expression. The
+common upregulation of MYB and MYC in both CRC cells
+and murine adenomas harboring Wnt pathway activation
+suggested the possibility that in addition to MYC, activated
+b-catenin may also directly regulate MYB. This was parti-
+cularly relevant in light of another study proposing that
+MYB is a target of the Wnt pathway.20 However, despite
+the presence of prospective TCF/LEF binding sites in the
+human and mouse MYB promoter (Supplementary Figure
+2a–c) we were unable to show upregulation of the MYB
+promoter
+in
+the
+presence
+of
+an
+activated
+form
+of
+b-catenin lacking the ﬁrst 89 amino acids. Strikingly, high
+concentrations of activated b-catenin plasmid inhibited MYB
+promoter activity (Figure 4a). It is unclear whether this repre-
+sents direct repression or the sequestration of transcription
+factors required for basal MYB promoter activity. In contrast,
+c-Myb induced its own promoter, consistent with previous
+ﬁndings.21 Furthermore, endogenous c-Myb/MYB activity in
+HEK293 and NIH3T3 cells was unaffected by exogenous
+activated b-catenin (Figure 4b; Supplementary Figure 2d),
+although luciferase reporter assays with the archetypal
+b-catenin-responsive reporter pTOPFlash showed that the
+construct used for these assays had transactivation function.
+Taken together, these results show that the correlation
+between MYB and MYC expression in CRC is unlikely to be
+due to the common activation of both genes by deregulated
+Wnt signaling.
+MYB and activated b-catenin cooperate to induce MYC
+reporter activation. Considering the mutual activation of
+b-catenin and MYB in CRC, in addition to MYC over-
+expression, we next considered whether MYB and activated
+b-catenin share MYC as a common gene target. This was
+assessed using chloramphenicol acetyltransferase (CAT)
+reporter assays with the human MYC promoter in HEK293
+epithelial cells. HEK293 cells were used as they express very
+low levels of MYB while retaining a functional Wnt pathway.
+MYB conferred a dose-dependent increase in transcription
+from the MYC promoter, with a maximum level of 4.0-fold
+activation observed (Figure 5a). It is also notable that increa-
+sing c-Myb beyond this maximum level leads to a progres-
+sive decline in reporter activation.14 When similar levels
+of activated b-catenin were co-transfected with the MYC
+promoter, there was a more modest effect on reporter activity
+compared with c-Myb alone, with a twofold increase obser-
+ved at best, in keeping with previous analyses (Figure 5b).11
+The prominence of binding sites for both MYB and the
+b-catenin transcriptional partner TCF/LEF within the MYC
+promoter sequence indicates a possible convergence of
+these pathways in the activation of MYC. As expected
+from the previous dose–response curves, transfection of
+Relative mRNA
+expression
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+Vector
+plus Dox
+shmyb
+plus Dox
+shscabble
+plus Dox
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+Vector
+plus Dox
+shmyb
+plus Dox
+shscabble
+plus Dox
+MYB
+a
+b
+MYC
+Figure 3
+shRNA against MYB downregulates MYC expression in CRC cells. Stable cell line pools of Colo201 cells that expressed doxycycline-inducible shRNA against
+MYB, a scrabbled shRNA, or vector control were generated by lentivirus infection. Colo201 CRC cells express robust levels of both genes and when MYB expression is
+reduced (a) by shmyb following 24 h induction by doxycycline we observed a corresponding reduction in MYC expression (b). The mean expression levels based on two
+separate cDNA syntheses and real-time RT-PCRs conducted in triplicate in both cases are shown
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1533
+Cell Death and Differentiation
+
+
+submaximal amounts of c-Myb/MYB and activated b-catenin
+provided only minimal stimulation of the reporter construct. In
+combination, however, these same levels of c-Myb and
+activated b-catenin gave a 6.5-fold increase in reporter
+stimulation, suggesting a cooperative activity exists between
+c-Myb and b-catenin in regulating the MYC promoter
+(Figure 5c). Furthermore, the pattern of activation observed
+in Figure 5c is maximal and sustainable, such that adding
+more c-Myb does not lead to the reduction in activity normally
+associated with excess c-Myb (Figure 5a; data not shown).
+Moreover, the levels of MYB expression are unchanged in
+the presence or absence of activated b-catenin (Figure 5d).
+These results thus demonstrate that MYB enhances the
+capacity of activated b-catenin to transactivate the Wnt target
+Fold activation
+Fold activation
+Fold activation
+1.0
+2.0
+3.0
+4.0
+5.0
+c-myb (μg)
+c-myb (μg)
+MYC promoter
+1.0
+2.0
+3.0
+4.0
+5.0
+MYC promoter
+ΔN89-β-catenin (μg)
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
++
++
++
+0.5 μg c-myb
+MYC promoter
+0 0.5 1
+2
+3
+0 0.5 1
+2
+3
+c-Myb
+actin
+ΔN89-β-catenin
+2μg ΔN89-β-catenin
+2μg ΔN89-β-catenin
+0
+3.0
+0.5 1.0 2.0
+0
+3.0
+0.5 1.0 2.0
++
+Figure 5
+Suboptimal amounts of c-Myb cooperate with activated b-catenin to transactivate the MYC promoter in HEK293 cells. (a) c-Myb activates the MYC reporter to a
+maximum of approximately fourfold whereas (b) activated b-catenin achieves at best an approximately twofold increase in reporter activity. (c) When maximum levels of
+activated b-catenin and minimum levels of c-Myb are combined activation is now approximately sevenfold. Activation of the MYC promoter is signiﬁcantly greater when c-Myb
+and activated b-catenin are combined compared to the individual effectors alone (t-test; Po1  105). (d) Western blots showing the expression of the c-Myc-epitope-tagged
+DN89-b-catenin, c-Myb, and a loading control pan-actin
+2
+4
+6
+8
+10
+12
+14
+16
+18
++
++
++
++
++
+FOPFlash
+Fold activation
+TOPFlash/
+FOPFlash
+TOPFlash
+Δn89-
+β-catenin
+actin
+c-Myb
+24
+48
+72
+Untreated
+24
+48
+72
+3ug
+hrs
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+0
+2.0
+3.0
+3.0
+Fold activation
+MYB promoter
+c-myb (μg)
+ΔN89-β-catenin
+ΔN89-β-catenin (μg)
+ΔN89-β-catenin
+2μg ΔN89-β-catenin
+0.5 1.0 2.0
++
+Figure 4
+Activated b-catenin is unable to stimulate either MYB promoter activity or endogenous MYB expression in HEK293 epithelial cells. (a) Cells were transfected with
+the reporter pMBS-CAT (harboring the multiple c-Myb binding sites) and increasing amounts of either full-length c-Myb (pACT-c-myb) or activated b-catenin (pcDNA3.1-
+DN89-b-catenin). After 72 h, cells were harvested, lysed, and assessed for CAT enzyme activity. Mean±S.E.M. of quadruplicate experiments is shown. Western blots
+depicting the expression of the effector proteins in the transfected cells are presented below the graphs from one of the replicate experiments. (b) HEK293 cells were
+transfected with activated b-catenin and 72 h later, harvested, lysed, and assessed for c-Myb and transfected b-catenin by western blot. Pan actin is shown as a loading
+control. (c) The ability of activated b-catenin to stimulate the luciferase reporters, pTOPFlash and pFOPFlash, is shown. HEK293 cells were transfected with 1 mg of either
+pTOPFlash or pFOPFlash reporter, along with 2 mg of activated b-catenin and the amount of luciferase activity in cells was measured 72 h after transfection. Mean±S.E.M. of
+triplicate experiments is shown
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1534
+Cell Death and Differentiation
+
+
+MYC. In addition, the presence of activated b-catenin
+overcomes the apparent inhibitory effects of c-Myb on MYC
+promoter activity when c-Myb is present in excess.
+MYB and b-catenin converge in regulating endogenous
+MYC expression. We next examined whether cooperation
+between activated b-catenin and MYB extended to the
+regulation of endogenous MYC. In a result mirroring those
+from
+the
+reporter
+studies,
+transfection
+of
+submaximal
+amounts of c-Myb led to a slight increase in the level of
+MYC mRNA (Figure 6a). Activated b-catenin was also able
+to induce endogenous MYC mRNA modestly (Figure 6a).
+Combining the two transcription factors however yielded
+a
+more
+immediate,
+greater
+and
+sustainable
+increase
+mRNA
+Untreated
+2μg c-myb
+2μg
+ΔN89-β-catenin
+2μg c-myb + 2μg
+ΔN89-β-catenin
+Untreated
+2μg c-myb
+2μg
+ΔN89-β-catenin
+2μg c-myb + 2μg
+ΔN89-β-catenin
+Anti-Myb
+Isotype control
+Input
+No antibody
+No antibody
+No antibody
+No antibody
+No antibody
+No antibody
+No antibody
+No antibody
+Input
+Anti-β-catenin
+Anti-β-catenin
+Anti-β-catenin
+Isotype control
+MYC
+GAPDH
+12
+48
+TCF-4 transfected
+Anti-TCF-4
+Isotype control
+Input
+untransfected
+Anti-TCF-4
+Isotype control
+Input
+Anti-c-Myb
+Isotype control
+Isotype control
+Isotype control
+Input
+untransfected
+Anti-c-Myb
+Input
+MYC
+MYC
+c-myb transfected
+Input
+Isotype control
+β-catenin transfected
+Input
+untransfected
+Protein
+c-Myc
+Actin
+24
+24
+24
+24
+48
+48
+48
+48
+72
+72
+72
+72
+24
+12
+48
+24
+12
+48
+24
+12
+48
+24
+Figure 6
+c-Myb and activated b-catenin cooperate in activating endogenous MYC and bind to the endogenous MYC promoter. HEK293 cells were transfected with
+constructs for c-Myb, activated b-catenin, or a combination of both and then harvested for total RNA at the times indicated after transfection. (a) Total RNA was reverse-
+transcribed, then subsequently used in PCR reactions to detect changes in the level of MYC mRNA. Housekeeping gene GAPDH was used to control for loading of cDNA for
+the PCR reactions. (b) Proteins were extracted from HEK293 cells transfected as in (a) and probed for changes in the level of c-Myc. Pan-actin was used to control for the
+loading of protein. (c) c-Myb, TCF4, and b-catenin are recruited to the MYC promoter in transfected HEK293 epithelial cells and (d) c-Myb and b-catenin in the case of Colo201
+colorectal cancer cells as determined by ChIP assays
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1535
+Cell Death and Differentiation
+
+
+(approximately sixfold; determined by densitometry scans) in
+MYC mRNA expression than that achieved by the individual
+effectors alone. Changes in MYC mRNA levels associated
+with the expression of MYB and activated b-catenin were
+also reﬂected as an increase in c-Myc protein (Figure 6b). It
+is apparent from these results that MYB and activated
+b-catenin also cooperate to support robust expression of
+endogenous MYC.
+MYB and activated b-catenin bind to the endogenous
+MYC
+promoter. c-Myb
+and
+activated
+b-catenin
+may
+cooperate in regulating MYC by associating together at the
+cellular target gene promoter. To evaluate this, chromatin
+immunoprecipitation (ChIP) assays were carried out in
+HEK293 cells transfected with expression constructs for
+c-Myb and b-catenin. These experiments showed that both
+proteins were recruited to the MYC promoter (Figure 6c). In
+the absence of transfected proteins, very little MYC promoter
+was detected in ChIP lysates, consistent with the minimal
+c-Myb/MYB expression and low amounts of endogenous
+nuclear b-catenin in this cell line.
+To determine whether endogenous c-Myb and b-catenin
+bind to the genomic MYC promoter in human CRC cells, ChIP
+assays were performed in Colo201 cells. These cells express
+abundant levels of MYB18 and MYC22 and have an activated
+Wnt pathway through APC mutation.6 As shown in Figure 6c,
+both c-Myb and b-catenin are enriched at the MYC promoter in
+these CRC cells. Numerous attempts were made to examine
+whether c-Myb and b-catenin, with or without TCF4, are able
+to form an endogenous complex in CRC cells or in HEK293
+cells when overexpressed. However, no evidence for such
+complexes was obtained, although binding of b-catenin to
+TCF4 was readily established (data not shown). These
+observations indicate that that both transcription factors most
+likely engage the MYC promoter independently of each other.
+To further understand the mechanism by which cooperation
+between the two factors occurs, we assessed acetylation at
+the MYC promoter using an antibody directed toward a motif
+correlated with transcriptional activation, acetylated lysine 27
+of histone H3. We found increased acetylated histone H3
+(lysine 27) associated with the binding of both factors, but in
+particular c-Myb (data not shown). In a broader context, these
+data provide additional support for the proposition that the
+activation of MYC expression by deregulated Wnt signaling is
+more readily achieved in the presence of c-Myb.
+Discussion
+The Wnt pathway has an early and prominent function in CRC
+genesis through mutations in APC or b-catenin.3,4,23 Analysis
+of APCMin/ þ mice and their corresponding predisposition to
+intestinal adenoma formation has allowed the cellular and
+molecular aspects of human familial adenomatous polyposis
+(FAP) to be understood.24
+The biology of adenoma formation needs to be considered
+in the context of how crypts are generated and maintained. In
+this regard, the Wnt pathway,25–27 c-Myb,2 and MYC28,29 are
+particularly important. We observed that the normal kinetics of
+adenoma formation in APCMin/ þ mice is correspondingly and
+signiﬁcantly delayed when c-myb is haploinsufﬁcient. This is
+likely because of the need to drive strong expression of
+important gene targets such as MYC, as shown in the current
+study. It has been reported that intestine-speciﬁc knockout of
+c-myc reduces adenoma formation in APCMin/ þ mice.30 We
+found a similar phenomenon in APCMin/ þ mice when one
+allele of c-myb is deleted. This is an especially important
+observation given that MYC is a common target for both MYB
+and the Wnt pathway in CRC. Certainly, deletion of either
+c-myb or c-myc has a critical effect on colonic crypt
+development,2,31,32 whereas c-Myb is additionally necessary
+for appropriate maintenance of adult crypt homeostasis.2 As
+a corollary, c-myb or c-myc expression is highly elevated in
+APCMin/ þ adenomas in the SI and colon indicating involve-
+ment of these in the inappropriate expansion of epithelial cells.
+The more slowly forming adenomas in APCMin/ þ  c-myb þ /
+mice showed a correspondingly reduced level of both c-myb
+and c-myc expression. Whether this ﬁnding reﬂects the
+availability of a single c-myb allele for activation in adeno-
+ma-prone APCMin/ þ intestinal epithelia is currently unclear.
+However, when these observations are considered together, it
+is clear that c-myb and c-myc are required for normal
+crypt biology, but when overexpressed are associated with
+carcinogenesis.
+Given that MYC is normally targeted by both the MYB and
+Wnt pathways, these data suggest a prospective mechanism
+for cooperation in which activated Wnt signaling leads to
+upregulation of MYB, making it available for cooperative
+activation of target genes such as MYC. Previous work by
+others highlighted MYB as a potential Wnt target gene.20
+However, we did not observe activation of either the MYB
+promoter or endogenous gene by an activated form of
+b-catenin. This discrepancy between our results and those
+of van de Wetering et al. may derive from the normal cellular
+biology of c-Myb/MYB. Expression of dominant-negative
+TCF4 in CRC cells causes cellular differentiation, a process
+that occurs in concert with decreased MYB expression.
+Nevertheless, we cannot at this stage rule out MYB as a
+bona ﬁde Wnt target gene in CRC. It is possible that the
+variation in ﬁndings stems from the different cell types used in
+each study.
+c-Myb
+requires
+cooperating
+factors
+in
+a
+number
+of
+circumstances to exert its full transactivation potential. For
+instance, c-Myb is known to work in partnership with a number
+of proteins, including CBP, the C/EBPb family member NF-M,
+and p100, in regulating hemopoietic genes such as mim-1
+(reviewed in Ramsay and Gonda1 ). The present work extends
+this list of c-Myb partners to include b-catenin. We have
+conﬁrmed previous reports that b-catenin alone activates the
+MYC promoter, but extended these observations by demon-
+strating that convergence with MYB leads to a more robust
+level of MYC promoter activity as well as expression from
+the endogenous gene locus. Our attempts to show direct
+interaction between the two factors were unsuccessful. The
+implication from this was that cooperative transactivation by
+the two factors is not achieved through physical association
+with each other, but rather through a mechanism that perhaps
+involves the independent binding of each factor to the target
+promoter, as shown in our ChIP assays. In further support of
+this assertion, ChIP assays against a histone motif correlated
+with transactivation showed increased acetylation at the MYC
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1536
+Cell Death and Differentiation
+
+
+promoter associated with the presence of both factors,
+consistent with the increased levels of endogenous MYC
+mRNA and protein.
+The potential that c-Myb/MYB and activated b-catenin
+cooperate in regulating other genes central to CRC has also
+been considered. One gene of particular interest was
+cyclooxygenase 2 (COX-2). The COX-2 promoter has both
+TCF4/LEF-133,34 and MYB binding sites within it promoter
+region, whereas its counterpart COX-1 has none.35 Expres-
+sion of Cox-2 is increased markedly in APCMin/ þ intestinal
+adenomas
+(Supplementary
+Figure
+3a)
+as
+reported
+by
+others.36,37 We observed cooperative induction of the human
+COX-2 promoter in the presence of submaximal levels of MYB
+with activated b-catenin, recapitulating the data described
+here for MYC (Supplementary Figure 3b–d). This indicates
+that the cooperative interaction between MYB and activated
+b-catenin may extend beyond MYC alone to include the
+regulation of other genes important to adenoma formation and
+progression.
+In conclusion, we have established a relationship between
+the two most commonly activated pathways in CRC in the
+generation of intestinal adenomas, a process that appears to
+function by cooperative regulation of CRC genes such as
+MYC. This cooperative mechanism of activation would be
+possible at the earliest stages of colonic crypt epithelial cell
+transformation where APC mutations are thought to initiate
+CRC, because MYB expression is a feature of normal
+colonocytes and thus available to work in cooperation with
+elevated levels of b-catenin. This
+work highlights the
+importance of discovering modes of therapeutic targeting of
+inappropriate MYB expression.1
+Materials and Methods
+Mice. C57Bl/6 APCmin/ þ mice harboring an Apc allele mutation that encodes a
+truncated protein of 850 amino acids and c-myb þ / knockout mice were interbred
+to generate compound heterozygous mice. They were observed for any signs
+intestinal bleeding or ill health according the Peter MacCallum Cancer Centre
+Animal Experimentation Ethics Committee regulations. Sick mice were killed and
+examined for the presence of adenomas in the colon and SIs. Adenomas and
+histologically normal mucosa were collected and processed for total RNA using
+Trizol (Invitrogen).
+cDNA microarray expression analysis. A gene expression database
+representing 229 tumor samples belonging to 13 histological types has been
+developed for the classiﬁcation of different cancers.38 Following intensity-based
+(LOWESS) and per gene median normalization of the array data, fold-change ratios
+for the genes MYB, MYC, and b-catenin (CTNNB1) were visualized across ordered
+cancer types using the programs Cluster and Treeview. All gene probes were
+conﬁrmed by DNA sequencing.
+Reporter assays. HEK293 or NIH3T3 cells were transfected with a
+combination of either 0.2 mg of CAT or 1 mg of luciferase reporter plasmid
+(pc-mycCAT, pTOPFlash, or pFOPFlash, 0.5–3 mg of effector plasmid (pACT-c-myb
+or pcDNA3.1-DN89-b-catenin) and 0.33 mg of transfection efﬁciency plasmid (pSV40-
+b-galactosidase) using Metafectene (Biontex) according to the manufacturer’s
+instructions. The MYB promoter construct has been described in detail elsewhere.39
+Western blotting. Transfection of cells involved correspondingly higher
+amounts of plasmid effector DNAs per ﬂask to recapitulate the ratios of effector
+DNAs to cell numbers used in the reporter studies. Proteins were partitioned into
+nuclear and cytoplasmic fractions by differential centrifugation in lysis buffer before
+separation on 10% polyacrylamide/SDS gels and transfer to PVDF membrane.
+Membranes were blocked in 10% non-fat skim milk powder and then probed with
+one of the following antibodies made up in 1% gelatin: mouse anti-c-Myb 1.1
+(1 : 500), mouse anti-c-Myc tag, mouse anti-pan actin (1 : 2500; ICN Biomedical),
+and mouse anti-b-catenin. After washing, the membranes were probed with a
+goat anti-mouse secondary antibody conjugated to alkaline phosphatase (1 : 2500;
+Bio-Rad). Blots were developed using 5-bromo-4-chloro-30-indolyphosphate
+p-toluidine salt and nitro-blue tetrazolium chloride reagents (Sigma).
+MYB knockdown by RNA interference. The doxycycline-inducible
+lentiviral shRNA vector pLVTSH will be fully described elsewhere (Barry et al., in
+preparation). In brief, vectors encoding an MYB shRNA 50-GAACCUCUUACA
+AUUUGCAGAAACACUUUCAUGAGAAGUGUUUCUGCAUUGUGUAAGAGGUU
+CUU-30 (with the bold sequences corresponding to sense and antisense MYB
+mRNA, respectively) and a scrambled control shRNA 50-AUAAGAAU GUCCAUC
+AGUUACGCCAUAUUCAUGAGAUAUGGCGUAACUGAUGGACAUUCUUAUUU-30
+were used. Lentivirus was generated by co-transfection of HEK293T cells with
+packaging plasmids using Lipofectamine 2000 (Invitrogen) as directed by the
+manufacturer. The supernatant was collected after 48h, ﬁltered through a 0.45mm
+ﬁlter before being used to transduce Colo201 cells. These cells were FACS-sorted
+based on expression of pLVTSH-encoded eGFP. Cell were allowed to expand and
+then treated with 1 mg/ml doxycycline (Sigma) for 3 days. A sample of each culture
+was collected, washed in PBS and placed in Trizol, and subsequently processed for
+total RNA. MYB and MYC knockdown efﬁciency was assessed by Q-RT-PCR.
+Chromatin
+Immunoprecipitation
+assays. Approximately
+1  106
+HEK293 cells were plated out in 100 mm dishes and transfected with 4 mg of
+one of the following constructs: pcDNA3.1-DN89-b-catenin, pcDNA1-TCF4, or
+pACT-c-myb. The same number of cells were also plated and left as untransfected
+controls. For examination of endogenous MYC promoter occupancy in CRC cells,
+approximately 1  106 Colo201 cells were plated in 100 mm dishes. ChIP assays
+were carried out 72 h after transfection for HEK293 cells or 72 h after plating
+for Colo201 cells. Brieﬂy, cells were ﬁxed with formaldehyde, washed, and
+subsequently lysed. The resulting lysates were sonicated on ice to yield DNA
+fragments of an appropriate size (300–1000 bp). After preclearing with Protein A
+Sepharose beads (Amersham Biosciences), samples were treated with one of the
+following antibodies to assess binding to the MYC promoter: mouse anti-Myb (clone
+1.1, 1 : 500); TCF4 antibody (Santa Cruz Biotechnology); and mouse anti-b-catenin
+(Signal Transduction Laboratories). A mouse anti-pan actin antibody and rabbit
+serum (Zymed) served as isotype controls. Antibody–protein–DNA complexes were
+collected using Protein A Sepharose beads and washed to remove nonspeciﬁcally
+bound protein–DNA adducts. The formaldehyde cross-links were reversed before
+the immunoprecipitates were assessed by PCR. ChIP samples were used undiluted
+and subjected to 27 cycles of PCR at 60 1C. Approximately 12% of the original
+sample was taken as the input control and subjected to the same PCR thermo-
+cycling. The following primers were used for ampliﬁcation: for transfected HEK293
+and Colo201cell studies—forward, 50-GCCTGCGATGATTTATACTCACAG-30;
+reverse, 50-CGGAGATTAGCGAGAGAGGATC-30. These were designed using
+Primer Express software from Applied Biosystems.
+RT–PCR analysis of endogenous MYC and MYB expression. The
+effect of ectopic c-Myb and activated b-catenin on the transcriptional regulation of
+genomic MYC and MYB was assessed by RT–PCR. Total RNA was extracted from
+HEK293 cells at various time points after transfection with the different expression
+constructs for MYB and activated b-catenin (see above) using Trizol (Invitrogen).
+Extracted RNA was DNAse-1-treated and subsequently used to synthesize cDNA
+before assessment of changes in expression by conventional PCR. The primers and
+annealing conditions used were—MYC: forward, 50-CAGCTGCTTAGACGCTGG
+ATT-30; reverse, 50-GTAGAAATACGGCTGCACCGA-30, 27 cycles of PCR at
+601C; MYB: forward, 50-GCCAATTATCTCCCGAATCGA-30; reverse, 50-ACCAAC
+GTTTCGGACCGTA-30; GAPDH: forward, 50-AGCCTTCTCCATGGTGGTGAAG
+AC-30; reverse, 50-CGGAGTCAACGGATTTGGTCGTAT-30, 22 cycles of PCR
+at 60 1C.
+Expression of endogenous c-myc, c-myb, and cox-2 in APCmin/ þ mouse
+adenomas and normal tissue—c-myc: forward, 50-AAGGCCCCCAAGGTAGTGA-30;
+reverse, 50-TGCTCGTCTGCTTGAATGGA-30; c-myb: forward, 50-AATTATCTGCC-
+CAACCGG-30; reverse, 50-AGACCAACGCTTCGGACC-30; cox-2: forward, 50-AGAA
+GGAAATGGCTGCAGAA-30; reverse, 50-CCCCAAAGATAGCATCTGGA-30.
+Chromatin immunoprecipitation assays. Q-RT-PCR was used to
+examine changes in acetylation levels at the endogenous MYC promoter asso-
+ciated with the binding of MYB and b-catenin. Approximately 1  106 HEK293 cells
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1537
+Cell Death and Differentiation
+
+
+were plated out in 100 mm dishes and transfected with 4 mg of either pcDNA3.1-
+DN89-b-catenin or pACT-c-Myb alone or in combination. The same number of cells
+were also plated and used as untransfected controls. ChIP assays were carried out
+72 h after transfection. After ﬁxation and sonication of the DNA, samples were
+precleared with Protein A Sepharose beads and treated with a rabbit acetylated-
+lysine27-speciﬁc antibody (Upstate Biotechnology). Rabbit serum (Zymed) served
+as an isotype control. Antibody–protein–DNA complexes were collected using
+Protein A Sepharose beads, washed, and the formaldehyde cross-links reversed
+before the immunoprecipitates were assessed by PCR. ChIP samples were diluted
+15-fold in dH2O before use. Reaction mixtures and thermocycling were performed
+using SYBR Green according to the manufacturer’s instructions in a PerkinElmer
+real-time PCR machine, model 7000 (Applied Biosystems). Primer sets were used
+to generate 100 bp amplicons and designed using Primer Express software from
+Applied Biosystems. Primer set 1: forward, 50-CTGGAAGGCAGCCAAATTTTA-30;
+reverse, 50-AAAATGCATCGATTCTGATCAAAG-30. Primer set 2: forward, 50-AGG
+ACAAGGATGCGGTTTGT-30; reverse, 50-CTACGCGCGCCTACCATTT-30. Forty
+cycles of PCR were used at a temperature of 60 1C. Analysis of the primary data
+was undertaken as described.40
+Acknowledgements. This work was supported by a fellowship (RGR) and
+grants from the NHMRC, Australia. We thank Alla Mirochnik and Tony Li
+(Department of Microbiology and Department of Molecular Genetics, University of
+California, Irvine, CA, USA) for the generous provision of reagents and time.
+Suggestions by Dr. Ross Hannan were also of great assistance during the
+preparation of the paper.
+1. Ramsay RG, Gonda TJ. MYB function in normal and cancer cells. Nat Rev Cancer 2008; 8:
+523–534.
+2. Malaterre J, Carpinelli M, Ernst M, Alexander W, Cooke M, Sutton S et al. c-Myb is
+required for progenitor cell homeostasis in colonic crypts. Proc Natl Acad Sci USA 2007;
+104: 3829–3834.
+3. Polakis P. Wnt signaling and cancer. Genes Dev 2000; 14: 1837–1851.
+4. Giles RH, van Es JH, Clevers H. Caught up in a Wnt storm: Wnt signaling in cancer.
+Biochim Biophys Acta 2003; 1653: 1–24.
+5. Staal FJ, Noort Mv M, Strous GJ, Clevers HC. Wnt signals are transmitted through
+N-terminally dephosphorylated beta-catenin. EMBO Rep 2002; 3: 63–68.
+6. Ilyas M, Tomlinson IP, Rowan A, Pignatelli M, Bodmer WF. Beta-catenin mutations in cell
+lines established from human colorectal cancers. Proc Natl Acad Sci USA 1997; 94:
+10330–10334.
+7. Kinzler KW, Vogelstein B. Lessons from hereditary colorectal cancer. Cell 1996; 87:
+159–170.
+8. Powell SM, Zilz N, Beazer-Barclay Y, Bryan TM, Hamilton SR, Thibodeau SN et al. APC
+mutations occur early during colorectal tumorigenesis. Nature 1992; 359: 235–237.
+9. Sparks AB, Morin PJ, Vogelstein B, Kinzler KW. Mutational analysis of the APC/beta-
+catenin/Tcf pathway in colorectal cancer. Cancer Res 1998; 58: 1130–1134.
+10. Yekkala K, Baudino TA. Inhibition of intestinal polyposis with reduced angiogenesis
+in ApcMin/+ mice due to decreases in c-Myc expression. Mol Cancer Res 2007; 5:
+1296–1303.
+11. He TC, Sparks AB, Rago C, Hermeking H, Zawel L, da Costa LT et al. Identiﬁcation of
+c-MYC as a target of the APC pathway. Science 1998; 281: 1509–1512.
+12. Howe LR, Subbaramaiah K, Chung WJ, Dannenberg AJ, Brown AM. Transcriptional
+activation of cyclooxygenase-2 in Wnt-1-transformed mouse mammary epithelial cells.
+Cancer Res 1999; 59: 1572–1577.
+13. Shtutman M, Zhurinsky J, Simcha I, Albanese C, D’Amico M, Pestell R et al. The cyclin D1
+gene is a target of the beta-catenin/LEF-1 pathway. Proc Natl Acad Sci USA 1999; 96:
+5522–5527.
+14. Nakagoshi H, Kanei-Ishii C, Sawazaki T, Mizuguchi G, Ishii S. Transcriptional activation of
+the c-myc gene by the c-myb and B-myb gene products. Oncogene 1992; 7: 1233–1240.
+15. Schmidt M, Nazarov V, Stevens L, Watson R, Wolff L. Regulation of the resident
+chromosomal copy of c-myc by c-Myb is involved in myeloid leukemogenesis. Mol Cell Biol
+2000; 20: 1970–1981.
+16. Blanc V, Henderson JO, Newberry RD, Xie Y, Cho SJ, Newberry EP et al. Deletion of the
+AU-rich RNA binding protein Apobec-1 reduces intestinal tumor burden in Apc(min) mice.
+Cancer Res 2007; 67: 8565–8573.
+17. Boussioutas A, Li H, Liu J, Waring P, Lade S, Holloway AJ et al. Distinctive patterns of gene
+expression in premalignant gastric mucosa and gastric cancer. Cancer Res 2003; 63:
+2569–2577.
+18. Alitalo K, Winqvist R, Lin CC, de la Chapelle A, Schwab M, Bishop JM. Aberrant expression
+of an ampliﬁed c-myb oncogene in two cell lines from a colon carcinoma. Proc Natl Acad
+Sci USA 1984; 81: 4534–4538.
+19. Trainer DL, Kline T, McCabe FL, Faucette LF, Feild J, Chaikin M et al. Biological
+characterization and oncogene expression in human colorectal carcinoma cell lines.
+Int J Cancer 1988; 41: 287–296.
+20. van de Wetering M, Sancho E, Verweij C, de Lau W, Oving I, Hurlstone A et al. The beta-
+catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells.
+Cell 2002; 111: 241–250.
+21. Nicolaides NC, Gualdi R, Casadevall C, Manzella L, Calabretta B. Positive autoregulation
+of c-myb expression via Myb binding sites in the 50 ﬂanking region of the human c-myb
+gene. Mol Cell Biol 1991; 11: 6166–6176.
+22. Lee MO, Han SY, Jiang S, Park JH, Kim SJ. Differential effects of retinoic acid on growth
+and apoptosis in human colon cancer cell lines associated with the induction of retinoic acid
+receptor beta. Biochem Pharmacol 2000; 59: 485–496.
+23. Bienz M, Clevers H. Linking colorectal cancer to Wnt signaling. Cell 2000; 103:
+311–320.
+24. Moser AR, Dove WF, Roth KA, Gordon JI. The Min (multiple intestinal neoplasia) mutation:
+its effect on gut epithelial cell differentiation and interaction with a modiﬁer system. J Cell
+Biol 1992; 116: 1517–1526.
+25. Andreu P, Colnot S, Godard C, Gad S, Chafey P, Niwa-Kawakita M et al. Crypt-restricted
+proliferation and commitment to the Paneth cell lineage following Apc loss in the mouse
+intestine. Development 2005; 132: 1443–1451.
+26. Batlle E, Henderson JT, Beghtel H, van den Born MM, Sancho E, Huls G et al. Beta-catenin
+and TCF mediate cell positioning in the intestinal epithelium by controlling the expression of
+EphB/ephrinB. Cell 2002; 111: 251–263.
+27. Hoffman J, Kuhnert F, Davis CR, Kuo CJ. Wnts as essential growth factors for the adult
+small intestine and colon. Cell Cycle 2004; 3: 554–557.
+28. Bettess MD, Dubois N, Murphy MJ, Dubey C, Roger C, Robine S et al. c-Myc is required for
+the formation of intestinal crypts but dispensable for homeostasis of the adult intestinal
+epithelium. Mol Cell Biol 2005; 25: 7868–7878.
+29. Muncan V, Sansom OJ, Tertoolen L, Phesse TJ, Begthel H, Sancho E et al. Rapid loss of
+intestinal crypts upon conditional deletion of the Wnt/Tcf-4 target gene c-Myc. Mol Cell Biol
+2006; 26: 8418–8426.
+30. Ignatenko NA, Holubec H, Besselsen DG, Blohm-Mangone KA, Padilla-Torres JL, Nagle
+RB et al. Role of c-Myc in intestinal tumorigenesis of the ApcMin/+ mouse. Cancer Biol
+Ther 2006; 5: 1658–1664.
+31. Zorbas M, Sicurella C, Bertoncello I, Venter D, Ellis S, Mucenski ML et al. c-Myb is critical
+for murine colon development. Oncogene 1999; 18: 5821–5830.
+32. Sansom OJ, Reed KR, Hayes AJ, Ireland H, Brinkmann H, Newton IP et al. Loss of Apc
+in vivo immediately perturbs Wnt signaling, differentiation, and migration. Genes Dev 2004;
+18: 1385–1390.
+33. Araki Y, Okamura S, Hussain SP, Nagashima M, He P, Shiseki M et al. Regulation
+of cyclooxygenase-2 expression by the Wnt and ras pathways. Cancer Res 2003; 63:
+728–734.
+34. Kim SJ, Im DS, Kim SH, Ryu JH, Hwang SG, Seong JK et al. Beta-catenin regulates
+expression of cyclooxygenase-2 in articular chondrocytes. Biochem Biophys Res Commun
+2002; 296: 221–226.
+35. Ramsay RG, Friend A, Vizantios Y, Freeman R, Sicurella C, Hammett F et al.
+Cyclooxygenase-2, a colorectal cancer nonsteroidal anti-inﬂammatory drug target, is
+regulated by c-MYB. Cancer Res 2000; 60: 1805–1809.
+36. Oshima M, Dinchuk JE, Kargman SL, Oshima H, Hancock B, Kwong E et al. Suppression
+of intestinal polyposis in Apc delta716 knockout mice by inhibition of cyclooxygenase 2
+(COX-2). Cell 1996; 87: 803–809.
+37. Williams CS, Luongo C, Radhika A, Zhang T, Lamps LW, Nanney LB et al.
+Elevated cyclooxygenase-2 levels in Min mouse adenomas. Gastroenterology 1996;
+111: 1134–1140.
+38. Tothill RW, Kowalczyk A, Rischin D, Bousioutas A, Haviv I, van Laar RK et al.
+An expression-based site of origin diagnostic method designed for clinical application to
+cancer of unknown origin. Cancer Res 2005; 65: 4031–4040.
+39. Hugo H, Cures A, Suraweera N, Drabsch Y, Purcell D, Mantamadiotis T et al. Mutations in
+the MYB intron I regulatory sequence increase transcription in colon cancers. Genes
+Chromosomes Cancer 2006; 45: 1143–1154.
+40. Christenson LK, Stouffer RL, Strauss III JF. Quantitative analysis of the hormone-induced
+hyperacetylation of histone H3 associated with the steroidogenic acute regulatory protein
+gene promoter. J Biol Chem 2001; 276: 27392–27399.
+Supplementary Information accompanies the paper on Cell Death and Differentiation website (http://www.nature.com/cdd)
+MYB and b-catenin regulate MYC and Min adenomas
+D Ciznadija et al
+1538
+Cell Death and Differentiation
