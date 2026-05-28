@@ -920,3 +920,30 @@ data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
 | 去除仅Literature | P=12.5% R=29.0% F1=17.5% | P=37.9% R=87.9% F1=53.0% |
 
 **关键发现**：去除 Literature 后模糊匹配召回率从 78.8% 升至 87.9%，证实 Literature 类条目对 LLM 识别难度大。
+
+---
+
+## 2026-05-28 优化记录
+
+### 54. Debug 条目合并工具 + 输出目录清理
+
+**问题**：`outputs/` 下累积 25 个 debug 运行目录（全量运行、单 PMID 调试、HDAC 专题），48 个 PMID 分散在多个目录中，无法快速查看某个 PMID 的最新结果。
+
+**改动**：
+- `scripts/merge_debug.py`（新建）：递归扫描 `outputs/**/analysis_results_debug.json`，按目录时间戳排序，同一 PMID 保留最新条目，输出合并的 `analysis_results.json` + `analysis_results_debug.json`
+- `scripts/review_debug.sh`：重写，支持自动定位最新输出目录（优先 `merged_*`，否则最新时间戳目录），也支持手动指定目录
+- `scripts/debug_to_excel.py`：已有，无需修改
+- 清理 1 个空目录（`debug_20260528_150718`）
+
+**合并结果**：25 个 debug 文件 → 1 个合并文件，48 个 PMID 各保留最新结果
+
+### 55. 项目文档与 README 同步更新
+
+**问题**：README 项目结构与实际情况不符：`extraction_strategy.md` 已归档但仍在目录树中引用；新增脚本（`rerun_pmids.sh`、`debug_to_excel.py`、`merge_debug.py`）未记录；Debug 章节引用已删除的 CLI 参数（`--test-abstract`、`--input`）。
+
+**改动**：
+- `README.md`：
+  - 项目结构树更新：scripts/ 新增 3 个脚本说明，docs/ 移除已归档文件，archive/ 从 data/ 提升为顶层目录
+  - `hybrid_convert_v2.py` 注释从 "Nougat + pymupdf4llm" 修正为 "Nougat + fitz"
+  - Debug 章节重写：移除已删除的 CLI 用法，新增 `rerun_pmids.sh`、`merge_debug.py`、`debug_to_excel.py` 用法示例
+  - 手动运行示例路径改为 `outputs/myrun/` 子目录形式

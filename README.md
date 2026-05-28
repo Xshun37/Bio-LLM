@@ -17,14 +17,13 @@ Bio-LLM/
 │   │   └── papers_txt/         # PDF→文本转换输出
 │   │       ├── Nougat/         # 纯 Nougat OCR 输出
 │   │       ├── fitz/           # 纯 PyMuPDF (fitz) 输出
-│   │       └── hybrid/         # Nougat + pymupdf4llm 混合输出 (最终使用)
+│   │       └── hybrid/         # Nougat + fitz 混合输出 (最终使用)
 │   ├── curated/
 │   │   ├── gene_alias_index.json         # HGNC 别名索引 (自动生成)
 │   │   ├── gene_alias_map.json           # 旧版别名映射 (向后兼容)
 │   │   ├── gene_alias_overrides.json     # 人工标注覆盖规则 (最高优先级)
 │   │   ├── gene_alias_conflicts.json     # 歧义别名列表 (自动生成)
 │   │   └── gene_ensg_map.json            # Gene → ENSG 映射表
-│   └── archive/                # 旧数据/代码归档 (TRRUST/GS50/abstracts.py, gitignore)
 ├── outputs/                     # 输出 (gitignore)
 ├── src/bio_llm/
 │   ├── __init__.py              # 包入口
@@ -35,12 +34,15 @@ Bio-LLM/
 ├── scripts/
 │   ├── build_alias_map.py       # 从 HGNC 构建别名索引
 │   ├── build_ensg_map.py        # 构建 Gene→ENSG 映射表
-│   ├── hybrid_convert_v2.py     # Nougat + pymupdf4llm 混合转换 (主用)
+│   ├── hybrid_convert_v2.py     # Nougat + fitz 混合转换 (主用)
+│   ├── merge_debug.py           # 合并多次运行的 debug JSON (同 PMID 取最新)
+│   ├── debug_to_excel.py        # debug JSON → Excel 双 sheet
+│   ├── rerun_pmids.sh           # 重跑指定 PMID 子集
 │   └── review_debug.sh          # 一键生成含 debug 面板的报告
 ├── run.sh                       # 一键启动入口
 ├── snakefile                    # Snakemake 工作流
+├── archive/                     # 旧数据/脚本/文档归档
 ├── docs/
-│   ├── extraction_strategy.md          # 提取策略规范
 │   └── 2026-05-10_optimization_log.md  # 优化记录
 ├── requirements.txt
 └── .gitignore
@@ -161,14 +163,20 @@ python scripts/hybrid_convert_v2.py --full --pmids 15184388 15195143
 ## Debug 与评估
 
 ```bash
-# 单条摘要交互调试
-PYTHONPATH=src python -m bio_llm.analysis --test-abstract "STAT3 binds to..."
+# 重跑指定 PMID（调试提示词）
+./scripts/rerun_pmids.sh 18776923,22479354
 
-# 批量模式输出 debug (含归一化日志)
-PYTHONPATH=src python -m bio_llm.analysis --input ... --output ... --debug
-
-# 生成含 debug 面板的报告
+# 生成含 debug 面板的报告（自动定位最新输出目录）
 ./scripts/review_debug.sh
+
+# 或指定目录
+./scripts/review_debug.sh outputs/merged_20260528_192933
+
+# 合并多次运行的 debug JSON（同一 PMID 取最新结果）
+python scripts/merge_debug.py --clean
+
+# debug JSON → Excel（方便在 Excel 中筛选查看）
+python scripts/debug_to_excel.py outputs/merged_*/analysis_results_debug.json
 ```
 
 ## 手动分步运行
@@ -178,15 +186,15 @@ PYTHONPATH=src python -m bio_llm.analysis --input ... --output ... --debug
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.analysis \
   --gold-standard data/raw/finalresult.tsv \
   --text-source fitz \
-  --output outputs/analysis_results.json --debug
+  --output outputs/myrun/analysis_results.json --debug
 
 # 2. 生成报告
 PYTHONPATH=src conda run --no-capture-output -n bio_llm python -m bio_llm.reporting \
-  --llm-json outputs/analysis_results.json \
+  --llm-json outputs/myrun/analysis_results.json \
   --text-source fitz \
-  --debug-json outputs/analysis_results_debug.json \
+  --debug-json outputs/myrun/analysis_results_debug.json \
   --gold-standard data/raw/finalresult.tsv \
-  --output outputs/report.html
+  --output outputs/myrun/report.html
 ```
 
 ## 配置文件
