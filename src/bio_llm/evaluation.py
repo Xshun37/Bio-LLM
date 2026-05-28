@@ -245,9 +245,11 @@ def compute_metrics(llm_data, gt_data, normalize_tf_fn, normalize_target_fn):
     fp_partial = 0    # TF+Target matched but Assay/CellLine wrong
     # FP_full = fp_partial + fp_rel (all non-TP predictions)
 
-    # Experimental-only subset (GT assay ≠ Literature)
+    # Experimental-only subset (GT assay not only Literature)
     exp_gt = 0
     exp_tp_full = 0
+    exp_tp_rel = 0       # fuzzy match (full + partial) on experimental GT
+    exp_fp_new_found = 0  # new_found predictions (count as FP for exp precision)
 
     for pmid, llm_results in llm_data.items():
         gt_raw = gt_data.get(str(pmid)) or []
@@ -290,18 +292,37 @@ def compute_metrics(llm_data, gt_data, normalize_tf_fn, normalize_target_fn):
                 tp_full += 1
                 claimed_gt.add(gt_idx)
 
-                # Check if this matched GT entry is experimental
+                # Check if both GT and LLM have experimental methods (not only Literature)
                 gt_assay = gt_norm[gt_idx][2]
-                if gt_assay.strip().lower() and gt_assay.strip().lower() != "literature":
+                gt_methods = set(m.strip().lower() for m in gt_assay.split(';') if m.strip())
+                gt_has_exp = bool(gt_methods - {'literature'})
+                llm_methods = set(m.strip().lower() for m in llm_assay.split(';') if m.strip())
+                llm_has_exp = bool(llm_methods - {'literature'})
+                if gt_has_exp and llm_has_exp:
                     exp_tp_full += 1
+                    exp_tp_rel += 1
 
             elif full_status == STATUS_FULL_PARTIAL:
                 tp_rel += 1
                 fp_partial += 1
                 claimed_gt.add(gt_idx)
 
+                # Check if both GT and LLM have experimental methods (counts as fuzzy TP)
+                gt_assay = gt_norm[gt_idx][2]
+                gt_methods = set(m.strip().lower() for m in gt_assay.split(';') if m.strip())
+                gt_has_exp = bool(gt_methods - {'literature'})
+                llm_methods = set(m.strip().lower() for m in llm_assay.split(';') if m.strip())
+                llm_has_exp = bool(llm_methods - {'literature'})
+                if gt_has_exp and llm_has_exp:
+                    exp_tp_rel += 1
+
             elif full_status == STATUS_FULL_NEW_FOUND:
                 fp_rel += 1
+                # Only count as exp FP if LLM has experimental methods
+                llm_methods = set(m.strip().lower() for m in llm_assay.split(';') if m.strip())
+                llm_has_exp = bool(llm_methods - {'literature'})
+                if llm_has_exp:
+                    exp_fp_new_found += 1
 
             else:  # STATUS_FULL_NEW
                 total_new += 1
@@ -323,8 +344,22 @@ def compute_metrics(llm_data, gt_data, normalize_tf_fn, normalize_target_fn):
     r_f = recall_full / 100
     f1_full = (2 * p_f * r_f / (p_f + r_f) * 100) if (p_f + r_f) > 0 else 0
 
-    # Experimental recall
+    # Experimental full-level metrics
     exp_recall = (exp_tp_full / exp_gt * 100) if exp_gt > 0 else 0
+    # exp FP = partial matches on exp GT + new_found
+    exp_fp_partial_count = exp_tp_rel - exp_tp_full  # partial on exp GT
+    exp_fp_full_total = exp_fp_partial_count + exp_fp_new_found
+    exp_precision = (exp_tp_full / (exp_tp_full + exp_fp_full_total) * 100) if (exp_tp_full + exp_fp_full_total) > 0 else 0
+    exp_p = exp_precision / 100
+    exp_r = exp_recall / 100
+    exp_f1 = (2 * exp_p * exp_r / (exp_p + exp_r) * 100) if (exp_p + exp_r) > 0 else 0
+
+    # Experimental fuzzy-level metrics (TF+Target only, on non-Literature GT)
+    exp_recall_rel = (exp_tp_rel / exp_gt * 100) if exp_gt > 0 else 0
+    exp_precision_rel = (exp_tp_rel / (exp_tp_rel + exp_fp_new_found) * 100) if (exp_tp_rel + exp_fp_new_found) > 0 else 0
+    exp_p_r = exp_precision_rel / 100
+    exp_r_r = exp_recall_rel / 100
+    exp_f1_rel = (2 * exp_p_r * exp_r_r / (exp_p_r + exp_r_r) * 100) if (exp_p_r + exp_r_r) > 0 else 0
 
     return {
         "total_pmids": len(llm_data),
@@ -350,7 +385,14 @@ def compute_metrics(llm_data, gt_data, normalize_tf_fn, normalize_target_fn):
         # Experimental
         "exp_gt": exp_gt,
         "exp_tp_full": exp_tp_full,
+        "exp_tp_rel": exp_tp_rel,
+        "exp_fp_new_found": exp_fp_new_found,
         "exp_recall": exp_recall,
+        "exp_precision": exp_precision,
+        "exp_f1": exp_f1,
+        "exp_recall_rel": exp_recall_rel,
+        "exp_precision_rel": exp_precision_rel,
+        "exp_f1_rel": exp_f1_rel,
     }
 
 

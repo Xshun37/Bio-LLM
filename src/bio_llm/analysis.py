@@ -49,15 +49,22 @@ SYSTEM_PROMPT = """
 
 ##实体提取要求##
 ======
-转录因子（TF）必须是一种蛋白质，只会通过以下三种形式调控基因的转录：
+TF栏提取的实体必须只能是以下两种中的一种：
+1.转录因子（TF）
+2.共调控因子（Cofactor/Coregulator）
+
+转录因子（TF）必须是一种蛋白质，只会通过以下两种形式调控基因的转录：
 1. 以单体形式结合DNA序列；
-2. 以复合物形式结合DNA序列；
-3. 不直接结合，但与直接结合的TF形成复合体，称为共调控因子（Cofactor/Coregulator）。
-不可接受的转录因子：激素、生长因子、细胞因子、药物、信号激酶或代谢物，以及各种调控通路的间接上游信号分子。
+2. 以复合物形式结合DNA序列。
+不可接受的转录因子：激素、生长因子、细胞因子、药物、信号激酶或代谢物。
+
+共调控因子（Cofactor/Coregulator）不直接结合DNA，需要TF进行**招募**，大部分以以下两种形式作用：
+1.表观遗传修饰，改变染色质结构
+2.桥梁介导，在 TF 与 RNA 聚合酶之间传递信号
 ======
 
 ======
-靶基因（Target）必须是一段DNA序列，不能是某种蛋白质，拒绝所有蛋白互作形式的调控关系。
+靶基因（Target）必须是一段**编码蛋白质的**DNA序列，不能是某种蛋白质，拒绝所有蛋白互作形式的调控关系。
 ======
 
 **基因命名规则（GENE NAME RULES）**
@@ -111,7 +118,9 @@ Assay必须是仅用于验证TF-Target调控关系的手段，而不涉及文献
 ======
 
 ======
-Cellline只考虑人/小鼠的细胞系，如果明确指出实验/引用文献不是在人/小鼠细胞中做的，拒绝这条调控关系。
+CellLine 指在体外培养的细胞，包括：
+- 连续细胞系（如 HEK293T、HeLa、MCF-7、NIH3T3）
+- 原代细胞（如大鼠系膜细胞、HUVEC、原代成纤维细胞）
 ======
 
 接下来你必须严格基于用户提供的文献内容和要求，提取其中所有明确提及或实验验证的“转录因子调控靶基因”关系。
@@ -130,22 +139,44 @@ ROUND1_PROMPT = """
 
 **Step 1：扫描论文中的调控事件**
 逐段阅读论文，找出所有 TF 调控基因的事件。
-- 对每个事件记录：TF（HGNC）、Target（HGNC）、Assay、CellLine；
-- 如果是引用文献的关系，Assay 标记 Literature；
-- 如果检测到复合体（complex）字样，应当要从前后文找到该复合体两个以上亚基。
+- 对每个事件记录：TF（HGNC）、Target（HGNC）、Assay、CellLine，文献的原始语句；
+- 如果是引用文献的关系，Assay标记Literature，必须给出Literatrue的序号；
+- 对于给出的每个Cellline，**逐字抄录**其出现位置，在该Cellline上使用的Asaay和选取的原因；
+- 如果检测到复合体（complex）字样，应当要从前后文找到该复合体两个以上亚基；
+- 使用中文推理，文献引用为英文。
+======
+输出样例：
+**KLF5 -> BIRC5 (survivin)**
+   - 原因及证据：KLF5结合survivin核心启动子的GT-box并强烈诱导其活性；过表达KLF5上调survivin，siRNA敲低KLF5下调survivin。
+   - 原文句子抄录：（此处略）
+   - Assay：Luciferase, ChIP, EMSA, OE, siRNA, NB, WB
+   - CellLine：
+   - EU-4：证据1；
+   - EU-8：证据2.
+======
 
 **Step 2：审查与过滤**
 逐条检查 Step 1 的结果：
+- 检查Step1输出的细胞系，如果不含人/小鼠/大鼠/猴的细胞系，拒绝这条调控关系；
 - Literature不必须有Cellline和Assay，禁止因这个理由排除调控关系
-- 排除间接链（TF→B→C 只保留 TF→B）
+- 处理间接链（例如：TF→B→C）
+    a. **保留**：如果论文中有实验证据（如 siRNA/OE/WB）证明 TF->C，而未明确/推测存在中间因子B，即便没有直接结合证据，也要保留这条关系
+    b. **拒绝**：论文中确信TF->C通过中间因子B作用，拒绝这条关系，只保留TF->B
 - 排除无具体蛋白的家族/结合位点
-- 排除无实验证据的推测
+- 接受WB, siRNA等非直接结合证据，排除无实验证据的推测
 - 排除蛋白互作（靶标必须是 DNA 序列）
 - 拒绝计算/生物信息学方法的纯计算预测证据
 - 拒绝高通量方法证据
-输出最终保留的列表，每条注明保留/排除原因。"""
+输出最终保留的列表，每条注明保留/排除原因。
+======
+输出样例：
+**最终保留的调控关系列表：**
+| TF (HGNC) | Target (HGNC) | Assay | CellLine | 保留原因 |
+**最终排除的调控关系列表：**
+| TF (HGNC) | Target (HGNC) | Assay | CellLine | 排除原因 |
+======"""
 
-ROUND2_PROMPT = """现在，基于你上面的分析，将所有有效的 TF-target 关系以 JSON 数组输出。
+ROUND2_PROMPT = """基于上面的分析，将所有有效的TF-target 关系计数，输出总数，然后以 JSON 数组输出。
 
 #额外规则#：
 1.  'TF'：将前文中为复合体的蛋白拆成单体，拒绝不明确的（如蛋白质家族）TF；
@@ -156,6 +187,7 @@ ROUND2_PROMPT = """现在，基于你上面的分析，将所有有效的 TF-tar
 3. 'cellLine'：分号分隔的细胞系，仅包含论文中明确提及的细胞系（例如 "HEK293T" 或 "HeLa;MCF-7"）。对于纯 Literature 引用的关系，如果论文未提及该关系的实验细胞系，使用空字符串。
 4. 不要输出重复的 (TF, Target) 对。每个 (TF, Target) 对在数组中只能出现一次。若多个实验支持同一对，将它们合并为一条记录。
 
+#输出要求#
 只输出 JSON 数组，不输出其他内容，必须遵循**正确格式**，一个例子如下：
 [{"TF": "PROTEIN", "Target": "GENE", "assay": "Luciferase;ChIP", "cellLine": "HEK293T"}]"""
 
@@ -406,17 +438,20 @@ def _extract_usage(resp):
 
 def run_analysis(gold_standard, text_source, output_path, model_name,
                  temperature=0, workers=1, debug=False, sample_size=None,
-                 pmid_seed=None, seed=None):
+                 pmid_seed=None, seed=None, pmids_filter=None):
     gs_data = load_gold_standard(gold_standard)
     if not gs_data:
         print(f"未找到金标准数据: {gold_standard}")
         return
 
     pmids = list(gs_data.keys())
-    if pmid_seed is not None:
+    if pmids_filter is not None:
+        pmids = [p for p in pmids_filter if p in gs_data]
+        print(f"指定 PMID 过滤: {len(pmids)}/{len(pmids_filter)} 篇在金标准中")
+    elif pmid_seed is not None:
         rng = random.Random(pmid_seed)
         rng.shuffle(pmids)
-    if sample_size and sample_size < len(pmids):
+    if sample_size and sample_size < len(pmids) and pmids_filter is None:
         pmids = pmids[:sample_size]
 
     fulltexts = load_local_fulltexts(pmids, source=text_source)
@@ -511,6 +546,8 @@ def build_parser():
     parser.add_argument("--sample-size", type=int, default=None, help="限制 PMID 数量 (快速测试)")
     parser.add_argument("--pmid-seed", type=int, default=None, help="PMID 随机抽取种子 (控制抽取顺序)")
     parser.add_argument("--seed", type=int, default=None, help="LLM 输出确定性种子 (控制模型输出)")
+    parser.add_argument("--pmids", default=None,
+                        help="指定 PMID 列表 (逗号分隔，如 18776923,22479354)，跳过 pmid_seed/sample_size")
     parser.add_argument("--debug", action="store_true", default=False,
                         help="保存中间 LLM 输出到 *_debug.json")
     return parser
@@ -535,6 +572,7 @@ def main():
         sample_size=args.sample_size,
         pmid_seed=args.pmid_seed,
         seed=args.seed,
+        pmids_filter=[p.strip() for p in args.pmids.split(",")] if args.pmids else None,
     )
 
 

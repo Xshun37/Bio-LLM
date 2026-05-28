@@ -884,3 +884,39 @@ data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
 - `snakefile`：从 `config.yaml` 读取 `seed` 并传给分析命令
 
 **使用**：`config.yaml` 设置 `seed: 42` 即可保证 PMID 顺序和 LLM 输出完全一致
+
+### 52. 实验验证子集新增精确率和 F1 指标
+
+**问题**：Literature 对 LLM 难以识别，仅含 Literature 的金标准条目会拉低召回率。需要单独评估"有实验验证"条目的 P/R/F1。
+
+**改动**：
+- `evaluation.py`：`compute_metrics()` 新增 `exp_fp_partial`（实验 GT 的部分匹配）和 `exp_fp_new_found`（新发现），计算 `exp_precision` 和 `exp_f1`
+- `reporting.py`：统计表新增"实验验证子集"分区，展示完整 P/R/F1
+
+**指标定义**：
+- 实验子集：GT 条目的 Assay 不仅含 Literature（至少有 1 个实验方法）
+- exp_precision = exp_tp / (exp_tp + exp_fp_partial + new_found)
+- exp_recall = exp_tp / exp_gt
+- exp_f1 = 2PR/(P+R)
+
+### 53. 四维评估指标体系重构 + 2×2 网格布局
+
+**问题**：原有指标体系不够清晰，需要同时评估全数据集和去除 Literature 子集的完全/模糊匹配。
+
+**改动**：
+- `evaluation.py`：
+  - 新增 `exp_tp_rel`（实验 GT 的模糊匹配数），计算 `exp_precision_rel`、`exp_recall_rel`、`exp_f1_rel`
+  - 删除 `exp_fp_partial`，改用 `exp_tp_rel - exp_tp_full` 推导
+  - 返回字典新增 4 个实验子集模糊匹配指标
+- `reporting.py`：
+  - 统计概览改为 2×2 网格布局（`.metrics-grid` + `.metrics-card`）
+  - 四个指标卡片：全数据集完全匹配（主指标，绿色高亮）、全数据集模糊匹配、去除Literature完全匹配、去除Literature模糊匹配
+  - 计数表简化，移除冗余行
+
+**指标矩阵**：
+| | 完全匹配 (TF+Target+Assay+CellLine) | 模糊匹配 (TF+Target) |
+|---|---|---|
+| 全数据集 | P=34.0% R=50.0% F1=40.5% | P=53.6% R=78.8% F1=63.8% |
+| 去除仅Literature | P=12.5% R=29.0% F1=17.5% | P=37.9% R=87.9% F1=53.0% |
+
+**关键发现**：去除 Literature 后模糊匹配召回率从 78.8% 升至 87.9%，证实 Literature 类条目对 LLM 识别难度大。

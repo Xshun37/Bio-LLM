@@ -65,6 +65,15 @@ def generate_html_report(llm_json, text_source, output_file,
             .status-miss { color: red; font-weight: bold; }
             .match-yes { color: green; }
             .match-no { color: #c00; }
+            .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+            .metrics-card { background: white; border-radius: 6px; padding: 15px; border: 1px solid #ddd; }
+            .metrics-card h3 { margin: 0 0 10px 0; font-size: 1em; padding-bottom: 8px; border-bottom: 2px solid #ddd; }
+            .metrics-card.primary { border-color: #4caf50; background: #f1f8e9; }
+            .metrics-card.primary h3 { border-bottom-color: #4caf50; }
+            .metrics-card table { width: 100%; }
+            .metrics-card td { padding: 4px 8px; font-size: 0.9em; }
+            .metrics-card td:first-child { font-weight: bold; width: 60px; }
+            .metrics-card td:last-child { color: #666; font-size: 0.85em; }
             .debug-section { margin-top: 20px; border: 1px solid #ddd; border-radius: 6px; padding: 0; background: #fafafa; }
             .debug-section summary { padding: 12px 16px; font-weight: bold; cursor: pointer; background: #e9ecef; border-radius: 6px; user-select: none; }
             .debug-section summary:hover { background: #dee2e6; }
@@ -89,30 +98,55 @@ def generate_html_report(llm_json, text_source, output_file,
     html_content += f"""
         <div class="card" style="background:#f0f8ff;">
             <h2>统计概览</h2>
-            <table style="width:auto;">
-                <tr><th>指标</th><th>数值</th><th>说明</th></tr>
-                <tr><td>论文总数</td><td>{metrics['total_pmids']}</td><td></td></tr>
-                <tr><td>金标准条目数</td><td>{metrics['total_gt']}</td><td>finalresult.tsv 中的条目总数</td></tr>
-                <tr><td>LLM 提取数</td><td>{metrics['total_llm']}</td><td>模型预测总数</td></tr>
-
-                <tr><td colspan="3" style="background:#e0e0e0;font-weight:bold;">关系级（TF+Target）</td></tr>
-                <tr><td>精确率</td><td>{metrics['tp_rel']}/{metrics['tp_rel'] + metrics['fp_rel']} = {metrics['precision_rel']:.1f}%</td><td>TP_rel / (TP_rel + NewFound)</td></tr>
-                <tr><td>召回率</td><td>{metrics['tp_rel']}/{metrics['total_gt']} = {metrics['recall_rel']:.1f}%</td><td>TP_rel / total_GT</td></tr>
-                <tr><td>F1</td><td>{metrics['f1_rel']:.1f}%</td><td>2PR/(P+R)</td></tr>
-
-                <tr style="background:#e8f5e9;"><td colspan="3" style="font-weight:bold;">完全级（TF+Target+Assay+CellLine）— 主指标</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>精确率</b></td><td><b>{metrics['tp_full']}/{metrics['tp_full'] + metrics['fp_partial'] + metrics['fp_rel_count']} = {metrics['precision_full']:.1f}%</b></td><td>TP_full / (TP_full + Partial + NewFound)</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>召回率</b></td><td><b>{metrics['tp_full']}/{metrics['total_gt']} = {metrics['recall_full']:.1f}%</b></td><td>TP_full / total_GT</td></tr>
-                <tr style="background:#e8f5e9;"><td><b>F1</b></td><td><b>{metrics['f1_full']:.1f}%</b></td><td>2PR/(P+R)</td></tr>
-                <tr><td>召回率（仅实验验证）</td><td>{metrics['exp_tp_full']}/{metrics['exp_gt']} = {metrics['exp_recall']:.1f}%</td><td>子集：Assay ≠ Literature</td></tr>
-
-                <tr><td colspan="3"></td></tr>
-                <tr><td>完全匹配</td><td style="color:green;font-weight:bold;">{metrics['tp_full']}</td><td>TF+Target+Assay+CellLine 全对</td></tr>
-                <tr><td>部分匹配</td><td style="color:orange;font-weight:bold;">{metrics['fp_partial']}</td><td>TF+Target 对，Assay 或 CellLine 不对</td></tr>
-                <tr><td>新发现</td><td style="color:#0066cc;font-weight:bold;">{metrics['fp_rel_count']}</td><td>LLM 发现但不在金标准中</td></tr>
-                <tr><td>遗漏（关系级）</td><td style="color:red;font-weight:bold;">{metrics['total_missed_rel']}</td><td>金标准中有但 LLM 未找到</td></tr>
-                <tr><td>无金标准</td><td style="color:gray;font-weight:bold;">{metrics['total_new']}</td><td>该 PMID 无金标准条目</td></tr>
+            <table style="width:auto; margin-bottom:20px;">
+                <tr><th>指标</th><th>数值</th></tr>
+                <tr><td>论文总数</td><td>{metrics['total_pmids']}</td></tr>
+                <tr><td>金标准条目数</td><td>{metrics['total_gt']}</td></tr>
+                <tr><td>LLM 提取数</td><td>{metrics['total_llm']}</td></tr>
+                <tr><td>完全匹配</td><td style="color:green;font-weight:bold;">{metrics['tp_full']}</td></tr>
+                <tr><td>模糊匹配（部分匹配）</td><td style="color:orange;font-weight:bold;">{metrics['fp_partial']}</td></tr>
+                <tr><td>新发现</td><td style="color:#0066cc;font-weight:bold;">{metrics['fp_rel_count']}</td></tr>
+                <tr><td>遗漏（模糊级）</td><td style="color:red;font-weight:bold;">{metrics['total_missed_rel']}</td></tr>
+                <tr><td>无金标准</td><td style="color:gray;font-weight:bold;">{metrics['total_new']}</td></tr>
             </table>
+
+            <div class="metrics-grid">
+                <div class="metrics-card primary">
+                    <h3>全数据集 · 完全匹配 (TF+Target+Assay+CellLine)</h3>
+                    <table>
+                        <tr><td>精确率</td><td>{metrics['tp_full']}/{metrics['tp_full'] + metrics['fp_partial'] + metrics['fp_rel_count']} = <b>{metrics['precision_full']:.1f}%</b></td><td>TP / (TP + 部分 + 新发现)</td></tr>
+                        <tr><td>召回率</td><td>{metrics['tp_full']}/{metrics['total_gt']} = <b>{metrics['recall_full']:.1f}%</b></td><td>TP / total_GT</td></tr>
+                        <tr><td>F1</td><td><b>{metrics['f1_full']:.1f}%</b></td><td>2PR/(P+R)</td></tr>
+                    </table>
+                </div>
+
+                <div class="metrics-card">
+                    <h3>全数据集 · 模糊匹配 (TF+Target)</h3>
+                    <table>
+                        <tr><td>精确率</td><td>{metrics['tp_rel']}/{metrics['tp_rel'] + metrics['fp_rel']} = {metrics['precision_rel']:.1f}%</td><td>关系命中 / (命中 + 新发现)</td></tr>
+                        <tr><td>召回率</td><td>{metrics['tp_rel']}/{metrics['total_gt']} = {metrics['recall_rel']:.1f}%</td><td>关系命中 / total_GT</td></tr>
+                        <tr><td>F1</td><td>{metrics['f1_rel']:.1f}%</td><td>2PR/(P+R)</td></tr>
+                    </table>
+                </div>
+
+                <div class="metrics-card">
+                    <h3>去除仅Literature · 完全匹配</h3>
+                    <table>
+                        <tr><td>精确率</td><td>{metrics['exp_tp_full']}/{metrics['exp_tp_full'] + (metrics['exp_tp_rel'] - metrics['exp_tp_full']) + metrics['exp_fp_new_found']} = {metrics['exp_precision']:.1f}%</td><td>TP / (TP + 部分 + 新发现)</td></tr>
+                        <tr><td>召回率</td><td>{metrics['exp_tp_full']}/{metrics['exp_gt']} = {metrics['exp_recall']:.1f}%</td><td>TP / exp_GT</td></tr>
+                        <tr><td>F1</td><td>{metrics['exp_f1']:.1f}%</td><td>2PR/(P+R)</td></tr>
+                    </table>
+                </div>
+
+                <div class="metrics-card">
+                    <h3>去除仅Literature · 模糊匹配</h3>
+                    <table>
+                        <tr><td>精确率</td><td>{metrics['exp_tp_rel']}/{metrics['exp_tp_rel'] + metrics['exp_fp_new_found']} = {metrics['exp_precision_rel']:.1f}%</td><td>关系命中 / (命中 + 新发现)</td></tr>
+                        <tr><td>召回率</td><td>{metrics['exp_tp_rel']}/{metrics['exp_gt']} = {metrics['exp_recall_rel']:.1f}%</td><td>关系命中 / exp_GT</td></tr>
+                        <tr><td>F1</td><td>{metrics['exp_f1_rel']:.1f}%</td><td>2PR/(P+R)</td></tr>
+                    </table>
+                </div>
+            </div>
         </div>
     """
 
