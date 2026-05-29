@@ -158,7 +158,9 @@ ROUND1_PROMPT = """
 **Step 2：审查与过滤**
 逐条检查 Step 1 的结果：
 - 检查Step1输出的细胞系，如果不含人/小鼠/大鼠/猴的细胞系，拒绝这条调控关系；
-- Literature不必须有Cellline和Assay，禁止因这个理由排除调控关系
+- Literatrue按下面**两条原则**处理：
+    a. 接受没有Cellline和Assay的Literatrue
+    b. 若有Cellline和Assay，按正常的的审查标准审查是否符合要求
 - 处理间接链（例如：TF→B→C）
     a. **保留**：如果论文中有实验证据（如 siRNA/OE/WB）证明 TF->C，而未明确/推测存在中间因子B，即便没有直接结合证据，也要保留这条关系
     b. **拒绝**：论文中确信TF->C通过中间因子B作用，拒绝这条关系，只保留TF->B
