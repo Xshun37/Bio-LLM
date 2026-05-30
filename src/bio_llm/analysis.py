@@ -21,7 +21,7 @@ from bio_llm.evaluation import normalize_and_log, load_gold_standard
 # ───────────────────────────────────────────────────────────
 
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "qwen3.7-max"
+DEFAULT_MODEL = "qwen3.7-max-2026-05-20"
 DEFAULT_TEXT_SOURCE = "fitz"
 DEFAULT_GOLD_STANDARD = "data/raw/finalresult.tsv"
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

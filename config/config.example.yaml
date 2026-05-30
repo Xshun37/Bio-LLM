@@ -12,7 +12,7 @@ sample_size: 48
 email: "your_email@example.com"
 
 # 阿里云百炼 Qwen 模型名称
-model: "qwen3.7-max"
+model: "qwen3.7-max-2026-05-20"
 
 # LLM 温度 (0 = 确定性输出)
 temperature: 0
