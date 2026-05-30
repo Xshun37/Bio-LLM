@@ -947,3 +947,40 @@ data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
   - `hybrid_convert_v2.py` 注释从 "Nougat + pymupdf4llm" 修正为 "Nougat + fitz"
   - Debug 章节重写：移除已删除的 CLI 用法，新增 `rerun_pmids.sh`、`merge_debug.py`、`debug_to_excel.py` 用法示例
   - 手动运行示例路径改为 `outputs/myrun/` 子目录形式
+
+---
+
+## 2026-05-30 优化记录
+
+### 56. run_production.py 读取 config.yaml 默认参数
+
+**问题**：`run_production.py` 不读取 `config.yaml`，seed/model/temperature 全靠 CLI 默认值（seed=None, model=DEFAULT_MODEL），与 `batch_screen.py` 的行为不一致。config.yaml 中配了 `seed: 42` 但未生效。
+
+**改动**：
+- `scripts/run_production.py`：
+  - 新增 `_load_config()` 函数，读取 `config/config.yaml`
+  - `main()` 中解析 CLI 后从 config 补充默认值：`seed`（CLI > config > None）、`model_name`、`temperature`
+  - `analyze_tf_interaction` 调用传入 `model_name` 和 `temperature`
+
+### 57. 生产流程始终保存完整模型输出
+
+**问题**：`run_production.py` 只在 `--debug` 模式下保存 round1 文本分析，导致无法审查模型推理过程。生产环境需要保留完整输出以便后续验证。
+
+**改动**：
+- `scripts/run_production.py`：
+  - `analyze_tf_interaction` 调用强制 `debug=True`（不再依赖 `args.debug`）
+  - 收集 `debug_info` 不再判断 `args.debug`
+  - 保存 `_debug.json` 不再判断 `args.debug`
+- 每次生产运行都会生成 `production_results_debug.json`，包含每篇论文的 round1 分析 + round2 结构化结果 + 标准化日志
+
+### 58. 生产 Debug JSON → HTML 可视化报告
+
+**问题**：`production_results_debug.json` 直接看 JSON 可读性差，round1 分析是长文本 markdown，round2 是嵌套 JSON，不便于审查 LLM 推理过程。
+
+**改动**：
+- `scripts/production_report.py`（新建）：读取 debug JSON 生成 HTML 报告
+  - 汇总卡片：论文数、关系数、总/平均 token 用量
+  - Per-paper 卡片：提取结果表格 + 可折叠 LLM 推理过程（round1 markdown→HTML + round2 格式化 JSON）
+  - Token 用量统计 + 基因标准化日志表格
+  - 错误论文红色标记
+- `run_production.sh`：末尾自动调用 `production_report.py`，生成 `production_report.html`

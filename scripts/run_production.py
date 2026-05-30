@@ -23,10 +23,21 @@ import fitz  # PyMuPDF
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 
+import yaml
+
 from bio_llm.analysis import (
     init_client,
     analyze_tf_interaction,
+    DEFAULT_MODEL,
 )
+
+
+def _load_config():
+    cfg_path = os.path.join(PROJECT_ROOT, "config", "config.yaml")
+    if os.path.exists(cfg_path):
+        with open(cfg_path) as f:
+            return yaml.safe_load(f) or {}
+    return {}
 
 DEFAULT_INPUT = "data/raw/paper_for_produce"
 DEFAULT_OUTPUT = "outputs/production_results.tsv"
@@ -206,6 +217,11 @@ def main():
     parser.add_argument("--seed", type=int, default=None, help="LLM 输出确定性种子")
     args = parser.parse_args()
 
+    cfg = _load_config()
+    seed = args.seed if args.seed is not None else cfg.get("seed")
+    model_name = cfg.get("model", DEFAULT_MODEL)
+    temperature = cfg.get("temperature", 0)
+
     input_dir = os.path.join(PROJECT_ROOT, args.input)
     output_path = os.path.join(PROJECT_ROOT, args.output)
     json_path = os.path.join(PROJECT_ROOT, args.json_output)
@@ -238,7 +254,7 @@ def main():
         return
 
     # Step 2: LLM 分析
-    print(f"Step 2: LLM 分析 ({len(todo)} 篇, workers={args.workers})")
+    print(f"Step 2: LLM 分析 ({len(todo)} 篇, workers={args.workers}, seed={seed})")
     init_client()
 
     results = dict(existing_results)  # 保留已有结果
@@ -247,7 +263,9 @@ def main():
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         future_map = {
             executor.submit(
-                analyze_tf_interaction, text, debug=args.debug, seed=args.seed
+                analyze_tf_interaction, text,
+                model_name=model_name, temperature=temperature,
+                debug=True, seed=seed
             ): file_id
             for file_id, text in todo.items()
         }
@@ -261,7 +279,7 @@ def main():
                 if isinstance(raw, dict):
                     if "result" in raw:
                         results[file_id] = raw["result"]
-                        if args.debug and "round1_analysis" in raw:
+                        if "round1_analysis" in raw:
                             debug_info[file_id] = raw
                     elif "error" in raw:
                         results[file_id] = raw
@@ -284,7 +302,7 @@ def main():
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"  JSON: {json_path}")
 
-    if args.debug and debug_info:
+    if debug_info:
         debug_path = json_path.replace(".json", "_debug.json")
         with open(debug_path, "w", encoding="utf-8") as f:
             json.dump(debug_info, f, ensure_ascii=False, indent=2)

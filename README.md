@@ -1,6 +1,6 @@
 # Bio-LLM
 
-面向小规模实验的生物文本抽取流水线。从人工金标准数据集获取 PMID，拉取 PubMed 摘要，用 LLM (qwen3.7-max-2026-05-20) 提取 TF-target 调控关系（含 Assay 和 CellLine），生成 HTML 对比报告。
+面向小规模实验的生物文本抽取流水线。从人工金标准数据集获取 PMID，拉取 PubMed 摘要，用 LLM (qwen3.7-max) 提取 TF-target 调控关系（含 Assay 和 CellLine），生成 HTML 对比报告。
 
 ## 项目结构
 
@@ -210,7 +210,7 @@ cp config/config.example.yaml config/config.yaml
 | sample_size | 48 | 选取 PMID 数 (全量金标准) |
 | seed | (无) | 随机种子 |
 | email | (必填) | NCBI Entrez 邮箱 |
-| model | qwen3.7-max-2026-05-20 | 阿里云百炼 Qwen 模型 |
+| model | qwen3.7-max | 阿里云百炼 Qwen 模型 |
 | temperature | 0 | LLM 温度 (0 = 确定性) |
 | workers | 4 | API 并发数 |
 | ncbi_bypass_proxy | false | 绕过代理直连 PubMed |

@@ -36,6 +36,10 @@ conda run --no-capture-output -n bio_llm python scripts/run_production.py \
   $SEED_FLAG \
   --skip-existing
 
+# 生成 HTML 报告
+conda run --no-capture-output -n bio_llm python scripts/production_report.py "$OUTDIR"
+
 echo ""
 echo "Results: $ROOT/$OUTDIR/production_results.tsv"
 echo "JSON:    $ROOT/$OUTDIR/production_results.json"
+echo "Report:  $ROOT/$OUTDIR/production_report.html"
