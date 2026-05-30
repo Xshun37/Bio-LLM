@@ -984,3 +984,49 @@ data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
   - Token 用量统计 + 基因标准化日志表格
   - 错误论文红色标记
 - `run_production.sh`：末尾自动调用 `production_report.py`，生成 `production_report.html`
+
+---
+
+## 2026-05-31 优化记录
+
+### 59. 生产流水线重构：统一入口 + 断点续传 + 鲁棒性
+
+**问题**：金标准模式 (`run.sh` + `snakefile`) 和生产模式 (`run_production.sh` + `scripts/run_production.py`) 两套独立流水线，核心 LLM 函数相同但外围逻辑重复。生产模式缺乏断点续传、失败重试、定期存盘，7000 篇批量测试无法保障稳定性。
+
+**改动**：
+- `src/bio_llm/analysis.py`：
+  - 移入 `pdf_to_text()`、`load_production_papers()`、`results_to_tsv()` 等生产辅助函数
+  - `run_analysis()` 新增 `--production-input` 参数，支持两种模式共用
+  - 新增断点续传：自动加载已有 `analysis_results.json`，跳过成功条目，重跑 error 条目
+  - 新增失败重试：`_analyze_with_retry()` 包装，失败自动重试 3 次（指数退避），捕获异常 + error 字典
+  - 新增定期存盘：每 50 篇自动保存 JSON + debug JSON
+  - 新增 tqdm 进度条 + 错峰启动（减少同时限流）
+- `src/bio_llm/reporting.py`：
+  - 新增 `--mode production`，生产模式跳过 ground truth 对比，只展示提取结果 + Token 统计
+  - 合并 `production_report.py` 的报告生成逻辑
+- `run.sh`：
+  - 新增 `--production` 参数切换模式
+  - 新增 `--resume` 参数（自动找最新目录 / 指定目录）
+  - 断点续传时绕过 snakemake，直接调 Python（避免 `--forceall` 清空文件）
+- `snakefile`：
+  - 支持 `mode=production` 路由
+  - 删除旧 `production` rule
+- 删除文件：`run_production.sh`、`scripts/run_production.py`、`scripts/production_report.py`
+
+### 60. 模型切换：qwen3.7-max-2026-05-20 → qwen3.7-max
+
+**问题**：日期版本 `qwen3.7-max-2026-05-20` 限流严重（RPM 600，TPM 1M），4 worker 同时发 8 个请求就触发 429 限流。
+
+**改动**：
+- `config/config.yaml`：`model` 改为 `qwen3.7-max`
+- `src/bio_llm/analysis.py`：`DEFAULT_MODEL` 改为 `qwen3.7-max`
+- `config/config.example.yaml`：同步更新
+
+**关键发现**：
+
+| 模型 | RPM | TPM | RPS（换算）|
+|------|-----|-----|-----------|
+| `qwen3.7-max` | 30,000 | 5,000,000 | 500/s |
+| `qwen3.7-max-2026-05-20` | 600 | 1,000,000 | 10/s |
+
+滚动版本 RPM 是日期版的 **50 倍**，TPM 是 **5 倍**，大批量跑不会触发限流。

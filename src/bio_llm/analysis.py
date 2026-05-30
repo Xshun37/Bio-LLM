@@ -1,4 +1,5 @@
 import argparse
+import csv
 import json
 import os
 import random
@@ -7,6 +8,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import fitz  # PyMuPDF
 from openai import OpenAI, RateLimitError, APIStatusError
 
 try:
@@ -21,7 +23,7 @@ from bio_llm.evaluation import normalize_and_log, load_gold_standard
 # ───────────────────────────────────────────────────────────
 
 DEFAULT_OUTPUT = "outputs/analysis_results.json"
-DEFAULT_MODEL = "qwen3.7-max-2026-05-20"
+DEFAULT_MODEL = "qwen3.7-max"
 DEFAULT_TEXT_SOURCE = "fitz"
 DEFAULT_GOLD_STANDARD = "data/raw/finalresult.tsv"
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -157,7 +159,9 @@ ROUND1_PROMPT = """
 
 **Step 2：审查与过滤**
 逐条检查 Step 1 的结果：
-- 检查Step1输出的细胞系，如果不含人/小鼠/大鼠/猴的细胞系，拒绝这条调控关系；
+- 检查Step1输出的细胞系：
+    a. 如果不含人/小鼠/大鼠/猴的细胞系，拒绝这条调控关系；
+    b. 有些不符合要求的细胞系（如果蝇，大肠杆菌）实际是被用于调控关系的功能验证实验（如体外生化实验），如果这条调控关系被接受，功能验证实验的Assay也应当被记录
 - Literatrue按下面**两条原则**处理：
     a. 接受没有Cellline和Assay的Literatrue
     b. 若有Cellline和Assay，按正常的的审查标准审查是否符合要求
@@ -278,6 +282,218 @@ def _parse_markdown_sections(text):
         sections = [("Full Paper", text)]
 
     return sections
+
+
+# ───────────────────────────────────────────────────────────
+#  § 3.5  Production: PDF 解析 + 论文加载 + TSV 输出
+# ───────────────────────────────────────────────────────────
+
+DEFAULT_PRODUCTION_INPUT = "data/raw/paper_for_produce"
+
+_SECTION_PATTERNS = [
+    r"^(Introduction|Background)\s*$",
+    r"^(Materials?\s+and\s+Methods?|Experimental\s+Procedures?|Methods?)\s*$",
+    r"^(Results?)\s*$",
+    r"^(Discussion)\s*$",
+    r"^(Conclusions?)\s*$",
+    r"^(Supplementary|References|Acknowledgm|Funding|Author\s+Contributions|Data\s+Availability|Conflict\s+of\s+Interest)",
+]
+
+_META_PATTERNS = [
+    r"^\d+\s*$",
+    r"^doi:",
+    r"published online",
+    r"received\s|accepted\s|revised\s",
+    r"©.*\d{4}",
+    r"correspondence.*to",
+]
+
+
+def _is_section_header(line):
+    stripped = line.strip()
+    if not stripped or len(stripped) > 100:
+        return False
+    for pat in _SECTION_PATTERNS:
+        if re.match(pat, stripped, re.IGNORECASE):
+            return True
+    return False
+
+
+def _is_meta_line(line):
+    stripped = line.strip()
+    if not stripped:
+        return False
+    for pat in _META_PATTERNS:
+        if re.search(pat, stripped, re.IGNORECASE):
+            return True
+    return False
+
+
+def pdf_to_text(pdf_path):
+    """将 PDF 转为纯文本，按 section 组织。"""
+    doc = fitz.open(pdf_path)
+    sections = []
+    current_section = "Untitled"
+    current_text = []
+    in_refs = False
+
+    for page in doc:
+        blocks = page.get_text("blocks")
+        blocks.sort(key=lambda b: (round(b[1] / 20) * 20, b[0]))
+
+        for block in blocks:
+            if block[6] != 0:
+                continue
+            text = block[4].strip()
+            if not text:
+                continue
+
+            if re.match(r"^(References|REFERENCES|Bibliography)\s*$", text, re.IGNORECASE):
+                in_refs = True
+                continue
+            if in_refs:
+                continue
+
+            if _is_meta_line(text):
+                continue
+
+            if _is_section_header(text):
+                if current_text:
+                    sections.append((current_section, "\n".join(current_text).strip()))
+                current_section = text.strip()
+                current_text = []
+            else:
+                current_text.append(text)
+
+    if current_text:
+        sections.append((current_section, "\n".join(current_text).strip()))
+
+    doc.close()
+
+    if not sections:
+        return ""
+
+    parts = []
+    for title, text in sections:
+        if text:
+            parts.append(f"# {title}\n\n{text}")
+    return "\n\n".join(parts)
+
+
+def load_production_papers(input_dir, txt_output_dir=None, limit=0):
+    """加载 input_dir 下 PDF/TXT 文件，返回 {file_id: text}。
+
+    txt_output_dir: 如果指定，将 PDF 转换的文本缓存为 .txt 文件。
+    limit: 只加载前 N 篇（0=全部）。
+    """
+    if txt_output_dir:
+        os.makedirs(txt_output_dir, exist_ok=True)
+
+    papers = {}
+    files = sorted(os.listdir(input_dir))
+
+    if limit > 0:
+        files = files[:limit]
+
+    for fname in files:
+        path = os.path.join(input_dir, fname)
+        if not os.path.isfile(path):
+            continue
+
+        base, ext = os.path.splitext(fname)
+        file_id = base
+
+        if ext.lower() == ".pdf":
+            try:
+                text = pdf_to_text(path)
+                if text:
+                    papers[file_id] = text
+                    print(f"  PDF: {fname} → {len(text)} chars")
+                    if txt_output_dir:
+                        txt_path = os.path.join(txt_output_dir, base + ".txt")
+                        if not os.path.exists(txt_path):
+                            with open(txt_path, "w", encoding="utf-8") as f:
+                                f.write(text)
+                else:
+                    print(f"  PDF: {fname} → 空文本，跳过")
+            except Exception as e:
+                print(f"  PDF: {fname} → 转换失败: {e}")
+        elif ext.lower() == ".txt":
+            with open(path, "r", encoding="utf-8") as f:
+                text = f.read().strip()
+            if text:
+                papers[file_id] = text
+                print(f"  TXT: {fname} → {len(text)} chars")
+        else:
+            continue
+
+    return papers
+
+
+def results_to_tsv(results, output_path):
+    """将 LLM 结果写为 TSV。
+
+    results: dict  file_id → list of {TF, Target, assay, cellLine}
+    """
+    rows = []
+    for file_id, entries in results.items():
+        if not isinstance(entries, list):
+            continue
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            rows.append({
+                "PaperID": file_id,
+                "TF": entry.get("TF", ""),
+                "Target": entry.get("Target", ""),
+                "Assay": entry.get("assay", ""),
+                "CellLine": entry.get("cellLine", ""),
+            })
+
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["PaperID", "TF", "Target", "Assay", "CellLine"],
+                                delimiter="\t")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    return len(rows)
+
+
+def _save_checkpoint(output_path, results, debug_info=None):
+    """保存中间结果（断点续传用）。"""
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    if debug_info is not None:
+        debug_path = output_path.replace(".json", "_debug.json")
+        with open(debug_path, "w", encoding="utf-8") as f:
+            json.dump(debug_info, f, ensure_ascii=False, indent=2)
+
+
+def _analyze_with_retry(text, max_retries=3, **kwargs):
+    """包装 analyze_tf_interaction，失败自动重试（异常 + error 字典）。
+    外层重试等待较长（15-45s），因为 DashScope 限流通常 1 分钟内恢复。
+    """
+    for attempt in range(max_retries):
+        try:
+            result = analyze_tf_interaction(text, **kwargs)
+        except Exception as e:
+            if attempt < max_retries - 1:
+                delay = 15 * (attempt + 1) + random.uniform(0, 5)
+                print(f"\n  异常重试 ({attempt+1}/{max_retries})，{delay:.0f}s 后...")
+                time.sleep(delay)
+            else:
+                return {"error": str(e)}
+            continue
+
+        # 检测 error 字典（如 API 限流重试耗尽）
+        if isinstance(result, dict) and "error" in result:
+            if attempt < max_retries - 1:
+                delay = 15 * (attempt + 1) + random.uniform(0, 10)
+                print(f"\n  错误重试 ({attempt+1}/{max_retries})，{delay:.0f}s 后... ({result['error'][:50]})")
+                time.sleep(delay)
+                continue
+        return result
+    return {"error": "重试已耗尽"}
 
 
 # ───────────────────────────────────────────────────────────
@@ -438,96 +654,187 @@ def _extract_usage(resp):
 # ───────────────────────────────────────────────────────────
 
 
-def run_analysis(gold_standard, text_source, output_path, model_name,
+def run_analysis(gold_standard=None, text_source=DEFAULT_TEXT_SOURCE,
+                 output_path=DEFAULT_OUTPUT, model_name=DEFAULT_MODEL,
                  temperature=0, workers=1, debug=False, sample_size=None,
-                 pmid_seed=None, seed=None, pmids_filter=None):
-    gs_data = load_gold_standard(gold_standard)
-    if not gs_data:
-        print(f"未找到金标准数据: {gold_standard}")
-        return
+                 pmid_seed=None, seed=None, pmids_filter=None,
+                 production_input=None, checkpoint_interval=50, max_retries=3):
+    """批量分析论文，提取 TF-Target 关系。
 
-    pmids = list(gs_data.keys())
-    if pmids_filter is not None:
-        pmids = [p for p in pmids_filter if p in gs_data]
-        print(f"指定 PMID 过滤: {len(pmids)}/{len(pmids_filter)} 篇在金标准中")
-    elif pmid_seed is not None:
-        rng = random.Random(pmid_seed)
-        rng.shuffle(pmids)
-    if sample_size and sample_size < len(pmids) and pmids_filter is None:
-        pmids = pmids[:sample_size]
+    两种模式：
+      - 金标准模式：gold_standard 指定 TSV，从 papers_txt/ 加载预解析文本
+      - 生产模式：production_input 指定 PDF/TXT 目录，直接解析
 
-    fulltexts = load_local_fulltexts(pmids, source=text_source)
-    if not fulltexts:
-        print(f"未找到任何本地全文 (source={text_source})")
-        return
+    鲁棒性：
+      - 断点续传：自动跳过已成功的条目，重跑错误条目
+      - 定期存盘：每 checkpoint_interval 篇保存一次
+      - 失败重试：单篇失败自动重试 max_retries 次
+    """
+    # ── 加载论文 ──
+    is_production = production_input is not None
 
-    tasks = [
-        {"pmid": pmid, "abstract": fulltexts[pmid]["full_text"]}
-        for pmid in pmids if pmid in fulltexts
-    ]
-    skipped = [p for p in pmids if p not in fulltexts]
-    if skipped:
-        print(f"跳过 {len(skipped)} 篇无全文的 PMID: {', '.join(skipped[:5])}...")
+    if is_production:
+        # 生产模式
+        input_dir = os.path.join(PROJECT_ROOT, production_input) if not os.path.isabs(production_input) else production_input
+        txt_output_dir = input_dir + "_txt"
+        print(f"生产模式: 加载论文 ({input_dir})")
+        print(f"  TXT 缓存: {txt_output_dir}")
+        papers = load_production_papers(input_dir, txt_output_dir=txt_output_dir, limit=sample_size or 0)
+        if not papers:
+            print("未找到任何论文，退出。")
+            return
+        print(f"  共 {len(papers)} 篇")
+    else:
+        # 金标准模式
+        gs_data = load_gold_standard(gold_standard)
+        if not gs_data:
+            print(f"未找到金标准数据: {gold_standard}")
+            return
 
-    if not tasks:
+        pmids = list(gs_data.keys())
+        if pmids_filter is not None:
+            pmids = [p for p in pmids_filter if p in gs_data]
+            print(f"指定 PMID 过滤: {len(pmids)}/{len(pmids_filter)} 篇在金标准中")
+        elif pmid_seed is not None:
+            rng = random.Random(pmid_seed)
+            rng.shuffle(pmids)
+        if sample_size and sample_size < len(pmids) and pmids_filter is None:
+            pmids = pmids[:sample_size]
+
+        fulltexts = load_local_fulltexts(pmids, source=text_source)
+        if not fulltexts:
+            print(f"未找到任何本地全文 (source={text_source})")
+            return
+
+        papers = {pmid: fulltexts[pmid]["full_text"] for pmid in pmids if pmid in fulltexts}
+        skipped = [p for p in pmids if p not in fulltexts]
+        if skipped:
+            print(f"跳过 {len(skipped)} 篇无全文的 PMID: {', '.join(skipped[:5])}...")
+
+    # 限制数量
+    if sample_size and sample_size < len(papers):
+        paper_ids = sorted(papers.keys())[:sample_size]
+        papers = {k: papers[k] for k in paper_ids}
+        print(f"  限制为前 {sample_size} 篇")
+
+    if not papers:
         print("未发现待处理任务。")
         return
 
-    results = {}
+    # ── 断点续传：加载已有结果 ──
+    existing = {}
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+        print(f"  已有 {len(existing)} 篇结果")
+
+    # 构建待处理列表：跳过成功 + 重跑错误
+    todo = {}
+    for file_id, text in papers.items():
+        if file_id in existing:
+            prev = existing[file_id]
+            if isinstance(prev, dict) and "error" in prev:
+                todo[file_id] = text  # 错误条目重跑
+            # 成功条目跳过
+        else:
+            todo[file_id] = text
+
+    if not todo:
+        print("所有论文已处理，退出。")
+        return
+
+    skipped_count = len(papers) - len(todo)
+    if skipped_count:
+        print(f"  跳过已完成: {skipped_count} 篇, 待处理: {len(todo)} 篇")
+
+    # ── 加载已有 debug ──
+    debug_path = output_path.replace(".json", "_debug.json")
     debug_info = {}
-    worker_count = max(1, min(workers, len(tasks)))
-    print(f"开始分析 {len(tasks)} 篇论文 (source={text_source}, workers={worker_count}, pmid_seed={pmid_seed}, seed={seed}, temp={temperature})...")
+    if debug and os.path.exists(debug_path):
+        with open(debug_path, "r", encoding="utf-8") as f:
+            debug_info = json.load(f)
+
+    # ── LLM 分析 ──
+    results = dict(existing)  # 保留已有结果
+    worker_count = max(1, min(workers, len(todo)))
+    print(f"\n开始分析 {len(todo)} 篇论文 (workers={worker_count}, seed={seed}, temp={temperature})...")
+
+    def _staggered_analyze(file_id, text):
+        """错开多线程的 API 调用时间，减少同时限流。"""
+        time.sleep(random.uniform(0, worker_count * 0.5))
+        return _analyze_with_retry(text, max_retries=max_retries,
+                                    model_name=model_name, temperature=temperature,
+                                    debug=debug, seed=seed)
 
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
         future_map = {
-            executor.submit(analyze_tf_interaction, task["abstract"],
-                            model_name=model_name, temperature=temperature,
-                            debug=debug, seed=seed): task["pmid"]
-            for task in tasks
+            executor.submit(_staggered_analyze, file_id, text): file_id
+            for file_id, text in todo.items()
         }
-        pbar = _tqdm(total=len(tasks), desc="LLM 分析", unit="PMID",
-                      disable=_tqdm is None) if True else None
+
+        done_count = 0
+        success_count = sum(1 for v in existing.values() if isinstance(v, list))
+        fail_count = sum(1 for v in existing.values() if isinstance(v, dict) and "error" in v)
+
+        pbar = _tqdm(total=len(todo), desc="LLM 分析", unit="篇",
+                     disable=_tqdm is None) if True else None
+
         for future in as_completed(future_map):
-            pmid = future_map[future]
+            file_id = future_map[future]
+            done_count += 1
+
             try:
                 raw = future.result()
-                if isinstance(raw, dict) and "result" in raw:
-                    if "round1_analysis" in raw:
-                        debug_info[pmid] = raw
-                    elif "normalization_log" in raw:
-                        debug_info.setdefault(pmid, {}).update(raw)
-                    results[pmid] = raw["result"]
-                elif debug and isinstance(raw, dict) and "round1_analysis" in raw:
-                    debug_info[pmid] = raw
-                    results[pmid] = raw.get("result", raw)
+                if isinstance(raw, dict):
+                    if "result" in raw:
+                        results[file_id] = raw["result"]
+                        if debug and "round1_analysis" in raw:
+                            debug_info[file_id] = raw
+                        success_count += 1
+                    elif "error" in raw:
+                        results[file_id] = raw
+                        fail_count += 1
+                    else:
+                        results[file_id] = raw
+                        success_count += 1
                 else:
-                    results[pmid] = raw
-                count = len(results[pmid]) if isinstance(results[pmid], list) else 0
-                if pbar:
-                    pbar.set_postfix_str(f"PMID {pmid} → {count}条", refresh=True)
-                else:
-                    print(f"PMID {pmid}: {count} relationships")
+                    results[file_id] = raw
+                    success_count += 1
             except Exception as exc:
-                if pbar:
-                    pbar.set_postfix_str(f"PMID {pmid} ✗ {exc}", refresh=True)
-                else:
-                    print(f"PMID {pmid}: ERROR - {exc}")
-                results[pmid] = {"error": str(exc)}
+                results[file_id] = {"error": str(exc)}
+                fail_count += 1
+
+            # tqdm 进度条
+            count = len(results[file_id]) if isinstance(results[file_id], list) else 0
             if pbar:
+                pbar.set_postfix_str(f"{file_id}: {count}条 | 成功:{success_count} 失败:{fail_count}", refresh=True)
                 pbar.update(1)
-        if pbar:
-            pbar.close()
 
-    with open(output_path, "w", encoding="utf-8") as handle:
-        json.dump(results, handle, ensure_ascii=False, indent=4)
+            # 定期存盘（每 checkpoint_interval 篇 或 最后一篇）
+            if done_count % checkpoint_interval == 0 or done_count == len(todo):
+                _save_checkpoint(output_path, results, debug_info if debug else None)
 
+    if pbar:
+        pbar.close()
+
+    # ── 最终保存 ──
+    _save_checkpoint(output_path, results, debug_info if debug else None)
+    print(f"  JSON: {output_path}")
     if debug and debug_info:
-        debug_path = output_path.replace(".json", "_debug.json")
-        with open(debug_path, "w", encoding="utf-8") as handle:
-            json.dump(debug_info, handle, ensure_ascii=False, indent=4)
-        print(f"Debug info saved to: {debug_path}")
+        print(f"  Debug: {debug_path}")
 
-    print(f"分析完成！结果已存至: {output_path}")
+    # 生产模式额外输出 TSV
+    if is_production:
+        tsv_path = output_path.replace(".json", ".tsv")
+        n_rows = results_to_tsv(results, tsv_path)
+        print(f"  TSV: {tsv_path} ({n_rows} 条)")
+
+    # 汇总
+    total = len(results)
+    success = sum(1 for v in results.values() if isinstance(v, list))
+    errors = total - success
+    total_relations = sum(len(v) for v in results.values() if isinstance(v, list))
+    print(f"\n完成: {success}/{total} 篇成功, {errors} 篇失败, 共 {total_relations} 条关系")
 
 
 # ───────────────────────────────────────────────────────────
@@ -537,7 +844,8 @@ def run_analysis(gold_standard, text_source, output_path, model_name,
 
 def build_parser():
     parser = argparse.ArgumentParser(description="从论文全文提取 TF-Target 关系并保存 JSON 结果。")
-    parser.add_argument("--gold-standard", default=DEFAULT_GOLD_STANDARD, help="金标准 TSV 文件路径")
+    parser.add_argument("--gold-standard", default=None, help="金标准 TSV 文件路径 (金标准模式)")
+    parser.add_argument("--production-input", default=None, help="生产输入目录 (PDF/TXT)")
     parser.add_argument("--text-source", default=DEFAULT_TEXT_SOURCE,
                         choices=["fitz", "hybrid", "nougat"], help="论文全文来源目录")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="输出 JSON 文件路径")
@@ -545,13 +853,17 @@ def build_parser():
     parser.add_argument("--api-key", default=None, help="阿里云百炼 API Key")
     parser.add_argument("--temperature", type=float, default=0, help="LLM temperature")
     parser.add_argument("--workers", type=int, default=1, help="并行 worker 数量")
-    parser.add_argument("--sample-size", type=int, default=None, help="限制 PMID 数量 (快速测试)")
+    parser.add_argument("--sample-size", type=int, default=None, help="限制 PMID/论文 数量 (快速测试)")
     parser.add_argument("--pmid-seed", type=int, default=None, help="PMID 随机抽取种子 (控制抽取顺序)")
     parser.add_argument("--seed", type=int, default=None, help="LLM 输出确定性种子 (控制模型输出)")
     parser.add_argument("--pmids", default=None,
-                        help="指定 PMID 列表 (逗号分隔，如 18776923,22479354)，跳过 pmid_seed/sample_size")
+                        help="指定 PMID 列表 (逗号分隔，如 18776923,22479354)")
     parser.add_argument("--debug", action="store_true", default=False,
                         help="保存中间 LLM 输出到 *_debug.json")
+    parser.add_argument("--checkpoint-interval", type=int, default=50,
+                        help="每 N 篇存盘一次 (默认 50)")
+    parser.add_argument("--max-retries", type=int, default=3,
+                        help="单篇失败最大重试次数 (默认 3)")
     return parser
 
 
@@ -564,7 +876,7 @@ def main():
         sys.exit(1)
 
     run_analysis(
-        gold_standard=args.gold_standard,
+        gold_standard=args.gold_standard or DEFAULT_GOLD_STANDARD,
         text_source=args.text_source,
         output_path=args.output,
         model_name=args.model,
@@ -575,6 +887,9 @@ def main():
         pmid_seed=args.pmid_seed,
         seed=args.seed,
         pmids_filter=[p.strip() for p in args.pmids.split(",")] if args.pmids else None,
+        production_input=args.production_input,
+        checkpoint_interval=args.checkpoint_interval,
+        max_retries=args.max_retries,
     )
 
 

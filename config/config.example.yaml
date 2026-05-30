@@ -12,12 +12,17 @@ sample_size: 48
 email: "your_email@example.com"
 
 # 阿里云百炼 Qwen 模型名称
-model: "qwen3.7-max-2026-05-20"
+# qwen3.7-max: 滚动版本，高 RPM (30000)，适合大批量
+# qwen3.7-max-2026-05-20: 日期版本，低 RPM (600)，固定模型版本
+model: "qwen3.7-max"
 
 # LLM 温度 (0 = 确定性输出)
 temperature: 0
 
-# 并行 worker 数量 (推理模型建议 2-4，避免 429 限流)
+# LLM 输出确定性种子 (可选，设置后模型输出可复现)
+seed: 42
+
+# 并行 worker 数量
 workers: 4
 
 # NCBI 代理旁路 (true 时绕过 http_proxy 直连 PubMed)

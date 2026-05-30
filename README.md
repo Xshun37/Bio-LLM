@@ -1,6 +1,10 @@
 # Bio-LLM
 
-面向小规模实验的生物文本抽取流水线。从人工金标准数据集获取 PMID，拉取 PubMed 摘要，用 LLM (qwen3.7-max-2026-05-20) 提取 TF-target 调控关系（含 Assay 和 CellLine），生成 HTML 对比报告。
+TF-Target 调控关系提取流水线。支持两种模式：
+- **金标准模式**：48 篇人工标注数据，评估 LLM 提取准确率（Precision/Recall/F1）
+- **生产模式**：批量处理 PDF 论文（支持 7000+ 篇），提取 TF-target 调控关系
+
+使用 LLM (`qwen3.7-max`) 进行两轮 CoT 提取，输出结构化 JSON + HTML 报告。
 
 ## 项目结构
 
@@ -12,34 +16,33 @@ Bio-LLM/
 ├── data/
 │   ├── raw/
 │   │   ├── finalresult.tsv     # 人工金标准 (48 PMID, 8 列)
+│   │   ├── paper_for_produce/  # 生产模式 PDF 论文
+│   │   ├── paper_for_produce_txt/  # PDF→文本缓存 (自动生成)
 │   │   ├── hgnc_complete_set.txt  # HGNC 完整基因集 (gitignore)
-│   │   ├── papers/             # 下载的 PDF 论文 (gitignore, 48 篇)
-│   │   └── papers_txt/         # PDF→文本转换输出
-│   │       ├── Nougat/         # 纯 Nougat OCR 输出
-│   │       ├── fitz/           # 纯 PyMuPDF (fitz) 输出
-│   │       └── hybrid/         # Nougat + fitz 混合输出 (最终使用)
+│   │   └── papers_txt/         # 金标准 PDF→文本
+│   │       ├── fitz/           # PyMuPDF (fitz) 输出
+│   │       ├── Nougat/         # Nougat OCR 输出
+│   │       └── hybrid/         # 混合输出
 │   ├── curated/
-│   │   ├── gene_alias_index.json         # HGNC 别名索引 (自动生成)
-│   │   ├── gene_alias_map.json           # 旧版别名映射 (向后兼容)
-│   │   ├── gene_alias_overrides.json     # 人工标注覆盖规则 (最高优先级)
-│   │   ├── gene_alias_conflicts.json     # 歧义别名列表 (自动生成)
+│   │   ├── gene_alias_index.json         # HGNC 别名索引
+│   │   ├── gene_alias_overrides.json     # 人工标注覆盖规则
 │   │   └── gene_ensg_map.json            # Gene → ENSG 映射表
 ├── outputs/                     # 输出 (gitignore)
+│   ├── YYYYMMDD_HHMMSS/        # 金标准模式输出
+│   └── production_YYYYMMDD_HHMMSS/  # 生产模式输出
 ├── src/bio_llm/
-│   ├── __init__.py              # 包入口
-│   ├── gene_aliases.py          # 基因名标准化 (role-aware + 元数据追踪)
-│   ├── analysis.py              # 两轮 LLM 抽取 + 本地全文加载
+│   ├── __init__.py              # 包入口 + 基因名标准化
+│   ├── gene_aliases.py          # 基因别名解析 (role-aware)
+│   ├── analysis.py              # 核心: 两轮 LLM 抽取 + PDF 解析 + 断点续传
 │   ├── evaluation.py            # 评估: 金标准加载 + 四维匹配
-│   └── reporting.py             # 生成 HTML 报告 + 统计
+│   └── reporting.py             # HTML 报告 (金标准对比 / 生产展示)
 ├── scripts/
 │   ├── build_alias_map.py       # 从 HGNC 构建别名索引
-│   ├── build_ensg_map.py        # 构建 Gene→ENSG 映射表
-│   ├── hybrid_convert_v2.py     # Nougat + fitz 混合转换 (主用)
-│   ├── merge_debug.py           # 合并多次运行的 debug JSON (同 PMID 取最新)
-│   ├── debug_to_excel.py        # debug JSON → Excel 双 sheet
+│   ├── merge_debug.py           # 合并多次运行的 debug JSON
+│   ├── debug_to_excel.py        # debug JSON → Excel
 │   ├── rerun_pmids.sh           # 重跑指定 PMID 子集
 │   └── review_debug.sh          # 一键生成含 debug 面板的报告
-├── run.sh                       # 一键启动入口
+├── run.sh                       # 统一入口 (金标准 + 生产 + 断点续传)
 ├── snakefile                    # Snakemake 工作流
 ├── archive/                     # 旧数据/脚本/文档归档
 ├── docs/
@@ -48,53 +51,48 @@ Bio-LLM/
 └── .gitignore
 ```
 
-## 流程
-
-```text
-data/raw/finalresult.tsv + data/raw/papers_txt/{source}/
-    → outputs/analysis_results.json   (analysis.py, 提示词内嵌在代码中)
-    → outputs/report.html             (reporting.py)
-```
-
-## 环境
-
-- `conda` + 名为 `bio_llm` 的环境
-- 阿里云百炼 API Key (`DASHSCOPE_API_KEY`)
-- [requirements.txt](requirements.txt)
-
-```bash
-conda create -n bio_llm python=3.10 -y
-conda activate bio_llm
-pip install -r requirements.txt
-export DASHSCOPE_API_KEY="your_api_key"
-```
-
 ## 快速开始
 
-```bash
-./run.sh        # 默认全量 48 PMID
-./run.sh 5      # 快速测试 5 条
-```
-
-## PDF 转文本
-
-PMC XML 全文仅覆盖 ~15% 论文，其余使用 Nougat OCR + pymupdf4llm 混合方案：
+### 金标准模式
 
 ```bash
-# 幻觉检测（无 GPU，快速调试）
-python scripts/hybrid_convert_v2.py --detect
-
-# 已有 Nougat 文本的后处理修复
-python scripts/hybrid_convert_v2.py --existing --pmid 10453008
-
-# 新论文完整流程（Nougat 推理 + pymupdf4llm fallback）
-python scripts/hybrid_convert_v2.py --full --pmids 15184388 15195143
+./run.sh                              # 全量 48 篇
+./run.sh --sample-size 5              # 测试 5 篇
+./run.sh --sample-size 5 --pmid-seed 42  # 指定随机种子
 ```
 
-**混合策略**：
-- Nougat 为主（希腊字母正确，自动 Markdown 结构）
-- 5 种幻觉检测器：行级重复、token 重复（backreference 正则）、句子 n-gram、单字符重复、跨段落重复
-- 三级修复：轻度 inline 删除 → 中度段落替换 pymupdf4llm → 重度整页替换
+### 生产模式
+
+```bash
+./run.sh --production                 # 全部论文 (data/raw/paper_for_produce/)
+./run.sh --production --sample-size 100  # 前 100 篇
+./run.sh --production --workers 4     # 4 worker 并行
+./run.sh --production --input path/to/pdfs  # 指定输入目录
+```
+
+### 断点续传
+
+跑到一半 Ctrl+C 后，用 `--resume` 继续：
+
+```bash
+./run.sh --production --resume        # 自动找最新目录续传
+./run.sh --production --resume outputs/production_20260531_xxx  # 指定目录
+```
+
+断点续传会自动：
+- ✅ 跳过已成功的条目
+- 🔄 重跑 `{"error": ...}` 的条目
+- 🔄 失败自动重试 3 次（指数退避）
+- 💾 每 50 篇自动存盘一次
+
+## 模型选择
+
+| 模型 | RPM | TPM | 适用场景 |
+|------|-----|-----|---------|
+| `qwen3.7-max` | 30,000 | 5,000,000 | **生产模式**（大批量，高并发）|
+| `qwen3.7-max-2026-05-20` | 600 | 1,000,000 | 需要固定模型版本的场景 |
+
+默认使用 `qwen3.7-max`（滚动版本），在 `config/config.yaml` 中修改 `model` 字段切换。
 
 ## 金标准数据集
 
@@ -207,11 +205,11 @@ cp config/config.example.yaml config/config.yaml
 
 | 参数 | 默认值 | 说明 |
 |------|--------|------|
-| sample_size | 48 | 选取 PMID 数 (全量金标准) |
-| seed | (无) | 随机种子 |
+| sample_size | 48 | 选取 PMID 数 (金标准) / 论文数 (生产) |
+| seed | 42 | LLM 输出确定性种子 |
 | email | (必填) | NCBI Entrez 邮箱 |
-| model | qwen3.7-max-2026-05-20 | 阿里云百炼 Qwen 模型 |
+| model | qwen3.7-max | 阿里云百炼 Qwen 模型 (滚动版本，高 RPM) |
 | temperature | 0 | LLM 温度 (0 = 确定性) |
 | workers | 4 | API 并发数 |
 | ncbi_bypass_proxy | false | 绕过代理直连 PubMed |
-| text_source | fitz | 论文文本来源 (fitz/hybrid/nougat) |
+| text_source | fitz | 金标准文本来源 (fitz/hybrid/nougat) |

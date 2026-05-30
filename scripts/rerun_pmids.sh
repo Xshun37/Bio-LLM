@@ -21,7 +21,7 @@ echo "输出目录: $OUTDIR"
 
 # 读取 config.yaml 中的 model/temperature/workers（可选）
 CONFIG="$ROOT/config/config.yaml"
-MODEL=$(grep -E '^model:' "$CONFIG" 2>/dev/null | awk '{print $2}' | tr -d '"' || echo "qwen3.7-max-2026-05-20")
+MODEL=$(grep -E '^model:' "$CONFIG" 2>/dev/null | awk '{print $2}' | tr -d '"' || echo "qwen3.7-max")
 TEMP=$(grep -E '^temperature:' "$CONFIG" 2>/dev/null | awk '{print $2}' || echo "0")
 WORKERS=$(grep -E '^workers:' "$CONFIG" 2>/dev/null | awk '{print $2}' || echo "4")
 SEED=$(grep -E '^seed:' "$CONFIG" 2>/dev/null | awk '{print $2}' || echo "")
