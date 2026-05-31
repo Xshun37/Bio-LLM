@@ -381,14 +381,40 @@ def pdf_to_text(pdf_path):
 
 
 def load_production_papers(input_dir, txt_output_dir=None, limit=0):
-    """加载 input_dir 下 PDF/TXT 文件，返回 {file_id: text}。
+    """加载论文，返回 {file_id: text}。
 
-    txt_output_dir: 如果指定，将 PDF 转换的文本缓存为 .txt 文件。
+    优先从 txt_output_dir 读取已缓存的 TXT（快）。
+    对于没有 TXT 缓存的 PDF，才实时解析（慢）。
+    如果 txt_output_dir 存在且非空，只读取已缓存的文件，跳过未缓存的 PDF。
     limit: 只加载前 N 篇（0=全部）。
     """
     if txt_output_dir:
         os.makedirs(txt_output_dir, exist_ok=True)
 
+    # 检查是否有 TXT 缓存
+    cached_txts = {}
+    if txt_output_dir and os.path.isdir(txt_output_dir):
+        for f in os.listdir(txt_output_dir):
+            if f.endswith('.txt'):
+                cached_txts[f.replace('.txt', '')] = os.path.join(txt_output_dir, f)
+
+    # 如果缓存非空，只从缓存读取
+    if cached_txts:
+        papers = {}
+        file_ids = sorted(cached_txts.keys())
+        if limit > 0:
+            file_ids = file_ids[:limit]
+
+        for file_id in file_ids:
+            with open(cached_txts[file_id], "r", encoding="utf-8") as f:
+                text = f.read().strip()
+            if text:
+                papers[file_id] = text
+
+        print(f"从 TXT 缓存加载: {len(papers)} 篇 (跳过 {len(cached_txts) - len(file_ids)} 篇未请求)")
+        return papers
+
+    # 缓存为空，从 PDF 解析
     papers = {}
     files = sorted(os.listdir(input_dir))
 
@@ -411,9 +437,8 @@ def load_production_papers(input_dir, txt_output_dir=None, limit=0):
                     print(f"  PDF: {fname} → {len(text)} chars")
                     if txt_output_dir:
                         txt_path = os.path.join(txt_output_dir, base + ".txt")
-                        if not os.path.exists(txt_path):
-                            with open(txt_path, "w", encoding="utf-8") as f:
-                                f.write(text)
+                        with open(txt_path, "w", encoding="utf-8") as f:
+                            f.write(text)
                 else:
                     print(f"  PDF: {fname} → 空文本，跳过")
             except Exception as e:
