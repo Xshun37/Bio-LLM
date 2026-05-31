@@ -1,0 +1,37 @@
+# 核心概念模块拆分 #
+模块A (转录因子主体): ("transcription factor"[tiab] OR "transcription factors"[tiab])
+模块B (作用区域与靶标): ("promoter activity"[tiab] OR "promoter region"[tiab] OR "binding site"[tiab] OR "response element"[tiab] OR "regulatory element"[tiab] OR "transcriptional target"[tiab] OR "bind to the promoter"[tiab])
+模块C (调控动作与结果): ("transcriptional regulation"[tiab] OR "transactivation"[tiab] OR "negatively regulate"[tiab] OR "positively regulate"[tiab] OR "up-regulated"[tiab] OR "down-regulated"[tiab])
+模块D (核心实验验证): ("chromatin immunoprecipitation"[tiab] OR "electrophoretic mobility shift"[tiab] OR "luciferase reporter"[tiab] OR "knockdown"[tiab] OR "overexpression"[tiab] OR "small interfering RNA"[tiab])
+模块E (排除无关干扰): ("review"[pt] OR "microRNA"[tiab] OR "miRNA"[tiab] OR "lncRNA"[tiab] OR "DNA methylation"[tiab] OR "histone modification"[tiab] OR "in silico"[tiab])
+
+# 推荐组合策略 #
+高查准率组合 (High Precision，适合精准筛选有扎实机制与实验验证的文献): 模块A AND 模块B AND 模块C AND 模块D NOT 模块E
+高查全率组合 (High Recall，适合初步广泛搜索，避免漏掉非典型描述的文献): 模块A AND (模块B OR 模块C) NOT 模块E
+
+# 最终可直接复制的PubMed检索式 #
+高查准率检索式:
+("transcription factor"[tiab] OR "transcription factors"[tiab]) AND ("promoter activity"[tiab] OR "promoter region"[tiab] OR "binding site"[tiab] OR "response element"[tiab] OR "regulatory element"[tiab] OR "transcriptional target"[tiab] OR "bind to the promoter"[tiab]) AND ("transcriptional regulation"[tiab] OR "transactivation"[tiab] OR "negatively regulate"[tiab] OR "positively regulate"[tiab] OR "up-regulated"[tiab] OR "down-regulated"[tiab]) AND ("chromatin immunoprecipitation"[tiab] OR "electrophoretic mobility shift"[tiab] OR "luciferase reporter"[tiab] OR "knockdown"[tiab] OR "overexpression"[tiab] OR "small interfering RNA"[tiab]) NOT ("review"[pt] OR "microRNA"[tiab] OR "miRNA"[tiab] OR "lncRNA"[tiab] OR "DNA methylation"[tiab] OR "histone modification"[tiab] OR "in silico"[tiab])
+
+高查全率检索式:
+("transcription factor"[tiab] OR "transcription factors"[tiab]) AND ("promoter activity"[tiab] OR "promoter region"[tiab] OR "binding site"[tiab] OR "response element"[tiab] OR "regulatory element"[tiab] OR "transcriptional target"[tiab] OR "bind to the promoter"[tiab] OR "transcriptional regulation"[tiab] OR "transactivation"[tiab] OR "negatively regulate"[tiab] OR "positively regulate"[tiab] OR "up-regulated"[tiab] OR "down-regulated"[tiab]) NOT ("review"[pt] OR "microRNA"[tiab] OR "miRNA"[tiab] OR "lncRNA"[tiab] OR "DNA methylation"[tiab] OR "histone modification"[tiab] OR "in silico"[tiab])
+
+ 简化完成：
+
+  之前：14 个中间条件 + 7 个 NOT 条件
+  现在：4 个核心条件 + 4 个 NOT 条件
+
+  保留的核心概念：
+  - "promoter" - 启动子（包含结合上下文）
+  - "binding site" - 结合位点
+  - "transcriptional regulation" - 转录调控
+  - "transactivation" - 转录激活
+
+  移除的冗余/过于宽泛的条件：
+  - promoter activity/region → 被 "promoter" 覆盖
+  - response/regulatory element → 属于 binding site
+  - transcriptional target → 太具体
+  - up/down-regulated, negatively/positively regulate → 太宽泛，会引入大量非 TF-Target 论文
+
+  移除的 NOT 条件：
+  - DNA methylation, histone modification, in silico → 本身就不会被简化后的关键词命中

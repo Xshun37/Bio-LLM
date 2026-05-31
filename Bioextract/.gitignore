@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.snakemake
+.claude
+src/**/*.pyc
+
+outputs/
+config/config.yaml
+data/raw/hgnc_complete_set.txt
+data/raw/papers/
+data/raw/papers_txt/
+data/raw/paper_for_produce
+data/raw/paper_for_produce_txt

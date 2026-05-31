@@ -1,13 +1,14 @@
 __pycache__/
 *.py[cod]
-.snakemake
-.claude
-src/**/*.pyc
+.DS_Store
+.vscode/
+.idea/
+.claude/
+.snakemake/
 
-outputs/
-config/config.yaml
-data/raw/hgnc_complete_set.txt
-data/raw/papers/
-data/raw/papers_txt/
-data/raw/paper_for_produce
-data/raw/paper_for_produce_txt
+.env
+*.log
+
+Bioextract/config/config.yaml
+batch-screen/config.yaml
+review-server/.env

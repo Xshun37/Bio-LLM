@@ -1,0 +1,228 @@
+PMID	TF	Target	Direction	CellLine	Assay	Complex	Notes	Cofactor
+22479354	 STAT1	GLS	Activation	HEK 293T	Luciferase;RT-PCR;ChIP;WB			0
+22479354	STAT1	CASR			Literature			0
+22479354	STAT1	MUC4			Literature			0
+23598529	REST	STAT1	Repression	SK-MEL-28, MM96	Luciferase;RT-PCR;ChIP;WB		并非citation，做了复合体的实验验证	0
+23598529	STAT1	STAT1		SK-Mel-28	Luciferase;EMSA	ISGF3	并非citation，做了复合体的实验验证	0
+23598529	STAT2	STAT1		SK-Mel-28	Luciferase;EMSA	ISGF3	并非citation，做了复合体的实验验证	0
+23598529	IRF-9	STAT1		SK-Mel-28	Luciferase;EMSA;Literature	ISGF3	并非citation，做了复合体的实验验证	0
+23598529	IRF-1	STAT1	Activation		Literature	IRF1-CBP	并非citation，做了复合体的实验验证	0
+23598529	CBP	STAT1	Activation		Literature	IRF1-CBP	并非citation，做了复合体的实验验证	1
+23598529	STAT1	IRF-1			Literature		并非citation，做了复合体的实验验证	0
+18776923	BRCA1	HSPA5		CaOV-3, SKOV-3, MDA-MB-231, MCF-7, T47D	Luciferase;OE;RT-PCR;WB;siRNA			0
+18776923	BRCA1	HSP90B1		CaOV-3, SKOV-3, MDA-MB-231	WB;siRNA			0
+18776923	BRCA1	DDIT3		CaOV-3, SKOV-3, MDA-MB-231	WB;siRNA			0
+15195143	E2F4	MCM10		HCT116	ChIP;Luciferase;RT-PCR			0
+15195143	E2F4	TOPBP1		HCT116	ChIP;Luciferase;RT-PCR			0
+15195143	E2F1	MCM10		HCT116	ChIP;Luciferase;Mutation;RT-PCR;WB			0
+15195143	E2F2	MCM10		HCT116	Luciferase;Mutation			0
+15195143	E2F3	MCM10		HCT116	Luciferase;Mutation			0
+15195143	E2F1	TOPBP1		HCT116	ChIP;Luciferase;Mutation;RT-PCR;WB			0
+15195143	E2F2	TOPBP1		HCT116	Luciferase;Mutation			0
+15195143	E2F3	TOPBP1		HCT116	Luciferase;Mutation			0
+11706010	CTCF	APP		HeLa, COS-1	EMSA;In_vitro_transcription;In_vivo_competition;Pull-down			0
+17204573	STAT3	FOS		primary cells from vastus lateralis	Literature;RT-PCR			0
+17204573	STAT3	JUNB		primary cells from vastus lateralis	Literature;RT-PCR			0
+17204573	STAT3	MYC		primary cells from vastus lateralis	Literature;RT-PCR			0
+17204573	STAT3	CCND1		-	Literature			0
+17204573	STAT3	BCL2		-	Literature			0
+17204573	STAT3	BCL2L1		-	Literature			0
+17204573	STAT3	VEGFA		-primary cells from vastus lateralis	Literature;RT-PCR			0
+19043455	CEBPB	BCL2L1		MCF10A	ChIP;EMSA;Luciferase;Mutation;OE;RT-PCR;WB			0
+17932312	EGR1	TNFSF10		HUVEC	Literature			0
+14642566	NFIC	SMUG1		Hela, 18Co	EMSA;Footprinting;Luciferase;Mutation;NB			0
+19303924	E2F-1	FGFR1	Activation	HEK293T，Lovo	Luciferase;RT-PCR;ChIP;EMSA;WB;OE;Mutation		观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	E2F-2	FGFR 1	Activation	HEK293T	Luciferase		观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	E2F-3a	FGFR 1		HEK293T	Luciferase		观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	RB1	FGFR 1	Repression	HT1080	WB;OE		观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	1
+19303924	E2F-2	CDC6	Unknown		Literature	E2F-2-YY1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	YY1	cdc6	Unknown		Literature	E2F-2-YY1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	1
+19303924	E2F-1	POLA1	Activation		Literature	E2F1-CUX1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	CUX1	POLA1	Activation		Literature	E2F1-CUX1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	1
+19303924	E2F-1	DHFR	Activation			E2F1-Sp1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+19303924	Sp1	DHFR	Activation		Literature	E2F1-Sp1	观察表明，人类FGFR1基因的转录由E2F-1和Sp1协同激活。还需进一步研究以阐明Sp1在E2F-1诱导FGFR1启动子转活化中的参与。当时有一些间接证据，未做记录	0
+23000143	YY1	HCFC1	Repression	HEK293T, NSC	Luciferase;RT-PCR;Microarray;ChIP;EMSA		S phase genes有点太宽泛了	0
+23000143	PHF8	HCFC1			Literature	PHF8-ZNF711	S phase genes有点太宽泛了	0
+23000143	ZNF711	HCFC1			Literature	PHF8-ZNF711	S phase genes有点太宽泛了	0
+23000143	YY1	ANT1			Literature		S phase genes有点太宽泛了	0
+23000143	HCFC1	ANT1			Literature		S phase genes有点太宽泛了	0
+16488890	USF1	P4HA1		HeLa, VSMC	ChIP;Luciferase;RT-PCR			0
+16488890	USF2	P4HA1		HeLa, VSMC	ChIP;Luciferase;RT-PCR;siRNA			0
+21700680	BRCA1	FEN1	Unknown		Literature;Microarray			0
+21700680	BRCA1	DDIT3	Unknown		Literature;Microarray			0
+21700680	BRCA1	BLM	Unknown		Literature;Microarray			0
+21700680	BRCA1	H3F3B	Unknown		Literature;Microarray			0
+21700680	BRCA1	BRCA2	Unknown		Literature;Microarray			0
+21700680	BRCA1	CCNB2	Unknown		Literature;Microarray			0
+21700680	BRCA1	DDB2	Unknown		Literature;Microarray			0
+21700680	BRCA1	MAD2L1	Unknown		Literature;Microarray			0
+22258560	USF-1	TBX21	Repression	Jurkat, THP-1	Luciferase;ChIP;EMSA;OE			0
+22258560	USF-1	TGFB1			Literature			0
+22419072	HDAC1	CD1D	Repression	A549	RT-PCR;WB;siRNA		所有的HDAC抑制剂服务于Sp1的测定，从这个视角或许可以认为Assay有通用性	0
+22419072	HDAC2	CD1D	Repression	A549	RT-PCR;WB;siRNA		所有的HDAC抑制剂服务于Sp1的测定，从这个视角或许可以认为Assay有通用性	0
+22419072	Sp1	CD1D	Activation	A549	Luciferase;RT-PCR;ChIP;DAPA;WB		所有的HDAC抑制剂服务于Sp1的测定，从这个视角或许可以认为Assay有通用性	0
+22419072	LEF-1	CD1D	Unknown		Literature		所有的HDAC抑制剂服务于Sp1的测定，从这个视角或许可以认为Assay有通用性	0
+16595680	KLF5	BIRC5		EU cellline from BCP-ALL patients; Reh	ChIP;Co-IP;EMSA;NB;WB;siRNA			0
+16595680	SP1	BIRC5		Hela	Literature			0
+16595680	TP53	BIRC5		-	Literature			0
+16595680	TCF7L2	BIRC5		-	Literature			0
+16595680	KLF4	CDKN1A		-	Literature	KLF4-p53		0
+16595680	KLF6	IGF1R		-	Literature	KLF6-p53		0
+16595680	TP53	CDKN1A		-	Literature	KLF4-p53		0
+16595680	TP53	IGF1R		-	Literature	KLF6-p53		0
+15688019	RUNX3	RUNX1		DG75, Akata31, IB4, LCL-C	EMSA;Luciferase;RPA;WB			0
+15688019	RUNX2	RUNX2			Literature			0
+19290488	RUNX3	CASP3		AGS, SNU1, primary cells from the representative cancerous lesions and from adjacent noncancerous tissues	WB;IHC;OE			0
+19290488	RUNX3	CDKN1A		-	Literature			0
+19290488	RUNX3	CCND1		-	Literature			0
+15178343	ARNT	EGLN2		primary human smooth muscle cells, HCT116	RT-PCR;ChIP		感觉没有MCF-7，至少这个的细胞系没用	0
+15908194	CBF	SOX9		C3H10T1/2, NIH3T3, HTB94	ChIP;EMSA;Luciferase			0
+15908194	SOX9	COL2A1			Literature			0
+15908194	SOX5	COL2A1			Literature			0
+15908194	SOX6	COL2A1		-	Literature			0
+15908194	SOX9	COL11A2		-	Literature			0
+15908194	SOX9	ACAN		-	Literature			0
+15908194	SOX9	COL9A1		-	Literature			0
+15908194	NFKB1	SOX9		-	Literature			0
+15908194	CBF	TOP2A		-	Literature			0
+15908194	CBF	TK1		-	Literature			0
+15908194	CBF	E2F1		-	Literature			0
+15908194	CBF	CDC25C			Literature			0
+22227292	SP1	POLK			Literature			0
+22227292	CREB	POLK			Literature			0
+18625744	CTCF	CCND1		Granta, NCEB, MCF-7, HBL-2	ChIP;IF;RT-PCR;WB			0
+18625744	POU2F2	CCND1		Granta, NCEB, MCF-7	ChIP;WB			0
+18625744	SP1	CCND1		Granta, NCEB, MCF-7	ChIP;WB			0
+20160719	BRCA1	SIRT1	Activation	HeLa	Luciferase;ChIP;Literature		BRCA1和DBC1貌似都更像是cofactor，这篇主要是说DBC1对BRCA1的pr-pr结合	1
+20160719	BRCA1	CDKN1A	Activation		Literature		BRCA1和DBC1貌似都更像是cofactor，这篇主要是说DBC1对BRCA1的pr-pr结合	1
+20160719	BRCA1	GADD45			Literature		BRCA1和DBC1貌似都更像是cofactor，这篇主要是说DBC1对BRCA1的pr-pr结合	1
+20160719	BRCA1	TP53			Literature		BRCA1和DBC1貌似都更像是cofactor，这篇主要是说DBC1对BRCA1的pr-pr结合	1
+11854297	SMAD	JUNB			Literature		我甚至完全没找到JUNB作用于SMAD4在哪里..同时这个是根据For example, the synthesis of JunB is stimulated by TGF-β and BMP-2 via Smad binding element (CAGACA) in the JunB promoter (65)得到的	0
+11854297	RUNX2	BGLAP			Literature		我甚至完全没找到JUNB作用于SMAD4在哪里..同时这个是根据For example, the synthesis of JunB is stimulated by TGF-β and BMP-2 via Smad binding element (CAGACA) in the JunB promoter (65)得到的	0
+22010578	ARID3A	PML		293FT			ARID3A 不直接结合 p16 或 p53 的启动子，p16/p53 的表达变化是 PML-NBs介导衰老后的间接后果。这篇确实与启动子无关，转录后水平调控，降解PML蛋白	0
+22010578	Ets1	CDKN2A	Activation		Literature		ARID3A 不直接结合 p16 或 p53 的启动子，p16/p53 的表达变化是 PML-NBs介导衰老后的间接后果。这篇确实与启动子无关，转录后水平调控，降解PML蛋白	0
+15184388	USF2	THBS1		RMCs（tr/cd），MLECs-clone 32	ChIP;EMSA;Luciferase;Mutation;WB			0
+15184388	USF1	THBS1		RMCs（tr/cd），MLECs-clone 32	ChIP;EMSA;Luciferase;Mutation;WB			0
+11013233	MAFK	NQO1		Hep-G2	EMSA;Luciferase	MAFK-MAFK, Nrf2-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFG	NQO1		Hep-G2	EMSA;Luciferase	MAFG-MAFG, Nrf2-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFK	GSTA1		Hep-G2	EMSA;Luciferase	MAFK-MAFK, Nrf2-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFG	GSTA1		Hep-G2	EMSA;Luciferase	MAFG-MAFG, Nrf2-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L2	NQO1		-	Luciferase;EMSA		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L2	GSTA1		-	Luciferase		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L1	HMOX1		-	Literature		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L2	HMOX1		-	Literature		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L1	GCLC		-	Literature		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	NFE2L2	GCLC		-	Literature		讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFK	GCLC		-	Literature	MAFK-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFG	GCLC		-	Literature	MAFG-MAFG	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFK	HBB		-	Literature	MAFK-p45	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFG	HBB		-	Literature	MAFG-p45	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFK	HBB		-	Literature	MAFK-MAFK	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+11013233	MAFG	HBB		-	Literature	MAFG-MAFG	讨论中说NRF1几乎没有结合，对基因表达无影响，我认为这篇文章有再被分析的必要。。	0
+9611253	ARNT	CTSD		MCF7	EMSA;Co-IP	AhR-ARNT	这里的ER是指ESR1还是ESR2？不太清楚。文献用的是CAT，没有这个Assay。比较迷惑的一篇我说实话，并且我不太确定细胞系MDA-MB-231的作用，貌似主要是对照ER的存在	0
+9611253	SP1	CTSD		MCF-7	EMSA;Literature	ESR/SP1	这里的ER是指ESR1还是ESR2？不太清楚。文献用的是CAT，没有这个Assay。比较迷惑的一篇我说实话，并且我不太确定细胞系MDA-MB-231的作用，貌似主要是对照ER的存在	0
+9611253	ESR1	CTSD		MCF-7	EMSA;Literature	ESR/SP1	这里的ER是指ESR1还是ESR2？不太清楚。文献用的是CAT，没有这个Assay。比较迷惑的一篇我说实话，并且我不太确定细胞系MDA-MB-231的作用，貌似主要是对照ER的存在	0
+9611253	ESR2	CTSD		MCF-7	EMSA;RNAi_KD;Literature	ESR/SP1	这里的ER是指ESR1还是ESR2？不太清楚。文献用的是CAT，没有这个Assay。比较迷惑的一篇我说实话，并且我不太确定细胞系MDA-MB-231的作用，貌似主要是对照ER的存在	0
+9611253	AhR	CTSD		MCF-7	Co-IP;RNAi_KD	AhR-ARNT	这里的ER是指ESR1还是ESR2？不太清楚。文献用的是CAT，没有这个Assay。比较迷惑的一篇我说实话，并且我不太确定细胞系MDA-MB-231的作用，貌似主要是对照ER的存在	0
+20228272	STAT3	Bcl-6	Activation	MM.1S, U266, RPMI8226	RT-PCR;Microarray;WB;IHC;siRNA		这里的细胞系好像……并非细胞系吗。IHC和microarray的结合？我可能不太熟悉这两个方法。。	0
+21983014	EGR1	PTGES	Unknown		EMSA;Literature		HDAC1是共抑制因子	0
+21983014	RELA	EGR1	Unknown	HeLa	Luciferase;ChIP;EMSA;WB;Co-IP;siRNA;Literature	NFκB-HDAC1	HDAC1是共抑制因子	0
+21983014	HDAC1	EGR1	Repression	HeLa	ChIP;EMSA;WB;Co-IP;siRNA;Literature	NFκB-HDAC1	HDAC1是共抑制因子	1
+19786090	EGR1	STMN1	Repression	A549, HEK293	Luciferase;RT-PCR;ChIP;EMSA;WB;siRNA			0
+19786090	TP53	EGR1	Repression	A549	Luciferase;WB			0
+25113559	CTCF	CELSR3		SK-N-SH, HEC-1-B, HepG2	RT-PCR;ChIP;EMSA;WB;siRNA		4c-seq	0
+25113559	REST	CELSR3	Repression	SK-N-SH, HEC-1-B, HepG2	RT-PCR;EMSA;WB;siRNA		4c-seq	0
+19609274	MYB	MYC		HEK293, Colo201	Luciferase;RT-PCR;Microarray;ChIP;WB;siRNA		貌似依旧是CAT？暂时记成luciferase reporter assay。COX2的报告在补充图里，我们将来的分析有多模态吗。没有看到明确的MYB的自调控。	0
+19609274	CTNNB1	MYC	Activation	HEK293, Colo201	Luciferase;ChIP;WB		貌似依旧是CAT？暂时记成luciferase reporter assay。COX2的报告在补充图里，我们将来的分析有多模态吗。没有看到明确的MYB的自调控。	1
+19609274	MYB	COX-2			Literature		貌似依旧是CAT？暂时记成luciferase reporter assay。COX2的报告在补充图里，我们将来的分析有多模态吗。没有看到明确的MYB的自调控。	0
+19609274	CTNNB1	COX-2			Literature		貌似依旧是CAT？暂时记成luciferase reporter assay。COX2的报告在补充图里，我们将来的分析有多模态吗。没有看到明确的MYB的自调控。	1
+19609274	CTNNB1	CCND1			Literature		貌似依旧是CAT？暂时记成luciferase reporter assay。COX2的报告在补充图里，我们将来的分析有多模态吗。没有看到明确的MYB的自调控。	0
+23388456	HSF1	SESN3		HaCaT, HCT116, HF, HT1080	Luciferase;RT-PCR;WB;RNAi_KD		未统计不同细胞系的不同调控方向。暂时记了p53->p21，同时文献应用了p53->SESN1,SESN2，FoxOs->SESN3，不知道为什么没有算入）	0
+23388456	TP53	CDKN1A	Activation		Literature		未统计不同细胞系的不同调控方向。暂时记了p53->p21，同时文献应用了p53->SESN1,SESN2，FoxOs->SESN3，不知道为什么没有算入）	0
+20304822	ATF3	IFNG	Activation	Jurkat, CD4 T	Luciferase;RT-PCR;ChIP;WB;siRNA;Flow_Cytometry	ATF3/JUN		0
+20304822	ATF3	JUN		CD4 T	WB;siRNA;Flow_Cytometry			0
+20304822	ATF3	TBX21		CD4 T	WB;siRNA;Flow_Cytometry			0
+20304822	JUN	ATF3	Activation		Literature			0
+20304822	ATF2	JUN	Activation		Literature			0
+20304822	JUN	IFNG		Jurkat, CD4 T	Luciferase;RT-PCR;ChIP	ATF3/JUN		0
+20304822	ATF2	IFNG			Literature	ATF2-JUN		0
+15735663	ATF7	SELE		Raji	ChIP;WB;siRNA		IP要算进去吗……	0
+15735663	TAF12	SELE		Raji	ChIP;WB;siRNA		IP要算进去吗……	0
+9756895	YY1	CTCF			Literature			0
+9756895	CTCF	MYC			Literature			0
+9756895	CTCF	PLK1			Literature			0
+9756895	CTCF	LYZ			Literature			0
+9756895	CTCF	APP			Literature			0
+9756895	CTCF	CDC25C			Literature			0
+9756895	CTCF	CDK1			Literature			0
+9756895	CTCF	CCNA1			Literature			0
+7655015	MYB	MYC	Activation	Molt-4, Jurkat	Literature		K562结合性能不佳	0
+7655015	MYB	MYB	Activation		Luciferase;EMSA;Mutation;Literature		K562结合性能不佳	0
+7655015	MYB	HSPA1A	Activation		Literature		K562结合性能不佳	0
+7655015	MYB	CD4	Activation		Literature		K562结合性能不佳	0
+7655015	MYB	CD34	Activation		Literature		K562结合性能不佳	0
+7655015	MYB	TRD@	Activation		Literature		K562结合性能不佳	0
+7655015	MYB	CDK1	Activation		Literature		K562结合性能不佳	0
+7655015	JUN	MYB	Activation		Literature		K562结合性能不佳	0
+7655015	JUND	MYB	Activation		Literature		K562结合性能不佳	0
+7655015	MYBL2	MYB		Molt-4, Jurkat	Literature;EMSA;Luciferase;Mutation		K562结合性能不佳	0
+10453008	CEBPA	CSF2RB		HL-60;U-937	EMSA;Mutation;Literature			0
+10453008	CEBPB	CSF2RB		HL-60;U-937	EMSA;Mutation;Literature			0
+10453008	CEBPE	CSF2RB		HL-60	EMSA;Mutation;Literature			0
+10453008	CEBPD	CSF2RB		HL-60;COS-1	Literature			0
+10453008	CEBPG	CSF2RB		HL-60;U-937	Literature			0
+10453008	SPI1	CSF2RB		COS-1	Literature;EMSA			0
+10453008	CEBP/SPI1	CSF3R			Literature			0
+10453008	CEBP/SPI1	CSF2RA			Literature			0
+10453008	CEBP/SPI1	CSF1R			Literature			0
+16628196	STAT1	CCR1			RT-PCR;WB;Mutation;Literature		STAT1调控的真的是CCR1而不是CCL3吗。STAT1用了ELISA。	0
+16628196	NFKB	CCL3			WB;Mutation;Literature		STAT1调控的真的是CCR1而不是CCL3吗。STAT1用了ELISA。	0
+16628196	STAT1	TLR3			RT-PCR;Mutation		STAT1调控的真的是CCR1而不是CCL3吗。STAT1用了ELISA。	0
+16628196	STAT3	TLR3			RT-PCR;Mutation		STAT1调控的真的是CCR1而不是CCL3吗。STAT1用了ELISA。	0
+19376845	ARNT	CYP1B1		MCF-7, HepG2	ChIP;Literature	AhR-ARNT		0
+19376845	ARNT	CYP1A1		MCF-7, HepG2	ChIP;Literature	AhR-ARNT		0
+19376845	ARNT	CYP1A2		MCF-7, HepG2	Literature	AhR-ARNT		0
+19376845	AHR	CYP1B1		MCF-7;HepG2	ChIP;Literature	AhR-ARNT		0
+19376845	AHR	CYP1A1		MCF-7, HepG2	ChIP;Literature	AhR-ARNT		0
+19376845	AHR	CYP1A2		MCF-7, HepG2	Literature	AhR-ARNT		0
+8631128	ARNT	CYP1A1		HepG2;MCF7	Literature	AhR-ARNT	说是存在ESR依赖的、AHR介导的CYP1A1诱导，没有算入	0
+8631128	AHR	CYP1A1		HepG2;MCF7	Literature	AhR-ARNT	说是存在ESR依赖的、AHR介导的CYP1A1诱导，没有算入	0
+8631128	SP1	CYP1A1	Activation	CV-1(Monkey)	Literature		说是存在ESR依赖的、AHR介导的CYP1A1诱导，没有算入	0
+8631128	KLF9	CYP1A1	Repression	(In Rat）	Literature		说是存在ESR依赖的、AHR介导的CYP1A1诱导，没有算入	0
+22213192	ZNF24	CCND1		L02, Hep3B	Luciferase;Microarray;EMSA;WB		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	ZNF24	CTNNB1		L02, Hep3B	Luciferase;ChIP;EMSA;Microarray;WB		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	ZNF24	VEGFA			Literature		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	AP1	CTNNB1			Literature		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	LEF/TCF	CTNNB1			Literature		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	NKX2-5	CTNNB1			Literature		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+22213192	THRB	CTNNB1			Literature		体内 ChIP 实验显示，ZNF191 并不能直接与包含 LEF/TCF 位点的 CCND1 启动子片段（-962CD1）结合（支持信息图 4），表明 ZNF191 对 CCND1 启动子的激活是通过 β-连环蛋白间接实现的。去掉了ChIP证据，其实不确定这里是否成立	0
+7876096	USF1	CEACAM5		SW403, Caco-2	EMSA;Mutation;Luciferase			0
+7876096	USF2	CEACAM5		SW403, Caco-2	EMSA;Mutation;Luciferase			0
+7876096	SP1	CEACAM5		SW403, Caco-3	EMSA;Mutation;Luciferase			0
+7876096	SP1-like	CEACAM5		SW403, Caco-4	EMSA;Mutation;Luciferase			0
+7876096	USF1	CEACAM1			Literature			0
+7876096	USF2				Literature			0
+7876096	HNF4A				Literature			0
+7876096	SP1	CDH1			Literature			0
+20068145	RB1	BRCA1	Repression	Jurkat T, HEK 293, HEK 293 LTV, PC3, LNCaP	RT-PCR;Microarray;ChIP;Co-IP;RNAi_KD;OE	BRCA1-E2F1-RB		1
+20068145	BRCA1	BRCA1	Repression	Jurkat T, HEK 293, HEK 293 LTV, PC, LNCaP	ChIP	BRCA1-E2F1-RB		0
+20068145	E2F1	BRCA1	Repression	Jurkat T, HEK 293, HEK 293 LTV, PC, LNCaP	Microarray;ChIP	BRCA1-E2F1-RB		1
+20068145	BRCA1	CCNB2			Literature			0
+20068145	BRCA1	MLH1			Literature			0
+20068145	BRCA1	H2AFX			Literature			0
+20068145	BRCA1	DDIT3			Literature			0
+20068145	BRCA1	SFPQ			Literature			0
+20068145	BRCA1	FEN1			Literature			0
+20068145	BRCA1	H3F3B			Literature			0
+22205702	ZEB1	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	ZEB2	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	SNAI1	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	SNAI2	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	TWIST1	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	TWIST2	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	TCF3	CDH1	Repression		Literature		这篇分歧有点大，我没看到luciferase assay	0
+22205702	STAT3	CDH1					这篇分歧有点大，我没看到luciferase assay	0
+22205702	STAT3	CDH2					这篇分歧有点大，我没看到luciferase assay	0
+22205702	STAT3	VIM					这篇分歧有点大，我没看到luciferase assay	0
+22205702	STAT3	ZEB1					这篇分歧有点大，我没看到luciferase assay	0
+22205702	ZEB1	CDH1					这篇分歧有点大，我没看到luciferase assay	0
